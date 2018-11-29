@@ -1,0 +1,22 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="ActivityTrackerLogDNA" audience="service" arm="" href="/docs/services/Activity-Tracker-with-LogDNA/index.html" path="services/Activity-Tracker-with-LogDNA"}
+IBM Cloud Activity Tracker with LogDNA
+
+    {: .navgroup id="learn"}
+    index.md
+
+    {: .topicgroup}
+    Internal adopters
+        ibm-internal-only/overview.md
+        ibm-internal-only/event_definition.md
+        ibm-internal-only/best_practices.md
+        ibm-internal-only/partner_news.md
+        ibm-internal-only/supertenant.md
+        ibm-internal-only/kube.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    gettinghelp.md
+    {: .navgroup-end}
