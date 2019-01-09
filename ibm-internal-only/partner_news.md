@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-29"
+lastupdated: "2019-01-07"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-11-29"
 {:download: .download}
 
 
-# Partner News for Activity Tracker
+# LogDNA News for Activity Tracker
 {: #ibm_partner}
 
 Activity Tracker(AT) and Log Analysis services are being moved to our partner [LogDNA](https://docs.logdna.com/docs). This page describes the transition for existing AT services to flow events to LogDNA. During the transition, events must flow to the current AT and LogDNA.
@@ -30,11 +30,11 @@ Activity Tracker(AT) and Log Analysis services are being moved to our partner [L
 * The format of payload section in the event remains unchanged.
 * Events flowing to the current AT will continue to work during the transition without any change to the events. So business as usual for customers.
 * Services on Armada will continue to write AT events to disk. The fluentd plug-in will process the events and send them to the current AT.
-* Non-Armada services please see the section [below](#otherapproach).
+* Non-Armada services please see the section [below](/docs/services/cloud-activity-tracker/ibm-internal-only/partner_news.html#ingestion).
 
 
 ## What Changes (Minor Changes)
-{: #cahnge}
+{: #change}
 
 Minor changes are required to send events to LogDNA. 
 
@@ -53,11 +53,12 @@ Two new fields will be added at the root level of the event structure. These are
 
 **One modified format for a field**
 
-The LogDNA UI will use the existing **message** field in the payload object as summary of the log line. This will enhance the customer experience when looking at events. The message field should follow the format defined [here](../../getting-start/event/#event-fields-for-new-architecture). This will allow us to present to the customer a consistent, easy to read summary of the event from all the services using AT.
+The LogDNA UI will use the existing **message** field in the payload object as summary of the log line. This will enhance the customer experience when looking at events. The message field should follow the format defined [here](/docs/services/cloud-activity-tracker/ibm-internal-only/event_definition.html#new). This will allow us to present to the customer a consistent, easy to read summary of the event from all the services using AT.
 
 **High-level view of updated event object**
 
-```JSON 
+```
+JSON 
 {
   'payload': {'message': <new_msg_format>, /* existing CADF fields */},
   'meta': {<meta>},
@@ -65,6 +66,8 @@ The LogDNA UI will use the existing **message** field in the payload object as s
   'saveServiceCopy: true
 }
 ```
+{: codeblock}
+
 
 **Additional plug-in to send events to LogDNA**
 
@@ -85,6 +88,8 @@ See [this video](https://ibm.webex.com/ibm/lsr.php?RCID=4f9bf0967f2d4fb08debeaf1
 {: #timeline}
 
 ### Phase 1: Now
+{: #phase1}
+
 * LogDNA working on code changes and getting into the IBM Cloud
 * Services can prepare their events to support LogDNA
 
@@ -93,7 +98,9 @@ Service steps for Phase 1:
 * Armada based services can update their events with the two new and one modified fields.
 * See detailed documentation on the fields [here](../../getting-start/event/#event-fields-for-new-architecture).
 
-### Phase 2: Start sending service events to LogDNA - October
+### Phase 2: Now
+{: #phase2}
+
 * LogDNA will be available inside the IBM Cloud. Look for an announcement in our slack channel **activity-tracker-user** and stakeholder meeting.
 * Optimized AT user experience provisioning for services running in Armada/Kubernetes. Traditional provisioning from the catalog will also be available.
 * AT events can now be sent to the legacy AT and LogDNA. At this time only service records will be appear in LogDNA.
@@ -106,7 +113,9 @@ Service steps for Phase 2:
 * Verify your service events show up in legacy AT and in LogDNA. **NOTE**: The event summary log line will not contain your message in this phase. This will be available in Phase 3
 
 
-### Phase 3: Activate an AT account for your service - October
+### Phase 3: Activate an AT account for your service - ET end of January
+{: #phase3}
+
 * LogDNA will have full AT functionality in the IBM Cloud.
 * AT events in LogDNA can now be saved for your service and the customer. This means an IBM Cloud customer can provision a LogDNA instance, specifically for receiving AT events from services they are using.
 * The message field will now show up in the log line summary.
@@ -117,6 +126,8 @@ Service steps for Phase 3:
 * Services **must** continue to send events to the legacy AT. 
 
 ### Phase 4: Service stop sending event to legacy AT
+{: #phase4}
+
 * All services are sending to both legacy AT and LogDNA.
 * Services can now stop sending events to legacy AT
 

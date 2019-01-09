@@ -16,7 +16,7 @@ lastupdated: "2018-11-29"
 {:download: .download}
 
 
-# Partner News for Super Tenants
+# LogDNA News for Super Tenants
 {: #ibm_partner_supertenant}
 
 All services are moving from Log Analysis to [LogDNA](https://docs.logdna.com/docs) for operational logs.
@@ -41,6 +41,8 @@ A super tenant log line must be in JSON. (Other log lines do not have to be in J
    // Additional JSON fields for your existing log line content...
 }
 ```
+{: codeblock}
+
 With the line in JSON, there are three special fields to be aware of:
 
 1. The line **must** have a JSON field called `logSourceCRN`. This field gives the CRN of your service instance that is producing the log. 
@@ -55,14 +57,21 @@ With the line in JSON, there are three special fields to be aware of:
 ## Approximate Timeline
 {: #timeline}
 
-* **Now**: You can convert your service's super tenant log lines to the above format, while still using Log Analysis.
-* **October**: LogDNA will be available inside the IBM Cloud. You can create a LogDNA account for your service, and begin sending its operational logs to LogDNA.
-  * If your service is running in Armada, use the [LogDNA Kubernetes agent](https://docs.logdna.com/docs/kubernetes), which is easy to set up and also works for AT.
-  * Otherwise, LogDNA offers many convenient methods of log ingestion--agents, libraries, and direct to API.  All of these will work for a super tenant account. Refer to [LogDNA docs](https://docs.logdna.com/docs) for details.
-  * Continue sending to Log Analysis at the same time--at least for your super tenant logs.
-* **October**: LogDNA will add Super Tenant capability.
-  * Your service will then need a Super Tenant account (hopefully you can convert your existing LogDNA account, or else make a new one).
-  * As an implementation detail, the IP address of the ingestion API will be different for a super tenant account. But the normal ingestion behavior will work the same.
-  * Your service will use the same super tenant account to send operation logs, super tenant logs, and Activity Tracker events. If using a LogDNA agent, you will only need one agent for all three purposes.
-  * Super tenancy will begin to work. However, continue to send to both Log Analysis and LogDNA until LA support is ended for super tenant services.
-  * Additional tip: Provide a [LogDNA tag](https://docs.logdna.com/docs/ingestion#section-tags) for your human-readable service name, as seen in the catalog. The LogDNA doc shows how to do this for various ingestion methods, but it typically involves a simple agent configuration. *[Armada example to be provided.]* This will make your service more visible to customers, so they will see all you are doing for them. Otherwise, your service will not stand out as your log lines are mingled with all the other services.
+**Now**
+
+You can convert your service's super tenant log lines to the above format, while still using Log Analysis.
+
+LogDNA will be available inside the IBM Cloud. You can create a LogDNA account for your service, and begin sending its operational logs to LogDNA.
+* If your service is running in Armada, use the [LogDNA Kubernetes agent](https://docs.logdna.com/docs/kubernetes), which is easy to set up and also works for AT.
+* Otherwise, LogDNA offers many convenient methods of log ingestion--agents, libraries, and direct to API.  All of these will work for a super tenant account. Refer to [LogDNA docs](https://docs.logdna.com/docs) for details.
+* Continue sending to Log Analysis at the same time--at least for your super tenant logs.
+
+
+**End of January** 
+
+LogDNA will add Super Tenant capability.
+* Your service will then need a Super Tenant account (hopefully you can convert your existing LogDNA account, or else make a new one).
+* As an implementation detail, the IP address of the ingestion API will be different for a super tenant account. But the normal ingestion behavior will work the same.
+* Your service will use the same super tenant account to send operation logs, super tenant logs, and Activity Tracker events. If using a LogDNA agent, you will only need one agent for all three purposes.
+* Super tenancy will begin to work. However, continue to send to both Log Analysis and LogDNA until LA support is ended for super tenant services.
+* Additional tip: Provide a [LogDNA tag](https://docs.logdna.com/docs/ingestion#section-tags) for your human-readable service name, as seen in the catalog. The LogDNA doc shows how to do this for various ingestion methods, but it typically involves a simple agent configuration. *[Armada example to be provided.]* This will make your service more visible to customers, so they will see all you are doing for them. Otherwise, your service will not stand out as your log lines are mingled with all the other services.

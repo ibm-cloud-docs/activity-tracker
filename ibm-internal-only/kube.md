@@ -25,15 +25,13 @@ lastupdated: "2018-11-29"
 
 | Pattern                                  | Scenario                                 | Sample App                               |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| <img src="../../images/AT_write_directv3.png" alt="Write by Service (IBM Cloud Container Service) pattern"  height="300" width="450" /> | You have a service in the IBM Cloud that you must [register with AT](#step2) in order to collect activity data. <br> <br> Use the <b><i>Write by Service (Kube)</i></b> pattern to [write activity data](#step3) for that service into the IBM Cloud Activity Tracker (AT) service. <br> <br> Use AT to understand how this cloud service is being used by end users. [Display and analyze the activity data](../read/) that is stored for the service in AT. | |
+| <img src="images/AT_write_directv3.png" alt="Write by Service (IBM Cloud Container Service) pattern"  height="300" width="450" /> | You have a service in the IBM Cloud that you must [register with AT](#step2) in order to collect activity data. <br> <br> Use the <b><i>Write by Service (Kube)</i></b> pattern to [write activity data](#step3) for that service into the IBM Cloud Activity Tracker (AT) service. <br> <br> Use AT to understand how this cloud service is being used by end users. [Display and analyze the activity data](../read/) that is stored for the service in AT. | |
 
 By using this pattern, you write activity data to /var/log/at/**/*.log in your container. The cluster's [fluentd](https://www.fluentd.org/) service forwards those events to AT. Fluentd is configured to pick up events from a file located in `/var/log/at/` in your service container.
 
 
-
-
-
-# Getting Started
+## Overview
+{: #ov}
 
 To display and analyze the usage of a Cloud service that an application interacts with, you must complete the following steps for the service:
 
@@ -43,9 +41,9 @@ To display and analyze the usage of a Cloud service that an application interact
 
 Then, you and your users can [view and analyze the Cloud service activity](../read/).
 
-<div id="step1" />
 
-## Step 1. Register the service with Activity Tracker.
+## Step 1: Register the service with Activity Tracker
+{: #step1}
 
 **NOTE: First, register your service in staging. Once it is tested and compliant with AT adoption guidelines and CADF field formats, register your service for production.**
 
@@ -65,16 +63,16 @@ The service's user's account IDs or space IDs will be specified in the actual ev
 to register the service against.<br><br>
 The following tables list the endpoints available for Activity Tracker per environment and region. You must register for each region individually that you want to use.
 
- * Stage1:  
+**Stage1**
 
 | Environment   | Endpoint                                          |
 | ------------- | ------------------------------------------------- |
 | Dallas        | https://activity-tracker.stage1.ng.bluemix.net    |
 | London        | https://activity-tracker.stage1.eu-gb.bluemix.net |
-| Frankfurt     |                not available             |
-| Sydney        |                not available             |
+| Frankfurt     |                not available                      |
+| Sydney        |                not available                      |
 
- * Production:  
+**Production**
 
 | Environment          | Endpoint                                         |
 | -------------------- | ------------------------------------------------ |
@@ -90,10 +88,8 @@ enable Activity Tracker on your cluster in the next step.
 Wait for the confirmation from the team that the service has been registered before you proceed to the next step.
 
 
-
-<div id="step2" />
-
-## Step 2. Enable Activity Tracker event-forwarding on your Cluster
+## Step 2: Enable Activity Tracker event-forwarding on your Cluster
+{: #step2}
 
 In order to add Activity Tracker support to your cluster, you'll need to:
 
@@ -104,22 +100,26 @@ In order to add Activity Tracker support to your cluster, you'll need to:
 
 These instructions require:
 
-- Familiarity with Kubernetes
-- A Kubernetes cluster for your service, in IBM Cloud (Armada). These instructions will not work on a free trial account.
-- An admin role for your cluster. Be sure to get the admin cluster-config for running kubectl: `bx cs cluster-config CLUSTER_NAME --admin`
+* Familiarity with Kubernetes
+* A Kubernetes cluster for your service, in IBM Cloud (Armada). These instructions will not work on a free trial account.
+* An admin role for your cluster. Be sure to get the admin cluster-config for running kubectl: `bx cs cluster-config CLUSTER_NAME --admin`
 
 These instructions involve creating several local files
 which `kubectl` uses to update your cluster.
 If you want copies of the files that are already created,
 clone [this repo](https://github.ibm.com/activity-tracker/helloATv2).
 
-### 2a. Encode AT account info
+### 2a: Encode AT account info
+{: #step2a}
 
 Copy the following line into a text editor, creating a file called `encodedServices.sh`:
 
 ```
 echo '{"services":[{"service_name":"YOUR_SERVICE_NAME","auth_token_value":"YOUR_SERVICE_TOKEN","project_id": "YOUR_SERVICE_SPACE_ID"}]}' | base64
 ```
+{: codeblock}
+
+
 Replace the following values in this line:
 
 1. Replace `YOUR_SERVICE_NAME` and `YOUR_SERVICE_SPACE_ID` with the information you registered to AT.
@@ -132,13 +132,15 @@ Once you have your service JSON ready, encode it by running
 the script at a command prompt.
 The command's output is your `ENCODED_SERVICES` string, to be used below.
 
-### 2b. Add a Secret to your cluster
+### 2b: Add a Secret to your cluster
+{: #step2b}
 
 Now that the account info is encoded,
 you need to make it available to Armada as a "secret".
 Create a file called `at_secret.yaml` and copy in the following:
 
-```yaml
+```
+yaml
 apiVersion: v1
 data:
   ACTIVITY_TRACKER_URL: ENCODED_SERVICES
@@ -148,6 +150,7 @@ metadata:
   namespace: kube-system
 type: Opaque
 ```
+{: codeblock}
 
 Replace the following values in this file:
 
@@ -162,13 +165,15 @@ If you get an error saying the secret already exists then you can delete the exi
  and run the `kubectl create` command again. 
 
 
-### 2c. Add a ConfigMap to your cluster
+### 2c: Add a ConfigMap to your cluster
+{: #step2c}
 
 A ConfigMap will tell fluentd what files to read,
 and where to send the data.
 Create a file called `at_config.yaml` and copy in the following:
 
-```yaml
+```
+yaml
 apiVersion: v1
 data:
   logging-activity-tracker.conf: |
@@ -212,6 +217,7 @@ metadata:
   name: at-fluentd-config
   namespace: kube-system
 ```
+{: codeblock}
 
 Replace the following values in this file:
 
@@ -223,22 +229,26 @@ like `ng`.
 
 Add the ConfigMap to your cluster by running `kubectl create -f at_config.yaml`. This will create the Activity Tracker ConfigMap in the `kube-system` namespace where fluentd requires it.
 
-### Special note on log rotation ###
+**Special note on log rotation**
 
 The following configuration will handle log rotation of any files written to the `var/log/at` directory. Rotation is done
 daily and rotated logs are kept for three days. If you want your service to handle log rotation because you want to be 
 able to keep the handle to your file open or you're using a logger that handles log rotation then you'll want to update
 the path to be `/var/log/at-no-rotate`.
 
-### 2d. Restart the fluentd pods
+### 2d: Restart the fluentd pods
+{: #step2d}
 
 You must restart each fluentd pod for it to pick up the new configuration
 and begin sending your events to AT.
 Save the following script in a file (such as `restartFluentd.sh`), `chmod +x` the file, and run it.
 
-    kubectl -n kube-system delete pods -l app=ibm-kube-fluentd
-    sleep 30
-    kubectl -n kube-system get pods -l app=ibm-kube-fluentd
+```
+kubectl -n kube-system delete pods -l app=ibm-kube-fluentd
+sleep 30
+kubectl -n kube-system get pods -l app=ibm-kube-fluentd
+```
+{: codeblock}
 
 The fluentd pods will be printed out at the end. Verify that they are all in `Running` state.
 
@@ -246,9 +256,8 @@ Now the fluentd pods are watching the `/var/log/at` directory,
 waiting to process any events that the other pods write there.
 
 
-<div id="step3" />
-
-## Step 3. Send events to Activity Tracker
+## Step 3: Send events to Activity Tracker
+{: #step3}
 
 Now that Activity Tracker is enabled on your cluster,
 you must enable your service to send events.
@@ -269,10 +278,9 @@ user in your image ([using the `USER` directive][user-directive]) or [use an
 
 [user-directive]: https://docs.docker.com/engine/reference/builder/#user
 
-### Sample deployment descriptor
+**Sample deployment descriptor**
 
-The following sample deploys a test service called `at-noisy`
-which sends a sample event every 30 seconds.
+The following sample deploys a test service called `at-noisy`which sends a sample event every 30 seconds.
 Other than the deployment descriptor, no additional code is needed.
 The `at-noisy` service consists of one line of bash: the "while true..." line in the file below.
 
@@ -281,7 +289,8 @@ view them in the Activity Tracker console.
 
 Save this text to a file called `at_noisy.yaml`.
 
-```yaml
+```
+yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -313,8 +322,10 @@ spec:
           hostPath:
             path: /var/log/at # or /var/log/at-no-rotate if you are handling log rotation
 ```
+{: codeblock}
 
-### The test service: `at-noisy`
+## The test service: `at-noisy`
+{: #test_svc}
 
 Every 30 seconds, the "while true..." line writes an event to `/var/log/at/noisy_events.log`.
 The name of the file is a constant in this simple example,
@@ -325,7 +336,8 @@ have a unique name, since the volume is shared by all pods.
 Each event uses the following JSON object,
 copied from above:
 
-```javascript
+```
+javascript
   {
     meta: {
       serviceProviderName: "YOUR_SERVICE_NAME",
@@ -357,12 +369,13 @@ copied from above:
       }
   }
 ```
+{: codeblock}
 
 
 There are two parts to the structure: `meta` and `payload`.
 
-- `meta` tells Activity Tracker where to send the event, as explained below.
-- `payload` contains the CADF fields. CADF is explained [here](../../#cadf), and the fields are described in detail [here](../event/).
+* `meta` tells Activity Tracker where to send the event, as explained below.
+* `payload` contains the CADF fields. CADF is explained [here](../../#cadf), and the fields are described in detail [here](../event/).
   This sample event shows rbertram creating a Kube worker node.
 
 The `meta` structure tells AT where to save two copies of each event: one for the service, and one for the user.
@@ -376,7 +389,8 @@ Before you deploy `at-noisy`, you must replace the placeholders in `meta` with y
   <br>b. Provide `USER_SPACE_ID` and `USER_SPACE_REGION` to send to the user's space, and omit `userAccountIds`.<br>
   For the test, specify either (a) an account or (b) a space, so that you can look to see if it is working.
 
-### Try out the test service
+## Try out the test service
+{: #try}
 
 Deploy `at-noisy` by running `kubectl create -f at_noisy.yaml`.
 
@@ -394,13 +408,15 @@ When you are finished with this test, remove the `at-noisy` service
 by running `kubectl delete -f at_noisy.yaml`.
 
 
-### helloAT revisited
+## helloAT revisited
+{: #helloat}
 
 Try the [Kube version of helloAT](https://github.ibm.com/activity-tracker/helloATv2).
 
 Back by popular demand, this is an update to the hello-world NodeJS application that sends events to AT. The original helloAT used protobuf to call the AT API. This simplified version just writes to a file, and lets Armada (fluentd) do the heavy lifting.
 
-### Debugging Tips
+## Debugging Tips
+{: #debug}
 
 If you don't see your events in Activity Tracker or Kibana you can do the following to figure out what's going on:
 
@@ -424,9 +440,9 @@ and change `ibm_plugin_log_level` to `debug`. Restart the fluentd pods to pick u
 
 NOTE: If the kubectl edit command fails with the error `the server doesn't have a resource type "at-fluentd-config`, try the following: `kubectl -n kube-system edit cm at-fluentd-config`
 
-<div id="init-containers">
 
-### Init Containers
+## Init Containers
+{: #init-containers}
 
 Since Kubernetes mount host paths as root, you may need to change the file
 permissions so your service can write logs there. One such method is to run
@@ -434,7 +450,8 @@ an `initContainer` that changes the file permissions.
 
 If your service name is `helloAT` then you could add this to your pod spec:
 
-```yaml
+```
+yaml
   initContainers:
     - name: fix-permissions
       image: alpine:3.6
@@ -448,9 +465,11 @@ If your service name is `helloAT` then you could add this to your pod spec:
       securityContext:
         runAsUser: 0
 ```
+{: codeblock}
 
 This will add write permissions on the `/var/log/at/helloAT` directory for all users.
 
-### Using protobuf to create JSON string events for writing to a logfile
+## Using protobuf to create JSON string events for writing to a logfile
+{: #protobuf}
 
 Services should write JSON content directly to file, and not convert to/from protobuf in the process. This avoids unnecessary work and overhead, and avoids existing bugs in Trail.java conversion to JSON.

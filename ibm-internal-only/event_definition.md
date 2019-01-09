@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-29"
+lastupdated: "2019-01-07"
 
 ---
 
@@ -30,18 +30,18 @@ lastupdated: "2018-11-29"
 
 To see a template of the CADF, see [template](https://github.ibm.com/activity-tracker/helloATv2/blob/master/CadfTemplate.js)
 
-**Mandatory fields:**
+The following table list the mandatory fields:
 
 <table>
   <caption>Mandatory fields</caption>
   <tr>
-    <th width="20%">Field Name</th>
-	  <th width="30%">Description</th>
-	  <th width="30%">Value</th>
+    <th>Field Name</th>
+	  <th>Description</th>
+	  <th>Value</th>
   </tr>
   <tr>
     <td>initiator.id</td>
-	  <td>ID of the initiator of the action. </br>There are two types of initiators: IBMID and serviceID.  <br>Set this value to the <b>access_token.iam_id</b> field. </br>**Note: It is strongly recommended to also set the <i>initiator.name</i> field; see below.**</td>
+	  <td>ID of the initiator of the action. </br>There are two types of initiators: IBMID and serviceID.  <br>Set this value to the **access_token.iam_id** field. </br>**Note: It is strongly recommended to also set the <i>initiator.name</i> field; see below.**</td>
 	  <td>Example of an IBMID:  <b>IBMid-060000JGT2</b> </br>Example of a service ID: <b>iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14</b> </td>
   </tr>
   <tr>

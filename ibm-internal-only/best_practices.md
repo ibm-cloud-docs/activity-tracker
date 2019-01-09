@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-29"
+lastupdated: "2019-01-07"
 
 ---
 
@@ -36,7 +36,7 @@ When your service runs on Armada containers,
 
 Then, rely on the Write by Service (Kube) pattern to send the events to Activity Tracker.
 
-For more information, see [Write by Service (IBM Cloud Container Service)](https://pages.github.ibm.com/activity-tracker/getting-start/kube/).
+For more information, see [Write by Service (IBM Cloud Container Service)](/docs/services/cloud-activity-tracker/ibm-internal-only/kube.html#ibm_kube).
 
 
 
@@ -189,7 +189,7 @@ In all cases:
 
 **NOTE: First, Validate events for your service in staging. Once it is tested and compliant with AT adoption guidelines and CADF field formats, register your service for production and validate in production.**  WHY?  Customers and other services (such as SEIMs) are consuming AT events. Inconsistency in field formats and deviations of the AT event format causes parsing errors and customer unsatisfaction.
 
-## Validating JSON
+## Validating JSON: AT Event Linter tool
 
 The [AT Event Linter](https://github.ibm.com/activity-tracker/helloATv2/blob/master/README.md#at-event-linter) is a tool that validates a JSON event stored in a file. 
 
@@ -237,7 +237,7 @@ Information about AT events that customers can monitor must be documented.
 Your services technical writer must complete the following steps to document the Activity Tracker events that your service generates:
 
 1. Create a topic that list all the Activity Tracker events. 
-2. Add the topic to the Reference section of your service documentation. For example: [AT events](https://console.stage1.bluemix.net/docs/services/cloud-activity-tracker/reference/events.html#events)
+2. Add the topic to the Reference section of your service documentation. For example: [AT events](/docs/services/cloud-activity-tracker/reference/events.html#events)
 3. Update the Activity Tracker documentation to include your service information.
 
 For more information, see the section [Onboarding in Activity Tracker (AT)](https://console.stage1.bluemix.net/docs/developing/index.html)
