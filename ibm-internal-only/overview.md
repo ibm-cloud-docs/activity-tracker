@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2019-01-07"
+lastupdated: "2019-01-15"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2019-01-07"
 {:tip: .tip}
 {:download: .download}
 
-# IBM Cloud Activity Tracker
+# Introduction
 {: #overview}
 
 **Use IBM Cloud Activity Tracker as an audit tool that records user-initiated activities that change the state of a service in the IBM cloud.**

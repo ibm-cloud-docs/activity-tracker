@@ -15,6 +15,7 @@ IBM Cloud Activity Tracker with LogDNA
         ibm-internal-only/partner_news.md
         ibm-internal-only/supertenant.md
         ibm-internal-only/kube.md
+        ibm-internal-only/at_events_acc_mgt.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

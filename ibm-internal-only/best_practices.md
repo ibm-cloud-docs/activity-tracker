@@ -90,7 +90,7 @@ Events are stored in the Log Analysis service. Depending on the events per minut
 
 ## Are there any mandatory fields in an event? 
 
-**You must include all mandatory fields in every AT event.** Activity Tracker events comply with the industry standard CADF format. For more information about the mandatory fields you need to provide, see [Event Fields](https://pages.github.ibm.com/activity-tracker/getting-start/event/).
+**You must include all mandatory fields in every AT event.** Activity Tracker events comply with the industry standard CADF format. For more information about the mandatory fields you need to provide, see [Event Fields](/docs/services/cloud-activity-tracker/ibm-internal-only/event_definition.html#mandatory).
 
 **target.id** is a mandatory field that must be set to the CRN of the resource on the IBM Cloud. When you define sets of events for a sub-resource in your service, use the same CRN for create, update, delete, and any other events that apply to that sub-resource.
 
@@ -227,7 +227,7 @@ To test Activity Tracker, complete the following steps when your service forward
 3. Execute an action in your service that generates an AT event.
 4. Launch the AT UI from the Cloud console, select the account domain view, and verify that the event for the action you executed shows on the AT dashboard.
 
-**Note:** To see account events, your user must have specific permissions. For more information, see [Viewing events](https://console.bluemix.net/docs/services/cloud-activity-tracker/how-to/manage-events-ui/viewing_events.html#view_acc_events).
+**Note:** To see account events, your user must have specific permissions. For more information, see [Viewing events](/docs/services/cloud-activity-tracker/how-to/manage-events-ui/viewing_events.html#view_acc_events).
 
 ## Documenting events
 
@@ -240,20 +240,18 @@ Your services technical writer must complete the following steps to document the
 2. Add the topic to the Reference section of your service documentation. For example: [AT events](/docs/services/cloud-activity-tracker/reference/events.html#events)
 3. Update the Activity Tracker documentation to include your service information.
 
-For more information, see the section [Onboarding in Activity Tracker (AT)](https://console.stage1.bluemix.net/docs/developing/index.html)
+For more information, see the section [Onboarding in Activity Tracker (AT)](https://console.test.cloud.ibm.com/docs/developing/index.html)
 
 
 For any documentation queries, contact Marisa (lopezdsr@uk.ibm.com) in slack.
 For CADF compliance queries, contact Brendan Hayes (brendan.hayes@us.ibm.com) in slack.
 
-Where will the information be available? 
+### Where will the information be available? 
 
-Specific event information for a service is provided through a reference topic that is owned and maintained by the your service.
+Specific event information for a service is provided through a reference topic that is owned and maintained by your service.
 
-General overview services information about the events that services send to AT will be available through the following URLs: 
+General overview services information about the events that services send to AT will be available through the following URL: 
 
-* Staging: https://console.stage1.bluemix.net/docs/services/cloud-activity-tracker/cloud_services.html#cloud_services
+* [Cloud services](/docs/services/cloud-activity-tracker/cloud_services.html#cloud_services)
 
-* Prod: https://console.bluemix.net/docs/services/cloud-activity-tracker/cloud_services.html#cloud_services
-   
 Your service is responsible for including the entry of your service in the list.
