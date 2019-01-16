@@ -30,7 +30,7 @@ Activity Tracker(AT) and Log Analysis services are being moved to our partner [L
 * The format of payload section in the event remains unchanged.
 * Events flowing to the current AT will continue to work during the transition without any change to the events. So business as usual for customers.
 * Services on Armada will continue to write AT events to disk. The fluentd plug-in will process the events and send them to the current AT.
-* Non-Armada services please see the section [below](/docs/services/cloud-activity-tracker/ibm-internal-only/partner_news.html#ingestion).
+* Non-Armada services please see the section [below](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/partner_news.html#ingestion).
 
 
 ## What Changes (Minor Changes)
@@ -42,7 +42,7 @@ Minor changes are required to send events to LogDNA.
 * one field has a format change in each event
 * an additional plug-in to send events to logDNA
 
-The three sections below provide a high level view of the new/modified fields and plug-in. Detailed information on the fields can be found [here](../../getting-start/event/#event-fields-for-new-architecture).
+The three sections below provide a high level view of the new/modified fields and plug-in. Detailed information on the fields can be found [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/event_definition.html#new).
 
 **Two new fields**
 
@@ -53,7 +53,7 @@ Two new fields will be added at the root level of the event structure. These are
 
 **One modified format for a field**
 
-The LogDNA UI will use the existing **message** field in the payload object as summary of the log line. This will enhance the customer experience when looking at events. The message field should follow the format defined [here](/docs/services/cloud-activity-tracker/ibm-internal-only/event_definition.html#new). This will allow us to present to the customer a consistent, easy to read summary of the event from all the services using AT.
+The LogDNA UI will use the existing **message** field in the payload object as summary of the log line. This will enhance the customer experience when looking at events. The message field should follow the format defined [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/event_definition.html#new). This will allow us to present to the customer a consistent, easy to read summary of the event from all the services using AT.
 
 **High-level view of updated event object**
 
@@ -96,7 +96,7 @@ See [this video](https://ibm.webex.com/ibm/lsr.php?RCID=4f9bf0967f2d4fb08debeaf1
 Service steps for Phase 1:
 
 * Armada based services can update their events with the two new and one modified fields.
-* See detailed documentation on the fields [here](../../getting-start/event/#event-fields-for-new-architecture).
+* See detailed documentation on the fields [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/event_definition.html#new).
 
 ### Phase 2: Now
 {: #phase2}
@@ -141,7 +141,7 @@ Service steps for Phase 4:
 ## Ingestion by LogDNA
 {: #ingestion}
 
-We expect most services using AT will be hosted in Armada. These services are following our container based strategy, [write to service](https://pages.github.ibm.com/activity-tracker/getting-start/kube/). This strategy writes AT events to a file in /var/log/at and a fluentd plug-in reads the events and sends them to the legacy Activity Tracker. For sending events to LogDNA, we will continue with this strategy. The LogDNA Kubernetes agent will read from the same directory and forward the events to LogDNA. 
+We expect most services using AT will be hosted in Armada. These services are following our container based strategy, [write to service](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/kube.html#ibm_kube). This strategy writes AT events to a file in /var/log/at and a fluentd plug-in reads the events and sends them to the legacy Activity Tracker. For sending events to LogDNA, we will continue with this strategy. The LogDNA Kubernetes agent will read from the same directory and forward the events to LogDNA. 
 
 This architecture has the following advantages:
 

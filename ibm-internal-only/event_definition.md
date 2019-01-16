@@ -303,7 +303,7 @@ This includes:
 ## Metadata fields
 {: #metadata}
 
-These fields are metadata fields that you must set to configure the AT domain where users can view events for your service. For more information, see [How to set the AT domain where users can view events for your service](https://pages.github.ibm.com/activity-tracker/getting-start/best-practices/#how-to-set-the-at-domain-where-users-can-view-events-for-your-service).
+These fields are metadata fields that you must set to configure the AT domain where users can view events for your service. For more information, see [How to set the AT domain where users can view events for your service](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/best_practices.html#how-to-set-the-at-domain-where-users-can-view-events-for-your-service).
 
 **Note: These fields are not part of the CADF <i>payload</i>; they are part of the <i>meta</i> structure.**
 

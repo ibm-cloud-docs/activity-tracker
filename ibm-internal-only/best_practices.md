@@ -36,7 +36,7 @@ When your service runs on Armada containers,
 
 Then, rely on the Write by Service (Kube) pattern to send the events to Activity Tracker.
 
-For more information, see [Write by Service (IBM Cloud Container Service)](/docs/services/cloud-activity-tracker/ibm-internal-only/kube.html#ibm_kube).
+For more information, see [Write by Service (IBM Cloud Container Service)](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/kube.html#ibm_kube).
 
 
 
@@ -90,7 +90,7 @@ Events are stored in the Log Analysis service. Depending on the events per minut
 
 ## Are there any mandatory fields in an event? 
 
-**You must include all mandatory fields in every AT event.** Activity Tracker events comply with the industry standard CADF format. For more information about the mandatory fields you need to provide, see [Event Fields](/docs/services/cloud-activity-tracker/ibm-internal-only/event_definition.html#mandatory).
+**You must include all mandatory fields in every AT event.** Activity Tracker events comply with the industry standard CADF format. For more information about the mandatory fields you need to provide, see [Event Fields](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/event_definition.html#mandatory).
 
 **target.id** is a mandatory field that must be set to the CRN of the resource on the IBM Cloud. When you define sets of events for a sub-resource in your service, use the same CRN for create, update, delete, and any other events that apply to that sub-resource.
 
@@ -237,10 +237,9 @@ Information about AT events that customers can monitor must be documented.
 Your services technical writer must complete the following steps to document the Activity Tracker events that your service generates:
 
 1. Create a topic that list all the Activity Tracker events. 
-2. Add the topic to the Reference section of your service documentation. For example: [AT events](/docs/services/cloud-activity-tracker/reference/events.html#events)
+2. Add the topic to the Reference section of your service documentation. 
 3. Update the Activity Tracker documentation to include your service information.
 
-For more information, see the section [Onboarding in Activity Tracker (AT)](https://console.test.cloud.ibm.com/docs/developing/index.html)
 
 
 For any documentation queries, contact Marisa (lopezdsr@uk.ibm.com) in slack.

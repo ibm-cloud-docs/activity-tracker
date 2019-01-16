@@ -33,8 +33,8 @@ You can use Activity Tracker (AT) to:
 ## LogDNA news
 {: #partner}
 
-* Services currently sending events to Activity Tracker should read [this page](/docs/services/cloud-activity-tracker/ibm-internal-only/partner_news.html#ibm_partner) about the upcoming partner transition.<br/>
-* Services currently sending super tenant logs to Log Analysis should read [this page](/docs/services/cloud-activity-tracker/ibm-internal-only/supertenant.html#ibm_partner_supertenant) about the upcoming partner transition.
+* Services currently sending events to Activity Tracker should read [this page](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/partner_news.html#ibm_partner) about the upcoming partner transition.<br/>
+* Services currently sending super tenant logs to Log Analysis should read [this page](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/supertenant.html#ibm_partner_supertenant) about the upcoming partner transition.
 
 
 
@@ -110,8 +110,8 @@ Follow the links to implement a pattern:
     <td style="text-align: left">A service owner</td>
     <td style="text-align: left">Record my IBM service's activities by using the cluster fluentd agent to forward events to AT. </td>
     <td style="text-align: center">1A</td>
-    <td style="text-align: left"><a href="/docs/services/cloud-activity-tracker/ibm-internal-only/kube.html#step2">Register my service with AT</a> </td>
-    <td style="text-align: left"><a href="/docs/services/cloud-activity-tracker/ibm-internal-only/kube.html#step3">Send events to AT</a> </td>
+    <td style="text-align: left"><a href="/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/kube.html#step2">Register my service with AT</a> </td>
+    <td style="text-align: left"><a href="/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/kube.html#step3">Send events to AT</a> </td>
   </tr>
   <tr>
     <td style="text-align: left">A service owner</td>
