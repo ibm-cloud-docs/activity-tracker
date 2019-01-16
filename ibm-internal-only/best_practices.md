@@ -237,9 +237,8 @@ Information about AT events that customers can monitor must be documented.
 Your services technical writer must complete the following steps to document the Activity Tracker events that your service generates:
 
 1. Create a topic that list all the Activity Tracker events. 
-2. Add the topic to the Reference section of your service documentation. 
+2. Add the topic to the Reference section of your service documentation. Use the template: [Template Activity Tracker events](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/at_events_acc_mgt.html#at_events)
 3. Update the Activity Tracker documentation to include your service information.
-
 
 
 For any documentation queries, contact Marisa (lopezdsr@uk.ibm.com) in slack.
