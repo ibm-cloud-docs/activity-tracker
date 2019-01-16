@@ -24,12 +24,12 @@ These instructions are a continuation of the [Super Tenant instructions](enable-
 
 An IBM service must complete the following steps to begin using Activity Tracker (AT).
 
-1. [Provision an Activity Tracker Sender](#provision)
-2. [Test your service's Activity Tracking](#test)
+1. [Provision an Activity Tracker Sender](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-AT.html#provision)
+2. [Test your service's Activity Tracking](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-AT.html#test)
 
-In addition to the above, your service must write Activity Tracker events using the `logSourceCRN` field and (optionally) the `saveServiceCopy` field. Otherwise, they will only be saved in your service's Activity Tracker instance. Read about the format of AT events [here](https://pages.github.ibm.com/activity-tracker/getting-start/event/), and the specific changes for LogDNA [here](https://pages.github.ibm.com/activity-tracker/news/partner/). **TODO: update links**
+In addition to the above, your service must write Activity Tracker events using the `logSourceCRN` field and (optionally) the `saveServiceCopy` field. Otherwise, they will only be saved in your service's Activity Tracker instance. Read about the format of AT events [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/event_definition.html#ibm_event_fields), and the specific changes for LogDNA [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/partner_news.html#ibm_partner). **TODO: update links**
 
-When finished, be sure to review the [Other Considerations](enable-ST.md#6-other-considerations) in the Super Tenant instructions.
+When finished, be sure to review the [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#6-other-considerations) in the Super Tenant instructions.
 
 ## 1. Provision an Activity Tracker Sender
 {: #provision}
@@ -41,6 +41,7 @@ First, get the CRN of your logging STS so you can link your ATS to it. Using you
 ```
 export crn=$(ibmcloud resource service-instance "myService-STS" | grep -m 1 -o "crn.*")
 ```
+{: codeblock}
 
 Then use the CRN as an input parameter when creating the ATS.
 
@@ -48,6 +49,7 @@ Then use the CRN as an input parameter when creating the ATS.
 ibmcloud resource service-instance-create myService-ATS logdnaat 14-day us-south \
     -p '{"service_supertenant": "myservice" , "associated_logging_crn": "$crn", "provision_key": "123"}'
 ```
+{: codeblock}
 
 Where:  
 * `myService-ATS` is whatever you call your service, with ATS ("Activity Tracker sender") appended by convention.
@@ -79,6 +81,7 @@ First, ensure that the ATS is receiving the events from your service. In the dia
 ```
 {"severity":"normal","reason":{"reasonCode":201},"initiator":{"credential":{"type":"token"},"name":"LOPEZDSR@uk.ibm.com","host":{"address":"138.177.90.26"},"id":"IBMid-060000JMG2","typeURI":"service/security/account/user"},"target":{"typeURI":"resource-controller/instance","host":{"address":"kub:prod-ams03:resource-controller-76693b7b88-lzlbx"},"id":"crn:v1:bluemix:public:kms:us-south:a/81de6380e6222019c6567c9c8de6dece:e3215e30-d27b-4533-857b-b27b7c5943b0::"},"eventTime":"2018-09-24T12:14:11Z","action":"kms.instance.create","outcome":"success","message":"Key Protect: create instance"}
 ```
+{: codeblock}
 
 This line should appear in your ATS. Note that the `message` field is displayed as a summary of the line. To see the CADF fields, you click on the left of the line to open it.
 

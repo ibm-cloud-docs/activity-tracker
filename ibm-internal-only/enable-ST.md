@@ -20,7 +20,8 @@ lastupdated: "2019-01-16"
 
 **Super Tenancy on LogDNA is not working yet**, but expected soon. This document is a preview of how services will onboard once it is working.
 
-### Background
+## Background
+{: #background}
 
 LogDNA supports two related capabilities: Super Tenancy and Activity Tracking.
 
@@ -30,7 +31,8 @@ LogDNA supports two related capabilities: Super Tenancy and Activity Tracking.
 
 This page tells how to enable Super Tenancy. If you are enabling Activity Tracker, you must first enable Super Tenancy because AT is now a layer on top of ST. So first complete the instructions on this page, and then follow the link for step 5 to set up Activity Tracker.
 
-### Overview
+## Overview
+{: #overview}
 
 An IBM service must complete the following steps to begin using super tenancy (ST).
 
@@ -46,7 +48,8 @@ An IBM service must complete the following steps to begin using super tenancy (S
 
 In addition to the above, your service must write super tenant log lines in JSON, using the `logSourceCRN` field and (optionally) the `saveServiceCopy` field as described in step 4. Otherwise, they will be handled as normal log lines. 
 
-### Before you start
+## Before you start
+{: #before}
 
 - Get a "provision key" from LogDNA. **TODO: give the IBM contact.** **NOTE: The provision key is not required on staging yet; just leave it out of the commands until it is required.**
 - Have the IBM Cloud command line installed.
@@ -65,6 +68,7 @@ Create your STS with the following command:
 ibmcloud resource service-instance-create myService-STS logdna 7-day us-south \
     -p '{"service_supertenant": "name-of-your-service" , "provision_key": "123"}'
 ```
+{: codeblock}
 
 Where:  
 * `myService-STS` is whatever you call your service, with STS ("super tenant sender") appended by convention.
@@ -98,6 +102,7 @@ If your service is running on Kubernetes, then follow [these instructions](https
         - name: LDLOGPATH
           value: /supertenant/logs/ingest
 ```
+{: codeblock}
 
 When the agent is deployed, it will send your service's logs to LogDNA from `stdout` and `/var/log/*`. However, it has these new features:
 
@@ -134,6 +139,7 @@ Now test super tenancy. In the diagram, this is the green line that runs from My
 9. As a further test, add `"saveServiceCopy":false` to the line, and verify that it *only* is saved for the customer, and not in your service's STS.
 
 ## 5. Set up Activity Tracker
+{: #setup}
 
 Follow [these instructions](enable-AT.md) to add Activity Tracker to your service.
 
