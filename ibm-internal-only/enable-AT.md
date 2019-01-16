@@ -1,4 +1,22 @@
+---
+
+copyright:
+  years: 2019
+lastupdated: "2019-01-16"
+
+---
+
+{:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+
 # Enabling Activity Tracker - DRAFT
+{: #enable_at}
 
 **Activity Tracker on LogDNA is not working yet**, but expected soon. This document is a preview of how services will onboard once it is working.
 
@@ -6,14 +24,15 @@ These instructions are a continuation of the [Super Tenant instructions](enable-
 
 An IBM service must complete the following steps to begin using Activity Tracker (AT).
 
-1. [Provision an Activity Tracker Sender](#1-provision-an-activity-tracker-sender)
-2. [Test your service's Activity Tracking](#2-test-your-services-activity-tracking)
+1. [Provision an Activity Tracker Sender](#provision)
+2. [Test your service's Activity Tracking](#test)
 
 In addition to the above, your service must write Activity Tracker events using the `logSourceCRN` field and (optionally) the `saveServiceCopy` field. Otherwise, they will only be saved in your service's Activity Tracker instance. Read about the format of AT events [here](https://pages.github.ibm.com/activity-tracker/getting-start/event/), and the specific changes for LogDNA [here](https://pages.github.ibm.com/activity-tracker/news/partner/). **TODO: update links**
 
 When finished, be sure to review the [Other Considerations](enable-ST.md#6-other-considerations) in the Super Tenant instructions.
 
 ## 1. Provision an Activity Tracker Sender
+{: #provision}
 
 Like the logging STS, an Activity Tracker Sender (ATS) is a LogDNA instance that is configured to detect and handle super tenant log lines. However, the ATS super tenant log lines are AT events.
 
@@ -49,6 +68,7 @@ The following diagram shows your service sending ST (green) and AT (red) data vi
 ![summary](images/ST-AT-instructions.png)
 
 ## 2. Test your service's Activity Tracking
+{: #test}
 
 First, ensure that the ATS is receiving the events from your service. In the diagram above, this is the red line that goes down to MyService-ATS.
 

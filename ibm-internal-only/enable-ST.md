@@ -1,4 +1,22 @@
+---
+
+copyright:
+  years: 2019
+lastupdated: "2019-01-16"
+
+---
+
+{:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+
 # Enabling Super Tenancy - DRAFT
+{: #enable_st}
 
 **Super Tenancy on LogDNA is not working yet**, but expected soon. This document is a preview of how services will onboard once it is working.
 
@@ -16,15 +34,15 @@ This page tells how to enable Super Tenancy. If you are enabling Activity Tracke
 
 An IBM service must complete the following steps to begin using super tenancy (ST).
 
-1. [Provision a Super Tenant Sender](#1-provision-a-super-tenant-sender)
-2. [Get the STS ingestion key](#2-get-the-sts-ingestion-key)
-3. [Install LogDNA Agent on Kubernetes](#3-install-logdna-agent-on-kubernetes)
-4. [Test your service's Super Tenancy](#4-test-your-services-super-tenancy)
+1. [Provision a Super Tenant Sender](#provision)
+2. [Get the STS ingestion key](#ingestion_key)
+3. [Install LogDNA Agent on Kubernetes](#kube_agent)
+4. [Test your service's Super Tenancy](#test)
 5. [Set up Activity Tracker](enable-AT.md) if applicable
-6. [Other Considerations](#6-other-considerations)
-    * [Not on Kubernetes?](#not-on-kubernetes)
+6. [Other Considerations](#considerations)
+    * [Not on Kubernetes?](#not_kube)
     * [Precautions](#precautions)
-    * [Continuous Automated Tests](#continuous-automated-tests)
+    * [Continuous Automated Tests](#automated_tests)
 
 In addition to the above, your service must write super tenant log lines in JSON, using the `logSourceCRN` field and (optionally) the `saveServiceCopy` field as described in step 4. Otherwise, they will be handled as normal log lines. 
 
@@ -37,6 +55,7 @@ In addition to the above, your service must write super tenant log lines in JSON
 These instructions assume you are working in staging, e.g. `test.cloud.ibm.com`. For production, adjust the endpoints accordingly.
 
 ## 1. Provision a Super Tenant Sender
+{: #provision}
 
 A Super Tenant Sender (STS) is a LogDNA instance that is configured to detect and handle super tenant log lines. This means it can save a copy of your service's log line to a customer's logging instance. You will need to create the STS LogDNA instance from the command line in order to pass in the required parameters.
 
@@ -54,6 +73,7 @@ Where:
 * `provision_key` is a key IBM gets from LogDNA which expires frequently. Get this key from ___. **TODO: say who.** You will only use this key for the `service-instance-create` commands in the ST and AT instructions.
 
 ## 2. Get the STS ingestion key
+{: #ingestion_key}
 
 To send log lines to the STS, you need its ingestion key.
 1. Log into the IBM Cloud Console.
@@ -67,6 +87,7 @@ To send log lines to the STS, you need its ingestion key.
 (If the "View ingestion key" UI is not working, as an alternative click "View LogDNA". Inside LogDNA, click the gear on the left, click "Organization", and click "API Keys".)
 
 ## 3. Install LogDNA Agent on Kubernetes
+{: #kube_agent}
 
 If your service is running on Kubernetes, then follow [these instructions](https://docs.logdna.com/docs/kubernetes) to install the Kubernetes agent, while observing the following:
 
@@ -92,6 +113,7 @@ The customer's perspective is in yellow at the bottom. Customers save their own 
 If your service was already using LogDNA before enabling Super Tenancy, then the new STS has replaced your service's old LogDNA instance. The old LogDNA instance will no longer receive logs from the Kubernetes cluster. You can keep it around while its existing logs are retained, and then delete it.
 
 ## 4. Test your service's Super Tenancy
+{: #test}
 
 First, ensure that the STS is receiving the logs from your service. In the diagram above, this is the green line that goes straight across from "My Service" to "Logs".
 
@@ -116,10 +138,12 @@ Now test super tenancy. In the diagram, this is the green line that runs from My
 Follow [these instructions](enable-AT.md) to add Activity Tracker to your service.
 
 ## 6. Other Considerations
+{: #considerations}
 
 These considerations relate to both ST and AT. If you are only using ST or only using AT, you can ignore the content that doesn't apply.
 
 ### Root Access on Kubernetes
+{: #root_access}
 
 For a service using Activity Tracker on Kubernetes, the best practice is for the service to write the AT events to a host-mounted volume on the worker node. The service writes to a log file in `/var/log/at`, and an agent reads the events and sends them to AT. In the case of an outage in nearly any part of the system, the AT events will be preserved in the log file and processed when the outage is resolved. This design works for the legacy AT with a fluentd output plugin, and the LogDNA AT with the LogDNA agent.
 
@@ -130,6 +154,7 @@ Another alternative is for the service to call the AT API to send the AT events.
 AT considered the option of sending through `stdout` along with the normal log lines. There are several problems with this, one of which is that the container logs are not persisted past the destruction of the container.
 
 ### Not on Kubernetes?
+{: #not_kube}
 
 The ST/AT design is optimized for Kubernetes. If you are one of the few unlucky engineers with a service that is not on Kubernetes, then consider the following remedies.
 
@@ -150,6 +175,7 @@ The ST/AT design is optimized for Kubernetes. If you are one of the few unlucky 
         - If you are only using AT, and sending events directly to the ATS, the STS must still be provisioned, and the ATS must be linked to it. This is a design limitation of LogDNA. **TODO: confirm this is still the case.**
 
 ### Precautions
+{: #precautions}
 
 Now your service has the power to write log lines to any account in its region. With great power comes great responsibility...
 - Your service's STS ingestion key is an important secret, so be sure your service manages it accordingly. For example, don't hard-code it.
@@ -160,6 +186,7 @@ Now your service has the power to write log lines to any account in its region. 
 - Develop AT events privately (in staging or ATS only), and review with Marisa/Architect Board before sending in production. Malformed events can break AT event consumers like QRadar, Security Advisor, and custom tools by IBM customers such as Caterpillar. Use the [event linter](https://github.ibm.com/activity-tracker/helloATv2#at-event-linter) to help ensure valid events.
 
 ### Continuous Automated Tests
+{: #automated_tests}
 
 If your service stops storing ST lines or AT events successfully, it should trigger a PagerDuty incident for your service. Here are some guidelines for setting up an automated test for this. The guidelines are written with AT in mind, but also apply to ST.
 
