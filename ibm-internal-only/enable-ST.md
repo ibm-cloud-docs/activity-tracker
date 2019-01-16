@@ -15,7 +15,7 @@ lastupdated: "2019-01-16"
 {:tip: .tip}
 {:download: .download}
 
-# Enabling Super Tenancy - DRAFT
+# Enabling Super Tenancy
 {: #enable_st}
 
 **Super Tenancy on LogDNA is not working yet**, but expected soon. This document is a preview of how services will onboard once it is working.
@@ -36,15 +36,15 @@ This page tells how to enable Super Tenancy. If you are enabling Activity Tracke
 
 An IBM service must complete the following steps to begin using super tenancy (ST).
 
-1. [Provision a Super Tenant Sender](#provision)
-2. [Get the STS ingestion key](#ingestion_key)
-3. [Install LogDNA Agent on Kubernetes](#kube_agent)
-4. [Test your service's Super Tenancy](#test)
-5. [Set up Activity Tracker](enable-AT.md) if applicable
-6. [Other Considerations](#considerations)
-    * [Not on Kubernetes?](#not_kube)
-    * [Precautions](#precautions)
-    * [Continuous Automated Tests](#automated_tests)
+1. [Provision a Super Tenant Sender](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#provision)
+2. [Get the STS ingestion key](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#ingestion_key)
+3. [Install LogDNA Agent on Kubernetes](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#kube_agent)
+4. [Test your service's Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test)
+5. [Set up Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-AT.html#enable_at) if applicable
+6. [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#considerations)
+    * [Not on Kubernetes?](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#not_kube)
+    * [Precautions](docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#precautions)
+    * [Continuous Automated Tests](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#automated_tests)
 
 In addition to the above, your service must write super tenant log lines in JSON, using the `logSourceCRN` field and (optionally) the `saveServiceCopy` field as described in step 4. Otherwise, they will be handled as normal log lines. 
 
