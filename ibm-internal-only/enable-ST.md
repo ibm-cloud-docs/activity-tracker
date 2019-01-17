@@ -98,6 +98,7 @@ If your service is running on Kubernetes, then follow [these instructions](https
 - The LogDNA Agent version must be 1.5.6 or later. If you are already running an older version, be sure to update it.
 - Use your service's STS ingestion key.
 - Download the `logdna-agent-ds.yaml` file before using it. Edit it to add to `spec.template.spec.containers.env` the following:
+
 ```
         - name: LDLOGPATH
           value: /supertenant/logs/ingest
@@ -141,7 +142,7 @@ Now test super tenancy. In the diagram, this is the green line that runs from My
 ## 5. Set up Activity Tracker
 {: #setup}
 
-Follow [these instructions](enable-AT.md) to add Activity Tracker to your service.
+Follow [these instructions](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-AT.html#enable_at) to add Activity Tracker to your service.
 
 ## 6. Other Considerations
 {: #considerations}
