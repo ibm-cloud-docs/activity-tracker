@@ -32,6 +32,11 @@ To see a template of the CADF, see [template](https://github.ibm.com/activity-tr
 
 The following table list the mandatory fields:
 
+| Field Name | Description | Value |
+|------------|-------------|-------|
+| `initiator.id` | ID of the initiator of the action. </br>There are two types of initiators: IBMID and serviceID.  <br>Set this value to the **access_token.iam_id** field. </br>**Note: It is strongly recommended to also set the <i>initiator.name</i> field; see below.** | Example of an IBMID:  <b>IBMid-060000JGT2</b> </br>Example of a service ID: <b>iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14</b> |
+{: caption="Table 1. Mandatory fields" caption-side="top"} 
+
 <table>
   <caption>Mandatory fields</caption>
   <tr>
