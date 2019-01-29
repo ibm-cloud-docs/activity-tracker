@@ -106,6 +106,8 @@ If your service is running on Kubernetes, then follow [these instructions](https
 ```
 {: codeblock}
 
+This change causes the agent to send logs to the special `supertenant` endpoint, instead of the usual `/logs/ingest` endpoint for ingestion.
+
 When the agent is deployed, it will send your service's logs to LogDNA from `stdout` and `/var/log/*`. However, it has these new features:
 
 * Whenever a JSON log line contains the `logSourceCRN` field, LogDNA will save a copy of the line to the logging instance in the account indicated in `logSourceCRN`.
@@ -116,6 +118,8 @@ These features are illustrated by the green lines in the following diagram:
 ![ST complete](images/ST-instructions.png)
 
 The customer's perspective is in yellow at the bottom. Customers save their own log lines in their LogDNA instance (Customer Logging Instance), and the service's super tenant lines are also saved there.
+
+LogDNA charges each service and each customer based on the logs stored in their instance. For charging purposes, it makes no difference if the logs were saved in a logging instance by the supertenant process. Customers pay for super tenant logs the same as their own logs. However, this also means that a service will not be charged for logs that are only saved for the customer (i.e. `saveServiceCopy` is false).
 
 If your service was already using LogDNA before enabling Super Tenancy, then the new STS has replaced your service's old LogDNA instance. The old LogDNA instance will no longer receive logs from the Kubernetes cluster. You can keep it around while its existing logs are retained, and then delete it.
 
@@ -155,7 +159,7 @@ These considerations relate to both ST and AT. If you are only using ST or only 
 
 For a service using Activity Tracker on Kubernetes, the best practice is for the service to write the AT events to a host-mounted volume on the worker node. The service writes to a log file in `/var/log/at`, and an agent reads the events and sends them to AT. In the case of an outage in nearly any part of the system, the AT events will be preserved in the log file and processed when the outage is resolved. This design works for the legacy AT with a fluentd output plugin, and the LogDNA AT with the LogDNA agent.
 
-Unfortunately, this solution requires writing as root to `/var/log/at`, since Kubernetes creates the mount path on the worker as root. To avoid writing as root, create an initContainer that runs as root to change the permissions of the directory. See https://pages.github.ibm.com/activity-tracker/getting-start/kube/#init-containers for more details on setting up an init container to do this.
+Unfortunately, this solution requires writing as root to `/var/log/at`, since Kubernetes creates the mount path on the worker as root. To avoid writing as root, create an initContainer that runs as root to change the permissions of the directory. See [this section](https://console.test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_kube#init-containers) for more details on setting up an init container to do this.
 
 Another alternative is for the service to call the AT API to send the AT events. LogDNA has an ingestion API, as does the legacy AT service. However, there is a requirement for the service to persist the AT events in the case of any lengthy outage. Therefore, the service should not call the API directly from its code, relying on a memory buffer to queue the events. The service would need to save the events persistently while they are waiting to be sent to AT, which leads back to the same problem.
 
@@ -188,7 +192,7 @@ The ST/AT design is optimized for Kubernetes. If you are one of the few unlucky 
 Now your service has the power to write log lines to any account in its region. With great power comes great responsibility...
 - Your service's STS ingestion key is an important secret, so be sure your service manages it accordingly. For example, don't hard-code it.
 - If you think your service's STS ingestion key may have been compromised, then generate a new key in LogDNA, replace the old one with the new, and invalidate the old one ASAP. **TODO: Specific Kube instructions, e.g. whether to restart pods.**
-- Do not send super tenant log lines unless you need to. **Most services do not need to send super tenant log lines.** If your service does not use super tenancy and only needs Activity Tracker, then ensure it never has a `logSourceCRN` field in logging. The `logSourceCRN` field triggers super tenant behavior.
+- Most services should never use the `logSourceCRN` field except in `/var/log/at` for Activity Tracker. Unless your service is one of the few that sends log lines to customers, be careful to never include a `logSourceCRN` field in your operational logs or `stdout`.
 - If your service sends log lines to customers via super tenancy, then the service's documentation should explain those lines **when you start sending them** or earlier.
 - If your service is sending so many log lines, or such large log lines, that customers may be concerned about the cost, then add an option to control them. (However, note that the ST/AT service will be adding controls for this in the future.)
 - Develop AT events privately (in staging or ATS only), and review with Marisa/Architect Board before sending in production. Malformed events can break AT event consumers like QRadar, Security Advisor, and custom tools by IBM customers such as Caterpillar. Use the [event linter](https://github.ibm.com/activity-tracker/helloATv2#at-event-linter) to help ensure valid events.
