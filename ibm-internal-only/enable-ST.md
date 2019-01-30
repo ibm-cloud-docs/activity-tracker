@@ -18,8 +18,6 @@ lastupdated: "2019-01-16"
 # Enabling Super Tenancy
 {: #enable_st}
 
-**Super Tenancy on LogDNA is not working yet**, but expected soon. This document is a preview of how services will onboard once it is working.
-
 ## Background
 {: #background}
 
