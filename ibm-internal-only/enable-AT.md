@@ -18,8 +18,6 @@ lastupdated: "2019-01-16"
 # Enabling Activity Tracker
 {: #enable_at}
 
-**Activity Tracker on LogDNA is not working yet**, but expected soon. This document is a preview of how services will onboard once it is working.
-
 These instructions are a continuation of the [Super Tenant instructions](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#enable_st), which must be completed first.
 
 An IBM service must complete the following steps to begin using Activity Tracker (AT).
