@@ -50,11 +50,16 @@ In addition to the above, your service must write super tenant log lines in JSON
 ## Before you start
 {: #before}
 
-- Get a "provision key" from LogDNA. **TODO: give the IBM contact.** **NOTE: The provision key is not required on staging yet; just leave it out of the commands until it is required.**
+- Get the "provision key" for super tenancy. This is a key that IBM gets from LogDNA. It expires frequently.  You will only use this key for the `service-instance-create` commands in the ST and AT instructions. Request the key in one of these Slack channels:
+  - `#ibm-logdna-guest-help` - to join, send `!logdna` in a direct message to @LogBot.
+  - `#activity-tracker-user`
 - Have the IBM Cloud command line installed.
 - Be logged into your service's account, or a test account in staging if you are just trying it out. 
 
-These instructions assume you are working in staging, e.g. `test.cloud.ibm.com`. For production, adjust the endpoints accordingly.
+These instructions assume you are developing ST/AT in staging. Here are some implications of staging:
+- The LogDNA service in staging cannot handle high volume. Only use staging for small loads, e.g. a proof-of-concept. Wait for super tenancy in production for full-volume tests. **Production Dallas is targeted for 19 Feb (high risk), for both ST and a dark launch of AT.**
+- To provision LogDNA in staging with a plan other than Lite, you need a special account that supports paid plans. We are accomodating a few early adopters, only during the weeks leading up to Production.
+- When ST/AT are available in Production, you can use production LogDNA instances for developing your service in staging. The endpoints in these instructions end in `test.cloud.ibm.com`, but when you use production, drop the `test.`.
 
 ## 1. Provision a Super Tenant Sender
 {: #provision}
@@ -73,7 +78,7 @@ Where:
 * `myService-STS` is whatever you call your service, with STS ("super tenant sender") appended by convention.
 * `7-day` is the plan, which could also be `lite`, `14-day` or `30-day`, your choice.
 * `name-of-your-service` is the CRN service-name of your service.
-* `provision_key` is a key IBM gets from LogDNA which expires frequently. Get this key from ___. **TODO: say who.** You will only use this key for the `service-instance-create` commands in the ST and AT instructions.
+* `provision_key` - see instructions above for obtaining this key.
 
 ## 2. Get the STS ingestion key
 {: #ingestion_key}
@@ -115,11 +120,13 @@ These features are illustrated by the green lines in the following diagram:
 
 ![ST complete](images/ST-instructions.png)
 
-The customer's perspective is in yellow at the bottom. Customers save their own log lines in their LogDNA instance (Customer Logging Instance), and the service's super tenant lines are also saved there.
+The customer's perspective is in yellow at the bottom. Customers save their own log lines in their LogDNA instance (Customer Logging Instance), and the service's super tenant lines are also saved there. Customers must have LogDNA instances enabled for receiving super tenant lines, or LogDNA assumes they do not want them; this is a normal condition and not an error.
 
 LogDNA charges each service and each customer based on the logs stored in their instance. For charging purposes, it makes no difference if the logs were saved in a logging instance by the supertenant process. Customers pay for super tenant logs the same as their own logs. However, this also means that a service will not be charged for logs that are only saved for the customer (i.e. `saveServiceCopy` is false).
 
 If your service was already using LogDNA before enabling Super Tenancy, then the new STS has replaced your service's old LogDNA instance. The old LogDNA instance will no longer receive logs from the Kubernetes cluster. You can keep it around while its existing logs are retained, and then delete it.
+
+If your service is using the fluentd agent for Activity Tracker, then the LogDNA Kubernetes agent will run alongside it. When you enable Activity Tracking on LogDNA, it will send your AT events to both the legacy AT service and to AT on LogDNA.
 
 ## 4. Test your service's Super Tenancy
 {: #test}
