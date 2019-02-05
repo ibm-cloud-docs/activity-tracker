@@ -53,7 +53,7 @@ Where:
 * `myService-ATS` is whatever you call your service, with ATS ("Activity Tracker sender") appended by convention.
 * `7-day` is the plan, which could also be `lite`, `14-day` or `30-day`, your choice.
 * `myservice` is the CRN service-name of your service.
-* `provision_key` is a key IBM gets from LogDNA which expires frequently. Get this key from ___. **TODO: say who.** You will only use this key for the `service-instance-create` commands in the ST and AT instructions.
+* `provision_key` - see [Super Tenant instructions](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#before) for how to obtain this key.
 
 Notice that the service is `logdnaat` instead of `logdna`. The `associated_logging_crn` parameter links the STS and ATS together.
 
@@ -66,6 +66,8 @@ Now you can send normal log lines, super tenant log lines, and AT events to the 
 The following diagram shows your service sending ST (green) and AT (red) data via the LogDNA agent, and adds the customer's perspective (yellow). The customer uses their logging instance for normal logging, but does not send any data to their AT instance; only the service's data goes to the customer's AT instance.
 
 ![summary](images/ST-AT-instructions.png)
+
+Customers must have LogDNA instances enabled for receiving AT events, or LogDNA assumes they do not want them; this is a normal condition and not an error.
 
 ## 2. Test your service's Activity Tracking
 {: #test}
