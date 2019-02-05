@@ -40,6 +40,7 @@ An IBM service must complete the following steps to begin using super tenancy (S
 4. [Test your service's Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test)
 5. [Set up Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-AT.html#enable_at) if applicable
 6. [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#considerations)
+    * [Writing to Log Files from Pods](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#pods)
     * [Root Access on Kubernetes](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#root_access)
     * [Not on Kubernetes?](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#not_kube)
     * [Precautions](docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#precautions)
@@ -158,6 +159,26 @@ Follow [these instructions](/docs/services/Activity-Tracker-with-LogDNA/ibm-inte
 {: #considerations}
 
 These considerations relate to both ST and AT. If you are only using ST or only using AT, you can ignore the content that doesn't apply.
+
+### Writing to Log Files from Pods
+{: #pods}
+
+When your service writes to a log file in Kubernetes, each pod should write to a different file name. Otherwise, the pods may write to the same file at the same time. So on the shared volume, you might see:
+
+```
+/var/log/at/myService_pod1.log
+/var/log/at/myService_pod2.log
+/var/log/at/myService_pod3.log
+```
+
+You can use code like this to keep the log files separate:
+
+```
+const hostname = os.hostname();
+const logFileName = `/var/log/at/${hostname}.log`;
+```
+
+For ST logging, you can use `stdout` to sidestep this problem, but AT requires writing to a a file.
 
 ### Root Access on Kubernetes
 {: #root_access}
