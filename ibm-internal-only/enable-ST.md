@@ -105,14 +105,21 @@ If your service is running on Kubernetes, then follow [these instructions](https
 - Download the `logdna-agent-ds.yaml` file before using it. Edit it to add to `spec.template.spec.containers.env` the following:
 
 ```
+        - name: LDAPIHOST
+          value: api.us-south.logging.cloud.ibm.com
+        - name: LDLOGHOST
+          value: logs.us-south.logging.cloud.ibm.com
         - name: LDLOGPATH
           value: /supertenant/logs/ingest
 ```
 {: codeblock}
+Regarding this change:
 
-This change causes the agent to send logs to the special `supertenant` endpoint, instead of the usual `/logs/ingest` endpoint for ingestion.
+* `LOGDNA_AGENT_KEY` and `LOGDNA_PLATFORM` should already exist at the same level, and be peers of the new values.
+* `LDAPIHOST` and `LDLOGHOST` should match the region you are deploying in. The above example is `us-south`, and also applies to staging (`test.cloud.ibm.com`).
+* `LDLOGPATH` causes the agent to send logs to the special `supertenant` endpoint, instead of the usual `/logs/ingest` endpoint for ingestion. This variable is uniquely used for super tenant senders.
 
-When the agent is deployed, it will send your service's logs to LogDNA from `stdout` and `/var/log/*`. However, it has these new features:
+After saving these file changes, specify your file name in the `kubectl create -f` command, instead of the web address in the instructions. When the agent is deployed, it will send your service's logs to LogDNA from `stdout` and `/var/log/*`. However, it has these new features:
 
 * Whenever a JSON log line contains the `logSourceCRN` field, LogDNA will save a copy of the line to the logging instance in the account indicated in `logSourceCRN`.
 * Whenever a JSON log line contains the `saveServiceCopy` field set to `false`, then it will not save a copy to your service's STS.
@@ -200,7 +207,7 @@ The ST/AT design is optimized for Kubernetes. If you are one of the few unlucky 
 
 2. If you can't do #1 right now, then create a way for your service to use the [LogDNA agent](https://docs.logdna.com/docs/logdna-agent) to get the same advantages. Apart from Kubernetes, the LogDNA agent will still read from log files and support ST/AT in the same way. 
     - Be sure to use `/var/log/at` for your AT logs.
-    - When setting up your agent, observe the Kubernetes notes above regarding version, ingestion key, and `LDLOGPATH`.
+    - When setting up your agent, observe the Kubernetes notes above regarding version, ingestion key, and `LDAPIHOST`/`LDLOGHOST`/`LDLOGPATH`.
 
 3. As a last resort, you can use the [LogDNA ingestion API](https://docs.logdna.com/v1.0/reference#api).
     - LogDNA has code libraries in most common languages for using the API. See [here](https://docs.logdna.com/docs), under "Code Libraries" on the left.
