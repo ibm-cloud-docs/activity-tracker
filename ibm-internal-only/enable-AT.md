@@ -37,15 +37,15 @@ Like the logging STS, an Activity Tracker Sender (ATS) is a LogDNA instance that
 First, get the CRN of your logging STS so you can link your ATS to it. Using your own STS name instead of "myService_STS", type:
 
 ```
-export crn=$(ibmcloud resource service-instance "myService-STS" | grep -m 1 -o "crn.*")
+ibmcloud resource service-instance "myService-STS"
 ```
 {: codeblock}
 
-Then use the CRN as an input parameter when creating the ATS.
+Copy the CRN from the above output, and use it as an input parameter when creating the ATS.
 
 ```
 ibmcloud resource service-instance-create myService-ATS logdnaat 14-day us-south \
-    -p '{"service_supertenant": "myservice" , "associated_logging_crn": "$crn", "provision_key": "123"}'
+    -p '{"service_supertenant": "myservice" , "associated_logging_crn": "YOUR_STS_CRN", "provision_key": "123"}'
 ```
 {: codeblock}
 
