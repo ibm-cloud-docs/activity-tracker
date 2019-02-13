@@ -207,7 +207,7 @@ The ST/AT design is optimized for Kubernetes. If you are one of the few unlucky 
 
 2. If you can't do #1 right now, then create a way for your service to use the [LogDNA agent](https://docs.logdna.com/docs/logdna-agent) to get the same advantages. Apart from Kubernetes, the LogDNA agent will still read from log files and support ST/AT in the same way. 
     - Be sure to use `/var/log/at` for your AT logs.
-    - When setting up your agent, observe the Kubernetes notes above regarding version, ingestion key, and `LDAPIHOST`/`LDLOGHOST`/`LDLOGPATH`.
+    - When setting up your agent, observe the Kubernetes notes above regarding version, ingestion key, and `LDAPIHOST`/`LDLOGHOST`/`LDLOGPATH`. Note that for the non-Kubernetes agent, `LDAPIHOST` is replaced by `LOGDNA_APIHOST`, and `LDLOGHOST` is replaced by `LOGDNA_LOGHOST`. **TODO: What about `LDLOGPATH`?**
 
 3. As a last resort, you can use the [LogDNA ingestion API](https://docs.logdna.com/v1.0/reference#api).
     - LogDNA has code libraries in most common languages for using the API. See [here](https://docs.logdna.com/docs), under "Code Libraries" on the left.
