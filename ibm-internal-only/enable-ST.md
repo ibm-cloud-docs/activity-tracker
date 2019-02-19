@@ -18,8 +18,6 @@ lastupdated: "2019-01-16"
 # Enabling Super Tenancy
 {: #enable_st}
 
-**Super Tenancy on LogDNA is not working yet**, but expected soon. This document is a preview of how services will onboard once it is working.
-
 ## Background
 {: #background}
 
@@ -42,6 +40,7 @@ An IBM service must complete the following steps to begin using super tenancy (S
 4. [Test your service's Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test)
 5. [Set up Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-AT.html#enable_at) if applicable
 6. [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#considerations)
+    * [Writing to Log Files from Pods](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#pods)
     * [Root Access on Kubernetes](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#root_access)
     * [Not on Kubernetes?](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#not_kube)
     * [Precautions](docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#precautions)
@@ -52,11 +51,16 @@ In addition to the above, your service must write super tenant log lines in JSON
 ## Before you start
 {: #before}
 
-- Get a "provision key" from LogDNA. **TODO: give the IBM contact.** **NOTE: The provision key is not required on staging yet; just leave it out of the commands until it is required.**
+- Get the "provision key" for super tenancy. This is a key that IBM gets from LogDNA. It expires frequently.  You will only use this key for the `service-instance-create` commands in the ST and AT instructions. Request the key in one of these Slack channels:
+  - `#ibm-logdna-guest-help` - to join, send `!logdna` in a direct message to @LogBot.
+  - `#activity-tracker-user`
 - Have the IBM Cloud command line installed.
 - Be logged into your service's account, or a test account in staging if you are just trying it out. 
 
-These instructions assume you are working in staging, e.g. `test.cloud.ibm.com`. For production, adjust the endpoints accordingly.
+These instructions assume you are developing ST/AT in staging. Here are some implications of staging:
+- The LogDNA service in staging cannot handle high volume. Only use staging for small loads, e.g. a proof-of-concept. Wait for super tenancy in production for full-volume tests. **Production Dallas is targeted for 19 Feb (high risk), for both ST and a dark launch of AT.**
+- To provision LogDNA in staging with a plan other than Lite, you need a special account that supports paid plans. We are accomodating a few early adopters, only during the weeks leading up to Production.
+- When ST/AT are available in Production, you can use production LogDNA instances for developing your service in staging. The endpoints in these instructions end in `test.cloud.ibm.com`, but when you use production, drop the `test.`.
 
 ## 1. Provision a Super Tenant Sender
 {: #provision}
@@ -75,7 +79,7 @@ Where:
 * `myService-STS` is whatever you call your service, with STS ("super tenant sender") appended by convention.
 * `7-day` is the plan, which could also be `lite`, `14-day` or `30-day`, your choice.
 * `name-of-your-service` is the CRN service-name of your service.
-* `provision_key` is a key IBM gets from LogDNA which expires frequently. Get this key from ___. **TODO: say who.** You will only use this key for the `service-instance-create` commands in the ST and AT instructions.
+* `provision_key` - see instructions above for obtaining this key.
 
 ## 2. Get the STS ingestion key
 {: #ingestion_key}
@@ -101,12 +105,21 @@ If your service is running on Kubernetes, then follow [these instructions](https
 - Download the `logdna-agent-ds.yaml` file before using it. Edit it to add to `spec.template.spec.containers.env` the following:
 
 ```
+        - name: LDAPIHOST
+          value: api.us-south.logging.cloud.ibm.com
+        - name: LDLOGHOST
+          value: logs.us-south.logging.cloud.ibm.com
         - name: LDLOGPATH
           value: /supertenant/logs/ingest
 ```
 {: codeblock}
+Regarding this change:
 
-When the agent is deployed, it will send your service's logs to LogDNA from `stdout` and `/var/log/*`. However, it has these new features:
+* `LOGDNA_AGENT_KEY` and `LOGDNA_PLATFORM` should already exist at the same level, and be peers of the new values.
+* `LDAPIHOST` and `LDLOGHOST` should match the region you are deploying in. The above example is `us-south`, and also applies to staging (`test.cloud.ibm.com`).
+* `LDLOGPATH` causes the agent to send logs to the special `supertenant` endpoint, instead of the usual `/logs/ingest` endpoint for ingestion. This variable is uniquely used for super tenant senders.
+
+After saving these file changes, specify your file name in the `kubectl create -f` command, instead of the web address in the instructions. When the agent is deployed, it will send your service's logs to LogDNA from `stdout` and `/var/log/*`. However, it has these new features:
 
 * Whenever a JSON log line contains the `logSourceCRN` field, LogDNA will save a copy of the line to the logging instance in the account indicated in `logSourceCRN`.
 * Whenever a JSON log line contains the `saveServiceCopy` field set to `false`, then it will not save a copy to your service's STS.
@@ -115,9 +128,13 @@ These features are illustrated by the green lines in the following diagram:
 
 ![ST complete](images/ST-instructions.png)
 
-The customer's perspective is in yellow at the bottom. Customers save their own log lines in their LogDNA instance (Customer Logging Instance), and the service's super tenant lines are also saved there.
+The customer's perspective is in yellow at the bottom. Customers save their own log lines in their LogDNA instance (Customer Logging Instance), and the service's super tenant lines are also saved there. Customers must have LogDNA instances enabled for receiving super tenant lines, or LogDNA assumes they do not want them; this is a normal condition and not an error.
+
+LogDNA charges each service and each customer based on the logs stored in their instance. For charging purposes, it makes no difference if the logs were saved in a logging instance by the supertenant process. Customers pay for super tenant logs the same as their own logs. However, this also means that a service will not be charged for logs that are only saved for the customer (i.e. `saveServiceCopy` is false).
 
 If your service was already using LogDNA before enabling Super Tenancy, then the new STS has replaced your service's old LogDNA instance. The old LogDNA instance will no longer receive logs from the Kubernetes cluster. You can keep it around while its existing logs are retained, and then delete it.
+
+If your service is using the fluentd agent for Activity Tracker, then the LogDNA Kubernetes agent will run alongside it. When you enable Activity Tracking on LogDNA, it will send your AT events to both the legacy AT service and to AT on LogDNA.
 
 ## 4. Test your service's Super Tenancy
 {: #test}
@@ -150,12 +167,32 @@ Follow [these instructions](/docs/services/Activity-Tracker-with-LogDNA/ibm-inte
 
 These considerations relate to both ST and AT. If you are only using ST or only using AT, you can ignore the content that doesn't apply.
 
+### Writing to Log Files from Pods
+{: #pods}
+
+When your service writes to a log file in Kubernetes, each pod should write to a different file name. Otherwise, the pods may write to the same file at the same time. So on the shared volume, you might see:
+
+```
+/var/log/at/myService_pod1.log
+/var/log/at/myService_pod2.log
+/var/log/at/myService_pod3.log
+```
+
+You can use code like this to keep the log files separate:
+
+```
+const hostname = os.hostname();
+const logFileName = `/var/log/at/${hostname}.log`;
+```
+
+For ST logging, you can use `stdout` to sidestep this problem, but AT requires writing to a a file.
+
 ### Root Access on Kubernetes
 {: #root_access}
 
 For a service using Activity Tracker on Kubernetes, the best practice is for the service to write the AT events to a host-mounted volume on the worker node. The service writes to a log file in `/var/log/at`, and an agent reads the events and sends them to AT. In the case of an outage in nearly any part of the system, the AT events will be preserved in the log file and processed when the outage is resolved. This design works for the legacy AT with a fluentd output plugin, and the LogDNA AT with the LogDNA agent.
 
-Unfortunately, this solution requires writing as root to `/var/log/at`, since Kubernetes creates the mount path on the worker as root. To avoid writing as root, create an initContainer that runs as root to change the permissions of the directory. See https://pages.github.ibm.com/activity-tracker/getting-start/kube/#init-containers for more details on setting up an init container to do this.
+Unfortunately, this solution requires writing as root to `/var/log/at`, since Kubernetes creates the mount path on the worker as root. To avoid writing as root, create an initContainer that runs as root to change the permissions of the directory. See [this section](https://console.test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_kube#init-containers) for more details on setting up an init container to do this.
 
 Another alternative is for the service to call the AT API to send the AT events. LogDNA has an ingestion API, as does the legacy AT service. However, there is a requirement for the service to persist the AT events in the case of any lengthy outage. Therefore, the service should not call the API directly from its code, relying on a memory buffer to queue the events. The service would need to save the events persistently while they are waiting to be sent to AT, which leads back to the same problem.
 
@@ -170,7 +207,7 @@ The ST/AT design is optimized for Kubernetes. If you are one of the few unlucky 
 
 2. If you can't do #1 right now, then create a way for your service to use the [LogDNA agent](https://docs.logdna.com/docs/logdna-agent) to get the same advantages. Apart from Kubernetes, the LogDNA agent will still read from log files and support ST/AT in the same way. 
     - Be sure to use `/var/log/at` for your AT logs.
-    - When setting up your agent, observe the Kubernetes notes above regarding version, ingestion key, and `LDLOGPATH`.
+    - When setting up your agent, observe the Kubernetes notes above regarding version, ingestion key, and `LDAPIHOST`/`LDLOGHOST`/`LDLOGPATH`. Note that for the non-Kubernetes agent, `LDAPIHOST` is replaced by `LOGDNA_APIHOST`, and `LDLOGHOST` is replaced by `LOGDNA_LOGHOST`. **TODO: What about `LDLOGPATH`?**
 
 3. As a last resort, you can use the [LogDNA ingestion API](https://docs.logdna.com/v1.0/reference#api).
     - LogDNA has code libraries in most common languages for using the API. See [here](https://docs.logdna.com/docs), under "Code Libraries" on the left.
@@ -182,13 +219,36 @@ The ST/AT design is optimized for Kubernetes. If you are one of the few unlucky 
         - You will need to get the ATS ingestion key from inside the LogDNA UI, since it is not available on the IBM Cloud Console.
         - If you are only using AT, and sending events directly to the ATS, the STS must still be provisioned, and the ATS must be linked to it. This is a design limitation of LogDNA. **TODO: confirm this is still the case.**
 
+Here is an example of using the API.
+
+```
+curl "https://logs.us-south.logging.test.cloud.ibm.com/supertenant/logs/ingest?hostname=logdnaTest&mac=$mac&ip=$ip&now=$(date +%s)" \
+-u c442e76e0ac2114516a91db2:: \
+-H "Content-Type: application/json; charset=UTF-8" \
+-d '{
+  "lines": [
+    {
+      "line": "{\"payload\":{\"action\":\"matt-hello-at.greeting.create\",\"severity\":\"normal\",\"eventTime\":\"2018-06-13T00:05:39.11+0000\",\"initiator\":{\"id\":\"rbetram@us.ibm.com\",\"name\":\"rbetram@us.ibm.com\",\"typeURI\":\"service/security/account/user\",\"credential\":{\"type\":\"user\"},\"host\":{\"agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"address\":\"169.62.218.62\"}},\"target\":{\"id\":\"crn:v1:bluemix:public:hello-at:undefined:s/undefined:1234-5678-9012-3456:greeting:1\",\"name\":\"helloATv3\",\"typeURI\":\"helloAT/user/greeting\"},\"reason\":{\"reasonCode\":200},\"outcome\":\"success\",\"requestData\":\"{\\\"name\\\":\\\"Amy\\\",\\\"localTime\\\":\\\"4:54:55 PM\\\"}\",\"responseData\":\"{\\\"greeting\\\":\\\"Hello, Amy!\\\"}\",\"message\":\"AT Kube Test: create greeting  helloATv3 name: Amy\"},\"meta\":{\"serviceProviderName\":\"hello-at-v3-logdna\",\"serviceProviderRegion\":\"ng\",\"serviceProviderProjectId\":\"6fbed285-0582-4014-bad0-8a05aed4239a\",\"userSpaceId\":\"2fbeace5-0baa-4bec-87b7-79833801f274\",\"userSpaceRegion\":\"ng\"},\"saveServiceCopy\":true,\"logSourceCRN\":\"crn:v1:staging:public:logdnaat:us-south:a/69eeb070845e4b319f1330fd188cb902:6a0dc626-70af-42aa-9904-4dce6ced5b3a::\"}", 
+      "level": "INFO",
+      "env": "staging",
+      "app": "/var/log/at/helloAT.log"
+    }
+  ]
+}'
+```
+
+Notes:
+- This is an Activity Tracker example, because the "app" is set to the `/var/log/at` directory. This causes the STSender to forward to AT; otherwise, it is just normal super tenant lines.
+- The "line" is the familiar CADF of Activity Tracker, wrapped in a payload. The `meta` structure is no longer necessary, and instead the `logSourceCRN` field controls the super tenancy. Without `logSourceCRN`, it is a normal log line.
+- You can send a number of lines in one API call, since "lines" is an array.
+
 ### Precautions
 {: #precautions}
 
 Now your service has the power to write log lines to any account in its region. With great power comes great responsibility...
 - Your service's STS ingestion key is an important secret, so be sure your service manages it accordingly. For example, don't hard-code it.
 - If you think your service's STS ingestion key may have been compromised, then generate a new key in LogDNA, replace the old one with the new, and invalidate the old one ASAP. **TODO: Specific Kube instructions, e.g. whether to restart pods.**
-- Do not send super tenant log lines unless you need to. **Most services do not need to send super tenant log lines.** If your service does not use super tenancy and only needs Activity Tracker, then ensure it never has a `logSourceCRN` field in logging. The `logSourceCRN` field triggers super tenant behavior.
+- Most services should never use the `logSourceCRN` field except in `/var/log/at` for Activity Tracker. Unless your service is one of the few that sends log lines to customers, be careful to never include a `logSourceCRN` field in your operational logs or `stdout`.
 - If your service sends log lines to customers via super tenancy, then the service's documentation should explain those lines **when you start sending them** or earlier.
 - If your service is sending so many log lines, or such large log lines, that customers may be concerned about the cost, then add an option to control them. (However, note that the ST/AT service will be adding controls for this in the future.)
 - Develop AT events privately (in staging or ATS only), and review with Marisa/Architect Board before sending in production. Malformed events can break AT event consumers like QRadar, Security Advisor, and custom tools by IBM customers such as Caterpillar. Use the [event linter](https://github.ibm.com/activity-tracker/helloATv2#at-event-linter) to help ensure valid events.
