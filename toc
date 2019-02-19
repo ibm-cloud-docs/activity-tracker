@@ -6,6 +6,7 @@ IBM Cloud Activity Tracker with LogDNA
 
     {: .navgroup id="learn"}
     index.md
+    about.md
 
     {: .topicgroup}
     Internal adopters
