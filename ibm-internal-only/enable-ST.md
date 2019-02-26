@@ -203,13 +203,13 @@ AT considered the option of sending through `stdout` along with the normal log l
 
 The ST/AT design is optimized for Kubernetes. If you are one of the few unlucky engineers with a service that is not on Kubernetes, then consider the following remedies.
 
-1. Migrate your service to Kubernetes.
+* Migrate your service to Kubernetes.
 
-2. If you can't do #1 right now, then create a way for your service to use the [LogDNA agent](https://docs.logdna.com/docs/logdna-agent) to get the same advantages. Apart from Kubernetes, the LogDNA agent will still read from log files and support ST/AT in the same way. 
+* If you can't do #1 right now, then create a way for your service to use the [LogDNA agent](https://docs.logdna.com/docs/logdna-agent) to get the same advantages. Apart from Kubernetes, the LogDNA agent will still read from log files and support ST/AT in the same way. 
     - Be sure to use `/var/log/at` for your AT logs.
     - When setting up your agent, observe the Kubernetes notes above regarding version and ingestion key. 
     - You will configure the agent in `/etc/logdna-agent.conf` instead of `logdna-agent-ds.yaml`. `LDAPIHOST` is replaced by `LOGDNA_APIHOST`, and `LDLOGHOST` is replaced by `LOGDNA_LOGHOST`.
-    - Set the environment variable `LDLOGPATH=/supertenant/logs/ingest` so the agent process has access to it. For example, in a container the agent runs as root, so the variable must also be at root.
+    - Set the environment variable `LDLOGPATH=/supertenant/logs/ingest` so the agent process has access to it. For example, in a container the agent runs as root, so the variable must also be at root. 
     
 To sum up these points, here is the agent running in an Ubuntu VM:
 ```
@@ -226,7 +226,7 @@ LOGDNA_LOGHOST = logs.us-south.logging.cloud.ibm.com
 $ sudo LDLOGPATH=/supertenant/logs/ingest logdna-agent start
 ```
 
-3. As a last resort, you can use the [LogDNA ingestion API](https://docs.logdna.com/v1.0/reference#api).
+* As a last resort, you can use the [LogDNA ingestion API](https://docs.logdna.com/v1.0/reference#api).
     - LogDNA has code libraries in most common languages for using the API. See [here](https://docs.logdna.com/docs), under "Code Libraries" on the left.
         - Be cautious about the libs that are "unofficial". They are not supported by LogDNA.
         - If using one of these libs, consider isolating it in a separate process, similar to how the agent works, reading from a persisted buffer.
