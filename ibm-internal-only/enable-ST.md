@@ -146,7 +146,7 @@ First, ensure that the STS is receiving the logs from your service. In the diagr
 
 Now test super tenancy. In the diagram, this is the green line that runs from MyService-STS to the customer's logging instance.
 
-1. Switch to a different account for testing as a customer.
+1. Switch to a different account for testing as a customer. (It is possible to use the same account for this test, but it makes the test less comprehensive.)
 2. Provision an instance of your service from the ibmcloud catalog. (This is "MyServiceInstance" in the diagram.)
 3. Get the CRN of your service instance. Run the command `ibmcloud resource service-instance MyServiceInstance` (but use the name of your own service instance), and save the CRN.
 4. Provision an instance of "Log Analysis with LogDNA" in the same account. Do this in the IBM Cloud console, not the CLI. Let us call it "Customer-Logging_Instance" **Temporary work-around: instead of console, use this CLI: `ibmcloud resource service-instance-create Customer-Logging-Instance logdna 7-day us-south -p '{"default_receiver": true}'`**
@@ -209,7 +209,22 @@ The ST/AT design is optimized for Kubernetes. If you are one of the few unlucky 
     - Be sure to use `/var/log/at` for your AT logs.
     - When setting up your agent, observe the Kubernetes notes above regarding version and ingestion key. 
     - You will configure the agent in `/etc/logdna-agent.conf` instead of `logdna-agent-ds.yaml`. `LDAPIHOST` is replaced by `LOGDNA_APIHOST`, and `LDLOGHOST` is replaced by `LOGDNA_LOGHOST`.
-    - Run the agent with the environment variable `LDLOGPATH=/supertenant/logs/ingest`.
+    - Set the environment variable `LDLOGPATH=/supertenant/logs/ingest` so the agent process has access to it. For example, in a container the agent runs as root, so the variable must also be at root.
+    
+To sum up these points, here is the agent running in an Ubuntu VM:
+```
+$ logdna-agent --version
+1.5.6
+
+$ cat /etc/logdna.conf
+logdir = /var/log
+key = d8890dbd764d2f4303e3ff43cea2473f # STSender ingestion key
+LOGDNA_APIHOST = api.us-south.logging.cloud.ibm.com
+LOGDNA_LOGHOST = logs.us-south.logging.cloud.ibm.com
+
+# start the agent with the LDLOGPATH env variable
+$ sudo LDLOGPATH=/supertenant/logs/ingest logdna-agent start
+```
 
 3. As a last resort, you can use the [LogDNA ingestion API](https://docs.logdna.com/v1.0/reference#api).
     - LogDNA has code libraries in most common languages for using the API. See [here](https://docs.logdna.com/docs), under "Code Libraries" on the left.
