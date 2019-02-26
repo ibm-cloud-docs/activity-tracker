@@ -203,15 +203,21 @@ AT considered the option of sending through `stdout` along with the normal log l
 
 The ST/AT design is optimized for Kubernetes. If you are one of the few unlucky engineers with a service that is not on Kubernetes, then consider the following remedies.
 
-* Migrate your service to Kubernetes.
+#### 1. Migrate your service to Kubernetes.
 
-* If you can't do #1 right now, then create a way for your service to use the [LogDNA agent](https://docs.logdna.com/docs/logdna-agent) to get the same advantages. Apart from Kubernetes, the LogDNA agent will still read from log files and support ST/AT in the same way. 
-    - Be sure to use `/var/log/at` for your AT logs.
-    - When setting up your agent, observe the Kubernetes notes above regarding version and ingestion key. 
-    - You will configure the agent in `/etc/logdna-agent.conf` instead of `logdna-agent-ds.yaml`. `LDAPIHOST` is replaced by `LOGDNA_APIHOST`, and `LDLOGHOST` is replaced by `LOGDNA_LOGHOST`.
-    - Set the environment variable `LDLOGPATH=/supertenant/logs/ingest` so the agent process has access to it. For example, in a container the agent runs as root, so the variable must also be at root. 
+If you can't do this right now, then...
+
+#### 2. Use the LogDNA agent
+
+Create a way for your service to use the [LogDNA agent](https://docs.logdna.com/docs/logdna-agent) to get the same advantages. Apart from Kubernetes, the LogDNA agent will still read from log files and support ST/AT in the same way. 
+
+- Be sure to use `/var/log/at` for your AT logs.
+- When setting up your agent, observe the Kubernetes notes above regarding version and ingestion key. 
+- You will configure the agent in `/etc/logdna-agent.conf` instead of `logdna-agent-ds.yaml`. `LDAPIHOST` is replaced by `LOGDNA_APIHOST`, and `LDLOGHOST` is replaced by `LOGDNA_LOGHOST`.
+- Set the environment variable `LDLOGPATH=/supertenant/logs/ingest` so the agent process has access to it. For example, in a container the agent runs as root, so the variable must also be at root. 
     
 To sum up these points, here is the agent running in an Ubuntu VM:
+
 ```
 $ logdna-agent --version
 1.5.6
@@ -226,15 +232,18 @@ LOGDNA_LOGHOST = logs.us-south.logging.cloud.ibm.com
 $ sudo LDLOGPATH=/supertenant/logs/ingest logdna-agent start
 ```
 
-* As a last resort, you can use the [LogDNA ingestion API](https://docs.logdna.com/v1.0/reference#api).
-    - LogDNA has code libraries in most common languages for using the API. See [here](https://docs.logdna.com/docs), under "Code Libraries" on the left.
-        - Be cautious about the libs that are "unofficial". They are not supported by LogDNA.
-        - If using one of these libs, consider isolating it in a separate process, similar to how the agent works, reading from a persisted buffer.
-    - One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
-    - If using the API, you can send AT events directly to your ATS instead of going through the STS. 
-        - To send AT events through the STS via API, you have to fake out the file path by adding `"app":"/var/log/at" to each event. You avoid this by sending directly to the ATS.
-        - You will need to get the ATS ingestion key from inside the LogDNA UI, since it is not available on the IBM Cloud Console.
-        - If you are only using AT, and sending events directly to the ATS, the STS must still be provisioned, and the ATS must be linked to it. This is a design limitation of LogDNA. **TODO: confirm this is still the case.**
+#### 3. Use the LogDNA ingestion API
+
+As a last resort, you can use the [LogDNA ingestion API](https://docs.logdna.com/v1.0/reference#api).
+
+- LogDNA has code libraries in most common languages for using the API. See [here](https://docs.logdna.com/docs), under "Code Libraries" on the left.
+    - Be cautious about the libs that are "unofficial". They are not supported by LogDNA.
+    - If using one of these libs, consider isolating it in a separate process, similar to how the agent works, reading from a persisted buffer.
+- One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
+- If using the API, you can send AT events directly to your ATS instead of going through the STS. 
+    - To send AT events through the STS via API, you have to fake out the file path by adding `"app":"/var/log/at" to each event. You avoid this by sending directly to the ATS.
+    - You will need to get the ATS ingestion key from inside the LogDNA UI, since it is not available on the IBM Cloud Console.
+    - If you are only using AT, and sending events directly to the ATS, the STS must still be provisioned, and the ATS must be linked to it. This is a design limitation of LogDNA. **TODO: confirm this is still the case.**
 
 Here is an example of using the API.
 
