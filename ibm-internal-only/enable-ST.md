@@ -65,9 +65,9 @@ These instructions assume you are developing ST/AT in staging. Here are some imp
 ## 1. Provision a Super Tenant Sender
 {: #provision}
 
-A Super Tenant Sender (STS) is a LogDNA instance that is configured to detect and handle super tenant log lines. This means it can save a copy of your service's log line to a customer's logging instance. You will need to create the STS LogDNA instance from the command line in order to pass in the required parameters.
+A Super Tenant Sender (STS) is a LogDNA instance that is configured to detect and handle super tenant log lines. This means it can save a copy of your service's log line to a customer's logging instance. You will need to create the STSender LogDNA instance from the command line in order to pass in the required parameters.
 
-Create your STS with the following command:
+Create your STSender with the following command:
 
 ```
 ibmcloud resource service-instance-create myService-STS logdna 7-day us-south \
@@ -81,15 +81,15 @@ Where:
 * `name-of-your-service` is the CRN service-name of your service.
 * `provision_key` - see instructions above for obtaining this key.
 
-## 2. Get the STS ingestion key
+## 2. Get the STSender ingestion key
 {: #ingestion_key}
 
-To send log lines to the STS, you need its ingestion key.
+To send log lines to the STSender, you need its ingestion key.
 1. Log into the IBM Cloud Console.
 1. Open the hamburger menu on the top left.
 1. Select Observability.
 1. Select Logging. 
-1. You should see your new STS; it is just a LogDNA instance. You can click "View ingestion key" to copy its ingestion key.
+1. You should see your new STSender; it is just a LogDNA instance. You can click "View ingestion key" to copy its ingestion key.
 
 ![Observability/Logging](images/STS-STR.png)
 
@@ -101,7 +101,7 @@ To send log lines to the STS, you need its ingestion key.
 If your service is running on Kubernetes, then follow [these instructions](https://docs.logdna.com/docs/kubernetes) to install the Kubernetes agent, while observing the following:
 
 - The LogDNA Agent version must be 1.5.6 or later. If you are already running an older version, be sure to update it.
-- Use your service's STS ingestion key.
+- Use your service's STSender ingestion key.
 - Download the `logdna-agent-ds.yaml` file before using it. Edit it to add to `spec.template.spec.containers.env` the following:
 
 ```
@@ -122,7 +122,7 @@ Regarding this change:
 After saving these file changes, specify your file name in the `kubectl create -f` command, instead of the web address in the instructions. When the agent is deployed, it will send your service's logs to LogDNA from `stdout` and `/var/log/*`. However, it has these new features:
 
 * Whenever a JSON log line contains the `logSourceCRN` field, LogDNA will save a copy of the line to the logging instance in the account indicated in `logSourceCRN`.
-* Whenever a JSON log line contains the `saveServiceCopy` field set to `false`, then it will not save a copy to your service's STS.
+* Whenever a JSON log line contains the `saveServiceCopy` field set to `false`, then it will not save a copy to your service's STSender.
 
 These features are illustrated by the green lines in the following diagram:
 
@@ -139,9 +139,9 @@ If your service is using the fluentd agent for Activity Tracker, then the LogDNA
 ## 4. Test your service's Super Tenancy
 {: #test}
 
-First, ensure that the STS is receiving the logs from your service. In the diagram above, this is the green line that goes straight across from "My Service" to "Logs".
+First, ensure that the STSender is receiving the logs from your service. In the diagram above, this is the green line that goes straight across from "My Service" to "Logs".
 
-1. In Observability > Logging, click "View LogDNA" for your STS.
+1. In Observability > Logging, click "View LogDNA" for your STSender.
 2. You should see the log lines that your service writes to `stdout` or to files in `/var/log`.
 
 Now test super tenancy. In the diagram, this is the green line that runs from MyService-STS to the customer's logging instance.
@@ -153,9 +153,9 @@ Now test super tenancy. In the diagram, this is the green line that runs from My
 5. Switch back to your service's account.
 6. Write a line to a log file in your service's cluster (e.g. `/var/log/test.log`) that looks like this: <br>`
 {"message":"This test log statement should be in STS and in Customer-Logging_Instance","saveServiceCopy":true,"logSourceCRN":"PUT YOUR SERVICE INSTANCE CRN HERE"}`
-7. Look in your STS LogDNA again, and verify that the line came through. Click on the left of the line to expand it.
+7. Look in your STSender LogDNA again, and verify that the line came through. Click on the left of the line to expand it.
 8. Now go back to the customer account where your service instance is provisioned, and look at that LogDNA instance. You should also see the line there.
-9. As a further test, add `"saveServiceCopy":false` to the line, and verify that it *only* is saved for the customer, and not in your service's STS.
+9. As a further test, add `"saveServiceCopy":false` to the line, and verify that it *only* is saved for the customer, and not in your service's STSender.
 
 ## 5. Set up Activity Tracker
 {: #setup}
@@ -166,6 +166,24 @@ Follow [these instructions](/docs/services/Activity-Tracker-with-LogDNA/ibm-inte
 {: #considerations}
 
 These considerations relate to both ST and AT. If you are only using ST or only using AT, you can ignore the content that doesn't apply.
+
+### Regions
+
+In this initial release of ST/AT, LogDNA will only store logs and events in the region in which they were ingested. 
+
+When saving a log to a customer's logging instance, LogDNA examines the `account` segment of `logSourceCRN`. LogDNA then looks in that account for a logging instance enabled to receive super tenant logs--but only in the region of ingestion. If it finds one, it saves a copy of the log there. LogDNA handles AT events in the same way as logs. In the future, the process will expand to consider more segments of the `logSourceCRN` than just the account, so be sure to get them all right. But in this release, LogDNA will ignore the `location` segment (the one which contains the region).
+
+**My service is deployed in Sydney but LogDNA is not there yet. What can I do?**
+
+You can format your logs and events for Sydney, including the `logSourceCRN`, but then send them to Dallas. To send an event in Sydney to Dallas, you need an STSender in Dallas. In your service in Sydney, configure the LogDNA agent with the endpoints in Dallas.
+
+You will need to document that you are doing this, and suggest how to filter the logs/events in the UI based on their region. Also, the documentation should mention that this is a short-term arrangement until LogDNA is deployed in Sydney. When your services starts sending the logs/events to Sydney, the customers should be forewarned.
+
+**My service sends global events which are not tied to any region. What can I do?**
+
+For now, global events are being stored in Dallas by convention. We will address this in a better way in the future.
+
+For now, store events in Dallas as explained above, but in `logSourceCRN` set the `location` segment to `global` instead of `us-south`. This will indicate to the customers that it is a global event. Furthermore, this field maybe used in the future to trigger special handling of global events.
 
 ### Writing to Log Files from Pods
 {: #pods}
@@ -240,10 +258,10 @@ As a last resort, you can use the [LogDNA ingestion API](https://docs.logdna.com
     - Be cautious about the libs that are "unofficial". They are not supported by LogDNA.
     - If using one of these libs, consider isolating it in a separate process, similar to how the agent works, reading from a persisted buffer.
 - One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
-- If using the API, you can send AT events directly to your ATS instead of going through the STS. 
-    - To send AT events through the STS via API, you have to fake out the file path by adding `"app":"/var/log/at" to each event. You avoid this by sending directly to the ATS.
+- If using the API, you can send AT events directly to your ATS instead of going through the STSender. 
+    - To send AT events through the STSender via API, you have to fake out the file path by adding `"app":"/var/log/at" to each event. You avoid this by sending directly to the ATS.
     - You will need to get the ATS ingestion key from inside the LogDNA UI, since it is not available on the IBM Cloud Console.
-    - If you are only using AT, and sending events directly to the ATS, the STS must still be provisioned, and the ATS must be linked to it. This is a design limitation of LogDNA. **TODO: confirm this is still the case.**
+    - If you are only using AT, and sending events directly to the ATS, the STSender must still be provisioned, and the ATS must be linked to it. This is a design limitation of LogDNA. **TODO: confirm this is still the case.**
 
 Here is an example of using the API.
 
@@ -272,8 +290,8 @@ Notes:
 {: #precautions}
 
 Now your service has the power to write log lines to any account in its region. With great power comes great responsibility...
-- Your service's STS ingestion key is an important secret, so be sure your service manages it accordingly. For example, don't hard-code it.
-- If you think your service's STS ingestion key may have been compromised, then generate a new key in LogDNA, replace the old one with the new, and invalidate the old one ASAP. **TODO: Specific Kube instructions, e.g. whether to restart pods.**
+- Your service's STSender ingestion key is an important secret, so be sure your service manages it accordingly. For example, don't hard-code it.
+- If you think your service's STSender ingestion key may have been compromised, then generate a new key in LogDNA, replace the old one with the new, and invalidate the old one ASAP. **TODO: Specific Kube instructions, e.g. whether to restart pods.**
 - Most services should never use the `logSourceCRN` field except in `/var/log/at` for Activity Tracker. Unless your service is one of the few that sends log lines to customers, be careful to never include a `logSourceCRN` field in your operational logs or `stdout`.
 - If your service sends log lines to customers via super tenancy, then the service's documentation should explain those lines **when you start sending them** or earlier.
 - If your service is sending so many log lines, or such large log lines, that customers may be concerned about the cost, then add an option to control them. (However, note that the ST/AT service will be adding controls for this in the future.)
