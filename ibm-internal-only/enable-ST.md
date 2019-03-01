@@ -40,6 +40,7 @@ An IBM service must complete the following steps to begin using super tenancy (S
 4. [Test your service's Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test)
 5. [Set up Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-AT.html#enable_at) if applicable
 6. [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#considerations)
+    * [Regions](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#regions)
     * [Writing to Log Files from Pods](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#pods)
     * [Root Access on Kubernetes](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#root_access)
     * [Not on Kubernetes?](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#not_kube)
@@ -168,6 +169,7 @@ Follow [these instructions](/docs/services/Activity-Tracker-with-LogDNA/ibm-inte
 These considerations relate to both ST and AT. If you are only using ST or only using AT, you can ignore the content that doesn't apply.
 
 ### Regions
+{: #regions}
 
 In this initial release of ST/AT, LogDNA will only store logs and events in the region in which they were ingested. 
 
