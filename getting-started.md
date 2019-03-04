@@ -16,7 +16,7 @@ lastupdated: "2019-01-10"
 {:download: .download}
 
 
-# Getting started with {{site.data.keyword.at_full_notm}}
+# Getting started tutorial
 {: #getting-started}
 
 Use {{site.data.keyword.at_full}} to add log management capabilities to your {{site.data.keyword.Bluemix}} architecture. {{site.data.keyword.at_full_notm}} is operated by LogDNA in partnership with {{site.data.keyword.IBM_notm}}.
