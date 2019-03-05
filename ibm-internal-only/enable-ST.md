@@ -54,12 +54,10 @@ In addition to the above, your service must write super tenant log lines in JSON
 
 - Request a "provision key" for super tenancy by opening an issue [here](https://github.ibm.com/activity-tracker/customer-issues/issues/new?template=logdna_provision_key.md). This key is for _provisioning_ an ST or AT Sender, so that only service owners can do it. You will only use this key for the `service-instance-create` commands in the ST and AT instructions, and then you won't need it again.
 - Have the IBM Cloud command line installed.
-- Be logged into your service's account, or a test account in staging if you are just trying it out. 
+- Be logged into your service's account in production.
 
-These instructions assume you are developing ST/AT in staging. Here are some implications of staging:
-- The LogDNA service in staging cannot handle high volume. Only use staging for small loads, e.g. a proof-of-concept. Wait for super tenancy in production for full-volume tests. **Production Dallas is targeted for 19 Feb (high risk), for both ST and a dark launch of AT.**
-- To provision LogDNA in staging with a plan other than Lite, you need a special account that supports paid plans. We are accomodating a few early adopters, only during the weeks leading up to Production.
-- When ST/AT are available in Production, you can use production LogDNA instances for developing your service in staging. The endpoints in these instructions end in `test.cloud.ibm.com`, but when you use production, drop the `test.`.
+Even if you are running your service in staging, you should provision LogDNA in production. You can test your service's code in staging by writing to a LogDNA instance in production. While it is possible to use LogDNA in staging, it is not recommended due to whitelists and other complications that are caused by billing considerations.
+
 
 ## 1. Provision a Super Tenant Sender
 {: #provision}
@@ -115,7 +113,7 @@ If your service is running on Kubernetes, then follow [these instructions](https
 Regarding this change:
 
 * `LOGDNA_AGENT_KEY` and `LOGDNA_PLATFORM` should already exist at the same level, and be peers of the new values.
-* `LDAPIHOST` and `LDLOGHOST` should match the region you are deploying in. The above example is `us-south`, and also applies to staging (`test.cloud.ibm.com`).
+* `LDAPIHOST` and `LDLOGHOST` should match the region you are deploying in. The above example is `us-south`.
 * `LDLOGPATH` causes the agent to send logs to the special `supertenant` endpoint, instead of the usual `/logs/ingest` endpoint for ingestion. This variable is uniquely used for super tenant senders.
 
 After saving these file changes, specify your file name in the `kubectl create -f` command, instead of the web address in the instructions. When the agent is deployed, it will send your service's logs to LogDNA from `stdout` and `/var/log/*`. However, it has these new features:
