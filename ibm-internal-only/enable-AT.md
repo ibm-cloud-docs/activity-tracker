@@ -20,6 +20,8 @@ lastupdated: "2019-01-16"
 
 These instructions are a continuation of the [Super Tenant instructions](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#enable_st), which must be completed first.
 
+While Activity Tracker is white-listed, you must be added to the white list by submitting an issue [here](https://github.ibm.com/activity-tracker/customer-issues/issues/new?template=logdna_whitelist.md). Do this before beginning these instructions.
+
 An IBM service must complete the following steps to begin using Activity Tracker (AT).
 
 1. [Provision an Activity Tracker Sender](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-AT.html#provision)
@@ -76,7 +78,7 @@ First, ensure that the ATSender is receiving the events from your service. In th
 
 1. In Observability > Activity Tracker, click "View LogDNA" for your ATSender.
 2. You should see the events that your service writes to files in `/var/log/at`.
-3. If your service is not writing events yet (i.e. it is using AT for the first time), then write the following sample line in a sample AT log file (e.g. `/var/log/at/test.log`).
+3. If your service is not writing events yet (i.e. it is using AT for the first time), then write the following sample line in a sample AT log file (e.g. `/var/log/at/test.log`). Refer to the ST test instructions for how to write to your cluster's logs.
 
 ```
 {"severity":"normal","reason":{"reasonCode":201},"initiator":{"credential":{"type":"token"},"name":"LOPEZDSR@uk.ibm.com","host":{"address":"138.177.90.26"},"id":"IBMid-060000JMG2","typeURI":"service/security/account/user"},"target":{"typeURI":"resource-controller/instance","host":{"address":"kub:prod-ams03:resource-controller-76693b7b88-lzlbx"},"id":"crn:v1:bluemix:public:kms:us-south:a/81de6380e6222019c6567c9c8de6dece:e3215e30-d27b-4533-857b-b27b7c5943b0::"},"eventTime":"2018-09-24T12:14:11Z","action":"kms.instance.create","outcome":"success","message":"Key Protect: create instance"}
@@ -90,7 +92,7 @@ Now test super tenancy. In the diagram, this is the red line that runs from MySe
 1. Switch to the same account that you used for testing as a customer with super tenancy. You already have an instance of your service provisioned from the ibmcoud catalog. You already have the CRN of your service instance.
 4. Provision an instance of "Activity Tracker with LogDNA" in the same account. Do this in the IBM Cloud console, not the CLI. Let us call it "Customer-AT_Instance" **Temporary work-around: instead of console, use this CLI: `ibmcloud resource service-instance-create Customer-AT-Instance logdnaat 7-day us-south -p '{"default_receiver": true}'`**
 5. Switch back to your service's account.
-6. Write the sample line above to an AT log file in your service's cluster (e.g. `/var/log/at/test.log`). However, this time add to the beginning of the JSON:  `"logSourceCRN":"PUT YOUR SERVICE INSTANCE CRN HERE"`.
+6. Write the sample line above to an AT log file in your service's cluster (e.g. `/var/log/at/test.log`). However, this time add to the beginning of the JSON:  `"logSourceCRN":"PUT YOUR SERVICE INSTANCE CRN HERE"`. Remember that `logSourceCRN` must use an account id for the location, not a space id.
 7. Look in your STS LogDNA again, and verify that the event came through.
 8. Now go back to the customer account where your service instance is provisioned, and look at that AT instance. You should also see the event there.
 9. As a further test, add `"saveServiceCopy":false` to the line, and verify that it *only* is saved for the customer, and not in your service's ATSender.
