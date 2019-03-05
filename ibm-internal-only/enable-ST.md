@@ -52,9 +52,7 @@ In addition to the above, your service must write super tenant log lines in JSON
 ## Before you start
 {: #before}
 
-- Get the "provision key" for super tenancy. This is a key that IBM gets from LogDNA. It expires frequently.  You will only use this key for the `service-instance-create` commands in the ST and AT instructions. Request the key in one of these Slack channels:
-  - `#ibm-logdna-guest-help` - to join, send `!logdna` in a direct message to @LogBot.
-  - `#activity-tracker-user`
+- Request a "provision key" for super tenancy by opening an issue [here](https://github.ibm.com/activity-tracker/customer-issues/issues/new?template=logdna_provision_key.md). This key is for _provisioning_ an ST or AT Sender, so that only service owners can do it. You will only use this key for the `service-instance-create` commands in the ST and AT instructions, and then you won't need it again.
 - Have the IBM Cloud command line installed.
 - Be logged into your service's account, or a test account in staging if you are just trying it out. 
 
@@ -85,7 +83,7 @@ Where:
 ## 2. Get the STSender ingestion key
 {: #ingestion_key}
 
-To send log lines to the STSender, you need its ingestion key.
+To send log lines to the STSender, you need its ingestion key. This key is used for sending logs to LogDNA, so your service will use it all the time. (It is different from the provision key, which was used in the previous step.)
 1. Log into the IBM Cloud Console.
 1. Open the hamburger menu on the top left.
 1. Select Observability.
@@ -153,7 +151,9 @@ Now test super tenancy. In the diagram, this is the green line that runs from My
 4. Provision an instance of "Log Analysis with LogDNA" in the same account. Do this in the IBM Cloud console, not the CLI. Let us call it "Customer-Logging_Instance" **Temporary work-around: instead of console, use this CLI: `ibmcloud resource service-instance-create Customer-Logging-Instance logdna 7-day us-south -p '{"default_receiver": true}'`**
 5. Switch back to your service's account.
 6. Write a line to a log file in your service's cluster (e.g. `/var/log/test.log`) that looks like this: <br>`
-{"message":"This test log statement should be in STS and in Customer-Logging_Instance","saveServiceCopy":true,"logSourceCRN":"PUT YOUR SERVICE INSTANCE CRN HERE"}`
+{"message":"This test log statement should be in STS and in Customer-Logging_Instance","saveServiceCopy":true,"logSourceCRN":"PUT YOUR SERVICE INSTANCE CRN HERE"}`. 
+  * Your `logSourceCRN` must use an account id for the location--not a space id. So the CRN location will start with `a/`.
+  * To write to a log file in your cluster, use `kubectl exec -it logdna-agent-name -- /bin/bash`. (Use `kubectl get pods` to get the actual name for `logdna-agent-name`.) Then `sudo echo LOG-LINE-CONTENT >/var/log/test.log`.
 7. Look in your STSender LogDNA again, and verify that the line came through. Click on the left of the line to expand it.
 8. Now go back to the customer account where your service instance is provisioned, and look at that LogDNA instance. You should also see the line there.
 9. As a further test, add `"saveServiceCopy":false` to the line, and verify that it *only* is saved for the customer, and not in your service's STSender.
