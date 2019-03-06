@@ -2,7 +2,11 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-01-10"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, LogDNA, Activity Tracker, overview
+
+subcollection: logdnaat
 
 ---
 
@@ -17,7 +21,7 @@ lastupdated: "2019-01-10"
 
 
 # About
-{: #about}
+{: #ov}
 
 Use {{site.data.keyword.at_full}} to add log management capabilities to your {{site.data.keyword.Bluemix}} architecture. {{site.data.keyword.at_full_notm}} is operated by LogDNA in partnership with {{site.data.keyword.IBM_notm}}.
 {:shortdesc}

@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-29"
+  years: 2019
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, LogDNA, Activity Tracker, super tenant
+
+subcollection: logdnaat
 
 ---
 
