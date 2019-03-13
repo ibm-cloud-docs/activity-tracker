@@ -8,6 +8,7 @@ IBM Cloud Activity Tracker with LogDNA
     getting-started.md
     about.md
     cloud_services.md
+    iam.md
 
     {: .topicgroup}
     Internal adopters
@@ -20,6 +21,22 @@ IBM Cloud Activity Tracker with LogDNA
         ibm-internal-only/enable-AT.md
         ibm-internal-only/kube.md
         ibm-internal-only/at_events_acc_mgt.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    provision.md
+    remove.md
+    alerts.md
+    export.md
+    launch.md
+    view_logs.md
+    archive.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    endpoints.md
+    [LogDNA Product Page](https://logdna.com/)
+    [LogDNA Blog](https://blog.logdna.com/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
