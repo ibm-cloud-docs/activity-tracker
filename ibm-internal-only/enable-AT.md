@@ -36,7 +36,7 @@ In addition to the above, your service must write Activity Tracker events using 
 When finished, be sure to review the [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#6-other-considerations) in the Super Tenant instructions.
 
 ## 1. Provision an Activity Tracker Sender
-{: #provision}
+{: #provision-at}
 
 Like the logging STS, an Activity Tracker Sender (ATS) is a LogDNA instance that is configured to detect and handle super tenant log lines. However, the ATSender super tenant log lines are AT events.
 
