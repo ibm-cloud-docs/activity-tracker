@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-19"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started
 
@@ -18,6 +18,8 @@ subcollection: logdnaat
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Getting started tutorial
@@ -28,7 +30,13 @@ Use the {{site.data.keyword.at_full}} service to track how applications interact
 
 ![The {{site.data.keyword.at_full_notm}} service](images/atov.png "The {{site.data.keyword.at_full_notm}} service")
 
-## About
+
+{{site.data.keyword.at_full_notm}} collects and stores audit records for API calls made to resources that run in the {{site.data.keyword.cloud_notm}}. Events that are collected are stored on {{site.data.keyword.cloud_notm}} storage.
+{: note}
+
+
+
+## About {{site.data.keyword.at_full}}
 {: #ov}
 
 Compliance with internal policies and industry regulations is a key requirement in any organization's strategy, regardless of where applications run: on-premises, in a hybrid cloud, or in a public cloud. The {{site.data.keyword.at_full_notm}} service provides the framework and functionality to monitor API calls to services on the {{site.data.keyword.cloud_notm}} and produces the evidence to comply with corporate policies and market industry-specific regulations.
@@ -42,19 +50,46 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 ![Core features offered by the {{site.data.keyword.at_full_notm}} service](images/features.png "Core features offered by the {{site.data.keyword.at_full_notm}} service")
 
 For example, you can use the {{site.data.keyword.at_full_notm}} activity logs to identify the following information:
+* The users who made API calls to cloud services
+* The time-stamp when the API calls were made
+* The status of the API call
+* The criticallity of the action
 
-* The users who made API calls to cloud services.
-* The source IP address from where the API calls were made.
-* The time-stamp when the API calls were made.
-* The status of the API call.
+
+Consider the following information about security when you work with the {{site.data.keyword.at_full_notm}} service:
+
+* IBM services that generate {{site.data.keyword.at_full_notm}} events follow the {{site.data.keyword.IBM_notm}} Cloud security policy. For more information, see [Trust the security and privacy of IBM Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/learn-more/why-ibm-cloud/security/){: new_window}.
+* The {{site.data.keyword.at_full_notm}} service captures user-initiated actions that change the state of Cloud services. The information does not provide direct access to databases or applications.
+* Only authorized users can view and monitor {{site.data.keyword.at_full_notm}} event logs. Each user is identified by their unique ID in the {{site.data.keyword.cloud_notm}}.
 
 
-## Step 1. Provision {{site.data.keyword.at_full_notm}}
+## Objectives
+{: #gs_objectives}
+
+Complete this tutorial to learn how to provision and manage access to the service in the {{site.data.keyword.cloud_notm}}. Find out what common data is available in each event and how it can help you monitor your cloud environment. Learn to navigate in the web UI. 
+
+
+## Prerequisites
+{: #gs_prereq}
+
+* You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+
+* Your {{site.data.keyword.IBM_notm}}ID must have assigned IAM policies to work in the {{site.data.keyword.cloud_notm}}. The following table lists the minimum permissions that you need to complete this tutorial: 
+
+| Resource                             | Scope of the access policy | Role    | Region    | Information                  |
+|--------------------------------------|----------------------------|---------|-----------|------------------------------|
+| Resource group **Default**           |  Resource group            | Viewer  | us-south  | This policy is required to allow the user to see service instances in the Default resource group.    |
+| {{site.data.keyword.at_full_notm}} service |  Resource group            | Editor  | us-south  | This policy is required to allow the user to provision and administer the {{site.data.keyword.at_full_notm}} service in the Default resource group.   |
+| ADD BASED ON SERVICE |   |
+{: caption="Table 1. List of IAM policies required to complete the tutorial" caption-side="top"} 
+
+* If you prefer to work with the command line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+
+
+## Step 1. Provision an instance of the {{site.data.keyword.at_full_notm}} service
 {: #gs_step1}
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account.
-
-    Click [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} to launch the {{site.data.keyword.cloud_notm}} dashboard.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
@@ -69,25 +104,58 @@ For example, you can use the {{site.data.keyword.at_full_notm}} activity logs to
 The Web UI opens.
 
 
-## Step 2. Grant users access to monitor events
+## Step 2. Manage access to the service
 {: #gs_step2}
 
 
 
-## Step 3. Generate {{site.data.keyword.at_full_notm}} events
+
+## Step 3. Learn about the structure of an event
 {: #gs_step3}
 
+Events comply with the **Cloud Auditing Data Federation (CADF) standard**. The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
+
+The CADF event model includes the following components:
+
+| Component | Description |
+|------------|----------------------------|
+| `Action`   | The action is the operation or activity that an initiator performs, attempts to perform, or is waiting to complete. |
+| `Initiator`| The initiator is the resource that makes an API call and generates a CADF event. The event that is triggered depends on the action that is requested by the API call. |
+| `Observer` | The observer is the resource that creates and stores a CADF record from information available in a CADF event. |
+| `Outcome`  | The outcome is the status of the action against the target. |
+| `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
+{: caption="Table 2. Components that are available in a CADF event model" caption-side="top"} 
 
 
 
-## Step 4. Viewing events
+
+## Step 4. Generate {{site.data.keyword.at_full_notm}} events
 {: #gs_step4}
 
 
 
 
+## Step 5. Launch the web UI 
+{: #gs_step5}
+
+
+
+## Step 6. Viewing events
+{: #gs_step6}
+
+
+The {{site.data.keyword.at_full_notm}} service captures activity data that is related to API calls and other actions that are made to selected cloud services in the {{site.data.keyword.cloud_notm}}. 
+
+* Events are collected automatically. 
+* Events that are collected in {{site.data.keyword.at_full_notm}} comply with the **Cloud Auditing Data Federation (CADF) standard**. The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
+* {{site.data.keyword.at_full_notm}} stores and groups events by region. 
+* Events that report on global {{site.data.keyword.cloud_notm}} account actions, are collected and stored in the **US-South** region.
+
+* The service plan that you select for your {{site.data.keyword.at_full_notm}} instance determines the number of days that events are available for search through the web UI. 
+
+
 ## Next steps
 {: #gs_next_steps}
 
-
+Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [filter logs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step5), [search logs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step6), [define views](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step7), and [configure alerts](https://docs.logdna.com/docs/alerts). For more information about {{site.data.keyword.at_full_notm}} service plans, see [Pricing plans](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#overview_pricing_plans).
 

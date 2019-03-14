@@ -6,7 +6,6 @@ IBM Cloud Activity Tracker with LogDNA
 
     {: .navgroup id="learn"}
     getting-started.md
-    about.md
     event.md
     cloud_services.md
     iam.md
@@ -35,7 +34,9 @@ IBM Cloud Activity Tracker with LogDNA
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
+    regions.md
     endpoints.md
+    service_plan.md
 
     {: .topicgroup}
     Events
