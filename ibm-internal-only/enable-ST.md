@@ -64,7 +64,7 @@ Even if you are running your service in staging, you should provision LogDNA in 
 
 
 ## 1. Provision a Super Tenant Sender
-{: #provision}
+{: #provision-st}
 
 A Super Tenant Sender (STS) is a LogDNA instance that is configured to detect and handle super tenant log lines. This means it can save a copy of your service's log line to a customer's logging instance. You will need to create the STSender LogDNA instance from the command line in order to pass in the required parameters.
 
