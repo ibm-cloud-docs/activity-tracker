@@ -138,7 +138,7 @@ If your service was already using LogDNA before enabling Super Tenancy, then the
 If your service is using the fluentd agent for Activity Tracker, then the LogDNA Kubernetes agent will run alongside it. When you enable Activity Tracking on LogDNA, it will send your AT events to both the legacy AT service and to AT on LogDNA.
 
 ## 4. Test your service's Super Tenancy
-{: #test}
+{: #test-st}
 
 First, ensure that the STSender is receiving the logs from your service. In the diagram above, this is the green line that goes straight across from "My Service" to "Logs".
 

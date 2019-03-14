@@ -76,7 +76,7 @@ The following diagram shows your service sending ST (green) and AT (red) data vi
 Customers must have LogDNA instances enabled for receiving AT events, or LogDNA assumes they do not want them; this is a normal condition and not an error.
 
 ## 2. Test your service's Activity Tracking
-{: #test}
+{: #test-at}
 
 First, ensure that the ATSender is receiving the events from your service. In the diagram above, this is the red line that goes down to MyService-ATS.
 
