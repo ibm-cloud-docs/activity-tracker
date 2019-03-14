@@ -24,11 +24,9 @@ subcollection: logdnaat
 # Endpoints
 {: #endpoints}
 
-List of endpoints.
+The following table lists the endpoints per region:
 {:shortdesc}
 
-
-The following table lists the endpoints per region:
 
 | Region                | Location  |  Endpoint                                          |
 |-----------------------|-----------|----------------------------------------------------|
