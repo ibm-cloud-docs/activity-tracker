@@ -31,7 +31,7 @@ Use the {{site.data.keyword.at_full}} service to monitor user-initiated activiti
 ## Platform core integrated services
 {: #platform_core_integrated}
 
-Core platform services generate {{site.data.keyword.at_full_notm}} events that you can view through the {{site.data.keyword.at_full_notm}} **account domain**.
+Core platform services generate events that you can view through the **us-south** {{site.data.keyword.at_full_notm}} web UI.
 
 The following table lists core platform services that send events to {{site.data.keyword.at_full_notm}}:
 
@@ -63,7 +63,7 @@ The following table lists database services that send events to {{site.data.keyw
 ## Platform integrated security services
 {: #platform_integrated_security}
 
-Integrated security services generate {{site.data.keyword.at_full_notm}} events that you can view through the {{site.data.keyword.at_full_notm}} **account domain**.
+Integrated security services generate events that you can view through the **us-south** {{site.data.keyword.at_full_notm}} web UI.
 
 
 The following table lists core security platform services that send events to {{site.data.keyword.at_full_notm}}:
