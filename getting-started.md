@@ -218,20 +218,40 @@ The {{site.data.keyword.at_full_notm}} service captures activity data that is re
 * Events that are collected in {{site.data.keyword.at_full_notm}} comply with the **Cloud Auditing Data Federation (CADF) standard**. The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
 * {{site.data.keyword.at_full_notm}} stores and groups events by region. 
 * Events that report on global {{site.data.keyword.cloud_notm}} account actions, are collected and stored in the **US-South** region.
-
 * The service plan that you select for your {{site.data.keyword.at_full_notm}} instance determines the number of days that events are available for search through the web UI. 
 
 
+For example, the following diagram shows what type of events you can manage through the `US South` web UI:
+
 ![Events collected and available through the US South web UI](images/us-south.png "Events collected and available through the US South web UI")
 
+The following diagram shows what type of events you can manage through the `EU-DE` web UI:
 
 ![Events collected and available through the EU DE web UI](images/eu-de.png "Events collected and available through the EU DE web UI")
+
+
+At any time, you can view each event line in context. Complete the following steps to view an event in context: 
+
+1. In the web UI, click the **Views** icon ![Configuration icon](images/views.png "Configuration icon").
+2. Select **Everything**.
+3. Identify a line that you want to explore.
+4. Expand the event line. 
+
+    Information about line identifiers, tags, and labels is displayed.
+
+5. Click **View in Context** to see the event line in context of other entries from that host, app, or both.
+
+When you finish exploring the event, click **Close** to close the line.
+
+
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events.md#view_events.md).
+
 
 
 ## Next steps
 {: #gs_next_steps}
 
-Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [filter events](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step5), [search events](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step6), [define views](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step7), and [configure alerts](https://docs.logdna.com/docs/alerts). 
+Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [filter events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md#views_step1), [search events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md#views_step2), [define views](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md#views_step3), and [configure alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts.md#alerts.md). 
 
 For more information about {{site.data.keyword.at_full_notm}} service plans, see [Service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan).
 
