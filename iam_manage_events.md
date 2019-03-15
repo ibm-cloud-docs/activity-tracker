@@ -22,13 +22,13 @@ subcollection: logdnaat
 {:note: .note}
 
  
-# Granting permissions to a user or service ID to manage events
+# Granting administration permissions to a user or service ID
 {: #iam_manage_events}
 
 {{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Complete the following steps to grant a user administration permissions to work with the {{site.data.keyword.at_full_notm}} service:
 {:shortdesc}
 
-
+For more information about IAM roles, see [Managing user access with IAM](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
 
 ## Step 1. Create an access group
 {: #iam_manage_events_step1}
@@ -71,7 +71,7 @@ ibmcloud iam access-group-policy-create GROUP_NAME {-f, --file @JSON_FILE | --ro
 Complete the following steps to assign a policy to an access group through the UI:
 
 1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and select **Access Groups**.
-2. Select the name of the group that you want to assign access to. For example, you can name your group *activity tracker admins*.
+2. Select the name of the group that you want to assign access to. 
 3. Click **Access policies**.
 4. Click **Assign access**.
 5. Choose to assign access by resources within a resource group, individual resources available within the account, or account management services. For example, you can choose any of the following options to grant a user an administrator role to manage an {{site.data.keyword.at_full_notm}} instance:
@@ -90,7 +90,8 @@ Complete the following steps to assign a user administrator role to the {{site.d
 5. Select **All current regions**.
 6. Select **All current service instances**.
 7. Select the platform role **Administrator**.
-8. Click Assign.
+8. Select the service role **Manager**.
+9. Click **Assign**.
 
 ### Option 2. Grant permissions to a user to become an administrator of the service within a resource group
 {: #admin_account_opt2}
@@ -111,7 +112,8 @@ Complete the following steps to assign a user administrator role to the {{site.d
 
 6. Select **IBM Cloud Activity Tracker with LogDNA**.
 7. Select the platform role **Administrator**.
-8. Click **Assign**.
+8. Select the service role **Manager**.
+9. Click **Assign**.
 
 ### Option 3. Grant permissions to a user to become an administrator of a single instance of the service in the {{site.data.keyword.cloud_notm}}
 {: #admin_account_opt3}
@@ -124,7 +126,8 @@ Complete the following steps to assign a user administrator role on one instance
 4. Select **IBM Cloud Activity Tracker with LogDNA**.
 5. Select the instance.
 6. Select the platform role **Administrator**.
-7. Click Assign.
+7. Select the service role **Manager**.
+8. Click **Assign**.
 
 
 
