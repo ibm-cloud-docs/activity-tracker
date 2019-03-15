@@ -89,7 +89,7 @@ As you apply search criteria, notice that the name of the view changes to **Unsa
 ## Step 3. Create a custom view
 {: #views_step3}
 
-After you apply filters and search criteria to the **Everything** view or to an existing custom view, complete the following steps to save the outcome as a custom view:
+After you apply a time frame, filters and search criteria to the **Everything** view or to an existing custom view, complete the following steps to save the outcome as a custom view:
 
 1. In the web UI, click **Unsaved View**.
 2. Select **Save as new view / alert**. The *Create new view* page opens.

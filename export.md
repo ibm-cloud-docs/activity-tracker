@@ -37,8 +37,46 @@ Consider the following information when you export log data:
 
 
 
-## Exporting events from the web UI
-{: #ui}
+## Prerequisites
+{: #export_prereqs}
+
+Before you start, check that your user ID has permissions to launch the web UI and view events. Then, [go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch).
+
+**Note:** You must be an administrator of the {{site.data.keyword.at_full_notm}} service, an administrator of the {{site.data.keyword.at_full_notm}} instance, or have account IAM permissions to manage policies.
+
+The following table lists the minimum policies that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
+
+| Role                      | Permission granted            |
+|---------------------------|-------------------------------|  
+| Platform role: `Viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
+| Service role: `Reader`      | Allows the user to launch the web UI and view events in the web UI.  |
+{: caption="Table 1. IAM policies" caption-side="top"} 
+
+For more information on how to configure these policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+
+**You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan). 
+
+
+
+## Step 1. Go to the web UI
+{: #export_step1}
+
+[Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch).
+
+
+## Step 2. Create a view
+{: #export_step2}
+
+[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md#views.md).
+
+
+## Step 3. Export data
+{: #export_step3}
+
+Choose one of the following options to export events:
+
+### Option 1. Exporting events from the web UI
+{: #export_ui}
 
 Complete the following steps to export data:
 
@@ -52,8 +90,8 @@ Complete the following steps to export data:
 8. Check your email. You receive an email from **LogDNA** with a link to download your exported lines.
 
 
-## Exporting logs programmatically by using the API
-{: #api}
+### Option 2. Exporting events programmatically by using the API
+{: #export_api}
 
 Complete the following steps to export events programmatically:
 

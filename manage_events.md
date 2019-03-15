@@ -32,23 +32,6 @@ When you launch the {{site.data.keyword.at_full_notm}} web UI, events are displa
 
 
 
-## Prerequisites
-{: #manage_events_prereqs}
-
-Before you start, check that your user ID has permissions to launch the web UI and view events. Then, [go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch).
-
-**Note:** You must be an administrator of the {{site.data.keyword.at_full_notm}} service, an administrator of the {{site.data.keyword.at_full_notm}} instance, or have account IAM permissions to manage policies.
-
-The following table lists the minimum policies that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
-
-| Role                      | Permission granted            |
-|---------------------------|-------------------------------|  
-| Platform role: `Viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
-| Service role: `Reader`      | Allows the user to launch the web UI and view events in the web UI.  |
-{: caption="Table 1. IAM policies" caption-side="top"} 
-
-For more information on how to configure these policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
-
 
 ## Defining custom views
 

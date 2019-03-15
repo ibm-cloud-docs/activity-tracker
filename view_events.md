@@ -86,7 +86,7 @@ Complete the following steps to modify the format of an event line:
 
 
 
-## View in context an event line
+## View an event in context
 {: #view_events_step3}
 
 At any time, you can view each event line in context.
@@ -107,7 +107,7 @@ When you finish exploring the event, click **Close** to close the line.
 
 
 
-## Copy to the clipboard an event line
+## Copy an event to the clipboard
 {: #view_events_step4}
 
 
