@@ -31,15 +31,16 @@ To provision an {{site.data.keyword.at_full_notm}} instance in a Public Cloud re
 
 Alternatively, {{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your events as they pass through the system. You can view events by using event tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
 
+To provision a service instance, your user ID must have permisisons to provision a service in a resource group. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#groups).
+{: tip}
+
 
 ## Provisioning an instance through the Observability dashboard
 {: #provision_ui}
 
 To provision an instance from the Observability dashboard in the {{site.data.keyword.cloud_notm}}, complete the following steps:
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account.
-
-    The {{site.data.keyword.cloud_notm}} dashboard can be found at: [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
@@ -72,9 +73,7 @@ Next, go to the web UI to manage events in your account. [Learn more]().
 
 To provision an instance of {{site.data.keyword.at_full_notm}} through the {{site.data.keyword.cloud_notm}} catalog, complete the following steps:
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account.
-
-    Click [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} to launch the {{site.data.keyword.cloud_notm}} dashboard.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 

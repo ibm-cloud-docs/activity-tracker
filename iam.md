@@ -59,6 +59,18 @@ Choose any of the following actions to manage access groups in the {{site.data.k
 * [Assigning access to a group](/docs/iam?topic=iam-groups#access_ag).
 
 
+## Managing access by assigning policies directly to users
+{: #users}
+
+To manage access or assign new access for users by using IAM policies, you must be the account owner, administrator on all services in the account, or an administrator for the particular service or service instance. 
+
+Choose any of the following actions to manage IAM policies in the {{site.data.keyword.cloud_notm}}:
+
+* To modify the permissions of a user, see [Editing existing access](/docs/iam?topic=iam-iammanidaccser#edit_existing).
+* To grant permissions to a user, see [Assign new access](/docs/iam?topic=iam-iammanidaccser#assign_new_access).
+* To revoke permissions, see [Removing access](/docs/iam?topic=iam-iammanidaccser#removing_access).
+* To review a user's permissions, see [Reviewing your assigned access](/docs/iam?topic=iam-iammanidaccser#review_your_access).
+
 
 ## {{site.data.keyword.cloud_notm}} platform roles
 {: #platform}

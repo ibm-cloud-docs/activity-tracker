@@ -31,7 +31,7 @@ Use the {{site.data.keyword.at_full}} service to track how applications interact
 ![The {{site.data.keyword.at_full_notm}} service](images/atov.png "The {{site.data.keyword.at_full_notm}} service")
 
 
-{{site.data.keyword.at_full_notm}} collects and stores audit records for API calls made to resources that run in the {{site.data.keyword.cloud_notm}}. Events that are collected are stored on {{site.data.keyword.cloud_notm}} storage.
+{{site.data.keyword.at_full_notm}} collects and stores audit records for API calls made to resources that run in the {{site.data.keyword.cloud_notm}}. You can archive these events on {{site.data.keyword.cloud_notm}} for long-term storage.
 {: note}
 
 
@@ -89,6 +89,8 @@ Complete this tutorial to learn how to provision and manage access to the servic
 ## Step 1. Provision an instance of the {{site.data.keyword.at_full_notm}} service
 {: #gs_step1}
 
+Complete the following steps to provision an instance:
+
 1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
@@ -101,7 +103,7 @@ Complete this tutorial to learn how to provision and manage access to the servic
 
 4. Select one instance. Then, click **View LogDNA**.
 
-The Web UI opens.
+The web UI opens.
 
 
 ## Step 2. Manage access to the service
@@ -138,6 +140,24 @@ The CADF event model includes the following components:
 ## Step 5. Launch the web UI 
 {: #gs_step5}
 
+Complete the following steps to launch the web UI:
+
+1. Log in to your {{site.data.keyword.cloud_notm}} account.
+
+    Click [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} to launch the {{site.data.keyword.cloud_notm}} dashboard.
+
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
+
+2. In the navigation menu, select **Observability**. 
+
+3. Select **Activity Tracker**. 
+
+    The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
+
+4. Select one instance. Then, click **View LogDNA**.
+
+The Web UI opens.
+
 
 
 ## Step 6. Viewing events
@@ -152,6 +172,12 @@ The {{site.data.keyword.at_full_notm}} service captures activity data that is re
 * Events that report on global {{site.data.keyword.cloud_notm}} account actions, are collected and stored in the **US-South** region.
 
 * The service plan that you select for your {{site.data.keyword.at_full_notm}} instance determines the number of days that events are available for search through the web UI. 
+
+
+![Events collected and available through the US South web UI](images/us-south.png "Events collected and available through the US South web UI")
+
+
+![Events collected and available through the EU DE web UI](images/eu-de.png "Events collected and available through the EU DE web UI")
 
 
 ## Next steps

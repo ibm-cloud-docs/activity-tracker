@@ -9,7 +9,7 @@ IBM Cloud Activity Tracker with LogDNA
     event.md
     cloud_services.md
     iam.md
-
+        
     {: .topicgroup}
     Internal adopters
         ibm-internal-only/overview.md
@@ -29,7 +29,8 @@ IBM Cloud Activity Tracker with LogDNA
     alerts.md
     export.md
     launch.md
-    view_logs.md
+    iam_manage_events.md
+    iam_view_events.md
     archive.md
     {: .navgroup-end}
 
