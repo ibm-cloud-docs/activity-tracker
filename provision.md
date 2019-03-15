@@ -99,7 +99,7 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the {{sit
 
 After you provision an instance, the *Activity Tracker* dashboard opens. 
 
-Next, go to the web UI to manage events in your account. [Learn more]().
+Next, go to the web UI to manage events in your account. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch).
 
 
 ## Provisioning an instance through the CLI

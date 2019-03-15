@@ -51,9 +51,7 @@ You launch the web UI within the context of an {{site.data.keyword.at_full_notm}
 
 Complete the following steps to launch the web UI:
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account.
-
-    Click [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} to launch the {{site.data.keyword.cloud_notm}} dashboard.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
