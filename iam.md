@@ -47,6 +47,9 @@ subcollection: logdnaat
 **To organize a set of users and service IDs into a single entity that makes it easy for you to manage IAM permissions, use *access groups*.** You can assign a single policy to the group instead of assigning the same access multiple times per individual user or service ID.
 {: tip}
 
+Learn more through the following tutorials:
+* [Granting administration permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_manage_events#iam_manage_events)
+* [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events)
 
 ## Managing access by using access groups
 {: #groups}
@@ -70,6 +73,7 @@ Choose any of the following actions to manage IAM policies in the {{site.data.ke
 * To grant permissions to a user, see [Assign new access](/docs/iam?topic=iam-iammanidaccser#assign_new_access).
 * To revoke permissions, see [Removing access](/docs/iam?topic=iam-iammanidaccser#removing_access).
 * To review a user's permissions, see [Reviewing your assigned access](/docs/iam?topic=iam-iammanidaccser#review_your_access).
+
 
 
 ## {{site.data.keyword.cloud_notm}} platform roles

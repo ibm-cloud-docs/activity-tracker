@@ -25,10 +25,11 @@ subcollection: logdnaat
 # Granting user permissions to a user or service ID
 {: #iam_view_events}
 
-{{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Complete the following steps to grant a user viewing permissions to work with the {{site.data.keyword.at_full_notm}} service: 
+{{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Complete the following steps to grant a user or service ID the minimum permissions to work with the {{site.data.keyword.at_full_notm}} service: 
 {:shortdesc}
 
-For more information about IAM roles, see [Managing user access with IAM](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
+For example, if you have a paid plan, you can set these minimum permissions to grant a user access to view, search, and filter events, export data, and configure alerts.
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
 
 
 ## Step 1. Create an access group
@@ -84,15 +85,13 @@ To grant a user administrator role to manage the service in the account, the use
 
 Complete the following steps to assign a user administrator role to the {{site.data.keyword.at_full_notm}} service in the account: 
 
-1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and then select **Users**.
-2. From the row for the user that you want to assign access, select the **Actions** menu, and then click **Assign access**.
-3. Select **Assign access to resources**.
-4. Select **IBM Cloud Activity Tracker with LogDNA**.
-5. Select **All current regions**.
-6. Select **All current service instances**.
-7. Select the platform role **Viewer**.
-8. Select the service role **Reader**.
-9. Click **Assign**.
+1. Select **Assign access to resources**.
+2. Select **IBM Cloud Activity Tracker with LogDNA**.
+3. Select **All current regions**.
+4. Select **All current service instances**.
+5. Select the platform role **Viewer**.
+6. Select the service role **Reader**.
+7. Click **Assign**.
 
 ### Option 2. Grant permissions to a user to become an administrator of the service within a resource group
 {: #user_opt2}
@@ -101,34 +100,30 @@ To grant a user administrator role to manage instances within a resource group i
 
 Complete the following steps to assign a user administrator role to the {{site.data.keyword.at_full_notm}} service within the context of a resource group: 
 
-1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and then select **Users**.
-2. From the row for the user that you want to assign access, select the **Actions** menu, and then click **Assign access**.
-3. Select **Assign access within a resource group**.
-4. Select a resource group.
-5. If the user does not have a role that is already granted for the selected resource group, choose a role for the **Assign access to a resource group** field. 
+1. Select **Assign access within a resource group**.
+2. Select a resource group.
+3. If the user does not have a role that is already granted for the selected resource group, choose a role for the **Assign access to a resource group** field. 
 
     Depending on the role that you select, the user can view the resource group on their dashboard, edit the resource group name, or manage user access to the group. 
     
     You can select **No access**, if you want the user to have access only to the {{site.data.keyword.at_full_notm}} service in the resource group.
 
-6. Select **IBM Cloud Activity Tracker with LogDNA**.
-7. Select the platform role **Viewer**.
-8. Select the service role **Reader**.
-9. Click **Assign**.
+4. Select **IBM Cloud Activity Tracker with LogDNA**.
+5. Select the platform role **Viewer**.
+6. Select the service role **Reader**.
+7. Click **Assign**.
 
 ### Option 3. Grant permissions to a user to become an administrator of a single instance of the service in the {{site.data.keyword.cloud_notm}}
 {: #user_opt3}
 
 Complete the following steps to assign a user administrator role on one instance of the {{site.data.keyword.at_full_notm}} service: 
 
-1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and then select **Users**.
-2. From the row for the user that you want to assign access, select the **Actions** menu, and then click **Assign access**.
-3. Select **Assign access to resources**.
-4. Select **IBM Cloud Activity Tracker with LogDNA**.
-5. Select the instance.
-6. Select the platform role **Viewer**.
-7. Select the service role **Reader**.
-8. Click **Assign**.
+1. Select **Assign access to resources**.
+2. Select **IBM Cloud Activity Tracker with LogDNA**.
+3. Select the instance.
+4. Select the platform role **Viewer**.
+5. Select the service role **Reader**.
+6. Click **Assign**.
 
 
 ## Step 3. Add a user to the access group
@@ -141,9 +136,10 @@ Continue to set up your group by adding users or service IDs.
 
 Complete the following steps to add a user:
 
-1. Select the name of the group that you want to add to.
-2. Click **Add users** on the **Users** tab.
-3. Select the users that you want to add from the list, and click **Add to group**.
+1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and select **Access Groups**.
+2. Select the name of the group that you want to assign access to. 
+3. Click **Add users** on the **Users** tab.
+4. Select the users that you want to add from the list, and click **Add to group**.
 
 
 ### Add a service ID to the access group
@@ -151,8 +147,9 @@ Complete the following steps to add a user:
 
 Complete the following steps to add a service ID:
 
-1. Select the name of the group that you want to add to.
-2. Click the **Service IDs** tab, and click **Add service ID**.
-5. Select the IDs that you want to add from the list, and click **Add to group**.
+1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and select **Access Groups**.
+2. Select the name of the group that you want to assign access to. 
+3. Click the **Service IDs** tab, and click **Add service ID**.
+4. Select the IDs that you want to add from the list, and click **Add to group**.
 
 

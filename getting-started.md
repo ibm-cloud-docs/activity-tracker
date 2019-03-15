@@ -109,6 +109,54 @@ The web UI opens.
 ## Step 2. Manage access to the service
 {: #gs_step2}
 
+**Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles. 
+
+In this tutorial, you will learn how to grant a user management permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a resource group. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
+
+
+### Step 1. Create an access group
+{: #gs_step2_step1}
+
+Complete the following steps to create an access group:
+
+1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and select **Access Groups**.
+2. Click **Create**.
+3. Enter a name and optional description for your group, and click **Create**.
+
+### Step 2. Add permissions to manage events
+{: #gs_step2_step2}
+
+After you set up your group, you can assign a common access policy to the group.
+
+To grant a user administrator role to manage instances within a resource group in the account, the user must have an IAM policy for the {{site.data.keyword.at_full_notm}} service with the platform role **Administrator** within the context of the resource group. 
+
+Complete the following steps to assign a policy to an access group through the UI:
+
+1. From the menu bar, click **Manage** &gt; **Access (IAM)**.
+2. Select **Access Groups**.
+3. Select the name of the group that you want to assign access to. 
+4. Click **Access policies**.
+5. Click **Assign access**.
+6. Select **Assign access within a resource group**.
+7. Select a resource group.
+8. If the user does not have a role that is already granted for the selected resource group, choose a role for the **Assign access to a resource group** field. 
+
+    Depending on the role that you select, the user can view the resource group on their dashboard, edit the resource group name, or manage user access to the group. 
+    
+    You can select **No access**, if you want the user to have access only to the {{site.data.keyword.at_full_notm}} service in the resource group.
+
+9. Select **IBM Cloud Activity Tracker with LogDNA**.
+10. Select the platform role **Administrator**.
+11. Select the service role **Manager**.
+12. Click **Assign**.
+
+
+### Step 3.  Add the user to the group
+{: #gs_step2_step3}
+
+Complete the following steps to add the user to the access group:
+1. Click **Add users** on the **Users** tab.
+2. Select the user that you want to add from the list, and click **Add to group**.
 
 
 
