@@ -114,7 +114,7 @@ The web UI opens.
 In this tutorial, you will learn how to grant a user management permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a resource group. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
 
 
-### Step 1. Create an access group
+### 1. Create an access group
 {: #gs_step2_step1}
 
 Complete the following steps to create an access group:
@@ -123,7 +123,7 @@ Complete the following steps to create an access group:
 2. Click **Create**.
 3. Enter a name and optional description for your group, and click **Create**.
 
-### Step 2. Add permissions to manage events
+### 2. Add permissions to manage events
 {: #gs_step2_step2}
 
 After you set up your group, you can assign a common access policy to the group.
@@ -151,7 +151,7 @@ Complete the following steps to assign a policy to an access group through the U
 12. Click **Assign**.
 
 
-### Step 3.  Add the user to the group
+### 3.  Add the user to the group
 {: #gs_step2_step3}
 
 Complete the following steps to add the user to the access group:

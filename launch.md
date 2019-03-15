@@ -33,14 +33,15 @@ After you provision an instance of the {{site.data.keyword.at_full_notm}} servic
 
 **Note:** You must be an administrator of the {{site.data.keyword.at_full_notm}} service, an administrator of an {{site.data.keyword.at_full_notm}} instance, or have account IAM permissions to grant other users policies.
 
-The following table lists the minimum policy that a user must have to be able to launch the web UI, and view data:
+The following table lists the minimum policy that a user must have to be able to launch the web UI, and view data through the {{site.data.keyword.at_full_notm}} web UI:
 
-| Service                              | Role                      | Permission granted       |
-|--------------------------------------|---------------------------|---------------------|
-| `{{site.data.keyword.at_full_notm}}` | Platform role: Viewer     | Allows the user to view the list of service instances in the Observability dashboard. |
+| Role                      | Permission granted       |
+|---------------------------|---------------------|
+| Platform role: `Viewer`   | Allows the user to view the list of service instances in the Observability dashboard. |
+| Service role: `Reader`    | Allows the user to view events through the web UI. | 
 {: caption="Table 1. IAM policies" caption-side="top"} 
 
-
+For more information, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
 
 
 ## Step 2. Launching the web UI through the {{site.data.keyword.cloud_notm}} UI

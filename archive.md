@@ -77,19 +77,23 @@ The following table lists the roles that a user can have to complete the actions
 
 Complete the following steps to assign a user administrator role to the {{site.data.keyword.cos_full_notm}} service within the context of a resource group: 
 
-1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and then select **Users**.
-2. From the row for the user that you want to assign access, select the **Actions** menu, and then click **Assign access**.
-3. Select **Assign access within a resource group**.
-4. Select a resource group.
-5. If the user does not have a role already granted for the selected resource group, choose a role for the **Assign access to a resource group** field. 
+1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
+    
+2. From the menu bar, click **Manage** &gt; **Access (IAM)**, and then select **Users**.
+3. From the row for the user that you want to assign access, select the **Actions** menu, and then click **Assign access**.
+4. Select **Assign access within a resource group**.
+5. Select a resource group.
+6. If the user does not have a role already granted for the selected resource group, choose a role for the **Assign access to a resource group** field. 
 
     Depending on the role that you select, the user can view the resource group on their dashboard, edit the resource group name, or manage user access to the group. 
     
     You can select **No access**, if you want the user to only have access to the {{site.data.keyword.at_full_notm}} service in the resource group.
 
-6. Select **Cloud Object Storage**.
-7. Select the platform role **Administrator**.
-8. Click **Assign**.
+7. Select **Cloud Object Storage**.
+8. Select the platform role **Administrator**.
+9. Click **Assign**.
 
 
 
@@ -97,32 +101,25 @@ Complete the following steps to assign a user administrator role to the {{site.d
 {: #archiving_step2}
 
 **Note:** This step must be completed by an editor, or administrator of the {{site.data.keyword.cos_full_notm}} service on the {{site.data.keyword.cloud_notm}}. 
-
 Complete the following steps to provision an {{site.data.keyword.cos_full_notm}} instance:
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account.
+1. From the menu bar, click **Catalog**. The list of the services that are available in {{site.data.keyword.cloud_notm}} opens.
 
-    Click [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} to launch the {{site.data.keyword.cloud_notm}} dashboard.
+2. To filter the list of services that is displayed, select the **Storage** category.
 
-	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
+3. Click the **Object Storage** tile.
 
-2. Click **Catalog**. The list of the services that are available in {{site.data.keyword.cloud_notm}} opens.
+4. Enter a name for the service instance.
 
-3. To filter the list of services that is displayed, select the **Storage** category.
-
-4. Click the **Object Storage** tile.
-
-5. Enter a name for the service instance.
-
-6. Select a resource group. 
+5. Select a resource group. 
 
     By default, the **Default** resource group is set.
 
-7. Select a service plan. 
+6. Select a service plan. 
 
     By default, the **Lite** plan is set.
 
-9. Click **Create**.
+7. Click **Create**.
 
 
 
@@ -145,13 +142,9 @@ To manage buckets, your user must be granted permissions to work with buckets on
 
 Complete the following steps to create a bucket:
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account.
+1. From the Navigation menu, select **Resource List**.
 
-    Click [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} to launch the {{site.data.keyword.cloud_notm}} dashboard.
-
-	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} Dashboard opens.
-
-2. From the Dashboard, select the {{site.data.keyword.cos_full_notm}} instance where you plan to create the bucket.
+2. Select the {{site.data.keyword.cos_full_notm}} instance where you plan to create the bucket.
 
 3. Select **Buckets**. Then, click **Create Bucket**.
 
@@ -199,29 +192,28 @@ You must assign specific access policies to the service ID that restrict permiss
 
 Complete the following steps to create a service ID with writing permissions for the {{site.data.keyword.cos_full_notm}} instance:
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account.
+1. From the Dashboard, select the {{site.data.keyword.cos_full_notm}} instance where you plan to create the bucket.
 
-    Click [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} to launch the {{site.data.keyword.cloud_notm}} dashboard.
+2. Select **Service credentials**. Then, select **New credential**.
 
-	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} Dashboard opens.
+3. Enter a name that it is easy to recognize. For example, you can name the service ID `activity-tracker-cos-serviceID`. 
 
-2. From the Dashboard, select the {{site.data.keyword.cos_full_notm}} instance where you plan to create the bucket.
+4. Select the **Writer** role.
 
-3. Select **Service credentials**. Then, select **New credential**.
+5. Click **Add**.
 
-4. Enter a name. 
+    A new service ID is created and added to the list. 
 
-5. Select the **Writer** role.
-
-6. Click **Add**.
-
-    A new service ID is added to the list. 
+    **Note:** The service ID that is created in the {{site.data.keyword.cloud_notm}} and listed through the IAM UI has a generic name. The name of the service ID in the IAM UI maps to the value of the field **iam_apikey_name** that you created in this step through the COS service ID UI.
+    
+6. [Optional] To lock the service ID to prevent deletion, from the menu bar, click **Manage** &gt; **Access (IAM)**. Search for the service ID. Then, select the action **Lock**.
 
 
 For the service ID that you just created, click **View credentials**. You can see information that is related to the service ID. 
 
 * Copy the API key. This is the value set for the field **apikey**.
 * Copy the resource instance ID. This is the value set for the field **resource_instance_id**.
+* Copy the value of the **iam_apikey_name** field.
 
 
 ## Step 5. Restrict the service ID to only have writing permissions for the bucket
@@ -229,23 +221,18 @@ For the service ID that you just created, click **View credentials**. You can se
 
 If you want to restrict the service ID to only have writing permissions for a bucket, complete the following steps:
 
-1. Read the information for the service ID and write down the value of the **iam_apikey_name** field and the **iam_apikey_name** field. 
+1. From the COS UI, select the bucket.
 
-2. From the Dashboard, select **Manage** &gt; **Access (IAM)**, and then select **Users**.
+2. From the bucket menu, select **Policies**. The *Bucket access policies* page opens.
 
 3. Select **Service IDs**.
 
-4. Look for a service ID that has the following name: **auto-generated-serviceId-<ID that is part of the iam_apikey_name value>.
+4. In the field **Select a service ID**, look for a service ID that has the following name: **auto-generated-serviceId-<ID that is part of the iam_apikey_name value>.
 
-5. Select the service ID. Then, in **Access policies**, click **Writer**.
+5. Select the service ID. Then, in **Access policies**, select **Writer**.
 
-6. In the *Resource type* field enter **bucket**.
+6. Click **Create access policy**.
 
-7. In the *Resource ID* field enter the name of your bucket.
-
-8. Click **Save**.
-
-**Note:** If you leave the Resource Type or Resource fields blank, the policy that is created is an instance-level policy.
 
 
 ## Step 6. Select the endpoint
@@ -276,13 +263,13 @@ Complete the following steps to obtain the endpoint for your bucket:
 
 The following table lists the policies that a user must have to configure archiving of events from the {{site.data.keyword.at_full_notm}} web UI into a bucket in an {{site.data.keyword.cos_full_notm}} instance:
 
-| Service                        | Role                      | Permission granted                  | 
-|--------------------------------|---------------------------|-------------------------------------|  
+| Service                              | Role                      | Permission granted                  | 
+|--------------------------------------|---------------------------|-------------------------------------|  
 | `{{site.data.keyword.at_full_notm}}` | Platform role: Viewer     | Allows the user to view the list of service instances in the Observability Logging dashboard. |
-| `{{site.data.keyword.at_full_notm}}` | Service role: Manager      | Allows the user to launch the web UI and view events in the web UI.                             |
+| `{{site.data.keyword.at_full_notm}}` | Service role: Manager     | Allows the user to launch the web UI and view events in the web UI.                             |
 {: caption="Table 2. IAM policies" caption-side="top"} 
 
-For more information on how to configure these policies for a user, see [Granting permissions to a user to view events in LogDNA](/docs/services/Log-Analysis-with-LogDNA/work_iam.html#user_logdna).
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
 
 Complete the following steps to assign a user permission to archive events: 
 
