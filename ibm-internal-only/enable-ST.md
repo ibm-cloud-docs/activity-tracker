@@ -86,15 +86,15 @@ Where:
 {: #ingestion_key}
 
 To send log lines to the STSender, you need its ingestion key. This key is used for sending logs to LogDNA, so your service will use it all the time. (It is different from the provision key, which was used in the previous step.)
-1. Log into the IBM Cloud Console.
+1. Log into the IBM Cloud Console, using the same id as when you created the STSender above.
 1. Open the hamburger menu on the top left.
 1. Select Observability.
 1. Select Logging. 
-1. You should see your new STSender; it is just a LogDNA instance. You can click "View ingestion key" to copy its ingestion key.
+1. You should see your new STSender; it is just a LogDNA instance. Click the three-dot menu on the right-hand side, and select "View Key". Copy your ingestion key.
 
-![Observability/Logging](images/STS-STR.png)
+![Observability/Logging](images/getServiceKey.png)
 
-(If the "View ingestion key" UI is not working, as an alternative click "View LogDNA". Inside LogDNA, click the gear on the left, click "Organization", and click "API Keys".)
+(If the UI is not working for step 5, instead click "View LogDNA". Inside LogDNA, click the gear on the left, click "Organization", and click "API Keys".)
 
 ## 3. Install LogDNA Agent on Kubernetes
 {: #kube_agent}
