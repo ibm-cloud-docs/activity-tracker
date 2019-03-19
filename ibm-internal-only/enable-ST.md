@@ -22,17 +22,16 @@ subcollection: logdnaat
 # Enabling Super Tenancy and Activity Tracker
 {: #enable_st}
 
-This page tells how to enable Super Tenancy and Activity Tracker. If you are enabling Activity Tracker, you must first enable Super Tenancy because AT is now a layer on top of ST. So first complete the Super Tenancy steps on this page, and then continue through the Activity Tracker steps.
-
 ## Overview
 {: #overview}
+This page tells how to enable Super Tenancy and Activity Tracker. 
 
-An IBM service must complete the following steps to begin using super tenancy (ST).
+If you are enabling Activity Tracker, you must first enable Super Tenancy because AT is now a layer on top of ST. So first complete the Super Tenancy steps on this page, and then continue through the Activity Tracker steps.
 
 1. [Provision a Super Tenant Sender](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#provision)
 2. [Get the STS ingestion key](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#ingestion_key)
 3. [Install LogDNA Agent on Kubernetes](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#kube_agent)
-4. [Test your service's Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test) <br/>If you are setting up Activity Tracker, continue...
+4. [Test your service's Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test) <br/>Continue only if you are setting up Activity Tracker...
 5. [Provision an Activity Tracker Sender](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#provision-at)
 6. [Test your service's Activity Tracking](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test-at)
 
@@ -129,6 +128,8 @@ Now test super tenancy. In the diagram, this is the green line that runs from My
 7. Look in your STSender LogDNA again, and verify that the line came through. Click on the left of the line to expand it.
 8. Now go back to the customer account where your service instance is provisioned, and look at that LogDNA instance. You should also see the line there.
 9. As a further test, add `"saveServiceCopy":false` to the line, and verify that it *only* is saved for the customer, and not in your service's STSender.
+
+Continue to the next step only if you are setting up Activity Tracker. Otherwise stop here.
 
 ## 5. Provision an Activity Tracker Sender
 {: #provision-at}
