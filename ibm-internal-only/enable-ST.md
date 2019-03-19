@@ -24,7 +24,7 @@ subcollection: logdnaat
 
 ## Overview
 {: #overview}
-This page tells how to enable Super Tenancy and Activity Tracker. 
+This page tells how to enable Super Tenancy and Activity Tracker. See [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#understand_st) for architecture and other enablement considerations.
 
 If you are enabling Activity Tracker, you must first enable Super Tenancy because AT is now a layer on top of ST. So first complete the Super Tenancy steps on this page, and then continue through the Activity Tracker steps.
 
@@ -105,7 +105,9 @@ Regarding this change:
 * `LDAPIHOST` and `LDLOGHOST` should match the region you are deploying in. The above example is `us-south`.
 * `LDLOGPATH` causes the agent to send logs to the special `supertenant` endpoint, instead of the usual `/logs/ingest` endpoint for ingestion. This variable is uniquely used for super tenant senders.
 
-After saving these file changes, specify your file name in the `kubectl create -f` command, instead of the web address in the instructions. 
+After saving these file changes, specify your file name in the `kubectl create -f` command, instead of the web address in the instructions.
+
+(By the way, if your service is already sending data to the old Activity Tracker via fluentd, leave it alone. The fluentd design should continue to send AT data to the old AT until it is shut down.)
 
 ## 4. Test your service's Super Tenancy
 {: #test-st}
@@ -162,7 +164,7 @@ Notice that the service is `logdnaat` instead of `logdna`. The `associated_loggi
 
 In the Observabilty view, click "Activity Tracker" and see your new ATSender.
 
-![AT in Observability](images/AT-Observability.png)
+![AT in Observability](images/myService-ATS.png)
 
 ## 6. Test your service's Activity Tracking
 {: #test-at}
