@@ -35,6 +35,7 @@ If you are enabling Activity Tracker, you must first enable Super Tenancy becaus
 5. [Provision an Activity Tracker Sender](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#provision-at)
 6. [Test your service's Activity Tracking](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test-at)
 
+
 To use Super Tenancy, your service must write super tenant log lines in JSON, using the `logSourceCRN` field and (optionally) the `saveServiceCopy`. Otherwise, they will be handled as normal log lines. Similarly, to use Activity Tracking, your service must write Activity Tracker events using the `logSourceCRN` field and (optionally) the `saveServiceCopy` field. Otherwise, they will only be saved in your service's Activity Tracker instance. Read about the format of AT events [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/event_definition.html#ibm_event_fields), and the specific changes for LogDNA [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/partner_news.html#ibm_partner).
 
 ## Before you start
@@ -83,9 +84,9 @@ To send log lines to the STSender, you need its ingestion key. This key is used 
 ## 3. Install LogDNA Agent on Kubernetes
 {: #kube_agent}
 
-If your service is running on Kubernetes, then follow [these instructions](https://docs.logdna.com/docs/kubernetes) to install the Kubernetes agent, while observing the following:
+If your service is not running on Kubernetes, refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#not_kube). Otherwise, follow [these instructions](https://docs.logdna.com/docs/kubernetes) to install the Kubernetes agent, while observing the following:
 
-- The LogDNA Agent version must be 1.5.6 or later. If you are already running an older version, be sure to update it.
+- The LogDNA Agent version must be 1.5.6 or later. If you are already running an older version, be sure to update it. **Note: v2 of the agent is coming soon, and required for production.**
 - Use your service's STSender ingestion key.
 - Download the `logdna-agent-ds.yaml` file before using it. Edit it to add to `spec.template.spec.containers.env` the following:
 
@@ -169,7 +170,7 @@ In the Observabilty view, click "Activity Tracker" and see your new ATSender.
 First, ensure that the ATSender is receiving the events from your service. In the diagram above, this is the red line that goes down to MyService-ATS.
 
 1. In Observability > Activity Tracker, click "View LogDNA" for your ATSender.
-2. You should see the events that your service writes to files in `/var/log/at`.
+2. You should see the events that your service writes to files in `/var/log/at` or `/var/log/at-no-rotate`. (Refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_kube#ibm_kube) for explanation of `at-no-rotate`; search for "at-no-rotate".)
 3. If your service is not writing events yet (i.e. it is using AT for the first time), then write the following sample line in a sample AT log file (e.g. `/var/log/at/test.log`). Refer to the ST test instructions for how to write to your cluster's logs.
 
 ```
