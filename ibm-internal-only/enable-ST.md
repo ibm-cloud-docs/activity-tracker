@@ -19,7 +19,7 @@ subcollection: logdnaat
 {:tip: .tip}
 {:download: .download}
 
-# Enabling Super Tenancy
+# Enabling Super Tenancy and Activity Tracker
 {: #enable_st}
 
 ## Background
@@ -42,8 +42,9 @@ An IBM service must complete the following steps to begin using super tenancy (S
 2. [Get the STS ingestion key](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#ingestion_key)
 3. [Install LogDNA Agent on Kubernetes](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#kube_agent)
 4. [Test your service's Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test)
-5. [Set up Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-AT.html#enable_at) if applicable
-6. [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#considerations)
+5. [Provision an Activity Tracker Sender](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#provision-at) - if you are setting up Activity Tracker
+6. [Test your service's Activity Tracking](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test-at) - if you are setting up Activity Tracker
+7. [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#considerations)
     * [Regions](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#regions)
     * [Writing to Log Files from Pods](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#pods)
     * [Root Access on Kubernetes](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#root_access)
@@ -160,12 +161,66 @@ Now test super tenancy. In the diagram, this is the green line that runs from My
 8. Now go back to the customer account where your service instance is provisioned, and look at that LogDNA instance. You should also see the line there.
 9. As a further test, add `"saveServiceCopy":false` to the line, and verify that it *only* is saved for the customer, and not in your service's STSender.
 
-## 5. Set up Activity Tracker
-{: #setup}
+## 5. Provision an Activity Tracker Sender
+{: #provision-at}
 
-Follow [these instructions](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-AT.html#enable_at) to add Activity Tracker to your service.
+Like the logging STS, an Activity Tracker Sender (ATS) is a LogDNA instance that is configured to detect and handle super tenant log lines. However, the ATSender super tenant log lines are AT events.
 
-## 6. Other Considerations
+First, get the CRN of your logging STSender so you can link your ATSender to it. Using your own STSender name instead of "myService_STS", type:
+
+```
+ibmcloud resource service-instance "myService-STS"
+```
+{: codeblock}
+
+Copy the CRN from the above output, and use it as an input parameter when creating the ATSender.
+
+```
+ibmcloud resource service-instance-create myService-ATS logdnaat 14-day us-south \
+    -p '{"service_supertenant": "myservice" , "associated_logging_crn": "YOUR_STS_CRN", "provision_key": "123"}'
+```
+{: codeblock}
+
+Where:  
+* `myService-ATS` is whatever you call your service, with ATS ("Activity Tracker sender") appended by convention.
+* `7-day` is the plan, which could also be `lite`, `14-day` or `30-day`, your choice.
+* `myservice` is the CRN service-name of your service.
+* `provision_key` - see [Super Tenant instructions](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#before) for how to obtain this key.
+
+Notice that the service is `logdnaat` instead of `logdna`. The `associated_logging_crn` parameter links the STSender and ATSender together.
+
+In the Observabilty view, click "Activity Tracker" and see your new ATSender.
+
+![AT in Observability](images/AT-Observability.png)
+
+## 6. Test your service's Activity Tracking
+{: #test-at}
+
+First, ensure that the ATSender is receiving the events from your service. In the diagram above, this is the red line that goes down to MyService-ATS.
+
+1. In Observability > Activity Tracker, click "View LogDNA" for your ATSender.
+2. You should see the events that your service writes to files in `/var/log/at`.
+3. If your service is not writing events yet (i.e. it is using AT for the first time), then write the following sample line in a sample AT log file (e.g. `/var/log/at/test.log`). Refer to the ST test instructions for how to write to your cluster's logs.
+
+```
+{"severity":"normal","reason":{"reasonCode":201},"initiator":{"credential":{"type":"token"},"name":"LOPEZDSR@uk.ibm.com","host":{"address":"138.177.90.26"},"id":"IBMid-060000JMG2","typeURI":"service/security/account/user"},"target":{"typeURI":"resource-controller/instance","host":{"address":"kub:prod-ams03:resource-controller-76693b7b88-lzlbx"},"id":"crn:v1:bluemix:public:kms:us-south:a/81de6380e6222019c6567c9c8de6dece:e3215e30-d27b-4533-857b-b27b7c5943b0::"},"eventTime":"2018-09-24T12:14:11Z","action":"kms.instance.create","outcome":"success","message":"Key Protect: create instance"}
+```
+{: codeblock}
+
+This line should appear in your ATSender. Note that the `message` field is displayed as a summary of the line. To see the CADF fields, you click on the left of the line to open it.
+
+Now test super tenancy. In the diagram, this is the red line that runs from MyService-ATS to the customer's AT instance.
+
+1. Switch to the same account that you used for testing as a customer with super tenancy. You already have an instance of your service provisioned from the ibmcoud catalog. You already have the CRN of your service instance.
+4. Provision an instance of "Activity Tracker with LogDNA" in the same account. Do this in the IBM Cloud console, not the CLI. Let us call it "Customer-AT_Instance" **Temporary work-around: instead of console, use this CLI: `ibmcloud resource service-instance-create Customer-AT-Instance logdnaat 7-day us-south -p '{"default_receiver": true}'`**
+5. Switch back to your service's account.
+6. Write the sample line above to an AT log file in your service's cluster (e.g. `/var/log/at/test.log`). However, this time add to the beginning of the JSON:  `"logSourceCRN":"PUT YOUR SERVICE INSTANCE CRN HERE"`. Remember that `logSourceCRN` must use an account id for the location, not a space id.
+7. Look in your STS LogDNA again, and verify that the event came through.
+8. Now go back to the customer account where your service instance is provisioned, and look at that AT instance. You should also see the event there.
+9. As a further test, add `"saveServiceCopy":false` to the line, and verify that it *only* is saved for the customer, and not in your service's ATSender.
+
+
+## 7. Other Considerations
 {: #considerations}
 
 These considerations relate to both ST and AT. If you are only using ST or only using AT, you can ignore the content that doesn't apply.
