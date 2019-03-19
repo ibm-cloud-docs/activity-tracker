@@ -22,8 +22,8 @@ subcollection: logdnaat
 # Understanding Super Tenancy and Activity Tracker
 {: #understand_st}
 
-## Background
-{: #background}
+## Overview
+{: #overview}
 
 LogDNA supports two related capabilities: Super Tenancy and Activity Tracking.
 
@@ -31,15 +31,20 @@ LogDNA supports two related capabilities: Super Tenancy and Activity Tracking.
 
 * *Activity Tracker with LogDNA* (AT) is a special LogDNA instance that allows your customers to see their activities on your service. Your service will have its own instance of AT for saving its AT log lines, which are called *events*. But since AT is a super tenant, your service can also save its events in the AT instances of your customers.
 
-* [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#considerations)
-    * [Regions](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#regions)
+* [Super Tenancy]()
+* [Activity Tracker]()
+* [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/understand_st.html#considerations)
+    * [Regions](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#regions)
     * [Writing to Log Files from Pods](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#pods)
     * [Root Access on Kubernetes](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#root_access)
     * [Not on Kubernetes?](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#not_kube)
     * [Precautions](docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#precautions)
     * [Continuous Automated Tests](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#automated_tests)
 
-When the agent is deployed, it will send your service's logs to LogDNA from `stdout` and `/var/log/*`. However, it has these new features:
+## Super Tenancy
+{: #super_tenancy}
+
+When the logdna-agent is deployed, it will send your service's logs to LogDNA from `stdout` and `/var/log/*`. However, it has these new features:
 
 * Whenever a JSON log line contains the `logSourceCRN` field, LogDNA will save a copy of the line to the logging instance in the account indicated in `logSourceCRN`.
 * Whenever a JSON log line contains the `saveServiceCopy` field set to `false`, then it will not save a copy to your service's STSender.
@@ -56,9 +61,10 @@ If your service was already using LogDNA before enabling Super Tenancy, then the
 
 If your service is using the fluentd agent for Activity Tracker, then the LogDNA Kubernetes agent will run alongside it. When you enable Activity Tracking on LogDNA, it will send your AT events to both the legacy AT service and to AT on LogDNA.
 
+## Activity Tracker
+{: #activity_tracker}
 
-
-Now you can send normal log lines, super tenant log lines, and AT events to the same endpoint, using the STS ingestion key. LogDNA will sort out the AT events for you. Your service's cluster only needs a single LogDNA agent to handle all of it.
+Your service can send normal log lines, super tenant log lines, and AT events to the same endpoint, using the STS ingestion key. LogDNA will sort out the AT events for you. Your service's cluster only needs a single LogDNA agent to handle all of it.
 
 The following diagram shows your service sending ST (green) and AT (red) data via the LogDNA agent, and adds the customer's perspective (yellow). The customer uses their logging instance for normal logging, but does not send any data to their AT instance; only the service's data goes to the customer's AT instance.
 
@@ -68,7 +74,7 @@ Customers must have LogDNA instances enabled for receiving AT events, or LogDNA 
 
 
 
-## 7. Other Considerations
+## Other Considerations
 {: #considerations}
 
 These considerations relate to both ST and AT. If you are only using ST or only using AT, you can ignore the content that doesn't apply.
