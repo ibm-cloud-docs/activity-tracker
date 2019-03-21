@@ -87,7 +87,7 @@ To send log lines to the STSender, you need its ingestion key. This key is used 
 If your service is not running on Kubernetes, refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#not_kube). Otherwise, install the logdna-agent on Kube by the following steps. These steps assume a clean install rather than an upgrade.
 
 1. Using the STSender ingestion key that you got above:<br/> `kubectl create secret generic logdna-agent-key --from-literal=logdna-agent-key=<INGESTION KEY>`
-2. Download [logdna-agentv2-ds-us-south.yaml](images/logdna-agentv2-ds-us-south.yaml) and install it:<br/>`kubectl create -f logdna-agentv2-ds-us-south.yaml`<br/>Notes:
+2. Download <a href="images/logdna-agentv2-ds-us-south.yaml" download>logdna-agentv2-ds-us-south.yaml</a> and install it:<br/>`kubectl create -f logdna-agentv2-ds-us-south.yaml`<br/>Notes:
   * This installs v2 of the agent, which is required.
   * It sets `LDAPIHOST` and `LDLOGHOST` for `us-south`. Change it if you are deploying in other regions.
   * It sets `LDLOGPATH` to use the supertenant endpoint rather than the normal ingestion endpoint.
