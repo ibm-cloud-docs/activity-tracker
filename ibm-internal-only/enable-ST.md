@@ -91,6 +91,7 @@ If your service is not running on Kubernetes, refer [here](https://test.cloud.ib
   * This installs v2 of the agent, which is required.
   * It sets `LDAPIHOST` and `LDLOGHOST` for `us-south`. Change it if you are deploying in other regions.
   * It sets `LDLOGPATH` to use the supertenant endpoint rather than the normal ingestion endpoint.
+  * The v2 agent has a minor bug which you should keep in mind while testing ST and AT. If you create a new log file as you are writing to it, the initial write may not be sent until the next write occurs. So a test like `echo "wait for it" >>newFile.log` might require a second line to be written before the first one is sent. LogDNA is fixing this bug.
 
 If your service is already sending data to the old Activity Tracker via fluentd, leave it alone. The fluentd design should continue to send AT data to the old AT until it is shut down.
 
