@@ -84,30 +84,15 @@ To send log lines to the STSender, you need its ingestion key. This key is used 
 ## 3. Install LogDNA Agent on Kubernetes
 {: #kube_agent}
 
-If your service is not running on Kubernetes, refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#not_kube). Otherwise, follow [these instructions](https://docs.logdna.com/docs/kubernetes) to install the Kubernetes agent, while observing the following:
+If your service is not running on Kubernetes, refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#not_kube). Otherwise, install the logdna-agent on Kube by the following steps. These steps assume a clean install rather than an upgrade.
 
-- The LogDNA Agent version must be 1.5.6 or later. If you are already running an older version, be sure to update it. **Note: v2 of the agent is coming soon, and required for production.**
-- Use your service's STSender ingestion key.
-- Download the `logdna-agent-ds.yaml` file before using it. Edit it to add to `spec.template.spec.containers.env` the following:
+1. Using the STSender ingestion key that you got above:<br/> `kubectl create secret generic logdna-agent-key --from-literal=logdna-agent-key=<INGESTION KEY>`
+2. Download [logdna-agentv2-ds-us-south.yaml](images/logdna-agentv2-ds-us-south.yaml) and install it:<br/>`kubectl create -f logdna-agentv2-ds-us-south.yaml`<br/>Notes:
+  * This installs v2 of the agent, which is required.
+  * It sets `LDAPIHOST` and `LDLOGHOST` for `us-south`. Change it if you are deploying in other regions.
+  * It sets `LDLOGPATH` to use the supertenant endpoint rather than the normal ingestion endpoint.
 
-```
-        - name: LDAPIHOST
-          value: api.us-south.logging.cloud.ibm.com
-        - name: LDLOGHOST
-          value: logs.us-south.logging.cloud.ibm.com
-        - name: LDLOGPATH
-          value: /supertenant/logs/ingest
-```
-{: codeblock}
-Regarding this change:
-
-* `LOGDNA_AGENT_KEY` and `LOGDNA_PLATFORM` should already exist at the same level, and be peers of the new values.
-* `LDAPIHOST` and `LDLOGHOST` should match the region you are deploying in. The above example is `us-south`.
-* `LDLOGPATH` causes the agent to send logs to the special `supertenant` endpoint, instead of the usual `/logs/ingest` endpoint for ingestion. This variable is uniquely used for super tenant senders.
-
-After saving these file changes, specify your file name in the `kubectl create -f` command, instead of the web address in the instructions.
-
-(By the way, if your service is already sending data to the old Activity Tracker via fluentd, leave it alone. The fluentd design should continue to send AT data to the old AT until it is shut down.)
+If your service is already sending data to the old Activity Tracker via fluentd, leave it alone. The fluentd design should continue to send AT data to the old AT until it is shut down.
 
 ## 4. Test your service's Super Tenancy
 {: #test-st}
@@ -127,7 +112,7 @@ Now test super tenancy. In the diagram, this is the green line that runs from My
 6. Write a line to a log file in your service's cluster (e.g. `/var/log/test.log`) that looks like this: <br>`
 {"message":"This test log statement should be in STS and in Customer-Logging_Instance","saveServiceCopy":true,"logSourceCRN":"PUT YOUR SERVICE INSTANCE CRN HERE"}`. 
   * Your `logSourceCRN` must use an account id for the location--not a space id. So the CRN location will start with `a/`.
-  * To write to a log file in your cluster, use `kubectl exec -it logdna-agent-name -- /bin/bash`. (Use `kubectl get pods` to get the actual name for `logdna-agent-name`.) Then `sudo echo LOG-LINE-CONTENT >/var/log/test.log`.
+  * To write to a log file in your cluster, use `kubectl exec -it logdna-agent-name -- /bin/bash`. (Use `kubectl get pods` to get the actual name for `logdna-agent-name`.) Then `echo LOG-LINE-CONTENT >/var/log/test.log`.
 7. Look in your STSender LogDNA again, and verify that the line came through. Click on the left of the line to expand it.
 8. Now go back to the customer account where your service instance is provisioned, and look at that LogDNA instance. You should also see the line there.
 9. As a further test, add `"saveServiceCopy":false` to the line, and verify that it *only* is saved for the customer, and not in your service's STSender.
