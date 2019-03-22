@@ -22,7 +22,7 @@ subcollection: logdnaat
 {:note: .note}
 
 # Endpoints
-{: #endpoints}
+{: #endpoints_copy}
 
 The following table lists the endpoints per region:
 {:shortdesc}

@@ -21,7 +21,7 @@ subcollection: logdnaat
 {:note: .note}
 
 # Regions
-{: #regions}
+{: #regions_copy}
 
 {{site.data.keyword.at_full_notm}} is available in the following regions:
 {:shortdesc}

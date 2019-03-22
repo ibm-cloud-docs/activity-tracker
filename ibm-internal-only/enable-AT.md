@@ -80,7 +80,7 @@ Customers must have LogDNA instances enabled for receiving AT events, or LogDNA 
 These considerations relate to both ST and AT. If you are only using ST or only using AT, you can ignore the content that doesn't apply.
 
 ### Regions
-{: #regions}
+{: #regions1}
 
 In this initial release of ST/AT, LogDNA will only store logs and events in the region in which they were ingested. 
 
