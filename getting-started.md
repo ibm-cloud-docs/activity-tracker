@@ -249,14 +249,6 @@ The {{site.data.keyword.at_full_notm}} service captures activity data that is re
 * The service plan that you select for your {{site.data.keyword.at_full_notm}} instance determines the number of days that events are available for search through the web UI. 
 
 
-
-For example, the following diagram shows what type of events you can manage through the `US South` web UI:
-
-![Events collected and available through the US South web UI](images/us-south.png "Events collected and available through the US South web UI")
-
-
-
-
 At any time, you can view each event line in context. Complete the following steps to view an event in context: 
 
 1. In the web UI, click the **Views** icon ![Configuration icon](images/views.png "Configuration icon").
