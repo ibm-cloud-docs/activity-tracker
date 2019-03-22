@@ -34,13 +34,11 @@ You can remove an instance of the {{site.data.keyword.at_full_notm}} service fro
 
 To remove an instance of {{site.data.keyword.at_full_notm}} by using the {{site.data.keyword.cloud_notm}} UI, complete the following steps:
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account.
-
-    Click [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} to launch the {{site.data.keyword.cloud_notm}} dashboard.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. Go to the menu icon ![menu icon](../../icons/icon_hamburger.svg) &gt; **Observability** to access the *Observability* Dashboard.
+2. Go to the menu icon ![Menu icon](../../icons/icon_hamburger.svg) &gt; **Observability** to access the *Observability* Dashboard.
 
 3. Select **Activity Tracker**. The list of instances is displayed.
 
@@ -55,7 +53,7 @@ Next, remove permissions that are granted to users to work with the instance tha
 
 To remove an instance of {{site.data.keyword.at_full_notm}} through the command line, complete the following steps:
 
-1. [Pre-requisite] Installion of the {{site.data.keyword.cloud_notm}} CLI.
+1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI.
 
    For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
@@ -74,9 +72,9 @@ To remove an instance of {{site.data.keyword.at_full_notm}} through the command 
     ```
     {: codeblock}
 
-    Where NAME is the name of the instance.
+    Where NAME is the name of the instance
 
-    To lits all the instances that are available in a the resource group where you logged in, run the following command:
+    To list all the instances that are available in the resource group where you logged in, run the following command:
 
     ```
     ibmcloud resource service-instances
