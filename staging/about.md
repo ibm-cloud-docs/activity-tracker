@@ -23,8 +23,8 @@ subcollection: logdnaat
 
 
 
-## Collecting events
-{: #activity_tracker_ov_collect}
+# Collecting events
+{: #ov_collect}
 
 The {{site.data.keyword.at_full_notm}} service captures activity data that is related to API calls and other actions that are made to selected cloud services in the {{site.data.keyword.cloud_notm}}. 
 
@@ -72,7 +72,7 @@ Consider the following information when you work with the {{site.data.keyword.at
 
 
 ## Provisioning Activity Tracker
-{: #activity_tracker_ov_provision}
+{: #ov_provision}
 
 To view events that are available through an account domain, you must provision the {{site.data.keyword.cloudaccesstrailshort}} service in a Cloud Foundry space in the region where you want to monitor API activity. Only the **account owner** can see account events.
 
@@ -83,7 +83,7 @@ To learn how to provision the {{site.data.keyword.cloudaccesstrailshort}} servic
 
 
 ## Analyzing activity logs
-{: #activity_tracker_ov_analyze}
+{: #ov_analyze}
 
 You can analyze activity logs through the {{site.data.keyword.cloudaccesstrailshort}} UI in the {{site.data.keyword.cloud_notm}}, or by using Kibana, an open source tool. You can monitor events that are available in a specific space or at the account level.
 
@@ -97,7 +97,7 @@ You can search, analyze, and monitor activity logs for the last 3 days through K
 
 
 ## Pricing plans
-{: #overview_pricing_plans}
+{: #ov_pricing_plans}
 
 Different pricing plans are available that you can choose for an {{site.data.keyword.la_full_notm}} instance. Each plan defines the number of days that data is retained for search, the number of users allowed to manage the data, and the LogDNA features that are enabled.
 
@@ -124,7 +124,7 @@ The following tables outline the different features that are included in each se
 
 
 ## Regions
-{: #overview_regions}
+{: #ov_regions}
 
 Logging with {{site.data.keyword.la_full_notm}} is available in the following regions:
 

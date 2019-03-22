@@ -31,7 +31,7 @@ subcollection: logdnaat
 For example, as an administrator of the service, you can provison and remove instances of the service, grant other users permissions to work with the service, archive logs to an {{site.data.keyword.cos_full_notm}} (COS) instance, and more. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
 
 ## Step 1. Create an access group
-{: #iam_manage_events_step1}
+{: #ime_step1}
 
 Complete the following steps to create an access group:
 
@@ -52,7 +52,7 @@ ibmcloud iam access-group-create GROUP_NAME [-d, --description DESCRIPTION]
 
 
 ## Step 2. Add permissions to manage events
-{: #iam_manage_events_step2}
+{: #ime_step2}
 
 After you set up your group, you can assign a common access policy to the group. 
 
@@ -126,12 +126,12 @@ Complete the following steps to assign a user administrator role on one instance
 
 
 ## Step 3. Add a user or service ID to the access group
-{: #iam_manage_events_step3}
+{: #ime_step3}
 
 Continue to set up your group by adding users or service IDs.
 
 ### Add a user to the access group
-{: #iam_manage_events_step3_user}
+{: #ime_step3_user}
 
 Complete the following steps to add a user:
 
@@ -142,7 +142,7 @@ Complete the following steps to add a user:
 
 
 ### Add a service ID to the access group
-{: #iam_manage_events_step3_svcid}
+{: #ime_step3_svcid}
 
 Complete the following steps to add a service ID:
 
