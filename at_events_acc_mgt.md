@@ -40,7 +40,7 @@ The following table lists the actions that generate an event:
 |--------------------------------------|-------------|
 | `billing.account.create`             | An event is generated when you provision an account after the account ID is assigned to the account. |
 | `billing.account.update`             | An event is generated when you update information about the account.  |
-| `billing.account.active`              | An event is generated when you verify the account, that is, an event is generated when the account becomes active. |
+| `billing.account.active`             | An event is generated when you verify the account, that is, an event is generated when the account becomes active. |
 | `billing.account.subscription.create` | An event is generated when you create a <a href="/docs/account?topic=account-accounts#subscription-account">Subscription account</a>. |
 {: caption="Table 1. Actions that generate events" caption-side="top"} 
 
@@ -54,9 +54,9 @@ The following table lists the actions that generate an event:
 
 | Action                               | Description |
 |--------------------------------------|-------------|
-| `user-management.user.create`        | An event is generated when you send an invitation to a user to join an account. The account owner is the only user in the account that can perform this action. |
+| `user-management.user.create`        | An event is generated when you send an invitation to a user to join an account. |
 | `user-management.user.active`        | An event is generated when you activate the user in the account. When the user verifies the email address, the event is generated. |
-| `user-management.account.user.delete` | An event is generated when you remove a user from the account. The account owner is the only user in the account that can perform this action. |
+| `user-management.account.user.delete` | An event is generated when you remove a user from the account. |
 {: caption="Table 2. Actions that generate events" caption-side="top"} 
 
 

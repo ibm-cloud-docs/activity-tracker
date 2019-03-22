@@ -31,7 +31,7 @@ The {{site.data.keyword.at_full_notm}} service records user-initiated activities
 
 
 ## Events for provisioning and managing service instances
-{: #at_events_rc_provision}
+{: #rc_provision}
 
 The following table lists the actions that generate an event:
 
@@ -43,9 +43,21 @@ The following table lists the actions that generate an event:
 {: caption="Table 1. Actions that generate events" caption-side="top"} 
 
 
+##  Events for managing API keys that are associated to a service instance
+{: #rc_alias}
+
+The following table lists the actions that generate an event:
+
+| Action                         | Description |
+|--------------------------------|---------|
+| `service_name.alias.create` | An event is generated when an alias for an instance is created. |
+| `service_name.alias.update` | An event is generated when an alias for an instance is updated. |
+| `service_name.alias.delete` | An event is generated when an alias for an instance is deleted. |
+{: caption="Table 2. Actions that generate events" caption-side="top"} 
+
 
 ##  Events for managing API keys that are associated to a service instance
-{: #at_events_rc_keys}
+{: #rc_keys}
 
 The following table lists the actions that generate an event:
 
@@ -53,12 +65,12 @@ The following table lists the actions that generate an event:
 |--------------------------------|---------|
 | `service_name.key.create` | An event is generated when an API key is created for a service instance through the *Service credentials* section of the service instance UI. |
 | `service_name.key.delete` | An event is generated when an API key that is associated with a service instance is deleted from the *Service credentials* section of the service instance UI. |
-{: caption="Table 1. Actions that generate events" caption-side="top"} 
+{: caption="Table 3. Actions that generate events" caption-side="top"} 
 
 
 
 ##  Events for binding a service instance to an app
-{: #at_events_rc_bind}
+{: #rc_bind}
 
 The following table lists the actions that generate an event:
 
@@ -66,12 +78,12 @@ The following table lists the actions that generate an event:
 |--------------------------------|---------|
 | `service_name.binding.create` | An event is generated when you bind a service instance to an application. |
 | `service_name.binding.delete` | An event is generated when you unbind a service instance from an application. |
-{: caption="Table 1. Actions that generate events" caption-side="top"} 
+{: caption="Table 4. Actions that generate events" caption-side="top"} 
 
 
 
 ## Where to look for the events
-{: #at_events_rc_ui}
+{: #rc_ui}
 
 Events are available in the **US-South** region. 
 
