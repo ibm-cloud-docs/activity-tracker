@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-19"
+lastupdated: "2019-03-25"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, alerts, events
 
@@ -171,24 +171,6 @@ Complete the following steps to detach a preset:
 4. Select **Detach**.
 5. Confirm that you want to delete the alert. Click **Detach**.
 
-
-
-## Notification channels
-{: #channels}
-
-The following table lists the notification channels that you can configure when an alert is triggered:
-
-| Channel           | Configuration details | 
-|-------------------|-----------------------|
-| `email`             | You can configure one or more email addresses.  | 
-| `Slack`             | You can configure a slack channel. |
-| `Webhook`           | You can configure a web hook URL. |
-| `PagerDuty`         | You can configure connection details to your PagerDuty system, and select a service.|
-| `OpsGenie`          | You can configure the API key to connect to your OpsGenie system. |
-| `Datadog`           | You can configure the API key to connect to your `Datadog` system. |
-| `AppOptics/Librato` | You can configure the API key to connect to your AppOptics/Librato system. |
-| `VictorOps`         | You can configure the URL to notify when an alert is triggered, the routing key, and an alert type. Valid alert types are: `info`, `warning`, `critical` |
-{: caption="Notification channels" caption-side="top"} 
 
 
 

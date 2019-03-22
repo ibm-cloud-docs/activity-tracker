@@ -8,7 +8,6 @@ IBM Cloud Activity Tracker with LogDNA
     getting-started.md
     event.md
     cloud_services.md
-    manage_events.md
     iam.md
         
     {: .topicgroup}
@@ -41,6 +40,7 @@ IBM Cloud Activity Tracker with LogDNA
     regions.md
     endpoints.md
     service_plan.md
+    channels.md
 
     {: .topicgroup}
     Events

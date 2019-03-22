@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-19"
+lastupdated: "2019-03-25"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, export
 
@@ -22,7 +22,7 @@ subcollection: logdnaat
 {:note: .note}
 
  
-# Exporting events to local file
+# Exporting events
 {: #export}
 
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. You can export logs programmatically or from the IBM Log Analysis Web UI. 
