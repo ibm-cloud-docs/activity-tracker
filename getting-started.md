@@ -49,7 +49,7 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 
 ![Core features offered by the {{site.data.keyword.at_full_notm}} service](images/features.png "Core features offered by the {{site.data.keyword.at_full_notm}} service")
 
-For example, you can use the {{site.data.keyword.at_full_notm}} activity logs to identify the following information:
+For example, you can use the {{site.data.keyword.at_full_notm}} events to identify the following information:
 * The users who made API calls to cloud services
 * The time-stamp when the API calls were made
 * The status of the API call
@@ -66,7 +66,7 @@ Consider the following information about security when you work with the {{site.
 ## Objectives
 {: #gs_objectives}
 
-Complete this tutorial to learn how to provision and manage access to the service in the {{site.data.keyword.cloud_notm}}. Find out what common data is available in each event and how it can help you monitor your cloud environment. Learn to navigate in the web UI. 
+Complete this tutorial to learn how to provision a service in the {{site.data.keyword.cloud_notm}}. Find out what common data is available in each event and how it can help you monitor your cloud environment. Learn to navigate in the web UI. 
 
 
 ## Prerequisites
@@ -74,13 +74,12 @@ Complete this tutorial to learn how to provision and manage access to the servic
 
 * You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
-* Your {{site.data.keyword.IBM_notm}}ID must have assigned IAM policies to work in the {{site.data.keyword.cloud_notm}}. The following table lists the minimum permissions that you need to complete this tutorial: 
+* Your {{site.data.keyword.IBM_notm}}ID must have assigned IAM policies to work in the {{site.data.keyword.cloud_notm}} with {{site.data.keyword.at_full_notm}} service. The following table lists the minimum permissions that you need to complete this tutorial: 
 
 | Resource                             | Scope of the access policy | Role    | Region    | Information                  |
 |--------------------------------------|----------------------------|---------|-----------|------------------------------|
-| Resource group **Default**           |  Resource group            | Viewer  | us-south  | This policy is required to allow the user to see service instances in the Default resource group.    |
+| Resource group **Default**           |  Resource group            | Editor  | us-south  | This policy is required to allow the user to see service instances in the Default resource group.    |
 | {{site.data.keyword.at_full_notm}} service |  Resource group            | Editor  | us-south  | This policy is required to allow the user to provision and administer the {{site.data.keyword.at_full_notm}} service in the Default resource group.   |
-| ADD BASED ON SERVICE |   |
 {: caption="Table 1. List of IAM policies required to complete the tutorial" caption-side="top"} 
 
 * If you prefer to work with the command line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
@@ -93,17 +92,29 @@ Complete the following steps to provision an instance:
 
 1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
-	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. In the navigation menu, select **Observability**. 
+2. Go to the menu icon ![menu icon](../../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
 
-3. Select **Activity Tracker**. 
+3. Select **Activity Tracker**, then click **Create instance**. 
 
-    The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
+4. Enter a name for the service instance.
 
-4. Select one instance. Then, click **View LogDNA**.
+5. Select the region where you plan to provision the instance.
 
-The web UI opens.
+6. Select a resource group. 
+
+    By default, the **Default** resource group is set.
+
+    **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
+
+7. Select the `Lite` service plan. 
+
+    By default, the lite plan is set.
+
+8. Click **Create**.
+
+After you provision an instance, the *Activity Tracker* dashboard opens. 
 
 
 ## Step 2. Manage access to the service
@@ -176,23 +187,41 @@ The CADF event model includes the following components:
 | `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
 {: caption="Table 2. Components that are available in a CADF event model" caption-side="top"} 
 
-
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-event#event).
 
 
 ## Step 4. Generate {{site.data.keyword.at_full_notm}} events
 {: #gs_step4}
 
+Complete the following steps to generate an event when an instance of the {{site.data.keyword.cloudcerts_short}} service is provisioned:
 
 
+1. From the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog){:new_window}, select the category **Security and Identity**.
+
+2. Select the {{site.data.keyword.cloudcerts_short}} service.
+
+3. Enter a name for the service instance.
+
+4. Select the region where you plan to provision the instance.
+
+5. Select a resource group. 
+
+    By default, the **Default** resource group is set.
+
+    **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
+
+6. Select the `Free` service plan. 
+
+7. Click **Create**.
+
+An instance of the {{site.data.keyword.cloudcerts_short}} service is created.
 
 ## Step 5. Launch the web UI 
 {: #gs_step5}
 
 Complete the following steps to launch the web UI:
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account.
-
-    Click [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} to launch the {{site.data.keyword.cloud_notm}} dashboard.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
@@ -204,8 +233,7 @@ Complete the following steps to launch the web UI:
 
 4. Select one instance. Then, click **View LogDNA**.
 
-The Web UI opens.
-
+The web UI opens.
 
 
 ## Step 6. Viewing events

@@ -50,21 +50,23 @@ To provision an instance from the Observability dashboard in the {{site.data.key
 
 4. Enter a name for the service instance.
 
-5. Select a resource group. 
+5. Select the region where you plan to provision the instance.
+
+6. Select a resource group. 
 
     By default, the **Default** resource group is set.
 
     **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
 
-6. Select the `Lite` service plan. 
+7. Select the `Lite` service plan. 
 
     By default, the lite plan is set.
 
-7. Click **Create**.
+8. Click **Create**.
 
 After you provision an instance, the *Activity Tracker* dashboard opens. 
 
-Next, go to the web UI to manage events in your account. [Learn more]().
+Next, go to the web UI to manage events in your account. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events.md#view_events.md).
 
 
 
