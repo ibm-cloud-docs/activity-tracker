@@ -39,7 +39,6 @@ LogDNA supports two related capabilities: Super Tenancy and Activity Tracking.
     * [Root Access on Kubernetes](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#root_access)
     * [Not on Kubernetes?](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#not_kube)
     * [Precautions](docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#precautions)
-    * [Continuous Automated Tests](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#automated_tests)
 
 ## Super Tenancy
 {: #super_tenancy}
@@ -209,22 +208,3 @@ Now your service has the power to write log lines to any account in its region. 
 - If your service sends log lines to customers via super tenancy, then the service's documentation should explain those lines **when you start sending them** or earlier.
 - If your service is sending so many log lines, or such large log lines, that customers may be concerned about the cost, then add an option to control them. (However, note that the ST/AT service will be adding controls for this in the future.)
 - Develop AT events privately (in staging or ATS only), and review with Marisa/Architect Board before sending in production. Malformed events can break AT event consumers like QRadar, Security Advisor, and custom tools by IBM customers such as Caterpillar. Use the [event linter](https://github.ibm.com/activity-tracker/helloATv2#at-event-linter) to help ensure valid events.
-
-### Continuous Automated Tests
-{: #automated_tests}
-
-If your service stops storing ST lines or AT events successfully, it should trigger a PagerDuty incident for your service. Here are some guidelines for setting up an automated test for this. The guidelines are written with AT in mind, but also apply to ST.
-
-The automated test should cover the complete path that an AT event takes. Even though your automated test could use the ingestion API, it is better for the test data to come from your log files in `/var/log/at`.
-
-The black-box approach is to create a test program that exercises your service:
-
-1. The test program runs in its own "test account". In the test account, there is an instance of your service provisioned for the test program to use.
-1. As the test runs, it exercises your service in some simple ways, causing your service to generate AT events--say, every minute.
-1. In the test account, an Activity Tracker Receiver LogDNA instance is provisioned.
-1. Your test program *could* test for AT events in the ATR using the [LogDNA export API](https://docs.logdna.com/v1.0/reference#api). However, LogDNA is soon adding "absence detection" and "anomaly detection" alerting. You will be able to trigger your PagerDuty from inside LogDNA if the events fail to show up. This is less work for you, and avoids pages resulting from LogDNA problems. **TODO: check the ETA for this feature**
-1. The page occurs if events fail to appear after, say, 10 minutes. Adjust the interval based on experience with latency.
-
-If you are already running a test program similar to the above, then you may only need to add steps 3 and 4.
-
-This is a general design for generating AT events from outside your service, and then evaluating the events outside your service. Consider expanding this test to include more AT events and scenarios, so that you get more value out of the test.
