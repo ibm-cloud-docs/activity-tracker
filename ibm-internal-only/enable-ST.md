@@ -181,7 +181,7 @@ Now test super tenancy. In the diagram, this is the red line that runs from MySe
 ## 7. Alert on ST/AT outage
 {: #alert-at}
 
-It is your service's responsibility to ensure that its AT events keep coming; no one else is monitoring them. If your service stops storing ST log lines or AT events successfully, it should trigger a PagerDuty incident. The following instructions set up an alert in LogDNA that pages you if your logs or events stop coming in. The instructions are written for AT events, but also apply to ST log lines.
+It is your service's responsibility to ensure that its AT events keep coming; no one else is monitoring them. If your service stops storing ST log lines or AT events successfully, it should trigger a PagerDuty incident. You can set up an alert in LogDNA that pages you if your logs or events stop coming in. See [here](https://docs.logdna.com/docs/views) for a tutorial on setting up views/alerts. The quick instructions below are written for AT events, but also apply to ST log lines.
 
 These steps assume your service is sending AT events to its ATSender. The steps assume your ingestion is constant, so that a minute never goes by without getting at least one event. Otherwise, your service needs to send a synthetic event every minute just to prove it is still working.
 
