@@ -35,7 +35,7 @@ If you are enabling Activity Tracker, you must first enable Super Tenancy becaus
 5. [Provision an Activity Tracker Sender](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#provision-at)
 6. [Test your service's Activity Tracking](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test-at)
 7. [Alert on ST/AT outage](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#alert-at)
-<br/>
+<br/><br/>
 When you complete these steps, your service can use Super Tenancy and (if applicable) Activity Tracker. To use Super Tenancy, your service must write super tenant log lines in JSON, using the `logSourceCRN` field and (optionally) the `saveServiceCopy`. Otherwise, they will be handled as normal log lines. Similarly, to use Activity Tracking, your service must write Activity Tracker events using the `logSourceCRN` field and (optionally) the `saveServiceCopy` field. Otherwise, they will only be saved in your service's Activity Tracker instance. Read about the format of AT events [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/event_definition.html#ibm_event_fields), and the specific changes for LogDNA [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/partner_news.html#ibm_partner).
 
 ## Before you start
@@ -193,7 +193,7 @@ These steps assume your service is sending AT events to its ATSender. The steps 
 6. Select "Absence". The alert should now say "When less than `1` matches appear within `15 minutes`.
 7. Configure the PagerDuty information for your service, and click "Save View".
 
-You can test the alert by temporarily setting then threshold higher than your 15-minute ingestion.
+You can test the alert by temporarily setting the threshold higher than your 15-minute ingestion.
 
 After you get this basic alert working, consider ways to improve it for your individual service. For example, if you can determine the orginating cluster from your AT event, then set up a separate alert for each cluster. Then you will know if a single cluster stops sending, even if the others are still working. You can create a single "preset" alert that is shared between filters, by going to the gear icon and then "Alerts". In general, find ways to pinpoint the problem more quickly by refining the alerts.
 
