@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-25"
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account events
 
@@ -56,7 +56,7 @@ The following table lists the actions that generate an event:
 |--------------------------------------|-------------|
 | `user-management.user.create`        | An event is generated when you send an invitation to a user to join an account. |
 | `user-management.user.active`        | An event is generated when you activate the user in the account. When the user verifies the email address, the event is generated. |
-| `user-management.account.user.delete` | An event is generated when you remove a user from the account. |
+| `user-management.user.delete`        | An event is generated when you remove a user from the account. |
 {: caption="Table 2. Actions that generate events" caption-side="top"} 
 
 
