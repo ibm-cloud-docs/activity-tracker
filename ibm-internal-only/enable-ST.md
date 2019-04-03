@@ -34,8 +34,8 @@ If you are enabling Activity Tracker, you must first enable Super Tenancy becaus
 4. [Test your service's Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test) <br/><br/>Continue only if you are setting up Activity Tracker...
 5. [Provision an Activity Tracker Sender](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#provision-at)
 6. [Test your service's Activity Tracking](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#test-at)
-
-<br/>
+7. [Alert on ST/AT outage](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#alert-at)
+<br/><br/>
 When you complete these steps, your service can use Super Tenancy and (if applicable) Activity Tracker. To use Super Tenancy, your service must write super tenant log lines in JSON, using the `logSourceCRN` field and (optionally) the `saveServiceCopy`. Otherwise, they will be handled as normal log lines. Similarly, to use Activity Tracking, your service must write Activity Tracker events using the `logSourceCRN` field and (optionally) the `saveServiceCopy` field. Otherwise, they will only be saved in your service's Activity Tracker instance. Read about the format of AT events [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/event_definition.html#ibm_event_fields), and the specific changes for LogDNA [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/partner_news.html#ibm_partner).
 
 ## Before you start
@@ -177,3 +177,24 @@ Now test super tenancy. In the diagram, this is the red line that runs from MySe
 7. Look in your STS LogDNA again, and verify that the event came through.
 8. Now go back to the customer account where your service instance is provisioned, and look at that AT instance. You should also see the event there.
 9. As a further test, add `"saveServiceCopy":false` to the line, and verify that it *only* is saved for the customer, and not in your service's ATSender.
+
+## 7. Alert on ST/AT outage
+{: #alert-at}
+
+It is your service's responsibility to ensure that its AT events keep coming; no one else is monitoring them. If your service stops storing ST log lines or AT events successfully, it should trigger a PagerDuty incident. You can set up an alert in LogDNA that pages you if your logs or events stop coming in. See [here](https://docs.logdna.com/docs/views) for a tutorial on setting up views/alerts. The quick instructions below are written for AT events, but also apply to ST log lines.
+
+These steps assume your service is sending AT events to its ATSender. The steps assume your ingestion is constant, so that a minute never goes by without getting at least one event. Otherwise, your service needs to send a synthetic event every minute just to prove it is still working.
+
+1. Open the LogDNA UI for your ATSender. You should see all your AT events going by. (If not, try selecting "LIVE" in the lower right.)
+2. To create an alert, you first have to apply a filter. In the "Search..." field at the bottom, enter "*" to include everything.
+3. Now the title in the top left changes from "Everything" to "Unsaved View". Click on it, and select "Save as new view / alert".
+4. Give your new view a name, like "All my events". You can optionally put it in a Category.
+5. Click "Attach an alert" > "Please choose an option" > "View-specific alert" > "PagerDuty"
+6. Select "Absence". The alert should now say "When less than `1` matches appear within `15 minutes`.
+7. Configure the PagerDuty information for your service, and click "Save View".
+
+You can test the alert by temporarily setting the threshold higher than your 15-minute ingestion.
+
+After you get this basic alert working, consider ways to improve it for your individual service. For example, if you can determine the orginating cluster from your AT event, then set up a separate alert for each cluster. Then you will know if a single cluster stops sending, even if the others are still working. You can create a single "preset" alert that is shared between filters, by going to the gear icon and then "Alerts". In general, find ways to pinpoint the problem more quickly by refining the alerts.
+
+Also consider alerting on AT events that indicate problems in your actual service.
