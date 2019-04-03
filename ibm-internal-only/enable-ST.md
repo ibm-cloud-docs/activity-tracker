@@ -24,7 +24,7 @@ subcollection: logdnaat
 
 ## Overview
 {: #overview}
-Follow the steps on this page to enable Super Tenancy and Activity Tracker on your service. See [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#understand_st) for architecture and other enablement considerations.
+Follow the steps on this page to enable Super Tenancy and Activity Tracker on your service. See [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#understand_st) for architecture and other enablement considerations.
 
 If you are enabling Activity Tracker, you must first enable Super Tenancy because AT is now a layer on top of ST. So first complete the Super Tenancy steps on this page, and then continue through the Activity Tracker steps.
 
@@ -41,7 +41,7 @@ When you complete these steps, your service can use Super Tenancy and (if applic
 ## Before you start
 {: #before}
 
-- Request a "provision key" for super tenancy by opening an issue [here](https://github.ibm.com/activity-tracker/customer-issues/issues/new?template=logdna_provision_key.md). This key is for _provisioning_ an ST or AT Sender, so that only service owners can do it. You will only use this key for the `service-instance-create` commands in the ST and AT instructions, and then you won't need it again.
+- Request a "provision key" for super tenancy by opening an issue [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/activity-tracker/customer-issues/issues/new?template=logdna_provision_key.md){:new_window}. This key is for _provisioning_ an ST or AT Sender, so that only service owners can do it. You will only use this key for the `service-instance-create` commands in the ST and AT instructions, and then you won't need it again.
 - Have the IBM Cloud command line installed.
 - Be logged into your service's account in production.
 
@@ -84,7 +84,7 @@ To send log lines to the STSender, you need its ingestion key. This key is used 
 ## 3. Install LogDNA Agent on Kubernetes
 {: #kube_agent}
 
-If your service is not running on Kubernetes, refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#not_kube). Otherwise, install the logdna-agent on Kube by the following steps. These steps assume a clean install rather than an upgrade.
+If your service is not running on Kubernetes, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#not_kube). Otherwise, install the logdna-agent on Kube by the following steps. These steps assume a clean install rather than an upgrade.
 
 1. Using the STSender ingestion key that you got above:<br/> `kubectl create secret generic logdna-agent-key --from-literal=logdna-agent-key=<INGESTION KEY>`
 2. Download <a href="https://github.ibm.com/rbertram/scratch/blob/master/logdna-onboard/logdna-agentv2-ds-us-south.yaml" download>logdna-agentv2-ds-us-south.yaml</a> and install it:<br/>`kubectl create -f logdna-agentv2-ds-us-south.yaml`<br/>Notes:
@@ -158,7 +158,7 @@ In the Observabilty view, click "Activity Tracker" and see your new ATSender.
 First, ensure that the ATSender is receiving the events from your service. In the diagram above, this is the red line that goes down to MyService-ATS.
 
 1. In Observability > Activity Tracker, click "View LogDNA" for your ATSender.
-2. You should see the events that your service writes to files in `/var/log/at` or `/var/log/at-no-rotate`. (Refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_kube#ibm_kube) for explanation of `at-no-rotate`; search for "at-no-rotate".)
+2. You should see the events that your service writes to files in `/var/log/at` or `/var/log/at-no-rotate`. (Refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_kube#ibm_kube) for explanation of `at-no-rotate`; search for "at-no-rotate".)
 3. If your service is not writing events yet (i.e. it is using AT for the first time), then write the following sample line in a sample AT log file (e.g. `/var/log/at/test.log`). Refer to the ST test instructions for how to write to your cluster's logs.
 
 ```

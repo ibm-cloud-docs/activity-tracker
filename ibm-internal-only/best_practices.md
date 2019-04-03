@@ -235,25 +235,6 @@ To test Activity Tracker, complete the following steps when your service forward
 
 ## Documenting events
 
-
-Information about AT events that customers can monitor must be documented. 
-
-Your services technical writer must complete the following steps to document the Activity Tracker events that your service generates:
-
-1. Create a topic that list all the Activity Tracker events. 
-2. Add the topic to the Reference section of your service documentation. Use the template: [Template Activity Tracker events](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/at_events_acc_mgt.html#at_events)
-3. Update the Activity Tracker documentation to include your service information.
+This section has been moved to [Documenting events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_docs#ibm_docs).
 
 
-For any documentation queries, contact Marisa (lopezdsr@uk.ibm.com) in slack.
-For CADF compliance queries, contact Brendan Hayes (brendan.hayes@us.ibm.com) in slack.
-
-### Where will the information be available? 
-
-Specific event information for a service is provided through a reference topic that is owned and maintained by your service.
-
-General overview services information about the events that services send to AT will be available through the following URL: 
-
-* [Cloud services](/docs/services/cloud-activity-tracker/cloud_services.html#cloud_services)
-
-Your service is responsible for including the entry of your service in the list.
