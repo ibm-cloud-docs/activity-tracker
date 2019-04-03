@@ -198,3 +198,4 @@ You can test the alert by temporarily setting the threshold higher than your 15-
 After you get this basic alert working, consider ways to improve it for your individual service. For example, if you can determine the orginating cluster from your AT event, then set up a separate alert for each cluster. Then you will know if a single cluster stops sending, even if the others are still working. You can create a single "preset" alert that is shared between filters, by going to the gear icon and then "Alerts". In general, find ways to pinpoint the problem more quickly by refining the alerts.
 
 Also consider alerting on AT events that indicate problems in your actual service.
+

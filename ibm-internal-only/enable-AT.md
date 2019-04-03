@@ -34,7 +34,7 @@ LogDNA supports two related capabilities: Super Tenancy and Activity Tracking.
 * [Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#super_tenancy)
 * [Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#activity_tracker)
 * [Other Considerations](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/understand_st.html#considerations)
-    * [Regions](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#regions)
+    * [Regions](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#regions)
     * [Writing to Log Files from Pods](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#pods)
     * [Root Access on Kubernetes](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#root_access)
     * [Not on Kubernetes?](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#not_kube)
@@ -107,6 +107,7 @@ When your service writes to a log file in Kubernetes, each pod should write to a
 /var/log/at/myService_pod2.log
 /var/log/at/myService_pod3.log
 ```
+{: codeblock}
 
 You can use code like this to keep the log files separate:
 
@@ -114,6 +115,7 @@ You can use code like this to keep the log files separate:
 const hostname = os.hostname();
 const logFileName = `/var/log/at/${hostname}.log`;
 ```
+{: codeblock}
 
 For ST logging, you can use `stdout` to sidestep this problem, but AT requires writing to a a file.
 
@@ -122,7 +124,7 @@ For ST logging, you can use `stdout` to sidestep this problem, but AT requires w
 
 For a service using Activity Tracker on Kubernetes, the best practice is for the service to write the AT events to a host-mounted volume on the worker node. The service writes to a log file in `/var/log/at`, and an agent reads the events and sends them to AT. In the case of an outage in nearly any part of the system, the AT events will be preserved in the log file and processed when the outage is resolved. This design works for the legacy AT with a fluentd output plugin, and the LogDNA AT with the LogDNA agent.
 
-Unfortunately, this solution requires writing as root to `/var/log/at`, since Kubernetes creates the mount path on the worker as root. To avoid writing as root, create an initContainer that runs as root to change the permissions of the directory. See [this section](https://console.test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_kube#init-containers) for more details on setting up an init container to do this.
+Unfortunately, this solution requires writing as root to `/var/log/at`, since Kubernetes creates the mount path on the worker as root. To avoid writing as root, create an initContainer that runs as root to change the permissions of the directory. See [this section](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_kube#init-containers) for more details on setting up an init container to do this.
 
 Another alternative is for the service to call the AT API to send the AT events. LogDNA has an ingestion API, as does the legacy AT service. However, there is a requirement for the service to persist the AT events in the case of any lengthy outage. Therefore, the service should not call the API directly from its code, relying on a memory buffer to queue the events. The service would need to save the events persistently while they are waiting to be sent to AT, which leads back to the same problem.
 
@@ -161,6 +163,7 @@ LOGDNA_LOGHOST = logs.us-south.logging.cloud.ibm.com
 # start the agent with the LDLOGPATH env variable
 $ sudo LDLOGPATH=/supertenant/logs/ingest logdna-agent start
 ```
+{: codeblock}
 
 #### 3. Use the LogDNA ingestion API
 
@@ -192,6 +195,7 @@ curl "https://logs.us-south.logging.test.cloud.ibm.com/supertenant/logs/ingest?h
   ]
 }'
 ```
+{: codeblock}
 
 Notes:
 - This is an Activity Tracker example, because the "app" is set to the `/var/log/at` directory. This causes the STSender to forward to AT; otherwise, it is just normal super tenant lines.
