@@ -34,6 +34,16 @@ You can use Activity Tracker (AT) to:
 4. <b style=" color:#002080">Centralize the analysis of logs and events.</b> AT works with the [IBM Cloud Log Analysis service](https://pages.github.ibm.com/alchemy-logmet/). Therefore, you can also use the IBM Cloud Log Analysis URL to analyze event data with your log data.
 
 
+
+## Types of events
+
+There are two kinds of events in Activity Tracker:
+
+* **Management Events**:  These are events that are generated when an API call changes the state of a Cloud resource. A resource might be an entire service instance or a resource managed internally by a service. A resource can be whatever the user experiences as a "thing" that they can create/update/delete, regardless of its internal implementation. For example, creating a policy for a user. 
+
+* **Data Events**: These are events that are generated when an API call retrieves the data from a resource. There are an order-of-magnitude more data events than management events, so the user must opt in to start saving them. **NOTE: Data events are not currently supported in Activity Tracker, but will be in the future.**
+
+
 ## Activity data format
 
 Event data must comply with the CADF standard. To see sample apps that work with Activity Tracker in various languages and generate CADF formatted events, see [helloAT](https://github.ibm.com/activity-tracker/helloAT).

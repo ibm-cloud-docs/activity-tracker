@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2019
-lastupdated: "2019-03-25"
+  years: 2019
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, archive logs, COS, cloud object storage
 
