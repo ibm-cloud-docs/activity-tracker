@@ -93,9 +93,9 @@ You will need to document that you are doing this, and suggest how to filter the
 
 **My service sends global events which are not tied to any region. What can I do?**
 
-For now, global events are being stored in Dallas by convention. We will address this in a better way in the future.
+For now, global events are being stored in `eu-de` (Frankfurt) by convention. (Formerly in Dallas, but this is changing.) We will address this in a better way in the future.
 
-For now, store events in Dallas as explained above, but in `logSourceCRN` set the `location` segment to `global` instead of `us-south`. This will indicate to the customers that it is a global event. Furthermore, this field maybe used in the future to trigger special handling of global events.
+For now, store events in `eu-de` by using an STSender/ATSender in Fankfurt, but in `logSourceCRN` set the `location` segment to `global` instead of `us-south`. This will indicate to the customers that it is a global event. Furthermore, this field maybe used in the future to trigger special handling of global events.
 
 ### Writing to Log Files from Pods
 {: #pods}
