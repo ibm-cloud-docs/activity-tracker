@@ -452,22 +452,41 @@ Since Kubernetes mount host paths as root, you may need to change the file
 permissions so your service can write logs there. One such method is to run
 an `initContainer` that changes the file permissions.
 
-If your service name is `helloAT` then you could add this to your pod spec:
+If your service name is `helloAT` then you could add `initContainers` to your pod spec:
 
 ```
-yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: activity-tracker
+  labels:
+    app: activity-tracker
+spec:
+  volumes:
+    - name: at-events
+      hostPath:
+        path: /var/log/at
+  containers:
+  - name: activity-tracker
+    image: busybox:1.28
+    command: ['sh', '-c', 'echo The app is running! && sleep 3600']
+    volumeMounts:
+      - name: at-events
+        mountPath: /var/log/at
+    securityContext:
+      runAsUser: 1001
   initContainers:
-    - name: fix-permissions
-      image: alpine:3.6
-      command:
-        - sh
-        - -c
-        - 'mkdir -p /var/log/at/helloAT; chmod -R a+rwx /var/log/at/helloAT'
-      volumeMounts:
-        - name: at-events
-          mountPath: /var/log/at
-      securityContext:
-        runAsUser: 0
+  - name: init-activity-tracker
+    image: alpine:3.6
+    command:
+      - sh
+      - -c
+      - 'mkdir -p /var/log/at/helloAT; chmod -R a+rwx /var/log/at/helloAT'
+    volumeMounts:
+      - name: at-events
+        mountPath: /var/log/at
+    securityContext:
+      runAsUser: 0
 ```
 {: codeblock}
 
