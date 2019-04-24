@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-02-13"
+  years: 2019
+lastupdated: "2019-04-15"
 
 ---
 
@@ -26,107 +26,10 @@ lastupdated: "2019-02-13"
 {:middle: .ph data-hd-position='middle'}
 {:right: .ph data-hd-position='right'}
 
-# Creating front matter for your IBM Cloud API Docs
-
-This template is designed to help you extend your Swagger 2.0 or OpenAPI 3.0 API documentation. Every offering onboarding into IBM Cloud must deliver API documentation, and this requirement includes adding some additional front matter to your API docs that use our extensions. The required sections are few, and you can author them in Markdown. We have a parser that transforms your .md file into an assembled JSON output and merges the output with your Swagger or OpenAPI JSON file.
-
-## Markdown rules
-
-The API IBM Docs app is rendered as a 3-pane GUI, and is broken into three parts:
-
-| Left | Middle | Right |
-|-----|--------|-------|
-| Navigation uses H1 pre-defined titles. You never need to use attributes to define left content - only H1 titles are used. | All content is defined as `{: middle}` by default. Any element or header that does not otherwise specify a position is rendered in the middle pane. H1 headings display in the left pane as the navigation entry and as the title in the middle pane. H3 headings display under the H1 title in the left pane and within the H1 section in the middle pane. **Note**: H2 titles are *never* rendered. | The right pane is designed to show code examples.<br>&nbsp;- To render code examples in the right pane, use H2s with the `{: right}` attribute. Include the language (`{: java}`) attribute to make it language specific.<br>&nbsp;- To line up the middle and right pane, nest code examples as H2s inside the H1 middle-pane content you want to align with. |
-
-**Tip**: Although the language tabs (for example, Curl, Node, Java, Python, Ruby) are displayed in the right-pane, switching these languages can change the display in both the middle and right panes.
-
----
-
-H1:
-
-* Titles are rendered as entries in both the left navigation and the title in the middle pane.
-* H1 can include `inline code`, images, tables, links, bullets, numbered lists, and any markdown element.
-* H1 is non-language specific unless otherwise modified by binding an attribute to it (which we don't recommend for most users)
-* H1 retains its language value until a new H1 is introduced. When an element within the H1 (including h2, h3, etc.) is bound with a language-attribute (for example, `{: java}`), only that element becomes language-specific. The next subsequent element reverts to generic.
-* H1 usually do not include H3s because H2s nested inside H1s are used to create relationships between the middle and right pane. You don't need to break that relationship by introducing an H3.
-* H1 can include any conrefs from the same master yaml conref file as used with docs. For example, `{{site.data.keyword.visualrecognitionshort}}`.
-
----
-
-H2:
-
-* H2 titles are **never** rendered. The H2 is used in these extensions explicitly as a container for language or for position-specific rendering. Many examples are included to demonstrate middle-pane and right-pane H2s with language attributes and custom content that displays in middle and right panes.
-* H2 can include all valid markdown.
-* H2 can include H3s.
-* H2 retains its language value (just like H1) until a new heading is introduced. Any time an element within the H2 (including h3s) is bound with a language-attribute like `{: java}`, only that element becomes language-specific. The next subsequent element reverts to generic.
-* H2 can include conrefs.
-
-We include some H2 examples that are associated with the `# Introduction` and `# Data collection` H1 sections. The /apidocs GUI is separated into three panes (Left nav/middle/right). To provide custom code examples in different programming languages (for example, Curl, Node, Java, and Python), add language-specific attributes to H2s within the H1 (TOC and middle) content.
-
-Different ways to structure your H2s:
-
-* Provide one H2 for each corresponding language and apply the language and position tags only to the H2.
-    * Everything that is nested within the H2 appears under that language tab on the right pane. See the samples below associated with `# Introduction`.
-    * This method supports nesting multiple content types (bullets, codeblocks, h3s, paragraphs, and so on) under the example.
-* Create an H2 that is generic. Nest your codeblocks within that h2 and bind language and position attributes to each of the included examples. This technique can be useful when you have several codeblocks for each language. See the example below for `# Data collection`.
-* Exclude content and examples for a language. For example, see the `# Additional headers` section below. This section illustrates how to exclude the content from Curl but render middle and right pane content for Node, Java, and Python.
-      * Alternatively, deliver an entire section only for a single language. Bind an H1 with a language attribute to display the content only when that language tab is selected.
-
-**Note**: You can also use H2s to add custom content to the middle-pane! See the `# Error handling` section.
-
----
-
-H3:
-
-* H3 sections are rendered in both the left navigation and the middle pane. The H3 is used to organize complex H1 sections.
-* H3s can also include H2s to specify position.
-* To make an H3 heading and its content language-specific, you have to add language attributes to both the heading and to the content blocks (for example, to each paragraph). Without the language attribute, the H3 heading or content renders in all languages.
-
----
-
-H4:
-* H4 sections are rendered only in the middle pane. Use H4s to further organize H3 content.
-
-
----
-
-Code examples:
-
-Place code examples within backticks (```) and bind the language class attribute to the codeblock. Two types of language mapping to codeblocks are used:
-
-* Define the syntax highlighting for the language on the same line as the first backticks (```java). See http://highlightjs.readthedocs.io/en/latest/css-classes-reference.html#language-names-and-aliases for the complete list of supported languages.
-* Bind the codeblock to a language tab with an attribute after the codeblock. This binding defines which language tab renders the codeblock (`{: java}`).
-
-**Important:** These two values sometimes do not match. For example, with **Node**, use `javascript` for the highlighting and `{: node}` for the binding. See the code examples in the `# Data collection` section for more details.
-
-## Section order
-
-This is the required order all sections.
-
-* **Introduction**, **Error handling**, **Authentication** are required.
-* Include other sections that apply to your API.
-* For your own custom sections, please ask on `#api-enablement` Slack channel about how to open a request for a new section.
-
-1. Introduction **REQUIRED**
-2. Error handling **REQUIRED**
-3. Authentication **REQUIRED**
-4. Versioning
-5. Additional headers
-6. Data labels
-7. Data collection
-8. Pagination
-9. Sorting
-10. Filtering
-11. Searching
-12. Rate limiting
-13. Related APIs
-14. Deprecated APIs
-
----
 
 # Introduction
 
-**Required**
+
 **Purpose**: This section is all about giving your customers an overall intro to the API you are documenting. You can provide as much information as you like, and provide language specific code examples that would apply to the API as a whole. Try and be as descriptive as possible - what is the service for? Why do they care? Feel free to link off to your docs or other resources.
 
 **Example**:
@@ -577,52 +480,3 @@ TBD
 **Purpose**: Does your API support filtering? For example, do you support the use of pre-defined tags? If so, provide details to clarify how your API handles filtering. For more information, see: [API Handbook - Filtering](https://pages.github.ibm.com/CloudEngineering/api_handbook/collections/filtering.html)
 **Example**:
 
-TBD
-
-# Searching
-
-**Optional**
-**Purpose**: (Link to the API Handbook - NA)
-**Example**:
-
-TBD
-
-# Rate limiting
-
-**Optional**
-**Purpose**: Provide details if your API supports rate limiting. In the example, we see details about a response header that shows users how close they are to the rate limit. (Link to the API Handbook TBD)
-**Example**:
-
-Rate limits for API requests are enforced on a per-service-instance basis. If the number of requests for a particular method and endpoint reaches the request limit within the specified time window, no further requests are accepted until the timer expires. After the timer expires, a new time window begins with the next accepted request.
-
-The response to each HTTP request includes headers that you can use to determine whether you are close to the rate limit:
-
-* X-RateLimit-Reset: the time the current timer expires (in UNIX epoch time)
-* X-RateLimit-Remaining: the number of requests remaining in the current time window
-* X-RateLimit-Limit: the total number of requests allowed within the time window
-
-HTTP status code `429` indicates that the rate limit has been exceeded.
-
-The number of allowed requests, and the length of the time window, vary by method and endpoint. The reference information for each endpoint specifies the rate limit that applies.
-
-# Related APIs
-
-**Optional**
-**Purpose**: Are you delivering a set of grouped APIs? Or maybe your offering has three kinds of APIs but you want to define the interrelationship between them? Provide any text that explains how one or more related APIs might be useful for the user to understand.
-**Example**:
-
-Intro text...
-
-* [Conversation](/apidocs/conversation)
-* [Natural Language Classifier](/apidocs/natural-language-classifier)
-* [Visual Recognition Dedicated](/apidocs/dedicated/visual-recognition-dedicated)
-
-# Deprecated APIs
-
-**Optional**
-**Purpose**: Have you deprecated one or more APIs associated with the latest one you are documenting? Provide some information about the deprecation and link to the deprecated API.
-**Example**:
-
-Intro text...
-
-* [V1](/apidocs/v1/visual-recognition-extension)
