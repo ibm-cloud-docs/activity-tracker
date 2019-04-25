@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-24"
+lastupdated: "2019-04-25"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -38,9 +38,11 @@ Core platform services generate events that you can view through the **us-south*
 The following table lists core platform services that send events to {{site.data.keyword.at_full_notm}}:
 
 | Service     | Description | {{site.data.keyword.at_full_notm}} events |
-|-------------|-------------|-------------|
-| [Provisioning and managing catalog services for resources that are managed by {{site.data.keyword.iamshort}} (IAM)](/docs/overview?topic=overview-ui#catalogcreate) | You can provision a service instance, rename a service instance, change the plan of a service instance, and remove a service instance. | [Events that are generated when you interact with catalog services ](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_rc#at_events_rc) |  
+|-------------|-------------|-------------------------------------------|
+| [Managing an account](/docs/account?topic=account-accounts#accounts) | You can sign up for an {{site.data.keyword.IBM_notm}} account by using an existing IBMid, creating a new IBMid, or by using a federated ID. | [Events that are generated when you manage an account](/docs/services/cloud-activity-tracker/services?topic=cloud-activity-tracker-at_events_acc_mgt#at_events_acc_mgt_account) |
 | [Managing users](/docs/iam?topic=iam-iamuserinv#iamusermanage) | You can view and manage users across the account or organizations that you own or manage.  | [Events that are generated when you manage users ](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_acc_mgt#at_events_acc_mgt) |
+| [Managing organizations](/docs/account?topic=account-orgsspacesusers#orgsspacesusers) | As an account owner, you can add and manage organizations to the account. | [Events that are generated when you manage organizations ](/docs/services/cloud-activity-tracker/services?topic=cloud-activity-tracker-at_events_acc_mgt#at_events_acc_mgt_org) |
+| [Provisioning and managing catalog services for resources that are managed by {{site.data.keyword.iamshort}} (IAM)](/docs/overview?topic=overview-ui#catalogcreate) | You can provision a service instance, rename a service instance, change the plan of a service instance, and remove a service instance. | [Events that are generated when you interact with catalog services ](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_rc#at_events_rc) |  
 {: caption="List of core platform actions" caption-side="top"} 
 
 
