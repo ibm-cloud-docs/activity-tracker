@@ -43,7 +43,7 @@ Here are the most common definitions that will be used in this document:
 * **Logging Super Tenant Sender (STS)**: STS is your service's super tenant {{site.data.keyword.la_short}} instance. You view your service's logs in this instance. 
 * **Logging Super Tenant Receiver (STR)**: STR is a logging instance created by the user. This is the instance in the customer's account where the customer can view logs that your service sends to them. The customer can also view any logs they are generated from their custom applications.
 * **Activity Tracker Sender (ATS)**: ATS is your service's {{site.data.keyword.at_short}} instance. All your service Activity Tracker (AT) events will be found here.
-* **Activity Tracker Receiver (ATR)**: ATR is the customer's {{site.data.keyword.at_short}} instance. This is the instance where a customer can view AT events that your service sends to them. There is an instance per region where the AT service is available.
+* **Activity Tracker Receiver (ATR)**: ATR is the customer's {{site.data.keyword.at_short}} instance. This is the instance where a customer can view AT events that your service sends to them. 
 
 ## Steps to enable Super tenancy and Activity Tracker
 {: #st_process}
@@ -583,16 +583,22 @@ The following example shows how to create an absence alert for a service ATS and
 
 **My service is deployed in Sydney but LogDNA is not there yet. What can I do?**
 
-Here is how to send you events from your service in Sydney to another region. In the example below ,the service's events are being sent to us-south. Services must document this deviation so their customers can find their events.
+Here is how to send you events from your service in Sydney to another region. 
+
+In the example below, the service's events are being sent to us-south. Services must document this deviation so their customers can find their events.
 Once Activity Tracker is available in Sydney, your service should switch to storing events in Sydney.
 
 
 1. Write your service's events and logs in Sydney. Fill in the `logSourceCRN` with the CRN of the customer instance of your service in Sydney.
 2. Create a Logging STS and Activity Tracker ATS for your service in us-south if they do not already exist. This is where you will find your service events and logs from Sydney.
 3. Deploy LogDNA agents in Sydney.
-  - Add your us-south Logging STS ingestion key as a secret in your cluster in au-syd.
-  - Use the us-south super tenant LogDNA agent deployment yaml to deploy agents in Sydney. 
-  - The `LDAPIHOST` and `LDLOGHOST` values in the yaml reference the us-south ingestion points. So that is where your logs and events will be sent.
+
+    * Add your us-south Logging STS ingestion key as a secret in your cluster in au-syd.
+
+    * Use the us-south super tenant LogDNA agent deployment yaml to deploy agents in Sydney. 
+
+    The `LDAPIHOST` and `LDLOGHOST` values in the yaml reference the us-south ingestion points. So that is where your logs and events will be sent.
+
 4. Users of your service will have to create a Logging STR and Activity Tracker ATR if they wish to view events and logs from your service in Sydney. Note, you do not have to create these instances if they already exist.
 
 
@@ -603,13 +609,15 @@ For now, global events are being stored in eu-de (Frankfurt) by convention. (For
 1. For your service create your Logging STS and Activity Tracker ATS instances in eu-de.
 2. Gather your logging STS ingestion key.
 3. In all regions:
-  - Add the ingestion key above as a secret.
-  - Install the eu-de version of the logDNA agent
+
+    * Add the ingestion key above as a secret.
+
+    * Install the eu-de version of the logDNA agent
   
-```
-kubectl create -f http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
-```
-{: codeblock}
+    ```
+    kubectl create -f http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
+    ```
+    {: codeblock}
 
 4. When your service writes events, change the region section of the logSourceCRN to `global`. This will indicate to the customers that it is a global event. Furthermore, this field maybe used in the future to trigger special handling of global events.
 
