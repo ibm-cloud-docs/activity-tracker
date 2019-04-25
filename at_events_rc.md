@@ -43,8 +43,10 @@ The following table lists the actions that generate an event:
 {: caption="Table 1. Actions that generate events" caption-side="top"} 
 
 
-##  Events for managing API keys that are associated to a service instance
+##  Events for managing aliases that are associated to a service instance
 {: #rc_alias}
+
+An alias is a connection between your IAM-managed service within a resource group and an application within an org or a space.
 
 The following table lists the actions that generate an event:
 
@@ -56,8 +58,10 @@ The following table lists the actions that generate an event:
 {: caption="Table 2. Actions that generate events" caption-side="top"} 
 
 
-##  Events for managing API keys that are associated to a service instance
+##  Events for managing service credentials that are associated to a service instance
 {: #rc_keys}
+
+A service credential provides the necessary information to connect an application to a service instance. Service credentials are always associated with a `Service ID`.
 
 The following table lists the actions that generate an event:
 
@@ -69,7 +73,7 @@ The following table lists the actions that generate an event:
 
 
 
-##  Events for binding a service instance to an app
+##  Events for binding and unbinding a service instance to an app
 {: #rc_bind}
 
 The following table lists the actions that generate an event:
