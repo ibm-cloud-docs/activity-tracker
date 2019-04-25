@@ -80,17 +80,14 @@ Below is a list of steps to follow. You can either use the link to go the a sect
 This step is required for existing services that are planning to on-board to {{site.data.keyword.at_short}} or if you just want to send logs from your service to users.
 {: note} 
 
-Complete the following steps to on-board your service:
-
 ### Activity Tracker and Logging JSON 
 
-Two new fields are added to the Logging and Activity Tracker JSON:
+You must add two new fields to the Logging and Activity Tracker JSON:
 
 * **logSourceCRN**: This field indicates the customer whom you want to receive the log or event. The logSourceCRN is the CRN of the service instance of your service created by the customer. If not present, no event will be sent to a customer.
+* **saveServiceCopy**: This field indicates if your service wants a copy of the log or event. This is an `optional` field. If the field is not present, the default of true will be used and your service will get a copy of the log or event. Set this field to false if your service does not want a copy of the log record or event.
 
- * **saveServiceCopy**: This field indicates if your service wants a copy of the log or event. This is an `optional` field. If the field is not present, the default of true will be used and your service will get a copy of the log or event. Set this field to false if your service does not want a copy of the log record or event.
-
- ```
+```
 {
   'payload': {'message': <new_msg_format>, /* existing CADF fields */},
   'meta': {<meta>},
