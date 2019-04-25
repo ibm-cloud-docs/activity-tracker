@@ -39,8 +39,8 @@ The following table lists core platform services that send events to {{site.data
 
 | Service     | Description | {{site.data.keyword.at_full_notm}} events |
 |-------------|-------------|-------------|
-| [Provisioning and managing catalog services for resources that are managed by {{site.data.keyword.iamshort}} (IAM)](/docs/overview?topic=overview-ui#catalogcreate) | You can provision a service instance, rename a service instance, change the plan of a service instance, and remove a service instance. | [Events that are generated when you interact with catalog services ](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_rc#at_events_acc_mgt) |  
-| [Managing users](/docs/iam?topic=iam-iamuserinv#iamusermanage) | You can view and manage users across the account or organizations that you own or manage.  | [Events that are generated when you manage users ](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_acc_mgt#at_events_acc_mgt_users) |
+| [Provisioning and managing catalog services for resources that are managed by {{site.data.keyword.iamshort}} (IAM)](/docs/overview?topic=overview-ui#catalogcreate) | You can provision a service instance, rename a service instance, change the plan of a service instance, and remove a service instance. | [Events that are generated when you interact with catalog services ](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_rc#at_events_rc) |  
+| [Managing users](/docs/iam?topic=iam-iamuserinv#iamusermanage) | You can view and manage users across the account or organizations that you own or manage.  | [Events that are generated when you manage users ](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_acc_mgt#at_events_acc_mgt) |
 {: caption="List of core platform actions" caption-side="top"} 
 
 
@@ -55,8 +55,8 @@ The following table lists core security platform services that send events to {{
 
 | Service     | Description | {{site.data.keyword.at_full_notm}} events |
 |-------------|-------------|-------------|
-| [Managing policies](/docs/iam?topic=iam-userroles#userroles) | You can use IAM to manage users and roles across the {{site.data.keyword.cloud_notm}} Platform and Infrastructure services. | [Events that are generated when you manage IAM policies](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_iam#at_events_iam_policies) |
 | [Managing access groups](/docs/iam?topic=iam-groups#groups) | You can define access groups to organize a set of users and service IDs into a single entity that makes it easy for you to assign permissions. | [Events that are generated when you manage access groups](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_iam#at_events_iam_access) |
+| [Managing policies](/docs/iam?topic=iam-userroles#userroles) | You can use IAM to manage users and roles across the {{site.data.keyword.cloud_notm}} Platform and Infrastructure services. | [Events that are generated when you manage IAM policies](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_iam#at_events_iam_policies) |
 {: caption="List of core security platform services" caption-side="top"} 
 
 
