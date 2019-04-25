@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-25"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, archive logs, COS, cloud object storage
 
@@ -132,7 +132,7 @@ To manage buckets, your user must be granted permissions to work with buckets on
 
 | Service                    | Roles                   | Action                             | 
 |----------------------------|-------------------------|------------------------------------|       
-| `Cloud Object Storage`     | Platform role: Viewer   | Allows the user to view all buckets and list the objects within them through the {site.data.keyword.Bluemix_notm}} UI. |
+| `Cloud Object Storage`     | Platform role: Viewer   | Allows the user to view all buckets and list the objects within them. |
 | `Cloud Object Storage`     | Service role: Manager   | Allows the user to make objects public.                                                       |
 | `Cloud Object Storage`     | Service roles: Manager </br>Writer | Allows the user to create and destroy buckets and objects.                         | 
 | `Cloud Object Storage`     | Service role: reader    | Allows the user to list and download objects.                                                 |

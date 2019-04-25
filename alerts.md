@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-25"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, alerts, events
 
@@ -46,7 +46,7 @@ A bell icon is displayed with the view to indicate that this view has an alert a
 
 
 ## Prerequisites
-{: #views_prereqs}
+{: #alerts_prereqs}
 
 Before you start, check that your user ID has permissions to launch the web UI and view events. 
 

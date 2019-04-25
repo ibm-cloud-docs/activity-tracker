@@ -61,18 +61,6 @@ The following table lists the actions that generate an event:
 
 
 
-## Events for managing organizations
-{: #at_events_acc_mgt_org}
-
-The following table lists the actions that generate an event:
-
-
-| Action                               | Description |
-|--------------------------------------|-------------|
-|`billing.account.org.create`          | An event is generated when you add an organization to the account. |
-{: caption="Table 3. Actions that generate events" caption-side="top"} 
-
-
 
 ## Where to look for the events
 {: #at_events_acc_mgt_ui}
