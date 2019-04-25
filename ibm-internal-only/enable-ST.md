@@ -198,137 +198,163 @@ All commands should be run from a terminal that is logged into your service's IB
     Copy your ingestion key for later use.
 
 
-## 3. Install LogDNA Agents in your Kubernetes cluster
+## Step 3. Install LogDNA Agents in your Kubernetes cluster
 {: #agent}
 
-The LogDNA Agent sends logs and events to LogDNA. The agent will collect logs from stdout/stderr, application and node logs and anything in /var/log. For Activity Tracker it will collect anything under /var/log/at. By default the agent will collect logs from all namespaces on each node, including kube-system.  Below we will show you how to install the agent pod in each node in your cluster.
+The LogDNA Agent sends logs and events to LogDNA. The agent will collect the following data:
+* Logs from stdout/stderr, applications and node logs, and anything in `/var/log`. 
+* For Activity Tracker, it will collect anything under `/var/log/at`. 
+
+By default, the agent will collect logs from all namespaces on each node, including kube-system.  
+
+Below we will show you how to install the agent pod in each node in your cluster.
 
 If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#nokube) for other options.
 
 1. Add your Logging STS ingestion key as a secret in your cluster
 
- ```
-kubectl create secret generic logdna-agent-key --from-literal=logdna-agent-key=<INGESTION KEY>
-```
-{: codeblock}
+    ```
+    kubectl create secret generic logdna-agent-key --from-literal=logdna-agent-key=<INGESTION KEY>
+    ```
+    {: codeblock}
 
 2. Install the LogDNA agent with super tenancy 
 
- The command below automatically installs a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in.
+    The command below automatically installs a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in.
 
- - us-south </br>
- ```
-kubectl create -f http://assets.us-south.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
-```
-{: codeblock}
+    For **us-south**, run the following command:
+ 
+    ```
+    kubectl create -f http://assets.us-south.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
+    ```
+    {: codeblock}
 
- - eu-de 
- ```
-kubectl create -f http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
-```
-{: codeblock}
+    For **eu-de**, run the following command: 
+
+    ```
+    kubectl create -f http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
+    ```
+    {: codeblock}
 
 3. Legacy Activity Tracker
 
- If your service is already sending data to the legacy Activity Tracker via fluentd, then the fluentd will continue to work as-is alongside the logdna-agent. 
+    If your service is already sending data to the legacy Activity Tracker via fluentd, then the fluentd will continue to work as-is alongside the logdna-agent. 
 
- Your service should continue to send data to legacy Activity Tracker until the legacy Activity Tracker service is shut down.
+    **Your service should continue to send data to legacy Activity Tracker until the legacy Activity Tracker service is shut down.**
 
 
-## 4. Set up a Logging customer Super Tenant Receiver (STR) instance
+## Step 4. Set up a test Super Tenant Receiver (STR) instance to verify the data customers get from your service 
 {: #STR}
 
+**This step is only required if your service plans to send Super Tenant logs to customers.**
+
 A customer wishing to view logs from your service creates a Logging Super Tenant Receiver (STR).
-We are creating one for testing purposes. Normally a customer would create an instance of your service and a STR instance. Your service would use the CRN of the instance they created of your service (not the STR instance) for the logSourceCRN field. This step is only required if your service plans to send Super Tenant logs to customers.
 
-1. For testing purposes we are going to create a Logging Super Tenant receiver (STR) instance in the same account as your STS. 
+Normally a customer would create an instance of your service and a STR instance. 
+
+You must create one STR instance for testing purposes. Your service would use the CRN of the service instance they created of your service (not the STR instance) for the logSourceCRN field. 
+
+1. For testing purposes, we are going to create a Logging Super Tenant receiver (STR) instance in the same account as your STS. 
 2. Log into the IBM cloud console
-3. Click on hamburger (upper left) -> Observability -> Logging
-4. In the upper left click "Create Instance"
+3. Click on hamburger (upper left). Then, select **Observability** &gt; **Logging**.
+4. In the upper left, click **Create Instance**.
 5. Define a service name. We suggest appending "_STR" to the end of the name to make it distinguishable from your STS.
-6. Choose the region and resource group
-7. Choose a plan other than lite. Lite plans only provide a stream of logs and makes it harder to debug. Note: if you do not have a paid account, you can only chose the lite service plan.
-8. Click "Create"
-9. Click "Configure platform service logs". This is where you assign a specific STR to receive all super tenant logs from your and other services.
-10. Click the region on the left hand side 
-11. On the right hand side click the STR you want to designate to receive super tenant logs. Click the STR you just created above
-12. Click "Save"
-13. The STR instance will now indicate it receives platform service (super tenant) logs
+6. Choose the region and resource group.
+7. Choose a plan other than `lite`. Lite plans only provide a stream of logs and makes it harder to debug. **Note:** if you do not have a paid account, you can only chose the lite service plan.
+8. Click **Create**.
+9. Click **Configure platform service logs**. This is where you assign a specific STR to receive all super tenant logs from your and other services.
+10. Click the region on the left hand side.
+11. On the right hand side, click the STR you want to designate to receive super tenant logs. Click the STR you just created above.
+12. Click **Save**.
 
- ![STR Instance](images/STR_instance_create.png)
+    The STR instance will now indicate it receives platform service (super tenant) logs
 
+    ![STR Instance](images/STR_instance_create.png)
 
-14. Get your logging customer STR instance CRN
-The logging STR CRN will be used later to send logs to this simulated customer.
- - Click the hamburger in the upper left and select Resource List 
- - Expand Services and find the Logging customer STR instance you created.
- - Click anywhere but on the instance name. 
- - A dialog will be displayed on the right. Copy the value from CRN and save for later use.
+13. Get your logging customer STR instance CRN.
 
-## 5. Test your service's Logging Super Tenancy
+    The logging STR CRN will be used later to send logs to this simulated customer.
+ 
+    * Click the hamburger in the upper left and select Resource List 
+
+    * Expand Services and find the Logging customer STR instance you created.
+
+    * Click anywhere but on the instance name. 
+
+    * A dialog will be displayed on the right. Copy the value from CRN and save for later use.
+
+## Step 5. Test your service's Logging Super Tenancy
 {: #STSTEST}
 
 1. Verify that your Logging STS is receiving logs from Kubernetes.
- - In the IBM Cloud console go to hamburger -> Observability -> Logging.
- - Click "View LogDNA" in your service's Logging STS instance.
- - The LogDNA console will then be displayed. It should show various logs from Kubernetes and anything writing  to /var/log or stdout.
+
+    In the IBM Cloud console, click on hamburger (upper left). Then, select **Observability** &gt; **Logging**.
+
+    Click "View LogDNA" in your service's Logging STS instance.
+
+    The LogDNA console will then be displayed. It should show various logs from Kubernetes and anything writing  to `/var/log` or `stdout`.
 
 2.  Test sending logging Super Tenant logs 
 
- This step is only required for services planning to send Super Tenant logs.
+    This step is only required for services planning to send Super Tenant logs.
  
- In this test we are going to simulate your service writing a log line to a file in /var/log. The LogDNA agent will then send the log line to LogDNA. LogDNA will then put a copy of the log in your service's Logging STS and your simulated customers Logging STR.
+    In this test we are going to simulate your service writing a log line to a file in `/var/log`. The LogDNA agent will then send the log line to LogDNA. LogDNA will then put a copy of the log in your service's Logging STS and your simulated customers Logging STR.
 
- - Prepare a log line. Below is a sample log line. For logSourceCRN use the CRN gathered above when you created the customer Logging STR instance. Normally this CRN would the the CRN of the service instance the customer created for your service.
+    Prepare a log line. Below is a sample log line. For logSourceCRN use the CRN gathered above when you created the customer Logging STR instance. Normally this CRN would the the CRN of the service instance the customer created for your service.
 
-      Raw message if you use an editor:
-     ```
-{"message":"This test log statement should be the service STS and the customer STR - abcdef","saveServiceCopy":true,"logSourceCRN":"<CRN_OF_CUST_STR>"}
-```
-{: codeblock}
+    Raw message if you use an editor:
+    
+    ```
+    {"message":"This test log statement should be the service STS and the customer STR - abcdef","saveServiceCopy":true,"logSourceCRN":"<CRN_OF_CUST_STR>"}
+    ```
+    {: codeblock}
 
-     Echo the log line to a file: 
+    Echo the log line to a file: 
 
-     ```
- echo {\"message\":\"This test log statement should be the service STS and the customer STR - abcdef\",\"saveServiceCopy\":true,\"logSourceCRN\":\"<CRN_OF_CUST_STR>\"} > test.log
-```
-{: codeblock}
+    ```
+    echo {\"message\":\"This test log statement should be the service STS and the customer STR - abcdef\",\"saveServiceCopy\":true,\"logSourceCRN\":\"<CRN_OF_CUST_STR>\"} > test.log
+    ```
+    {: codeblock}
 
- - Get a list of pods
+    Get a list of pods
  
-     ```
-kubectl get pods
-```
-{: codeblock}
+    ```
+    kubectl get pods
+    ```
+    {: codeblock}
 
- -  Copy the name of one of the logDNA pods.
- -  Log into the pod
+    Copy the name of one of the logDNA pods.
+ 
+    Log into the pod
 
-      ```
-kubectl exec -it <logDNA__podname> -- /bin/bash
-```
-{: codeblock}
+    ```
+    kubectl exec -it <logDNA__podname> -- /bin/bash
+    ```
+    {: codeblock}
 
- -  Go to the log directory
+    Go to the log directory
 
-     ```
-cd /var/log
-```
-{: codeblock}
+    ```
+    cd /var/log
+    ```
+    {: codeblock}
 
- - Either echo or write the log line into the file `test.log`
- - LogDNA will then read the line from the file and create a log message in the service STS and the customer STR.
+    Either echo or write the log line into the file `test.log`
+
+    LogDNA will then read the line from the file and create a log message in the service STS and the customer STR.
 
 3. View your log line
 
- - In the IBM Cloud console, go to your service's Logging STS instance and click "View LogDNA" In the logDNA console.
- - Look for the log line written above. You may have to filter with "abcdef" to find your log line.
- - Now click "View LogDNA" for your logging customer STR instance and find  the log line.
+    In the IBM Cloud console, go to your service's Logging STS instance and click **View LogDNA** In the logDNA console.
 
-  ![STS Log Line](images/STS_test_logline_logDNA.png)
+    Look for the log line written above. You may have to filter with `abcdef` to find your log line.
+
+    Now click **View LogDNA** for your logging customer STR instance and find the log line.
+
+    ![STS Log Line](images/STS_test_logline_logDNA.png)
 
 
-## 6. Setup your service's Activity Tracker Sender (ATS) instance
+## Step 6. Setup your service's Activity Tracker Sender (ATS) instance
 {: #ATS}
 
 The Activity Tracker Sender (ATS) instance is where your service's Activity Tracker events can be viewed. The ATS instance creation links your ATS to your STS. Both the STS and ATS share the same ingestion key so no LogDNA agent configuration is required.
@@ -336,147 +362,164 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
  1. All commands should be run from a terminal that is logged into your service's IBM cloud account.
  2. Create an ATS instance to view your service's Activity Tracker events.
 
- ```
-ibmcloud resource service-instance-create <myService-ATS> logdnaat  7-day us-south \
+    ```
+    ibmcloud resource service-instance-create <myService-ATS> logdnaat  7-day us-south \
     -p '{"service_supertenant": "<name-of-your-service>" , "associated_logging_crn": "<STS_CRN>", "provision_key": "<key>"}'
-```
-{: codeblock}
+    ```
+    {: codeblock}
 
- Where:  
-   - **myService-ATS** is whatever you call your service, with ATS appended to the end by convention.
-   - **7-day** is the plan, which could also be `lite`, `14-day` or `30-day`.
-   - **name-of-your-service** is the CRN service-name of your service.
-   - **us-south** is the region your service instance will be created. Other choices are: `eu-de`.
-   - **provision_key** is the same key you used to create your service's Logging STS instance.
-   -  **logSourceCRN** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS.
+    Where:  
+   
+    **myService-ATS** is whatever you call your service, with ATS appended to the end by convention.
+    
+    **7-day** is the plan, which could also be `lite`, `14-day` or `30-day`.
+   
+    **name-of-your-service** is the CRN service-name of your service.
+   
+    **us-south** is the region your service instance will be created. Other choices are: `eu-de`.
+   
+    **provision_key** is the same key you used to create your service's Logging STS instance.
+   
+    **logSourceCRN** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS.
 
-  An example command:
+    An example command:
 
- ```
-ibmcloud resource service-instance-create predictor-service-ATS logdnaat 7-day us-south \
+    ```
+    ibmcloud resource service-instance-create predictor-service-ATS logdnaat 7-day us-south \
     -p '{"service_supertenant": "predictor" , "associated_logging_crn": "crn:v1:bluemix:public:logdna:us-south:a/2a76b4a971bfe8e5a1f5baba5d81a845:e7a36b65-b288-43d8-a83f-2e58ec0e255e::", "provision_key": "abc1234"}'
-```
-{: codeblock}
+    ```
+    {: codeblock}
 
 3. Verify you service ATS instance
-  - Log into the IBM Cloud console with the same account you used in step 1.
-  - Click the hamburger (upper left) -> Observability -> Activity Tracker.
-  - You should see your service ATS instance. 
 
-  ![ATS Instance](images/ATS_instance_create.png)
+    Log into the IBM Cloud console with the same account you used in step 1.
+    
+    Click on hamburger (upper left). Then, select **Observability** &gt; **Activity Tracker**.
+  
+    You should see your service ATS instance. 
+
+    ![ATS Instance](images/ATS_instance_create.png)
 
 
-## 7. Set up a customer Activity Tracker Receiver (ATR) instance
+## Step 7. Set up a customer Activity Tracker Receiver (ATR) instance
 {: #ATR}
 
-A customer wishing to view Activity Tracker events from your service must create an Activity Tracker Receiver (ATR).
-We are creating one for testing purposes. Normally a customer would create an instance of your service and a ATR instance. Your service would use the CRN of the instance they created of your service (not the ATR instance) for the logSourceCRN field.
+A customer wishing to view Activity Tracker events from your service must create an Activity Tracker Receiver (ATR). Normally a customer would create an instance of your service and a ATR instance.
+
+You must create one for testing purposes.  Your service would use the CRN of the instance they created of your service (not the ATR instance) for the logSourceCRN field.
 
 1. For testing purposes we are going to create a customer Activity Tracer Receiver (ATR) instance in the same account as your ATS. 
 2. Log into the ibm cloud console.
-3. Click on hamburger (upper left) -> Observability -> Activity Tracker.
-4. In the upper left click "Create Instance".
-5. Define a service name. We suggest appending "_ATR" to the end of the name to make it distinguishable from your ATS.
-6. Choose the region and resource group
-7. Choose a plan other than lite if you have a paid account. Otherwise choose the lite plan.
-8. Click "Create"
+3. Click on hamburger (upper left). Then, select **Observability** &gt; **Activity Tracker**.
+4. In the upper left, click **Create Instance**.
+5. Define a service name. We suggest appending **_ATR** to the end of the name to make it distinguishable from your ATS.
+6. Choose the region and resource group.
+7. Choose a plan other than `lite` if you have a paid account. Otherwise choose the lite plan.
+8. Click **Create**.
 
- ![ATR Instance](images/ATR_instance_create.png)
-
+   ![ATR Instance](images/ATR_instance_create.png)
 
 9. Get your Activity Tracker customer ATR instance CRN
 
-  - The customer ATR CRN will be used later to send events to this simulated customer.
-  - Click the hamburger in the upper left and select Resource List 
-  - Expand Services and find the Activity Tracker customer ATR instance you created.
-  - Click anywhere but on the instance name. 
-  - A dialog will be displayed on the right. Copy the value from CRN and save for later use.
+    The customer ATR CRN will be used later to send events to this simulated customer.
 
-## 8. Setting up your test environment
+    Click the hamburger in the upper left and select **Resource List**. 
+    
+    Expand Services and find the Activity Tracker customer ATR instance you created.
+
+    Click anywhere but on the instance name. 
+
+    A dialog will be displayed on the right. Copy the value from CRN and save for later use.
+
+## Step 8. Setting up your test environment
 {: testenv}
 
- We have limited space in staging for services to do full blown testing. This is due to the limits of white listing and resources allocated in staging. Below are our two approaches for services to test in staging.
+ We have limited space in staging for services to do full blown testing. This is due to the limits of white listing and resources allocated in staging. Below are two approaches for services to test in staging:
 
 1. White listing for a limited time
 
- We can support a limited number of services at any give time in staging.  Follow these steps to run tests in staging:
+    We can support a limited number of services at any give time in staging.  Follow these steps to run tests in staging:
 
- - Request to be white listed by opening a git hub issue. Include the account's e-mail you want white listed. This should be the account your service runs under.
+    Request to be white listed by opening a git hub issue. Include the account's e-mail you want white listed. This should be the account your service runs under.
 
- - You will have approximately two weeks to test.
+    You will have approximately two weeks to test.
 
- - Your testing can include creation of your service's Logging and Activity Tracker(STS/ATS) instances as well as simulated customer Logging and Activity Tracker(STR/ATR) instances.
+    Your testing can include creation of your service's Logging and Activity Tracker(STS/ATS) instances as well as simulated customer Logging and Activity Tracker(STR/ATR) instances.
 
- - If you do not have a paid account in staging, you can only use the Lite Plan for your instances. This means your events and logs in JSON will not be parsed. In addition you can only view a stream of your logs. You will not be able to use most of the LogDNA features (search, graphing, export, etc)
+    If you do not have a paid account in staging, you can only use the Lite Plan for your instances. This means your events and logs in JSON will not be parsed. In addition you can only view a stream of your logs. You will not be able to use most of the LogDNA features (search, graphing, export, etc)
 
 
 2. Test in staging but direct your events/logs to production
 
- No white listing is required for this environment. The drawback is that you can not simulate customer Logging and Activity Tracker (STR/ATR) instances.  Follow the steps below:
+    No white listing is required for this environment. The drawback is that you can not simulate customer Logging and Activity Tracker (STR/ATR) instances.  Follow the steps below:
 
- - In production, create your service Logging and Activity Tracker (STS/ATS) instances.
+    In production, create your service Logging and Activity Tracker (STS/ATS) instances.
 
- - Copy the LogDNA ingestion key for your service's  Logging STS instance in production.
+    Copy the LogDNA ingestion key for your service's  Logging STS instance in production.
 
- - Run your service in staging.
+    Run your service in staging.
 
- - When deploying the logDNA agent 
-     - Set the secret key to the ingestion key of you logging STS instance in production.
-     - Deploy the production super tenant agent of the region you created your STS in.
+    When deploying the logDNA agent:
+    
+        Set the secret key to the ingestion key of you logging STS instance in production.
+    
+        Deploy the production super tenant agent of the region you created your STS in.
 
- - Logs and Events sent by your service can be viewed in your Logging and Activity Tracker (STS/ATS) instances in production.
+    Logs and Events sent by your service can be viewed in your Logging and Activity Tracker (STS/ATS) instances in production.
 
- - Logs and Events sent to customers will not show up anywhere. This is because you have different account numbers in staging and production.
+    Logs and Events sent to customers will not show up anywhere. This is because you have different account numbers in staging and production.
 
 
-## 9. Test Activity Tracker with your service
+## Step 9. Test Activity Tracker with your service
 {: #ATSTEST}
 
-In this test we are going to simulate your service writing an event line to a file in /var/log/at. The LogDNA agent will then send the event to LogDNA. LogDNA will then put a copy of the event in your service's ATS instance and your simulated customers ATR instance.
+In this test we are going to simulate that your service is writing an event line to a file in `/var/log/at`. The LogDNA agent will then send the event to LogDNA. LogDNA will then put a copy of the event in your service's ATS instance and your simulated customers ATR instance.
 
 1. Prepare an event line. 
 
-  Below is a sample event. Note the meta block is not included so the event will only go to LogDNA. Add your own meta block if you have the legacy AT fluentd plugin installed and want to send events to go to both the legacy and new Activity Trackers.
+    Below is a sample event. Note the meta block is not included so the event will only go to LogDNA. Add your own meta block if you have the legacy AT fluentd plugin installed and want to send events to go to both the legacy and new Activity Trackers.
 
- Raw message if you use an editor:
+    Raw message if you use an editor:
  
- ```
-{"payload":{"action":"bss-metering-test.event.create","severity":"normal","eventTime":"2018-06-13T00:05:39.11+0000","initiator":{"id":"IBMid-3mbbuga6i7","name":"Nellie_Wolf59@hotmail.com","typeURI":"service/security/account/user","credential":{"type":"user"},"host":{"agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36","address":"169.46.16.210"}},"target":{"id":"crn:v1:production:public:bss-metering-test:undefined:s/undefined:1234-5678-9012-3456:event:1","name":"bss-metering-test","typeURI":"bss-metering-test/event/create"},"reason":{"reasonCode":200},"outcome":"success","requestData":"{\"name\":\"Sequi\",\"localTime\":\"11:13:48 PM\"}","message":"This is a test"},"saveServiceCopy":true,"logSourceCRN":"<ATR_CRN>"}
-```
-{: codeblock}
+    ```
+    {"payload":{"action":"bss-metering-test.event.create","severity":"normal","eventTime":"2018-06-13T00:05:39.11+0000","initiator":{"id":"IBMid-3mbbuga6i7","name":"Nellie_Wolf59@hotmail.com","typeURI":"service/security/account/user","credential":{"type":"user"},"host":{"agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36","address":"169.46.16.210"}},"target":{"id":"crn:v1:production:public:bss-metering-test:undefined:s/undefined:1234-5678-9012-3456:event:1","name":"bss-metering-test","typeURI":"bss-metering-test/event/create"},"reason":{"reasonCode":200},"outcome":"success","requestData":"{\"name\":\"Sequi\",\"localTime\":\"11:13:48 PM\"}","message":"This is a test"},"saveServiceCopy":true,"logSourceCRN":"<ATR_CRN>"}
+    ```
+    {: codeblock}
 
- Echo the log line to a file:
+    Echo the log line to a file:
  
- ```
- echo "{\"payload\":{\"action\":\"bss-metering-test.event.create\",\"severity\":\"normal\",\"eventTime\":\"2018-06-13T00:05:39.11+0000\",\"initiator\":{\"id\":\"IBMid-3mbbuga6i7\",\"name\":\"Nellie_Wolf59@hotmail.com\",\"typeURI\":\"service/security/account/user\",\"credential\":{\"type\":\"user\"},\"host\":{\"agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36\",\"address\":\"169.46.16.210\"}},\"target\":{\"id\":\"crn:v1:production:public:bss-metering-test:undefined:s/undefined:1234-5678-9012-3456:event:1\",\"name\":\"bss-metering-test\",\"typeURI\":\"bss-metering-test/event/create\"},\"reason\":{\"reasonCode\":200},\"outcome\":\"success\",\"requestData\":\"{\\\"name\\\":\\\"Sequi\\\",\\\"localTime\\\":\\\"11:13:48 PM\\\"}\",\"message\":\"This is a test\"},\"saveServiceCopy\":true,\"logSourceCRN\":\"crn:v1:bluemix:public:logdnaat:us-south:a/3b76b4a971bfe8e5a1f5baba5d81a845:c6d2975e-bdbf-431f-8e2a-d48f668cd272::\"}" > at.log
- ```
- 
+    ```
+    echo "{\"payload\":{\"action\":\"bss-metering-test.event.create\",\"severity\":\"normal\",\"eventTime\":\"2018-06-13T00:05:39.11+0000\",\"initiator\":{\"id\":\"IBMid-3mbbuga6i7\",\"name\":\"Nellie_Wolf59@hotmail.com\",\"typeURI\":\"service/security/account/user\",\"credential\":{\"type\":\"user\"},\"host\":{\"agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36\",\"address\":\"169.46.16.210\"}},\"target\":{\"id\":\"crn:v1:production:public:bss-metering-test:undefined:s/undefined:1234-5678-9012-3456:event:1\",\"name\":\"bss-metering-test\",\"typeURI\":\"bss-metering-test/event/create\"},\"reason\":{\"reasonCode\":200},\"outcome\":\"success\",\"requestData\":\"{\\\"name\\\":\\\"Sequi\\\",\\\"localTime\\\":\\\"11:13:48 PM\\\"}\",\"message\":\"This is a test\"},\"saveServiceCopy\":true,\"logSourceCRN\":\"crn:v1:bluemix:public:logdnaat:us-south:a/3b76b4a971bfe8e5a1f5baba5d81a845:c6d2975e-bdbf-431f-8e2a-d48f668cd272::\"}" > at.log
+    ```
+    {: codeblock}
 
- Where:  
-  - **ATR_CRN** is the customer ATR CRN you obtained when you created the ATR instance above. Normally this would be the CRN of the customer instance of your service.
+    Where:  
+
+    **ATR_CRN** is the customer ATR CRN you obtained when you created the ATR instance above. Normally this would be the CRN of the customer instance of your service.
 
 2. Get a list of pods
 
- ```
-kubectl get pods
-```
-{: codeblock}
+    ```
+    kubectl get pods
+    ```
+    {: codeblock}
 
 3. Copy the name of one of the logDNA pods.
 4. Log into the pod
 
- ```
-kubectl exec -it <logDNA_podname> -- /bin/bash
-```
-{: codeblock}
+    ```
+    kubectl exec -it <logDNA_podname> -- /bin/bash
+    ```
+    {: codeblock}
 
 5. Go to the log directory
-If the `at` directory does not exist, create it.
 
- ```
-cd /var/log/at
-```
-{: codeblock}
+    If the `at` directory does not exist, create it.
+
+    ```
+    cd /var/log/at
+    ```
+    {: codeblock}
 
 6. Either echo or write the event above into the file `at_test.log`.
 7. LogDNA will then read from the file and create an event in the service ATS and the customer ATR.
@@ -484,42 +527,56 @@ cd /var/log/at
 9. In the console look for the event written above.
 10. Now click "View LogDNA" for your Activity Tracker customer ATR instance and verify the event shows up.
 
- ![ATS Event](images/ATS_test_event_logDNA.png)
+    ![ATS Event](images/ATS_test_event_logDNA.png)
  
 
-## 10. Alert if your service's logs or events are not flowing into LogDNA
+## Step 10. Alert if your service's logs or events are not flowing into LogDNA
 {: #alert}
 
-Services are responsible for monitoring that their logs and Activity Tracker events are being received by LogDNA. A simple solution is to create a **LogDNA  absence alert** in your service STS and ATS instances.
-These alerts can notify you via a variety of methods when the alert condition is met.
+Services are responsible for monitoring that their logs and Activity Tracker events are being received by LogDNA. 
 
-**NOTE**: As of April 17,2019, the Pager Duty integration does not work in our IBM environment. LogDNA is working on a resolution to this issue.
+A simple solution is to create a **LogDNA absence alert** in your service STS and ATS instances. These alerts can notify you via a variety of methods when the alert condition is met.
+
+As of April 17,2019, the Pager Duty integration does not work in our IBM environment. LogDNA is working on a resolution to this issue.
+{: note}
 
 To create an alert, you must create a view and then attach an alert to it. LogDNA documentation on this feature can be found [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/docs/views){:new_window}.
 
 The following example shows how to create an absence alert for a service ATS and trigger a Slack message if no events match the view criteria in 15 minutes.
 
-1. In the IBM Cloud console go to hamburger -> Observability -> Activity Tracker.
-2. Click on "View LogDNA" in your service ATS instance. This will bring up the LogDNA console.
+1. In the IBM Cloud console, click on hamburger (upper left). Then, select **Observability** &gt; **Activity Tracker**.
+2. Click on **View LogDNA** in your service ATS instance. This will bring up the LogDNA console.
 3. Create a filter that will filter out all other events except those from your service. Filter documentation can be found [here. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/docs/filters){:new_window}
-  - Click on "Unsaved View" at the top -> "Save as new view/alert"
-  - Enter a name and click "Save View"
-  - Click on your newly created view and select "Attach an Alert".
-  - Select "View-specific alert" in the drop-down.
-  - Click on the Slack icon.
-  - Change Type to Absence. This will create an alert if no events come in the time frame specified.
-  - Change the time frame to a time you want to wait if no messages come in to send the alert.
-  - Enter your Slack Webhook URL and select your message color.
-  - Save alert.
 
-  ![ATS Alert](images/ATS_alert.png)
+    Click on **Unsaved View** at the top. Then, select **Save as new view/alert**.
+
+    Enter a name and click **Save View**.
+
+    Click on your newly created view and select **Attach an Alert**.
+  
+    Select **View-specific alert** in the drop-down.
+  
+    Click on the Slack icon.
+  
+    Change *Type* to **Absence**. This will create an alert if no events come in the time frame specified.
+  
+    Change the time frame to a time you want to wait if no messages come in to send the alert.
+  
+    Enter your Slack Webhook URL and select your message color.
+  
+    Save alert.
+
+    ![ATS Alert](images/ATS_alert.png)
   
 4. Test your alert
 
- The Alert does not become active until a least one event matching the view is received in LogDNA in the ATS instance. Once that happens the clock starts for the absence alert.
-  - Send an event that matches the view created in step 3. You can artificially generate one using the testing method explained above.
-  - Do not send any more events that match the view.
-  - Wait the designated amount of time and then check your Slack channel.
+    **The Alert does not become active until a least one event matching the view is received in LogDNA in the ATS instance.** Once that happens the clock starts for the absence alert.
+  
+    Send an event that matches the view created in step 3. You can artificially generate one using the testing method explained above.
+  
+    Do not send any more events that match the view.
+  
+    Wait the designated amount of time and then check your Slack channel.
 
 ## 11. FAQ and other considerations 
 {: #faq}
@@ -552,7 +609,7 @@ For now, global events are being stored in eu-de (Frankfurt) by convention. (For
   - Add the ingestion key above as a secret.
   - Install the eu-de version of the logDNA agent
   
- ```
+```
 kubectl create -f http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
 ```
 {: codeblock}
