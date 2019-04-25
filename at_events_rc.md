@@ -61,7 +61,7 @@ The following table lists the actions that generate an event:
 ##  Events for managing service credentials that are associated to a service instance
 {: #rc_keys}
 
-A service credential provides the necessary information to connect an application to a service instance. Service credentials are always associated with a `Service ID`.
+A service credential provides the necessary information to connect an application to a service instance. 
 
 The following table lists the actions that generate an event:
 
