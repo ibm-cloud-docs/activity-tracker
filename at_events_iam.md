@@ -79,7 +79,7 @@ To view these events, you must [provision an instance](/docs/services/Activity-T
 ## Analyzing events
 {: #at_events_iam_analyze}
 
-Consider the following information when you analyze an event:
+**Action: iam-groups.group.delete**
 
 When an access group is deleted, other actions are automatically triggered to clean up other resources that are associated with the group. Some actions that are triggered report events that are related to deletion of members in an access group, deletion of policies, and deletion of dynamic rules. **The initiator of these actions is an IBM service ID.**
 {: note}
@@ -95,6 +95,7 @@ Apr 29 14:11:24 IAM Access Management: delete policy -failure
 {: screen}
 
 The events `IAM Access Groups: delete members`, `IAM Access Groups: delete rules`, and `IAM Access Management: delete policy` report an outcome of`failure` with a `404` outcome code. 
+
 
 
 
