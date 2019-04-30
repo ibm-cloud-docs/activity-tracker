@@ -86,7 +86,7 @@ When an access group is deleted, consider the following information:
 * The initiator of these actions is an {{site.data.keyword.IBM_notm}} service ID.
 
 
-When the access group that is deleted does not have members, policies, and rules assigned, the events that are generated for any of these resources report an outcome of`failure` with a `404` outcome code. The following is a sample of the events that are generated when an access group that does not have members, policies or dynamic rules assigned is deleted:
+When the access group that is deleted does not have members, policies, and rules assigned, the events that are generated for any of these resources report an outcome of`failure` with a `404` outcome code. The following sample shows the events that are generated when an access group that does not have members, policies or dynamic rules assigned is deleted:
 
 ```
 Apr 29 14:11:22 IAM Access Groups: delete group test5

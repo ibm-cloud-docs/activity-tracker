@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-25"
+lastupdated: "2019-04-30"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, alerts, events
 
@@ -38,7 +38,7 @@ You can decide whether both conditions are checked or only one. If both conditio
 
 For example, you can configure an alert that is triggered after 30 seconds, or when a 100 event lines that match the view's filtering and search criteria are collected.
 
-You can configure multiple notification channels. Valid channels are: `email`, `Slack`, `PagerDuty`, `Webhook`, `OpsGenie`, `Datadog`, `AppOptics`, `VictorOps`
+You can configure multiple notification channels. For information about the supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
 
 You can also define a **preset**. A preset is an alert template that you can attach to any number of views. 
 
@@ -89,7 +89,7 @@ Complete the following steps to configure a preset:
 1. In the web UI, select the **Configuration** icon ![Configuration icon](images/admin.png "Admin icon").
 2. Select **Alerts**.
 3. Select **Add a preset alert**.
-4. Choose a notification channel. 
+4. Choose a notification channel. For the list of supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
 5. Define the threshold conditions.
 
     1. Select a time frequency. For example, 12 hours.
