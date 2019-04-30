@@ -100,7 +100,7 @@ Complete the following steps to provision an instance:
 
 4. Enter a name for the service instance.
 
-5. Select the region where you plan to provision the instance.
+5. Select the region where you plan to provision the instance. For more information about the regions where the service is available, see [Regions](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
 
 6. Select a resource group. 
 
