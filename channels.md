@@ -33,10 +33,6 @@ The following table lists the notification channels that you can configure when 
 | `Slack`             | You can configure a slack channel. |
 | `Webhook`           | You can configure a web hook URL. |
 | `PagerDuty`         | You can configure connection details to your PagerDuty system, and select a service.|
-| `OpsGenie`          | You can configure the API key to connect to your OpsGenie system. |
-| `Datadog`           | You can configure the API key to connect to your `Datadog` system. |
-| `AppOptics/Librato` | You can configure the API key to connect to your AppOptics/Librato system. |
-| `VictorOps`         | You can configure the URL to notify when an alert is triggered, the routing key, and an alert type. Valid alert types are: `info`, `warning`, `critical`|
 {: caption="Notification channels" caption-side="top"} 
 
 

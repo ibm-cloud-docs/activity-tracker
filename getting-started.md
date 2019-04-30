@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-30"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started
 
@@ -170,28 +170,8 @@ Complete the following steps to add the user to the access group:
 2. Select the user that you want to add from the list, and click **Add to group**.
 
 
-
-## Step 3. Learn about the structure of an event
+## Step 3. Generate {{site.data.keyword.at_full_notm}} events
 {: #gs_step3}
-
-Events comply with the **Cloud Auditing Data Federation (CADF) standard**. The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
-
-The CADF event model includes the following components:
-
-| Component | Description |
-|------------|----------------------------|
-| `Action`   | The action is the operation or activity that an initiator performs, attempts to perform, or is waiting to complete. |
-| `Initiator`| The initiator is the resource that makes an API call and generates a CADF event. The event that is triggered depends on the action that is requested by the API call. |
-| `Observer` | The observer is the resource that creates and stores a CADF record from information available in a CADF event. |
-| `Outcome`  | The outcome is the status of the action against the target. |
-| `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
-{: caption="Table 2. Components that are available in a CADF event model" caption-side="top"} 
-
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-event#event).
-
-
-## Step 4. Generate {{site.data.keyword.at_full_notm}} events
-{: #gs_step4}
 
 Complete the following steps to generate an event when an instance of the {{site.data.keyword.cloudcerts_short}} service is provisioned:
 
@@ -216,8 +196,8 @@ Complete the following steps to generate an event when an instance of the {{site
 
 An instance of the {{site.data.keyword.cloudcerts_short}} service is created.
 
-## Step 5. Launch the web UI 
-{: #gs_step5}
+## Step 4. Launch the web UI 
+{: #gs_step4}
 
 Complete the following steps to launch the web UI:
 
@@ -236,8 +216,8 @@ Complete the following steps to launch the web UI:
 The web UI opens. 
 
 
-## Step 6. Viewing events
-{: #gs_step6}
+## Step 5. Viewing events
+{: #gs_step5}
 
 
 The {{site.data.keyword.at_full_notm}} service captures activity data that is related to API calls and other actions that are made to selected cloud services in the {{site.data.keyword.cloud_notm}}. 
@@ -264,6 +244,26 @@ When you finish exploring the event, click **Close** to close the line.
 
 
 [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events.md#view_events.md).
+
+
+
+## Step 6. Learn about the structure of an event
+{: #gs_step6}
+
+Events comply with the **Cloud Auditing Data Federation (CADF) standard**. The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
+
+The CADF event model includes the following components:
+
+| Component | Description |
+|------------|----------------------------|
+| `Action`   | The action is the operation or activity that an initiator performs, attempts to perform, or is waiting to complete. |
+| `Initiator`| The initiator is the resource that makes an API call and generates a CADF event. The event that is triggered depends on the action that is requested by the API call. |
+| `Observer` | The observer is the resource that creates and stores a CADF record from information available in a CADF event. |
+| `Outcome`  | The outcome is the status of the action against the target. |
+| `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
+{: caption="Table 2. Components that are available in a CADF event model" caption-side="top"} 
+
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-event#event).
 
 
 
