@@ -85,7 +85,7 @@ This step is required for existing services that are planning to on-board to {{s
 You must add two new fields to the Logging and Activity Tracker JSON:
 
 * **logSourceCRN**: This field indicates the customer whom you want to receive the log or event. The logSourceCRN is the CRN of the service instance of your service created by the customer. If not present, no event will be sent to a customer.
-* **saveServiceCopy**: This field indicates if your service wants a copy of the log or event. This is an `optional` field. If the field is not present, the default of true will be used and your service will get a copy of the log or event. Set this field to false if your service does not want a copy of the log record or event.
+* **saveServiceCopy**: This field indicates if your service wants a copy of the log or event. This is an `optional` field. If the field is not present, the default of true will be used and your service will get a copy of the log or event. Set this field to false if your service does not want a copy of the log record or event. If the field is false, LogDNA will not charge your service for the event since it only charges each service or customer for what is stored.
 
 ```
 {
@@ -123,13 +123,9 @@ const logFileName = `/var/log/at/${hostname}.log`;
 
 ### Write logs with Super Tenancy
 
-* Write your Super Tenant logs in **/var/log**. 
-* Logs or events written in `/var/log`  and directories underneath (except `at`) will be considered logs.
+* Write your Super Tenant logs in **/var/log** or to **stdout**.
+* Logs or events written in `/var/log`  and directories underneath (except `at`) will be considered logs. Logs or events written to `stdout` will be considered logs.
 * If you want to send logs to customers, you must implement the `logSourceCRN` and `saveServiceCopy` JSON fields noted above.
-
-LogDNA is working on supporting Super Tenancy for logs written to stdout.
-{: note}
-
 
 
 ## Step 2. Set up a Logging Super Tenant Sender (STS) instance
@@ -170,7 +166,7 @@ All commands should be run from a terminal that is logged into your service's IB
  
     * **provision_key** is the key obtained from step 1.
 
-3. Get you Logging STS instance CRN
+3. Get your Logging STS instance CRN
 
     From the output of the above command, capture and save the **ID** value. This ID is the CRN of your STS instance.
 
@@ -387,7 +383,7 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
     ```
     {: codeblock}
 
-3. Verify you service ATS instance
+3. Verify your service's ATS instance
 
     Log into the IBM Cloud console with the same account you used in step 1.
     
@@ -682,7 +678,7 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 2. Use a LogDNA Agent
 {: #nokubelogdnaagent}
 
- LogDNA provides an assortment of non-kubernetes agents. These agent will behave like the kubernetes agent. They will still read read from log files, have retry support, and support super tenancy. For Activity Tracker events you should write your events to a file in /var/log/at.
+ LogDNA provides an assortment of non-kubernetes agents. These agents will behave like the kubernetes agent. They will still read read from log files, have retry support, and support super tenancy. For Activity Tracker events you should write your events to a file in /var/log/at.
 
  - You will need to create your service's Logging STS and Activity Tracker ATS. Follow the instructions above.
  - Go to Observability-> Logging 
@@ -692,7 +688,7 @@ Our design is optimized for services running in Kubernetes. Listed below are som
  - Select the kind of agent you want. Installation instructions will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
  - In addition to the instructions, you must perform an addition step to enable Super Tenancy. Run this command after running the `sudo logdna-agent -s LOGDNA_LOGHOST` command.
  
-     ```
+```
 sudo logdna-agent -s  LDLOGPATH=/supertenant/logs/ingest
 ```
 {: codeblock}
@@ -735,6 +731,18 @@ curl "https://logs.us-south.logging.test.cloud.ibm.com/supertenant/logs/ingest?h
   - This is an Activity Tracker example, because the "app" is set to the /var/log/at directory. This causes the STSender to forward to AT; otherwise, it is just normal super tenant lines.
   - The "line" is the familiar CADF format of Activity Tracker, wrapped in a payload. The meta structure is no longer necessary, and instead the logSourceCRN field controls where the customer copy of the event should be sent.
   - You can send a number of lines in one API call, since "lines" is an array. The maximum size you can send is 16 Kb
+
+  - LogDNA has code libraries in most common languages for using the API. See [here](https://docs.logdna.com/docs), under "Code Libraries" on the left.
+    - Be cautious about the libs that are "unofficial". They are not supported by LogDNA.
+    - If using one of these libs, consider isolating it in a separate process, similar to how the agent works, reading from a persisted buffer.
+    - One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
+    - Here is a code snippet for sending to a LogDNA STS in us-south, using the NodJS library. (Courtesy of Martin Ross.)
+
+```
+const Logger = require('logdna')
+let logger = Logger.createLogger('<INGESTION KEY>', {logdna_url: 'https://logs.us-south.logging.cloud.ibm.com/supertenant/logs/ingest'})
+logger.log({ app: 'myAppName', message: 'foo bar ', logSourceCRN: 'crn:v1:bluemix:public:<CNAME>:us-south:a/<ACCOUNT ID>:<INSTANCE ID>::' })
+```
 
 
 ### How to replace a compromised secret key 
