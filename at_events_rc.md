@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-25"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, resource controller events
 
@@ -92,6 +92,26 @@ The following table lists the actions that generate an event:
 Events are available in the **US-South** region. 
 
 To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **US-South** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2). 
+
+
+## Analyzing events
+{: #at_events_iam_analyze}
+
+**Action: service_name.instance.delete**
+
+When a service instance is deleted, consider the following information:
+* Other actions are automatically triggered to clean up IAM permissions. These actions remove policies that are configured for users and service IDs in the account to work with the service instance. 
+* The initiator of these actions is an {{site.data.keyword.IBM_notm}} service ID.
+
+
+When the service instance that is deleted does not have IAM policies configured for users and service IDs, the events that are automatically generated for any of these resources report an outcome of`failure` with a `404` outcome code. The following sample shows the events that are generated when a service instance that does not have policies configured in the account is deleted:
+
+```
+Apr 30 09:04:16 cloudcerts: delete instance Certificate Manager-v1
+Apr 30 09:41:20 IAM Access Management: delete policy -failure
+Apr 30 09:41:20 IAM Access Management: delete policy -failure
+```
+{: screen}
 
 
 
