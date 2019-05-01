@@ -103,7 +103,7 @@ Use the following table to identify the service roles that you can grant a user 
 |-------------------------------------------------------------------------|------------------------------------------------------|
 | `Manage ingestion keys through the logDNA web UI`                       | Manager                                              |
 | `Manage service keys`                                                   | Manager                                              |
-| `Archive logs`                                                          | Manager                                              |
+| `Archive events`                                                        | Manager                                              |
 | `Define exclusion rules`                                                | Manager                                              |
 | `Configure alerts`                                                      | Manager </br>Reader                                  | 
 | `Filter and search data`                                                | Manager </br>Reader                                  |
@@ -111,7 +111,7 @@ Use the following table to identify the service roles that you can grant a user 
 | `Manage views`                                                          | Manager </br>Reader                                  |
 | `Export log data`                                                       | Manager </br>Reader                                  |
 | `Configure user preferences in the LogDNA web UI`                       | Manager </br>Reader                                  |
-| `View logs through the LogDNA web UI`                                   | Manager </br>Reader                                  | 
+| `View events through the LogDNA web UI`                                 | Manager </br>Reader                                  | 
 | `View ingestion keys through the logDNA web UI`                         | Manager </br>Writer </br>Reader                      |
 {: caption="Table 2. IAM user roles and actions" caption-side="top"}
 

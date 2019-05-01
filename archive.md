@@ -180,6 +180,7 @@ Complete the following steps to create a bucket:
 
 
 
+
 ## Step 4. Create a service ID for the {{site.data.keyword.cos_full_notm}} instance
 {: #archiving_step4}
 
