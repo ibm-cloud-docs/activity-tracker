@@ -27,7 +27,7 @@ subcollection: logdnaat
 
 LogDNA supports two related capabilities: Super Tenancy and Activity Tracking.
 
-* *Super Tenancy* (ST) is a capability of logging. A "super tenant" can store log lines to other tenants as well as itself. As a super tenant, your service will still have its own instance of Log Analysis with LogDNA for saving its operational log lines. But it also has the ability to save its log lines in the LogDNA instances of your customers.
+* *Super Tenancy* (ST) is a capability of logging. A **super tenant** can store log lines to other tenants as well as itself. As a super tenant, your service will still have its own instance of Log Analysis with LogDNA for saving its operational log lines. But it also has the ability to save its log lines in the LogDNA instances of your customers.
 
 * *Activity Tracker with LogDNA* (AT) is a special LogDNA instance that allows your customers to see their activities on your service. Your service will have its own instance of AT for saving its AT log lines, which are called *events*. But since AT is a super tenant, your service can also save its events in the AT instances of your customers.
 
