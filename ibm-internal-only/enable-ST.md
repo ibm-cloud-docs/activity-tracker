@@ -688,7 +688,7 @@ Our design is optimized for services running in Kubernetes. Listed below are som
  - Select the kind of agent you want. Installation instructions will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
  - In addition to the instructions, you must perform an addition step to enable Super Tenancy. Run this command after running the `sudo logdna-agent -s LOGDNA_LOGHOST` command.
  
-     ```
+```
 sudo logdna-agent -s  LDLOGPATH=/supertenant/logs/ingest
 ```
 {: codeblock}
@@ -731,6 +731,18 @@ curl "https://logs.us-south.logging.test.cloud.ibm.com/supertenant/logs/ingest?h
   - This is an Activity Tracker example, because the "app" is set to the /var/log/at directory. This causes the STSender to forward to AT; otherwise, it is just normal super tenant lines.
   - The "line" is the familiar CADF format of Activity Tracker, wrapped in a payload. The meta structure is no longer necessary, and instead the logSourceCRN field controls where the customer copy of the event should be sent.
   - You can send a number of lines in one API call, since "lines" is an array. The maximum size you can send is 16 Kb
+
+  - LogDNA has code libraries in most common languages for using the API. See [here](https://docs.logdna.com/docs), under "Code Libraries" on the left.
+    - Be cautious about the libs that are "unofficial". They are not supported by LogDNA.
+    - If using one of these libs, consider isolating it in a separate process, similar to how the agent works, reading from a persisted buffer.
+    - One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
+    - Here is a code snippet for sending to a LogDNA STS in us-south, using the NodJS library. (Courtesy of Martin Ross.)
+
+```
+const Logger = require('logdna')
+let logger = Logger.createLogger('<INGESTION KEY>', {logdna_url: 'https://logs.us-south.logging.cloud.ibm.com/supertenant/logs/ingest'})
+logger.log({ app: 'myAppName', message: 'foo bar ', logSourceCRN: 'crn:v1:bluemix:public:<CNAME>:us-south:a/<ACCOUNT ID>:<INSTANCE ID>::' })
+```
 
 
 ### How to replace a compromised secret key 
