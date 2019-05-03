@@ -686,8 +686,10 @@ Our design is optimized for services running in Kubernetes. Listed below are som
  - Click the question mark (`?`) on the bottom left hand side.
  - A pop-up window will be displayed with the choices of LogDNA agents you can use.
  - Select the kind of agent you want. Installation instructions will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
- - In addition to the instructions, you must perform an addition step to enable Super Tenancy. Run this command after running the `sudo logdna-agent -s LOGDNA_LOGHOST` command.
+   * If you need to doublecheck your ingestion key and ingestion paths, look in `/etc/logdna-agent.conf`; this is like the `.yaml` file in Kubernetes. The Kubernetes `LDAPIHOST` is replaced by `LOGDNA_APIHOST`, and `LDLOGHOST` is replaced by `LOGDNA_LOGHOST`.
+ - Set the environment variable `LDLOGPATH=/supertenant/logs/ingest` so the agent process has access to it. For example, in a container the agent runs as root, so the variable must also be at root.
  
+(Does the following work as well as the env variable?)
 ```
 sudo logdna-agent -s  LDLOGPATH=/supertenant/logs/ingest
 ```
