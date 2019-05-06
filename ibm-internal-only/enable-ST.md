@@ -713,7 +713,7 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 		```
        {: codeblock}
 
-3. Use the LogDNA ingestion REAT API
+3. Use the LogDNA ingestion REST API
 {: #ingestionapi}
 
    As a last resort you can use LogDNA's REST API or code libraries.
