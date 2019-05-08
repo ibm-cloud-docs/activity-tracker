@@ -687,17 +687,16 @@ Our design is optimized for services running in Kubernetes. Listed below are som
    - A pop-up window will be displayed with the choices of LogDNA agents you can use.
    - On the left side, select one of the agents listed under `via agent`.
    - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
-
-   - In order to enable Super Tenancy you must add one additional command. 
-      - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
-      - The command is:
+   - In order to enable Super Tenancy you must add one additional command. mm
+   - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
+   - The command is:
       
           ```
-      sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest 
+      sudo logdna-agent -s LDLOGPATH=&#47;supertenant&#47;logs&#47;ingest 
       ```
       {: codeblock}
       
-      - Below is a sample of the instructions to add a Linux Debian Agent. You can see where the LDLOGPATH command was added. 
+   - Below is a sample of the instructions to add a Linux Debian Agent. You can see where the LDLOGPATH command was added. 
           
           ```
        echo "deb https://repo.logdna.com stable main" | sudo tee /etc/apt/sources.list.d/logdna.list
