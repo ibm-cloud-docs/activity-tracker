@@ -679,25 +679,25 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 
    LogDNA provides an assortment of non-kubernetes agents. These agents will behave like the kubernetes agent. They will still read read from log files, have retry support, and support super tenancy. For Activity Tracker events you should write your events to a file in /var/log/at.
  
-  - You will need to create your service's Logging STS and Activity Tracker ATS. Follow the instructions above.
-  - Go to Observability-> Logging 
-  - Identify the STS for the region where you want to install the LogDNA agent. Click on "View LogDNA"
-  - Click the question mark (?) on the bottom left hand side.
-  - A pop-up window will be displayed with the choices of LogDNA agents you can use.
-  - On the left side, select one of the agents listed under `via agent`.
-  - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
-  - In order to enable Super Tenancy you must add one additional command. **RR**
-  - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
-  - The command is:
-  - 
- ```
+    - You will need to create your service's Logging STS and Activity Tracker ATS. Follow the instructions above.
+    - Go to Observability-> Logging 
+    - Identify the STS for the region where you want to install the LogDNA agent. Click on "View LogDNA"
+    - Click the question mark (?) on the bottom left hand side.
+    - A pop-up window will be displayed with the choices of LogDNA agents you can use.
+    - On the left side, select one of the agents listed under `via agent`.
+    - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
+    - In order to enable Super Tenancy you must add one additional command. **SS**
+    - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
+    - The command is:
+    
+     ```
       sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest 
- ```
-   {: codeblock}
+     ```
+     {: codeblock}
       
-  - Below is a sample of the instructions to add a Linux Debian Agent. You can see where the LDLOGPATH command was added. 
+    - Below is a sample of the instructions to add a Linux Debian Agent. You can see where the LDLOGPATH command was added. 
           
-  ```
+      ```
   echo "deb https://repo.logdna.com stable main" | sudo tee /etc/apt/sources.list.d/logdna.list
   wget -O- https://repo.logdna.com/logdna.gpg | sudo apt-key add -
   sudo apt-get update
