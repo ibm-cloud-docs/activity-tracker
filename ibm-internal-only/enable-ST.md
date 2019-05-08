@@ -675,7 +675,8 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 
     If you can not do this right now, proceed to other options below.
 
-  2. Use a LogDNA Agent {: #nokubelogdnaagent}
+  2. Use a LogDNA Agent 
+  {: #nokubelogdnaagent}
 
    LogDNA provides an assortment of non-kubernetes agents. These agents will behave like the kubernetes agent. They will still read read from log files, have retry support, and support super tenancy. For Activity Tracker events you should write your events to a file in /var/log/at.
  
@@ -686,13 +687,13 @@ Our design is optimized for services running in Kubernetes. Listed below are som
     - A pop-up window will be displayed with the choices of LogDNA agents you can use.
     - On the left side, select one of the agents listed under `via agent`.
     - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
-    - In order to enable Super Tenancy you must add one additional command. **SS**
+    - In order to enable Super Tenancy you must add one additional command. **TT**
     - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
     - The command is:
     
-     ```
+          ```
       sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest 
-     ```
+          ```
      {: codeblock}
       
     - Below is a sample of the instructions to add a Linux Debian Agent. You can see where the LDLOGPATH command was added. 
@@ -721,10 +722,9 @@ Our design is optimized for services running in Kubernetes. Listed below are som
   - In addition to fields documented above, you must also add an "app" field in the JSON that contains a fake path to a log file in /var/log/at. See the Curl example below to understand where the "app" field needs to be added in the JSON.
   - You use your logging STS ingestion key for the -u parameter in the REST call.
   Below is a sample Curl command sending an event to LogDNA. To use this please change the ingestion key (-u) and the logSourceCRN fields.
-    
-    
+   
      ```
-   curl "https://logs.us-south.logging.test.cloud.ibm.com/supertenant/logs/ingest?hostname=logdnaTest&mac=$mac&ip=$ip&now=$(date +%s)" \
+     curl "https://logs.us-south.logging.test.cloud.ibm.com/supertenant/logs/ingest?hostname=logdnaTest&mac=$mac&ip=$ip&now=$(date +%s)" \
 -u c442e76e0ac2114516a91db2:: \
 -H "Content-Type: application/json; charset=UTF-8" \
 -d '{
@@ -737,7 +737,7 @@ Our design is optimized for services running in Kubernetes. Listed below are som
     }
   ]
 }'
-     ```
+    ```
 {: codeblock}
 
   **Notes:**
