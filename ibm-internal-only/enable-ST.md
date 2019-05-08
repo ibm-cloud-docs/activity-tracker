@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-05-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, enable super tenancy
 
@@ -671,19 +671,19 @@ spec:
 
 Our design is optimized for services running in Kubernetes. Listed below are some possible remedies for your service.
 
-1. Migrate your service to Kubernetes
+  1. Migrate your service to Kubernetes
 
     If you can not do this right now, proceed to other options below.
 
-2. Use a LogDNA Agent
-{: #nokubelogdnaagent}
+  2. Use a LogDNA Agent
+  {: #nokubelogdnaagent}
 
    LogDNA provides an assortment of non-kubernetes agents. These agents will behave like the kubernetes agent. They will still read read from log files, have retry support, and support super tenancy. For Activity Tracker events you should write your events to a file in /var/log/at.
  
    - You will need to create your service's Logging STS and Activity Tracker ATS. Follow the instructions above.
    - Go to Observability-> Logging 
    - Identify the STS for the region where you want to install the LogDNA agent. Click on "View LogDNA"
-   - Click the question mark (`?`) on the bottom left hand side.
+   - Click the question mark (?) on the bottom left hand side.
    - A pop-up window will be displayed with the choices of LogDNA agents you can use.
    - On the left side, select one of the agents listed under `via agent`.
    - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
