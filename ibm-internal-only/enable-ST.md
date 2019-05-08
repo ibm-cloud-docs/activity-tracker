@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, enable super tenancy
 
@@ -692,14 +692,14 @@ Our design is optimized for services running in Kubernetes. Listed below are som
       - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
       - The command is:
       
-      ```
+          ```
       sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest 
       ```
       {: codeblock}
       
       - Below is a sample of the instructions to add a Linux Debian Agent. You can see where the LDLOGPATH command was added. 
           
-      ```
+          ```
        echo "deb https://repo.logdna.com stable main" | sudo tee /etc/apt/sources.list.d/logdna.list
 		wget -O- https://repo.logdna.com/logdna.gpg | sudo apt-key add -
 		sudo apt-get update
@@ -718,14 +718,13 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 
    As a last resort you can use LogDNA's REST API or code libraries.
 
-- LogDNA Rest API documentation can be found [here. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/reference#api){:new_window}
-- In addition to fields documented above, you must also add an "app" field in the JSON that contains a fake path to a log file in `/var/log/at`. See the Curl example below to understand where the "app" field needs to be added in the JSON.
-- You use your logging STS ingestion key for the -u parameter in the REST call.
-- Below is a sample Curl command sending an event to LogDNA. To use this please change the ingestion key (-u) and 
-  the logSourceCRN fields.
+  - LogDNA Rest API documentation can be found [here. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/reference#api){:new_window}
+  - In addition to fields documented above, you must also add an "app" field in the JSON that contains a fake path to a log file in `/var/log/at`. See the Curl example below to understand where the "app" field needs to be added in the JSON.
+  - You use your logging STS ingestion key for the -u parameter in the REST call.
+  - Below is a sample Curl command sending an event to LogDNA. To use this please change the ingestion key (-u) and the logSourceCRN fields.
     
- ```
-curl "https://logs.us-south.logging.test.cloud.ibm.com/supertenant/logs/ingest?hostname=logdnaTest&mac=$mac&ip=$ip&now=$(date +%s)" \
+     ```
+   curl "https://logs.us-south.logging.test.cloud.ibm.com/supertenant/logs/ingest?hostname=logdnaTest&mac=$mac&ip=$ip&now=$(date +%s)" \
 -u c442e76e0ac2114516a91db2:: \
 -H "Content-Type: application/json; charset=UTF-8" \
 -d '{
