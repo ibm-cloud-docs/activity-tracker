@@ -675,43 +675,42 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 
     If you can not do this right now, proceed to other options below.
 
-  2. Use a LogDNA Agent
-  {: #nokubelogdnaagent}
+  2. Use a LogDNA Agent {: #nokubelogdnaagent}
 
    LogDNA provides an assortment of non-kubernetes agents. These agents will behave like the kubernetes agent. They will still read read from log files, have retry support, and support super tenancy. For Activity Tracker events you should write your events to a file in /var/log/at.
  
-   - You will need to create your service's Logging STS and Activity Tracker ATS. Follow the instructions above.
-   - Go to Observability-> Logging 
-   - Identify the STS for the region where you want to install the LogDNA agent. Click on "View LogDNA"
-   - Click the question mark (?) on the bottom left hand side.
-   - A pop-up window will be displayed with the choices of LogDNA agents you can use.
-   - On the left side, select one of the agents listed under `via agent`.
-   - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
-   - In order to enable Super Tenancy you must add one additional command. **QQ**
-   - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
-   - The command is:
-      
-      ```
+  - You will need to create your service's Logging STS and Activity Tracker ATS. Follow the instructions above.
+  - Go to Observability-> Logging 
+  - Identify the STS for the region where you want to install the LogDNA agent. Click on "View LogDNA"
+  - Click the question mark (?) on the bottom left hand side.
+  - A pop-up window will be displayed with the choices of LogDNA agents you can use.
+  - On the left side, select one of the agents listed under `via agent`.
+  - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
+  - In order to enable Super Tenancy you must add one additional command. **RR**
+  - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
+  - The command is:
+  - 
+ ```
       sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest 
-   ```
+ ```
    {: codeblock}
       
-   - Below is a sample of the instructions to add a Linux Debian Agent. You can see where the LDLOGPATH command was added. 
+  - Below is a sample of the instructions to add a Linux Debian Agent. You can see where the LDLOGPATH command was added. 
           
-       ```
-       echo "deb https://repo.logdna.com stable main" | sudo tee /etc/apt/sources.list.d/logdna.list
-		wget -O- https://repo.logdna.com/logdna.gpg | sudo apt-key add -
-		sudo apt-get update
-		sudo apt-get install logdna-agent < "/dev/null" # this line needed for copy/paste
-		sudo logdna-agent -k abcdeb62c8e0e5bbec12384fd1b225b7 # this is your unique Ingestion Key
-		sudo logdna-agent -s LOGDNA_APIHOST=api.us-south.logging.cloud.ibm.com # this is your API server host
-		sudo logdna-agent -s LOGDNA_LOGHOST=logs.us-south.logging.cloud.ibm.com # this is your Log server host
-		sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest  # You need to add this line
-		sudo update-rc.d logdna-agent defaults
-		sudo /etc/init.d/logdna-agent start
-      ```
-       {: codeblock}
-       </br>
+  ```
+  echo "deb https://repo.logdna.com stable main" | sudo tee /etc/apt/sources.list.d/logdna.list
+  wget -O- https://repo.logdna.com/logdna.gpg | sudo apt-key add -
+  sudo apt-get update
+  sudo apt-get install logdna-agent < "/dev/null" # this line needed for copy/paste
+  sudo logdna-agent -k abcdeb62c8e0e5bbec12384fd1b225b7 # this is your unique Ingestion Key
+  sudo logdna-agent -s LOGDNA_APIHOST=api.us-south.logging.cloud.ibm.com # this is your API server host
+  sudo logdna-agent -s LOGDNA_LOGHOST=logs.us-south.logging.cloud.ibm.com # this is your Log server host
+  sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest  # You need to add this line
+  sudo update-rc.d logdna-agent defaults
+  sudo /etc/init.d/logdna-agent start
+```
+{: codeblock}
+
 
 3. Use the LogDNA ingestion REST API
 {: #ingestionapi}
