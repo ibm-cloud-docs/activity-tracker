@@ -671,34 +671,32 @@ spec:
 
 Our design is optimized for services running in Kubernetes. Listed below are some possible remedies for your service.
 
-  1. Migrate your service to Kubernetes
+#### Migrate your service to Kubernetes
+If you can not do this right now, proceed to other options below.
 
-    If you can not do this right now, proceed to other options below.
+#### Use a LogDNA Agent 
+{: #nokubelogdnaagent}
 
-  2. Use a LogDNA Agent 
-  {: #nokubelogdnaagent}
-
-   LogDNA provides an assortment of non-kubernetes agents. These agents will behave like the kubernetes agent. They will still read read from log files, have retry support, and support super tenancy. For Activity Tracker events you should write your events to a file in /var/log/at.
+LogDNA provides an assortment of non-kubernetes agents. These agents will behave like the kubernetes agent. They will still read read from log files, have retry support, and support super tenancy. For Activity Tracker events you should write your events to a file in /var/log/at.
  
-    - You will need to create your service's Logging STS and Activity Tracker ATS. Follow the instructions above.
-    - Go to Observability-> Logging 
-    - Identify the STS for the region where you want to install the LogDNA agent. Click on "View LogDNA"
-    - Click the question mark (?) on the bottom left hand side.
-    - A pop-up window will be displayed with the choices of LogDNA agents you can use.
-    - On the left side, select one of the agents listed under `via agent`.
-    - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
-    - In order to enable Super Tenancy you must add one additional command. **TT**
-    - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
-    - The command is:
-    
-          ```
-      sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest 
-          ```
-     {: codeblock}
+- You will need to create your service's Logging STS and Activity Tracker ATS. Follow the instructions above.
+- Go to Observability-> Logging 
+- Identify the STS for the region where you want to install the LogDNA agent. Click on "View LogDNA"
+  - Click the question mark (?) on the bottom left hand side.
+  - A pop-up window will be displayed with the choices of LogDNA agents you can use.
+  - On the left side, select one of the agents listed under `via agent`.
+  - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
+  - In order to enable Super Tenancy you must add one additional command. **UU**
+  - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
+  - The command is:   
+```
+sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest 
+```
+{: codeblock}
       
-    - Below is a sample of the instructions to add a Linux Debian Agent. You can see where the LDLOGPATH command was added. 
+  - Below is a sample of the instructions to add a Linux Debian Agent. You can see where the LDLOGPATH command was added. 
           
-      ```
+```
   echo "deb https://repo.logdna.com stable main" | sudo tee /etc/apt/sources.list.d/logdna.list
   wget -O- https://repo.logdna.com/logdna.gpg | sudo apt-key add -
   sudo apt-get update
@@ -713,17 +711,17 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 {: codeblock}
 
 
-3. Use the LogDNA ingestion REST API
+#### Use the LogDNA ingestion REST API
 {: #ingestionapi}
 
-   As a last resort you can use LogDNA's REST API or code libraries.
+As a last resort you can use LogDNA's REST API or code libraries. This section will discuss the REST API.
 
-  - LogDNA Rest API documentation can be found [here. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/reference#api){:new_window}
-  - In addition to fields documented above, you must also add an "app" field in the JSON that contains a fake path to a log file in /var/log/at. See the Curl example below to understand where the "app" field needs to be added in the JSON.
-  - You use your logging STS ingestion key for the -u parameter in the REST call.
-  Below is a sample Curl command sending an event to LogDNA. To use this please change the ingestion key (-u) and the logSourceCRN fields.
+- LogDNA Rest API documentation can be found [here. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/reference#api){:new_window}
+- In addition to fields documented above, you must also add an "app" field in the JSON that contains a fake path to a log file in /var/log/at. See the Curl example below to understand where the "app" field needs to be added in the JSON.
+- You use your logging STS ingestion key for the -u parameter in the REST call.
+- Below is a sample Curl command sending an event to LogDNA. To use this please change the ingestion key (-u) and the logSourceCRN fields.
    
-     ```
+```
      curl "https://logs.us-south.logging.test.cloud.ibm.com/supertenant/logs/ingest?hostname=logdnaTest&mac=$mac&ip=$ip&now=$(date +%s)" \
 -u c442e76e0ac2114516a91db2:: \
 -H "Content-Type: application/json; charset=UTF-8" \
@@ -737,35 +735,35 @@ Our design is optimized for services running in Kubernetes. Listed below are som
     }
   ]
 }'
-    ```
+```
 {: codeblock}
 
-  **Notes:**
+**Notes:**
   
-  - This is an Activity Tracker example, because the "app" is set to the /var/log/at directory. This causes the STSender to forward to AT; otherwise, it is just normal super tenant lines.
-  - The "line" is the familiar CADF format of Activity Tracker, wrapped in a payload. The meta structure is no longer necessary, and instead the logSourceCRN field controls where the customer copy of the event should be sent.
-  - You can send a number of lines in one API call, since "lines" is an array. The maximum size you can send is 16 Kb
-  - One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
+- This is an Activity Tracker example, because the "app" is set to the /var/log/at directory. This causes the STSender to forward to AT; otherwise, it is just normal super tenant lines.
+- The "line" is the familiar CADF format of Activity Tracker, wrapped in a payload. The meta structure is no longer necessary, and instead the logSourceCRN field controls where the customer copy of the event should be sent.
+- You can send a number of lines in one API call, since "lines" is an array. The maximum size you can send is 16 Kb
+- One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
 
 
-4. Use the LogDNA code libraries
+#### Use the LogDNA code libraries
 {: #codelibs}
 
-    LogDNA has code libraries in most common languages. Documentation can be found in the  [LogDNA documentation](https://docs.logdna.com/docs). On the left side of the window look for "Code Libraries".
+LogDNA has code libraries in most common languages. Documentation can be found in the  [LogDNA documentation](https://docs.logdna.com/docs). On the left side of the window look for "Code Libraries".
 
-  Activity Tracker has not investigated using LogDNA code libraries with events. 
+Activity Tracker has not investigated using LogDNA code libraries with events. 
 {: note} 
 
- - Be cautious about the libraries that are "unofficial". They are not supported by LogDNA.
- - If using one of these libs, consider isolating it in a separate process, similar to how the agent works, reading from a persisted buffer.
-  - One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
-  - Here is a code snippet for sending to a LogDNA STS in us-south, using the NodJS library. (Courtesy of Martin Ross.)
+- Be cautious about the libraries that are "unofficial". They are not supported by LogDNA.
+- If using one of these libs, consider isolating it in a separate process, similar to how the agent works, reading from a persisted buffer.
+- One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
+- Here is a code snippet for sending to a LogDNA STS in us-south, using the NodJS library. (Courtesy of Martin Ross.)
 
-     ```
+```
      const Logger = require('logdna')
      let logger = Logger.createLogger('<INGESTION KEY>', {logdna_url: 'https://logs.us-    south.logging.cloud.ibm.com/supertenant/logs/ingest'})
      logger.log({ app: 'myAppName', message: 'foo bar ', logSourceCRN:   'crn:v1:bluemix:public:<CNAME>:us-south:a/<ACCOUNT ID>:<INSTANCE ID>::' })
-    ```
+```
 {: codeblock}
 
 ### How to replace a compromised secret key 
