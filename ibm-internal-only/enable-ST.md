@@ -673,6 +673,7 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 
 #### Migrate your service to Kubernetes
 If you can not do this right now, proceed to other options below.
+**VV**
 
 #### Use a LogDNA Agent 
 {: #nokubelogdnaagent}
@@ -686,9 +687,10 @@ LogDNA provides an assortment of non-kubernetes agents. These agents will behave
   - A pop-up window will be displayed with the choices of LogDNA agents you can use.
   - On the left side, select one of the agents listed under `via agent`.
   - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
-  - In order to enable Super Tenancy you must add one additional command. **UU**
-  - The command must be added after the last `sudo logdna-agent -s` command listed in the instructions.
-  - The command is:   
+  - In order to enable Super Tenancy you must add one additional command. ****
+  - The command must be added after the last **sudo logdna-agent -s** command listed in the instructions.
+  - The command is: 
+    
 ```
 sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest 
 ```
