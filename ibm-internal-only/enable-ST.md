@@ -673,7 +673,7 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 
 #### Migrate your service to Kubernetes
 If you can not do this right now, proceed to other options below.
-**XX**
+**ZZ**
 
 #### Use a LogDNA Agent 
 {: #nokubelogdnaagent}
@@ -761,11 +761,11 @@ Activity Tracker has not investigated using LogDNA code libraries with events.
 - One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
 - Here is a code snippet for sending to a LogDNA STS in us-south, using the NodJS library. (Courtesy of Martin Ross.)
 
-  ```
+```
      const Logger = require('logdna')
      let logger = Logger.createLogger('<INGESTION KEY>', {logdna_url: 'https://logs.us-    south.logging.cloud.ibm.com/supertenant/logs/ingest'})
      logger.log({ app: 'myAppName', message: 'foo bar ', logSourceCRN:   'crn:v1:bluemix:public:<CNAME>:us-south:a/<ACCOUNT ID>:<INSTANCE ID>::' })
-  ```
+```
 {: codeblock}
 
 ### How to replace a compromised secret key 
