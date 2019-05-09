@@ -673,7 +673,6 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 
 #### Migrate your service to Kubernetes
 If you can not do this right now, proceed to other options below.
-**ZZ**
 
 #### Use a LogDNA Agent 
 {: #nokubelogdnaagent}
