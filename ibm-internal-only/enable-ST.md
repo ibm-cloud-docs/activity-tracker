@@ -673,7 +673,7 @@ Our design is optimized for services running in Kubernetes. Listed below are som
 
 #### Migrate your service to Kubernetes
 If you can not do this right now, proceed to other options below.
-**WW**
+**XX**
 
 #### Use a LogDNA Agent 
 {: #nokubelogdnaagent}
@@ -765,7 +765,7 @@ Activity Tracker has not investigated using LogDNA code libraries with events.
      const Logger = require('logdna')
      let logger = Logger.createLogger('<INGESTION KEY>', {logdna_url: 'https://logs.us-    south.logging.cloud.ibm.com/supertenant/logs/ingest'})
      logger.log({ app: 'myAppName', message: 'foo bar ', logSourceCRN:   'crn:v1:bluemix:public:<CNAME>:us-south:a/<ACCOUNT ID>:<INSTANCE ID>::' })
-```
+  ```
 {: codeblock}
 
 ### How to replace a compromised secret key 
