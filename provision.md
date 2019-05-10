@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-05-10"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, provision instance
 
@@ -24,16 +24,20 @@ subcollection: logdnaat
 # Provisioning an instance
 {: #provision}
 
-Before you can monitor and manage event data with {{site.data.keyword.at_full_notm}}, you must first provision an instance of the service in {{site.data.keyword.cloud_notm}}.
+Before you can monitor and manage event data with {{site.data.keyword.at_full_notm}}, you must provision an instance of the service in {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-To provision an {{site.data.keyword.at_full_notm}} instance in a Public Cloud region, you must select the service plan that is associated with the instance, the region where your logs are collected, and the plan that determines the retention period for your logs. You can choose from 7, 14, or 30-day retention periods.
+To provision an {{site.data.keyword.at_full_notm}} instance in a Public Cloud region, consider the following information:
 
-Alternatively, {{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your events as they pass through the system. You can view events by using event tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
+* You must select the service plan that is associated with the instance, the region where your logs are collected, and the plan that determines the retention period for your logs. You can choose from 7, 14, or 30-day retention periods.
 
-To provision a service instance, your user ID must have permisisons to provision a service in a resource group. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#groups).
-{: tip}
+    Alternatively, {{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your events as they pass through the system. You can view events by using event tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
 
+* Your user ID must have permisisons to provision a service in a resource group. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#groups).
+
+
+You can only provision 1 instance of the service per {{site.data.keyword.cloud_notm}} region.
+{: imp}
 
 ## Provisioning an instance through the Observability dashboard
 {: #provision_ui}
