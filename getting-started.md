@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-05-10"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started
 
@@ -61,6 +61,7 @@ Consider the following information about security when you work with the {{site.
 * IBM services that generate {{site.data.keyword.at_full_notm}} events follow the {{site.data.keyword.IBM_notm}} Cloud security policy. For more information, see [Trust the security and privacy of IBM Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/security){: new_window}.
 * The {{site.data.keyword.at_full_notm}} service captures user-initiated actions that change the state of Cloud services. The information does not provide direct access to databases or applications.
 * Only authorized users can view and monitor {{site.data.keyword.at_full_notm}} event logs. Each user is identified by their unique ID in the {{site.data.keyword.cloud_notm}}.
+* You can only provision 1 instance of the service per {{site.data.keyword.cloud_notm}} region.
 
 
 ## Objectives
@@ -162,7 +163,7 @@ Complete the following steps to assign a policy to an access group through the U
 12. Click **Assign**.
 
 
-### 3.  Add the user to the group
+### 3. Add the user to the group
 {: #gs_step2_step3}
 
 Complete the following steps to add the user to the access group:
