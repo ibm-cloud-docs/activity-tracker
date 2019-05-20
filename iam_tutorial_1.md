@@ -58,7 +58,7 @@ For example, you might be interested in finding out why an action to delete a us
 
 2. To work with the command-line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
-3. You need an {{site.data.keyword.at_full_notm}} instance provisioned in Frankfurt with a 7-day, 14-day, or 30-day plan.
+3. You need an {{site.data.keyword.at_full_notm}} instance provisioned in Frankfurt with a 7-day, 14-day, or 30-day plan. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision).
 
 4. Your user ID must have assigned an IAM policy to work in the {{site.data.keyword.cloud_notm}} with {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/iam?topic=iam-iammanidaccser#access_to_resources).
 
@@ -134,7 +134,7 @@ For example, if you create an API key with name `demo-key`, you can see the foll
 {:screen}
 
 
-### Generate events by using the CLI that fail
+### Generate events by using the CLI for actions that fail
 {: #aim_tut_1_step1_3}
 
 Complete the following steps to generate events as a result of actions on user API keys in the account :  This step will generate an event that reports an action that fails.
@@ -244,10 +244,9 @@ Complete the following steps to configure a dashboard:
 
 1. In the web UI, click the **Dashboards** icon ![Dashboards icon](images/boards.png).
 2. Select **NEW BOARD**.
-3. Click **Edit** to enter the name of the dashboard. Optionally, you can also create or add the dahboard to a category. Click **Save**.
-4. Click **Add Graph**.
-5. Choose a field to graph. Select **action**. Then, click **Add Graph**.
-6. Click the **Search** icon ![Search icon](images/search.png). Enter **iam-identity.user-apikey.*** to filter out all actions that are related to user API keys.
+3. Click **Add Graph**.
+4. Choose a field to graph. Select **action**. Then, click **Add Graph**.
+5. Click the **Search** icon ![Search icon](images/search.png). Enter **iam-identity.user-apikey.*** to filter out all actions that are related to user API keys.
 6. Select the time interval that you want to see through this dashboard. Choose **Live** to see the past 60 minutes.
 7. Click the **expand** icon ![Expand icon](images/expand.png). Choose the breakdown type *histogram*.
 8. Select the field to distribute the data in the histogram. Choose **action**. Then, click **Add breakdown**. You see entries for each action of type *iam-identity.user-apikey* that has data in the time interval that you selected.
@@ -258,7 +257,7 @@ Complete the following steps to configure a dashboard:
 
     ![Plus icon](images/dashboard_sample_1.png)
 
-
+10. Click **Edit** to enter the name of the dashboard. Optionally, you can also create or add the dahboard to a category. Click **Save**.
 
 
 
