@@ -166,33 +166,55 @@ In the web UI, verify that you see the events for each of these actions.
 
 From the {{site.data.keyword.at_short}} web UI, complete the following steps to customize views that you can use to monitor user API key actions in your account:
 
-* In the web UI, click the **Views** icon ![Configuration icon](images/views.png "Configuration icon").
-* Select **Everything**.
-* Choose a search condition. The following table shows different actions and the corresponding search condition:
+1. In the web UI, click the **Views** icon ![Configuration icon](images/views.png "Configuration icon").
+2. Select **Everything**.
+3. Choose a search condition. The following table shows different actions and the corresponding search condition:
 
-| Action                                                                                             | Search condition                                                   |
-|----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
-| View user API key events                                                                           | `(action user-apikey) -login`                                      |
-| View failed user API key events                                                                    | `(action user-apikey) -login failure`                              | 
-| View events related to deletion of a user API key                                                  | `(action user-apikey.delete) -login`                               |
-| View events related to locking a user API key, renaming a key, or changing the description field.  | `(action user-apikey.update) -login`                               |
-| View events that originate from actions in the UI                                                  | `initiator.host.agent:"NotSet" (action user-apikey) -login`        |
-| View events that originate from actions in the CLI                                                 | `initiator.host.agent:"IBM Cloud CLI" (action user-apikey) -login` |
-{: caption="Table 1. Condition to filter user API key events for create, delete, lock, unlock, and update actions." caption-side="top"}
+    <table>
+      <caption>Table 1. Condition to filter user API key events for create, delete, lock, unlock, and update actions.</caption>
+      <tr>
+        <th>Action</th>
+        <th>Search condition</th>
+      </tr>
+      <tr>
+        <td>View user API key events</td>
+        <td>`(action user-apikey) -login`</td>
+      </tr>
+      <tr>
+        <td>View failed user API key events</td>
+        <td>`(action user-apikey) -login failure`</td>
+      </tr>
+      <tr>
+        <td>View events related to deletion of a user API key</td>
+        <td>`(action user-apikey.delete) -login`</td>
+      </tr>
+      <tr>
+        <td>View events related to locking a user API key, renaming a key, or changing the description field.</td>
+        <td>`(action user-apikey.update) -login`</td>
+      </tr>
+      <tr>
+        <td>View events that originate from actions in the UI</td>
+        <td>`initiator.host.agent:"NotSet" (action user-apikey) -login`</td>
+      </tr>
+      <tr>
+        <td>View events that originate from actions in the CLI</td>
+        <td>`initiator.host.agent:"IBM Cloud CLI" (action user-apikey) -login`</td>
+      </tr>
+    </table>
 
-* Enter the condition in the **Search bar**, then click `Enter`. 
+4. Enter the condition in the **Search bar**, then click `Enter`. 
 
     In this tutorial, create a view to show events that report deletion of user API keys. The condition is `(action user-apikey.delete) -login`.
 
     As you apply the search criteria, notice that the name of the view changes from **Everything** to **Unsaved View**.
 
-* Click **Unsaved View** and select, **Save as new view / alert**. A *Create View* page opens.
+5. Click **Unsaved View** and select, **Save as new view / alert**. A *Create View* page opens.
 
-* Enter a name for the view.
+6. Enter a name for the view.
 
-* Optionally, choose a category. You can create a new one too.
+7. Optionally, choose a category. You can create a new one too.
 
-* Click **Save View**.
+8. Click **Save View**.
 
 To create multiple views based on the search condition, repeat the tasks in this step of the tutorial.
 
