@@ -373,7 +373,7 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
    
     **provision_key** is the same key you used to create your service's Logging STS instance.
    
-    **logSourceCRN** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS.
+    **associated_logging_crn** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS.
 
     An example command:
 
@@ -686,12 +686,12 @@ LogDNA provides an assortment of non-kubernetes agents. These agents will behave
   - A pop-up window will be displayed with the choices of LogDNA agents you can use.
   - On the left side, select one of the agents listed under `via agent`.
   - Installation commands will be provided. The instructions will be tailor made based on your STS instance. This includes your ingestion key and ingestion paths.
-  - In order to enable Super Tenancy you must add one additional command. ****
+  - In order to enable Super Tenancy you must add one additional command.
   - The command must be added after the last **sudo logdna-agent -s** command listed in the instructions.
   - The command is: 
     
 ```
-sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest 
+sudo logdna-agent -s LOGDNA_LOGENDPOINT=/supertenant/logs/ingest 
 ```
 {: codeblock}
       
@@ -705,7 +705,7 @@ sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest
   sudo logdna-agent -k abcdeb62c8e0e5bbec12384fd1b225b7 # this is your unique Ingestion Key
   sudo logdna-agent -s LOGDNA_APIHOST=api.us-south.logging.cloud.ibm.com # this is your API server host
   sudo logdna-agent -s LOGDNA_LOGHOST=logs.us-south.logging.cloud.ibm.com # this is your Log server host
-  sudo logdna-agent -s LDLOGPATH=/supertenant/logs/ingest  # You need to add this line
+  sudo logdna-agent -s LOGDNA_LOGENDPOINT=/supertenant/logs/ingest  # You need to add this line
   sudo update-rc.d logdna-agent defaults
   sudo /etc/init.d/logdna-agent start
 ```
