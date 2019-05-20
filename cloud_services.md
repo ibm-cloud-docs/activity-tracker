@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-05-14"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -33,7 +33,7 @@ Use the {{site.data.keyword.at_full}} service to monitor user-initiated activiti
 ## Platform core integrated services
 {: #platform_core_integrated}
 
-Core platform services generate events that you can view through the **us-south** {{site.data.keyword.at_full_notm}} web UI. To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **US-South** region.
+Core platform services generate events that you can view through the **Dallas (us-south)** {{site.data.keyword.at_full_notm}} web UI. To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Dallas (us-south)** region.
 {: note}
 
 The following table lists core platform services that send events to {{site.data.keyword.at_full_notm}}:
@@ -54,7 +54,7 @@ You can generate a Cloud Foundry (CF) instance, or alias, of this service with t
 ## Platform integrated security services
 {: #platform_integrated_security}
 
-Integrated security services generate events that you can view through the **us-south** {{site.data.keyword.at_full_notm}} web UI. To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **US-South** region.
+Integrated security services generate events that you can view through the **Dallas (us-south)** {{site.data.keyword.at_full_notm}} web UI. To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Dallas (us-south)** region.
 {: note}
 
 The following table lists core security platform services that send events to {{site.data.keyword.at_full_notm}}:
