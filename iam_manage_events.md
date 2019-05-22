@@ -30,6 +30,14 @@ subcollection: logdnaat
 
 For example, as an administrator of the service, you can provison and remove instances of the service, grant other users permissions to work with the service, archive logs to an {{site.data.keyword.cos_full_notm}} (COS) instance, and more. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
 
+## Prerequisites
+{: #iam_manage_events_prereq}
+
+Your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. You might need to contact the account administrator to grant you administrative permissions to manage the {{site.data.keyword.at_full_notm}} service in the account. [Learn nmore](/docs/iam?topic=iam-userroles).
+
+The account owner can grant another user full access to the account for the purposes of managing user access, and managing account resources. 
+
+
 ## Step 1. Create an access group
 {: #ime_step1}
 

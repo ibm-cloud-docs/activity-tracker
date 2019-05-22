@@ -28,6 +28,14 @@ subcollection: logdnaat
 {{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Complete the following steps to grant a user or service ID the minimum permissions to work with the {{site.data.keyword.at_full_notm}} service: 
 {:shortdesc}
 
+## Prerequisites
+{: #iam_view_events_prereq}
+
+Your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. You might need to contact the account administrator to grant you administrative permissions to manage the {{site.data.keyword.at_full_notm}} service in the account. [Learn nmore](/docs/iam?topic=iam-userroles).
+
+The account owner can grant another user full access to the account for the purposes of managing user access, and managing account resources. 
+
+
 
 ## Step 1. Create an access group
 {: #iam_view_events_step1}

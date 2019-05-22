@@ -91,7 +91,9 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the {{sit
 
 5. Enter a name for the service instance.
 
-6. Select the [location](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions) where you plan to provision the instance. 
+6. Select the location where you plan to provision the instance. 
+
+    To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
 
 7. Select a resource group. 
 
@@ -119,7 +121,9 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the comma
 
    If the CLI is installed, continue with the next step.
 
-2. Log in to the [location](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions) in the {{site.data.keyword.cloud_notm}} where you want to provision the instance. Run the following command: [`ibmcloud login`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login)
+2. Log in to the location in the {{site.data.keyword.cloud_notm}} where you want to provision the instance. Run the following command: [`ibmcloud login`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login)
+
+    To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
 
 3. Set the resource group where you want to provision the instance. Run the following command: [`ibmcloud target`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_target)
 
@@ -140,7 +144,7 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the comma
 
     * SERVICE_PLAN_NAME is the type of plan. Valid values are *lite*, *7-days*, *14-days*, *30-days*
     
-    * LOCATION is the region where the LogDNA instance is created. For example, a valid value is *us-south*
+    * LOCATION is the region where the LogDNA instance is created. To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
 
     
 For example, to provision an instance with the 7 days retention plan, run the following command:
