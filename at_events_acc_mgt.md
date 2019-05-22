@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-14"
+lastupdated: "2019-05-21"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account events
 
@@ -77,9 +77,9 @@ The following table lists the actions that generate an event:
 ## Where to look for the events
 {: #at_events_acc_mgt_ui}
 
-Events are available in the **US-South** region. 
+Events are available in the **Frankfurt (eu-de)** region. 
 
-To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **US-South** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2). 
+To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2). 
 
 
 

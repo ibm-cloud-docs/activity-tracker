@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-05-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, iam, manage user access, viewer
 
@@ -68,18 +68,25 @@ ibmcloud iam access-group-policy-create GROUP_NAME {-f, --file @JSON_FILE | --ro
 ```
 {: codeblock}
 
+When you define the policy, you need to select a platform role and a service role:
+* Platform management roles cover a range of actions, including the ability to create and delete instances, manage aliases, bindings, and credentials, and manage access. The platform roles are administrator, editor, operator, viewer. Platform management roles also apply to account management services that enable users to invite users, manage service IDs, access policies, catalog entries, and track billing and usage depending on their assigned role on an account management service.
+* Service access roles define a user or service’s ability to perform actions on a service instance. The service access roles are manager, writer, and reader.
+
+To manage the {{site.data.keyword.at_full_notm}} service, a user needs the following roles:
+* Platform role: **Administrator**. 
+* Service role: **Manager**. 
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
+
 Complete the following steps to assign a policy to an access group through the UI:
 
 1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and select **Access Groups**.
 2. Select the name of the group that you want to assign access to. 
 3. Click **Access policies**.
 4. Click **Assign access**.
-5. Choose to assign access by resources within a resource group, individual resources available within the account, or account management services. For example, you can choose any of the following options to grant a user an administrator role to manage an {{site.data.keyword.at_full_notm}} instance:
+5. Choose to assign access by resources within a resource group, or by individual resources available within the account. For example, you can choose any of the following options to grant a user an administrator role to manage {{site.data.keyword.at_full_notm}}:
 
-### Option 1. Grant permissions to a user to become an administrator of the service in the {{site.data.keyword.cloud_notm}} account
+### Option 1. Grant permissions on the service
 {: #admin_account_opt1}
-
-To grant a user administrator role to manage the service in the account, the user must have an IAM policy for the {{site.data.keyword.at_full_notm}} service with the platform role **Administrator**. You must assign this user access to an individual resource in the account. 
 
 Complete the following steps to assign a user administrator role to the {{site.data.keyword.at_full_notm}} service in the account: 
 
@@ -91,10 +98,8 @@ Complete the following steps to assign a user administrator role to the {{site.d
 6. Select the service role **Manager**.
 7. Click **Assign**.
 
-### Option 2. Grant permissions to a user to become an administrator of the service within a resource group
+### Option 2. Grant permissions within the context of a resource group
 {: #admin_account_opt2}
-
-To grant a user administrator role to manage instances within a resource group in the account, the user must have an IAM policy for the {{site.data.keyword.at_full_notm}} service with the platform role **Administrator** within the context of the resource group. 
 
 Complete the following steps to assign a user administrator role to the {{site.data.keyword.at_full_notm}} service within the context of a resource group: 
 
@@ -111,8 +116,11 @@ Complete the following steps to assign a user administrator role to the {{site.d
 6. Select the service role **Manager**.
 7. Click **Assign**.
 
-### Option 3. Grant permissions to a user to become an administrator of a single instance of the service in the {{site.data.keyword.cloud_notm}}
+### Option 3. Grant permissions in a location
 {: #admin_account_opt3}
+
+You can only provision 1 instance of the {{site.data.keyword.at_full_notm}} service per location. Therefore, when you grant permissions by using this option, you are controlling access per location. 
+{: note}
 
 Complete the following steps to assign a user administrator role on one instance of the {{site.data.keyword.at_full_notm}} service: 
 

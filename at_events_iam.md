@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-05-21"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -115,9 +115,9 @@ The following table lists the actions that generate an event:
 ## Viewing events
 {: #at_events_iam_ui}
 
-Access group events, and policy events are available in the **Dallas (us-south)** region. To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Dallas (us-south)** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2).
+Events are available in the **Frankfurt (eu-de)** region. 
 
-Service ID events, API key events, and login events are available in the **Frankfurt (eu-de)** region. To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2). 
+To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2). 
 
 
 ## Analyzing events

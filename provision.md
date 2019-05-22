@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-10"
+lastupdated: "2019-05-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, provision instance
 
@@ -37,7 +37,7 @@ To provision an {{site.data.keyword.at_full_notm}} instance in a Public Cloud re
 
 
 You can only provision 1 instance of the service per {{site.data.keyword.cloud_notm}} region.
-{: imp}
+{: important}
 
 ## Provisioning an instance through the Observability dashboard
 {: #provision_ui}
@@ -54,7 +54,7 @@ To provision an instance from the Observability dashboard in the {{site.data.key
 
 4. Enter a name for the service instance.
 
-5. Select the region where you plan to provision the instance.
+5. Select the [location](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions) where you plan to provision the instance. 
 
 6. Select a resource group. 
 
@@ -91,17 +91,19 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the {{sit
 
 5. Enter a name for the service instance.
 
-6. Select a resource group. 
+6. Select the [location](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions) where you plan to provision the instance. 
+
+7. Select a resource group. 
 
     By default, the **Default** resource group is set.
 
     **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
 
-7. Select the `Lite` service plan. 
+8. Select the `Lite` service plan. 
 
     By default, the lite plan is set.
 
-8. Click **Create**.
+9. Click **Create**.
 
 After you provision an instance, the *Activity Tracker* dashboard opens. 
 
@@ -117,7 +119,7 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the comma
 
    If the CLI is installed, continue with the next step.
 
-2. Log in to the region in the {{site.data.keyword.cloud_notm}} where you want to provision the instance. Run the following command: [`ibmcloud login`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login)
+2. Log in to the [location](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions) in the {{site.data.keyword.cloud_notm}} where you want to provision the instance. Run the following command: [`ibmcloud login`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login)
 
 3. Set the resource group where you want to provision the instance. Run the following command: [`ibmcloud target`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_target)
 

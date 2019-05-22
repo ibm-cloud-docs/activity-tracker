@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-10"
+lastupdated: "2019-05-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started
 
@@ -61,7 +61,7 @@ Consider the following information about security when you work with the {{site.
 * IBM services that generate {{site.data.keyword.at_full_notm}} events follow the {{site.data.keyword.IBM_notm}} Cloud security policy. For more information, see [Trust the security and privacy of IBM Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/security){: new_window}.
 * The {{site.data.keyword.at_full_notm}} service captures user-initiated actions that change the state of Cloud services. The information does not provide direct access to databases or applications.
 * Only authorized users can view and monitor {{site.data.keyword.at_full_notm}} event logs. Each user is identified by their unique ID in the {{site.data.keyword.cloud_notm}}.
-* You can only provision 1 instance of the service per {{site.data.keyword.cloud_notm}} region.
+* You can only provision 1 instance of the service per {{site.data.keyword.cloud_notm}} location (region).
 
 
 ## Objectives
@@ -75,15 +75,9 @@ Complete this tutorial to learn how to provision a service in the {{site.data.ke
 
 * You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
-* Your {{site.data.keyword.IBM_notm}}ID must have assigned IAM policies to work in the {{site.data.keyword.cloud_notm}} with {{site.data.keyword.at_full_notm}} service. The following table lists the minimum permissions that you need to complete this tutorial: 
-
-| Resource                             | Scope of the access policy | Role    | Region    | Information                  |
-|--------------------------------------|----------------------------|---------|-----------|------------------------------|
-| Resource group **Default**           |  Resource group            | Editor  | us-south  | This policy is required to allow the user to see service instances in the Default resource group.    |
-| {{site.data.keyword.at_full_notm}} service |  Resource group            | Editor  | us-south  | This policy is required to allow the user to provision and administer the {{site.data.keyword.at_full_notm}} service in the Default resource group.   |
-{: caption="Table 1. List of IAM policies required to complete the tutorial" caption-side="top"} 
-
 * If you prefer to work with the command line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+
+* To manage access to the service, your user ID needs administrator permissions to manage the account. The account owner can grant another user full access to the account for the purposes of managing user access and managing all account resources. Account administrators require two policies. One policy that gives the user access to all resources in the account by selecting **All Identity and Access enabled services** with the *Administrator* and *Manager* roles assigned. And, one policy that gives the user access to all account management services in the account by selecting **All account management services** with the *Administrator* role assigned. [Learn nmore](/docs/iam?topic=iam-userroles).
 
 
 ## Step 1. Provision an instance of the {{site.data.keyword.at_full_notm}} service
@@ -121,9 +115,9 @@ After you provision an instance, the *Activity Tracker* dashboard opens.
 ## Step 2. Manage access to the service
 {: #gs_step2}
 
-**Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles. 
+**Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam).
 
-In this tutorial, you will learn how to grant a user management permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a resource group. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
+In this tutorial, you will learn how to grant a user management permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a resource group.
 
 
 ### 1. Create an access group
@@ -138,11 +132,18 @@ Complete the following steps to create an access group:
 ### 2. Add permissions to manage events
 {: #gs_step2_step2}
 
-After you set up your group, you can assign a common access policy to the group.
+After you set up your group, you must assign a common access policy to the group. Any policy that you set for an access group applies to all entities, users and service IDs, within the group.
 
-To grant a user administrator role to manage instances within a resource group in the account, the user must have an IAM policy for the {{site.data.keyword.at_full_notm}} service with the platform role **Administrator** within the context of the resource group. 
+When you define the policy, you need to select a platform role and a service role:
+* Platform management roles cover a range of actions, including the ability to create and delete instances, manage aliases, bindings, and credentials, and manage access. The platform roles are administrator, editor, operator, viewer. Platform management roles also apply to account management services that enable users to invite users, manage service IDs, access policies, catalog entries, and track billing and usage depending on their assigned role on an account management service.
+* Service access roles define a user or service’s ability to perform actions on a service instance. The service access roles are manager, writer, and reader.
 
-Complete the following steps to assign a policy to an access group through the UI:
+To manage the {{site.data.keyword.at_full_notm}} service, a user needs the following roles:
+* Platform role: **Administrator**. 
+* Service role: **Manager**. 
+
+
+Complete the following steps to assign a policy through the UI:
 
 1. From the menu bar, click **Manage** &gt; **Access (IAM)**.
 2. Select **Access Groups**.
@@ -212,7 +213,9 @@ Complete the following steps to launch the web UI:
 
     The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
 
-4. Select one instance. Then, click **View LogDNA**.
+4. Select the instance located in **Frankfurt**. Then, click **View LogDNA**.
+
+    Global events, like provisioning a service, are available through the global domain instance that is located in Frankfurt.
 
 The web UI opens. 
 
@@ -225,9 +228,9 @@ The {{site.data.keyword.at_full_notm}} service captures activity data that is re
 
 * Events are collected automatically. 
 * Events that are collected in {{site.data.keyword.at_full_notm}} comply with the **Cloud Auditing Data Federation (CADF) standard**. The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
-* {{site.data.keyword.at_full_notm}} stores and groups events by region. 
-* Events that report on global {{site.data.keyword.cloud_notm}} account actions, are collected and stored in the **US-South** region.
-* The service plan that you select for your {{site.data.keyword.at_full_notm}} instance determines the number of days that events are available for search through the web UI. 
+* {{site.data.keyword.at_full_notm}} stores and groups events by location. 
+* Events that report on global {{site.data.keyword.cloud_notm}} account actions, are collected and stored in **Frankfurt (EU-DE)**.
+* The service plan that you select for your {{site.data.keyword.at_full_notm}} instance sets the number of days that events are available for search through the web UI. 
 
 
 At any time, you can view each event line in context. Complete the following steps to view an event in context: 
