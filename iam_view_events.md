@@ -31,9 +31,7 @@ subcollection: logdnaat
 ## Prerequisites
 {: #iam_view_events_prereq}
 
-Your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. You might need to contact the account administrator to grant you administrative permissions to manage the {{site.data.keyword.at_full_notm}} service in the account. [Learn nmore](/docs/iam?topic=iam-userroles).
-
-The account owner can grant another user full access to the account for the purposes of managing user access, and managing account resources. 
+Your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. Contact the account administrator. The account owner can grant another user access to the account for the purposes of managing user access, and managing account resources. [Learn more](/docs/iam?topic=iam-userroles).
 
 
 

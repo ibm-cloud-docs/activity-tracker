@@ -73,14 +73,11 @@ Complete this tutorial to learn how to provision a service in the {{site.data.ke
 ## Prerequisites
 {: #gs_prereq}
 
-* You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+* You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
 * If you prefer to work with the command line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
-* To complete the steps to manage access to the service, your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. You might need to contact the account administrator to grant you administrative permissions to manage the {{site.data.keyword.at_full_notm}} service in the account. [Learn more](/docs/iam?topic=iam-userroles).
-
-    The account owner can grant another user full access to the account for the purposes of managing user access, and managing account resources. 
-
+* To complete the steps to manage access to the service, your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. Contact the account administrator. The account owner can grant another user access to the account for the purposes of managing user access, and managing account resources. [Learn more](/docs/iam?topic=iam-userroles).
 
 
 
@@ -128,7 +125,6 @@ In this tutorial, you will learn how to grant a user management permissions to w
 {: #gs_step2_step1}
 
 Complete the following steps to create an access group:
-
 1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and select **Access Groups**.
 2. Click **Create**.
 3. Enter a name and optional description for your group, and click **Create**.

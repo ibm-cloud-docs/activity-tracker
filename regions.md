@@ -27,7 +27,6 @@ subcollection: logdnaat
 {:shortdesc}
 
 
-
 | Geography             | Region               | 
 |-----------------------|----------------------|
 | `North America`       | `Dallas (us-south)`  | 
