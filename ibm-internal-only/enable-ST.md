@@ -198,7 +198,8 @@ The LogDNA Agent sends logs and events to LogDNA. The agent will collect the fol
 * Logs from stdout/stderr, applications and node logs, and anything in `/var/log`. 
 * For Activity Tracker, it will collect anything under `/var/log/at`. 
 
-By default, the agent will collect logs from all namespaces on each node, including kube-system.  
+By default, the logDNA agent will be installed in the cluster default namespace. The agent will collect logs from all namespaces on each node (including kube-system). You can install the agent in a different namespace, but logs will still be collected from all namespaces. The logDNA agent and secret must be installed in the same namespace.
+{: note}  
 
 Below we will show you how to install the agent pod in each node in your cluster.
 
