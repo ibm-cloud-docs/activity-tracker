@@ -55,11 +55,6 @@ Consider the following information when you export log data:
 
 
 
-## Hide events from views
-{: #manage_events_hide}
-
-
-
 ## Archive events
 {: #manage_events_archive}
 
@@ -85,7 +80,11 @@ The {{site.data.keyword.cos_full_notm}} instance is provisioned within the conte
 ## Classify events by using categories
 {: #manage_events_category}
 
+You can define categories through the **Categories** section in the web UI. 
 
+You can define categories to group views. You can define a different set of categories to group dashboards.
+
+Use categories to group resources so users can easily find them. 
 
 
 
