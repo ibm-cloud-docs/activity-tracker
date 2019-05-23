@@ -23,7 +23,7 @@ subcollection: logdnaat
 
 
 # Creating custom views
-{: #views.md}
+{: #views}
 
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search and filtering criteria to define the events that are displayed through a custom view.
 {:shortdesc}
