@@ -32,11 +32,11 @@ Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search quer
 ## Prerequisites
 {: #alerts_prereqs}
 
-* [Learn more about alerts]().
+* [Learn more about alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_alerts).
 
 * **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan).
 
-* Before you start, check that your user ID has permissions to launch the web UI and view events. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
+* Check that your user ID has permissions to launch the web UI and view events. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
 
 | Role                      | Permission granted            |
 |---------------------------|-------------------------------|  

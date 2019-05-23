@@ -10,6 +10,7 @@ IBM Cloud Activity Tracker with LogDNA
     cloud_services.md
     iam.md
     monitor_events.md
+    manage_events.md
 
     {: .topicgroup}
     Tutorials

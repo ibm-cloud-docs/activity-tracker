@@ -4,7 +4,7 @@ copyright:
   years: 2019
 lastupdated: "2019-05-25"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, view events
+keywords: IBM Cloud, LogDNA, Activity Tracker, monitor events
 
 subcollection: logdnaat
 
@@ -22,10 +22,10 @@ subcollection: logdnaat
 {:note: .note}
 
 
-# Monitoring events
+# Monitoring activity in your account
 {: #monitor_events}
 
-After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can monitor events through the {{site.data.keyword.at_full_notm}} web UI.
+After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can monitor your account by analyzing the events that are displayed through the {{site.data.keyword.at_full_notm}} web UI.
 {:shortdesc}
 
 You can select the events that are displayed through a view by applying a timestamp, a search query, or both.
@@ -33,11 +33,12 @@ You can select the events that are displayed through a view by applying a timest
 * You can apply a search query, and save it as a custom view. 
 * You can apply a timestamp to jump to a specific time in your event log. 
 
+When you apply a search query, you can save that view for reuse later. However, timestamps are not saved.
+
 You can only monitor events within your retention period. Different [service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan) have different retention periods.
 {: important}
 
-When you apply a search query, you can save that view for reuse later. However, timestamps are not saved.
-{: note}
+
 
 ## Monitoring events through the default view
 {: #mon_def_view}
@@ -68,7 +69,7 @@ You can organize views by grouping them in **categories*.
 ## Monitoring events by applying a timeframe
 {: #mon_time_view}
 
-You can select the events that are displayed through a view by applying a timeframe.
+You can select the events that are displayed through a view by applying a timeframe. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events#view_events_step3).
 
 You can apply a timestamp by specifying an absolute time, a relative time, or a time range.
 
@@ -78,7 +79,7 @@ You can apply a timestamp by specifying an absolute time, a relative time, or a 
 
 * A time range specified an interval of time, such as `yesterday 10am to yesterday 11am`, `last fri 4:30pm to 11/12 1 AM`, `last wed 4:30pm to 23/05 1 AM`, or `May 20 10am to May 22 10am`. 
 
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events#view_events_step3).
+
 
 
 ## Configuring alerts

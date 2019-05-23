@@ -25,15 +25,8 @@ subcollection: logdnaat
 # Exporting events
 {: #export}
 
-You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. You can export logs programmatically or from the IBM Log Analysis Web UI. 
+You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. You can export logs programmatically by using the LogDNA REST API. 
 {:shortdesc}
-
-Consider the following information when you export log data:
-* You export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
-* From the web UI, when you export events, you get an email that is sent to your email address, with a link to a compressed file that includes the data. To get the data, you must click the link and download the compressed file.
-* When you export events programmatically, you can choose to send an email or to stream events in to your terminal.
-* The compressed file that contains the data that you want to export is available for a maximum of 48 hours. 
-* The maximum number of lines that you can export is 10,000.
 
 
 
