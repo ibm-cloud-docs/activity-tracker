@@ -198,5 +198,86 @@ After you apply the search query to the **Everything** view or to an existing cu
 6. Click **Save View**
 
 
+## Step 4. Customize data displayed through the view
+{: #views_step4}
 
+There are different options to customize how you see data in a view.
+* You can modify the properties of a view., You can rename a view, add or modify its description, and apply a specific line format.
+* You can change the `log format` in the *USER PREFERENCES* section.
+* You can apply a line template from the *Tools* section. Notice that this overrides any other line configuration. If you select **Persist these settings**, all views in the UI will show data per the line format that is specified in this section.
+* You can apply color to terms or strings by setting ***Highlight Terms** in the **Tools** section.
+
+
+
+### Change the line format through the view properties page
+{: #views_step4_1}
+
+Complete the following steps to modify the format of an event line in a single view:
+
+1. In your view, select **Edit View Properties**. The *Edit View Properties* page opens.
+
+2. Enter a custom line format in the **Custom %LINE Template** section. The default is set to `{{line}}`.
+    
+    Use mustache style `{{field.name}}` or bash style `${field.name}` variables to construct your template. 
+
+    Use `{{line}}` or `$@` to reference the original line. 
+
+    All other characters or strings are interpreted as text literal. 
+
+5. Click **Save properties*.
+
+
+
+### Change the line format through the user preferences section
+{: #views_step4_2}
+
+In the **USER PREFERENCES** section, you can modify the order of the data fields that are displayed per line.
+
+Complete the following steps to modify the format of an event line:
+
+1. In the web UI, click the **Configuration** icon ![Configuration icon](images/admin.png "Admin icon").
+2. Select **USER PREFERENCES**. A new window opens.
+3. Select **Log Format**.
+4. Modify the *Line Format* section to match your requirements. Drag boxes.
+
+
+### Change the line format through the  line template in the tools section
+{: #views_step4_3}
+
+Complete the following steps to modify the format of an event line:
+
+1. In the view, click the **Tools** icon ![Tools icon](images/tool.png "Tools icon").
+2. In the **Line Template*** field, enter your custom line format.
+3. Optionally, click **Persist these settings** to apply the line format to all views.
+
+
+
+### Highlight terms
+{: #view_events_step4_4}
+
+Complete the following steps to highlight terms in a view:
+
+1. In the view, click the **Tools** icon ![Tools icon](images/tool.png "Tools icon").
+2. In the **Line Template*** field, enter a word or string in the ***Highlight Terms** section.
+3. Optionally, click **Persist these settings** to apply these setting to all views.
+
+
+
+## Change the name and description of a custom view
+{: #views_step5}
+
+You can rename a view. You can add or modify the description of a view.
+
+
+Complete the following steps:
+
+1. In your view, select **Edit View Properties**. The *Edit View Properties* page opens.
+
+    You can rename the view, add or modify the description of the view, and apply a custom line format.
+
+2. Enter a new name in the **Rename View** section to rename the view.
+
+3. Enter or modify the description in the **Description** section.
+
+4. Click **Save properties*.
 
