@@ -32,15 +32,15 @@ Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search and 
 ## Prerequisites
 {: #views_prereqs}
 
-Before you start, check that your user ID has permissions to launch the web UI and view events. The following table lists the minimum policies that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
+Before you start, check that your user ID has permissions to launch the web UI and view events. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
 
 | Role                      | Permission granted            |
 |---------------------------|-------------------------------|  
 | Platform role: `Viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
 | Service role: `Reader`      | Allows the user to launch the web UI and view events in the web UI.  |
-{: caption="Table 1. IAM policies" caption-side="top"} 
+{: caption="Table 1. IAM roles" caption-side="top"} 
 
-For more information on how to configure these policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
 
 
 
@@ -54,7 +54,7 @@ Complete the following steps:
 3. Select **Everything** or a view. 
 
 
-## Step 2. Filter out events by applying a search query
+## Step 2. Select the set of events to display through a view by applying a search query
 {: #views_step2}
 
 To search for specific events, you can apply a search query. 
@@ -198,10 +198,10 @@ After you apply the search query to the **Everything** view or to an existing cu
 6. Click **Save View**
 
 
-## Step 4. Customize data that is displayed through a view
+## Step 4. Customize how event lines are displayed through a view
 {: #views_step4}
 
-There are different options to customize how you see data in a view.
+There are different options to customize how you see data in a view:
 * You can modify the properties of a view., You can rename a view, add or modify its description, and apply a specific line format.
 * You can change the `log format` in the *USER PREFERENCES* section.
 * You can apply a line template from the *Tools* section. Notice that this overrides any other line configuration. If you select **Persist these settings**, all views in the UI will show data per the line format that is specified in this section.

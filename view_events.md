@@ -36,10 +36,10 @@ Complete the following steps to view events:
 
 1. Check that your user ID has permissions to launch the web UI and view events. 
 
-    The following table lists the minimum policies that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
+    The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
 
     <table>
-      <caption>Table 1. IAM policies</caption>
+      <caption>Table 1. IAM roles</caption>
       <tr>
         <th>Role</th>
         <th>Permission granted</th>
@@ -54,7 +54,7 @@ Complete the following steps to view events:
       </tr>
     </table>
 
-    For more information on how to configure these policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+    For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
 
 2. [Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch).
 
@@ -66,19 +66,18 @@ You can view events through the view that you have selected.
 
 
 
-## View a subset of the events
+## View a subset of the events by applying a search query
 {: #view_events_step2}
 
-You can select the events that are displayed through a view by applying a timestamp, a search query, or both.
+You can select the events that are displayed through a view by applying a search query. You can save that view for reuse later. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_step2).
 
-* You can apply a search query, and save it as a custom view. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views).
-* You can apply a timestamp to jump to a specific time within your retention period. Different [service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan) have different retention periods.
+ 
 
-When you apply a search query, you can save that view for reuse later. However, timestamps are not saved.
-{: note}
 
-## Jump to a timeframe
+## View a subset of the events by applying a timeframe
 {: #view_events_step3}
+
+You can select the events that are displayed through a view by applying a timeframe.
 
 You can apply a timestamp by specifying an absolute time, a relative time, or a time range.
 
