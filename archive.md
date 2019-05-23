@@ -28,27 +28,25 @@ subcollection: logdnaat
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. 
 {:shortdesc}
 
-To configure archiving, you must have an IAM policy with platform role **Viewer** and service role **Manager** for the {{site.data.keyword.at_full_notm}} service.
-
-You archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. Each {{site.data.keyword.at_full_notm}} instance has its own archiving configuration. 
-
-Events are automatically archived once a day in a compressed format **(.json.gz)**. Each line preserves its metadata.
-
-Events are archived within 24-48 hours after you save the configuration. 
-
-The {{site.data.keyword.cos_full_notm}} instance is provisioned within the context of a resource group. The {{site.data.keyword.at_full_notm}} instance is also provisioned within the context of a resource group. Both instances can be grouped under the same resource group or in different ones. 
-
-{{site.data.keyword.at_full_notm}} uses a service ID to communicate with the {{site.data.keyword.cos_full_notm}} service.
-
-* The service ID that you create for an {{site.data.keyword.cos_full_notm}} instance is used by the {{site.data.keyword.at_full_notm}} to authenticate and access the {{site.data.keyword.cos_full_notm}} instance. 
-* You can assign specific access policies to the service ID that restrict permissions on the {{site.data.keyword.cos_full_notm}} instance. Restrict the service ID to only have writing permissions on the bucket where you plan to archive the events.
-
-The following figure shows a high-level view of the different components that are integrated when archiving events:
-
-![High-level view archiving events](images/archive.png "High-level view archiving events")
-
-
 Complete the following steps to archive an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} instance:
+
+## Prerequisites
+{: #archiving_prereqs}
+
+* [Learn more about archiving events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-manage_events#manage_events_archive).
+
+* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan). 
+
+* Check that your user ID has permissions to launch the web UI and manage events. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
+
+| Role                      | Permission granted            |
+|---------------------------|-------------------------------|  
+| Platform role: `Viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
+| Service role: `Manager`      | Allows the user to launch the web UI and manage events in the web UI.  |
+{: caption="Table 1. IAM roles" caption-side="top"} 
+
+For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+
 
 
 ## Step 1. Grant IAM policies to a user to work with {{site.data.keyword.cos_full_notm}}
