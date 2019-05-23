@@ -99,7 +99,7 @@ Complete the following steps to export events programmatically:
 
     **Note:** You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to complete this step.
 
-    1. Launch the {{site.data.keyword.at_full_notm}} web UI. For more information, see [Go to to the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2).
+    1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2).
 
     2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
 
