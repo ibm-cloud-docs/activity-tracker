@@ -22,17 +22,15 @@ subcollection: logdnaat
 {:note: .note}
 
 
-# Monitoring events
-{: #monitor_events.md}
+# Viewing events
+{: #view_events}
 
-After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can monitor events through the {{site.data.keyword.at_full_notm}} web UI.
+After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view events through the {{site.data.keyword.at_full_notm}} web UI. You view events in your local time.
 {:shortdesc}
 
 
-## Viewing events
-{: #mon_view_events}
-
-You view and manage events in the web UI.
+## View events
+{: #view_events_step1}
 
 Complete the following steps to view events:
 
@@ -62,85 +60,46 @@ Complete the following steps to view events:
 
 3. Click the **Views** icon ![Configuration icon](images/views.png).
 
-4. Select **Everything** or a view. You can view events through the view that you have selected.
+4. Select **Everything** to see all the events, or a view. You can view events through the view that you have selected.
 
 
-## Customizing a view
+
+## View a subset of the events
 {: #view_events_step2}
 
-To complete these steps, you need a custom view. If you do not have one, create one. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md).
+You can select the events that are displayed through a view by applying a timestamp, a search query, or both.
+
+* You can apply a search query, and save it as a custom view. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views).
+* You can apply a timestamp to jump to a specific time within your retention period. Different [service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan) have different retention periods.
+
+When you apply a search query, you can save that view for reuse later. However, timestamps are not saved.
 {: note}
 
-There are different options to customize how you see data in a view.
-* You can modify the properties of a view., You can rename a view, add or modify its description, and apply a specific line format.
-* You can change the `log format` in the *USER PREFERENCES* section.
-* You can apply a line template from the *Tools* section. Notice that this overrides any other line configuration. If you select **Persist these settings**, all views in the UI will show data per the line format that is specified in this section.
-* You can apply color to terms or strings by setting ***Highlight Terms** in the **Tools** section.
+## Jump to a timeframe
+{: #view_events_step3}
 
-Consider the following guidance on how to define line templates:
-* Use mustache style `{{field.name}}` or bash style `${field.name}` variables to construct your template. 
-* Use `{{line}}` or `$@` to reference the original line. 
-* All other characters or strings are interpreted as text literal. 
+You can apply a timestamp by specifying an absolute time, a relative time, or a time range.
 
-### Edit view properties
-{: #view_events_step2_1}
+Complete the following steps to jump to a specific time:
+1. [Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch).
+2. Click the **Views** icon ![Configuration icon](images/views.png).
+3. Select **Everything** or a view.
+4. Enter a time query. Choose any of the following options:
 
-Complete the following steps to modify the format of an event line in a single view:
+    * Enter an abosute time to jump to a point in time in your events such as `May 20 7:00pm`.
+    
+    * Enter a relative time such as `2 days ago`, `today at 12am`, or `an hour ago`.
 
-1. In your view, select **Edit View Properties**. The *Edit View Properties* page opens.
+    * Enter a time range such as `yesterday 10am to yesterday 11am`, `last fri 4:30pm to 11/12 1 AM`, `last wed 4:30pm to 23/05 1 AM`, or `May 20 10am to May 22 10am`. Make sure to include `to` to separate the initial timestamp from the end timestamp.
 
-    You can rename the view, add or modify the description of the view, and apply a custom line format.
+5. Click **ENTER**.
 
-2. Enter a new name in the **Rename View** section to rename the view.
+    You might get the error message: `Your request is taking longer than expected, try refreshing your browser in a bit as we try to catch up. Retry.` If you do, the timeframe that you have specified does not have any events available to show. Change the time query, adn then retry.
 
-3. Enter or modify the description in the **Description** section.
-
-4. Enter a custom line format in the **Custom %LINE Template** section.
-
-    The default is set to `{{line}}`.
-
-5. Click **Save properties*.
-
-
-### Customize the user preferences section
-{: #view_events_step2_2}
-
-In the **USER PREFERENCES** section, you can modify the order of the data fields that are displayed per line.
-
-Complete the following steps to modify the format of an event line:
-
-1. In the web UI, click the **Configuration** icon ![Configuration icon](images/admin.png "Admin icon").
-2. Select **USER PREFERENCES**. A new window opens.
-3. Select **Log Format**.
-4. Modify the *Line Format* section to match your requirements. Drag boxes.
-
-### Customize the line template in the tools section
-{: #view_events_step2_3}
-
-Complete the following steps to modify the format of an event line:
-
-1. In the view, click the **Tools** icon ![Tools icon](images/tool.png "Tools icon").
-2. In the **Line Template*** field, enter your custom line format.
-3. Optionally, click **Persist these settings** to apply the line format to all views.
-
-
-### Highlight terms
-{: #view_events_step2_4}
-
-Complete the following steps to highlight terms in a view:
-
-1. In the view, click the **Tools** icon ![Tools icon](images/tool.png "Tools icon").
-2. In the **Line Template*** field, enter a word or string in the ***Highlight Terms** section.
-3. Optionally, click **Persist these settings** to apply these setting to all views.
-
-
-
-## Jump to timeframe
-{: #view_events_stepx}
 
 
 ## View an event in context
-{: #view_events_step3}
+{: #view_events_step4}
 
 At any time, you can view each event line in context.
 
@@ -160,7 +119,7 @@ When you finish exploring the event, click **Close** to close the line.
 
 
 ## Copy an event to the clipboard
-{: #view_events_step4}
+{: #view_events_step5}
 
 
 Complete the following steps to copy an event to the clipboard: 
