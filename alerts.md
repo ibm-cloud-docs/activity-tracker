@@ -25,44 +25,28 @@ subcollection: logdnaat
 # Configuring alerts
 {: #alerts}
 
-Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search and filtering criteria to define the events that are displayed through a custom view. Then, you can attach an alert to a view to be notified. You can attach one or more alerts to a view. You can define multiple notification channels for an alert. You can mute alerts. You can detach alerts from a view.
+Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search queries to define the events that are displayed through a custom view. Then, you can attach an alert to that view to be notified when a condition occurs. You can attach one or more alerts to a view. You can define multiple notification channels for an alert. You can mute alerts. You can detach alerts from a view.
 {:shortdesc}
-
-
-You can configure any of the following conditions for an alert:
-
-* *Time frequency*: Specify how often to trigger an alert. Valid values are: 30 seconds, 1 minute, 5 minutes, 15 minutes, 30 minutes, 1 hour, 6 hours, 12 hours, 24 hours
-* *event lines counter*: Specify the number of event lines that match the view's filtering and search criteria. When the number of event lines is reached, an alert is triggered.
-
-You can decide whether both conditions are checked or only one. If both conditions are set, an alert is triggered when any of the thresholds is reached. 
-
-For example, you can configure an alert that is triggered after 30 seconds, or when a 100 event lines that match the view's filtering and search criteria are collected.
-
-You can configure multiple notification channels. For information about the supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
-
-You can also define a **preset**. A preset is an alert template that you can attach to any number of views. 
-
-A bell icon is displayed with the view to indicate that this view has an alert attached to it.
 
 
 ## Prerequisites
 {: #alerts_prereqs}
 
-Before you start, check that your user ID has permissions to launch the web UI and view events. 
+* [Learn more about alerts]().
 
-**Note:** You must be an administrator of the {{site.data.keyword.at_full_notm}} service, an administrator of the {{site.data.keyword.at_full_notm}} instance, or have account IAM permissions to manage policies.
+* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan).
 
-The following table lists the minimum policies that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
+* Before you start, check that your user ID has permissions to launch the web UI and view events. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
 
 | Role                      | Permission granted            |
 |---------------------------|-------------------------------|  
 | Platform role: `Viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
 | Service role: `Reader`      | Allows the user to launch the web UI and view events in the web UI.  |
-{: caption="Table 1. IAM policies" caption-side="top"} 
+{: caption="Table 1. IAM roles" caption-side="top"} 
 
-For more information on how to configure these policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
 
-**You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan). 
+ 
 
 
 ## Step 1. Go to the web UI
@@ -74,7 +58,7 @@ For more information on how to configure these policies for a user, see [Grantin
 ## Step 2. Create a view
 {: #alerts_step2}
 
-[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md#views.md).
+[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views).
 
 
 
@@ -90,7 +74,9 @@ Complete the following steps to configure a preset:
 2. Select **Alerts**.
 3. Select **Add a preset alert**.
 4. Choose a notification channel. For the list of supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
-5. Define the threshold conditions.
+5. Select the type of alert. Choose the **Presence alert** type to notify when the number of events that show in a view is more than what you expect. Choose the **Absence alert** type to notify when the number of events that show in a view is less than what you expect, or none. 
+5. Choose a notification channel. For the list of supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
+6. Define the threshold conditions.
 
     1. Select a time frequency. For example, 12 hours.
 
@@ -98,11 +84,11 @@ Complete the following steps to configure a preset:
 
     3. Select whether you want both conditions to be checked or just one.
 
-6. Add the details for the notification channel that you have chosen.
+7. Add the details for the notification channel that you have chosen.
 
     For example, for the email notification channel, add one or more recipients, and optionally a time zone.
 
-7. Click **Save alert**.
+8. Click **Save alert**.
 
 
 
@@ -133,7 +119,8 @@ Complete the following steps to attach an alert to a view:
 2. Click the view name. Then, select **Attach an alert**.
 3. Choose **view-specific alert**.
 4. Choose a notification channel. 
-5. Define the threshold conditions.
+5. Select the type of alert. Choose the **Presence alert** type to notify when the number of events that show in a view is more than what you expect. Choose the **Absence alert** type to notify when the number of events that show in a view is less than what you expect, or none. 
+6. Define the threshold conditions.
 
     1. Select a time frequency. For example, 12 hours.
 
@@ -141,11 +128,11 @@ Complete the following steps to attach an alert to a view:
 
     3. Select whether you want both conditions to be checked or just one.
 
-6. Add the details for the notification channel that you have chosen.
+7. Add the details for the notification channel that you have chosen.
 
     For example, for the email notification channel, add one or more recipients, and optionally a time zone.
 
-7. Click **Save alert**.
+8. Click **Save alert**.
 
 
 
