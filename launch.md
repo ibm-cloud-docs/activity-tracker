@@ -59,11 +59,15 @@ Complete the following steps to launch the web UI:
 
 3. Select **Activity Tracker**. 
 
-    The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
+    The list of {{site.data.keyword.at_full_notm}} instances is displayed.
 
-4. Select one instance. Then, click **View LogDNA**.
+    There is 1 instance per region.
+    {: important}
 
-The Web UI opens.
+4. Select the instance in the region where you want to view events. Then, click **View LogDNA**.
+
+The {{site.data.keyword.at_full_notm}} web UI opens and shows the **Everything** view. Through this view, you can see the events in your account for the region that you have selected.
+
 
 
 ## Getting the web UI URL from the {{site.data.keyword.cloud_notm}}

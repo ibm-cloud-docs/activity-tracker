@@ -28,11 +28,14 @@ subcollection: logdnaat
 After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can monitor events through the {{site.data.keyword.at_full_notm}} web UI.
 {:shortdesc}
 
+* You view and manage events in the web UI.
+* The default view is the **Everything** view. As soon as you open the web UI, this is the view that you see.
+* You can create custom views.
 
 ## Viewing events
 {: #mon_view_events}
 
-You view and manage events in the web UI.
+
 
 Complete the following steps to view events:
 
@@ -66,7 +69,7 @@ Complete the following steps to view events:
 
 
 ## Customizing a view
-{: #view_events_step2}
+{: #mon_customize}
 
 To complete these steps, you need a custom view. If you do not have one, create one. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md).
 {: note}
@@ -83,7 +86,7 @@ Consider the following guidance on how to define line templates:
 * All other characters or strings are interpreted as text literal. 
 
 ### Edit view properties
-{: #view_events_step2_1}
+{: #mon_cust_1}
 
 Complete the following steps to modify the format of an event line in a single view:
 
@@ -103,7 +106,7 @@ Complete the following steps to modify the format of an event line in a single v
 
 
 ### Customize the user preferences section
-{: #view_events_step2_2}
+{: #mon_cust_2}
 
 In the **USER PREFERENCES** section, you can modify the order of the data fields that are displayed per line.
 
@@ -115,7 +118,7 @@ Complete the following steps to modify the format of an event line:
 4. Modify the *Line Format* section to match your requirements. Drag boxes.
 
 ### Customize the line template in the tools section
-{: #view_events_step2_3}
+{: #mon_cust_3}
 
 Complete the following steps to modify the format of an event line:
 
