@@ -198,7 +198,7 @@ After you apply the search query to the **Everything** view or to an existing cu
 6. Click **Save View**
 
 
-## Step 4. Customize data displayed through the view
+## Step 4. Customize data that is displayed through a view
 {: #views_step4}
 
 There are different options to customize how you see data in a view.
@@ -217,14 +217,10 @@ Complete the following steps to modify the format of an event line in a single v
 1. In your view, select **Edit View Properties**. The *Edit View Properties* page opens.
 
 2. Enter a custom line format in the **Custom %LINE Template** section. The default is set to `{{line}}`.
-    
-    Use mustache style `{{field.name}}` or bash style `${field.name}` variables to construct your template. 
 
-    Use `{{line}}` or `$@` to reference the original line. 
+    For more information about the line template guidelines, see [Guidelines]().
 
-    All other characters or strings are interpreted as text literal. 
-
-5. Click **Save properties*.
+3. Click **Save properties*.
 
 
 
@@ -247,7 +243,7 @@ Complete the following steps to modify the format of an event line:
 Complete the following steps to modify the format of an event line:
 
 1. In the view, click the **Tools** icon ![Tools icon](images/tool.png "Tools icon").
-2. In the **Line Template*** field, enter your custom line format.
+2. In the **Line Template*** field, enter your custom line format. For more information about the line template guidelines, see [Guidelines]().
 3. Optionally, click **Persist these settings** to apply the line format to all views.
 
 
@@ -280,4 +276,18 @@ Complete the following steps:
 3. Enter or modify the description in the **Description** section.
 
 4. Click **Save properties*.
+
+
+
+## Guidelines defining line templates
+{: #views_line}
+
+Consider the following guidelines that you must apply when you define a line template:
+* Use mustache style `{{field.name}}` or bash style `${field.name}` variables to construct your template. 
+* Use `{{line}}` or `$@` to reference the original line. 
+* All other characters or strings are interpreted as text literal. 
+
+
+For example, you can define a line template as `{{initiator.id}} -- {{action}} -- {{message}}` to see these fields for each event in a view.
+
 

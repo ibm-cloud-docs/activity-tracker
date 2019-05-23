@@ -60,7 +60,9 @@ Complete the following steps to view events:
 
 3. Click the **Views** icon ![Configuration icon](images/views.png).
 
-4. Select **Everything** to see all the events, or a view. You can view events through the view that you have selected.
+4. Select **Everything** to see all the events, or a view. 
+
+You can view events through the view that you have selected.
 
 
 
@@ -94,7 +96,7 @@ Complete the following steps to jump to a specific time:
 
 5. Click **ENTER**.
 
-    You might get the error message: `Your request is taking longer than expected, try refreshing your browser in a bit as we try to catch up. Retry.` If you do, the timeframe that you have specified does not have any events available to show. Change the time query, adn then retry.
+    You might get the error message: `Your request is taking longer than expected, try refreshing your browser in a bit as we try to catch up. Retry.` You might get this error when the timeframe that you have specified does not have any events available to show. Change the time query, and retry.
 
 
 
