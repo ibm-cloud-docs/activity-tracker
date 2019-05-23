@@ -25,10 +25,18 @@ subcollection: logdnaat
 # Managing events in your account
 {: #manage_events}
 
-After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can monitor events through the {{site.data.keyword.at_full_notm}} web UI.
+As an administrator of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you must provision an instance of the service in each location that you plan to monitor. You must define the account guidelines to manage events in the account, such as archiving guidelines.
 {:shortdesc}
 
+
+## Provision an instance of the service per location
+{: #manage_events_provision}
+
+You can provison 1 instance of the {{site.data.keyword.at_full_notm}} service per location. To get the list of locations where the service is available in the {{site.data.keyword.cloud_notm}}, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
+
+
 ## Export events
+{: #manage_events_export}
 
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. You can export logs programmatically by using the LogDNA REST API.
 
@@ -44,14 +52,22 @@ Consider the following information when you export log data:
 
 
 ## Hide events from views
-
+{: #manage_events_hide}
 
 
 
 ## Archive events
-
+{: #manage_events_archive}
 
 
 
 ## Classify events by using categories
+{: #manage_events_category}
+
+
+
+
+
+
+
 
