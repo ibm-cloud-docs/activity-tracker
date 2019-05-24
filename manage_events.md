@@ -32,26 +32,17 @@ As an administrator of the {{site.data.keyword.at_full_notm}} service in the {{s
 ## Provision an instance of the service per location
 {: #manage_events_provision}
 
-You can provison 1 instance of the {{site.data.keyword.at_full_notm}} service per location. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch).
+To collect and monitor activity in your account, you must provision the {site.data.keyword.at_full_notm}} service in your account. 
+
+You only can provison 1 instance of the {{site.data.keyword.at_full_notm}} service per location. 
+* If you want to monitor [global events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_def_event_type), you must configure an instance in Frankfurt. 
+
+[Learn more about provisioning the service](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision).
 
 To get the list of locations where the service is available in the {{site.data.keyword.cloud_notm}}, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
 
 As soon as an instance is available, events are collected and available for monitoring through the web UI of the service in that location.
 
-
-## Export events
-{: #manage_events_export}
-
-You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. 
-
-You can export logs programmatically by using the LogDNA REST API. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-export#export_api).
-You can export logs through the web UI. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-export#export_ui).
-
-Consider the following information when you export log data:
-* You export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
-* From the web UI, when you export events, you get an email that is sent to your email address, with a link to a compressed file that includes the data. To get the data, you must click the link and download the compressed file. The compressed file that contains the data that you want to export is available for a maximum of 48 hours. 
-* When you export events programmatically, you can choose to send an email or to stream events in to your terminal.
-* The maximum number of lines that you can export is 10,000.
 
 
 
