@@ -218,7 +218,7 @@ Complete the following steps to modify the format of an event line in a single v
 
 2. Enter a custom line format in the **Custom %LINE Template** section. The default is set to `{{line}}`.
 
-    For more information about the line template guidelines, see [Guidelines]().
+    For more information about the line template guidelines, see [Guidelines](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_line).
 
 3. Click **Save properties*.
 
@@ -243,7 +243,7 @@ Complete the following steps to modify the format of an event line:
 Complete the following steps to modify the format of an event line:
 
 1. In the view, click the **Tools** icon ![Tools icon](images/tool.png "Tools icon").
-2. In the **Line Template** field, enter your custom line format. For more information about the line template guidelines, see [Guidelines]().
+2. In the **Line Template** field, enter your custom line format. For more information about the line template guidelines, see [Guidelines](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_line).
 3. Optionally, click **Persist these settings** to apply the line format to all views.
 
 
