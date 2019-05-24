@@ -32,7 +32,7 @@ You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} i
 ## Prerequisites
 {: #export_prereqs}
 
-* [Learn more about exporting events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-manage_events#manage_events_export).
+* [Learn more about exporting events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_export).
 
 * **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan). 
 

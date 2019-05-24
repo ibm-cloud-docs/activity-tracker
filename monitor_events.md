@@ -48,7 +48,7 @@ Notice that instances might have different service plans, and consequently diffe
 ## Monitoring global and location-based events
 {: #mon_def_event_type}
 
-Events can be classified as global or location-based. The type of event determines where to monitor events.
+Events can be classified as global or location-based. The type of event determines where you must monitor events.
 
 The common theme for global events is a single, synchronized location where account administrators can monitor certain types of activity across the Cloud. Meanwhile, location-based events remain local to the location where a subscribed cloud service is hosted.
 {: note}
@@ -84,7 +84,11 @@ For example, if you provision the {{site.data.keyword.cloudcerts_short}} service
 ## Monitoring events through the default view
 {: #mon_def_view}
 
-The default view is named **Everything**. As soon as you open the web UI, this is the view that you see.
+The default view is named **Everything**. 
+
+As soon as you open the web UI in a location, this is the view that you see. 
+
+All events in your instance are displayed through this view.
 
 [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events#view_events_step1).
 
@@ -92,7 +96,7 @@ The default view is named **Everything**. As soon as you open the web UI, this i
 ## Monitoring events through custom views
 {: #mon_cus_view}
 
-You can create custom views to analyze data. 
+You might want to monitor a set of events in your account. To anayze a subset of events, you can create custom views. 
 
 To create a custom view, you must apply a search query that defines what events to display through the view. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events#view_events_step2).
 
@@ -110,6 +114,8 @@ You can organize views by grouping them in **categories*.
 ## Monitoring events by applying a timeframe
 {: #mon_time_view}
 
+You might want to see events within a specific timeframe.
+
 You can select the events that are displayed through a view by applying a timeframe. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events#view_events_step3).
 
 You can apply a timestamp by specifying an absolute time, a relative time, or a time range.
@@ -125,6 +131,8 @@ You can apply a timestamp by specifying an absolute time, a relative time, or a 
 
 ## Configuring alerts
 {: #mon_alerts}
+
+There are scenarios where you might want to be notified if specific events are generated in your account. For example, you might want to be notified if the number of actions that fail goes above a threshold that you specify. 
 
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search queries to define the events that are displayed through a custom view. Then, you can attach an alert to that view to be notified when a condition occurs. A bell icon is displayed with the view to indicate that this view has an alert attached to it.
 
@@ -166,19 +174,24 @@ For example, you can configure an alert that is triggered after 30 seconds, or w
 
 
 
-## Export events
+## Exporting events
 {: #mon_export}
+
+You might need access to a set of events outside the web UI to investigate an issue in more detail. 
 
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. 
 
-Consider the following information when you export log data:
-* You export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
+You can export events through a view in the web UI, or programmatically by using a REST API.
+
+Consider the following information when you export events:
+* You export a set of event entries. 
+* To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
 * The maximum number of lines that you can export is 20,000.
 
 ### By using the REST API
 {: #mon_export_api}
 
-You can export logs programmatically by using the LogDNA REST API. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-export#export_api).
+You can export events programmatically by using the LogDNA REST API. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-export#export_api).
 
 When you export events programmatically, consider the following information:
 
