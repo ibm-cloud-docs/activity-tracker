@@ -56,7 +56,7 @@ For more information on how to configure policies for a user, see [Granting user
 ## Step 2. Create a view
 {: #export_step2}
 
-[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md#views.md).
+[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views).
 
 
 ## Step 3. Export data
