@@ -29,13 +29,16 @@ As an administrator of the {{site.data.keyword.at_full_notm}} service in the {{s
 {:shortdesc}
 
 
-## Provision an instance of the service per location
+## Provisioning an instance of the service per location
 {: #manage_events_provision}
 
 To collect and monitor activity in your account, you must provision the {site.data.keyword.at_full_notm}} service in your account. 
 
-You only can provison 1 instance of the {{site.data.keyword.at_full_notm}} service per location. 
-* If you want to monitor [global events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_def_event_type), you must configure an instance in Frankfurt. 
+There is 1 instance of the {{site.data.keyword.at_full_notm}} service per location. Therefore, to monitor activity in your account, you might need to provision multiple {{site.data.keyword.at_full_notm}} instances. 
+
+* In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) > **Observability** > **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
+* If you want to monitor [global events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_def_global), you must configure an instance in Frankfurt. 
+{: tip}
 
 [Learn more about provisioning the service](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision).
 
@@ -45,8 +48,7 @@ As soon as an instance is available, events are collected and available for moni
 
 
 
-
-## Archive events
+## Archiving events
 {: #manage_events_archive}
 
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving).
@@ -68,7 +70,7 @@ The {{site.data.keyword.cos_full_notm}} instance is provisioned within the conte
 * You can assign specific access policies to the service ID that restrict permissions on the {{site.data.keyword.cos_full_notm}} instance. Restrict the service ID to only have writing permissions on the bucket where you plan to archive the events.
 
 
-## Classify events by using categories
+## Classifying events by using categories
 {: #manage_events_category}
 
 You can define categories through the **Categories** section in the web UI. 

@@ -25,7 +25,7 @@ subcollection: logdnaat
 # Monitoring activity in your account
 {: #monitor_events}
 
-You can monitor activity in your account through the {{site.data.keyword.at_full_notm}} web UI.
+You can monitor activity in your account through the {{site.data.keyword.at_full_notm}} web UI. You can also export sets of events to analyze them in a different context.
 {:shortdesc}
 
 There is 1 instance of the {{site.data.keyword.at_full_notm}} service per location. Therefore, to monitor activity in your account, you might need to view and analyze events through different {{site.data.keyword.at_full_notm}} instances. 
