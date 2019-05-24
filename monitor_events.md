@@ -137,7 +137,7 @@ There are scenarios where you might want to be notified if specific events are g
 
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search queries to define the events that are displayed through a custom view. Then, you can attach an alert to that view to be notified when a condition occurs. A bell icon is displayed with the view to indicate that this view has an alert attached to it.
 
-* You can [attach one alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step4) per view. .
+* You can [attach one alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step4) per view.
 * You can configure conditions that are based on the number of event lines that meet the search query in the view, on a time frequency, or both.
 * You can define multiple notification channels for an alert. For information about the supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
 * You can [define a **preset**](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step3). A preset is an alert template that you can attach to any number of views. You can use presets to define templates that users can reuse when they attach an alert to a view. 
