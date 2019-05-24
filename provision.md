@@ -70,7 +70,7 @@ To provision an instance from the Observability dashboard in the {{site.data.key
 
 After you provision an instance, the *Activity Tracker* dashboard opens. 
 
-Next, go to the web UI to manage events in your account. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events.md#view_events.md).
+Next, go to the web UI to view the events in your account. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events).
 
 
 

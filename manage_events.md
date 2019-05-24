@@ -32,19 +32,19 @@ As an administrator of the {{site.data.keyword.at_full_notm}} service in the {{s
 ## Provisioning an instance of the service per location
 {: #manage_events_provision}
 
-To collect and monitor activity in your account, you must provision the {site.data.keyword.at_full_notm}} service in your account. 
+To collect and monitor activity in your account, you must provision the {{site.data.keyword.at_full_notm}} service in your account. 
 
 There is 1 instance of the {{site.data.keyword.at_full_notm}} service per location. Therefore, to monitor activity in your account, you might need to provision multiple {{site.data.keyword.at_full_notm}} instances. 
 
 * In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) > **Observability** > **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
-* If you want to monitor [global events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_def_global), you must configure an instance in Frankfurt. 
-{: tip}
+* If you want to monitor [global events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_def_global), you must provision an instance in Frankfurt. 
+
 
 [Learn more about provisioning the service](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision).
 
 To get the list of locations where the service is available in the {{site.data.keyword.cloud_notm}}, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
 
-As soon as an instance is available, events are collected and available for monitoring through the web UI of the service in that location.
+As soon as an instance is available, events are collected and available for monitoring through the web UI of that instance.
 
 
 

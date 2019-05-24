@@ -62,7 +62,7 @@ To search for specific events, you can apply a search query.
 * You can do simple searches (single term string search), compound search (multiple search terms and operators), field searches if the log line can be parsed, and others. For more information, see [How to Search Logs in LogDNA docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/docs/search){:new_window}.
 * AND and OR operators are case-sensitive and must be capitalized.
 
-You can only search as far back as your plan's retention period.
+You can only search events for the number of days that is specified through the instance's service plan.
 {: important}
 
 
