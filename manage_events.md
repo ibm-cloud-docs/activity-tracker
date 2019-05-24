@@ -25,7 +25,7 @@ subcollection: logdnaat
 # Managing events in your account
 {: #manage_events}
 
-As an administrator of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you must provision an instance of the service in each location that you plan to monitor. You must define the account guidelines to manage events in the account, such as archiving guidelines.
+As an administrator of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you must provision an instance of the service in each location that you plan to monitor. You must define the account guidelines to manage events in the account.
 {:shortdesc}
 
 

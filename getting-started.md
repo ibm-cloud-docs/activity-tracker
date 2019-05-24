@@ -96,11 +96,13 @@ Complete the following steps to provision an instance:
 
 4. Enter a name for the service instance.
 
-5. Select the region where you plan to provision the instance. For more information about the regions where the service is available, see [Regions](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
+5. Select the **Frankfurt** location. 
+
+    For more information about the regions where the service is available, see [Regions](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
 
 6. Select a resource group. 
 
-    By default, the **Default** resource group is set.
+    By default, the **default** resource group is set.
 
     **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
 
@@ -213,7 +215,7 @@ Complete the following steps to launch the web UI:
 
     The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
 
-4. Select the instance located in **Frankfurt**. Then, click **View LogDNA**.
+4. Select the instance that is located in **Frankfurt**. Then, click **View LogDNA**.
 
     Global events, like provisioning a service, are available through the global domain instance that is located in Frankfurt.
 
@@ -232,23 +234,9 @@ The {{site.data.keyword.at_full_notm}} service captures activity data that is re
 * Events that report on global {{site.data.keyword.cloud_notm}} account actions, are collected and stored in **Frankfurt (EU-DE)**.
 * The service plan that you select for your {{site.data.keyword.at_full_notm}} instance sets the number of days that events are available for search through the web UI. 
 
+When the web UI opens, the **Everything** view is displayed. You can see events through this view.
 
-At any time, you can view each event line in context. Complete the following steps to view an event in context: 
-
-1. In the web UI, click the **Views** icon ![Configuration icon](images/views.png "Configuration icon").
-2. Select **Everything**.
-3. Identify a line that you want to explore.
-4. Expand the event line. 
-
-    Information about line identifiers, tags, and labels is displayed.
-
-5. Click **View in Context** to see the event line in context of other entries from that host, app, or both.
-
-When you finish exploring the event, click **Close** to close the line.
-
-
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events.md#view_events.md).
-
+You can also define custom views to view a set of events by applying a timestamp, a search query, or both. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views).
 
 
 ## Step 6. Learn about the structure of an event
@@ -274,7 +262,9 @@ The CADF event model includes the following components:
 ## Next steps
 {: #gs_next_steps}
 
-Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [filter events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md#views_step1), [search events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md#views_step2), [define views](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views.md#views_step3), and [configure alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts.md#alerts.md). 
+[Define custom views](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views). 
+
+Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [search events by applying a query](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_step2), and [configure alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts). 
 
 For more information about {{site.data.keyword.at_full_notm}} service plans, see [Service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan).
 
