@@ -205,7 +205,7 @@ There are different options to customize how you see data in a view:
 * You can modify the properties of a view., You can rename a view, add or modify its description, and apply a specific line format.
 * You can change the `log format` in the *USER PREFERENCES* section.
 * You can apply a line template from the *Tools* section. Notice that this overrides any other line configuration. If you select **Persist these settings**, all views in the UI will show data per the line format that is specified in this section.
-* You can apply color to terms or strings by setting ***Highlight Terms** in the **Tools** section.
+* You can apply color to terms or strings by setting **Highlight Terms** in the **Tools** section.
 
 
 
@@ -243,7 +243,7 @@ Complete the following steps to modify the format of an event line:
 Complete the following steps to modify the format of an event line:
 
 1. In the view, click the **Tools** icon ![Tools icon](images/tool.png "Tools icon").
-2. In the **Line Template*** field, enter your custom line format. For more information about the line template guidelines, see [Guidelines]().
+2. In the **Line Template** field, enter your custom line format. For more information about the line template guidelines, see [Guidelines]().
 3. Optionally, click **Persist these settings** to apply the line format to all views.
 
 
@@ -254,7 +254,7 @@ Complete the following steps to modify the format of an event line:
 Complete the following steps to highlight terms in a view:
 
 1. In the view, click the **Tools** icon ![Tools icon](images/tool.png "Tools icon").
-2. In the **Line Template*** field, enter a word or string in the ***Highlight Terms** section.
+2. In the **Line Template** field, enter a word or string in the **Highlight Terms** section.
 3. Optionally, click **Persist these settings** to apply these setting to all views.
 
 
@@ -275,7 +275,7 @@ Complete the following steps:
 
 3. Enter or modify the description in the **Description** section.
 
-4. Click **Save properties*.
+4. Click **Save properties**.
 
 
 
