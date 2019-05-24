@@ -28,7 +28,12 @@ subcollection: logdnaat
 You can monitor activity in your account through the {{site.data.keyword.at_full_notm}} web UI.
 {:shortdesc}
 
-To monitor activity in your account, you might need to view events in different {{site.data.keyword.at_full_notm}} instances. You need to launch the web UI XxXXXXXXXX
+There is 1 instance of the {{site.data.keyword.at_full_notm}} service per location. Therefore, to monitor activity in your account, you might need to view and analyze events through different {{site.data.keyword.at_full_notm}} instances. 
+
+In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) > **Observability** > **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
+{: tip}
+
+To view events, first, you must [launch the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch) in the location where events are available. Then, you can work with views to monitor those events.
 
 You can select the events that are displayed through a view by applying a timestamp, a search query, or both.
 
@@ -37,8 +42,7 @@ You can select the events that are displayed through a view by applying a timest
 
 When you apply a search query, you can save that view for reuse later. However, timestamps are not saved.
 
-You can only monitor events within your retention period. Different [service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan) have different retention periods.
-{: important}
+Notice that instances might have different service plans, and consequently different data retention periods that determine the number of days that you have data available for search though the web UI. You can only monitor events within your retention period. Different [service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan) have different retention periods.
 
 
 ## Monitoring global and location-based events
