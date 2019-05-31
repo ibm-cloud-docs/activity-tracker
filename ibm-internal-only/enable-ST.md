@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-08"
+lastupdated: "2019-05-31"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, enable super tenancy
 
