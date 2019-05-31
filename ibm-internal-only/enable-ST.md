@@ -82,10 +82,13 @@ This step is required for existing services that are planning to on-board to {{s
 
 ### Activity Tracker and Logging JSON 
 
-You must add two new fields to the Logging and Activity Tracker JSON:
+Three new optional fields are available to use the Logging and Activity Tracker JSON. **logSourceCRN** is required if you are using Super Tenancy to send logs and events to a user of your service.
 
 * **logSourceCRN**: This field indicates the customer whom you want to receive the log or event. The logSourceCRN is the CRN of the service instance of your service created by the customer. If not present, no event will be sent to a customer.
 * **saveServiceCopy**: This field indicates if your service wants a copy of the log or event. This is an `optional` field. If the field is not present, the default of true will be used and your service will get a copy of the log or event. Set this field to false if your service does not want a copy of the log record or event. If the field is false, LogDNA will not charge your service for the event since it only charges each service or customer for what is stored.
+* **message**: This field will be displayed as the summary line of the log/event in the LogDNA UI. The message field has a prescribed format for Activity Tracker. Refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields) for format information.
+
+The below listing shows how the new fields fit into the overall JSON that describes the event.
 
 ```
 {
@@ -788,7 +791,7 @@ Now your service has the power to write events and logs to any account in its re
 
 - If your service is sending so many log lines, or such large log lines, that customers may be concerned about the cost, then add an option to control them. However, note that we will be adding controls for this in the future.
 
-- Before sending events in Production, please have them reviewed by  Marisa Lopez de Silanes Ruiz(e-mail: LOPEZDSR@uk.ibm.com, slack: @Marisa LOPEZ DE SILANES RUIZ). Malformed events can break AT event consumers like QRadar, Security Advisor, and custom tools by IBM customers such as Caterpillar. Use the [event linter](https://github.ibm.com/activity-tracker/helloATv2#at-event-linter) to help ensure valid events.
+- Before sending events in Production, please have them reviewed by  Marisa Lopez de Silanes Ruiz(e-mail: LOPEZDSR@uk.ibm.com, slack: @Marisa LOPEZ DE SILANES RUIZ). Malformed events can break AT event consumers like QRadar, Security Advisor, and custom tools by IBM customers such as Caterpillar. Use the [event linter](https://github.ibm.com/activity-tracker/helloATv3#at-event-linter) to help ensure valid events.
 
 
 
