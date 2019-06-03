@@ -96,7 +96,7 @@ To view these events, you must [provision an instance](/docs/services/Activity-T
 
 
 ## Analyzing events
-{: #at_events_rc_analyze}
+{: #rc_analyze}
 
 **Action: service_name.instance.delete**
 

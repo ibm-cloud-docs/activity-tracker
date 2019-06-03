@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-25"
+lastupdated: "2019-06-03"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, search, filter, events
 
@@ -158,7 +158,7 @@ outcome failure
 
 
 ### Query by event criticallity
-{: #views_step1_4}
+{: #views_step1_5}
 
 Each event has a **severity** field that defines the level of threat an action may have on the Cloud. 
 

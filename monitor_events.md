@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-25"
+lastupdated: "2019-06-03"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, monitor events
 
@@ -33,7 +33,7 @@ There is 1 instance of the {{site.data.keyword.at_full_notm}} service per locati
 In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) > **Observability** > **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
 {: tip}
 
-To view events, first, you must [launch the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch) in the location where events are available. Then, you can work with views to monitor those events. You view events in your local time.
+To view events, you must [launch the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch) in the location where events are available. Then, you can work with views to monitor those events. You view events in your local time.
 
 You can select the events that are displayed through a view by applying a timestamp, a search query, or both.
 
