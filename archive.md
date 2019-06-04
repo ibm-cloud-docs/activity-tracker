@@ -241,11 +241,9 @@ An endpoint defines where to look for a bucket. There are different endpoints de
 
 Complete the following steps to obtain the endpoint for your bucket:
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
-    Click [{{site.data.keyword.cloud_notm}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} to launch the {{site.data.keyword.cloud_notm}} dashboard.
-
-	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} Dashboard opens.
+	After you log in, the {{site.data.keyword.cloud_notm}} Dashboard opens.
 
 2. From the Dashboard, select the {{site.data.keyword.cos_full_notm}} instance where you plan to create the bucket.
 
@@ -295,7 +293,7 @@ Complete the following steps to assign a user permission to archive events:
 
 Complete the following steps to configure archiving of your {{site.data.keyword.at_full_notm}} instance into a COS bucket:
 
-1. Launch the {{site.data.keyword.at_full_notm}} web UI. [Learn more](/docs/services/Log-Analysis-with-LogDNA/view_logs.html#view_logs_step2).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](//docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch).
 
 2. Select the **Configuration** icon. Then select **Archiving**. 
 
