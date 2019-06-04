@@ -72,7 +72,7 @@ For example, you might be interested in finding out why an action to delete a us
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
-2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) > **Observability**. 
+2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**. 
 
 3. Select **Activity Tracker**. 
 

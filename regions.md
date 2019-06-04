@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-22"
+lastupdated: "2019-06-06"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, regions
 subcollection: logdnaat
@@ -31,6 +31,7 @@ subcollection: logdnaat
 |-----------------------|----------------------|
 | `North America`       | `Dallas (us-south)`  | 
 | `Europe`              | `Frankfurt (eu-de)`  | 
+| `Asia Pacific`        | `Tokyo (jp-tok)`     |
 {: caption="Table 1. List of locations where the service is available" caption-side="top"} 
 
 Where

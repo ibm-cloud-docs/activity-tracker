@@ -96,9 +96,7 @@ Complete the following steps to export events programmatically:
 
         You can see the service keys that are created. 
 
-    4. Click **Generate Service Key**.
-
-        A new key is added to the list. Copy this key.
+    4. Click **Generate Service Key**. A new key is added to the list. Copy this key.
 
 2. Export events. Run the following cURL command:
 

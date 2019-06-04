@@ -53,6 +53,9 @@ The following table lists core platform actions that send events to {{site.data.
 
 
 
+
+
+
 ## Platform integrated security services
 {: #platform_integrated_security}
 
