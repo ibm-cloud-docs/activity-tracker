@@ -45,23 +45,23 @@ The following table list the mandatory fields:
   </tr>
   <tr>
     <td>initiator.id</td>
-	  <td>ID of the initiator of the action. </br>There are two types of initiators: IBMID and serviceID.  <br>Set this value to the **access_token.iam_id** field. </br>**Note: It is strongly recommended to also set the <i>initiator.name</i> field; see below.**</td>
-	  <td>Example of an IBMID:  <b>IBMid-060000JGT2</b> </br>Example of a service ID: <b>iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14</b> </td>
+	  <td>ID of the initiator of the action. </br>There are different types of initiators: IBMID, serviceID. </br>The initiator is a user with an IBMID or a service ID in the customer account. Set this value to the **access_token.iam_id** field. </br>The initiator of an action in the customer account is an IBM service ID. This action is run on behalf of the customer as a result a customer's request. Set the initiator.id to the **access_token.iam_id** field. </br>**Note: It is strongly recommended to also set the <i>initiator.name</i> field.**</td>
+	  <td>Example of an IBMID:  <b>IBMid-060000JGT2</b> </br>Example of a service ID: <b>iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14</b> </br>Example of a certificate: <b>CertificateId-769b5c65-0165-4c89-847d-9660b1632e14</b></td>
   </tr>
   <tr>
     <td>initiator.name</td>
-	  <td>Username of the user that initiated the action.  </br>Set this value to the <b>access_token.sub</b> field. </td>
+	  <td>Username of the user that initiated the action.  </br>The initiator is a user with an IBMID or a service ID in the customer account. Set this value to the <b>access_token.sub</b> field. </br>The initiator of an action in the customer account is an IBM service ID. This action is run on behalf of the customer as a result a customer's request. Set the initiator.id to the `Catalog name of the service` who owns the service ID that is used. </td>
 	  <td>For example: for IBMID, set the value to <i>lopezdsr@uk.ibm.com</i> </br>For a service ID initiator.id, set the value to <i>ServiceId-769b5c65-0165-4c89-847d-9660b1632e14</i>.</td>
   </tr>
   <tr>
     <td>initiator.typeURI</td>
-	  <td>The type of the source of the event. </br>Set to <b>service/security/clientid</b> to indicate that the initiator is an registered IAM UI or service </br>For example, when Cloud Console logs in users with IAM, they need a client id / secret. In this case, the Token Service will set this value for the initiator.typeURI field in the AT event.</br>Set to <b>service/security/account/user</b> to indicate that the initiator is a user </br>For example, a user with an IBMid runs an action to create a certificate. </br>Set to <b>service/security/account/serviceid</b> to indicate that the initiator is a serviceID (a service or an app </br>For example, an app or a service call an API to trigger an action on a cloud resource.</td>
+	  <td>The type of the source of the event. </br>Set to <b>service/security/clientid</b> to indicate that the initiator is an registered IAM UI or service </br>For example, when Cloud Console logs in users with IAM, they need a client id / secret. In this case, the Token Service will set this value for the initiator.typeURI field in the AT event.</br>Set to <b>service/security/account/user</b> to indicate that the initiator is a user </br>For example, a user with an IBMid runs an action to create a certificate. </br>Set to <b>service/security/account/serviceid</b> to indicate that the initiator is a serviceID (a service or an app) </br>For example, an app or a service call an API to trigger an action on a cloud resource. </br>Set to <b>service/security/client/certificateid</b> to indicate that the initiator runs an action by using a certificate.</td>
 	  <td><b>service/security/clientid</b> </br><b>service/security/account/user</b> </br><b>service/security/account/serviceid</b></td>
   </tr>
   <tr>
     <td>initiator.credential.type</td>
 	  <td>Set to type of initiator ID credential. </td>
-	  <td>token, user, apikey</td>
+	  <td>token, user, apikey, certificate</td>
   </tr>
   <tr>
     <td>initiator.host.address</td>
@@ -97,7 +97,7 @@ The following table list the mandatory fields:
   </tr>
   <tr>
     <td>reason.reasonCode</td>
-	  <td>This is a numeric field (the others are strings). <br>Use the values that are defined in https://www.iana.org/assignments/http-status-codes/http-status-codes.xml </td>
+	  <td>This is a numeric field (the others are strings). <br>Use the values that are defined in https://www.iana.org/assignments/http-status-codes/http-status-codes.xml </br>If your actions are not REST API calls, set to 200 for success outcome and 500 for failure. Add in responseData information about the failure cause.</td>
 	  <td>For example: 200</td>
   </tr>
   <tr>
@@ -141,7 +141,7 @@ The following table list the mandatory fields:
   </tr>
   <tr>
     <td>requestData<br>responseData</td>
-	  <td>These two fields are not part of CADF, but are provided for services to use for custom JSON. </br>Add any information here that will enhance the user experience going through ther audit trail of your service events. </td>
+	  <td>These two fields are not part of CADF, but are provided for services to use for custom JSON. </br>Add any information here that will enhance the user experience going through ther audit trail of your service events.  </br>Add value pairs of information. Although this is a string field, add the information as JSON. </br>Some fields: </br>{"ResourceGroupID":"CRN of the resource group"} </br>{"ReasonForFailure":"Additional information about why the request failed"} </td>
 	  <td>For example, in an update event, add details of original version and final version.</td>
   </tr>
   <tr>

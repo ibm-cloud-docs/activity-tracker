@@ -293,7 +293,7 @@ Complete the following steps to assign a user permission to archive events:
 
 Complete the following steps to configure archiving of your {{site.data.keyword.at_full_notm}} instance into a COS bucket:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](//docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch).
 
 2. Select the **Configuration** icon. Then select **Archiving**. 
 
