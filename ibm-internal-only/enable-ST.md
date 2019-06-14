@@ -139,11 +139,11 @@ This is your service's super tenant Log Analysis instance. All your service's lo
 All commands should be run from a terminal that is logged into your service's IBM cloud account.
 {: important}
 
-1. Obtain a provisioning key for Activity Tracker 
+1. Obtain a provisioning key in order to create STS or ATS instances 
 
     * A provisioning key is used when you create STS or ATS service instance with super tenancy.
 
-    * The same key works in staging and production, in all regions.
+    * The same key works for provisioning STS and ATS instances in production and staging. The key is not region specific.
     
     * Request a key by opening an issue [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/activity-tracker/customer-issues/issues/new?template=logdna_provision_key.md){:new_window}
 
