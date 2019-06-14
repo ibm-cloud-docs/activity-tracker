@@ -150,7 +150,7 @@ Consider the following information when you configure alerts:
 
 * You can [detach an alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_delete_view) from a view. 
 
-* The timestamp that you see in a notification is set to UTC. For email botifications, you can set the **Timezone** to define a different timestamp value such as local time, for example. 
+* The timestamp that you see in a notification is set to UTC. For email notifications, you can set the **Timezone** to define a different timestamp value such as local time, for example. 
 
 
 ### Alert types

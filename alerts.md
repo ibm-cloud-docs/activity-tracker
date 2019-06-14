@@ -29,7 +29,7 @@ Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search quer
 {:shortdesc}
 
 
-## Configuring an alert
+## Configure an alert
 {: alerts_config}
 
 ### Prerequisites
@@ -203,7 +203,6 @@ After you configure an alert on a view and receive a notification email from `Lo
     Manage Alerts
     ```
     {: screen}
-
 
     From this page, you can select **unmute** to enable notifications on the view. You can also select manage to go to the Alerts dashboard in the web UI.
 
