@@ -142,10 +142,14 @@ All commands should be run from a terminal that is logged into your service's IB
 1. Obtain a provisioning key for Activity Tracker 
 
     * A provisioning key is used when you create STS or ATS service instance with super tenancy.
+
+    * The same key works in staging and production, in all regions.
     
     * Request a key by opening an issue [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/activity-tracker/customer-issues/issues/new?template=logdna_provision_key.md){:new_window}
 
     * You do not need a provision key to later change your service plan or delete the instance.
+
+    * The provision key is rotated near the end of each quarter, starting on June 25th 2019 at 4pm UTC. **This does not impact existing STS and ATS instances.** It is only for provisioning new ones. If you cannot provision an STS or ATS using the instructions on this page (i.e. the service-instance-create fails with 401), then ensure you have the latest key.
 
 2. Provision your service's Logging Super Tenant Sender (STS)
 
