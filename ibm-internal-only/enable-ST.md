@@ -118,6 +118,16 @@ const logFileName = `/var/log/at/${hostname}.log\`;
 ```
  {: codeblock}
 
+### Validate your events with our Event Linter 
+We have a tool that will validate your events and provide guidance on what may be wrong.
+
+- clone the code from the hellATv3 github repository:
+
+  `git clone git@github.ibm.com:activity-tracker/helloATv3.git`
+- Review the [instructions](https://github.ibm.com/mposner/helloATv3#at-event-linter) 
+- Run the linter and correct any issues. 
+- If you need help with any issues found, please contact Marisa Lopez de Silanes Ruiz(e-mail: LOPEZDSR@uk.ibm.com, slack: @Marisa LOPEZ DE SILANES RUIZ).
+
 
 ### Have your events reviewed by the Activity Tracker Team
 
