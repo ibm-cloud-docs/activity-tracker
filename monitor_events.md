@@ -135,12 +135,22 @@ There are scenarios where you might want to be notified if specific events are g
 
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search queries to define the events that are displayed through a custom view. Then, you can attach an alert to that view to be notified when a condition occurs. A bell icon is displayed with the view to indicate that this view has an alert attached to it.
 
-* You can [attach one alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step4) per view.
-* You can configure conditions that are based on the number of event lines that meet the search query in the view, on a time frequency, or both.
+Consider the following information when you configure alerts:
+* You can [attach one alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step4) per custom view.
+
+* You can configure conditions that are based on the number of event lines that meet the search query in the view, on a time frequency, or both. 
+
+* The time frequency that is specified as part of the condition defines the reset time of an alert after it is triggered.
+
 * You can define multiple notification channels for an alert. For information about the supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
-* You can [define a **preset**](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step3). A preset is an alert template that you can attach to any number of views. You can use presets to define templates that users can reuse when they attach an alert to a view. 
-* You can mute alerts. 
+
+* You can [define **presets**](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step3). A preset is an alert template that users can attach to any number of views. Service administrators define presets. 
+
+* You can enable or disable the feature on alerts that allow a user to mute an alert for a period of time. This feature only applies to email noyification channels.
+
 * You can [detach an alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_delete_view) from a view. 
+
+
 
 
 ### Alert types
@@ -171,6 +181,17 @@ If you set the *Event lines counter* to be the only condition that triggers an a
 {: note}
 
 For example, you can configure an alert that is triggered after 30 seconds, or when a 100 event lines that match the view's filtering and search criteria are collected.
+
+
+### Mutable feature
+{: #mon_alerts_mute}
+
+By default, the **mutable** feature is enabled when you configure an alert on a custom view. This feature applies to email notifications only.
+
+When the **mutable** feature is enabled on an alert, a user can pause notifications for a period of time. Valid times are 1 hour, 6 hours, 12 hours, and 1 day. 
+
+
+
 
 
 
