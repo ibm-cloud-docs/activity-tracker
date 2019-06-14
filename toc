@@ -33,6 +33,7 @@ IBM Cloud Activity Tracker with LogDNA
     provision.md
     remove.md
     launch.md
+    config.md
     iam_manage_events.md
     iam_view_events.md
     view_events.md
