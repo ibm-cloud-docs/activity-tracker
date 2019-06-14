@@ -144,13 +144,13 @@ Consider the following information when you configure alerts:
 
 * You can define multiple notification channels for an alert. For information about the supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
 
-* You can [define **presets**](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step3). A preset is an alert template that users can attach to any number of views. Service administrators define presets. 
+* You can [define **presets**](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step3). A preset is an alert template that users can attach to any number of views. Service administrators define presets. Notice that when you delete a preset, any alerts that are defined by using this preset are automatically deleted.
 
-* You can enable or disable the feature on alerts that allow a user to mute an alert for a period of time. This feature only applies to email noyification channels.
+* You can enable or disable the feature on alerts that allow a user to mute an alert for a period of time. This feature only applies to email notification channels.
 
 * You can [detach an alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_delete_view) from a view. 
 
-
+* The timestamp that you see in a notification is set to UTC. For email botifications, you can set the **Timezone** to define a different timestamp value such as local time, for example. 
 
 
 ### Alert types
@@ -183,12 +183,12 @@ If you set the *Event lines counter* to be the only condition that triggers an a
 For example, you can configure an alert that is triggered after 30 seconds, or when a 100 event lines that match the view's filtering and search criteria are collected.
 
 
-### Mutable feature
+### Mute alert notifications
 {: #mon_alerts_mute}
 
-By default, the **mutable** feature is enabled when you configure an alert on a custom view. This feature applies to email notifications only.
+By default, the feature that controls the ability of a user to mute notifications is enabled when you configure an alert on a custom view. The **Muteable** feature applies to email notifications only.
 
-When the **mutable** feature is enabled on an alert, a user can pause notifications for a period of time. Valid times are 1 hour, 6 hours, 12 hours, and 1 day. 
+When the **mutable** feature is enabled on an alert, a user can pause notifications for a period of time. A user can choose to mute an alert for a period of 1 hour, 6 hours, 12 hours, or 1 day. 
 
 
 
