@@ -210,7 +210,7 @@ Consider the following information when you export events:
 * The maximum number of lines that you can export is 20,000.
 
 
-To make the EU-DE (Frankfurt) location EU compliant, the export function is **not available*** in **Frankfurt**. The download website for the exported logs is currently located outside the EU.
+To make the EU-DE (Frankfurt) location EU compliant, the export function is **not available** in **Frankfurt**. The download website for the exported logs is currently located outside the EU.
 {: important}
 
 

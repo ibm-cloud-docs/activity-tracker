@@ -28,7 +28,7 @@ subcollection: logdnaat
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. You can export logs programmatically by using the LogDNA REST API or through the web UI. 
 {:shortdesc}
 
-**Note:** To make the EU-DE (Frankfurt) location EU compliant, the export function is **not available*** in **Frankfurt**. The download website for the exported logs is currently located outside the EU.
+**Note:** To make the EU-DE (Frankfurt) location EU compliant, the export function is **not available** in **Frankfurt**. The download website for the exported logs is currently located outside the EU.
 {: important}
 
 ## Prerequisites
