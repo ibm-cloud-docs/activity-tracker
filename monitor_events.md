@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-03"
+lastupdated: "2019-06-14"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, monitor events
 
@@ -100,17 +100,15 @@ To learn how to view events through this view, see [Viewing events](/docs/servic
 
 You might want to monitor a set of events in your account. To anayze a subset of events, you can create custom views. 
 
-To create a custom view, you must apply a search query that defines what events to display through the view. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events#view_events_step2).
+You create a custom view by applying a search query that defines what events to display through the view. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events#view_events_step2).
 
-You can [attach alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts) to a custom view. 
+You can also run any of the following tasks:
 
-You can [export data](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-export) from a custom view. 
-
-You can [rename, and add or modify the description of a view](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_step5). 
-
-You can [apply a line template](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_step4) to a view to customize how the data is displayed. 
-
-You can organize views by grouping them in **categories*.
+* [Attach an alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts) to a custom view
+* [Export data](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-export) from a custom view 
+* [Rename, and add or modify the description of a view](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_step5)
+* [Apply a line template](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_step4) to a view to customize how the data is displayed
+* Organize views by grouping them into **categories**
 
 
 ## Monitoring events by applying a timeframe
@@ -189,6 +187,11 @@ Consider the following information when you export events:
 * You export a set of event entries. 
 * To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
 * The maximum number of lines that you can export is 20,000.
+
+
+To make the EU-DE (Frankfurt) location EU compliant, the export function is **not available*** in **Frankfurt**. The download website for the exported logs is currently located outside the EU.
+{: important}
+
 
 ### By using the REST API
 {: #mon_export_api}

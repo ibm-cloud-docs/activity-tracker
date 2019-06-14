@@ -537,19 +537,27 @@ A simple solution is to create a **LogDNA absence alert** in your service STS an
 As of April 17,2019, the Pager Duty integration does not work in our IBM environment. LogDNA is working on a resolution to this issue.
 {: note}
 
-To create an alert, you must create a view and then attach an alert to it. LogDNA documentation on this feature can be found [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/docs/views){:new_window}.
+To create an alert, you must create a view and then attach an alert to it. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts).
 
 The following example shows how to create an absence alert for a service ATS and trigger a Slack message if no events match the view criteria in 15 minutes.
 
 1. In the IBM Cloud console, click on hamburger (upper left). Then, select **Observability** &gt; **Activity Tracker**.
 2. Click on **View LogDNA** in your service ATS instance. This will bring up the LogDNA console.
-3. Create a filter that will filter out all other events except those from your service. Filter documentation can be found [here. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/docs/filters){:new_window}
+3. Create a filter that will filter out all other events except those from your service. 
+
+    Select your service by adding the IBM tag `_supertenant:<ServiceName>`
+
+    The following figure shows how you can add it from an event in your Everything view.
+
+    ![Platform service](images/servicenamesample.png) 
 
     Click on **Unsaved View** at the top. Then, select **Save as new view/alert**.
 
     Enter a name and click **Save View**.
 
     Click on your newly created view and select **Attach an Alert**.
+
+    Disable ***Mutable**.
   
     Select **View-specific alert** in the drop-down.
   
@@ -557,13 +565,15 @@ The following example shows how to create an absence alert for a service ATS and
   
     Change *Type* to **Absence**. This will create an alert if no events come in the time frame specified.
   
-    Change the time frame to a time you want to wait if no messages come in to send the alert.
+    Change the time frame to a time you want to wait if no messages come in to send the alert. The minimum is 15 min.
   
     Enter your Slack Webhook URL and select your message color.
   
     Save alert.
 
     ![ATS Alert](images/ATS_alert.png)
+
+    [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step2).
   
 4. Test your alert
 

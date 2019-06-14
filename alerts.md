@@ -47,6 +47,8 @@ Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search quer
 For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
 
  
+ quick question on alerts - is the timestamp based on the one that is displayed on the view, the local time of the user or eventTime?
+ It should display based from what you have setup as the `Timezone` under the Alert.
 
 
 ## Step 1. Go to the web UI
