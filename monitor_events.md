@@ -171,6 +171,7 @@ Configure an absence alert to notify when the number of events that show in a vi
 An absence alert is triggered when the view that has an absence alert attached to it is active. A view is active when the view receives events within the last 24 hours.
 {: important}
 
+For example, you might have a view that does not get any events for 2 days. Therefore, this view is not active. You have an absence alert attached to this view that is configured to send a notification after 30 minutes. Because the view is not active, the absence alert is muted and you do not get notifications. To make the view active and get notifications for the absence condition, events need to start flowing into the view. 
 
 
 ### Alert conditions
