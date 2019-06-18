@@ -136,7 +136,7 @@ There are scenarios where you might want to be notified if specific events are g
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search queries to define the events that are displayed through a custom view. Then, you can attach an alert to that view to be notified when a condition occurs. A bell icon is displayed with the view to indicate that this view has an alert attached to it.
 
 Consider the following information when you configure alerts:
-* You can [attach one alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step4) per custom view.
+* You can [attach one alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step4) per custom view. There are 2 types of alerts: presence alert and absence alert.
 
 * You can configure conditions that are based on the number of event lines that meet the search query in the view, on a time frequency, or both. 
 
@@ -153,18 +153,24 @@ Consider the following information when you configure alerts:
 * The timestamp that you see in a notification is set to UTC. For email notifications, you can set the **Timezone** to define a different timestamp value such as local time, for example. 
 
 
-### Alert types
-{: #mon_alerts_types}
 
-You can configure the following types of alerts:
 
-* **Presence alert**: You can use this type of alert to notify when the number of events that show in a view is more than what you expect. 
-* **Absence alert**: You can use this type of alert to notify when the number of events that show in a view is less than what you expect, or none. 
+### Presence alert
+{: #mon_alerts_presence}
+
+Configure a presence alert to notify when the number of events that show in a view is more than what you expect. 
 
 For example, you might have a view that shows events that report the deletion of service instances in your account. You are not expecting the deletion of service instances. You can configure a *presence alert** that triggers an alert when 1 or more events show in the view.
 
-The absence alert is enabled after an event is shown in the view.
-{: note}
+
+### Absence alert
+{: #mon_alerts_absences}
+
+Configure an absence alert to notify when the number of events that show in a view is less than what you expect, or none. 
+
+An absence alert is triggered when the view that has an absence alert attached to it is active. A view is active when the view receives events within the last 24 hours.
+{: important}
+
 
 
 ### Alert conditions
