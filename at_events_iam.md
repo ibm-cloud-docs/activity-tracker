@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-06-14"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -95,6 +95,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.user-apikey.delete`      | An event is generated when an initiator deletes an API key. |  
 | `iam-identity.serviceid-apikey.create` | An event is generated when an initiator creates an API key for a service ID. |  
 | `iam-identity.serviceid-apikey.delete` | An event is generated when an initiator deletes an API key for a service ID. |  
+| `iam-identity.serviceid-apikey.update` | An event is generated when an initiator renames an API key for a service ID or modifies its description. |
 {: caption="Table 3. Working with API keys actions" caption-side="top"} 
 
 
@@ -128,9 +129,9 @@ To view these events, you must [provision an instance](/docs/services/Activity-T
 
 In the {{site.data.keyword.cloud_notm}}, an administrator, or a user that has the correct access in your account, has different options to manage a user's login settings. For example, an administrator can order external authentication options, enable a one-time passcode to be used during login, enable the use of security questions at login, or set a password expiration time period. [Learn more](/docs/iam?topic=iam-loginsettings). 
 
-* A user an log in by using a user ID and password.
-* A federated user that uses a corporate or enterprise single sign-on ID can log in to {{site.data.keyword.cloud_notm}} from the command-line interface (CLI) by using either a one-time passcode or an API key. [Learn more](/docs/iam?topic=iam-federated_id).
-
+* A user can log in by using a user ID and password.
+* A federated user that uses a corporate or enterprise single sign-on ID can log in to {{site.data.keyword.cloud_notm}} from the command-line interface (CLI) by using either a one-time passcode or an API key. [Learn more](/docs/iam?topic=iam-federated_id). 
+* A user can log in by using an API key.  
 
 The following fields include extra information:
 * The `initiator.name` includes information about the user that logs in to the account.
@@ -158,7 +159,12 @@ The following field includes extra information:
 
 **Failed log in actions do not generate an event that you can monitor in your account.**
 
-A user can belong to multiple accounts. When a user logs in to the {{site.data.keyword.cloud_notm}}, the user ID (IBMid) and credentiasls are validated first. At this point, the user has not selected an account. After the user ID is authenticated successfully in the {{site.data.keyword.cloud_notm}}, the user can choose an account. It is at this point in the process that an account is associated to the log in request, and an event with action `iam-identity.user-refreshtoken.login`, or `iam-identity.user-apikey.login` is generated in your account.
+In Activity Tracker, you can see events that are associated to your account. 
+
+When a user logs in to the {{site.data.keyword.cloud_notm}}, the user ID (IBMid) and credentiasls are validated first. At this point, the user has not selected an account. Notice that a user can belong to multiple accounts. 
+
+After the user ID is authenticated successfully in the {{site.data.keyword.cloud_notm}}, the user can choose an account. It is at this point in the process that an account is associated to the log in request, and an event with action `iam-identity.user-refreshtoken.login`, or `iam-identity.user-apikey.login` is generated in your account.
+
 
 
 

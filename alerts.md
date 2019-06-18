@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-14"
+lastupdated: "2019-06-17"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, alerts, events
 
@@ -103,7 +103,7 @@ Complete the following steps to attach an alert to a view:
 
 8. Add the details for the notification channel that you have chosen.
 
-    For example, for the email notification channel, add one or more recipients, and optionally a time zone. The time zone defines the timestamp value that is used for each event that is included in the email. To see UTC timestamps, you can select **(GMT +00:00) UTC**.
+    For example, for the email notification channel, add one or more recipients, and optionally a time zone. The time zone defines the timestamp value of each event that is included in the email. To see UTC timestamps, you can select **(GMT +00:00) UTC**.
 
 9. Click **Save alert**.
 
@@ -189,9 +189,9 @@ After you configure an alert on a view and receive a notification email from `Lo
 
 3. Choose a period of time.
 
-    A window opens. The information provided indicates the view and for which notifications are muted, and the time period that are muted.
+    A window opens. The information provided indicates the view, the notification that is muted, and the time period that is muted for.
 
-    You get a message that indicates the following:
+    For example, you can get a message that indicates the following:
 
     ```
     Email alerting for MyView has been muted for an hour.
@@ -204,7 +204,7 @@ After you configure an alert on a view and receive a notification email from `Lo
     ```
     {: screen}
 
-    From this page, you can select **unmute** to enable notifications on the view. You can also select manage to go to the Alerts dashboard in the web UI.
+    From this page, you can select **unmute** to enable notifications on the view. You can also select **manage** to go to the *Alerts* dashboard in the web UI.
 
 
 ## Unmute a muted alert

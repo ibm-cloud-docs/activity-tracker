@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-14"
+lastupdated: "2019-06-17"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, manage events
 
@@ -53,14 +53,17 @@ As soon as an instance is available, events are collected and available for moni
 
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving).
 
-* Events are automatically archived once a day in a compressed format **(.json.gz)**. Each line preserves its metadata.
+* Events are automatically archived once a day in a compressed format **(.json.gz)**. Each event preserves its metadata.
 * Events are archived within 24-48 hours after you save the configuration. 
+* When you configure archiving for the first time, the first archive file includes events for a set number of days:
 
-When you configure archiving, the first archive file includes data that is available for search in your instance:
-* The maximum number of days that is archived for a `30 day search` plan is 21 days.
-* The maximum number of days that is archived for a `14 day search` plan is 14 days.
-* The maximum number of days that is archived for a `7 day search` plan is 7 days.
+    * The maximum number of days that is archived includes events for the past 30 days when the instance has a `30 day search` plan.
 
+    * The maximum number of days that is archived includes events for the past 14 days when the instance has a `14 day search` plan.
+
+    * The maximum number of days that is archived includes events for the past 7 days when the instance has a `7 day search` plan.
+
+For example, if you have a service plan of 30 days. You configured the instance 10 days ago. You enable archiving on the 10th day. You first archive includes events for the past 10 days.
 
 Each {{site.data.keyword.at_full_notm}} instance has its own archiving configuration.
 {: important}
