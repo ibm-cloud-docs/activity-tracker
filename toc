@@ -14,7 +14,7 @@ IBM Cloud Activity Tracker with LogDNA
 
     {: .topicgroup}
     Tutorials
-        iam_tutorial_1.md
+        tutorial_iam.md
         
     {: .topicgroup}
     Internal adopters

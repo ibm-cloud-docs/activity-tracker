@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-14"
+lastupdated: "2019-06-24"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, search, filter, events
 
@@ -61,6 +61,8 @@ To search for specific events, you can apply a search query.
 
 * You can do simple searches (single term string search), compound search (multiple search terms and operators), field searches if the log line can be parsed, and others. For more information, see [How to Search Logs in LogDNA docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/docs/search){:new_window}.
 * AND and OR operators are case-sensitive and must be capitalized.
+* Use `FieldName:==FieldValue` to search for a specific field value.
+* Use `FieldName:Value` to search for field values that start with that value. 
 
 You can only search events for the number of days that is specified through the instance's service plan.
 {: important}
