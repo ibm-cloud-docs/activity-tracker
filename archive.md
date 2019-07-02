@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-01"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, archive logs, COS, cloud object storage
 
@@ -75,10 +75,7 @@ The following table lists the roles that a user can have to complete the actions
 
 Complete the following steps to assign a user administrator role to the {{site.data.keyword.cos_full_notm}} service within the context of a resource group: 
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
-
-	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
-    
+1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.    
 2. From the menu bar, click **Manage** &gt; **Access (IAM)**, and then select **Users**.
 3. From the row for the user that you want to assign access, select the **Actions** menu, and then click **Assign access**.
 4. Select **Assign access within a resource group**.
@@ -186,7 +183,7 @@ A service ID identifies a service similar to how a user ID identifies a user. Se
 
 You must create a service ID for your {{site.data.keyword.cos_full_notm}} instance. This service ID is used by the {{site.data.keyword.at_full_notm}} instance to authenticate with your {{site.data.keyword.cos_full_notm}} instance. 
 
-You must assign specific access policies to the service ID that restrict permissions for using specific services, or even combine permissions for accessing different services. For example, to restrict access to a single bucket, ensure that the service ID doesn't have any instance level policies using either the console or CLI.
+You must assign specific access policies to the service ID that restrict permissions for using specific services, or even combine permissions for accessing different services. 
 
 
 Complete the following steps to create a service ID with writing permissions for the {{site.data.keyword.cos_full_notm}} instance:
@@ -329,6 +326,10 @@ Complete the following steps to configure archiving of your {{site.data.keyword.
 
 
 After you save the configuration, events are archived once a day.
+
+Notice that when you save the configuration, you can get a message that informs you that the configuration has been saved successfully. When you get this message, the integration between the LogDNA instance and the bucket is verified. A test to upload and delete an object from the bucket is completed successfully. 
+
+If you get an error when you save the configuration, the verification process fails. Check your configuration and retry again. 
 
 
 
