@@ -79,7 +79,8 @@ The {{site.data.keyword.cos_full_notm}} instance is provisioned within the conte
 * The service ID that you create for an {{site.data.keyword.cos_full_notm}} instance is used by the {{site.data.keyword.at_full_notm}} to authenticate and access the {{site.data.keyword.cos_full_notm}} instance. 
 * You can assign specific access policies to the service ID that restrict permissions on the {{site.data.keyword.cos_full_notm}} instance. Restrict the service ID to only have writing permissions on the bucket where you plan to archive the events.
 
-
+**Archiving in an EU-managed location:** You must configure a bucket that complies with the EU-managed and GDPR regulations.
+{: important}
 
 
 

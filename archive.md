@@ -143,6 +143,8 @@ Complete the following steps to create a bucket:
 
 3. Select **Buckets**. Then, click **Create Bucket**.
 
+    If you are configuring **archiving in an EU-managed location**, you must configure a bucket that complies with the EU-managed and GDPR regulations.
+
 4. Enter a bucket name for the *Unique bucket name* field.
 
     **Note:** All buckets in all regions across the globe share a single namespace. 
