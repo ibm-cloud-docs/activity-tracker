@@ -107,7 +107,7 @@ The following table list the mandatory fields:
   </tr>
   <tr>
     <td>eventTime</td>
-	  <td>Indicates the timestamp when the event was created. </br>The date is represented as Universal Time Coordinated (UTC). </br></br>ISO 8601 date and time must be followed by Z or +0000 to indicate that a time is defined as Universal Time (UTC). For AT, use +0000   </br></br>The letter 'T' in the date/time syntax must always be upper case.  </br></br>For readability and consistency in the UI, the format of this field is: <b>YYYY-MM-DDTHH.mm.ss.SS+0000</b></td>
+	  <td>Indicates the timestamp when the event was created. </br>The date is represented as Universal Time Coordinated (UTC). </br></br>ISO 8601 date and time must be followed by Z or +0000 to indicate that a time is defined as Universal Time (UTC). For AT, use +0000   </br></br>The letter 'T' in the date/time syntax must always be upper case.  </br></br>For readability and consistency in the UI, the format of this field is: <b>YYYY-MM-DDTHH:mm:ss.SS+0000</b></td>
 	  <td>For example: 2017-10-19T19:07:50.32+0000</td>
   </tr>
 </table>
