@@ -42,9 +42,9 @@ To manage user API keys from the UI, go to **Manage** &gt; **Access (IAM)** &gt;
 To manage user API keys from the command-line, you can run any of the following CLI commands:
 * [ibmcloud iam api-key-create](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)
 * [ibmcloud iam api-key-update](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_update)
-* [ibmcloud api-key-delete](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_delete)
-* [ibmcloud api-key-lock](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_lock)
-* [ibmcloud api-key-unlock](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_unlock)
+* [ibmcloud iam api-key-delete](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_delete)
+* [ibmcloud iam api-key-lock](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_lock)
+* [ibmcloud iam api-key-unlock](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_unlock)
 
 When you run any of these actions, an event is generated. You can use these events to monitor user API keys in the account. You monitor these events through the {{site.data.keyword.at_short}} instance that is available in the Frankfurt location.
 
@@ -150,15 +150,17 @@ Complete the following steps to generate events as a result of actions on user A
 In the web UI, verify that you see the events for each of these actions. 
 
 ```
-17/May/2019:12:48:13 IAM Identity Service: create user-apikey demo-key-for-fail-scenario
-17/May/2019:12:48:17 IAM Identity Service: update user-apikey demo-key-for-fail-scenario
-17/May/2019:12:48:18 IAM Identity Service: update user-apikey n/a-failure
-17/May/2019:12:48:20 IAM Identity Service: update user-apikey n/a-failure
-17/May/2019:12:48:21 IAM Identity Service: delete user-apikey demo-key-for-fail-scenario-failure
-17/May/2019:12:48:21 IAM Identity Service: update user-apikey demo-key-for-fail-scenario
-17/May/2019:12:48:41 IAM Identity Service: delete user-apikey demo-key-for-fail-scenario
+    4/Jul/2019:16:34:44 IAM Identity Service: create user-apikey demo-key-for-fail-scenario
+    4/Jul/2019:16:34:59 IAM Identity Service: update user-apikey demo-key-for-fail-scenario
+    4/Jul/2019:16:36:29 IAM Identity Service: update user-apikey demo-key-for-fail-scenario -failure
+    4/Jul/2019:16:36:59 IAM Identity Service: update user-apikey demo-key-for-fail-scenario -failure
+    4/Jul/2019:16:37:16 IAM Identity Service: delete user-apikey demo-key-for-fail-scenario -failure
+    4/Jul/2019:16:37:30 IAM Identity Service: update user-apikey demo-key-for-fail-scenario
+    4/Jul/2019:16:37:40 IAM Identity Service: delete user-apikey demo-key-for-fail-scenario
 ```
 {:screen}
+
+
 
 
 ## Step 3. Configure a view to see events 
