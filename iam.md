@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, iam, manage user access
 
@@ -84,11 +84,11 @@ Use the following table to identify the platform role that you can grant a user 
 | Platform actions                                                        | {{site.data.keyword.cloud_notm}} Platform Roles    | 
 |-------------------------------------------------------------------------|------------------------------------------------------|
 | `Grant other account members access to work with the service`           | Administrator                                        | 
-| `Provision a service instance`                                          | Editor                            | 
+| `Provision a service instance`                                          | Administrator </br>Editor                            | 
 | `Delete a service instance`                                             | Administrator </br>Editor                            | 
 | `Create a service ID`                                                   | Administrator </br>Editor                            |
 | `View details of a service instance`                                    | Administrator </br>Editor </br>Operator </br>Viewer  | 
-| `View service instances in the Observability Logging dashboard`         | Administrator </br>Editor </br>Operator </br>Viewer  | 
+| `View service instances in the Observability Activity Tracker dashboard` | Administrator </br>Editor </br>Operator </br>Viewer  | 
 | `View the ingestion key in the {{site.data.keyword.cloud_notm}} console` | Administrator                                        | 
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
@@ -107,8 +107,8 @@ Use the following table to identify the service roles that you can grant a user 
 | `Define exclusion rules`                                                | Manager                                              |
 | `Configure alerts`                                                      | Manager </br>Reader                                  | 
 | `Filter and search data`                                                | Manager </br>Reader                                  |
-| `Create views`                                                          | Manager </br>Reader                                  |
-| `Manage views`                                                          | Manager </br>Reader                                  |
+| `Create and manage views`                                               | Manager </br>Reader                                  |
+| `Create and manage dashboards`                                          | Manager </br>Reader                                  |
 | `Export log data`                                                       | Manager </br>Reader                                  |
 | `Configure user preferences in the LogDNA web UI`                       | Manager </br>Reader                                  |
 | `View events through the LogDNA web UI`                                 | Manager </br>Reader                                  | 
