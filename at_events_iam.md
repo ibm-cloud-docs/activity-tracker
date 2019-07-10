@@ -157,15 +157,13 @@ The following field includes extra information:
 
 
 
-**Failed log in actions do not generate an event that you can monitor in your account.**
-
-In Activity Tracker, you can see events that are associated to your account. 
+**Failed log in actions**
 
 When a user logs in to the {{site.data.keyword.cloud_notm}}, the user ID (IBMid) and credentiasls are validated first. At this point, the user has not selected an account. Notice that a user can belong to multiple accounts. 
 
 After the user ID is authenticated successfully in the {{site.data.keyword.cloud_notm}}, the user can choose an account. It is at this point in the process that an account is associated to the log in request, and an event with action `iam-identity.user-refreshtoken.login`, or `iam-identity.user-apikey.login` is generated in your account.
 
-
+In Activity Tracker, you can see events that are associated to your account. Failed log in actions do not generate an event that you can monitor in your account.
 
 
 ### Delete an access group
@@ -289,7 +287,7 @@ To find out the user who has tried to modify an API key or a service ID, complet
 To get the API key on which the action has been requested and failed, see the field `prev_instance_name` in requestData.
 
 
-### Resource is locked. Request to update Service ID or API key fails**
+### Resource is locked. Request to update Service ID or API key fails
 {: #an_fail_locked}
 
 When a service ID or an API key are locked, you cannot change any of its attributes. The event that is generated has an `outcome` of **failure**.

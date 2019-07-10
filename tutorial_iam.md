@@ -150,13 +150,13 @@ Complete the following steps to generate events as a result of actions on user A
 In the web UI, verify that you see the events for each of these actions. 
 
 ```
-    4/Jul/2019:16:34:44 IAM Identity Service: create user-apikey demo-key-for-fail-scenario
-    4/Jul/2019:16:34:59 IAM Identity Service: update user-apikey demo-key-for-fail-scenario
-    4/Jul/2019:16:36:29 IAM Identity Service: update user-apikey demo-key-for-fail-scenario -failure
-    4/Jul/2019:16:36:59 IAM Identity Service: update user-apikey demo-key-for-fail-scenario -failure
-    4/Jul/2019:16:37:16 IAM Identity Service: delete user-apikey demo-key-for-fail-scenario -failure
-    4/Jul/2019:16:37:30 IAM Identity Service: update user-apikey demo-key-for-fail-scenario
-    4/Jul/2019:16:37:40 IAM Identity Service: delete user-apikey demo-key-for-fail-scenario
+    17/May/2019:16:34:44 IAM Identity Service: create user-apikey demo-key-for-fail-scenario
+    17/May/2019:16:34:59 IAM Identity Service: update user-apikey demo-key-for-fail-scenario
+    17/May/2019:16:36:29 IAM Identity Service: update user-apikey demo-key-for-fail-scenario -failure
+    17/May/2019:16:36:59 IAM Identity Service: update user-apikey demo-key-for-fail-scenario -failure
+    17/May/2019:16:37:16 IAM Identity Service: delete user-apikey demo-key-for-fail-scenario -failure
+    17/May/2019:16:37:30 IAM Identity Service: update user-apikey demo-key-for-fail-scenario
+    17/May/2019:16:37:40 IAM Identity Service: delete user-apikey demo-key-for-fail-scenario
 ```
 {:screen}
 
