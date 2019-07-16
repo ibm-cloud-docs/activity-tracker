@@ -55,6 +55,10 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 
 * Events are automatically archived once a day in a compressed format **(.json.gz)**. Each event preserves its metadata.
 * Events are archived within 24-48 hours after you save the configuration. 
+* The events that are archived on a file correspond to a single day of data. **The timestamp that is used to determine whether the event is included in an archive is the UTC timestamp.**
+
+    Notice that depending on your location, there might be events that you see in local time in your views on a specific day. However, you cannot find them on the archive file for that day. You are most likely viewing events in local time and the archive process uses the UTC timestamp of the event.
+
 * After you configure archiving, the first archive file is created when the archiving process runs and there is data.
 * The first time the archive process runs, you get an archive file for each day that you have data.
 

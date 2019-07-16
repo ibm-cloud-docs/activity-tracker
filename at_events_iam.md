@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-14"
+lastupdated: "2019-07-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -260,8 +260,8 @@ The following fields include extra information:
 {: #an_fail_not_authorized}
 
 For example, when a user logs into your account using an API key, the user is authenticated to access your account. However, this API key may not have permissions to run actions to modify API keys or service IDs in the account. When this happens, you get one of the following messages:
-* **IAM Identity Service: update user-apikey n/a-failure**
-* **IAM Identity Service: update account-serviceid n/a -failure**
+* **IAM Identity Service: update user-apikey APIKeyName -failure**
+* **IAM Identity Service: update account-serviceid ServiceIDName -failure**
 
 To look for information about the user that has requested a change to an API key or to a service ID, look at the initiator fields in the event.
 
