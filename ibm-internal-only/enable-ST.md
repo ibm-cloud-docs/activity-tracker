@@ -247,6 +247,22 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     ```
     {: codeblock}
 
+    For **eu-gb**, run the following command: 
+
+    ```
+    kubectl create -f http://assets.eu-gb.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
+    ```
+    {: codeblock} 
+
+    For **jp-tok**, run the following command: 
+
+    ```
+    kubectl create -f http://assets.jp-tok.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
+    ```
+    {: codeblock}
+
+   
+
 3. Legacy Activity Tracker
 
     If your service is already sending data to the legacy Activity Tracker via fluentd, then the fluentd will continue to work as-is alongside the logdna-agent. 
