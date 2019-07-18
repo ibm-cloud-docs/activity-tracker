@@ -103,6 +103,36 @@ The below listing shows how the new fields fit into the overall JSON that descri
 
 If your service is not already using the old version of Activity Tracker, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#ibm_event_fields) to understand how an event must be formatted and the definitions of the event fields.
 
+### Deployment changes to support Kubernetes volumes
+Activity Tracker requires services to write events to a file in /var/log/at on the worker node.
+You will also have to do this if you are writing logs to a file in /var/log.
+We utilize Kubernetes volumes to accomplish this. The logDNA agent mounts the same volume in 
+order to make events and logs available to the  LogDNA agent. Go [here](https://kubernetes.io/docs/concepts/storage/volumes/) to learn more about Kubernetes 
+volumes.
+
+We recommend you mount `/var/log`. This will also pick up files written to /var/log/at.
+At a minimum you must mount: `/var/log/at`.
+
+Your service deployment .yaml file must be changed to add [hostPath volume mounts](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath). Listed below is an example deployment yaml. The fields of interest are **volumeMounts** and **volumes**.
+
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: at-tester
+spec:
+  containers:
+  - name: at-tester
+    image: de.icr.io/kingco_bss/at-tester:1
+    volumeMounts:
+    - mountPath: /var/log
+      name: logs 
+  volumes: 
+  - name: logs
+    hostPath:
+      path: /var/log 
+
+```
 
 ### Activity Tracker guidelines 
 
