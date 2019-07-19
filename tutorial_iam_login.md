@@ -78,13 +78,22 @@ For a user to log in successfully to your account through the {{site.data.keywor
 
     By default, an account is pre-selected. This account is the one that is associated to the IBMid of the user. 
 
-4. At this point in the process, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-refreshtoken.login** for the user's default account.
+4. At this point in the process, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-refreshtoken.login**. This event is available in the user's default account.
 
 5. Next, the user switches account and selects a different account.
 
 6. The IAM Identity Service checks the current tokens. If the user is authorized to work in the new account, the IAM Identity Service returns a new access token and a new refresh token that are bound to the new account.
 
-7. At this point in the process, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-refreshtoken.login** for the new account.
+7. At this point in the process, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-refreshtoken.login**. This event is available in the new account.
+
+
+
+## Run an action in the {{site.data.keyword.cloud_notm}} UI
+{: #iam_action_ui}
+
+When a user runs an action in the {{site.data.keyword.cloud_notm}} UI, you might get one or more login events:
+
+* If the access and refresh tokens are expired, the user needs to log in through the {{site.data.keyword.cloud_notm}} UI. An Activity Tracker event with action **iam-identity.user-refreshtoken.login** is generated.
 
 8. Optional] User runs an action
 

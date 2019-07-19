@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-25"
+lastupdated: "2019-07-18"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, export
 
@@ -28,7 +28,7 @@ subcollection: logdnaat
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. You can export logs programmatically by using the LogDNA REST API or through the web UI. 
 {:shortdesc}
 
-**Note:** To make the EU-DE (Frankfurt) location EU compliant, the export function is **not available** in **Frankfurt**. The download website for the exported logs is currently located outside the EU.
+To make the EU-DE (Frankfurt) location `EU-Supported`, the web UI export functionality is not available. Also, you cannot use the API to export data to an email address. However, if you need to export data from this location, you can use the export API to export your data to a local file.
 {: important}
 
 ## Prerequisites
