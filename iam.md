@@ -90,6 +90,7 @@ Use the following table to identify the platform role that you can grant a user 
 | `View details of a service instance`                                    | Administrator </br>Editor </br>Operator </br>Viewer  | 
 | `View service instances in the Observability Activity Tracker dashboard` | Administrator </br>Editor </br>Operator </br>Viewer  | 
 | `View the ingestion key in the {{site.data.keyword.cloud_notm}} console` | Administrator                                        | 
+| `Configure service platform logs`                                       | Administrator </br>Editor                             |
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
 
