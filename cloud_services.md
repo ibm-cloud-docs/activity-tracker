@@ -83,6 +83,16 @@ The following table lists core platform actions that send events to {{site.data.
 | [Managing tags](/docs/resources?topic=resources-tag) | A tag is a label that you assign to a resource for easy filtering of resources in your resource list. | [Events for managing tags](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-at_events_acc_mgt#at_events_acc_mgt_resources) |
 {: caption="List of core platform actions" caption-side="top"} 
 
+## Platform container services
+{: #container}
+
+The following table lists container platform services that send events to {{site.data.keyword.at_full_notm}}:
+
+| Service     | Description | {{site.data.keyword.at_full_notm}} events |
+|-------------|-------------|-------------|
+| [{{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started) | You can use the {{site.data.keyword.registrylong_notm}} service to store and access private Docker images in a highly available and scalable architecture. | [Events that are generated when you interact with the {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-at_events#at_events) | 
+{: caption="Container events" caption-side="top"} 
+
 
 
 ## Platform database services
