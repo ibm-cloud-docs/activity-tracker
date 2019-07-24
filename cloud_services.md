@@ -90,7 +90,7 @@ The following table lists container platform services that send events to {{site
 
 | Service     | Description | {{site.data.keyword.at_full_notm}} events |
 |-------------|-------------|-------------|
-| [{{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started) | You can use the {{site.data.keyword.registrylong_notm}} service to store and access private Docker images in a highly available and scalable architecture. | [Events that are generated when you interact with the {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-at_events#at_events) | 
+| [{{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started) | You can use the {{site.data.keyword.registrylong_notm}} service to store and access private images in a highly available and scalable architecture. | [Events that are generated when you interact with the {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-at_events#at_events) | 
 {: caption="Container events" caption-side="top"} 
 
 
