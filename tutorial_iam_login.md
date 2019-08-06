@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-11"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -65,7 +65,7 @@ As owner or person responsible of the account access management, you can expect 
 
 
 ## Log in through the {{site.data.keyword.cloud_notm}} UI
-{: #iam_login_ui}
+{: #tutorial_iam_login_ui}
 
 
 For a user to log in successfully to your account through the {{site.data.keyword.cloud_notm}} UI, consider the following information:
@@ -89,7 +89,7 @@ For a user to log in successfully to your account through the {{site.data.keywor
 
 
 ## Run an action in the {{site.data.keyword.cloud_notm}} UI
-{: #iam_action_ui}
+{: #tutorial_iam_action_ui}
 
 When a user runs an action in the {{site.data.keyword.cloud_notm}} UI, you might get one or more login events:
 
@@ -110,7 +110,7 @@ When you do a console login, the console ( 1 of the many microservices) gets the
 
 
 ### Log in from the CLI by using an API key
-{: #iam_login_cli_key}
+{: #tutorial_iam_login_cli_key}
 
 Log in with IBMid through the CLI 
 ibmcloud login –a cloud.ibm.com –apikey xxxx
@@ -125,7 +125,7 @@ Activity Tracker event is generated iam-identity.user-apikey.login
 
 
 ### Log in from the CLI by using a one-time passcode.
-{: #iam_login_cli_passcode}
+{: #tutorial_iam_login_cli_passcode}
 
 Log in with IBMid through the CLI 
 ibmcloud login –a cloud.ibm.com –sso
@@ -152,7 +152,7 @@ The token does not contain any credentials. It contains an identity, account and
 
 
 ### Log in from the CLI by using a user ID and password
-{: #iam_login_cli_pwd}
+{: #tutorial_iam_login_cli_pwd}
 
 Log in with IBMid through the CLI 
 ibmcloud login –a cloud.ibm.com –u USER –p password
@@ -170,7 +170,7 @@ ibmcloud login –a cloud.ibm.com –u USER –p password
 
 
 ## Summary
-{: #iam_login_summ}
+{: #tutorial_iam_login_summ}
 
 The following table shows the IAM event that is generated in each of the log in cases:
 

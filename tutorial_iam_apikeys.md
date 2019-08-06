@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-11"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -23,14 +23,14 @@ subcollection: logdnaat
 
 
 # Monitoring user API keys
-{: #tutorial_iam}
+{: #tutorial_iam_apikeys}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.iamlong}} (IAM) service in {{site.data.keyword.cloud_notm}}. This tutorial shows how to monitor actions on user API keys in your account.
 {:shortdesc}
 
 
 ## Overview
-{: #tutorial_iam_ov}
+{: #tutorial_iam_apikeys_ov}
 
 A federated user or non-federated user can create an API key to use on the CLI or as part of automation to log in as your user identity. You can use the UI or the CLI to manage your API keys by listing your keys, creating keys, locking and unlocking keys, updating keys, or deleting keys. [Learn more](/docs/iam?topic=iam-userapikey).
 
@@ -52,7 +52,7 @@ For example, you might be interested in finding out why an action to delete a us
 
 
 ## Prereqs
-{: #tutorial_iam_prereqs}
+{: #tutorial_iam_apikeys_prereqs}
 
 1. You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
@@ -66,7 +66,7 @@ For example, you might be interested in finding out why an action to delete a us
 
 
 ## Step 1. Launch the web UI in Frankfurt
-{: #tutorial_iam_step1}
+{: #tutorial_iam_apikeys_step1}
 
 1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
@@ -82,7 +82,7 @@ For example, you might be interested in finding out why an action to delete a us
 
 
 ## Step 2. Generate events
-{: #tutorial_iam_step2}
+{: #tutorial_iam_apikeys_step2}
 
 ### Generate events through the UI
 {: #tutorial_iam_step1_1}
@@ -110,7 +110,7 @@ For example, if you create an API key with name `demo-key`, you can see the foll
 
 
 ### Generate events by using the CLI
-{: #tutorial_iam_step1_2}
+{: #tutorial_iam_apikeys_step1_2}
 
 Complete the following steps to generate events by using the command-line:
 
@@ -135,7 +135,7 @@ For example, if you create an API key with name `demo-key`, you can see the foll
 
 
 ### Generate events by using the CLI for actions that fail
-{: #tutorial_iam_step1_3}
+{: #tutorial_iam_apikeys_step1_3}
 
 Complete the following steps to generate events as a result of actions on user API keys in the account :  This step will generate an event that reports an action that fails.
 
@@ -164,7 +164,7 @@ In the web UI, verify that you see the events for each of these actions.
 
 
 ## Step 3. Configure a view to see events 
-{: #tutorial_iam_step3}
+{: #tutorial_iam_apikeys_step3}
 
 From the {{site.data.keyword.at_short}} web UI, complete the following steps to customize views that you can use to monitor user API key actions in your account:
 
@@ -224,7 +224,7 @@ To create multiple views based on the search condition, repeat the tasks in this
 
 
 ## Step 4. Define an email alert
-{: #tutorial_iam_step4}
+{: #tutorial_iam_apikeys_step4}
 
 After you save a view, you might decide that you want to be notified when certain conditions occur. 
 
@@ -261,7 +261,7 @@ After you delete 2 user API keys, you get an email from LogDNA with information 
 
 
 ## Step 5. Configure a dashboard
-{: #tutorial_iam_step5}
+{: #tutorial_iam_apikeys_step5}
 
 
 Complete the following steps to configure a dashboard:
