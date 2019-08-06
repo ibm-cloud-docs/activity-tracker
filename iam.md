@@ -106,7 +106,7 @@ Use the following table to identify the service roles that you can grant a user 
 | `Create and delete service keys through the LogDNA web UI`              | Yes      | No                     | No     |
 | `Configure archiving`                                                   | Yes      | No                     | No     |
 | `Define exclusion rules`                                                | Yes      | No                     | No     |
-| `Create and delete categories.`                                         | Yes      | No                     | No     |
+| `Create and delete categories`                                          | Yes      | No                     | No     |
 | `Manage how views and dashboards are grouped in categories`             | Yes      | No                     | No     |
 | `View service keys through the LogDNA web UI`                           | Yes      | No                     | No     |
 | `Export log data`                                                       | Yes      | Yes                    | No     |

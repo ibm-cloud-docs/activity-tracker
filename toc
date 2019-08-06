@@ -11,12 +11,13 @@ IBM Cloud Activity Tracker with LogDNA
     iam.md
     monitor_events.md
     manage_events.md
+    manage_eu_acc.md
 
     {: .topicgroup}
     Tutorials
         tutorial_iam_apikeys.md
         tutorial_iam_login.md
-        
+
     {: .topicgroup}
     Internal adopters
         ibm-internal-only/overview.md
