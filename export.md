@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-18"
+lastupdated: "2019-08-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, export
 
@@ -28,7 +28,7 @@ subcollection: logdnaat
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. You can export logs programmatically by using the LogDNA REST API or through the web UI. 
 {:shortdesc}
 
-To make the EU-DE (Frankfurt) location `EU-Supported`, the web UI export functionality is not available. Also, you cannot use the API to export data to an email address. However, if you need to export data from this location, you can use the export API to export your data to a local file.
+The web UI export functionality is not available in the Frankfurt location. Also, you cannot use the API to export data to an email address. However, if you need to export data from the Frankfurt location, you can use the export API to export your data to a local file or to the terminal.
 {: important}
 
 ## Prerequisites
@@ -38,15 +38,7 @@ To make the EU-DE (Frankfurt) location `EU-Supported`, the web UI export functio
 
 * **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan). 
 
-* Check that your user ID has permissions to launch the web UI and view events. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
-
-| Role                      | Permission granted            |
-|---------------------------|-------------------------------|  
-| Platform role: `Viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
-| Service role: `Reader`      | Allows the user to launch the web UI and view events in the web UI.  |
-{: caption="Table 1. IAM roles" caption-side="top"} 
-
-For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+* Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
 
 
 ## Step 1. Go to the web UI
@@ -88,7 +80,9 @@ Complete the following steps to export events programmatically:
 
 1. Generate a Service Key. 
 
-    **Note:** You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to complete this step.
+    You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to complete this step. 
+    
+    If you are a user with the **LogDNA user** service role permissions, you can get an active service key through the LogDNA web UI. Go to **Settings** &gt; **Organization** &gt; **API keys** section to view the active service keys.
 
     1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2).
 
