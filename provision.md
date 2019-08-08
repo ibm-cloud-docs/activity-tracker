@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-03"
+lastupdated: "2019-08-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, provision instance
 
@@ -138,7 +138,7 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the comma
 
     * The value *logdnaat* is the name of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}
 
-    * SERVICE_PLAN_NAME is the type of plan. Valid values are *lite*, *7-days*, *14-days*, *30-days*
+    * SERVICE_PLAN_NAME is the type of plan. Valid values are *lite*, *7-day*, *14-day*, *30-day*
     
     * LOCATION is the region where the LogDNA instance is created. To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
 
