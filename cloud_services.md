@@ -197,7 +197,7 @@ The following table lists storage services that send events to {{site.data.keywo
 * **You must configure each bucket to enable management events, or management and data events.** Notice that you cannot enable data events only for a bucket. 
 
     * To monitor management events, you must configure a bucket and specify the {{site.data.keyword.at_short}} instance where those events will be available for monitoring.
-    * To monitor data events, you must select the option **Track data events** when you configure a bucket to generate management events. 
+    * To monitor data events, you must select the option **Track data events** when you associate a bucket with an {{site.data.keyword.at_short}} instance. 
 
 
 
