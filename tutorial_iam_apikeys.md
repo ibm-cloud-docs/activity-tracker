@@ -58,11 +58,9 @@ For example, you might be interested in finding out why an action to delete a us
 
 2. To work with the command-line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
-3. You need an {{site.data.keyword.at_full_notm}} instance provisioned in Frankfurt with a 7-day, 14-day, or 30-day plan. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision).
+3. You need an {{site.data.keyword.at_full_notm}} instance that is provisioned in Frankfurt with a 7-day, 14-day, or 30-day plan. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision).
 
-4. Your user ID must have assigned an IAM policy to work in the {{site.data.keyword.cloud_notm}} with {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/iam?topic=iam-iammanidaccser#access_to_resources).
-
-    ![Policy for working as a viewer with the {{site.data.keyword.at_short}} service](images/viewer_at_policy_in_rg.png "Policy for working as a viewer with the {{site.data.keyword.at_short}} service") 
+4. Your user ID must have assigned an IAM policy to work in the {{site.data.keyword.cloud_notm}} with the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/iam?topic=iam-iammanidaccser#access_to_resources).
 
 
 ## Step 1. Launch the web UI in Frankfurt
@@ -206,7 +204,7 @@ From the {{site.data.keyword.at_short}} web UI, complete the following steps to 
 
 4. Enter the condition in the **Search bar**, then click `Enter`. 
 
-    In this tutorial, create a view to show events that report deletion of user API keys. The condition is `(action user-apikey.delete) -login`.
+    For example, create a view to show events that report deletion of user API keys. The condition is `(action user-apikey.delete) -login`.
 
     As you apply the search criteria, notice that the name of the view changes from **Everything** to **Unsaved View**.
 
@@ -247,9 +245,9 @@ Complete the following steps to configure an email alert:
     To define the threshold condition, set the number of lines after which you want the alert to trigger. Enter **2**.
 
 6. Choose the trigger condition **Immediately after 2 lines**.
-7. Enter one or more recipients. Notice the email does not need to be from a user in the account. However, to see the data, a user needs to have permissions in the account. 
+7. Enter one or more recipients. 
 
-8. Optionally, enter a time zone.
+8. Optionally, enter a time zone. This setting indicates the timestamp of the events that are reported through the email.
 
 9. Click **Save alert**.
 
