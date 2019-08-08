@@ -261,33 +261,33 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
 2. Install the LogDNA agent with super tenancy 
 
-    The command below automatically installs a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in.
+    The command below automatically installs a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. We now have private endpoints for the agents. This allows your logs and events to stay withing the IBM network and not travel through the public internet.
 
     For **us-south**, run the following command:
  
     ```
-    kubectl create -f http://assets.us-south.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
+    kubectl create -f  http://assets.us-south.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
     For **eu-de**, run the following command: 
 
     ```
-    kubectl create -f http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
+    kubectl create -f http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
     For **eu-gb**, run the following command: 
 
     ```
-    kubectl create -f http://assets.eu-gb.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
+    kubectl create -f http://assets.eu-gb.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock} 
 
     For **jp-tok**, run the following command: 
 
     ```
-    kubectl create -f http://assets.jp-tok.logging.cloud.ibm.com/clients/logdna-agent-v2-st.yaml
+    kubectl create -f http://assets.jp-tok.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
