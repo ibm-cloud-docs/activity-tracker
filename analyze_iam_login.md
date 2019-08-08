@@ -22,7 +22,7 @@ subcollection: logdnaat
 {:note: .note}
 
 
-# Managing events from log in actions in an account
+# Analyze events from log in actions in an account
 {: #manage_iam_login}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users, applications, and services interact with your account. The {{site.data.keyword.iamlong}} (IAM) service in {{site.data.keyword.cloud_notm}} generates events that you can use to monitor log in activity to your account. This tutorial explains the different log in options to {{site.data.keyword.cloud_notm}} and what happens from an IAM and an {{site.data.keyword.at_full_notm}} perspective. You can also find out how to define views and dashboards to monitor these actions in your account.
