@@ -2,7 +2,7 @@
 
 copyright:
   years:  2018, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-12"
 
 keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU managed
 
@@ -28,11 +28,11 @@ Across every industry, organizations require tighter controls and visibility int
 {:shortdesc}
 
 To manage events that are generated in your **EU-managed account** by using the {{site.data.keyword.at_full_notm}} service, consider the following information:
-* You must provision 1 {{site.data.keyword.at_full_notm}} instance in the `EU-DE (Frankfurt)` location. (You can only have 1 instance per location.)
-* Your account must be EU Supported enabled, so support is handled by team members in the European Union. 
+* You must provision 1 {{site.data.keyword.at_full_notm}} instance in the `EU-DE (Frankfurt)` location. (You can only have 1 instance per region.)
+* [Your must enable your account to be EU Supported](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-manage_eu_acc#manage_eu_acc_step1), so support is handled by team members in the European Union. 
 * To monitor activity from {{site.data.keyword.cloud_notm}} services and Cloud Foundry (CF) resources, you must provision these resources in the Frankfurt location.
     
-    Notice that the {{site.data.keyword.cos_full_notm}} (COS) service is a global service. When you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location bound. As soon as you provision a COS instance, you get global events automatically through the Frankfurt {{site.data.keyword.at_full_notm}} instance. You can also enable management and data events on a bucket to go to the Frankfurt {{site.data.keyword.at_full_notm}} instance. **When you enable all events to go to the Frankfurt instance, notice that global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt.**
+    Notice that the {{site.data.keyword.cos_full_notm}} (COS) service is a global service. When you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location bound. As soon as you provision a COS instance, you get [global events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_def_global) automatically through the Frankfurt {{site.data.keyword.at_full_notm}} instance. You can also enable management and data events on a bucket to go to the Frankfurt {{site.data.keyword.at_full_notm}} instance. **When you enable all events to go to the Frankfurt instance, notice that global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt.**
 
 * You must **restrict access to users** to see and manage events in the {{site.data.keyword.at_short}} instance provisioned in Frankfurt.  
 * You must ensure that you **archive to an EU-Supported {{site.data.keyword.cos_full_notm}} (COS) bucket**. 
@@ -63,14 +63,14 @@ For more information on how to provision an instance, see [Provisioning an insta
 ## Step 3. Working with global services in the {{site.data.keyword.cloud_notm}}
 {: #manage_eu_acc_step3}
 
-Global events report on activity in your account that relate to data and resources that are generally synchronized across all regions. The common theme for global events is a single, synchronized location where account administrators can monitor certain types of activity across the Cloud. The services that users interact with are integrated into the core of the global {{site.data.keyword.cloud_notm}} experience. The global domain is set for **Frankfurt**. Global events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt.
+[Global events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_def_global) report on activity in your account that relate to data and resources that are generally synchronized across all regions. The common theme for global events is a single, synchronized location where account administrators can monitor certain types of activity across the Cloud. The services that users interact with are integrated into the core of the global {{site.data.keyword.cloud_notm}} experience. The global domain is set for **Frankfurt**. Global events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt.
 
 
 
 ### {{site.data.keyword.cos_full_notm}} (COS)
 {: #step3-cos}
 
-{{site.data.keyword.cos_full_notm}} (COS) is a global service. Global actions on COS resources such as create a bucket in your account are automatically collected and forwarded to the {{site.data.keyword.at_short}} instance in Frankfurt.
+{{site.data.keyword.cos_full_notm}} (COS) is a global service. Global actions on COS resources such as create a bucket in your account are automatically collected and forwarded to the {{site.data.keyword.at_short}} instance in Frankfurt. [Learn more about COS global events.](/docs/services/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-global)
 
 COS can also generate management and data events. These events are optional. To learn more about these type of events, go to step 4.
 
@@ -90,7 +90,7 @@ Check out the list of {{site.data.keyword.cloud_notm}} resources that automatica
 {: #step4-cos}
 
 
-COS can also generate management and data events. These events are optional and location-based.
+COS can also generate [management](/docs/services/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-mngt) and [data](/docs/services/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-data) events. These events are optional and location-based.
 
 To monitor management events from actions on {{site.data.keyword.cos_full_notm}} (COS) buckets, you must create buckets in [(COS) EU managed locations](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed) and you must configure the bucket to forward events to the {{site.data.keyword.at_short}} instance in Frankfurt. If you also want to monitor data events, you must configure the bucket to enable data events.
 
@@ -114,17 +114,17 @@ You might have users across different geographies. However, to comply with EU la
 {: #manage_eu_acc_step5-1}
 
 To grant administrator permissions to users, complete the following steps:
-1. Create an access group, then add users to it. For example, create an access group named `logdnaat-eu-admins`. [Learn more](/docs/iam?topic=iam-groups#create_ag).
+1. Create an access group, then add users to it. For example, create an access group named `logdna-at-eu-sec-admins`. [Learn more](/docs/iam?topic=iam-groups#create_ag).
 2. [Assign administrator access to a group](/docs/iam?topic=iam-groups#access_ag) by configuring policies.
 
-    For example, add a policy where you select the {{site.data.keyword.at_short}} instance in Frankfurt only. Select the platform role **administrator**. If you want to remove permissions to manage users, choose the platform role **editor**. Select the service role **manager**. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_manage_events.)
+    For example, add a policy where you select the {{site.data.keyword.at_short}} instance in Frankfurt only. Select the platform role **administrator**, or if you want to remove permissions to manage users, choose the platform role **editor**. Select the service role **manager**. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_manage_events.)
 
 
 ### Grant permissions to users to view events
 {: #manage_eu_acc_step5-2}
 
 To grant viewer permissions to users, complete the following steps:
-1. Create an access group, then add users to it. For example, create an access group named `logdna-eu-users`. [Learn more](/docs/iam?topic=iam-groups#create_ag).
+1. Create an access group, then add users to it. For example, create an access group named `logdna-at-eu-users`. [Learn more](/docs/iam?topic=iam-groups#create_ag).
 2. [Assign access to a group](/docs/iam?topic=iam-groups#access_ag) by configuring policies.
 
     For example, add a policy where you select the {{site.data.keyword.at_short}} instance in Frankfurt only. Select the platform role **viewer** to grant users permissions to view events. Select the service role **reader**. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events.)
@@ -137,7 +137,7 @@ The web UI export functionality is not available for the {{site.data.keyword.at_
 
 Users can export data to a local file or to a terminal by using the LogDNA export API and a service key. 
 * Users with **manager** permissions to administer the Frankfurt {{site.data.keyword.at_short}} instance can create and view service keys. 
-* Users with **manager** or **LogDNA user** permissions to work with the Frankfurt {{site.data.keyword.at_short}} instance can view active service keys, and therefore, can export data locally.
+* Users with **manager** or **Standard-Member** permissions to work with the Frankfurt {{site.data.keyword.at_short}} instance can view active service keys, and therefore, can export data locally.
 * Users with **user** permissions to work with the Frankfurt {{site.data.keyword.at_short}} instance cannot see service keys. Therefore, these users cannot use the export API to download data.
 
 Service keys are only used to export data from a LogDNA instance by using the Export API. [Learn more](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-export#api).

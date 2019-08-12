@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-12"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -23,7 +23,7 @@ subcollection: logdnaat
 
 
 # Managing events from log in actions in an account
-{: #manage_iam_login}
+{: #iam_manage_login}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users, applications, and services interact with your account. The {{site.data.keyword.iamlong}} (IAM) service in {{site.data.keyword.cloud_notm}} generates events that you can use to monitor log in activity to your account. This tutorial explains the different log in options to {{site.data.keyword.cloud_notm}} and what happens from an IAM and an {{site.data.keyword.at_full_notm}} perspective. You can also find out how to define views and dashboards to monitor these actions in your account.
 {:shortdesc}
@@ -65,7 +65,7 @@ As owner or person responsible of the account access management, you can expect 
 
 
 ## User logs in through the {{site.data.keyword.cloud_notm}} UI
-{: #tutorial_iam_login_ui}
+{: #iam_manage_login_ui}
 
 For a user to log in successfully to your account through the {{site.data.keyword.cloud_notm}} UI, consider the following information:
 
@@ -90,7 +90,7 @@ For a user to log in successfully to your account through the {{site.data.keywor
 
 
 ## User requests to run an action in the {{site.data.keyword.cloud_notm}} UI
-{: #tutorial_iam_action_ui}
+{: #iam_manage_login_action_ui}
 
 In this scenario, a user is already logged in successfully to your account and runs an action on a service in your account. 
 
@@ -102,7 +102,7 @@ In this scenario, a user is already logged in successfully to your account and r
 
 
 ## User logs in from the CLI by using an API key
-{: #tutorial_iam_login_cli_key}
+{: #iam_manage_login_cli_key}
 
 For a user to log in successfully to your account from the CLI by using an API key, consider the following information:
 
@@ -119,7 +119,7 @@ For a user to log in successfully to your account from the CLI by using an API k
 
 
 ## User logs in from the CLI by using a one-time passcode.
-{: #tutorial_iam_login_cli_passcode}
+{: #iam_manage_login_cli_passcode}
 
 For a user to log in successfully to your account from the CLI by using a one-time passcode, consider the following information:
 
@@ -145,7 +145,7 @@ For a user to log in successfully to your account from the CLI by using a one-ti
 
 
 ## User logs in from the CLI by using a user ID and password
-{: #tutorial_iam_login_cli_pwd}
+{: #iam_manage_login_cli_pwd}
 
 For a user to log in successfully to your account from the CLI by using a user ID and password, consider the following information:
 
@@ -170,7 +170,7 @@ For a user to log in successfully to your account from the CLI by using a user I
 
 
 ## A service or application logs in by using a service ID
-{: #tutorial_iam_login_svc_id}
+{: #iam_manage_loginiam_manage_login_svc_id}
 
 A service ID identifies a service or application similar to how a user ID identifies a user. These are IDs that can be used by applications to authenticate with an {{site.data.keyword.cloud_notm}} service. Policies can be assigned to each service ID to control the level of access that is allowed by an application that uses the service ID, and an API key can be created to enable the authentication.
 
@@ -185,7 +185,7 @@ For a service or application to log in successfully to your account by using an 
 
 
 ## Summary
-{: #tutorial_iam_login_summ}
+{: #iam_manage_login_summ}
 
 The following table shows the IAM event that is generated in each of the log in cases:
 
