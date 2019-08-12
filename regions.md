@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-18s"
+lastupdated: "2019-08-12"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, regions
 subcollection: logdnaat
@@ -23,8 +23,12 @@ subcollection: logdnaat
 # Locations
 {: #regions}
 
-{{site.data.keyword.at_full_notm}} is available in the following locations:
+{{site.data.keyword.at_full}} is available in the following locations:
 {:shortdesc}
+
+
+![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/world-map_min.svg)
+{: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}
 
 
 | Geography             | Region                  | `EU-Supported` |
