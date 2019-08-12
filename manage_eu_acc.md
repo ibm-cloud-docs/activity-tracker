@@ -28,7 +28,7 @@ Across every industry, organizations require tighter controls and visibility int
 {:shortdesc}
 
 * You must provision 1 {{site.data.keyword.at_full_notm}} instance in the `EU-DE (Frankfurt)` location. (You can only have 1 instance per region.)
-* [You must enable your account to be EU Supported](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-manage_eu_acc#manage_eu_acc_step1), so support is handled by team members in the European Union. 
+* [You must enable your account to be EU-supported](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-manage_eu_acc#manage_eu_acc_step1), so support is handled by team members in the European Union. 
 * To monitor activity from {{site.data.keyword.cloud_notm}} services and Cloud Foundry (CF) resources, you must provision these resources in the Frankfurt location.
     
     Notice that the {{site.data.keyword.cos_full_notm}} (COS) service is a global service. When you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location bound. As soon as you provision a COS instance, you get [global events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_def_global) automatically through the Frankfurt {{site.data.keyword.at_full_notm}} instance. You can also enable management and data events on a bucket to go to the Frankfurt {{site.data.keyword.at_full_notm}} instance. **When you enable all events to go to the Frankfurt instance, notice that global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt.**
@@ -43,7 +43,7 @@ Across every industry, organizations require tighter controls and visibility int
 
 You must enable your account to be `EU-Supported` so that logging instances in Frankfurt are supported by EU members. 
 
-Consider the following information when you turn on the `EU Supported` flag in your account:
+Consider the following information when you turn on the `EU-supported` flag in your account:
 * Support is handled by team members in the European Union (EU). 
 * In the event that your issue requires non-EU expert assistance, it will be reviewed and approval given prior to any non-EU intervention.
 * You can filter and identify the {{site.data.keyword.cloud_notm}} Catalog services that are EU-Supported. 
