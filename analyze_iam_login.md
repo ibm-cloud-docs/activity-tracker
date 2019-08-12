@@ -38,9 +38,9 @@ As a user, you can log in to the {{site.data.keyword.cloud_notm}} in any of the 
 
 As a service, you log in to the {{site.data.keyword.cloud_notm}} by using an API key that is associated to a service ID.
 
-When a user registers in {{site.data.keyword.cloud_notm}}, the user requests an IBMid. An account is created and associated to the user's IBMid by default. 
+If you are a new user of the {{site.data.keyword.cloud_notm}}, [you must request an IBMid ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}. When you register to work in the {{site.data.keyword.cloud_notm}}, you get an IBMid, and an account is created and associated to your IBMid. 
 
-A user that has an IBMid can be invited to be a member in other accounts in {{site.data.keyword.cloud_notm}}. When a user is invited to work in your account, an event with action **user-management.user.create** is generated and available in your account. You can monitor these events through the {{site.data.keyword.at_full_notm}} instance in Frankfurt.
+Once you have registered to {{site.data.keyword.cloud_notm}}, you can be invited to be a member in other accounts in {{site.data.keyword.cloud_notm}}. When you are invited to work in an account that is different from the default account that is associated with your IBMid, an event with action **user-management.user.create** is generated and available in the  account where you are invited to work. Users in the account with permissions to monitor Activity Tracker events can monitor these events through the {{site.data.keyword.at_full_notm}} instance in Frankfurt.
 
 For a user to log in successfully to your account, consider the following information:
 1. First, the credentials of the user or service are validated in {{site.data.keyword.cloud_notm}}.
