@@ -4,7 +4,7 @@ copyright:
   years:  2018, 2019
 lastupdated: "2019-08-12"
 
-keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU managed
+keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU-supported
 
 subcollection: logdnaat
 
@@ -21,13 +21,12 @@ subcollection: logdnaat
 {:important: .important}
 {:note: .note}
 
-# Managing events for an EU-managed account
+# Managing events for an EU-supported account
 {: #manage_eu_acc}
 
-Across every industry, organizations require tighter controls and visibility into where their data is stored and processed in the {{site.data.keyword.cloud_notm}}. If you are looking for guidance on how to monitor activity in an EU-managed account, check out this topic. 
+Across every industry, organizations require tighter controls and visibility into where their data is stored and processed in the {{site.data.keyword.cloud_notm}}. To manage events that are generated in your **EU-supported account** by using the {{site.data.keyword.at_full_notm}} service, consider the following information:
 {:shortdesc}
 
-To manage events that are generated in your **EU-managed account** by using the {{site.data.keyword.at_full_notm}} service, consider the following information:
 * You must provision 1 {{site.data.keyword.at_full_notm}} instance in the `EU-DE (Frankfurt)` location. (You can only have 1 instance per region.)
 * [You must enable your account to be EU Supported](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-manage_eu_acc#manage_eu_acc_step1), so support is handled by team members in the European Union. 
 * To monitor activity from {{site.data.keyword.cloud_notm}} services and Cloud Foundry (CF) resources, you must provision these resources in the Frankfurt location.
@@ -80,7 +79,7 @@ COS can also generate management and data events. These events are optional. To 
 ## Step 4. Working with {{site.data.keyword.cloud_notm}} services and CF apps
 {: #manage_eu_acc_step4}
 
-To monitor activity from {{site.data.keyword.cloud_notm}} services and Cloud Foundry (CF) resources, you must provision these resources in the **Frankfurt** EU managed location in the {{site.data.keyword.cloud_notm}}.
+To monitor activity from {{site.data.keyword.cloud_notm}} services and Cloud Foundry (CF) resources, you must provision these resources in the **Frankfurt** EU-supported location in the {{site.data.keyword.cloud_notm}}.
 
 Check out the list of {{site.data.keyword.cloud_notm}} resources that automatically collect events and forward them to the {{site.data.keyword.at_full_notm}} service. See [Cloud services](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-cloud_services).
 
@@ -92,10 +91,10 @@ Check out the list of {{site.data.keyword.cloud_notm}} resources that automatica
 
 COS can also generate [management](/docs/services/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-mngt) and [data](/docs/services/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-data) events. These events are optional and location-based.
 
-To monitor management events from actions on {{site.data.keyword.cos_full_notm}} (COS) buckets, you must create buckets in [(COS) EU managed locations](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed) and you must configure the bucket to forward events to the {{site.data.keyword.at_short}} instance in Frankfurt. If you also want to monitor data events, you must configure the bucket to enable data events.
+To monitor management events from actions on {{site.data.keyword.cos_full_notm}} (COS) buckets, you must create buckets in [(COS) EU-supported locations](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed) and you must configure the bucket to forward events to the {{site.data.keyword.at_short}} instance in Frankfurt. If you also want to monitor data events, you must configure the bucket to enable data events.
 
 
-In summary, you must configure each bucket to enable collection and forwarding of bucket events to an {{site.data.keyword.at_short}} instance. Therefore, to keep all events in an EU managed location, you must configure your buckets to collect and forward events to the {{site.data.keyword.at_short}} instance in the Frankfurt location.
+In summary, you must configure each bucket to enable collection and forwarding of bucket events to an {{site.data.keyword.at_short}} instance. Therefore, to keep all events in an EU-supported location, you must configure your buckets to collect and forward events to the {{site.data.keyword.at_short}} instance in the Frankfurt location.
 
 
 
@@ -108,7 +107,7 @@ In summary, you must configure each bucket to enable collection and forwarding o
 
 **Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles. [Learn more about the IAM user roles for the {{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#service).
 
-You might have users across different geographies. However, to comply with EU law, only EU personnel can see and access log data from your EU-managed infrastructure, apps, and services. To restrict access to users, you can configure an access group, and define policies that restrict access to those users to the Frankfurt instance only.
+You might have users across different geographies. However, to comply with EU law, only EU personnel can see and access log data from your EU-supported infrastructure, apps, and services. To restrict access to users, you can configure an access group, and define policies that restrict access to those users to the Frankfurt instance only.
 
 ### Grant permissions to users to manage the instance
 {: #manage_eu_acc_step5-1}
@@ -150,7 +149,7 @@ Service keys are only used to export data from a LogDNA instance by using the Ex
 
 When you archive logs from the Frankfurt LogDNA instance to a {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
 * When you provision an instance of the COS service, this instance is a global one in your account. It is not region bound.
-* You must configure a bucket that complies with the EU-Supported and GDPR regulations. For the list of COS EU managed endpoints, see [EU managed endpoints](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
+* You must configure a bucket that complies with the EU-Supported and GDPR regulations. For the list of COS EU-supported endpoints, see [EU-supported endpoints](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
 
     For example, consider the following scenarios:
 
@@ -161,7 +160,7 @@ When you archive logs from the Frankfurt LogDNA instance to a {{site.data.keywor
     * For a bucket with **cross region** resiliency, you can create the bucket in the `eu-geo` location. Data is kept within the EU geography across datacenters that are located in Milan, Amsterdam, and Frankfurt.
 
 * You must restrict user access to manage archived log files in these buckets.  
-* Users are responsible for downloading files to EU-managed locations.
+* Users are responsible for downloading files to EU-supported locations.
 
 To learn how to configure archiving for your LogDNA instance, see [Archiving logs](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving).
 
