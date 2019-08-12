@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-18"
+lastupdated: "2019-08-12"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, manage events
 
@@ -87,6 +87,24 @@ The {{site.data.keyword.cos_full_notm}} instance is provisioned within the conte
 
 **Archiving in an EU-managed location:** You must configure a bucket that complies with the EU-managed and GDPR regulations.
 {: important}
+
+
+## Querying archived events with SQL Query service
+{: #manage_events_sqlquery}
+
+
+{{site.data.keyword.sqlquery_short}} provides a serverless, no-ETL solution to easily query data stored in COS. [Learn more](/docs/services/sql-query?topic=sql-query-overview).
+
+You can use this service to analyze data from archived files in COS. 
+
+Once you have SQL Query running on IBM Cloud, you can immediately start querying your data using the SQL Query user interface, programmatically by using either the REST API or the Python `ibmcloudsql` library, or write a serverless function by using {{site.data.keyword.openwhisk_short}}.
+
+When you query events, consider the following information:
+* You must provision an instance of the {{site.data.keyword.sqlquery_short}} service.
+* You must restrict user access to work with that instance. Users need the platform **viewer** role to launch the UI, and the service **writer** role to run queries.
+* When you open the UI, the {{site.data.keyword.sqlquery_short}} service automatically generates a unique COS bucket that will store all of the results as CSV files from your SQL queries. To make sure that you are using a custom bucket, create one. You can specify your custom bucket to store results in. 
+
+
 
 
 
