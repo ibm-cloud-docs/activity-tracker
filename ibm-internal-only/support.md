@@ -38,11 +38,11 @@ Support is supplemented by the Slack channel *ibm-guest-logdna-help*. However, i
 1. Category: select "Developer Tools and Runtimes."
 1. Offering: usually have to leave it blank. You are usually using a different account for support than where the LogDNA instance is.
 1. Severity: Select the appropriate Severity. 
-    - If you do not see a place to set the Severity, then you do not have Advanced or Premium support. Your cases will have severity 4 only. See the section below.
-    - If your team does have Adv/Prem support, then consider whether you are logged into the right account for it. See the section below.
+    - If you do not see a place to set the Severity, then you do not have Advanced or Premium support. Your cases will have severity 4 only. See [this section](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-support_cases#adv-prem) below.
+    - If your team does have Adv/Prem support and you still can't set the severity, then consider whether you are logged into the right account for it. See [this section](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-support_cases#adv-prem) below.
 1. Subject: Mention "LogDNA" in the subject. This is important, so the support team will quickly see they need to route the case to LogDNA.
 1. Fill out the rest of the form. Include this information:
-    - Account Information, Environment, Region (URL included)<br>- You can get this by copying the URL from the LogDNA UI.<br>- Response to tickets is often delayed because this vital information is missing.
+    - Account Information, Environment, Region (URL included)<br>- You can get all three (account, environment, and region) by copying the URL from the LogDNA UI.<br>- Response to tickets is often delayed because this vital information is missing.
     - Problem statement (Expected behavior)
     - Result of the problem (Actual behavior)
     - Any configuration information inclusive of that problem (Patterns, how to replicate issue)
@@ -65,4 +65,14 @@ Your service must have *Advanced Support* or *Premium Support* to open cases wit
 
 
 If you do not have Advanced (or Premium) support, see [here](https://ibm.ent.box.com/v/cldsup-internal) for instructions on how to order it.
+
+## LogDNA Severities
+{: #severity}
+
+| Sev | Definition | Examples |
+| --- | --- | --- |
+| 1 | Urgent - Critical business impact/Service Down | <ul><li>Ingestion has stopped from ALL Sources on multiple customers<li>No logs are showing up in the console<li>Web App unreachable for multiple customers for significant period of time<li>Customers unable to login to web console to see logs <li>Archive data missing for more than 72 hours</ul> |
+| 2 | High - Significant business impact | <ul><li>Indexing delay for more than 20 mins. Indexing refers to the time between a line is ingested and when itʼs available for search. By default, our indexing process updates every 15s after live tail latency. <li>Alert did not triggering for multiple customers <li>Ingestion (live-tail) latency for more than 15 mins <li>Logs are showing up in live-tail but with delay which affects Alerts. By default, live-tail latency is 30 sec or less.</ul>
+| 3 | Normal - Minor business impact | <ul><li>Unable to export logs <li>Exclusion Rule issues Log lines that matches the exclusion rule still showing up in the console for search <li>Parsing issue Logs are not displayed properly in the console <li>Alert did not trigger due to customer configuration issue</ul> |
+| 4 | Low - Minimal business impact: An inquiry or non-technical request | <ul><li>New Feature Request from the customer <li>Documentation updates <li>Update outdated documentation <li>Change billing information <li>How-to questions <li>Add new members <li>Create alerts, custom views, etc.</ul> |
 
