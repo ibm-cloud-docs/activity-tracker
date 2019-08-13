@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="logdnaat" category="devops" audience="service" arm="4379776" href="/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started" path="services/Activity-Tracker-with-LogDNA"}
+{: .toc subcollection="logdnaat" audience="service" arm="4379776" href="/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started" path="services/Activity-Tracker-with-LogDNA"}
 IBM Cloud Activity Tracker with LogDNA
 
     {: .navgroup id="learn"}
@@ -17,12 +17,26 @@ IBM Cloud Activity Tracker with LogDNA
     {: .topicgroup}
     Tutorials
         tutorial_iam_apikeys.md
+
+    {: .topicgroup}
+    Internal adopters
+        ibm-internal-only/overview.md
+        ibm-internal-only/event_definition.md
+        ibm-internal-only/enable-AT.md
+        ibm-internal-only/enable-ST.md
+        ibm-internal-only/partner_news.md
+        ibm-internal-only/supertenant.md
+        ibm-internal-only/kube.md
+        ibm-internal-only/best_practices.md
+        ibm-internal-only/documentation.md
+        ibm-internal-only/support.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     provision.md
     remove.md
     launch.md
+    config.md
     iam_manage_events.md
     iam_view_events.md
     view_events.md

@@ -29,9 +29,9 @@ Different pricing plans are available that you can choose for an {{site.data.key
 
 | Plan                     | 
 |--------------------------|
-| `30 days log search`  |
-| `14 days log search`  |
-| `7-day log search`   |
+| `30 day event search`  |
+| `14 day event search`  |
+| `7 day event search`   |
 | `Lite`                  |
 {: caption="Table 1. List of service plans" caption-side="top"} 
 
@@ -43,12 +43,12 @@ Different pricing plans are available that you can choose for an {{site.data.key
 
 The following tables outline the different features that are included in each service plan:
 
-| Feature                          | `30 day log search` plan | `14 days log search` plan    | `7 days log search plan     | `Lite` plan | 
-|----------------------------------|-------------------------|-------------------------------|-----------------------------|--------------|
-| `Logs are stored and searchable` | Yes - for 30 days       | Yes - for 14 days             | Yes - for 7 days            | No           |
-| `Live streaming tail`            | Yes                     | Yes                           | Yes                         | Yes          |
-| `Archiving`                      | Yes                     | Yes                           | Yes                         | No           |
-| `Multi-channel Alerting`         | Yes                     | Yes                           | Yes                         | No           | 
+| Feature                          | `30 day event search` plan | `14 day event search` plan    | `7 day event search plan     | `Lite` plan | 
+|----------------------------------|----------------------------|-------------------------------|------------------------------|--------------|
+| `Logs are stored and searchable` | Yes - for 30 days          | Yes - for 14 days             | Yes - for 7 days            | No           |
+| `Live streaming tail`            | Yes                        | Yes                           | Yes                         | Yes          |
+| `Archiving`                      | Yes                        | Yes                           | Yes                         | No           |
+| `Multi-channel Alerting`         | Yes                        | Yes                           | Yes                         | No           | 
 {: caption="Table 2. List of features available for each service plan" caption-side="top"} 
 
 
