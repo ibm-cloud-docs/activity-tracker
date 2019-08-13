@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-11"
+lastupdated: "2019-07-09"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -157,15 +157,6 @@ The following field includes extra information:
 
 
 
-**Failed log in actions**
-
-When a user logs in to the {{site.data.keyword.cloud_notm}}, the user ID (IBMid) and credentiasls are validated first. At this point, the user has not selected an account. Notice that a user can belong to multiple accounts. 
-
-After the user ID is authenticated successfully in the {{site.data.keyword.cloud_notm}}, the user can choose an account. It is at this point in the process that an account is associated to the log in request, and an event with action `iam-identity.user-refreshtoken.login`, or `iam-identity.user-apikey.login` is generated in your account.
-
-In Activity Tracker, you can see events that are associated to your account. Failed log in actions do not generate an event that you can monitor in your account.
-
-
 ### Delete an access group
 {: #an_del_ag}
 
@@ -260,8 +251,8 @@ The following fields include extra information:
 {: #an_fail_not_authorized}
 
 For example, when a user logs into your account using an API key, the user is authenticated to access your account. However, this API key may not have permissions to run actions to modify API keys or service IDs in the account. When this happens, you get one of the following messages:
-* **IAM Identity Service: update user-apikey APIKeyName -failure**
-* **IAM Identity Service: update account-serviceid ServiceIDName -failure**
+* **IAM Identity Service: update user-apikey APIkeyName -failure**
+* **IAM Identity Service: update account-serviceid serviceIDName -failure**
 
 To look for information about the user that has requested a change to an API key or to a service ID, look at the initiator fields in the event.
 
