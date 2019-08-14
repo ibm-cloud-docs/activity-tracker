@@ -651,7 +651,7 @@ The following example shows how to create an absence alert for a service ATS and
 ### Differences in customer logs and events
 {: #cust_logs_events}
 
-LogDNA provides additional information to services sending logs and events using super tenancy. This 
+For services using super tenancy, LogDNA adds some information to each log and event. This 
 information should not be provided to customers. LogDNA will modify and remove this data so customers 
 do not see it. Below we outline the changes that customers will see.
 
