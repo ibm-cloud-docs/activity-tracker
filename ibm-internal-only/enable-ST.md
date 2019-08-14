@@ -648,6 +648,29 @@ The following example shows how to create an absence alert for a service ATS and
 ## 11. FAQ and other considerations 
 {: #faq}
 
+### Differences in customer logs and events
+{: #cust_logs_events}
+
+LogDNA provides additional information to services sending logs and events using super tenancy. This 
+information should not be provided to customers. LogDNA will modify and remove this data so customers 
+do not see it. Below we outline the changes that customers will see.
+
+#### Customer Super Tenant Logs
+{: #str-transform}
+* `platform-service` identifier is added (shown with the IBM logo). This is the service name of the service that sent this log.
+* `Source` is set to the same thing as `platform-service` identifier.
+* `App` is set to the `logSourceCRN` of the customer as specified in the log line.
+  * Exception: if the `appOverride` field is given, then its value is used for `app` instead. `appOverride` is peer to the `app` field, outside of the log line.
+* `LogDNA agent related Line Identifiers and Tags` are removed.
+
+#### Customer Super Tenant Activity Tracker Events
+{: #atr-transform}
+* All the changes listed for the Customer Super Tenant Logs are applied to Activity Tracker Events.
+* Additional changes are:
+  * `level` is set to the `severity` field specified in the Activity Tracker event.
+  * `timestamp` is set to the `eventTime` field in the Activity Tracker event.
+
+
 ### Regions
 {: #regions1}
 
