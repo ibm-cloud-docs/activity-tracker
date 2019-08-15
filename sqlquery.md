@@ -284,7 +284,7 @@ INTO RESULTS_BUCKET STORED AS CSV
 
 Where
 
-* **FIELDS** is the list of fields that you want to get information on for teh different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME, _source.o_initiator.id AS INITIATOR_ID, _source.o_initiator.name AS INITIATOR_NAME`
+* **FIELDS** is the list of fields that you want to get information on for the different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME, _source.o_initiator.id AS INITIATOR_ID, _source.o_initiator.name AS INITIATOR_NAME`
 * **PARQUET_FILE** is the **Result location URL** that you get when you transform the archive file from JSON to PARQUET
 * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
 
@@ -311,7 +311,7 @@ INTO RESULTS_BUCKET STORED AS CSV
 
 Where
 
-* **FIELDS** is the list of fields that you want to get information on for teh different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME`
+* **FIELDS** is the list of fields that you want to get information on for the different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME`
 * **PARQUET_FILE** is the **Result location URL** that you get when you transform the archive file from JSON to PARQUET
 * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
 
@@ -340,7 +340,7 @@ INTO RESULTS_BUCKET STORED AS CSV
 
 Where
 
-* **FIELDS** is the list of fields that you want to get information on for teh different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME`
+* **FIELDS** is the list of fields that you want to get information on for the different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME`
 * **PARQUET_FILE** is the **Result location URL** that you get when you transform the archive file from JSON to PARQUET
 * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
 * **ACTION*** is the action value that is set in the action field of an event

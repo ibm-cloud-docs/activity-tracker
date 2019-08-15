@@ -16,6 +16,11 @@ IBM Cloud Activity Tracker with LogDNA
     manage_eu_acc.md
 
     {: .topicgroup}
+    Integration with other Cloud services
+        archive.md
+        sqlquery.md
+
+    {: .topicgroup}
     Tutorials
         tutorial_iam_apikeys.md
 
@@ -44,8 +49,6 @@ IBM Cloud Activity Tracker with LogDNA
     views.md
     alerts.md
     export.md
-    archive.md
-    sqlquery.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
