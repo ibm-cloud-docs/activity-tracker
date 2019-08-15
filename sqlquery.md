@@ -24,7 +24,7 @@ subcollection: logdnaat
 # Using SQL Query to monitor events in archived files
 {: #sqlquery}
 
-You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} (AT) archive files that are stored in a {{site.data.keyword.cos_short}} (COS) bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically.
+You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} (AT) archive files that are stored in an {{site.data.keyword.cos_short}} (COS) bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically.
 {:shortdesc}
 
 ![{{site.data.keyword.cloud_notm}} services integration scenario](images/sqlquery.png "{{site.data.keyword.cloud_notm}} services integration scenario")
@@ -53,21 +53,21 @@ Each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO`
 
 To be able to use the {{site.data.keyword.sqlquery_short}} service to query archived event files, check the following prerequites: 
 
-* You have access to a COS instance in your account. 
+* You must have access to a COS instance in your account. 
 
     You must have access to a bucket that contains the {{site.data.keyword.at_full_notm}} archive files and a bucket to use to store results from your queries. 
 
-* You have an {{site.data.keyword.at_full_notm}} instance provisioned in your account that has [archiving configured to a bucket in the COS instance in your account](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving). 
+* You must have an {{site.data.keyword.at_full_notm}} instance provisioned in your account that has [archiving configured to a bucket in the COS instance in your account](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving). 
 
     Events are archived daily to a file in a COS bucket. 
 
     Notice that if archiving is not configured, you must wait at least 24 hours before an archive file is available after archiving is configured.
 
-* You have 1 or more archive files uploaded in the bucket.
+* You must have 1 or more archive files uploaded in the bucket.
 
-* You have a policy on the COS service with at least platform role **reader** so that you can view data in the COS bucket where the archive files are uploaded.
+* You must have a policy on the COS service with at least platform role **reader** so that you can view data in the COS bucket where the archive files are uploaded.
 
-* You have a policy on the COS instance with at least **Writer** access to at least one COS bucket so that result files (files containing output data) can be written there.
+* You must have a policy on the COS instance with at least **Writer** access to at least one COS bucket so that result files (files containing output data) can be written there.
 
 
 
@@ -76,13 +76,11 @@ To be able to use the {{site.data.keyword.sqlquery_short}} service to query arch
 
 To query archive files hosted in a COS bucket, you can use the {{site.data.keyword.sqlquery_short}} service.
 
-Notice that you must provision an instance of the {{site.data.keyword.sqlquery_short}} service in the same account where the COS instance that manages the bucket with the files that you want to query is available.
+You must provision the {{site.data.keyword.sqlquery_short}} service in the same account where the COS instance that manages the bucket with the archive files is available.
 {: important}
 
 To provision an instance, see [Create your {{site.data.keyword.sqlquery_short}} service instance](/docs/services/sql-query?topic=sql-query-gettingstarted#sql_query).
 
-When you provision the instance with the **Lite** plan, you can only run 1 query at a time.
-{: note}
 
 Once you have {{site.data.keyword.sqlquery_short}} running on {{site.data.keyword.cloud_notm}}, you can immediately start querying your data by using the {{site.data.keyword.sqlquery_short}} UI, or programmatically by using either [the {{site.data.keyword.sqlquery_short}} REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/sql-query){:new_window}, or the Python `ibmcloudsql` library. 
 
@@ -90,21 +88,21 @@ Once you have {{site.data.keyword.sqlquery_short}} running on {{site.data.keywor
 ## Granting user permissions to run a query
 {: #sqlquery_step2}
 
-To run queries with the SQL query service, a user needs a platform role and a service role. The following tables show the roles that are enabled to run an action:
+To run queries with the SQL query service, a user needs a platform role and a service role. The following tables show the roles and actions that you can assign a user to run SQL queries:
 
 
 | Platform actions                        | Administrator                                     | Editor | Operator | Viewer  |
 |---------------------------------------------------------------------------|:-------------------------------------------------:|:-------:|:--------:|:------:|
-| `View details of a service instance`    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)    | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
+| `View details of the {{site.data.keyword.sqlquery_short}} service instance`    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)    | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
 {: caption="Table 1. Platform roles" caption-side="top"}
 
 
 | Service actions                 | Manager                                           | Writer                                            | Reader           |
 |:-------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|:----------------:|
-| `Run a query`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |                  |
+| `Run an SQL query`              | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |                  |
 {: caption="Table 2. Service roles" caption-side="top"}
 
-Notice that users with **reader** role, get an access error when they launch the SQL Query UI.
+Notice that users with the service role **reader** get an access error when they launch the SQL Query UI.
 
 To manage access or assign new access for users by using IAM policies, you must be the account owner, administrator on all services in the account, or an administrator for the particular service or service instance. 
 
@@ -123,7 +121,7 @@ In SQL, the term *query* is just another way of saying *SELECT statement*.
 
 To run a query, complete the following steps:
 
-### Step 1. Launching the {{site.data.keyword.sqlquery_short}} query UI
+### Step 1. Launch the {{site.data.keyword.sqlquery_short}} query UI
 {: #sqlquery_step3-1}
 
 1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
@@ -141,7 +139,7 @@ When the {{site.data.keyword.sqlquery_short}} query UI opens, a COS bucket is au
 Wen you run queries, you can specify a custom bucket to store results in. If your query does not specify one, the default one is used.
 {: note}
 
-### Step 2. Getting information on the file that you want to query in COS
+### Step 2. Get information on the file that you want to query in COS
 {: #sqlquery_step3-2}
 
 Complete the following steps:
@@ -168,12 +166,12 @@ Complete the following steps:
 
 7. Copy the URL.
 
-### Step 3. Getting information on the COS bucket that is used to store results from queries
+### Step 3. Get information on the COS bucket that is used to store results from queries
 {: #sqlquery_step3-3}
 
 Complete the following steps:
 
-1. Select **Buckets**. 
+1. In the COS instance UI, select **Buckets**. 
 
 2. Select the bucket name that you plan to use to store the results from queries.
 
@@ -184,7 +182,7 @@ Complete the following steps:
 4. Copy the URL.
 
 
-### Step 4. Transforming an archive file to PARQUET format
+### Step 4. Transform an archive file to PARQUET format
 {: #sqlquery_step3-4}
 
 When you query an archive file, the format of the data is JSON. You must transform the format to **PARQUET** to query successfully the data. 
@@ -204,8 +202,8 @@ INTO RESULTS_BUCKET STORED AS PARQUET
 
 Where
 
-* **SQL_URL** is the sql URL of the archive file in COS
-* **RESULTS_BUCKET** is the sql URL of the custom COS bucket that you plan to use to upload the query results
+* **SQL_URL** is the SQL URL of the archive file in COS
+* **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
 
 For example, the following query is used to transform an archive file:
 
@@ -248,7 +246,7 @@ After you have the file converted to 'PARQUET` format, you can run queries to an
 {: note}
 
 
-### Step 5. Running a query to determine the number of events in the archive file
+### Step 5. Run a query to determine the number of events in the archive file
 {: #sqlquery_step3-5}
 
 To report on the total number of events that are included in the archive file, run the following query:
@@ -263,7 +261,7 @@ Where
 
 * **NUMBER_EVENTS** is the name of the field that you want to use to report the numerical value
 * **PARQUET_FILE** is the **Result location URL** that you get when you transform the archive file from JSON to PARQUET
-* **RESULTS_BUCKET** is the sql URL of the custom COS bucket that you plan to use to upload the query results
+* **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
 
 For example, to get the total number of events in a file, you can run the following query:
 ```
@@ -273,8 +271,90 @@ INTO cos://eu-de/results-marisa STORED AS CSV
 {: screen }
 
 
+### Step 6. Run a query to get a custom view of a subset of the event fields
+{: #sqlquery_step3-6}
+
+To see information about each event, run the following query:
+
+```
+SELECT FIELDS FROM PARQUET_FILE STORED AS PARQUET
+INTO RESULTS_BUCKET STORED AS CSV
+```
+{: codeblock}
+
+Where
+
+* **FIELDS** is the list of fields that you want to get information on for teh different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME`
+* **PARQUET_FILE** is the **Result location URL** that you get when you transform the archive file from JSON to PARQUET
+* **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
+
+For example, to get the event time, the action, the criticality of the action, and the outcome, you can run the following query:
+
+```
+SELECT _source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME FROM PARQUET_FILE STORED AS PARQUET
+INTO RESULTS_BUCKET STORED AS CSV
+```
+{: screen}
 
 
+### Step 7. Run a query to get a custom view of a subset of the event fields ordered by the event time
+{: #sqlquery_step3-7}
+
+To see information about each event, run the following query:
+
+```
+SELECT FIELDS FROM PARQUET_FILE STORED AS PARQUET 
+ORDER BY _source.eventTime
+INTO RESULTS_BUCKET STORED AS CSV
+```
+{: codeblock}
+
+Where
+
+* **FIELDS** is the list of fields that you want to get information on for teh different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME`
+* **PARQUET_FILE** is the **Result location URL** that you get when you transform the archive file from JSON to PARQUET
+* **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
+
+For example, to get the event time, the action, the criticality of the action, and the outcome, you can run the following query:
+
+```
+SELECT _source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME FROM PARQUET_FILE STORED AS PARQUET ORDER BY _source.eventTime
+INTO RESULTS_BUCKET STORED AS CSV
+```
+{: screen}
+
+
+### Step 8. Run a query to list all events for a specific action
+{: #sqlquery_step3-8}
+
+To see all the events for a specific action, run the following query:
+
+```
+SELECT FIELDS 
+FROM PARQUET_FILE STORED AS PARQUET 
+WHERE _source.action = ACTION
+ORDER BY _source.eventTime
+INTO RESULTS_BUCKET STORED AS CSV
+```
+{: codeblock}
+
+Where
+
+* **FIELDS** is the list of fields that you want to get information on for teh different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME`
+* **PARQUET_FILE** is the **Result location URL** that you get when you transform the archive file from JSON to PARQUET
+* **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
+* **ACTION*** is the action value that is set in the action field of an event
+
+For example, to get all the events for the action **iam-identity.serviceid-apikey.login**, you can run the following query:
+
+```
+SELECT _source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS severity, _source.outcome AS OUTCOME 
+FROM cos://eu-de/results-marisa/jobid=f178778e-7707-46a9-982d-1e89261b63a5 STORED AS PARQUET 
+WHERE _source.action = "iam-identity.serviceid-apikey.login"
+ORDER BY _source.eventTime
+INTO cos://eu-de/results-marisa STORED AS CSV
+```
+{: screen}
 
 
     - If required, you can use JOIN constructs to join data from several input files, even if those files are located in different instances.
@@ -283,41 +363,8 @@ INTO cos://eu-de/results-marisa STORED AS CSV
 
 
 
-
-
-
-SELECT _source.action AS component, COUNT(*) AS logLines FROM cos://us-south/sql.query.at.demo/transformed_logs_3a941d8f1f.2019-06-03.62 STORED AS PARQUET GROUP BY _source.action
--- INTO clause was automatically added based on the default target
-INTO cos://us-south/sql-e1b292f2-0796-4b8f-98a0-06c390db916d/result/ STORED AS CSV
-
-
-SELECT COUNT(*) AS logLines FROM cos://us-south/sql.query.at.demo/transformed_logs_3a941d8f1f.2019-06-03.62 STORED AS PARQUET
--- INTO clause was automatically added based on the default target
-INTO cos://us-south/sql-e1b292f2-0796-4b8f-98a0-06c390db916d/result/ STORED AS CSV
-
-SELECT _source.action AS component, _source.eventTime AS eventtime FROM cos://us-south/sql.query.at.demo/transformed_logs_3a941d8f1f.2019-06-03.62 STORED AS PARQUET
--- INTO clause was automatically added based on the default target
-INTO cos://us-south/sql-e1b292f2-0796-4b8f-98a0-06c390db916d/result/ STORED AS CSV
-
-
-SELECT _source.action AS component, _source.eventTime AS eventtime FROM cos://us-south/sql.query.at.demo/transformed_logs_3a941d8f1f.2019-06-03.62 STORED AS PARQUET ORDER BY _source.eventTime
--- INTO clause was automatically added based on the default target
-INTO cos://us-south/sql-e1b292f2-0796-4b8f-98a0-06c390db916d/result/ STORED AS CSV
-
-SELECT _source.action AS component, _source.eventTime AS eventtime FROM cos://us-south/sql.query.at.demo/transformed_logs_3a941d8f1f.2019-06-03.62 STORED AS PARQUET
--- INTO clause was automatically added based on the default target
-INTO cos://us-south/sql-e1b292f2-0796-4b8f-98a0-06c390db916d/result/ STORED AS CSV
-
-SELECT * FROM CLEANCOLS(cos://us-south/logdna-dallas-test/2efeb87512.2019-07-09.70.json.gz STORED AS JSON)
-INTO cos://us-south/sql.query.at.demo/transformed_logs_2efeb87512.2019-07-09.70 STORED AS PARQUET
-
-
-SELECT _index AS index, _source._app AS app, _source._ts AS timestamp FROM cos://us-south/sql.query.at.demo/transformed_logs_2efeb87512.2019-07-09.70 STORED AS PARQUET
-
-INTO cos://us-south/sql-e1b292f2-0796-4b8f-98a0-06c390db916d/result/ STORED AS CSV
-
-
-
+SQL execution failed
+Invalid data type struct<__key:string,_account:string,_app:string,_bid:string,_cluster:string,_env:string,_file:string,_host:string,_ingester:string,_ip:string,_lid:string,_line:string,_logtype:string,_supertenant:string,_ts:bigint,action:string,eventTime:string,eventType:string,id:string,level:string,logSourceCRN:string,message:string,o_initiator:struct<id:string,name:string,o_credential:struct<type:string>,o_host:struct<address:string,agent:string>,typeURI:string>,o_reason:struct<reasonCode:bigint>,... 7 more fields> found in the query result. Structured column types are not supported when writing query results as CSV. Use JSON as output format for writing and previewing structured column types in the UI. Alternatively, ensure that the query result contains only flat data types when writing to CSV. Consider using FLATTEN table transfomer for flattening all nested columns and EXPLODE scalar function for flattening arrays. You can see CSV & JSON PARSING QUERIES in Samples for usage examples.
 
 
 
