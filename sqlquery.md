@@ -284,7 +284,7 @@ INTO RESULTS_BUCKET STORED AS CSV
 
 Where
 
-* **FIELDS** is the list of fields that you want to get information on for teh different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME`
+* **FIELDS** is the list of fields that you want to get information on for teh different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME, _source.o_initiator.id AS INITIATOR_ID, _source.o_initiator.name AS INITIATOR_NAME`
 * **PARQUET_FILE** is the **Result location URL** that you get when you transform the archive file from JSON to PARQUET
 * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
 
@@ -295,6 +295,31 @@ SELECT _source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severit
 INTO RESULTS_BUCKET STORED AS CSV
 ```
 {: screen}
+
+The following table lists the event fields and the column name that you must use when you build your SQL queries:
+
+{"id":"3a2c098e-20c9-4f37-bc55-bcac30769a02","eventTime":"2019-08-15T09:00:41.35+0000","action":"iam-groups.group.read","outcome":"success","message":"IAM Access Groups: read group logdna-standard-member","initiator":{"id":"IBMid-060000JMJ2","typeURI":"service/security/account/user","name":"LOPEZDSR@uk.ibm.com","host":{"address":"158.177.175.70"},"credential":{"type":"token"}},"target":{"id":"crn:v1:bluemix:public:iam-groups:global:a/81de6380e6232019c6567c9c8de6dece::groups:AccessGroupId-108d1889-d98b-40f1-9a5a-b697c346a60b","typeURI":"iam-groups/group","name":"logdna-standard-member"},"reason":{"reasonCode":200},"severity":"normal","responseData":"{\"id\":\"AccessGroupId-108d1889-d98b-40f1-9a5a-b697c346a60b\",\"name\":\"logdna-standard-member\",\"description\":\"\",\"account_id\":\"81de6380e6232019c6567c9c8de6dece\",\"created_at\":\"2019-08-13T07:25:13Z\",\"created_by_id\":\"IBMid-060000JMJ2\",\"last_modified_at\":\"2019-08-13T07:25:13Z\",\"last_modified_by_id\":\"IBMid-060000JMJ2\"}","meta":{"serviceProviderName":"iam-groups","serviceProviderRegion":"ng","serviceProviderProjectId":"53c0f9a6-c07e-4ac0-b933-7327b6ca3c84","userAccountIds":["81de6380e6232019c6567c9c8de6dece"]},"logSourceCRN":"crn:v1:bluemix:public:iam-groups:global:a/81de6380e6232019c6567c9c8de6dece:::","saveServiceCopy":true}
+
+| Activity Tracker event field   | SLQ query column name |
+|--------------------------------|-----------------------|
+| `id`                           | `_source.id`          |
+| `eventTime`                    | `_source.eventTime`   |
+| `action`                       | `_source.action`      |
+| `outcome`                      | `_source.outcome`     |
+| `message`                      | `_source.message`     |
+| `initiator.id`                 | `_source.o_initiator.id` |
+| `initiator.typeURI`            | `_source.o_initiator.typeURI` |
+| `initiator.name`               | `_source.o_initiator.name` |
+| `initiator.host.address`       | `_source.o_initiator.o_host.address` |
+| `initiator.host.agent`         | `_source.o_initiator.o_host.agent` |
+| `initiator.host.credential.type` | `_source.o_initiator.o_host.o_credential.type` |
+| `target.id`                    | `_source.o_target.id` |
+| `target.name`                 | `_source.o_target.name`  |
+| `target.typeURI`              | `_source.o_target.typeURI` |
+| `reason`                      | `_source.reason`    |
+| `severity`                    | `_source.severity    |
+{: caption="Table 1. Mapping of event fields to SQL query column names" caption-side="top"} 
+
 
 
 ### Step 7. Run a query to get a custom view of a subset of the event fields ordered by the event time
@@ -357,35 +382,9 @@ INTO cos://eu-de/results-marisa STORED AS CSV
 {: screen}
 
 
-    - If required, you can use JOIN constructs to join data from several input files, even if those files are located in different instances.
+### Step 9. Run a query to list events from multiple days for a service
+{: #sqlquery_step3-9}
 
 
 
 
-
-SQL execution failed
-Invalid data type struct<__key:string,_account:string,_app:string,_bid:string,_cluster:string,_env:string,_file:string,_host:string,_ingester:string,_ip:string,_lid:string,_line:string,_logtype:string,_supertenant:string,_ts:bigint,action:string,eventTime:string,eventType:string,id:string,level:string,logSourceCRN:string,message:string,o_initiator:struct<id:string,name:string,o_credential:struct<type:string>,o_host:struct<address:string,agent:string>,typeURI:string>,o_reason:struct<reasonCode:bigint>,... 7 more fields> found in the query result. Structured column types are not supported when writing query results as CSV. Use JSON as output format for writing and previewing structured column types in the UI. Alternatively, ensure that the query result contains only flat data types when writing to CSV. Consider using FLATTEN table transfomer for flattening all nested columns and EXPLODE scalar function for flattening arrays. You can see CSV & JSON PARSING QUERIES in Samples for usage examples.
-
-
-
-
-## Limitations
-{: #limitations}
-
-- If a JSON, ORC, or Parquet object contains a nested or arrayed structure, using a wildcard (for example, `select * from cos://...`) returns an error such as 
-"Invalid CSV data type used: `struct<nested JSON object>`."
-Use one of the following workarounds:
-  - For a nested structure, specify the fully nested column name instead of the wildcard, for example, `select address.city from cos://...`.
-  - For an array, use the Spark SQL explode() function, for example, `select explode(address.city) from cos://...`.
-- If you receive a corrupted result, verify that the source file is correct and that the correct input file format is specified using 'STORED AS' in the SQL statement.
-- If you receive an error message stating that some columns are not found in the input columns,
-but the columns do exist in the input file, check if the input file format being specified using 'STORED AS'
-in the SQL statement is the actual file format of your current file.
-- In order to further process CSV output with {{site.data.keyword.sqlquery_short}}, all values have to be contained within one line. The multi-line option is not supported and therefore must be manually changed. 
-To remove new lines from multi-line column values, use the SQL function `regexp_replace`. For example, a CSV object `data` has an attribute `multi_line` containing values spanning multiple lines. To select a subset of rows based on a `condition` and store it on COS for further processing, a skeleton SQL statement looks like the following:
-
-	`SELECT regexp_replace(multi_line, '[\\r\\n]', ' ') as multi_line FROM data STORED AS CSV WHERE condition`
-	
-- Ensure that each SQL query updating the composite object uses the same column select list, meaning that names of columns and sequence 
-of columns have to be identical. Otherwise, composed objects become unreadable due to incompatible headers stored in different parts of the object.
-- Ensure that for growing composite objects, all SQL statements that update the object and introduce new columns to a column selection list, add these columns to the end of the column list. If this is not the case, the structure of the object gets corrupted, causing unreadable objects, corrupted data, or unreliable results.
