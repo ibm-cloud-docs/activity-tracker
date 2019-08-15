@@ -31,7 +31,10 @@ Support is supplemented by the Slack channel *ibm-guest-logdna-help*. However, i
 ## To open a case on LogDNA
 {: #open_case}
 
-1. Log into the IBM Cloud account your team uses.
+1. Log into your team's IBM Cloud account.
+	- Services generally have one IBM Cloud account that all team members use for opening cases.
+	- This account will be the one that has Advanced or Premium support, if your service pays for it.
+	- This account must be an internal paid account to get even Basic support.
 1. On the IBM Cloud console, click "Support" at the top.
 1. Click "Create a case" on the right.
 1. Select "Technical".
@@ -58,9 +61,10 @@ Your service must have *Advanced Support* or *Premium Support* to open cases wit
 
 #### To see if you have Advanced Support:
 
-1. Log into your service's account in the IBM Cloud. 
-	- Typically your service will have one IBM Cloud account designated for Advanced Support, and the team members will use that account for opening cases.
-	- It must be an internal paid account.
+1. Log into your team's IBM Cloud account.
+	- Services generally have one IBM Cloud account that all team members use for opening cases.
+	- This account will be the one that has Advanced or Premium support, if your service pays for it.
+	- This account must be an internal paid account to get even Basic support.
 2. Click "Support" at the top.
 3. On the right, the "Plan" section will show your support plan. If it is "basic" support, you need to upgrade to at least "advanced."
 
@@ -71,6 +75,8 @@ If you do not have Advanced (or Premium) support, see [here](https://ibm.ent.box
 {: #severity}
 
 Set the severity based on the following. Do not assign a higher severity than appropriate, as it will only lead to delays.
+
+Notice that LogDNA considers some problems more severe when multiple customers are experiencing them. Unless you know otherwise, you can assign the severity on the assumption that other users are having the same problem you are.
 
 | Sev | Definition | Examples |
 | --- | --- | --- |
