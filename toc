@@ -45,6 +45,7 @@ IBM Cloud Activity Tracker with LogDNA
     alerts.md
     export.md
     archive.md
+    sqlquery.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
