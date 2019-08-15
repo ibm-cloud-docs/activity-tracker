@@ -296,31 +296,6 @@ INTO RESULTS_BUCKET STORED AS CSV
 ```
 {: screen}
 
-The following table lists the event fields and the column name that you must use when you build your SQL queries:
-
-{"id":"3a2c098e-20c9-4f37-bc55-bcac30769a02","eventTime":"2019-08-15T09:00:41.35+0000","action":"iam-groups.group.read","outcome":"success","message":"IAM Access Groups: read group logdna-standard-member","initiator":{"id":"IBMid-060000JMJ2","typeURI":"service/security/account/user","name":"LOPEZDSR@uk.ibm.com","host":{"address":"158.177.175.70"},"credential":{"type":"token"}},"target":{"id":"crn:v1:bluemix:public:iam-groups:global:a/81de6380e6232019c6567c9c8de6dece::groups:AccessGroupId-108d1889-d98b-40f1-9a5a-b697c346a60b","typeURI":"iam-groups/group","name":"logdna-standard-member"},"reason":{"reasonCode":200},"severity":"normal","responseData":"{\"id\":\"AccessGroupId-108d1889-d98b-40f1-9a5a-b697c346a60b\",\"name\":\"logdna-standard-member\",\"description\":\"\",\"account_id\":\"81de6380e6232019c6567c9c8de6dece\",\"created_at\":\"2019-08-13T07:25:13Z\",\"created_by_id\":\"IBMid-060000JMJ2\",\"last_modified_at\":\"2019-08-13T07:25:13Z\",\"last_modified_by_id\":\"IBMid-060000JMJ2\"}","meta":{"serviceProviderName":"iam-groups","serviceProviderRegion":"ng","serviceProviderProjectId":"53c0f9a6-c07e-4ac0-b933-7327b6ca3c84","userAccountIds":["81de6380e6232019c6567c9c8de6dece"]},"logSourceCRN":"crn:v1:bluemix:public:iam-groups:global:a/81de6380e6232019c6567c9c8de6dece:::","saveServiceCopy":true}
-
-| Activity Tracker event field   | SLQ query column name |
-|--------------------------------|-----------------------|
-| `id`                           | `_source.id`          |
-| `eventTime`                    | `_source.eventTime`   |
-| `action`                       | `_source.action`      |
-| `outcome`                      | `_source.outcome`     |
-| `message`                      | `_source.message`     |
-| `initiator.id`                 | `_source.o_initiator.id` |
-| `initiator.typeURI`            | `_source.o_initiator.typeURI` |
-| `initiator.name`               | `_source.o_initiator.name` |
-| `initiator.host.address`       | `_source.o_initiator.o_host.address` |
-| `initiator.host.agent`         | `_source.o_initiator.o_host.agent` |
-| `initiator.host.credential.type` | `_source.o_initiator.o_host.o_credential.type` |
-| `target.id`                    | `_source.o_target.id` |
-| `target.name`                 | `_source.o_target.name`  |
-| `target.typeURI`              | `_source.o_target.typeURI` |
-| `reason`                      | `_source.reason`    |
-| `severity`                    | `_source.severity    |
-{: caption="Table 1. Mapping of event fields to SQL query column names" caption-side="top"} 
-
-
 
 ### Step 7. Run a query to get a custom view of a subset of the event fields ordered by the event time
 {: #sqlquery_step3-7}
@@ -385,6 +360,34 @@ INTO cos://eu-de/results-marisa STORED AS CSV
 ### Step 9. Run a query to list events from multiple days for a service
 {: #sqlquery_step3-9}
 
+
+## Event field names in SQL queries
+{: #sqlquery-ref}
+
+The following table lists the event fields and the column name that you must use when you build your SQL queries:
+
+| Activity Tracker event field   | SLQ query column name |
+|--------------------------------|-----------------------|
+| `id`                           | `_source.id`          |
+| `eventTime`                    | `_source.eventTime`   |
+| `action`                       | `_source.action`      |
+| `outcome`                      | `_source.outcome`     |
+| `message`                      | `_source.message`     |
+| `initiator.id`                 | `_source.o_initiator.id` |
+| `initiator.typeURI`            | `_source.o_initiator.typeURI` |
+| `initiator.name`               | `_source.o_initiator.name` |
+| `initiator.host.address`       | `_source.o_initiator.o_host.address` |
+| `initiator.host.agent`         | `_source.o_initiator.o_host.agent` |
+| `initiator.credential.type`    | `_source.o_initiator.o_credential.type` |
+| `target.id`                    | `_source.o_target.id` |
+| `target.name`                 | `_source.o_target.name`  |
+| `target.typeURI`              | `_source.o_target.typeURI` |
+| `reason.reasonCode`            | `_source.o_reason.reasonCode`    |
+| `reason.reasonType`            | `_source.o_reason.reasonType`    |
+| `severity`                    | `_source.severity`    |
+| `requestData`                 | `_source.requestData` |
+| `responseData`                | `_source.responseData` |
+{: caption="Table 1. Mapping of event fields to SQL query column names" caption-side="top"} 
 
 
 
