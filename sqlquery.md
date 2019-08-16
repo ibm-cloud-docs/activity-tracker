@@ -2,7 +2,7 @@
 
 copyright:
   years:  2018, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-08-16"
 
 keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU-supported
 
@@ -21,7 +21,7 @@ subcollection: logdnaat
 {:important: .important}
 {:note: .note}
 
-# Search your archive data by using the {{site.data.keyword.sqlquery_short}} service
+# Searching archive data by using the {{site.data.keyword.sqlquery_short}} service
 {: #sqlquery}
 
 You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} (AT) archive files that are stored in an {{site.data.keyword.cos_short}} (COS) bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically.

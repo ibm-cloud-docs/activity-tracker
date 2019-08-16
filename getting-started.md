@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-08-16"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started
 
