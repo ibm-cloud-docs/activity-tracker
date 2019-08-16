@@ -28,6 +28,7 @@ subcollection: logdnaat
 Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate for abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 {:shortdesc}
 
+
 ![The {{site.data.keyword.at_full_notm}} service](images/atov.png "The {{site.data.keyword.at_full_notm}} service")
 
 
@@ -47,6 +48,28 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 * {{site.data.keyword.at_full_notm}} provides a solution for administrators to capture, store, view, search, and monitor API activity in a single place. It also offers a notifications feature to alert you by using any of the supported notification channels.
 * {{site.data.keyword.at_full_notm}} provides capabilities to export events that you can then use to generate an audit trail report. You might require these reports so that your organization complies with internal regulations and external industry and country regulations.
 
+
+### Features
+{: #gs_ov_features}
+
+* **Simplify compliance sign-off tasks**
+
+    Boost audit tasks on your {{site.data.keyword.cloud_notm}} by automatically collecting events that report on actions to resources in your {{site.data.keyword.cloud_notm}} account. Analyze and get notified on the events that report out of compliance actions. 
+
+* **Accelerate detection of security incidents** 
+
+    Get alert notifications of important events and errors when things are out of compliance. Create custom views and  get notified immediately.  You can configure multi-channel alert notifications based on pattern matching to a variety of direct integrations such as email, Slack, PagerDuty, or your own custom webhooks.
+
+* **Improve visibility on actions in your {{site.data.keyword.cloud_notm}} account**
+
+    Improve the visibility into user and resource activity in your account by easily identifying the initiator who requested an action, the object on which the action was requested, and the time when the action took place. 
+
+* **Adhere to standards**
+
+   Events comply with the Cloud Auditing Data Federation (CADF) standard. Use simple to use keyword based search to search across your events instead of fiddling with custom query languages. Apply the same keyword search to build time series graphs instantly.
+
+
+
 ![Core features offered by the {{site.data.keyword.at_full_notm}} service](images/features.png "Core features offered by the {{site.data.keyword.at_full_notm}} service")
 
 For example, you can use the {{site.data.keyword.at_full_notm}} events to identify the following information:
@@ -55,6 +78,8 @@ For example, you can use the {{site.data.keyword.at_full_notm}} events to identi
 * The status of the API call
 * The criticallity of the action
 
+### Security
+{: #gs_ov_security}
 
 Consider the following information about security when you work with the {{site.data.keyword.at_full_notm}} service:
 
