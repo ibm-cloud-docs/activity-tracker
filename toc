@@ -13,12 +13,15 @@ IBM Cloud Activity Tracker with LogDNA
     monitor_events.md
     manage_events.md
     iam_manage_login.md
-    manage_eu_acc.md
 
     {: .topicgroup}
     Integration with other Cloud services
         archive.md
         sqlquery.md
+
+    {: .topicgroup}
+    Compliance
+        manage_eu_acc.md
 
     {: .topicgroup}
     Tutorials
