@@ -21,7 +21,7 @@ subcollection: logdnaat
 {:important: .important}
 {:note: .note}
 
-# Using SQL Query to monitor events in archived files
+# Search your archive data by using the {{site.data.keyword.sqlquery_short}} service
 {: #sqlquery}
 
 You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} (AT) archive files that are stored in an {{site.data.keyword.cos_short}} (COS) bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically.
@@ -357,11 +357,9 @@ INTO cos://eu-de/results-marisa STORED AS CSV
 {: screen}
 
 
-### Step 9. Run a query to list events from multiple days for a service
-{: #sqlquery_step3-9}
 
 
-## Event field names in SQL queries
+## Reference. Event field names for SQL queries
 {: #sqlquery-ref}
 
 The following table lists the event fields and the column name that you must use when you build your SQL queries:
