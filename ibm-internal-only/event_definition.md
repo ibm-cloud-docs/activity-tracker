@@ -151,7 +151,7 @@ The following table list the mandatory fields:
   </tr>
   <tr>
 	<td>dataEvent</td>
-	<td>True if this event is a "data event" rather than a "management event". See [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events) for an explanation. The default is <b>false</b>, so that an event is a management event unless this field is specified true. This field can only be provided to AT with LogDNA; legacy AT will not parse it.</td>
+	<td>True if this event is a "data event" rather than a "management event". See [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events) for an explanation. The default is `false`, so that an event is a management event unless it has `dataEvent:"true"`. <br/><br/>This field is not part of CADF. This field can only be provided to Activity Tracker with LogDNA; legacy AT will not parse it.</td>
 	<td><b>true</b><br/><b>false</b> (default)</td>
   </tr>
 </table>
