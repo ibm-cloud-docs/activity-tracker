@@ -149,6 +149,11 @@ The following table list the mandatory fields:
 	  <td>These field is an array of strings.</td>
 	  <td></td>
   </tr>
+  <tr>
+	<td>dataEvent</td>
+	<td>True if this event is a "data event" rather than a "management event". See [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events) for an explanation. The default is <b>false</b>, so that an event is a management event unless this field is specified true. This field can only be provided to AT with LogDNA; legacy AT will not parse it.</td>
+	<td><b>true</b><br/><b>false</b> (default)</td>
+  </tr>
 </table>
 
 
@@ -198,7 +203,7 @@ The `logSourceCRN` and `saveServiceCopy` fields are at the root level, but the `
 
 
 
-## Event fields that are added by Activity Tracker
+## Event fields that are added by legacy Activity Tracker
 {: #at}
 
 <table>
@@ -304,7 +309,7 @@ This includes:
 * `latencies`
 
 
-## Metadata fields
+## Metadata fields for legacy Activity Tracker
 {: #metadata}
 
 These fields are metadata fields that you must set to configure the AT domain where users can view events for your service. For more information, see [How to set the AT domain where users can view events for your service](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/best_practices.html#how-to-set-the-at-domain-where-users-can-view-events-for-your-service).
