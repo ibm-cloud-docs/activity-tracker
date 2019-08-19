@@ -27,7 +27,7 @@ subcollection: logdnaat
 {:shortdesc}
 
 
-## How to send events to AT Using Armada and fluentd (strategic approach)
+## How to send events to LEGACY AT Using Armada and fluentd (strategic approach)
 
 
 
@@ -44,7 +44,7 @@ For more information, see [Write by Service (IBM Cloud Container Service)](/docs
 
 
 
-## How to send events to AT Using the API (Deprecated)
+## How to send events to LEGACY AT Using the API (Deprecated)
 
 **Services that do not run on Armada will need to use the Activity Tracker API. In the future we will provide another alternative and remove this API.**
 
@@ -82,7 +82,7 @@ There are two kinds of events in Activity Tracker:
     * Deprovisioning a service in the IBM Cloud.
     * Service plan changes.
 
-## How many events/minute can my service send to AT?
+## How many events/minute can my service send to LEGACY AT?
 
 Events are stored in the Log Analysis service. Depending on the events per minute, you might need to contact the AT team.
 
@@ -122,13 +122,13 @@ If you are unsure about the information that you are sending, contact the GDPR S
 
 ## Global domain
 
-For global services in the IBM Cloud, use the <b>US South region</b> as the global account domain for Activity Tracker events.
+For global services in the IBM Cloud, use the <b>eu-de region</b> as the endpoint for global Activity Tracker events.
 
-For example, IAM and BSS send events that are not bound to a region. Those events are available to the user through the account domain in the US South region.
+LEGACY AT: For global services in the IBM Cloud, use the <b>US South region</b> as the global account domain for Activity Tracker events.  For example, IAM and BSS send events that are not bound to a region. Those events are available to the user through the account domain in the US South region.
 
 
 
-## How to set the AT domain where users can view events for your service
+## How to set the LEGACY AT domain where users can view events for your service
 
 There are two service brokers a service can support:
 
@@ -214,7 +214,7 @@ For Go users:
 2. Run `./AT-event-linter <filename>`
 
 
-## Testing events
+## Testing events in LEGACY AT
 
 To test Activity Tracker, complete the following steps when your service forwards AT events to a space domain:
 
