@@ -261,8 +261,34 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
 2. Install the LogDNA agent with super tenancy 
 
-    The command below automatically installs a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. We now have private endpoints for the agents. This allows your logs and events to stay withing the IBM network and not travel through the public internet.
+    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. We now have private endpoints for the agents. This allows your logs and events to stay withing the IBM network and not travel through the public internet.
 
+    To use private endpoints your account must have Service Endpoint enabled.
+
+    Verify if your account has Service Endpoint enabled. If it is enabled, proceed to creating the logDNA agents below.
+
+    ```
+    ibmcloud account show
+    ```
+    {: codeblock}
+
+    Use this command to enable your account.
+
+    ```
+    ibmcloud account update --service-endpoint-enable true
+    ```
+    {: codeblock}
+
+    Note: You may get an error that Virtual Forwarding and Routing (VFR) is not enabled. Answer yes to the question to have a SoftLayer ticket opened to enable VFR. Once VFR has been enabled, run the command above one more time.
+
+    Example of the message if VFR is not enabled 
+
+    ```
+    Service Endpoint is not available in linked Softlayer Account 1900403. Enable VRF(Virtual Routing and Forwarding) first to proceed. Learn more about VRF here - https://cloud.ibm.com/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html.
+
+    Do you want to open a ticket to enable it? [y/N] > 
+    ```  
+    
     For **us-south**, run the following command:
  
     ```
