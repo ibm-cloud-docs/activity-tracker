@@ -694,6 +694,7 @@ do not see it. Below we outline the changes that customers will see.
 {: #atr-transform}
 * All the changes listed for the Customer Super Tenant Logs are applied to Activity Tracker Events.
 * Additional changes are:
+  * `payload` fields are promoted to top level, and `payload` is removed.
   * `level` is set to the `severity` field specified in the Activity Tracker event.
   * `timestamp` is set to the `eventTime` field in the Activity Tracker event.
 
