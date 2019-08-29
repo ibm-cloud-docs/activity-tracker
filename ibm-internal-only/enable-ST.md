@@ -688,7 +688,7 @@ do not see it. Below we outline the changes that customers will see.
 * `App` is set to the `logSourceCRN` of the customer as specified in the log line.
   * Exception: if the `appOverride` field is given, then its value is used for `app` instead. `appOverride` is peer to the `app` field, outside of the log line.
 * `file` is set to the `logSourceCRN` of the customer as specified in the log line.
-* `LogDNA agent related Line Identifiers and Tags` are removed.
+* `Line Identifiers and Tags` are removed.
 
 #### Customer Super Tenant Activity Tracker Events
 {: #atr-transform}
