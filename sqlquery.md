@@ -2,7 +2,7 @@
 
 copyright:
   years:  2018, 2019
-lastupdated: "2019-08-16"
+lastupdated: "2019-09-12"
 
 keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU-supported
 
