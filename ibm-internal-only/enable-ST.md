@@ -84,7 +84,7 @@ This step is required for existing services that are planning to on-board to {{s
 
 Three new optional fields are available to use the Logging and Activity Tracker JSON. **logSourceCRN** is required if you are using Super Tenancy to send logs and events to a user of your service.
 
-* **logSourceCRN**: This field indicates the customer whom you want to receive the log or event. The logSourceCRN is the CRN of the service instance of your service created by the customer. If not present, no event will be sent to a customer.
+* **logSourceCRN**: This field indicates the customer whom you want to receive the log or event. The logSourceCRN is the CRN of the service instance (or internal resource) of your service created by the customer. If not present, no event will be sent to a customer.  The CRN `scope` segment must be the customer's account, and the `location` segment must match the location where the log or event is ingested.  
 * **saveServiceCopy**: This field indicates if your service wants a copy of the log or event. This is an `optional` field. If the field is not present, the default of true will be used and your service will get a copy of the log or event. Set this field to false if your service does not want a copy of the log record or event. If the field is false, LogDNA will not charge your service for the event since it only charges each service or customer for what is stored.
 * **message**: This field will be displayed as the summary line of the log/event in the LogDNA UI. The message field has a prescribed format for Activity Tracker. Refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields) for format information.
 
@@ -209,7 +209,7 @@ All commands should be run from a terminal that is logged into your service's IB
   
     * **name-of-your-service** is the CRN service-name of your service.
  
-    * **us-south** is the region where your service instance will be created. Other choices are: `eu-de`.
+    * **us-south** is the region where your service instance will be created. Other choices include: `eu-de`, `eu-gb`, `au-syd`, etc.
  
     * **provision_key** is the key obtained from step 1.
 
@@ -459,7 +459,7 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
    
     **name-of-your-service** is the CRN service-name of your service.
    
-    **us-south** is the region your service instance will be created. Other choices are: `eu-de`.
+    **us-south** is the region your service instance will be created. Other choices include: `eu-de`, `eu-gb`, `au-syd`, etc.
    
     **provision_key** is the same key you used to create your service's Logging STS instance.
    
@@ -704,6 +704,9 @@ do not see it. Below we outline the changes that customers will see.
 
 **My service is deployed in Sydney but LogDNA is not there yet. What can I do?**
 
+
+Normally, the `location` segment of `logSourceCRN` should match the location where the log or event is ingested. This situation is an exception.
+
 Here is how to send you events from your service in Sydney to another region. 
 
 In the example below, the service's events are being sent to us-south. Services must document this deviation so their customers can find their events.
@@ -725,7 +728,7 @@ Once Activity Tracker is available in Sydney, your service should switch to stor
 
 **My service sends global events which are not tied to any region. What can I do?**
 
-For now, global events are being stored in eu-de (Frankfurt) by convention. (Formerly in Dallas, but this is changing.) We will address this in a better way in the future.
+For now, global events are being stored in eu-de (Frankfurt) by convention. We will address this in a better way in the future.
 
 1. For your service create your Logging STS and Activity Tracker ATS instances in eu-de.
 2. Gather your logging STS ingestion key.
