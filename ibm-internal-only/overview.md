@@ -41,7 +41,7 @@ There are two kinds of events in Activity Tracker:
 
 * **Management Events**:  These are events that are generated when an API call changes the state of a Cloud resource. A resource might be an entire service instance or a resource managed internally by a service. A resource can be whatever the user experiences as a "thing" that they can create/update/delete, regardless of its internal implementation. For example, creating a policy for a user. 
 
-* **Data Events**: These are events that are generated when an API call retrieves the data from a resource. There are an order-of-magnitude more data events than management events, so the user must opt in to start saving them. **NOTE: Data events are not currently supported in Activity Tracker, but will be in the future.**
+* **Data Events**: These are events that are generated when an API call retrieves the data from a resource. There are an order-of-magnitude more data events than management events, so the user must opt in to start saving them.
 
 
 ## Activity data format
