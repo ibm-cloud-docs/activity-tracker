@@ -113,6 +113,19 @@ The following table lists the actions that generate an event:
 | `iam-identity.user-refreshtoken.login`   | This is an event that is generated when the initiator logs in to the IBM Cloud , or when an initiator that has already logged in to the IBM Cloud requests a new refresh token to run an action. |
 {: caption="Table 4. User login actions" caption-side="top"} 
 
+## License and entitlement events
+{: #at_events_iam_entitlement}
+
+The following table lists the actions that generate an event:
+
+| Action                                   | Description |
+|------------------------------------------|---------|
+| `entitlement.entitlement.create`         | An event is generated when an initiator binds a license to an account. |  
+| `entitlement.entitlement.delete`    | An event is generated when an initiator deletes an entitlment. |  
+| `entitlement.entitlement.delete_purge` | An event is generated when an initiator purges an entitlement. |
+| `entitlement.entitlement.update`   | An event is generated when an initiator updates an entilement. |
+| `entitlement.entitlement.check`   | An event is generated when an initiator has used an entitlement to pull an image from the goverend IBM Container Registry. |
+{: caption="Table 5. User entitlement actions" caption-side="top"} 
 
 ## Viewing events
 {: #at_events_iam_ui}
