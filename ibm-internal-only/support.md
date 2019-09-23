@@ -54,6 +54,20 @@ Support is supplemented by the Slack channel *ibm-guest-logdna-help*. However, i
     - Any other information (please include screenshots, video)
 1. Submit.
 
+### To follow up in Slack
+
+After you have opened a case, you may wish to refer to it in the Slack channel *ibm-guest-logdna-help*.
+To do this, you need the Third Party Ticket number (TPT), since LogDNA support has no visibility into ServiceNow.
+To get the TPT, someone with appropriate ServiceNow access should:
+
+1. Log into ServiceNow.
+2. Open the case.
+3. Scroll down to the "Related Links" section.
+4. Select the "Third Party Case tickets" tab.
+5. You sould see a row in the table, starting with something like "TPT0000123". 
+
+That is the TPT number that LogDNA support will recognize. If you don't see it, then you may not have appropriate access or the ticket may not have been opened in LogDNA's system yet.
+
 ## Advanced/Premium Support
 {: #adv-prem}
 
