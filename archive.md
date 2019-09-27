@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-09-27"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, archive logs, COS, cloud object storage
 
@@ -28,6 +28,8 @@ subcollection: logdnaat
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. 
 {:shortdesc}
 
+
+
 Complete the following steps to archive an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} instance:
 
 ## Prerequisites
@@ -46,7 +48,6 @@ Complete the following steps to archive an {{site.data.keyword.at_full_notm}} in
 {: caption="Table 1. IAM roles" caption-side="top"} 
 
 For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
-
 
 
 ## Step 1. Grant IAM policies to a user to work with {{site.data.keyword.cos_full_notm}}
@@ -334,4 +335,8 @@ Notice that when you save the configuration, you can get a message that informs 
 If you get an error when you save the configuration, the verification process fails. Check your configuration and retry again. 
 
 
+## Limitations
+{: #archive_limitations}
+
+* You cannot archive data to a bucket that has a retention policy configured.
 
