@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-27"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, endpoints
 
@@ -39,6 +39,7 @@ The following table shows the API endpoints:
 | `Frankfurt (eu-de)`      | `https://api.eu-de.logging.cloud.ibm.com`          |
 | `London (eu-gb)`         | `https://api.eu-gb.logging.cloud.ibm.com`          |
 | `Tokyo (jp-tok)`         | `https://api.jp-tok.logging.cloud.ibm.com`         |
+| `Seoul (kr-seo)`         | `https://api.kr-seo.logging.cloud.ibm.com`         |
 | `Sydney (au-syd)`        | `https://api.au-syd.logging.cloud.ibm.com`         |
 {: caption="Table 1. Lists of public API endpoints for interacting with {{site.data.keyword.at_full_notm}} over {{site.data.keyword.cloud_notm}}'s public network" caption-side="top"}
 
