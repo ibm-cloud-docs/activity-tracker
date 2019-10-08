@@ -98,11 +98,15 @@ Events are stored in the Log Analysis service. Depending on the events per minut
 
 **target.id** is a mandatory field that must be set to the CRN of the resource on the IBM Cloud. When you define sets of events for a sub-resource in your service, use the same CRN for create, update, delete, and any other events that apply to that sub-resource.
 
-There are some optional fields that are recommend to be set to enhance the user experience:
-
 * **target.name**: Set this field to the human readable name of the cloud resource on which the action is being performed. This is the value a user would see on the Cloud UI or running a command.
+
 * **initiator.name**: Set this field to the username that is associated with the IBMID or service ID that is used to initiate an action. 
+
+There are some optional fields that are recommend to be set to enhance the user experience. 
+
 * **requestData** and **responseData**: Set data in these field that provide useful information to the user. These fields must be set to valid JSON, where an object (like requestData) can contain one or more child elements. The child elements must be simple and not contain nested structures. For example, if you upgrade the version of an object, and only specify the mandatory fields, the user will not know what was the original version and the one that the object was upgraded to. 
+
+Exception: RequestData is required for **update** events. Information about the original value and the changed value must be included.
 
 ## What event fields can be sent and be GDPR compliant?
 

@@ -142,7 +142,7 @@ The following table list the mandatory fields:
   <tr>
     <td>requestData<br>responseData</td>
 	  <td>These two fields are not part of CADF, but are provided for services to use for custom JSON. </br>Add any information here that will enhance the user experience going through ther audit trail of your service events.  </br>Add value pairs of information. Although this is a string field, add the information as JSON. </br>Some fields: </br>{"ResourceGroupID":"CRN of the resource group"} </br>{"ReasonForFailure":"Additional information about why the request failed"} </td>
-	  <td>For example, in an update event, add details of original version and final version.</td>
+	  <td>Notice that for update events (this field is required), you should add details of original version and final version of the change.</td>
   </tr>
   <tr>
     <td>tags</td>
