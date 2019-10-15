@@ -27,12 +27,13 @@ Different pricing plans are available that you can choose for an {{site.data.key
 {:shortdesc}
 
 
-| Plan                     | 
-|--------------------------|
-| `30 day event search`  |
-| `14 day event search`  |
-| `7 day event search`   |
-| `Lite`                  |
+
+| Plan                     | Number of days that data is available for seach | Number of users per plan |
+|--------------------------|-------------------------------------------------|--------------------------|
+| `30 days log search`     | 30                                              | Unlimitted               |
+| `14 days log search`     | 14                                              | Unlimitted               |
+| `7-day log search`       | 7                                               | Unlimitted               |
+| `Lite`                   | Data is not available for search                | 1                        |
 {: caption="Table 1. List of service plans" caption-side="top"} 
 
 {{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your logs as they pass through the system. You can view logs by using log tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
@@ -43,12 +44,17 @@ Different pricing plans are available that you can choose for an {{site.data.key
 
 The following tables outline the different features that are included in each service plan:
 
-| Feature                          | `30 day event search` plan | `14 day event search` plan    | `7 day event search plan     | `Lite` plan | 
-|----------------------------------|----------------------------|-------------------------------|------------------------------|--------------|
-| `Logs are stored and searchable` | Yes - for 30 days          | Yes - for 14 days             | Yes - for 7 days            | No           |
-| `Live streaming tail`            | Yes                        | Yes                           | Yes                         | Yes          |
-| `Archiving`                      | Yes                        | Yes                           | Yes                         | No           |
-| `Multi-channel Alerting`         | Yes                        | Yes                           | Yes                         | No           | 
+| Feature                                              | `30 day log search` plan | `14 days log search` plan    | `7 days log search plan     | `Lite` plan | 
+|------------------------------------------------------|-------------------------|-------------------------------|-----------------------------|--------------|
+| `Live streaming tail`                                | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg)|
+| `Events are stored and searchable`                     | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) | |
+| `Archiving of events`                                  | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) | |
+| `Multi-channel Alerting`                             | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) | |
+| `Exporting events`                                     | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) | |
+| `Definig custom parsing templates`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) | |
+| `Configuring exclusion rules from the LogDNA web UI` | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) | |
+| `Creating views and dashboards`                      | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) | |
+| `Analyzing logs in different contexts`               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) | |
 {: caption="Table 2. List of features available for each service plan" caption-side="top"} 
 
 
