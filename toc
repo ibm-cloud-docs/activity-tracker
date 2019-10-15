@@ -6,9 +6,10 @@ IBM Cloud Activity Tracker with LogDNA
 
     {: .navgroup id="learn"}
     getting-started.md
-    event.md
     cloud_services.md
     cloud_services_locations.md
+    event.md
+    data.md
     iam.md
     monitor_events.md
     manage_events.md
