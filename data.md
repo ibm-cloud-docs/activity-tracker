@@ -90,7 +90,7 @@ You can use the {{site.data.keyword.sqlquery_short}} service to query data in ar
 ## Data exports
 {: #data_exports}
 
-You can export data in JSONL format locally, stream data to your terminal, or request an email with a link to the data. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-export).
+You can export data in JSONL format locally, write data to your terminal, or request an email with a link to the data. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-export).
 
 Consider the following information when you export log data:
 * You export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
