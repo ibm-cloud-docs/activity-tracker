@@ -88,7 +88,7 @@ Control the cost of your logging infrastructure in the IBM Cloud by configuring 
 ## Step 1. Provision an instance of the {{site.data.keyword.at_full_notm}} service
 {: #tutorial_step1}
 
-Complete the following steps to provision an instance:
+Complete the following steps to provision an Activity Tracker instance:
 
 1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
@@ -110,13 +110,34 @@ Complete the following steps to provision an instance:
 
     **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
 
-7. Select the `Lite` service plan. 
+7. Select the `7-day search` service plan. 
 
     By default, the lite plan is set.
 
 8. Click **Create**.
 
 After you provision an instance, the *Activity Tracker* dashboard opens. 
+
+Repeat the steps to provision a Logging innstance:
+
+1. Select **Logging**, then click **Create instance**. 
+
+2. Enter a name for the service instance.
+
+3. Select the **Frankfurt** location. 
+
+4. Select a resource group. 
+
+    By default, the **default** resource group is set.
+
+    **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
+
+5. Select the `7-day search` service plan. 
+
+    By default, the lite plan is set.
+
+9. Click **Create**.
+
 
 
 ## Step 2. Manage access to the service
@@ -452,6 +473,14 @@ Complete the following steps to configure a dashboard:
     ![Plus icon](images/dashboard_sample_1.png)
 
 10. Click **Edit** to enter the name of the dashboard. Optionally, you can also create or add the dahboard to a category. Click **Save**.
+
+
+## Next steps: Admin tasks 
+{: #tutorial_step9}
+
+* In the logging instance, configure the instance to collect logs for IBM Cloud service logs: [Configuring IBM Cloud service logs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-config_svc_logs). 
+* Backup data for long term storage:  [Archiving events to IBM Cloud Object Storage](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving)
+* Reuse definitions of views, dashboards, and templates in different LogDNA instances: [Reusing definitions of LogDNA resources](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-reuse_resource_definitions)
 
 
 
