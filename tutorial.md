@@ -25,7 +25,7 @@ subcollection: logdnaat
 # Learning tutorial on LogDNA
 {: #tutorial_logdna}
 
-As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.iamlong}} (IAM) service in {{site.data.keyword.cloud_notm}}. This tutorial shows how to monitor actions on user API keys in your account.
+Use this tutorial to learn how to monitor actions on user API keys in your account by using the IBM Cloud Activity with LogDNA service. Learn how to set soe of the admin tasks that are required to manage and operate this service.
 {:shortdesc}
 
 ## Features
@@ -479,8 +479,15 @@ Complete the following steps to configure a dashboard:
 {: #tutorial_step9}
 
 * In the logging instance, configure the instance to collect logs for IBM Cloud service logs: [Configuring IBM Cloud service logs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-config_svc_logs). 
+
 * Backup data for long term storage:  [Archiving events to IBM Cloud Object Storage](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving)
+
 * Reuse definitions of views, dashboards, and templates in different LogDNA instances: [Reusing definitions of LogDNA resources](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-reuse_resource_definitions)
 
+* Control data usage: [Controlling data usage](https://test.cloud.ibm.com/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-control_usage)
+
+    Define the data usage alert
+
+    [Define an exclusion rule](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-exclusion). For example, in the Activity Tracker instance, define an exclusion rule to exclude events with action: user-apikey.delete. In the query field, enter: **action:user-apikey.delete**.
 
 
