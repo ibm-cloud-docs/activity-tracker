@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-08"
+lastupdated: "2019-10-16"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, export
 
@@ -28,8 +28,6 @@ subcollection: logdnaat
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. You can export logs programmatically by using the LogDNA REST API or through the web UI. 
 {:shortdesc}
 
-The web UI export functionality is not available in the Frankfurt location. Also, you cannot use the API to export data to an email address. However, if you need to export data from the Frankfurt location, you can use the export API to export your data to a local file or to the terminal.
-{: important}
 
 ## Prerequisites
 {: #export_prereqs}
@@ -123,7 +121,7 @@ The following table lists the query parameters that you can set:
 | `emailSubject` | `string`     | Optional   | Use to set the subject of the email. </br>Use `%20` to represent a space. For example, a sample value is `Export%20logs`. |
 {: caption="Query parameters" caption-side="top"} 
 
-For example, to stream events into the terminal, you can run the following command:
+For example, to write events into the terminal, you can run the following command:
 
 ```
 curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&from=$(($(date +%s)-86400))000" -u e08c0c759663491880b0d61712346789:
