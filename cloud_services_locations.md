@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-14"
+lastupdated: "2019-10-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -35,7 +35,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 The following table shows the locations where automatic collection of Cloud Foundry (CF) logs is enabled. You can monitor these logs through the {{site.data.keyword.at_full_notm}}  instance that is configured with the **service platform logs** in the same location where the CF resource is available.
 
-| Service                                                       | `Dallas (us-south)` | 
+| Service                                                       | `Dallas (us-south)` |
 |---------------------------------------------------------------|:--------------------:|
 | Cloud Foundry (CF)                                            | ![Checkmark icon](../../icons/checkmark-icon.svg)              |
 {: caption="Table 1. Cloud Foundry in America" caption-side="top"}
@@ -76,10 +76,12 @@ The following tables list the locations where automatic collection of database s
 | Service                                                         | `Dallas (us-south)` | `Washington (us-east)`  |
 |-----------------------------------------------------------------|:-------------------:|:-------------------:|
 | {{site.data.keyword.cloudant_short_notm}}                       | ![Checkmark icon](../../icons/checkmark-icon.svg) `(beta)`        | `NO`                |
-| {{site.data.keyword.databases-for-elasticsearch_full_notm}}     | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                | 
+| {{site.data.keyword.databases-for-elasticsearch_full_notm}}     | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
 | {{site.data.keyword.databases-for-etcd_full_notm}}              | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
 | {{site.data.keyword.databases-for-mongodb_full_notm}}           | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
 | {{site.data.keyword.databases-for-postgresql_full_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)`               | `NO`                |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
 | {{site.data.keyword.messages-for-rabbitmq_full_notm}}           | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
 | {{site.data.keyword.databases-for-redis_full_notm}}             | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
 {: caption="Table 4. Database services integration in America's locations" caption-side="top"}
@@ -96,6 +98,8 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.databases-for-etcd_full_notm}}              | ![Checkmark icon](../../icons/checkmark-icon.svg)   | `NO`             | `Events are available through the Log Analysis Tokyo instance` | `Events are available through the Log Analysis Tokyo instance` |
 | {{site.data.keyword.databases-for-mongodb_full_notm}}           | ![Checkmark icon](../../icons/checkmark-icon.svg)    | `NO`             | `Events are available through the Log Analysis Tokyo instance` | `Events are available through the Log Analysis Tokyo instance` |
 | {{site.data.keyword.databases-for-postgresql_full_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)    | `NO`             | `Events are available through the Log Analysis Tokyo instance` | `Events are available through the Log Analysis Tokyo instance` |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}          | `NO`               | `Events are available through the Log Analysis Dallas instance`             | `NO`                     | `NO`                     |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}       | `NO`               | `Events are available through the Log Analysis Dallas instance`             | `NO`                     | `NO`                     |
 | {{site.data.keyword.messages-for-rabbitmq_full_notm}}           | ![Checkmark icon](../../icons/checkmark-icon.svg)    | `NO`             | `Events are available through the Log Analysis Tokyo instance` | `Events are available through the Log Analysis Tokyo instance` |
 | {{site.data.keyword.databases-for-redis_full_notm}}             | ![Checkmark icon](../../icons/checkmark-icon.svg)    | `NO`             | `Events are available through the Log Analysis Tokyo instance` | `Events are available through the Log Analysis Tokyo instance` |
 {: caption="Table 5. Database services integration in AP locations" caption-side="top"}
@@ -110,8 +114,10 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.cloudant_short_notm}}                     | `NO`                | `NO`             | `NO`                      |
 | {{site.data.keyword.databases-for-elasticsearch_full_notm}}   | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis London instance` |
 | {{site.data.keyword.databases-for-etcd_full_notm}}            | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis London instance` |
-| {{site.data.keyword.databases-for-mongodb_full_notm}}         | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis London instance` | 
+| {{site.data.keyword.databases-for-mongodb_full_notm}}         | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis London instance` |
 | {{site.data.keyword.databases-for-postgresql_full_notm}}      | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis London instance` |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)                | `NO`             | `NO`                      |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}     | ![Checkmark icon](../../icons/checkmark-icon.svg)                | `NO`             | `NO`                      |
 | {{site.data.keyword.messages-for-rabbitmq_full_notm}}         | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis London instance` |
 | {{site.data.keyword.databases-for-redis_full_notm}}           | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis London instance` |
 {: caption="Table 6. Database services integration in Europe locations" caption-side="top"}
@@ -150,7 +156,7 @@ The following tables list the locations where automatic collection of security s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | 
+| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|:-------------------:|:----------------:|
 | {{site.data.keyword.cloudcerts_full_notm}}                    | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`             |
 | {{site.data.keyword.keymanagementservicelong}}                | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`             |
@@ -171,8 +177,8 @@ The following tables list the locations where automatic collection of security s
 | Service                                                         | `Dallas (us-south)` | `Washington (us-east)`                   |
 |-----------------------------------------------------------------|---------------------|--------------------------------------|
 | [{{site.data.keyword.block_storage_is_short}} - Storage resources](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-getting-started)| ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`   |            
-| [{{site.data.keyword.vsi_is_short}} - Compute resources](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-getting-started)|  ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` | 
-| [VPC Network resources](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-getting-started)|  ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` | 
+| [{{site.data.keyword.vsi_is_short}} - Compute resources](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-getting-started)|  ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` |
+| [VPC Network resources](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-getting-started)|  ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` |
 | [VPC Load Balancer](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)| ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` |  
 | [VPC VPN](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-vpn-with-your-vpc)| `Events are available through the Activity Tracker US-South instance` | `Events are available through the Activity Tracker US-South instance` |
 {: caption="Table 10. VPC events in America's locations" caption-side="top"}
@@ -196,7 +202,7 @@ The following tables list the locations where automatic collection of security s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | 
+| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|:-------------------:|:----------------:|
 | [{{site.data.keyword.block_storage_is_short}} - Storage resources](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-getting-started)| ![Checkmark icon](../../icons/checkmark-icon.svg)               | `Events are available through the Activity Tracker EU-DE instance` |            
 | [{{site.data.keyword.vsi_is_short}} - Compute resources](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-getting-started)|  ![Checkmark icon](../../icons/checkmark-icon.svg)               | `Events are available through the Activity Tracker EU-DE instance` |            
@@ -209,6 +215,3 @@ The following tables list the locations where automatic collection of security s
 {: tab-group="cs_vpc"}
 {: class="simple-tab-table"}
 {: row-headers}
-
-
-
