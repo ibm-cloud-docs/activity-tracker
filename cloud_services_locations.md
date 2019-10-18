@@ -90,7 +90,6 @@ The following tables list the locations where automatic collection of database s
 {: tab-group="cs_dbs"}
 {: class="simple-tab-table"}
 {: row-headers}
-
 | Service                                                         | `Tokyo (jp-tok)`   |`Sydney (au-syd)` | `Seoul 01 (seo01)`       | `Chennai 01 (che01)`     |
 |-----------------------------------------------------------------|:------------------:|:----------------:|:-------------------------|:-------------------------|
 | {{site.data.keyword.cloudant_short_notm}}                       | `NO`               | `NO`             | `NO`                     | `NO`                     |
@@ -108,7 +107,6 @@ The following tables list the locations where automatic collection of database s
 {: tab-group="cs_dbs"}
 {: class="simple-tab-table"}
 {: row-headers}
-
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Oslo 01 (osl01)`         |
 |---------------------------------------------------------------|:-------------------:|:----------------:|:--------------------------|
 | {{site.data.keyword.cloudant_short_notm}}                     | `NO`                | `NO`             | `NO`                      |
