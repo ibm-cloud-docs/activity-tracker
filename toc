@@ -16,11 +16,6 @@ IBM Cloud Activity Tracker with LogDNA
     iam_manage_login.md
 
     {: .topicgroup}
-    Integration with other Cloud services
-        archive.md
-        sqlquery.md
-
-    {: .topicgroup}
     Compliance
         manage_eu_acc.md
 
@@ -46,14 +41,28 @@ IBM Cloud Activity Tracker with LogDNA
     {: .navgroup id="howto"}
     provision.md
     remove.md
-    launch.md
-    config.md
-    iam_manage_events.md
-    iam_view_events.md
-    view_events.md
-    views.md
-    alerts.md
-    export.md
+
+    {: .topicgroup}
+    DevOps tasks
+        archive.md
+        control_usage.md
+        exclusion_rules.md
+        iam_manage_events.md
+        iam_view_events.md
+        reuse_resource_definitions.md
+        sqlquery.md
+
+    {: .topicgroup}
+    View logs
+        launch.md
+        config.md
+        views.md
+        view_events.md
+        alerts.md
+
+    {: .topicgroup}
+    Export logs
+        export.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
