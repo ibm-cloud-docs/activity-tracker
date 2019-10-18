@@ -40,7 +40,7 @@ Events that are excluded do not count towards your data usage quota. Also, event
 
 When you exclude events through an exclusion rule, you can choose to **Preserve these lines for live-tail and alerting**. When you check this option, log lines that match the exclusion rule are shown through the live tail and you can set up an alert for that data.
 
-[Learn more](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-exclusion).
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-exclusion).
 
 ​
 
