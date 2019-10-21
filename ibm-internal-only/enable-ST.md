@@ -104,16 +104,22 @@ The below listing shows how the new fields fit into the overall JSON that descri
 If your service is not already using the old version of Activity Tracker, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#ibm_event_fields) to understand how an event must be formatted and the definitions of the event fields.
 
 ### Deployment changes to support Kubernetes volumes
-Activity Tracker requires services to write events to a file in /var/log/at on the worker node.
-You will also have to do this if you are writing logs to a file in /var/log.
-We utilize Kubernetes volumes to accomplish this. The logDNA agent mounts the same volume in 
+Activity Tracker requires services to write events to a file in a subdirectory of `/var/log/at` on the worker node.
+For example, write to `/var/log/at/myservice` where "myservice" is the catalog id of your service.
+You should mount the `/var/log/at/myservice` directory rather than `/var/log/at`, 
+in order to avoid conflicts with other microservices that are also writing AT events.
+We utilize Kubernetes volumes to manage the directories. The logDNA agent mounts the same volume in 
 order to make events and logs available to the  LogDNA agent. Go [here](https://kubernetes.io/docs/concepts/storage/volumes/) to learn more about Kubernetes 
 volumes.
+You can assume that `/var/log/at` has already been created by Kubernetes, 
+and you only need to add the `myservice` subdirectory.
 
-We recommend you mount `/var/log`. This will also pick up files written to /var/log/at.
-At a minimum you must mount: `/var/log/at`.
+You can write super tenant logs by writing to `stdout`. 
+Alternatively, you can write them to a subdirectory in `/var/log`, such as `/var/log/myservice`.
+You should mount `/var/log/myservice` in this case.
 
 Your service deployment .yaml file must be changed to add [hostPath volume mounts](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath). Listed below is an example deployment yaml. The fields of interest are **volumeMounts** and **volumes**.
+Again, "myservice" should be replaced by the catalog id of your service.
 
 ```
 apiVersion: extensions/v1beta1
@@ -125,26 +131,27 @@ spec:
   - name: at-tester
     image: de.icr.io/kingco_bss/at-tester:1
     volumeMounts:
-    - mountPath: /var/log
+    - mountPath: /var/log/at/myservice
       name: logs 
   volumes: 
   - name: logs
     hostPath:
-      path: /var/log 
+      path: /var/log/at/myservice
 
 ```
 
 ### Activity Tracker guidelines 
 
 **Write Activity Tracker events** to one of the following directories depending on your log rotation approach:
-* Activity Tracker events should be written to `/var/log/at` if you rely on the cluster handling event rotation. IKS is already enabled to rotate logs in this directory 
-* Activity Tracker events should be written to `/var/log/at-no-rotate` if your service handles rotation.
+* Activity Tracker events should be written to `/var/log/at/myservice` if you rely on the cluster handling event rotation. IKS is already enabled to rotate logs in this directory 
+* Activity Tracker events should be written to `/var/log/at-no-rotate/myservice` if your service handles rotation.
+* In either case, only mount the full path to `myservice` to avoid any conflicts.
 
 **Log file names should be unique** to eliminate the possibility of two pods updating the same file in the shared volume. One technique is to use the hostname of the pod in the log file name. Below is an example.
  
 ```
 const hostname = os.hostname();
-const logFileName = `/var/log/at/${hostname}.log\`;
+const logFileName = `/var/log/at/myservice/${hostname}.log\`;
 ```
  {: codeblock}
 
@@ -166,7 +173,7 @@ We have a tool that will validate your events and provide guidance on what may b
 
 ### Write logs with Super Tenancy
 
-* Write your Super Tenant logs in **/var/log** or to **stdout**.
+* Write your Super Tenant logs in a subdirectory of **/var/log** or to **stdout**.
 * Logs or events written in `/var/log`  and directories underneath (except `at`) will be considered logs. Anything written to `stdout` will be considered a log.
 * If you want to send logs to customers, you must implement the `logSourceCRN` and `saveServiceCopy` JSON fields noted above.
 
@@ -756,13 +763,15 @@ For now, global events are being stored in eu-de (Frankfurt) by convention. We w
 ### Root Access on Kubernetes
 {: #rootaccess}
 
-For a service using Activity Tracker on Kubernetes, the best practice is to write Activity Tracker events to a host-mounted volume on the worker node. The service writes to a log file in /var/log/at and an agent reads the events and sends them to Activity Tracker. In an outage (in nearly any part of the system), the Activity Tracker events will be preserved in the log file and processed when the outage is resolved. 
+For a service using Activity Tracker on Kubernetes, the best practice is to write Activity Tracker events to a host-mounted volume on the worker node. The service writes to a log file in a subdirectory of /var/log/at and an agent reads the events and sends them to Activity Tracker. In an outage (in nearly any part of the system), the Activity Tracker events will be preserved in the log file and processed when the outage is resolved. 
 
 The LogDNA agent will run as root, as this is considered the best practice for Kubernetes logging agents. We are working with the CISO team to establish a cloud-wide exception for the LogDNA agent running as root
 
-You can use an **initContainer** to change the permissions of the /var/log/at directory so you do not have to be root to write events. The initContainer runs as root and changes the permissions of the directory. 
+You can use an **initContainer** to change the permissions of the subdirectory of /var/log/at directory so you do not have to be root to write events. The initContainer runs as root and changes the permissions of the directory. 
 
  Below is an example of a deployment yaml file that has an initContainer section. Optionally, you can have the initContainers section use `chown` to restrict access to a single user.
+ Be sure to work with a subdirectory of `at`, such as `/var/log/at/myservice`, 
+ where "myservice" is the catalog id of your service.
 
  ```
 apiVersion: v1
@@ -775,14 +784,14 @@ spec:
   volumes:
     - name: at-events
       hostPath:
-        path: /var/log/at
+        path: /var/log/at/myservice
   containers:
   - name: activity-tracker
     image: busybox:1.28
     command: ['sh', '-c', 'echo The app is running! && sleep 3600']
     volumeMounts:
       - name: at-events
-        mountPath: /var/log/at
+        mountPath: /var/log/at/myservice
     securityContext:
       runAsUser: 1001
   initContainers:
@@ -791,10 +800,10 @@ spec:
     command:
       - sh
       - -c
-      - 'mkdir -p /var/log/at/helloAT; chmod -R a+rwx /var/log/at/helloAT'
+      - 'mkdir -p /var/log/at/myservice; chmod -R a+rwx /var/log/at/myservice'
     volumeMounts:
       - name: at-events
-        mountPath: /var/log/at
+        mountPath: /var/log/at/myservice
     securityContext:
       runAsUser: 0
  ```
@@ -812,7 +821,7 @@ If you can not do this right now, proceed to other options below.
 #### Use a LogDNA Agent 
 {: #nokubelogdnaagent}
 
-LogDNA provides an assortment of non-kubernetes agents. These agents will behave like the kubernetes agent. They will still read read from log files, have retry support, and support super tenancy. For Activity Tracker events you should write your events to a file in /var/log/at.
+LogDNA provides an assortment of non-kubernetes agents. These agents will behave like the kubernetes agent. They will still read read from log files, have retry support, and support super tenancy. For Activity Tracker events you should write your events to a file in a subdirectory of /var/log/at.
  
 - You will need to create your service's Logging STS and Activity Tracker ATS. Follow the instructions above.
 - Go to Observability-> Logging 
