@@ -108,11 +108,10 @@ Activity Tracker requires services to write events to a file in a subdirectory o
 For example, write to `/var/log/at/myservice` where "myservice" is the catalog id of your service.
 You should mount the `/var/log/at/myservice` directory rather than `/var/log/at`, 
 in order to avoid conflicts with other microservices that are also writing AT events.
+Your `/var/log/at/myservice` directory will be created by Kubernetes when you mount it, if it doesn't already exist.
 We utilize Kubernetes volumes to manage the directories. The logDNA agent mounts the same volume in 
 order to make events and logs available to the  LogDNA agent. Go [here](https://kubernetes.io/docs/concepts/storage/volumes/) to learn more about Kubernetes 
 volumes.
-You can assume that `/var/log/at` has already been created by Kubernetes, 
-and you only need to add the `myservice` subdirectory.
 
 You can write super tenant logs by writing to `stdout`. 
 Alternatively, you can write them to a subdirectory in `/var/log`, such as `/var/log/myservice`.
@@ -196,7 +195,7 @@ All commands should be run from a terminal that is logged into your service's IB
 
     * You do not need a provision key to later change your service plan or delete the instance.
 
-    * The provision key is rotated near the end of each quarter, starting on June 25th 2019 at 4pm UTC. **This does not impact existing STS and ATS instances.** It is only for provisioning new ones. If you cannot provision an STS or ATS using the instructions on this page (i.e. the service-instance-create fails with 401), then ensure you have the latest key.
+    * The provision key is rotated after the beginning of each quarter, on the 15th of the month. **This does not impact existing STS and ATS instances.** It is only for provisioning new ones. If you cannot provision an STS or ATS using the instructions on this page (i.e. the service-instance-create fails with 401), then ensure you have the latest key. If needed, request an updated provision key by opening an issue [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/activity-tracker/customer-issues/issues/new?template=logdna_provision_key.md){:new_window}, as above.
 
 2. Provision your service's Logging Super Tenant Sender (STS)
 
