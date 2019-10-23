@@ -82,18 +82,18 @@ This step is required for existing services that are planning to on-board to {{s
 
 ### Activity Tracker and Logging JSON 
 
-Three new optional fields are available to use the Logging and Activity Tracker JSON. **logSourceCRN** is required if you are using Super Tenancy to send logs and events to a user of your service.
+Three optional fields are available to use in the Logging and Activity Tracker JSON. **logSourceCRN** is required if you are using Super Tenancy to send logs and events to a user of your service.
 
-* **logSourceCRN**: This field is used to determine the customer whom you want to receive the log or event. The logSourceCRN is the CRN of the service instance (or internal resource) of your service created by the customer. If not present, no event will be sent to a customer.  The CRN `scope` segment must be the customer's account, and the `location` segment must be the location of the service instance or resource--the region where the event is ingested.
+* **logSourceCRN**: This field is used to determine the customer whom you want to receive the log or event. The logSourceCRN is the CRN of the service instance (or internal resource) of your service created by the customer. If not present, no event will be sent to a customer.  The CRN `scope` segment must be the customer's account, and the `location` segment must be the location of the service instance or resource--normally the region where the event is ingested.
 * **saveServiceCopy**: This field indicates if your service wants a copy of the log or event. This is an `optional` field. If the field is not present, the default of true will be used and your service will get a copy of the log or event. Set this field to false if your service does not want a copy of the log record or event. If the field is false, LogDNA will not charge your service for the event since it only charges each service or customer for what is stored.
-* **message**: This field will be displayed as the summary line of the log/event in the LogDNA UI. The message field has a prescribed format for Activity Tracker. Refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields) for format information.
+* **message**: This field will be displayed as the summary line of the log/event in the LogDNA UI. The message field has a prescribed format for Activity Tracker, and is **required** for Activity Tracker. Refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields) for format information.
 
-The below listing shows how the new fields fit into the overall JSON that describes the event.
+The below listing shows how these fields fit into the overall JSON that describes the event.
 
 ```
 {
-  'payload': {'message': <new_msg_format>, /* existing CADF fields */},
-  'meta': {<meta>},
+  'message': <any_string>, /* optional for logging, required for AT in a specific format */ 
+  /* required CADF fields for AT */
   'logSourceCRN': <crn_of_serviceInstance>, 
   'saveServiceCopy: true
 }
@@ -101,7 +101,7 @@ The below listing shows how the new fields fit into the overall JSON that descri
 {: codeblock}
 
 
-If your service is not already using the old version of Activity Tracker, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#ibm_event_fields) to understand how an event must be formatted and the definitions of the event fields.
+If your service is adopting Activity Tracker, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#ibm_event_fields) to understand how an event must be formatted and the definitions of the CADF event fields.
 
 ### Deployment changes to support Kubernetes volumes
 Activity Tracker requires services to write events to a file in a subdirectory of `/var/log/at` on the worker node.
@@ -569,7 +569,7 @@ You must create one for testing purposes.  Your service would use the CRN of the
 ## Step 9. Test Activity Tracker with your service
 {: #ATSTEST}
 
-In this test we are going to simulate that your service is writing an event line to a file in `/var/log/at`. The LogDNA agent will then send the event to LogDNA. LogDNA will then put a copy of the event in your service's ATS instance and your simulated customers ATR instance.
+In this test we are going to simulate that your service is writing an event line to a file in `/var/log/at/myservice`. The LogDNA agent will then send the event to LogDNA. LogDNA will then put a copy of the event in your service's ATS instance and your simulated customers ATR instance.
 
 1. Prepare an event line. 
 
@@ -578,14 +578,14 @@ In this test we are going to simulate that your service is writing an event line
     Raw message if you use an editor:
  
     ```
-    {"payload":{"action":"bss-metering-test.event.create","severity":"normal","eventTime":"2018-06-13T00:05:39.11+0000","initiator":{"id":"IBMid-3mbbuga6i7","name":"Nellie_Wolf59@hotmail.com","typeURI":"service/security/account/user","credential":{"type":"user"},"host":{"agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36","address":"169.46.16.210"}},"target":{"id":"crn:v1:production:public:bss-metering-test:undefined:s/undefined:1234-5678-9012-3456:event:1","name":"bss-metering-test","typeURI":"bss-metering-test/event/create"},"reason":{"reasonCode":200},"outcome":"success","requestData":"{\"name\":\"Sequi\",\"localTime\":\"11:13:48 PM\"}","message":"This is a test"},"saveServiceCopy":true,"logSourceCRN":"<ATR_CRN>"}
+    {"action":"bss-metering-test.event.create","severity":"normal","eventTime":"2018-06-13T00:05:39.11+0000","initiator":{"id":"IBMid-3mbbuga6i7","name":"Nellie_Wolf59@hotmail.com","typeURI":"service/security/account/user","credential":{"type":"user"},"host":{"agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36","address":"169.46.16.210"}},"target":{"id":"crn:v1:production:public:bss-metering-test:undefined:s/undefined:1234-5678-9012-3456:event:1","name":"bss-metering-test","typeURI":"bss-metering-test/event/create"},"reason":{"reasonCode":200},"outcome":"success","requestData":"{\"name\":\"Sequi\",\"localTime\":\"11:13:48 PM\"}","message":"This is a test","saveServiceCopy":true,"logSourceCRN":"<ATR_CRN>"}
     ```
     {: codeblock}
 
     Echo the log line to a file:
  
     ```
-    echo "{\"payload\":{\"action\":\"bss-metering-test.event.create\",\"severity\":\"normal\",\"eventTime\":\"2018-06-13T00:05:39.11+0000\",\"initiator\":{\"id\":\"IBMid-3mbbuga6i7\",\"name\":\"Nellie_Wolf59@hotmail.com\",\"typeURI\":\"service/security/account/user\",\"credential\":{\"type\":\"user\"},\"host\":{\"agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36\",\"address\":\"169.46.16.210\"}},\"target\":{\"id\":\"crn:v1:production:public:bss-metering-test:undefined:s/undefined:1234-5678-9012-3456:event:1\",\"name\":\"bss-metering-test\",\"typeURI\":\"bss-metering-test/event/create\"},\"reason\":{\"reasonCode\":200},\"outcome\":\"success\",\"requestData\":\"{\\\"name\\\":\\\"Sequi\\\",\\\"localTime\\\":\\\"11:13:48 PM\\\"}\",\"message\":\"This is a test\"},\"saveServiceCopy\":true,\"logSourceCRN\":\"crn:v1:bluemix:public:logdnaat:us-south:a/3b76b4a971bfe8e5a1f5baba5d81a845:c6d2975e-bdbf-431f-8e2a-d48f668cd272::\"}" > at.log
+    echo "{\"action\":\"bss-metering-test.event.create\",\"severity\":\"normal\",\"eventTime\":\"2018-06-13T00:05:39.11+0000\",\"initiator\":{\"id\":\"IBMid-3mbbuga6i7\",\"name\":\"Nellie_Wolf59@hotmail.com\",\"typeURI\":\"service/security/account/user\",\"credential\":{\"type\":\"user\"},\"host\":{\"agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36\",\"address\":\"169.46.16.210\"}},\"target\":{\"id\":\"crn:v1:production:public:bss-metering-test:undefined:s/undefined:1234-5678-9012-3456:event:1\",\"name\":\"bss-metering-test\",\"typeURI\":\"bss-metering-test/event/create\"},\"reason\":{\"reasonCode\":200},\"outcome\":\"success\",\"requestData\":\"{\\\"name\\\":\\\"Sequi\\\",\\\"localTime\\\":\\\"11:13:48 PM\\\"}\",\"message\":\"This is a test\",\"saveServiceCopy\":true,\"logSourceCRN\":\"crn:v1:bluemix:public:logdnaat:us-south:a/3b76b4a971bfe8e5a1f5baba5d81a845:c6d2975e-bdbf-431f-8e2a-d48f668cd272::\"}" > at.log
     ```
     {: codeblock}
 
@@ -613,7 +613,7 @@ In this test we are going to simulate that your service is writing an event line
     If the `at` directory does not exist, create it.
 
     ```
-    cd /var/log/at
+    cd /var/log/at/myservice
     ```
     {: codeblock}
 
@@ -710,6 +710,22 @@ do not see it. Below we outline the changes that customers will see.
   * `payload` fields are promoted to top level, and `payload` is removed.
   * `level` is set to the `severity` field specified in the Activity Tracker event.
   * `timestamp` is set to the `eventTime` field in the Activity Tracker event.
+
+
+### Differences in legacy and LogDNA Activity Tracker events
+{: #legacy_vs_new_at}
+
+The legacy Activity Tracker service was ended in October 2019.
+It is replaced by Activity Tracker with LogDNA, which supports a number of improvements in the format of the events.
+
+The events that worked on legacy Activity will continue to work on the new Activity Tracker with LogDNA.
+However, services should consider the following improvements:
+
+* `requestData`/`responseData` can be any JSON object, not just stringified JSON. A JSON object is now preferred over stringified JSON, for better parsing and searching.
+* The `meta` object is now ignored. Services should remove it.
+* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` is not required, and defaults to `false`. Refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#optional) for more info.
+* Events should have the CADF fields at the top level, and no longer encapsulate the CADF fields in the `payload` structure. When an event does have `payload`, LogDNA removes it and promotes its internal fields to the top level.
+* The `observer` fields are no longer discouraged, and `observer.name` should be set to "ActivityTracker". `observer.name` may be used in the future to support sending events to AT via stdout.
 
 
 ### Regions
@@ -872,7 +888,7 @@ As a last resort you can use LogDNA's REST API or code libraries. This section w
 -d '{
   "lines": [
     {
-      "line": "{\"payload\":{\"action\":\"matt-hello-at.greeting.create\",\"severity\":\"normal\",\"eventTime\":\"2018-06-13T00:05:39.11+0000\",\"initiator\":{\"id\":\"rbetram@us.ibm.com\",\"name\":\"rbetram@us.ibm.com\",\"typeURI\":\"service/security/account/user\",\"credential\":{\"type\":\"user\"},\"host\":{\"agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"address\":\"169.62.218.62\"}},\"target\":{\"id\":\"crn:v1:bluemix:public:hello-at:undefined:s/undefined:1234-5678-9012-3456:greeting:1\",\"name\":\"helloATv3\",\"typeURI\":\"helloAT/user/greeting\"},\"reason\":{\"reasonCode\":200},\"outcome\":\"success\",\"requestData\":\"{\\\"name\\\":\\\"Amy\\\",\\\"localTime\\\":\\\"4:54:55 PM\\\"}\",\"responseData\":\"{\\\"greeting\\\":\\\"Hello, Amy!\\\"}\",\"message\":\"AT Kube Test: create greeting  helloATv3 name: Amy\"},\"meta\":{\"serviceProviderName\":\"hello-at-v3-logdna\",\"serviceProviderRegion\":\"ng\",\"serviceProviderProjectId\":\"6fbed285-0582-4014-bad0-8a05aed4239a\",\"userSpaceId\":\"2fbeace5-0baa-4bec-87b7-79833801f274\",\"userSpaceRegion\":\"ng\"},\"saveServiceCopy\":true,\"logSourceCRN\":\"crn:v1:staging:public:logdnaat:us-south:a/69eeb070845e4b319f1330fd188cb902:6a0dc626-70af-42aa-9904-4dce6ced5b3a::\"}", 
+      "line": "{\"action\":\"matt-hello-at.greeting.create\",\"severity\":\"normal\",\"eventTime\":\"2018-06-13T00:05:39.11+0000\",\"initiator\":{\"id\":\"rbetram@us.ibm.com\",\"name\":\"rbetram@us.ibm.com\",\"typeURI\":\"service/security/account/user\",\"credential\":{\"type\":\"user\"},\"host\":{\"agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"address\":\"169.62.218.62\"}},\"target\":{\"id\":\"crn:v1:bluemix:public:hello-at:undefined:s/undefined:1234-5678-9012-3456:greeting:1\",\"name\":\"helloATv3\",\"typeURI\":\"helloAT/user/greeting\"},\"reason\":{\"reasonCode\":200},\"outcome\":\"success\",\"requestData\":\"{\\\"name\\\":\\\"Amy\\\",\\\"localTime\\\":\\\"4:54:55 PM\\\"}\",\"responseData\":\"{\\\"greeting\\\":\\\"Hello, Amy!\\\"}\",\"message\":\"AT Kube Test: create greeting  helloATv3 name: Amy\",\"saveServiceCopy\":true,\"logSourceCRN\":\"crn:v1:staging:public:logdnaat:us-south:a/69eeb070845e4b319f1330fd188cb902:6a0dc626-70af-42aa-9904-4dce6ced5b3a::\"}", 
       "level": "INFO",
       "env": "production",
       "app": "/var/log/at/helloAT.log"
@@ -885,7 +901,6 @@ As a last resort you can use LogDNA's REST API or code libraries. This section w
 **Notes:**
   
 - This is an Activity Tracker example, because the "app" is set to the /var/log/at directory. This causes the STSender to forward to AT; otherwise, it is just normal super tenant lines.
-- The "line" is the familiar CADF format of Activity Tracker, wrapped in a payload. The meta structure is no longer necessary, and instead the logSourceCRN field controls where the customer copy of the event should be sent.
 - You can send a number of lines in one API call, since "lines" is an array. The maximum size you can send is 16 Kb
 - One pitfall is that you must manage the persistence of your logs and events. If you store your logs and events in memory, the data will be lost if your program crashes or LogDNA is not accessible for a period of time. This limitation is overcome in the agent approach because it stores the logs and events in a disk based file. The LogDNA agent will automatically send the saved data when conditions get corrected.
 
