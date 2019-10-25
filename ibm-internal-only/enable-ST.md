@@ -41,9 +41,10 @@ Before continuing, review [Understanding Super Tenancy and Activity Tracker](/do
 Here are the most common definitions that will be used in this document: 
 
 * **Logging Super Tenant Sender (STS)**: STS is your service's super tenant {{site.data.keyword.la_short}} instance. You view your service's logs in this instance. 
-* **Logging Super Tenant Receiver (STR)**: STR is a logging instance created by the user. This is the instance in the customer's account where the customer can view logs that your service sends to them. The customer can also view any logs they are generated from their custom applications.
+* **Logging Super Tenant Receiver (STR)**: STR is a logging instance created by the user and designated for "Platform Service Log". This is the instance in the customer's account where the customer can view logs that your service sends to them. The customer can also view any logs they are generated from their custom applications.
 * **Activity Tracker Sender (ATS)**: ATS is your service's {{site.data.keyword.at_short}} instance. All your service Activity Tracker (AT) events will be found here.
 * **Activity Tracker Receiver (ATR)**: ATR is the customer's {{site.data.keyword.at_short}} instance. This is the instance where a customer can view AT events that your service sends to them. 
+* The **CRN service-name** of your service is its programmatic name in the catalog. You can look it up [here](http://resource-catalog.bluemix.net/search) in the Name column. For example, the service-name for Event Streams is `messagehub`. This name is used for registring the STS and ATS above. It is also referred to by "myService" in these instructions.
 
 ## Steps to enable Super tenancy and Activity Tracker
 {: #st_process}
@@ -93,7 +94,7 @@ The below listing shows how these fields fit into the overall JSON that describe
 ```
 {
   'message': <any_string>, /* optional for logging, required for AT in a specific format */ 
-  /* required CADF fields for AT */
+  /* required CADF fields for AT go here */
   'logSourceCRN': <crn_of_serviceInstance>, 
   'saveServiceCopy: true
 }
@@ -105,7 +106,7 @@ If your service is adopting Activity Tracker, refer [here](/docs/services/Activi
 
 ### Deployment changes to support Kubernetes volumes
 Activity Tracker requires services to write events to a file in a subdirectory of `/var/log/at` on the worker node.
-For example, write to `/var/log/at/myservice` where "myservice" is the catalog id of your service.
+For example, write to `/var/log/at/myservice` where "myservice" is the CRN name of your service; look it up [here](http://resource-catalog.bluemix.net/search) in the Name column.
 You should mount the `/var/log/at/myservice` directory rather than `/var/log/at`, 
 in order to avoid conflicts with other microservices that are also writing AT events.
 Your `/var/log/at/myservice` directory will be created by Kubernetes when you mount it, if it doesn't already exist.
@@ -118,7 +119,7 @@ Alternatively, you can write them to a subdirectory in `/var/log`, such as `/var
 You should mount `/var/log/myservice` in this case.
 
 Your service deployment .yaml file must be changed to add [hostPath volume mounts](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath). Listed below is an example deployment yaml. The fields of interest are **volumeMounts** and **volumes**.
-Again, "myservice" should be replaced by the catalog id of your service.
+Again, "myservice" should be replaced by the CRN name of your service.
 
 ```
 apiVersion: extensions/v1beta1
@@ -786,7 +787,7 @@ You can use an **initContainer** to change the permissions of the subdirectory o
 
  Below is an example of a deployment yaml file that has an initContainer section. Optionally, you can have the initContainers section use `chown` to restrict access to a single user.
  Be sure to work with a subdirectory of `at`, such as `/var/log/at/myservice`, 
- where "myservice" is the catalog id of your service.
+ where "myservice" is the CRN name of your service; look it up [here](http://resource-catalog.bluemix.net/search) in the Name column.
 
  ```
 apiVersion: v1
