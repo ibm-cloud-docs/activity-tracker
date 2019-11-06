@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-10-06"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -52,7 +52,7 @@ The following table lists the actions that generate an event:
 | `iam-groups.rule.create`    | An event is generated when an initiator adds a rule to an access group. |
 | `iam-groups.rule.update`    | An event is generated when an initiator modifies the rule name. |
 | `iam-groups.rule.delete`    | An event is generated when an initiator deletes a rule from an access group. |
-| `iam-groups.member.federated-login` | An event is generated when an initiator logs in to the account and gains federated membership to an access group. |
+| `iam-groups.federated-member.add` | An event is generated when an initiator logs in to the account and gains federated membership to an access group. |
 {: caption="Table 1. Manage access groups actions" caption-side="top"} 
 
 
