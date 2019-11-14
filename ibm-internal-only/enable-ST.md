@@ -331,14 +331,6 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     ```
     {: codeblock}
 
-   
-
-3. Legacy Activity Tracker
-
-    If your service is already sending data to the legacy Activity Tracker via fluentd, then the fluentd will continue to work as-is alongside the logdna-agent. 
-
-    **Your service should continue to send data to legacy Activity Tracker until the legacy Activity Tracker service is shut down.**
-
 
 ## Step 4. Set up a test Super Tenant Receiver (STR) instance 
 {: #STR}
@@ -574,7 +566,7 @@ In this test we are going to simulate that your service is writing an event line
 
 1. Prepare an event line. 
 
-    Below is a sample event. Note the meta block is not included so the event will only go to LogDNA. Add your own meta block if you have the legacy AT fluentd plugin installed and want to send events to go to both the legacy and new Activity Trackers.
+    Below is a sample event.
 
     Raw message if you use an editor:
  
@@ -711,22 +703,6 @@ do not see it. Below we outline the changes that customers will see.
   * `payload` fields are promoted to top level, and `payload` is removed.
   * `level` is set to the `severity` field specified in the Activity Tracker event.
   * `timestamp` is set to the `eventTime` field in the Activity Tracker event.
-
-
-### Differences in legacy and LogDNA Activity Tracker events
-{: #legacy_vs_new_at}
-
-The legacy Activity Tracker service was ended in October 2019.
-It is replaced by Activity Tracker with LogDNA, which supports a number of improvements in the format of the events.
-
-The events that worked on legacy Activity will continue to work on the new Activity Tracker with LogDNA.
-However, services should consider the following improvements:
-
-* `requestData`/`responseData` can be any JSON object, not just stringified JSON. A JSON object is now preferred over stringified JSON, for better parsing and searching.
-* The `meta` object is now ignored. Services should remove it.
-* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` is not required, and defaults to `false`. Refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#optional) for more info.
-* Events should have the CADF fields at the top level, and no longer encapsulate the CADF fields in the `payload` structure. When an event does have `payload`, LogDNA removes it and promotes its internal fields to the top level.
-* The `observer` fields are no longer discouraged, and `observer.name` should be set to "ActivityTracker". `observer.name` may be used in the future to support sending events to AT via stdout.
 
 
 ### Regions
