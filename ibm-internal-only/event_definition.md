@@ -42,6 +42,8 @@ The CADF event model requires 5 components. For Activity Tracker, these translat
 4. target: the IBM service that the action is performed against
 5. outcome: the result of the action; "success" or "failure"
 
+<img src="images/CADF-event.png" alt="CADF event model"  height="200" width="300"  />
+
 Following is a sample event, to use as an example. Each of the fields is explained in the rest of this page.
 
 ```js
@@ -216,7 +218,7 @@ The following table list the mandatory fields:
   </tr>
   <tr>
     <td>requestData<br>responseData</td>
-	  <td>These two fields are not part of CADF, but are provided for services to use for custom JSON. </br>Add any information here that will enhance the user experience going through ther audit trail of your service events.  </br>Add value pairs of information. Although this is a string field, add the information as JSON. </br>Some fields: </br>{"ResourceGroupID":"CRN of the resource group"} </br>{"ReasonForFailure":"Additional information about why the request failed"} </td>
+	  <td>These two fields are not part of CADF, but are provided for services to use for custom JSON. </br>Add any information here that will enhance the user experience going through ther audit trail of your service events.  </br>Add value pairs of information. </br>Some fields: </br>{"ResourceGroupID":"CRN of the resource group"} </br>{"ReasonForFailure":"Additional information about why the request failed"} </td>
 	  <td>Notice that for update events (this field is required), you should add details of original version and final version of the change.</td>
   </tr>
   <tr>
@@ -226,7 +228,7 @@ The following table list the mandatory fields:
   </tr>
   <tr>
 	<td>dataEvent</td>
-	<td>True if this event is a "data event" rather than a "management event". See [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events) for an explanation. The default is `false`, so that an event is a management event unless it has `dataEvent:true`. <br/><br/>This field is not part of CADF. This field can only be provided to Activity Tracker with LogDNA; legacy AT will not parse it.</td>
+	<td>True if this event is a "data event" rather than a "management event". See [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events) for an explanation. The default is `false`, so that an event is a management event unless it has `dataEvent:true`. However, should be set to `false` explicitly.  <br/><br/>This field is not part of CADF. This field can only be provided to Activity Tracker with LogDNA; legacy AT will not parse it.</td>
 	<td>`true`<br/>`false` (default)</td>
   </tr>
 </table>
@@ -253,7 +255,7 @@ Activity Tracker with LogDNA relies on three new fields: `logSourceCRN`, `saveSe
   </tr>
   <tr>
     <td>saveServiceCopy</td>
-	  <td>This field is used to control whether the IBM service gets a copy of the event or not. </br></br>Defaults to <b>true</b>. </br></br>If set to <b>true</b>,  the event is saved to the service's account.  </br></br>If set to <b>false</b>, then event is not saved to the service's account.</td>
+	  <td>This field is used to control whether the IBM service gets a copy of the event or not. </br></br>Defaults to <b>true</b>, but should be set to <b>true</b> explicitly. </br></br>If set to <b>true</b>, the event is saved to the service's account.  </br></br>If set to <b>false</b>, then event is not saved to the service's account.</td>
 	  <td><b>true</b> </br><b>false</b></td>
   </tr>
   <tr>
@@ -306,4 +308,21 @@ Activity Tracker with LogDNA relies on three new fields: `logSourceCRN`, `saveSe
   </tr>
 </table>
 
+## Differences in legacy and LogDNA Activity Tracker events
+{: #legacy_vs_new_at}
 
+The legacy Activity Tracker service was ended in October 2019.
+It is replaced by Activity Tracker with LogDNA, which supports a number of improvements in the format of the events.
+
+The events that worked on legacy Activity will continue to work on the new Activity Tracker with LogDNA.
+However, services should consider the following improvements:
+
+* `requestData`/`responseData` can be any JSON object, not just stringified JSON. A JSON object is now preferred over stringified JSON, for better parsing and searching. All events should include `requestData` and `responseData`, even if empty.
+* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` defaults to `false`, but events should specify `false` explicitly. Refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#optional) for more info.
+* The `observer` fields are no longer discouraged, and `observer.name` should be set to "ActivityTracker". `observer.name` may be used in the future to support sending events to AT via stdout.
+* Events should have the CADF fields at the top level, and no longer encapsulate the CADF fields in the `payload` structure. When an event does have `payload`, LogDNA removes it and promotes its internal fields to the top level.
+* The `meta` object is now ignored. Services should remove it.
+* The following fields were used by legacy AT, but should now be removed:
+   * `attachments`
+   * `requestHeader`, `requestBody`, `responseHeader`, `responseBody`
+   * `latencies`
