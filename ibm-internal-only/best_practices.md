@@ -27,35 +27,6 @@ subcollection: logdnaat
 {:shortdesc}
 
 
-## How to send events to LEGACY AT Using Armada and fluentd (strategic approach)
-
-
-
-**Services on Armada must use this approach.**  
-
-When your service runs on Armada containers, 
-
-1. Send your events using the fluentd plugin built into containers. Sending events is a simple as writing the event to a file. 
-2. Use an AT token versus an IAM token. 
-
-Then, rely on the Write by Service (Kube) pattern to send the events to Activity Tracker.
-
-For more information, see [Write by Service (IBM Cloud Container Service)](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/kube.html#ibm_kube).
-
-
-
-## How to send events to LEGACY AT Using the API (Deprecated)
-
-**Services that do not run on Armada will need to use the Activity Tracker API. In the future we will provide another alternative and remove this API.**
-
-* Use **Version 3** of the Activity Tracker API. 
-
-* Use an IAM token to send events to Activity Tracker.
-
-* Use protobuf in v3 to send batches of up to 128 events quickly, rather than sending them individually.
-
-For more information, see [Trail API](https://pages.github.ibm.com/activity-tracker/api-spec/v3/#/Trail_API).
-
 ## Types of events
 
 There are two kinds of events in Activity Tracker:
@@ -82,31 +53,6 @@ There are two kinds of events in Activity Tracker:
     * Deprovisioning a service in the IBM Cloud.
     * Service plan changes.
 
-## How many events/minute can my service send to LEGACY AT?
-
-Events are stored in the Log Analysis service. Depending on the events per minute, you might need to contact the AT team.
-
-* 1 - 100 events/min requires no additional Log Analysis resource to be allocated.
-* 101 - 250 events/min may require additional Log Analysis resources. Contact AT team.
-* \> 250 events/min will require additional Log Analysis resources. Contact the AT team.
-
-
-
-## Are there any mandatory fields in an event? 
-
-**You must include all mandatory fields in every AT event.** Activity Tracker events comply with the industry standard CADF format. For more information about the mandatory fields you need to provide, see [Event Fields](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/event_definition.html#mandatory).
-
-**target.id** is a mandatory field that must be set to the CRN of the resource on the IBM Cloud. When you define sets of events for a sub-resource in your service, use the same CRN for create, update, delete, and any other events that apply to that sub-resource.
-
-* **target.name**: Set this field to the human readable name of the cloud resource on which the action is being performed. This is the value a user would see on the Cloud UI or running a command.
-
-* **initiator.name**: Set this field to the username that is associated with the IBMID or service ID that is used to initiate an action. 
-
-There are some optional fields that are recommend to be set to enhance the user experience. 
-
-* **requestData** and **responseData**: Set data in these field that provide useful information to the user. These fields must be set to valid JSON, where an object (like requestData) can contain one or more child elements. The child elements must be simple and not contain nested structures. For example, if you upgrade the version of an object, and only specify the mandatory fields, the user will not know what was the original version and the one that the object was upgraded to. 
-
-Exception: RequestData is required for **update** events. Information about the original value and the changed value must be included.
 
 ## What event fields can be sent and be GDPR compliant?
 
@@ -120,6 +66,8 @@ The following mandatory fields have been exempted for auditing purposes and can 
 * *target.id*
 * *target.name*
 
+AT customers do require the above information for “security/audit logging”. We discussed this topic in the [AT stakeholder meeting on 2018/09/21](https://ibm.webex.com/ibm/lsr.php?RCID=dd8e42624d974893bbd2de6c8160393a), with a couple of GDPR SMEs. The discussion starts at 7:30. The password is `3Mip3DWj`.
+
 **It is your service’s responsibility to comply with GDPR. Do not include other customer data.**
 
 If you are unsure about the information that you are sending, contact the GDPR SME responsible for your service. 
@@ -127,49 +75,6 @@ If you are unsure about the information that you are sending, contact the GDPR S
 ## Global domain
 
 For global services in the IBM Cloud, use the <b>eu-de region</b> as the endpoint for global Activity Tracker events.
-
-LEGACY AT: For global services in the IBM Cloud, use the <b>US South region</b> as the global account domain for Activity Tracker events.  For example, IAM and BSS send events that are not bound to a region. Those events are available to the user through the account domain in the US South region.
-
-
-
-## How to set the LEGACY AT domain where users can view events for your service
-
-There are two service brokers a service can support:
-
-* Cloud Foundry (CF) service broker:  Services are bound to a CF space.
-* Resource controller (RC), which is the next-generation provisioning layer that manages the lifecycle of cloud resources. Services are bound to the account per region.
-
-In AT, events can be hosted in a CF space domain or in the account domain. A Resource Group domain will be added in the future.
-
-* **If you support a CF service broker, you can send either events at a space or account level.**
-* **If you support a RC service broker, you can only send events at the account level (at this time).**
-
-Use the following guidelines to decide where you should send your events:
-
-* If your **service is managed by the CF service broker**: Send events to the **space domain** that is associated with the CF space where your service instance is running.
-
-    * Set *userSpaceId* to the space ID of the customer
-    * Set the *userAccountIds* to null.
-
-* If your service is an **account level service**: Send events to the AT **account domain**.
-
-    * Set the userSpaceId to null.
-    * Set the userAccountIds to [user-account] (an array of one)
-
-* If your **service is managed by the Resource Controller**: Send events to the AT **account domain**.
-
-    * Set the userSpaceId to null.
-    * Set the userAccountIds to [user-account] (an array of one)
-    
-    * In addition, consider using a field in `requestData` in the CADF payload to distinguish the Resource Group, such as `"resourceGroup": "default"`. This is a temporary work-around. **Note: Resource groups are not supported yet.** Resource Groups will be supported in the future.
-
-In all cases:
-
-* The `serviceProviderName`, `serviceProviderRegion`, and `serviceProviderProjectId` should be the same in the metadata as what you registered to AT. 
-* The `userSpaceRegion` should match the serviceProviderRegion. AT currently only supports saving events in the region where the service is registered.
-
-**Note:** If you are generating AT events in a region where AT is not deployed, you can send the events to a region where it is. You must register with AT in the target region, and use that information for sending the events. Consider GDPR and EU rules when transferring data. The users will have to look in the target region to see the data. This is a temporary work-around, and more regions will be supported in the future.
-
 
 
 
@@ -218,27 +123,5 @@ For Go users:
 2. Run `./AT-event-linter <filename>`
 
 
-## Testing events in LEGACY AT
-
-To test Activity Tracker, complete the following steps when your service forwards AT events to a space domain:
-
-1. Create a new CF space, or use an existing space that is different from the one you service currently uses.
-2. In that space, provision an instance of the Activity Tracker service and provision an instance of your service.
-3. Within the context of the CF space, execute an action in your service that generates an AT event.
-4. Launch the AT UI from the Cloud console. In the space domain view, verify that the event for the action you executed shows on the AT dashboard.
-
-To test Activity Tracker, complete the following steps when your service forwards AT events to an account domain:
-
-1. Create a new CF space, or use an existing space that is different from the one you service currently uses.
-2. In that space, provision an instance of the Activity Tracker service.
-3. Provision an instance of your service, if your service requires provisioning.
-3. Execute an action in your service that generates an AT event.
-4. Launch the AT UI from the Cloud console, select the account domain view, and verify that the event for the action you executed shows on the AT dashboard.
-
-**Note:** To see account events, your user must have specific permissions. For more information, see [Viewing events](/docs/services/cloud-activity-tracker/how-to/manage-events-ui/viewing_events.html#view_acc_events).
-
-## Documenting events
-
-This section has been moved to [Documenting events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_docs#ibm_docs).
 
 
