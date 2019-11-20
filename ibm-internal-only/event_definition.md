@@ -85,8 +85,7 @@ Following is a sample event, to use as an example. Each of the fields is explain
 
     "id": "916faca9-4644-41ce-9e7c-b40a04738a16",
     "observer": {
-        "name": "Activity Tacker",
-        "id": "ActivityTracker"
+        "name": "ActivityTracker"
     },
 
     // The rest of the optional fields are not part of CADF spec:
@@ -164,7 +163,7 @@ The following table list the mandatory fields:
   </tr>
   <tr>
     <td>action</td>
-	  <td>This field indicates the action that triggers an event. The format of this field is <b>serviceName.objectType.action</b> where servicename is the name of the service as indicated in the crn. The name should match the name of the service in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=) under the name column. [Learn more about CRNs](https://github.ibm.com/ibmcloud/builders-guide/blob/master/specifications/crn/CRN.md)</br></br>Use a dot <b>.</b> to separate the 3 parts that define the action field (serviceName, objectType, action). </br></br>Use a dash <b>–</b> to separate complex objectTypes to make it more readable to the users. </br></br><b>objectType</b> describes the resource or resource attribute on which the action is requested. For example, in COS, a user can create a bucket. The action triggered would be cloud-object-storage.bucket.create where objectType =  bucket  However, if the action is to creata the ACL of the bucket, the action would be cloud-object-storage.bucket-acl.create where objectType = bucket-acl </br></br>Valid action values are: create, read, update, delete, backup, capture, configure, deploy,  disable, enable, import, list, monitor, pull, push, restore, start, stop, undeploy, receive, reimport, remove, send, set-on, set-off, authenticate, read, renew, revoke, allow, deny, evaluate, notify, unknown. </br></br>More values will be added as needed. </td>
+	  <td>This field indicates the action that triggers an event. The format of this field is <b>serviceName.objectType.action</b> where servicename is the name of the service as indicated in the crn. The name should match the name of the service in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=) under the name column. [Learn more about CRNs](https://github.ibm.com/ibmcloud/builders-guide/blob/master/specifications/crn/CRN.md)</br></br>Use a dot <b>.</b> to separate the 3 parts that define the action field (serviceName, objectType, action). </br></br>Use a dash <b>–</b> to separate complex objectTypes to make it more readable to the users. </br></br><b>objectType</b> describes the resource or resource attribute on which the action is requested. For example, in COS, a user can create a bucket. The action triggered would be cloud-object-storage.bucket.create where objectType =  bucket  However, if the action is to creata the ACL of the bucket, the action would be cloud-object-storage.bucket-acl.create where objectType = bucket-acl </br></br>Valid action values are: add, create, read, update, delete, backup, capture, configure, deploy,  disable, enable, import, list, monitor, pull, push, restore, start, stop, undeploy, receive, reimport, remove, send, set-on, set-off, authenticate, read, renew, revoke, allow, deny, evaluate, notify, unknown. </br></br>More values will be added as needed. </td>
     <td>For example: </br>containers-kubernetes.worker.create  </br>iam-identity.user-apikey.create  </br>cloud-object-storage.bucket-acl.create   </br>cloud-object-storage.bucket.update   </td>
   </tr>
   <tr>
@@ -231,6 +230,11 @@ The following table list the mandatory fields:
 	<td>True if this event is a "data event" rather than a "management event". See [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events) for an explanation. The default is `false`, so that an event is a management event unless it has `dataEvent:true`. However, should be set to `false` explicitly.  <br/><br/>This field is not part of CADF. This field can only be provided to Activity Tracker with LogDNA; legacy AT will not parse it.</td>
 	<td>`true`<br/>`false` (default)</td>
   </tr>
+    <tr>
+    <td>observer.name</td>
+	  <td>If given, this field must be set to ActivityTracker.</td>
+	  <td>`ActivityTracker`</td>
+  </tr>
 </table>
 
 
@@ -270,7 +274,7 @@ Activity Tracker with LogDNA relies on three new fields: `logSourceCRN`, `saveSe
 {: #reserved}
 
 <table>
-  <caption>Reserved fields (reserved for Activity Tracker)</caption>
+  <caption>Reserved fields (reserved for Activity Tracker, may be used in the future)</caption>
   <tr>
     <th width="20%">Field Name</th>
 	<th width="30%">Description</th>
@@ -288,23 +292,18 @@ Activity Tracker with LogDNA relies on three new fields: `logSourceCRN`, `saveSe
   </tr>
   <tr>
     <td>type</td>
-	  <td>This field must be set to ActivityTracker.</td>
-	  <td>ActivityTracker</td>
-  </tr>
-  <tr>
-    <td>observer.name</td>
-	  <td>This field must be set to ActivityTracker.</td>
-	  <td></td>
+	  <td>This field must be set to `ActivityTracker`.</td>
+	  <td>`ActivityTracker`</td>
   </tr>
   <tr>
     <td>observer.id</td>
 	  <td>This field must be set to the CRN of the AT instance that the event is sent to.</td>
-	  <td>ActivityTracker</td>
+	  <td></td>
   </tr>
   <tr>
     <td>observer.typeURI</td>
-	  <td>This field must be set to security/edge/activity-tracker.</td>
-	  <td>security/edge/activity-tracker</td>
+	  <td>This field must be set to `security/edge/activity-tracker`.</td>
+	  <td>`security/edge/activity-tracker`</td>
   </tr>
 </table>
 
