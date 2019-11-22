@@ -34,6 +34,19 @@ LogDNA supports two related capabilities: Super Tenancy and Activity Tracking.
 * [Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#super_tenancy)
 * [Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#activity_tracker)
 
+The following diagram shows a **customer** view of how Activity Tracker compares to Log Analysis:
+
+![Log Analysis vs. Activity Tracker for customer](images/LAvsAT-customer.png)
+
+Log Analysis shows the customer what their app did, but Activity Tracker shows the customer what their app made **the services** do. Activity Tracker provides logs ("events") from each service that are formatted consistently, so that the customer can filter and analyze events across services.
+
+The following diagram shows a **service** view of how Activity Tracker compares to Log Analysis:
+
+![Log Analysis vs. Activity Tracker for service](images/LAvsAT-service.png)
+
+In the first diagram, when the customer looks at Activity Tracker, they see events from all services--but just for the one customer. In contrast, in the above diagram, when the service team looks at Activity Tracker, they see events from all customers--but just for the one service.
+
+
 ## Super Tenancy
 {: #super_tenancy}
 
