@@ -107,6 +107,7 @@ Following is a sample event, to use as an example. Each of the fields is explain
 
 }
 ```
+{: codeblock}
 
 ## Required event fields provided by the service to comply with CADF
 {: #mandatory}
