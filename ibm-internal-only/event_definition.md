@@ -44,7 +44,7 @@ The CADF event model requires 5 components. For Activity Tracker, these translat
 
 <img src="images/CADF-event.png" alt="CADF event model"  height="200" width="300"  />
 
-Following is a sample event, to use as an example. Each of the fields is explained in the rest of this page.
+Following is a sample event that includes the fields that are required. You can use it as an example of a CADF event. Each of the fields is explained in the rest of this page.
 
 ```js
 {
@@ -108,8 +108,19 @@ Following is a sample event, to use as an example. Each of the fields is explain
 ```
 {: codeblock}
 
-You can **test your events** by using the [Activity Tracker linter tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/Yuqian-Chen/event-linter-web/blob/master/README.md){:new_window}. Notice that this tool is offered and supported on a best-effort basis.
-{: important}
+## Validating an AT event
+{: #validate}
+
+To validate an event, you must check the **formatting of each of its fields**, and also the **quality of the data**.
+{: note}
+
+To validate the formatting, you can use the [Activity Tracker linter tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/Yuqian-Chen/event-linter-web/blob/master/README.md){:new_window}. **Notice that this tool is offered and supported on a best-effort basis.** You can also use this tool through the following URL [AT linter tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://eventlinter.mybluemix.net/){:new_window}.
+
+* If your event action is being reported as not valid, check the list of action in the code. If it is not there, notify the AT team at the `AT Office hours & Stakeholders meeting`.
+* Validate that the initiator IP address is not an IBM IP.
+
+To check the quality of the data, verify that the data provided by the event includes the information required for auditing your service. For example, if you update the name of a resource, indicate the old name and the new name. use the requestData and responseData fields to include additonal information.
+
 
 
 ## Required event fields provided by the service to comply with CADF
@@ -182,6 +193,11 @@ The following table list the mandatory fields:
 	  <td>For example: 200</td>
   </tr>
   <tr>
+    <td>requestData<br>responseData</td>
+	  <td>These two fields are not part of CADF, but are provided for services to use for custom JSON. </br>Add any information here that will enhance the user experience going through ther audit trail of your service events.  </br>Add value pairs of information. </br>Some fields: </br>{"ResourceGroupID":"CRN of the resource group"} </br>{"ReasonForFailure":"Additional information about why the request failed"} </td>
+	  <td>Notice that for update events (this field is required), you should add details of original version and final version of the change.</td>
+  </tr>
+  <tr>
     <td>severity</td>
 	  <td>This field defines the level of threat an action may have on the Cloud. </br></br>Valid values are: </br><b>normal</b>: Use this value for routine actions in the Cloud. For example: starting an instance,  refreshing a token, etc  </br><b>warning</b>: Use this value when a Cloud resource is updated or its metadata is modified. For example: updating the version of a worker node, renaming a certificate, renaming a service instance, etc  </br><b>critical</b>: Use this value when the action affects security in the Cloud like changing credentials of a user, deleting data, unauthorized access to work with a Cloud resource.  For example: adding or removing proviledges to a user, deleting a security key, deleting logs, running an action against a resource where the user does not have permissions to work with, etc.</td>
 	  <td><b>normal</b> </br><b>warning</b> </br><b>critical</b> </td>
@@ -190,6 +206,32 @@ The following table list the mandatory fields:
     <td>eventTime</td>
 	  <td>Indicates the timestamp when the event was created. </br>The date is represented as Universal Time Coordinated (UTC). </br></br>ISO 8601 date and time must be followed by Z or +0000 to indicate that a time is defined as Universal Time (UTC). For AT, use +0000   </br></br>The letter 'T' in the date/time syntax must always be upper case.  </br></br>For readability and consistency in the UI, the format of this field is: <b>YYYY-MM-DDTHH:mm:ss.SS+0000</b></td>
 	  <td>For example: 2017-10-19T19:07:50.32+0000</td>
+  </tr>
+  <tr>
+    <td>logSourceCRN</td>
+	  <td>Set to the CRN of the service instance that generates the event. (CRN of the service instance in the customer's account.)  </br></br>This field determines where a copy of the event is saved for the user. </br></br>If you leave out logSourceCRN, it only saves the event to your account, not to the user's account. </br></br>If you leave out logSourceCRN AND set saveServiceCopy:false, then the event is not saved at all.</td>
+	  <td>For example: crn:v1:bluemix:public:kms:eu-	gb:a/8131c65c6ad70bdc209bb564997a5f1c	:8424aaea-ddcf-4dfe-ae90-
+	1a4b89e07b86::</td>
+  </tr>
+  <tr>
+    <td>saveServiceCopy</td>
+	  <td>This field is used to control whether the IBM service gets a copy of the event or not. </br></br>Defaults to <b>true</b>, but should be set to <b>true</b> explicitly. </br></br>If set to <b>true</b>, the event is saved to the service's account.  </br></br>If set to <b>false</b>, then event is not saved to the service's account.</td>
+	  <td><b>true</b> </br><b>false</b></td>
+  </tr>
+  <tr>
+    <td>message</td>
+	  <td>Message that is associated with the event. </br></br>The format of this field is: <b>serviceName: action objectType target.name [custom data per service][outcome]</b> </br></br>where <b>ServiceName</b> is the UI name of the service as shown in the catalog.  </br></br> <b>action</b> matches the action component as described in the CADF <i>action</i> field of the event. Must be in lowercase. </br></br><b>objectType</b> matches the objectType component as described in the CADF <i>action</i> field of the event. Must be in lowercase. </br></br><b>target.name</b> matches the value of the CADF field <i>target.name</i>. If a name is not available, leave it out. </br></br><b>[custom data per service]</b> has the format: <b>[for resourceType resourceID][custom information]</b> </br>You can add information from data that is available through the AT fields requestData and responseData lowercase. </br>When the action applies to a sub resource component, for example, a policy for a user, or a worker for a cluster, the section [for resourceType resourceID]  should be included. </br>* <b>resourceType</b> defines type of resource, for example, cluster, access group, serviceID, etc. </br>* <b>resourceID</b> specifies the ID of the resource type to which the action applies. </br>The section <b>[custom information]</b> should include any relevant information that you consider important to the user for your event. </br></br><b>[outcome]</b> is set when the <i>outcome</i> field reports an action that is not <i>success</i>. The format is <b>-outcome</b> where outcome matches the outcome value as described in the CADF <i>outcome</i> field of the event. </td>
+	  <td>For example: </br>IAM Identity Service: delete user-apikey KeyProtectTest -failure  </br>Key Protect: list secrets </br>IAM Identity Service: login user-apikey containers-kubernetes-key</td>
+  </tr>
+  <tr>
+    <td>observer.name</td>
+	  <td>This field must be set to ActivityTracker.</td>
+	  <td>`ActivityTracker`</td>
+  </tr>
+  <tr>
+    <td>dataEvent</td>
+	  <td>True if this event is a "data event" rather than a "management event". See [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events) for an explanation. The default is `false`, so that an event is a management event unless it has `dataEvent:true`. However, should be set to `false` explicitly.  <br/><br/>This field is not part of CADF. This field can only be provided to Activity Tracker with LogDNA.</td>
+	  <td>`true`<br/>`false` (default)</td>
   </tr>
 </table>
 
@@ -221,58 +263,12 @@ The following table list the mandatory fields:
 	  <td>For example, for a reason.reasonCode = 200, set reasonType to <b>OK</b></td>
   </tr>
   <tr>
-    <td>requestData<br>responseData</td>
-	  <td>These two fields are not part of CADF, but are provided for services to use for custom JSON. </br>Add any information here that will enhance the user experience going through ther audit trail of your service events.  </br>Add value pairs of information. </br>Some fields: </br>{"ResourceGroupID":"CRN of the resource group"} </br>{"ReasonForFailure":"Additional information about why the request failed"} </td>
-	  <td>Notice that for update events (this field is required), you should add details of original version and final version of the change.</td>
-  </tr>
-  <tr>
     <td>tags</td>
 	  <td>These field is an array of strings.</td>
 	  <td></td>
   </tr>
-  <tr>
-	<td>dataEvent</td>
-	<td>True if this event is a "data event" rather than a "management event". See [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events) for an explanation. The default is `false`, so that an event is a management event unless it has `dataEvent:true`. However, should be set to `false` explicitly.  <br/><br/>This field is not part of CADF. This field can only be provided to Activity Tracker with LogDNA; legacy AT will not parse it.</td>
-	<td>`true`<br/>`false` (default)</td>
-  </tr>
-    <tr>
-    <td>observer.name</td>
-	  <td>If given, this field must be set to ActivityTracker.</td>
-	  <td>`ActivityTracker`</td>
-  </tr>
 </table>
 
-
-
-## Event fields for new architecture 
-{: #new}
-
-Activity Tracker with LogDNA relies on three new fields: `logSourceCRN`, `saveServiceCopy`, and `message`.
-
-<table>
-  <caption>Required fields for new architecture</caption>
-  <tr>
-    <th width="20%">Field Name</th>
-	  <th width="30%">Description</th>
-	  <th width="30%">Value</th>
-  </tr>
-  <tr>
-    <td>logSourceCRN</td>
-	  <td>Set to the CRN of the service instance that generates the event. (CRN of the service instance in the customer's account.)  </br></br>This field determines where a copy of the event is saved for the user. </br></br>If you leave out logSourceCRN, it only saves the event to your account, not to the user's account. </br></br>If you leave out logSourceCRN AND set saveServiceCopy:false, then the event is not saved at all.</td>
-	  <td>For example: crn:v1:bluemix:public:kms:eu-	gb:a/8131c65c6ad70bdc209bb564997a5f1c	:8424aaea-ddcf-4dfe-ae90-
-	1a4b89e07b86::</td>
-  </tr>
-  <tr>
-    <td>saveServiceCopy</td>
-	  <td>This field is used to control whether the IBM service gets a copy of the event or not. </br></br>Defaults to <b>true</b>, but should be set to <b>true</b> explicitly. </br></br>If set to <b>true</b>, the event is saved to the service's account.  </br></br>If set to <b>false</b>, then event is not saved to the service's account.</td>
-	  <td><b>true</b> </br><b>false</b></td>
-  </tr>
-  <tr>
-    <td>message</td>
-	  <td>Message that is associated with the event. </br></br>The format of this field is: <b>serviceName: action objectType target.name [custom data per service][outcome]</b> </br></br>where <b>ServiceName</b> is the UI name of the service as shown in the catalog.  </br></br> <b>action</b> matches the action component as described in the CADF <i>action</i> field of the event. Must be in lowercase. </br></br><b>objectType</b> matches the objectType component as described in the CADF <i>action</i> field of the event. Must be in lowercase. </br></br><b>target.name</b> matches the value of the CADF field <i>target.name</i>. If a name is not available, leave it out. </br></br><b>[custom data per service]</b> has the format: <b>[for resourceType resourceID][custom information]</b> </br>You can add information from data that is available through the AT fields requestData and responseData lowercase. </br>When the action applies to a sub resource component, for example, a policy for a user, or a worker for a cluster, the section [for resourceType resourceID]  should be included. </br>* <b>resourceType</b> defines type of resource, for example, cluster, access group, serviceID, etc. </br>* <b>resourceID</b> specifies the ID of the resource type to which the action applies. </br>The section <b>[custom information]</b> should include any relevant information that you consider important to the user for your event. </br></br><b>[outcome]</b> is set when the <i>outcome</i> field reports an action that is not <i>success</i>. The format is <b>-outcome</b> where outcome matches the outcome value as described in the CADF <i>outcome</i> field of the event. </td>
-	  <td>For example: </br>IAM Identity Service: delete user-apikey KeyProtectTest -failure  </br>Key Protect: list secrets </br>IAM Identity Service: login user-apikey containers-kubernetes-key</td>
-  </tr>
-</table>
 
 
 ## Reserved fields for Activity Tracker
@@ -315,7 +311,7 @@ Activity Tracker with LogDNA relies on three new fields: `logSourceCRN`, `saveSe
 ## Differences in legacy and LogDNA Activity Tracker events
 {: #legacy_vs_new_at}
 
-The legacy Activity Tracker service was ended in October 2019.
+The legacy Activity Tracker service was deprecated in October 2019.
 It is replaced by Activity Tracker with LogDNA, which supports a number of improvements in the format of the events.
 
 The events that worked on legacy Activity will continue to work on the new Activity Tracker with LogDNA.
@@ -330,3 +326,5 @@ However, services should consider the following improvements:
    * `attachments`
    * `requestHeader`, `requestBody`, `responseHeader`, `responseBody`
    * `latencies`
+
+
