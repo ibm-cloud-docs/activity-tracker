@@ -18,6 +18,8 @@ subcollection: logdnaat
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Event fields
