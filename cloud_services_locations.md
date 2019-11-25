@@ -651,15 +651,17 @@ The following tables list the locations where automatic collection of security s
 {: #cloud_services_locations_watson_ai}
 
 
-| Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
-|------------------------------------------------|:-------------------:|:------------------------------------:|
-| {{site.data.keyword.discoveryfull}}            |                     |                                      |          
-| {{site.data.keyword.cncfullnotm}}              |                     |                                      |
-| {{site.data.keyword.DSX_short}}                |                     |                                      | 
-| Watson Knowledge Catalog                       |                     |                                      | 
-| {{site.data.keyword.pm_full}}                  |                     |                                      | 
-| {{site.data.keyword.nlclassifiershort}}        |                     |                                      | 
-| {{site.data.keyword.visualrecognitionshort}}   |                     |                                      | 
+| Service                                        | `Dallas (us-south)`                               | `Washington (us-east)`                            |
+|------------------------------------------------|:-------------------------------------------------:|:-------------------------------------------------:|
+| {{site.data.keyword.discoveryfull}}            |                                                   |                                                   |          
+| {{site.data.keyword.cncfullnotm}}              |                                                   |                                                   |
+| {{site.data.keyword.DSX_short}}                |                                                   |                                                   | 
+| Watson Knowledge Catalog                       |                                                   |                                                   | 
+| {{site.data.keyword.pm_full}}                  |                                                   |                                                   | 
+| {{site.data.keyword.nlclassifiershort}}        |                                                   |                                                   | 
+| {{site.data.keyword.visualrecognitionshort}}   |                                                   |                                                   | 
+| {{site.data.keyword.texttospeechshort}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.speechtotextshort}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Watson AI services integration in America's locations" caption-side="top"}
 {: #cs_watsonai-table-1}
 {: tab-title="America"}
@@ -667,15 +669,17 @@ The following tables list the locations where automatic collection of security s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|------------------------------------------------|:----------------:|:--------------------------:|
-| {{site.data.keyword.discoveryfull}}            |                     |                                      |          
-| {{site.data.keyword.cncfullnotm}}              |                     |                                      |
-| {{site.data.keyword.DSX_short}}                |                     |                                      | 
-| Watson Knowledge Catalog                       |                     |                                      | 
-| {{site.data.keyword.pm_full}}                  |                     |                                      | 
-| {{site.data.keyword.nlclassifiershort}}        |                     |                                      | 
-| {{site.data.keyword.visualrecognitionshort}}   |                     |                                      | 
+| Service                                        | `Tokyo (jp-tok)`                                  |`Sydney (au-syd)`                                  |
+|------------------------------------------------|:-------------------------------------------------:|:-------------------------------------------------:|
+| {{site.data.keyword.discoveryfull}}            |                                                   |                                                   |          
+| {{site.data.keyword.cncfullnotm}}              |                                                   |                                                   |
+| {{site.data.keyword.DSX_short}}                |                                                   |                                                   | 
+| Watson Knowledge Catalog                       |                                                   |                                                   | 
+| {{site.data.keyword.pm_full}}                  |                                                   |                                                   | 
+| {{site.data.keyword.nlclassifiershort}}        |                                                   |                                                   | 
+| {{site.data.keyword.visualrecognitionshort}}   |                                                   |                                                   | 
+| {{site.data.keyword.texttospeechshort}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.speechtotextshort}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Watson AI services integration in AP locations" caption-side="top"}
 {: #cs_watsonai-table-2}
 {: tab-title="Asia Pacific"}
@@ -683,15 +687,17 @@ The following tables list the locations where automatic collection of security s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|---------------------------------------------------------------|:-------------------:|:----------------:|
-| {{site.data.keyword.discoveryfull}}                           |                     |                  |          
-| {{site.data.keyword.cncfullnotm}}                             |                     |                  |
-| {{site.data.keyword.DSX_short}}                               |                     |                  | 
-| Watson Knowledge Catalog                                      |                     |                  | 
-| {{site.data.keyword.pm_full}}                                 |                     |                  | 
-| {{site.data.keyword.nlclassifiershort}}                       |                     |                  |
-| {{site.data.keyword.visualrecognitionshort}}                  |                     |                  |
+| Service                                                       |`Frankfurt (eu-de)`                                | `London (eu-gb)`                                  |
+|---------------------------------------------------------------|:-------------------------------------------------:|:-------------------------------------------------:|
+| {{site.data.keyword.discoveryfull}}                           |                                                   |                                                   |          
+| {{site.data.keyword.cncfullnotm}}                             |                                                   |                                                   |
+| {{site.data.keyword.DSX_short}}                               |                                                   |                                                   | 
+| Watson Knowledge Catalog                                      |                                                   |                                                   | 
+| {{site.data.keyword.pm_full}}                                 |                                                   |                                                   | 
+| {{site.data.keyword.nlclassifiershort}}                       |                                                   |                                                   |
+| {{site.data.keyword.visualrecognitionshort}}                  |                                                   |                                                   |
+| {{site.data.keyword.texttospeechshort}}                       | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.speechtotextshort}}                       | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Watson AI services integration in Europe locations" caption-side="top"}
 {: #cs_watsonai-table-3}
 {: tab-title="Europe"}
