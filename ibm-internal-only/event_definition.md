@@ -23,24 +23,22 @@ subcollection: logdnaat
 # Event fields
 {: #ibm_event_fields}
 
-
+This page defines all of the fields used by an Activity Tracker event. Events in Activity Tracker are expressed in JSON.
 {:shortdesc}
 
 
 ## Introduction
 {: #intro}
 
-This page defines all of the fields used by an Activity Tracker event. Events in Activity Tracker are expressed in JSON.
-
 The schema of an Activity Tracker event is based on [the CADF standard](http://www.dmtf.org/sites/default/files/standards/documents/DSP0262_1.0.0.pdf) (Cloud Auditing Data Federation). This is an open model for events that is suitable for auditing.
 
 The CADF event model requires 5 components. For Activity Tracker, these translate into:
 
-1. observer: always Activity Tracker
-2. initiator: an end user, or an internal (IBM) or external service
-3. action: the activity that the initiator is performing, such as calling a REST API
-4. target: the IBM service that the action is performed against
-5. outcome: the result of the action; "success" or "failure"
+1. `observer`: always Activity Tracker
+2. `initiator`: an end user, or an internal (IBM) or external service
+3. `action`: the activity that the initiator is performing, such as calling a REST API
+4. `target`: the IBM service that the action is performed against
+5. `outcome`: the result of the action; "success" or "failure"
 
 <img src="images/CADF-event.png" alt="CADF event model"  height="200" width="300"  />
 
@@ -107,6 +105,10 @@ Following is a sample event, to use as an example. Each of the fields is explain
 }
 ```
 {: codeblock}
+
+You can **test your events** by using the [Activity Tracker linter tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/Yuqian-Chen/event-linter-web/blob/master/README.md){:new_window}. Notice that this tool is offered and supported on a best-effort basis.
+{: important}
+
 
 ## Required event fields provided by the service to comply with CADF
 {: #mandatory}
