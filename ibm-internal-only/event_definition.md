@@ -116,10 +116,10 @@ To validate an event, you must check the **formatting of each of its fields**, a
 
 To validate the formatting, you can use the [Activity Tracker linter tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/Yuqian-Chen/event-linter-web/blob/master/README.md){:new_window}. **Notice that this tool is offered and supported on a best-effort basis.** You can also use this tool through the following URL [AT linter tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://eventlinter.mybluemix.net/){:new_window}.
 
-* If your event action is being reported as not valid, check the list of action in the code. If it is not there, notify the AT team at the `AT Office hours & Stakeholders meeting`.
+* If your event action is being reported as not valid, check the list of actions in the code. If it is not listed there, notify the AT team at the `AT Office hours & Stakeholders meeting`.
 * Validate that the initiator IP address is not an IBM IP.
 
-To check the quality of the data, verify that the data provided by the event includes the information required for auditing your service. For example, if you update the name of a resource, indicate the old name and the new name. use the requestData and responseData fields to include additonal information.
+To check the quality of the data, verify that the data provided by the event includes the information required for auditing your service. For example, if you update the name of a resource, indicate the old name and the new name. Use the requestData and responseData fields to include additonal information.
 
 
 

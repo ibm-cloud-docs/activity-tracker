@@ -77,6 +77,10 @@ IBM Cloud Activity Tracker with LogDNA
         at_events_acc_mgt.md
         at_events_rc.md
 
+    {: .topicgroup}
+    Trails
+        trail_global_actions.md
+
     [LogDNA Product Page](https://logdna.com/)
     [LogDNA Blog](https://blog.logdna.com/)
     {: .navgroup-end}

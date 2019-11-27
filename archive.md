@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-27"
+lastupdated: "2019-11-27"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, archive logs, COS, cloud object storage
 
@@ -333,10 +333,4 @@ After you save the configuration, events are archived once a day.
 Notice that when you save the configuration, you can get a message that informs you that the configuration has been saved successfully. When you get this message, the integration between the LogDNA instance and the bucket is verified. A test to upload and delete an object from the bucket is completed successfully. 
 
 If you get an error when you save the configuration, the verification process fails. Check your configuration and retry again. 
-
-
-## Limitations
-{: #archive_limitations}
-
-* You cannot archive data to a bucket that has a retention policy configured.
 
