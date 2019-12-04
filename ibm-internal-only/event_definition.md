@@ -194,8 +194,8 @@ The following table list the mandatory fields:
   </tr>
   <tr>
     <td>requestData<br>responseData</td>
-	  <td>These two fields are not part of CADF, but are provided for services to use for custom JSON. </br>Add any information here that will enhance the user experience going through ther audit trail of your service events.  </br>Add value pairs of information. </br>Some fields: </br>{"ResourceGroupID":"CRN of the resource group"} </br>{"ReasonForFailure":"Additional information about why the request failed"} </td>
-	  <td>Notice that for update events (this field is required), you should add details of original version and final version of the change.</td>
+	  <td>These two fields are not part of CADF, but are provided for services to use for custom JSON. </br>Add any information here that will enhance the user experience going through ther audit trail of your service events.  </br>Add value pairs of information. </br>Some fields: </br>{"ResourceGroupID":"CRN of the resource group"} </br>{"ReasonForFailure":"Additional information about why the request failed"} </br>{"updateType":"Indicate if it is a name change, description change, or other type"} </br>{"initialValue":"Add the original value that the initiator wants to change"} </br>{"newValue":"Add the new value requested in the action"} </td>
+	  <td>Notice that for update events (this field is required), you should add details of the type of change (updateType), the original value (initialValue) and the final value of the change (newValue).</td>
   </tr>
   <tr>
     <td>severity</td>

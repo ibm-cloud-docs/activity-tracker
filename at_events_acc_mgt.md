@@ -57,8 +57,8 @@ The following table lists the actions that generate an event:
 | `user-management.user.create`        | An event is generated when you send an invitation to a user to join an account. |
 | `user-management.user.active`        | An event is generated when you activate the user in the account. When the user verifies the email address, the event is generated. |
 | `user-management.user.delete`        | An event is generated when you remove a user from the account. |
+| `user-management.user-setting.update` | An event is generated when you update the user's login configuration settings: *User one-time passcode authentication*, *Require MFA security questions at login*, *User-managed login* or *Setting up security questions* |
 {: caption="Table 2. Actions that generate events" caption-side="top"} 
-
 
 
 
@@ -93,9 +93,27 @@ Events are available in the **Frankfurt (eu-de)** region.
 To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2). 
 
 
+## Analyzing events
+{: #at_events_acc_mgt_analyze}
+
+### User log in settings
+{: #user_login_settings_events} 
+
+An account owner or a user with permissions in the account can modify the log in settings of other users in the account. [Learn more](/docs/account?topic=account-login-settings). For example, they can modify the following log in settings:
+* [Set on or off security questions](/docs/account?topic=account-login-settings#security-questions)
+* [Set on or off a password expiration](/docs/account?topic=account-login-settings#password-expiration)
+* [Set on or off TOTP authentication](/docs/account?topic=account-login-settings#password-expiration)
+* [Set on or off external authentication](/docs/account?topic=account-login-settings#password-expiration)
+
+These actions generate events that have the action field set to **user-management.user-setting.update**.
 
 
 
+
+
+* When you set up security questions: --> You can set up answers to three security questions for extra authentication at login. You must set up your security questions and answers before your administrator can enable this MFA requirement for you.
+
+* Enables user to set password expiration, turn on securoty quiestions for login, and define allowed IP addresses for IBM CLoud login and classic infrastructure APIs.
 
 
 
