@@ -93,34 +93,6 @@ Events are available in the **Frankfurt (eu-de)** region.
 To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2). 
 
 
-## Analyzing events
-{: #at_events_acc_mgt_analyze}
-
-### MFA user log in settings
-{: #user_login_settings_events} 
-
-An account owner or an administrator with permissions to manage users can modify the login settings of other users in the account. [Learn more](/docs/account?topic=account-login-settings). For example, they can modify the following settings:
-* **User-managed login**: Allows the user to set a password expiration, turn on security questions for login, and define allowed IP addresses for {{site.data.keyword.cloud_notm}} login and classic infrastructure APIs.
-* **Require MFA security questions at login**: Prompts the user for a security question at log in. To enable this setting, the user must set up answers to three security questions in their profile. 
-* **User one-time passcode authentication**: Prompts the user for a one-time passcode at log in. To enable this setting, the user must set up a password expiration time in their profile.
-* **This user has no external authentication set up**: Sets an external authentication provider.
-
-When the account owner or an administrator with permissions to manage users sets on or off any of these settings for a user in the account, you get an event with action **user-management.user-setting.update**.
-
-When a user that is logged in to your account [sets on security questions](/docs/account?topic=account-login-settings#security-questions), you get an event with action **user-management.user-setting.update** for each question. 
-
-When a user that is logged in to your account [sets on or off a password expiration](/docs/account?topic=account-login-settings#password-expiration), you get an event with action **user-management.user-setting.update**.
-
-If the a user has the **User-managed login** setting enabled, the user can also set on the **Require MFA security questions at login** through the *Access IAM* dashboard or through their profile. This request generates an event with action **user-management.user-setting.update**. 
-
-For any of these events, requestData includes more information that can help you monitor these types of actions in your account:
-* **iam_id** informs about the user in your account that has a login setting updated.
-* **2FA** defines whether MFA is set on or off for the user. When it is set to false, MFA is not set for that user. Valid values are *true* and *false*.
-* **security_questions_required** defines whether the user is required to set security questions to log in to the account. Valid values are *true* and *false*.
-* **security_questions_setup** defines whether the user has defined the security questions in his profile. Valid values are *true* and *false*.
-
-
-
 
 
 
