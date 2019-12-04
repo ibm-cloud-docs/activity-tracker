@@ -13,10 +13,10 @@ IBM Cloud Activity Tracker with LogDNA
     iam.md
     monitor_events.md
     manage_events.md
-    iam_manage_login.md
 
     {: .topicgroup}
     Monitoring actions
+        iam_manage_login.md
         service_instance_events.md
         iam_ag_events.md
         iam_apikeys_events.md

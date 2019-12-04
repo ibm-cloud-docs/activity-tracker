@@ -29,10 +29,6 @@ subcollection: logdnaat
 
 
 
-
-
-## Events that are generated when you work with service IDs
-
 | Working with service IDs            | Service     | Actions                                        |
 |:------------------------------------|:------------|:-----------------------------------------------|
 | `Create a service ID`               | `IAM`       | `iam-identity.account-serviceid.create` |
@@ -48,16 +44,36 @@ subcollection: logdnaat
 
 
 ## Events that are generated when you work with policies and service IDs
+{: #iam_serviceIDs_events_policies}
+
+| Working with policies and users                                                 | Actions                                        |
+|:--------------------------------------------------------------------------------|:-----------------------------------------------|
+| `Add a policy by assigning access to resources`                                 | `iam-am.policy.create  `   |
+| `Add a policy by assigning access within a resource group to a resource group`  | `iam-am.policy.create` |
+| `Add a policy by assigning access within a resource group to a resource group and to a service in the resource group` | `iam-am.policy.create` for the resource group permissions </br></br>`iam-am.policy.create` for the service permissions within the resource group |
+| `Modify a policy`                                                               | `iam-am.policy.update` |
+| `Delete a policy`                                                               | `iam-am.policy.update` |
+{: caption="Actions generated when you assign a policy to a service ID" caption-side="top"} 
 
 
-| Working with policies and users                                        | Service     | Actions                                        |
-|:-----------------------------------------------------------------------|:------------|:-----------------------------------------------|
-| `Add a policy for a user by assigning access to resources`             | `IAM`       | `iam-am.policy.create  `   |
-| `Add a policy by assigning access within a resource group to a resource group` | `IAM`  | `iam-am.policy.create` |
-| `Add a policy by assigning access within a resource group to a resource group and to a service in the resource group` | `IAM` | </br>`iam-am.policy.create` for the resource group permissions </br></br>`iam-am.policy.create` for the service permissions within the resource group |
-| `Modify a policy for a user`                                           | `IAM`       | `iam-am.policy.update` |
-| `Delete a policy for a user`                                           | `IAM`       | `iam-am.policy.update` |
+### Add a policy by assigning access to resources
+{: #iam_users_events_policies_1}
 
+
+### Add a policy by assigning access within a resource group to a resource group
+{: #iam_users_events_policies_2}
+
+
+### Add a policy by assigning access within a resource group to a resource group and to a service in the resource group
+{: #iam_users_events_policies_3}
+
+
+### Modify a policy
+{: #iam_users_events_policies_4}
+
+
+### Delete a policy
+{: #iam_users_events_policies_5}
 
 
 
