@@ -19,7 +19,7 @@ IBM Cloud Activity Tracker with LogDNA
     Events
         service_instance_events.md
         iam_users_events.md
-        iam_mfa_events.md
+        bss_mfa_events.md
 
     {: .topicgroup}
     Compliance
