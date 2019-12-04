@@ -22,7 +22,7 @@ subcollection: logdnaat
 {:note: .note}
 
 # Managing service IDs
-{: #iam_serviceIDs_events}
+{: #iam_serviceids_events}
 
 {{site.data.keyword.cloud_notm}} services that are organized in a resource group in your account are managed by using {{site.data.keyword.iamlong}} (IAM). You can monitor IAM actions in your account with the {{site.data.keyword.at_full_notm}} service.
 {:shortdesc}
@@ -44,7 +44,7 @@ subcollection: logdnaat
 
 
 ## Events that are generated when you work with policies and service IDs
-{: #iam_serviceIDs_events_policies}
+{: #iam_serviceids_events_policies}
 
 | Working with policies and users                                                 | Actions                                        |
 |:--------------------------------------------------------------------------------|:-----------------------------------------------|
@@ -57,23 +57,19 @@ subcollection: logdnaat
 
 
 ### Add a policy by assigning access to resources
-{: #iam_users_events_policies_1}
+{: #iam_serviceids_events_policies_1}
 
 
 ### Add a policy by assigning access within a resource group to a resource group
-{: #iam_users_events_policies_2}
-
-
-### Add a policy by assigning access within a resource group to a resource group and to a service in the resource group
-{: #iam_users_events_policies_3}
+{: #iam_serviceids_events_policies_2}
 
 
 ### Modify a policy
-{: #iam_users_events_policies_4}
+{: #iam_serviceids_events_policies_3}
 
 
 ### Delete a policy
-{: #iam_users_events_policies_5}
+{: #iam_serviceids_events_policies_5}
 
 
 
