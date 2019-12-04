@@ -21,8 +21,8 @@ subcollection: logdnaat
 {:important: .important}
 {:note: .note}
 
-# Multifactor authentication events
-{: #mfa_events}
+# Managing multifactor authentication settings
+{: #bss_mfa_events}
 
 Multifactor authentication (MFA) adds an extra layer of security to your account by requiring all users to authenticate by using an additional authentication method beyond an ID and password. This is also commonly known as two-factor authentication (2FA). When you change MFA settings at the account level or for users in your account, you get {{site.data.keyword.at_full_notm}} events to monitor these actions.
 {:shortdesc}

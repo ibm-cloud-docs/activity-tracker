@@ -17,6 +17,8 @@ IBM Cloud Activity Tracker with LogDNA
 
     {: .topicgroup}
     Events
+        service_instance_events.md
+        users_events.md
         mfa_events.md
 
     {: .topicgroup}
@@ -80,10 +82,6 @@ IBM Cloud Activity Tracker with LogDNA
         at_events_iam.md
         at_events_acc_mgt.md
         at_events_rc.md
-
-    {: .topicgroup}
-    Trails
-        trail_global_actions.md
 
     [LogDNA Product Page](https://logdna.com/)
     [LogDNA Blog](https://blog.logdna.com/)
