@@ -96,24 +96,31 @@ To view these events, you must [provision an instance](/docs/services/Activity-T
 ## Analyzing events
 {: #at_events_acc_mgt_analyze}
 
-### User log in settings
+### MFA user log in settings
 {: #user_login_settings_events} 
 
-An account owner or a user with permissions in the account can modify the log in settings of other users in the account. [Learn more](/docs/account?topic=account-login-settings). For example, they can modify the following log in settings:
-* [Set on or off security questions](/docs/account?topic=account-login-settings#security-questions)
-* [Set on or off a password expiration](/docs/account?topic=account-login-settings#password-expiration)
-* [Set on or off TOTP authentication](/docs/account?topic=account-login-settings#password-expiration)
-* [Set on or off external authentication](/docs/account?topic=account-login-settings#password-expiration)
+An account owner or an administrator with permissions to manage users can modify the login settings of other users in the account. [Learn more](/docs/account?topic=account-login-settings). For example, they can modify the following settings:
+* **User-managed login**: Allows the user to set a password expiration, turn on security questions for login, and define allowed IP addresses for {{site.data.keyword.cloud_notm}} login and classic infrastructure APIs.
+* **Require MFA security questions at login**: Prompts the user for a security question at log in. To enable this setting, the user must set up answers to three security questions in their profile. 
+* **User one-time passcode authentication**: Prompts the user for a one-time passcode at log in. To enable this setting, the user must set up a password expiration time in their profile.
+* **This user has no external authentication set up**: Sets an external authentication provider.
 
-These actions generate events that have the action field set to **user-management.user-setting.update**.
+When the account owner or an administrator with permissions to manage users sets on or off any of these settings for a user in the account, you get an event with action **user-management.user-setting.update**.
+
+When a user that is logged in to your account [sets on security questions](/docs/account?topic=account-login-settings#security-questions), you get an event with action **user-management.user-setting.update** for each question. 
+
+When a user that is logged in to your account [sets on or off a password expiration](/docs/account?topic=account-login-settings#password-expiration), you get an event with action **user-management.user-setting.update**.
+
+If the a user has the **User-managed login** setting enabled, the user can also set on the **Require MFA security questions at login** through the *Access IAM* dashboard or through their profile. This request generates an event with action **user-management.user-setting.update**. 
+
+For any of these events, requestData includes more information that can help you monitor these types of actions in your account:
+* **iam_id** informs about the user in your account that has a login setting updated.
+* **2FA** defines whether MFA is set on or off for the user. When it is set to false, MFA is not set for that user. Valid values are *true* and *false*.
+* **security_questions_required** defines whether the user is required to set security questions to log in to the account. Valid values are *true* and *false*.
+* **security_questions_setup** defines whether the user has defined the security questions in his profile. Valid values are *true* and *false*.
 
 
 
-
-
-* When you set up security questions: --> You can set up answers to three security questions for extra authentication at login. You must set up your security questions and answers before your administrator can enable this MFA requirement for you.
-
-* Enables user to set password expiration, turn on securoty quiestions for login, and define allowed IP addresses for IBM CLoud login and classic infrastructure APIs.
 
 
 
