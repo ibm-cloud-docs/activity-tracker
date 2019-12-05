@@ -51,7 +51,7 @@ You get the following events:
    When you select **None** as the MFA option, you get the following event:
 
     ```
-
+    ADD info
     ```
     {: screen}
 
@@ -65,14 +65,14 @@ You get the following events:
     When you select **All users** as the MFA option, you get the following event:
 
     ```
-
+    Add info
     ```
     {: screen}
 
 * An event per user when they set up the TOTP with action **user-management.user-setting.update**.
 
     ```
-
+    Add info
     ```
     {: screen}
 
@@ -84,7 +84,7 @@ You get the following events:
 When you [disable MFA for all users in your account](/docs/iam?topic=iam-enablemfa#disablemfa), you get the following events:
 
 ```
-
+Add info
 ```
 {: screen}
 
