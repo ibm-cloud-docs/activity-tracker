@@ -27,7 +27,7 @@ IBM Cloud Activity Tracker with LogDNA
     {: .topicgroup}
     Compliance
         manage_eu_acc.md
-        adoption.md
+        adoption.mdg
 
     {: .topicgroup}
     Tutorials
