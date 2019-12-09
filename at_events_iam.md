@@ -179,27 +179,6 @@ After the user ID is authenticated successfully in the {{site.data.keyword.cloud
 In Activity Tracker, you can see events that are associated to your account. Failed log in actions do not generate an event that you can monitor in your account.
 
 
-### Delete an access group
-{: #an_del_ag}
-
-When you delete an access group, the event that is triggered has an `action` field set to `iam-groups.group.delete`.
-
-When an access group is deleted, consider the following information:
-* Other actions are automatically triggered to clean up other resources that are associated with the group. Some actions that are triggered report events that are related to deletion of members in an access group, deletion of policies, and deletion of dynamic rules. 
-* The initiator of these actions is an {{site.data.keyword.IBM_notm}} service ID.
-
-
-When the access group that is deleted does not have members, policies, and rules assigned, the events that are generated for any of these resources report an outcome of`failure` with a `404` outcome code. The following sample shows the events that are generated when an access group that does not have members, policies or dynamic rules assigned is deleted:
-
-```
-Apr 29 14:11:22 IAM Access Groups: delete group test5
-Apr 29 14:11:24 IAM Access Groups: delete members -failure
-Apr 29 14:11:24 IAM Access Groups: delete rules -failure
-Apr 29 14:11:24 IAM Access Management: delete policy -failure
-```
-{: screen}
-
-
 
 ### Update an account service ID
 {: #an_update_acc_scvid}

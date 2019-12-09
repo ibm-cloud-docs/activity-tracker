@@ -111,7 +111,7 @@ Next, go to the web UI to manage events in your account. [Learn more](/docs/serv
 ## Provisioning an instance through the CLI
 {: #provision_cli}
 
-To provision an instance of {{site.data.keyword.at_full_notm}} through the command line, complete the following steps:
+Complete the following steps:
 
 1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
@@ -149,6 +149,4 @@ For example, to provision an instance with the 7 days retention plan, run the fo
 ibmcloud resource service-instance-create logdna-instance-01 logdnaat 7-day us-south
 ```
 {: codeblock}
-
-
 

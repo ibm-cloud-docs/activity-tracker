@@ -80,9 +80,13 @@ The following table lists the actions that generate an event:
 
 | Action                                          | Description |
 |-------------------------------------------------|-------------|
-| `global-search-tagging.tag.attach-tag`          | An event is generated when you add a tag to a resource. |
-| `global-search-tagging.tag.detach-tag`          | An event is generated when you remove a tag from a resource.  |
+| `global-search-tagging.tag.attach`              | An event is generated when you associate a tag to a resource. |
+| `global-search-tagging.tag.detach`              | An event is generated when you remove a tag from a resource.  |
+| `global-search-tagging.tag.update`              | An event is generated when you update a tag that is attached to a resource.  |
+| `global-search-tagging.tag.delete`              | An event is generated when you delete a tag in your account.  |
+| `global-search-tagging.tags.delete`             | An event is generated when you delete all the tags that are not attached to resources in your account.  |
 {: caption="Table 4. Actions that generate events" caption-side="top"} 
+
 
 
 ## Where to look for the events
