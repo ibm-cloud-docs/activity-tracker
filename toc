@@ -27,7 +27,6 @@ IBM Cloud Activity Tracker with LogDNA
     {: .topicgroup}
     Compliance
         manage_eu_acc.md
-        adoption.mdg
 
     {: .topicgroup}
     Tutorials
@@ -35,13 +34,9 @@ IBM Cloud Activity Tracker with LogDNA
 
     {: .topicgroup}
     Internal adopters
-        ibm-internal-only/overview.md
         ibm-internal-only/event_definition.md
         ibm-internal-only/enable-AT.md
         ibm-internal-only/enable-ST.md
-        ibm-internal-only/partner_news.md
-        ibm-internal-only/supertenant.md
-        ibm-internal-only/kube.md
         ibm-internal-only/best_practices.md
         ibm-internal-only/documentation.md
         ibm-internal-only/support.md
