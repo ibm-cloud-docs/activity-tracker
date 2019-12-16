@@ -116,9 +116,6 @@ Following is a sample event that includes the fields that are required. You can 
 To validate an event, you must check the **formatting of each of its fields**, and also the **quality of the data**.
 {: note}
 
-**ANNOUNCEMENT:** From February 2020, check the schema of the event matches the one provided in the sample.
-{: important}
-
 To validate the formatting, you can use the [Activity Tracker linter tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/Yuqian-Chen/event-linter-web/blob/master/README.md){:new_window}. **Notice that this tool is offered and supported on a best-effort basis.** You can also use this tool through the following URL [AT linter tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://eventlinter.mybluemix.net/){:new_window}.
 
 * If your event action is being reported as not valid, check the list of actions in the code. If it is not listed there, notify the AT team at the `AT Office hours & Stakeholders meeting`.
@@ -136,26 +133,26 @@ The following table list the mandatory fields:
 | Field                              | CADF spec                                         | Extension of CADF                                 | Status                     |
 |------------------------------------|---------------------------------------------------|---------------------------------------------------|----------------------------|
 | `action`                           | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
+| `dataEvent`                        |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
+| `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
+| `logSourceCRN`                     |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
+| `message`                          |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
 | `initiator.id`                     | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
 | `initiator.name`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
 | `initiator.typeURI`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
 | `initiator.credential.type`        | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
 | `initiator.host.address`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `target.id`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `target.name`                      | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `target.typeURI`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
+| `observer.name`                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
 | `outcome`                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
 | `reason.reasonCode`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
 | `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | Varies `[1]`               |
 | `requestData`                      |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | Varies `[2]`               |
 | `responseData`                     |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Optional`                 |
-| `severity`                         | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `message`                          |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
-| `logSourceCRN`                     |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
 | `saveServiceCopy`                  |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
-| `observer.name`                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `dataEvent`                        |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
+| `severity`                         | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
+| `target.id`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
+| `target.name`                      | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
+| `target.typeURI`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
 {: caption="Table 1. List of event fields in an AT event" caption-side="top"}
 
 `[1]`: This field is required for actions that fail.
@@ -199,6 +196,142 @@ Where
 
 **Use a dash `–` to separate complex objectTypes to make it more readable to the users.**
 {: important}
+
+
+### dataEvent (boolean)
+{: #dataEvent}
+
+This field specifies the type of event, whether it is a management event or a data event.
+{: note}
+
+* For a `management event`, set this field to **false**.
+* For a `data event`, set this field to **true**.
+
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events).
+
+
+
+
+### eventTime (string)
+{: #eventTime}
+
+This field indicates the timestamp when the event was created. 
+{: note}
+  
+The date is represented as Universal Time Coordinated (UTC). 
+
+The format of this field is: 
+
+```
+YYYY-MM-DDTHH:mm:ss.SS+0000
+```
+{: codeblock}
+  
+* The letter `T` in the date time syntax must always be upper case.  
+  
+For example: 2017-10-19T19:07:50.32+0000
+  
+For example, some java sample code to generate the eventTime: This code is provided as-is and is not supported nor maintained by the AT team.
+
+```java
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class EventTime {        
+    public static void main(String[] args) {        
+        System.out.println(getCurrentATEventDateFormat());    
+        }    
+    public static String getCurrentATEventDateFormat() {        
+        ZonedDateTime date = ZonedDateTime.now();        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSZ");        
+        return date.format(formatter);    
+        }
+    }
+```
+{: codeblock}
+
+ 
+### logSourceCRN  (string)
+{: #logSourceCRN}
+
+This field determines where a copy of the event is saved for the user. 
+{: note}
+
+This field must be set to the CRN of the service instance that generates the event. The information in the CRN indicates the user's account ID and the instance ID of your service in the user's account.
+
+The format of this field is the following:
+
+```
+crn:version:cname:ctype:service-name:location:scope:service-instance::
+```
+{: codeblock}
+
+Where `scope` must be set to the user's account and `service-instance` must be set to the ID of the instance in the user's account
+
+If you leave out logSourceCRN, it only saves the event to your account, not to the user's account. 
+{: important}
+
+If you leave out logSourceCRN AND set saveServiceCopy:false, then the event is not saved at all.
+{: important}
+
+
+
+### message (string)
+{: #message}
+
+Message that is associated with the event. 
+{: note}
+
+The format of this field is: 
+
+```
+serviceName: action objectType target.name [custom data per service][outcome]
+```
+{: codeblock}
+
+Where 
+
+* `servicename` is the name of the service as indicated under the **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=).  
+* `action` matches the action component as described in the CADF *action* field of the event. Must be in lowercase. 
+* `objectType` matches the objectType component as described in the CADF *action* field of the event. Must be in lowercase. 
+* `target.name` matches the value of the CADF field *target.name*. If a name is not available, leave it out. 
+* `[custom data per service]` has the format: 
+
+    ```
+    [for resourceType resourceID][custom information]
+    ```
+    {: codeblock}
+    
+    You can add information from data that is available through the AT fields requestData and responseData lowercase. 
+    
+    When the action applies to a sub resource component, for example, a policy for a user, or a worker for a cluster, the section [for resourceType resourceID] should be included. 
+    
+    `resourceType` defines the type of resource, for example, cluster, access group, serviceID, etc. 
+    
+    `resourceID` specifies the ID of the resource type to which the action applies. 
+    
+    The section `[custom information]` should include any relevant information that you consider important to the user for your event. 
+
+* `outcome` is set when the `outcome` field reports an action that is NOT `success`. 
+
+    The format is 
+    
+    ```
+    -outcome
+    ```
+    {: codeblock}
+    
+    Where `outcome` matches the outcome value as described in the CADF *outcome* field of the event. Valid values in message are `failure` and `warning`.
+
+
+For example: 
+
+```
+IAM Identity Service: delete user-apikey KeyProtectTest -failure  
+Key Protect: list secrets 
+IAM Identity Service: login user-apikey containers-kubernetes-key
+```
+{: codeblock}
 
 
 ### initiator.id (string)
@@ -376,6 +509,142 @@ To customize a cluster to preserve the external IPs by using a Helm chart, compl
     {: codeblock}
 
 
+  
+### requestData (JSON)
+{: #requestData}
+
+Add any information here that will enhance the user experience going through ther audit trail of your service events.  
+{: note}
+
+* Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
+* Must include information that is required to clarify the action. For example, an event with action create might require information on the Software verison. An update event requires information on the initial value and final value. There may be cases where data is sensitive or too long, in this situation, add information about the type of update
+* Must be added as value pairs of information.
+
+Some fields:
+* [Optional] `ResourceGroupID`: Set to the CRN of the resource group
+* [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
+* [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
+* [`Required for update action`] `newValue`: Add the new value requested in the action
+
+
+### responseData (JSON)
+{: #responseData}
+ 
+Add any information here that will enhance the user experience going through ther audit trail of your service events. 
+{: note}
+
+* Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
+* Must include information that is required to clarify the action.
+* Must be added as value pairs of information.
+
+
+
+
+### observer.name (string)
+{: #observer.name}
+
+This field must be set to the fixed value **ActivityTracker**.
+{: note}
+
+### outcome (string)
+{: #outcome}
+
+This field indicates the result of the action.
+{: note}
+
+Valid values are: `success`, `pending`, `failure`, `unknown`
+
+Make sure that all values are in lowercase.
+{: tip}
+ 
+
+### reason.reasonCode (numeric)
+{: #reason.reasonCode}
+
+This field returns the HTTP response code of the action requested.
+{: note}
+
+Use the values that are defined in [HTTP response codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xml).
+
+If your actions are not REST API calls, set to 200 for success outcome and 500 for failure. Add in `reason.reasonType` information about the failure cause.
+
+### reason.reasonType (string)
+{: #reason.reasonType}
+
+This field provides additional information about the result of the action requested. 
+{: note}
+
+This field is REQUIRED if the outcome of the action is **failure**. If you have events that do not require additional information in this field, leave the field empty.
+
+{: important}
+
+
+To set this field, you can use the description associated to the reasonCode (value) defined in [HTTP response codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xml). For example, for a reason.reasonCode = 200, set reasonType to **OK**.
+
+You can also set it to any message or information that you might have available in your service when you receive a specific reasonCode and outcome.
+
+
+### saveServiceCopy (boolean)
+{: #saveServiceCopy}
+
+This field is used to control whether the IBM service gets a copy of the event or not.
+{: note} 
+
+The default value is **true* but the field must be set explicitly. 
+
+* To save a copy of the event in your ATS ( in your service's account), set this field to **true**.
+* If you do not want a copy of the events saved in your ATS, set this field to **false**. 
+
+
+
+### severity (string)
+{: #severity}
+
+This field defines the level of threat an action may have on the Cloud.
+{: note}
+
+Valid values are: `normal`, `warning`, and `critical`
+
+* Set to **normal** for routine actions in the Cloud. 
+
+    For example: starting an instance,  refreshing a token, etc  
+
+* Set to **warning**  when an action fails, or when a Cloud resource is updated or its metadata is modified. 
+
+    For example: updating the version of a worker node, renaming a certificate, renaming a service instance, etc  
+
+* Set to **critical** when the action affects security in the Cloud like changing credentials of a user, deleting data, unauthorized access to work with a Cloud resource.  
+
+    For example: adding or removing proviledges to a user, deleting a security key, deleting logs, running an action against a resource where the user does not have permissions to work with, etc.
+
+For example, if the action is:
+* `create`: Set the value to `normal` 
+* `update`: Set the value to `warning`
+* `delete`: Set the value to `critical`
+
+
+For the deletion of low level data resources that are not critical, like objects in a bucket in COS, which is a routine action for that service, severity for deleting an object should be set to normal as this is `routine action in the cloud`, and the severity for deleting a bucket should be set to critical.
+
+When the reasonCode for an API call is any of the following values, you can apply a a second set of criteria to determine the value of severity.  The following list outlines the reasonCodes and expected severity values:
+
+| reasonCode | description                   | severity       |
+|------------|-------------------------------|----------------|
+| `400`      | `Bad Request`                 | `warning`      |
+| `401`      | `Unauthorized`                | `critical`     |
+| `403`      | `Forbidden`                   | `critical`     |
+| `409`      | `Conflict`                    | `warning`      |
+| `424`      | `Failed Dependency`           | `warning `     |
+| `500`      | `Internal Server Error`       | `warning`      |
+| `502`      | `Bad Gateway`                 | `warning`      |
+| `503`      | `Service Unavailable`         | `critical`     |
+| `504`      | `Gateway Timeout`             | `warning`      |
+| `505`      | `HTTP Version Not Supported`  | `warning`      |
+| `507`      | `Insufficient Storage`        | `critical`     |
+{: caption="Table 2. Severity value for some reason codes" caption-side="top"}
+
+
+
+
 ### target.id (string)
 {: #target.id}
 
@@ -446,270 +715,6 @@ Where
 This field does not include action information.
 
 Use forward slash `/` to separate complex objectTypes to make it more readable to the users. For example, `cloud-object-storage/bucket/cors`
-
-
-  
-### requestData (JSON)
-{: #requestData}
-
-Add any information here that will enhance the user experience going through ther audit trail of your service events.  
-{: note}
-
-* Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
-* Must include information that is required to clarify the action. For example, an event with action create might require information on the Software verison. An update event requires information on the initial value and final value. There may be cases where data is sensitive or too long, in this situation, add information about the type of update
-* Must be added as value pairs of information.
-
-Some fields:
-* [Optional] `ResourceGroupID`: Set to the CRN of the resource group
-* [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
-* [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
-* [`Required for update action`] `newValue`: Add the new value requested in the action
-
-
-### responseData (JSON)
-{: #responseData}
- 
-Add any information here that will enhance the user experience going through ther audit trail of your service events. 
-{: note}
-
-* Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
-* Must include information that is required to clarify the action.
-* Must be added as value pairs of information.
-
-### message (string)
-{: #message}
-
-Message that is associated with the event. 
-{: note}
-
-The format of this field is: 
-
-```
-serviceName: action objectType target.name [custom data per service][outcome]
-```
-{: codeblock}
-
-Where 
-
-* `servicename` is the name of the service as indicated under the **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=).  
-* `action` matches the action component as described in the CADF *action* field of the event. Must be in lowercase. 
-* `objectType` matches the objectType component as described in the CADF *action* field of the event. Must be in lowercase. 
-* `target.name` matches the value of the CADF field *target.name*. If a name is not available, leave it out. 
-* `[custom data per service]` has the format: 
-
-    ```
-    [for resourceType resourceID][custom information]
-    ```
-    {: codeblock}
-    
-    You can add information from data that is available through the AT fields requestData and responseData lowercase. 
-    
-    When the action applies to a sub resource component, for example, a policy for a user, or a worker for a cluster, the section [for resourceType resourceID] should be included. 
-    
-    `resourceType` defines the type of resource, for example, cluster, access group, serviceID, etc. 
-    
-    `resourceID` specifies the ID of the resource type to which the action applies. 
-    
-    The section `[custom information]` should include any relevant information that you consider important to the user for your event. 
-
-* `outcome` is set when the `outcome` field reports an action that is NOT `success`. 
-
-    The format is 
-    
-    ```
-    -outcome
-    ```
-    {: codeblock}
-    
-    Where `outcome` matches the outcome value as described in the CADF *outcome* field of the event. Valid values in message are `failure` and `warning`.
-
-
-For example: 
-
-```
-IAM Identity Service: delete user-apikey KeyProtectTest -failure  
-Key Protect: list secrets 
-IAM Identity Service: login user-apikey containers-kubernetes-key
-```
-{: codeblock}
-
-
-### outcome (string)
-{: #outcome}
-
-This field indicates the result of the action.
-{: note}
-
-Valid values are: `success`, `pending`, `failure`, `unknown`
-
-Make sure that all values are in lowercase.
-{: tip}
- 
-
-### reason.reasonCode (numeric)
-{: #reason.reasonCode}
-
-This field returns the HTTP response code of the action requested.
-{: note}
-
-Use the values that are defined in [HTTP response codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xml).
-
-If your actions are not REST API calls, set to 200 for success outcome and 500 for failure. Add in `reason.reasonType` information about the failure cause.
-
-### reason.reasonType (string)
-{: #reason.reasonType}
-
-This field provides additional information about the result of the action requested. 
-{: note}
-
-This field is REQUIRED if the outcome of the action is **failure**. If you have events that do not require additional information in this field, leave the field empty.
-
-{: important}
-
-
-To set this field, you can use the description associated to the reasonCode (value) defined in [HTTP response codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xml). For example, for a reason.reasonCode = 200, set reasonType to **OK**.
-
-You can also set it to any message or information that you might have available in your service when you receive a specific reasonCode and outcome.
-
-
-### severity (string)
-{: #severity}
-
-This field defines the level of threat an action may have on the Cloud.
-{: note}
-
-Valid values are: `normal`, `warning`, and `critical`
-
-* Set to **normal** for routine actions in the Cloud. 
-
-    For example: starting an instance,  refreshing a token, etc  
-
-* Set to **warning**  when an action fails, or when a Cloud resource is updated or its metadata is modified. 
-
-    For example: updating the version of a worker node, renaming a certificate, renaming a service instance, etc  
-
-* Set to **critical** when the action affects security in the Cloud like changing credentials of a user, deleting data, unauthorized access to work with a Cloud resource.  
-
-    For example: adding or removing proviledges to a user, deleting a security key, deleting logs, running an action against a resource where the user does not have permissions to work with, etc.
-
-For example, if the action is:
-* `create`: Set the value to `normal` 
-* `update`: Set the value to `warning`
-* `delete`: Set the value to `critical`
-
-
-For the deletion of low level data resources that are not critical, like objects in a bucket in COS, which is a routine action for that service, severity for deleting an object should be set to normal as this is `routine action in the cloud`, and the severity for deleting a bucket should be set to critical.
-
-When the reasonCode for an API call is any of the following values, you can apply a a second set of criteria to determine the value of severity.  The following list outlines the reasonCodes and expected severity values:
-
-| reasonCode | description                   | severity       |
-|------------|-------------------------------|----------------|
-| `400`      | `Bad Request`                 | `warning`      |
-| `401`      | `Unauthorized`                | `critical`     |
-| `403`      | `Forbidden`                   | `critical`     |
-| `409`      | `Conflict`                    | `warning`      |
-| `424`      | `Failed Dependency`           | `warning `     |
-| `500`      | `Internal Server Error`       | `warning`      |
-| `502`      | `Bad Gateway`                 | `warning`      |
-| `503`      | `Service Unavailable`         | `critical`     |
-| `504`      | `Gateway Timeout`             | `warning`      |
-| `505`      | `HTTP Version Not Supported`  | `warning`      |
-| `507`      | `Insufficient Storage`        | `critical`     |
-{: caption="Table 2. Severity value for some reason codes" caption-side="top"}
-
-
-### eventTime (string)
-{: #eventTime}
-
-This field indicates the timestamp when the event was created. 
-{: note}
-  
-The date is represented as Universal Time Coordinated (UTC). 
-
-The format of this field is: 
-
-```
-YYYY-MM-DDTHH:mm:ss.SS+0000
-```
-{: codeblock}
-  
-* The letter `T` in the date time syntax must always be upper case.  
-  
-For example: 2017-10-19T19:07:50.32+0000
-  
-For example, some java sample code to generate the eventTime: This code is provided as-is and is not supported nor maintained by the AT team.
-
-```java
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-
-public class EventTime {        
-    public static void main(String[] args) {        
-        System.out.println(getCurrentATEventDateFormat());    
-        }    
-    public static String getCurrentATEventDateFormat() {        
-        ZonedDateTime date = ZonedDateTime.now();        
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSZ");        
-        return date.format(formatter);    
-        }
-    }
-```
-{: codeblock}
-
-### saveServiceCopy (boolean)
-{: #saveServiceCopy}
-
-This field is used to control whether the IBM service gets a copy of the event or not.
-{: note} 
-
-The default value is **true* but the field must be set explicitly. 
-
-* To save a copy of the event in your ATS ( in your service's account), set this field to **true**.
-* If you do not want a copy of the events saved in your ATS, set this field to **false**. 
-
-
- 
-### logSourceCRN  (string)
-{: #logSourceCRN}
-
-This field determines where a copy of the event is saved for the user. 
-{: note}
-
-This field must be set to the CRN of the service instance that generates the event. The information in the CRN indicates the user's account ID and the instance ID of your service in the user's account.
-
-The format of this field is the following:
-
-```
-crn:version:cname:ctype:service-name:location:scope:service-instance::
-```
-{: codeblock}
-
-Where `scope` must be set to the user's account and `service-instance` must be set to the ID of the instance in the user's account
-
-If you leave out logSourceCRN, it only saves the event to your account, not to the user's account. 
-{: important}
-
-If you leave out logSourceCRN AND set saveServiceCopy:false, then the event is not saved at all.
-{: important}
-
-
-
-### observer.name (string)
-{: #observer.name}
-
-This field must be set to the fixed value **ActivityTracker**.
-{: note}
-
-### dataEvent (boolean)
-{: #dataEvent}
-
-This field specifies the type of event, whether it is a management event or a data event.
-{: note}
-
-* For a `management event`, set this field to **false**.
-* For a `data event`, set this field to **true**.
-
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events).
 
 
 
