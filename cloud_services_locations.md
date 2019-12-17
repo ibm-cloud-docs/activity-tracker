@@ -656,9 +656,11 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.discoveryfull}}            |                                                   |                                                   |          
 | {{site.data.keyword.cncfullnotm}}              |                                                   |                                                   |
 | {{site.data.keyword.DSX_short}}                |                                                   |                                                   | 
-| Watson Knowledge Catalog                       |                                                   |                                                   | 
+| Watson Knowledge Catalog                       |                                                   |                                                   |
+| {{site.data.keyword.knowledgestudioshort}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.pm_full}}                  |                                                   |                                                   | 
 | {{site.data.keyword.nlclassifiershort}}        |                                                   |                                                   | 
+| {{site.data.keyword.nlushort}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.visualrecognitionshort}}   |                                                   |                                                   | 
 | {{site.data.keyword.texttospeechshort}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.speechtotextshort}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
@@ -674,9 +676,11 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.discoveryfull}}            |                                                   |                                                   |          
 | {{site.data.keyword.cncfullnotm}}              |                                                   |                                                   |
 | {{site.data.keyword.DSX_short}}                |                                                   |                                                   | 
-| Watson Knowledge Catalog                       |                                                   |                                                   | 
+| Watson Knowledge Catalog                       |                                                   |                                                   |
+| {{site.data.keyword.knowledgestudioshort}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.pm_full}}                  |                                                   |                                                   | 
-| {{site.data.keyword.nlclassifiershort}}        |                                                   |                                                   | 
+| {{site.data.keyword.nlclassifiershort}}        |                                                   |                                                   |
+| {{site.data.keyword.nlushort}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.visualrecognitionshort}}   |                                                   |                                                   | 
 | {{site.data.keyword.texttospeechshort}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.speechtotextshort}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
@@ -692,9 +696,11 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.discoveryfull}}                           |                                                   |                                                   |          
 | {{site.data.keyword.cncfullnotm}}                             |                                                   |                                                   |
 | {{site.data.keyword.DSX_short}}                               |                                                   |                                                   | 
-| Watson Knowledge Catalog                                      |                                                   |                                                   | 
+| Watson Knowledge Catalog                                      |                                                   |                                                   |
+| {{site.data.keyword.knowledgestudioshort}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.pm_full}}                                 |                                                   |                                                   | 
 | {{site.data.keyword.nlclassifiershort}}                       |                                                   |                                                   |
+| {{site.data.keyword.nlushort}}                       | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.visualrecognitionshort}}                  |                                                   |                                                   |
 | {{site.data.keyword.texttospeechshort}}                       | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.speechtotextshort}}                       | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
