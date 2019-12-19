@@ -765,10 +765,13 @@ Use this field to attach tags to an event.
 
 
 
-## Reserved fields for Activity Tracker
+## Reserved CADF fields
 {: #reserved}
 
 These are reserved fields for Activity Tracker that might be used in the future.
+
+Do not set these fields.
+{: important}
 
 ### eventType (string)
 {: #eventType}
