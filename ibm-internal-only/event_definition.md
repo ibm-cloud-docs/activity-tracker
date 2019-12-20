@@ -52,8 +52,8 @@ Following is a sample event that includes the fields that are required. You can 
     // REQUIRED FIELDS:
 
     "initiator": {
-        "id": "IBMid-120000QUJ0",
-        "name": "rbertram@us.ibm.com",
+        "id": "IBMid-xxxxxxxxxx",
+        "name": "xxxxm@us.ibm.com",
         "typeURI": "service/security/account/user",
         "credential": {
             "type": "token"
@@ -71,30 +71,36 @@ Following is a sample event that includes the fields that are required. You can 
     "action": "iam-groups.member.add",
     "outcome": "success",
     "reason": {
-        "reasonCode": 200
-        // reasonType is optional here
+        "reasonCode": 200,
+        "reasonType": "OK"
     },
     "severity": "warning",
     "eventTime": "2019-11-03T21:40:53.94+0000",
 
-    // Three required fields are not part of CADF spec:
+    // The rest of the fields are not part of CADF spec:
     "message": "IAM Access Groups: add member Test Group",
     "logSourceCRN": "crn:v1:bluemix:public:iam-groups:global:a/7131c65c6ad70bdc209bb564997a5f1c:::",
     "saveServiceCopy": true,
 
-    // REMAINING FIELDS ARE OPTIONAL
-
+    // id is optional
     "id": "916faca9-4644-41ce-9e7c-b40a04738a16",
+
     "observer": {
         "name": "ActivityTracker"
     },
 
-    // The rest of the optional fields are not part of CADF spec:
+    // requestData is required for events that modify resources in the IBM Cloud and to add info that clarifies the action on an audit
     "requestData": {
         // This object is defined by the service
-        "iam_id": "IBMid-550000HRWG",
-        "type": "user"
+        // ResourceGroupID is optional
+        "ResourceGroupID": "xxxx",
+        // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
+        "updateType": "xxxx",
+        "initialValue": "xxxxx",
+        "newValue": "xxxxxx"
     },
+
+    // responseData is optional
     "responseData": {
         // This object is defined by the service
         "iam_id": "IBMid-550000HRWG",
@@ -169,7 +175,50 @@ Where
 **Use a dash `–` to separate complex objectTypes to make it more readable to the users.**
 {: important}
 
-
+| Action      | Sample     |
+|-------------|------------|
+| `add`       | `containers-kubernetes.usersubnet.add` |
+| `allow`     | |
+| `attach`    | `global-search-tagging.tag.attach`  |
+| `authenticate` | |
+| `backup`    | |
+| `capture`   | |
+| `configure` | |
+| `connect`   | `mobile-foundation.server-db.connect` |
+| `create`    | `containers-kubernetes.alb.create` |
+| `delete`    | `cloudcerts.certificate.delete` |
+| `deny`      | |
+| `deploy`    | |
+| `detach`    | `global-search-tagging.tag.detach`  |
+| `disable`   | |
+| `enable`    | |
+| `evaluate`  | |
+| `import`    | `cloudcerts.certificate.import` |
+| `inspect`   | `container-registry.image.inspect`   |
+| `list`      | `cloudcerts.certificates.list` </br>`container-registry.image.list` |
+| `monitor`   | |
+| `notify`    | |
+| `pull`      | `container-registry.image.pull` |
+| `push`      | `container-registry.image.push` |
+| `read`      | `cloudcerts.certificates.read` </br> `kms.policies.read`|
+| `receive`   | |
+| `reimport`  | `cloudcerts.certificate.reimport` |
+| `remove`    | |
+| `renew`     | |
+| `restore`   | `<service_id>.backup.restore` |
+| `revoke`    | |
+| `rewrap`    | `kms.secrets.rewrap`  |
+| `scale`     | `<service_id>.resources.scale`       |
+| `search`    | `cloudcerts.certificates-metadata.search` |
+| `send`      | |
+| `set-on`    | |
+| `set-off`   | |
+| `start`     | |
+| `stop`      | |
+| `test`      | `cloudcerts.notification-channel.test` |
+| `undeploy`  | |
+| `update`    | `containers-kubernetes.logging-config.update` |
+{: caption="Table 1. Actions and samples" caption-side="top"}
 
 
 ### dataEvent (boolean)
@@ -411,7 +460,7 @@ This field determines where a copy of the event is saved for the user.
 {: note}
 
 * This field must be set to the CRN of the service instance that generates the event. The information in the CRN indicates the user's account ID and the instance ID of your service in the user's account.
-* The location that is specified in the CRN must be set to the region or datacenter where the event occurred. The location can only be set to **global** if the action does not pertain to a specific location, for example, IAM actions. Events that have location set to *global* go to the *global endpoint** that is currently in Frankfurt.
+* The location that is specified in the CRN must be set to the region or datacenter where the event occurred. The location can only be set to **global** if the action does not pertain to a specific location, for example, IAM actions. Events that have location set to *global* go to the *global endpoint* that is currently in Frankfurt.
 
 
 The format of this field is the following:
@@ -783,22 +832,23 @@ Set this field to **activity** for Activity Tracker. (Other CADF values are "mon
 ### typeURI (string)
 {: #typeURI}
 
-This value must be set to: `http://schemas.dmtf.org/cloud/audit/1.0/event`.
+This field would be set to: `http://schemas.dmtf.org/cloud/audit/1.0/event`.
 
 ### type (string)
 {: #type}
 
-This field must be set to `ActivityTracker`.
+This field would be set to `ActivityTracker`.
+{: note}
 
 ### observer.id (string)
 {: #observer.id}
 
-This field must be set to the CRN of the AT instance that the event is sent to.
+This field would be set to the CRN of the AT instance that the event is sent to.
 
 ### observer.typeURI (string)
 {: #observer.typeURI}
 
-This field must be set to `security/edge/activity-tracker`.
+This field would be set to `security/edge/activity-tracker`.
 
 
 
@@ -825,7 +875,7 @@ However, services should consider the following improvements:
 ## Change control
 {: #change}
 
-
+The following table outlines when the AT guidelines change to adapt to new requirements:
 
 | Field                              | Required                                          | Field required  | Guideline changes               |
 |------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
@@ -833,8 +883,8 @@ However, services should consider the following improvements:
 | `dataEvent`                        |                                                   |  December 2019  |                                 |
 | `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
 | `id`                               |                                                   |                 |                                 | 
-| `logSourceCRN`                     |                                                   |  June 2019      |                                 |
-| `message`                          |                                                   |  June 2019      |                                 |
+| `logSourceCRN` `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      | June 2019 - when changes to migrate to LogDNA were requested                                 |
+| `message` `[*]`                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |                                 |
 | `initiator.id`                     | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `initiator.name`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
 | `initiator.typeURI`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
@@ -843,10 +893,10 @@ However, services should consider the following improvements:
 | `observer.name`                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |                                 |
 | `outcome`                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `reason.reasonCode`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check 403 is being generated to report on unauthorized access to run an action |
-| `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |  December 2019 - check that it is populated for failure events // January 2020 - required for all outcomes |
-| `requestData`                      | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check and request that update events all include information about the update (3 new subfields added to add consistency in the user experience) |
-| `responseData`                     |                                                   |                                                   |
-| `saveServiceCopy`                  |                                                   |  June 2019      |                                 |
+| `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |  December 2019 - check that it is populated for failure events </br>January 2020 - required for all outcomes |
+| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check and request that update events all include information about the update (3 new subfields added to add consistency in the user experience) |
+| `responseData` `[*]`               |                                                   |                                                   |
+| `saveServiceCopy`  `[*]`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |  June 2019 - when changes to migrate to LogDNA were requested |
 | `severity`                         | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `target.id`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `target.name`                      | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
@@ -854,4 +904,6 @@ However, services should consider the following improvements:
 | `target.host.address`              |                                                   |                 |                                 | 
 | `tags`                             |                                                   |                 |                                 | 
 {: caption="Table 4. Change control for list of event fields in an AT event" caption-side="top"}
+
+`[*]` These fields are extensions of the CADF specification.
 
