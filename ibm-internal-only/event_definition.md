@@ -175,6 +175,8 @@ Where
 **Use a dash `–` to separate complex objectTypes to make it more readable to the users.**
 {: important}
 
+The following table shows some actions and sample events:
+
 | Action      | Sample     |
 |-------------|------------|
 | `add`       | `containers-kubernetes.usersubnet.add` |
@@ -478,6 +480,15 @@ If you leave out logSourceCRN, it only saves the event to your account, not to t
 If you leave out logSourceCRN AND set saveServiceCopy:false, then the event is not saved at all.
 {: important}
 
+#### Information on how to set the logSourceCRN for services that on-boarded with the resource-controller
+{: #logSourceCRN-1}
+
+When an instance is provisioned by a user, the request calls the service’s broker via [IBM Cloud Open Service Broker API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://test.cloud.ibm.com/apidocs/resource-controller/ibm-cloud-osb-api#create-provision-a-service-instance){: new_window}. The response includes the instance’s CRN.
+
+When a user makes a call to one of your service's API endpoints, the user must pass the CRN as part of the call (can be a header, request Path, depends on your API), which you can then use to populate `target.id` and `logSourceCRN`.
+
+
+
 
 
 ### message (string)
@@ -734,6 +745,13 @@ A cloud resource can be a service, a service instance, or a service sub-resource
     ```
     {: codeblock}
 
+
+#### Information on how to set the target.id for services that on-boarded with the resource-controller
+{: #logSourceCRN-1}
+
+When an instance is provisioned by a user, the request calls the service’s broker via [IBM Cloud Open Service Broker API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://test.cloud.ibm.com/apidocs/resource-controller/ibm-cloud-osb-api#create-provision-a-service-instance){: new_window}. The response includes the instance’s CRN.
+
+When a user makes a call to one of your service's API endpoints, the user must pass the CRN as part of the call (can be a header, request Path, depends on your API), which you can then use to populate `target.id` and `logSourceCRN`.
 
 
 ### target.name (string)
