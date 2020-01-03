@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-17"
+  years: 2019, 2020
+lastupdated: "2020-01-03"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -654,7 +654,7 @@ The following tables list the locations where automatic collection of security s
 | Service  | `Dallas (us-south)`  | `Washington (us-east)` |
 |----------|:--------------------:|:----------------------:|
 | {{site.data.keyword.conversationshort}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| {{site.data.keyword.discoveryfull}}    |  |  |
+| {{site.data.keyword.discoveryfull}}    | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.cncfullnotm}}      |  |  |
 | {{site.data.keyword.DSX_short}}        |  |  |
 | Watson Knowledge Catalog               |  |  |
@@ -675,7 +675,7 @@ The following tables list the locations where automatic collection of security s
 | Service | `Tokyo (jp-tok)` | `Sydney (au-syd)` |
 |---------|:----------------:|:-----------------:|
 | {{site.data.keyword.conversationshort}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| {{site.data.keyword.discoveryfull}}     |  |  |          
+| {{site.data.keyword.discoveryfull}}     | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
 | {{site.data.keyword.cncfullnotm}}       |  |  |
 | {{site.data.keyword.DSX_short}}         |  |  | 
 | Watson Knowledge Catalog                |  |  |
@@ -696,7 +696,7 @@ The following tables list the locations where automatic collection of security s
 | Service |`Frankfurt (eu-de)` | `London (eu-gb)` |
 |---------|:------------------:|:----------------:|
 | {{site.data.keyword.conversationshort}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| {{site.data.keyword.discoveryfull}}     |  |  |
+| {{site.data.keyword.discoveryfull}}     | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.cncfullnotm}}       |  |  |
 | {{site.data.keyword.DSX_short}}         |  |  | 
 | Watson Knowledge Catalog                |  |  |
