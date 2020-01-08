@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-09-27"
+  years: 2019, 2020
+lastupdated: "2019-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, cloud foundry
 
@@ -42,5 +42,7 @@ ServiceId-9066eabb-ad5b-4ed0-86c7-74bf235ae4bf AND action:iam-identity.serviceid
 you get an event for every archive file that is uploaded into your COS bucket
 
 
+3. Create a dashboard
 
+4. Create a screen to monitor archive status
 

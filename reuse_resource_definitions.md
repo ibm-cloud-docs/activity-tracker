@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-10-14"
+  years: 2019, 2020
+lastupdated: "2019-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, reuse
 

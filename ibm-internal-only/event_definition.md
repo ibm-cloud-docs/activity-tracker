@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-12"
+  years: 2019, 2020
+lastupdated: "2019-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
 
@@ -93,7 +93,7 @@ Following is a sample event that includes the fields that are required. You can 
     "requestData": {
         // This object is defined by the service
         // ResourceGroupID is optional
-        "ResourceGroupID": "xxxx",
+        "resourceGroupID": "xxxx",
         // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
         "updateType": "xxxx",
         "initialValue": "xxxxx",
@@ -561,7 +561,7 @@ Add any information here that will enhance the user experience going through the
 * Must be added as value pairs of information.
 
 Some fields:
-* [Optional] `ResourceGroupID`: Set to the CRN of the resource group
+* [Optional] `resourceGroupID`: Set to the CRN of the resource group
 * [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
 * [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
 * [`Required for update action`] `newValue`: Add the new value requested in the action
