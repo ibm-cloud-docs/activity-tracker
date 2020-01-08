@@ -214,7 +214,8 @@ All commands should be run from a terminal that is logged into your service's IB
  
     * **7-day** is the plan, which could also be `lite`, `14-day` or `30-day`.
   
-    * **name-of-your-service** is the CRN service-name of your service.
+    * **name-of-your-service** is the CRN service-name of your service. This name will appear in orange at the beginning of each line in the LogDNA UI, so be sure to get it right! For example, the name-of-your-service here is iam-am:
+      ![Sample line](images/logdna-sample-line.png)
  
     * **us-south** is the region where your service instance will be created. Other choices include: `eu-de`, `eu-gb`, `au-syd`, etc.
  
@@ -925,7 +926,42 @@ Now your service has the power to write events and logs to any account in its re
 - Before sending events in Production, please have them reviewed by  Marisa Lopez de Silanes Ruiz(e-mail: LOPEZDSR@uk.ibm.com, slack: @Marisa LOPEZ DE SILANES RUIZ). Malformed events can break AT event consumers like QRadar, Security Advisor, and custom tools by IBM customers such as Caterpillar. Use the [event linter](https://github.ibm.com/activity-tracker/helloATv3#at-event-linter) to help ensure valid events.
 
 
+### Troubleshooting
+{: #troubleshooting}
 
 
+#### I can't get super tenancy or AT to start working
 
+Here are the common problems to check for:
+
+* Make sure you configured your agent to point to the super tenant endpoint. If you do a `kubectl describe` of the logdna-agent pod, you should see `LDLOGPATH` set to `/supertenant/logs/ingest`.  If not, you may have used the wrong yaml file to configure the agent. If this is the problem, you will see logs in the STS, but nothing in STR, ATS, or ATR.
+
+* If you are using a private endpoint, make sure your account is VRF-enabled. Make sure you configured the agent for private endpoint. If you do a `kubectl describe` of the logdna-agent pod, you should see `LDAPIHOST` and `LDLOGHOST` have values that include `...private...`.  If not, you may have used the wrong yaml file to configure the agent. If this is the problem, you will see nothing in STS, STR, ATS, or ATR.
+
+* Make sure the STS ingestion key is the one that is specified in the `secret` for `logdna-agent-key`. If this is wrong, then nothing will show up in STS, STR, ATS, or ATR.
+
+* Make sure the ATS was provisioned with the CRN of the STS. If this was not done correctly, the STS and STR will work as expected but logs will not be delivered to the ATS and ATR.
+
+* If you accidentaly delete the ATS, you have to create a new STS before creating a new ATS. The old STS will not re-bind to a new ATS. If this is the problem, no logs will appear in the ATS or ATR.
+
+
+#### My service name is wrong in the LogDNA lines
+
+Suppose your LogDNA lines look like this:
+![Sample line](images/wrong-name-LogDNA-line.png)
+
+The problem is that when you provisioned your STS (step 2, part 2 above), you set `service_supertenant` to "wrong-name". 
+
+You will need to provison a new STS (and ATS, if applicable), and follow the instructions for setting `service_supertenant`. It must be the CRN service-name, as defined near the top of this page.
+
+Create a new STS/ATS, and then set your cluster's secret to the new one's ingestion key. Keep the old STS/ATS around for the length of your plan, so that the old logs drain. If you have dashboards or other configurations in the old STS/ATS, be sure to export and import them to the new ones.
+
+
+#### I accidentally deleted my service's STS and/or ATS
+
+This is not recommended, especially in production! But if it happens, do not panic. Do not waste time trying to get LogDNA to recover your old STS/ATS; they may be able to recover data from it but they cannot restore it to function in the IBM Cloud. Instead, take the following approach.
+
+Hopefully your cluster's logdna-agent is not impacted by whatever you did, and it is continuing to write to `/var/log/*`. If so, then all you need to do is set up a new STS and ATS, and update your cluster's secret with the new ingestion key. The logdna-agent will start sending to the new STS where the old one left off, and catch up to the current time.
+
+Note that even if you only deleted the ATS, you will still need to create a new STS before creating a new ATS. Your new ATS will not bind to the old STS; STSs only bind once to ATSs.
 
