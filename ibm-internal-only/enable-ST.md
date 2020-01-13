@@ -950,6 +950,8 @@ Here are the common problems to check for:
 
 * If you accidentaly delete the ATS, you have to create a new STS before creating a new ATS. The old STS will not re-bind to a new ATS. If this is the problem, no logs will appear in the ATS or ATR.
 
+* For problems with AT events, use the [Event Linter](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_event_fields#validate) to verify that your event content is valid.
+
 
 #### My service name is wrong in the LogDNA lines
 
