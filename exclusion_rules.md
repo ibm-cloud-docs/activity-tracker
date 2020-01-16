@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2019-01-08"
+lastupdated: "2020-01-08"
 
 keywords: LogDNA, IBM, Log Analysis, logging, config agent
 
