@@ -304,6 +304,13 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     ```
     {: codeblock}
 
+     For **us-east**, run the following command:
+ 
+    ```
+    kubectl create -f  http://assets.us-east.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    ```
+    {: codeblock}
+
     For **eu-de**, run the following command: 
 
     ```
@@ -329,6 +336,13 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
     ```
     kubectl create -f http://assets.kr-seo.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    ```
+    {: codeblock}
+
+     For **au-syd**, run the following command:
+ 
+    ```
+    kubectl create -f  http://assets.au-syd.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 

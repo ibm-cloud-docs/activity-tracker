@@ -195,6 +195,7 @@ The following table shows some actions and sample events:
 | `disable`   | |
 | `enable`    | |
 | `evaluate`  | |
+| `export`    | `toolchain.pipeline-job-execution.export`|
 | `import`    | `cloudcerts.certificate.import` |
 | `inspect`   | `container-registry.image.inspect`   |
 | `list`      | `cloudcerts.certificates.list` </br>`container-registry.image.list` |
