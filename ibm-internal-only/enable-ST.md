@@ -470,7 +470,7 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
    
     **provision_key** is the same key you used to create your service's Logging STS instance.
    
-    **associated_logging_crn** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS.
+    **associated_logging_crn** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS. (It is possible to provision multiple ATS instances in a region, but you must link each ATS to a unique STS. Do not link two ATS instances to one STS instance.)
 
     An example command:
 
@@ -929,6 +929,10 @@ Now your service has the power to write events and logs to any account in its re
 ### Troubleshooting
 {: #troubleshooting}
 
+#### I can't provision my STS or ATS; it fails with 401
+
+If you cannot provision an STS or ATS (i.e. the service-instance-create fails with 401), then you are probably using an expired provisioning key. Refer to step 2.1 in the instructions above.
+
 
 #### I can't get super tenancy or AT to start working
 
@@ -942,7 +946,11 @@ Here are the common problems to check for:
 
 * Make sure the ATS was provisioned with the CRN of the STS. If this was not done correctly, the STS and STR will work as expected but logs will not be delivered to the ATS and ATR.
 
+* If you have provisioned multiple ATS instances in the same region, be sure that you linked each ATS to a unique STS when you provisioned it. You do this with the `associated_logging_crn` parameter when you create the ATS. You cannot link more than one ATS to a single STS.
+
 * If you accidentaly delete the ATS, you have to create a new STS before creating a new ATS. The old STS will not re-bind to a new ATS. If this is the problem, no logs will appear in the ATS or ATR.
+
+* For problems with AT events, use the [Event Linter](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_event_fields#validate) to verify that your event content is valid.
 
 
 #### My service name is wrong in the LogDNA lines

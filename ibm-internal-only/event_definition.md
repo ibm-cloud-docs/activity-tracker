@@ -461,9 +461,7 @@ To customize a cluster to preserve the external IPs by using a Helm chart, compl
 This field determines where a copy of the event is saved for the user. 
 {: note}
 
-* This field must be set to the CRN of the service instance that generates the event. The information in the CRN indicates the user's account ID and the instance ID of your service in the user's account.
-* The location that is specified in the CRN must be set to the region or datacenter where the event occurred. The location can only be set to **global** if the action does not pertain to a specific location, for example, IAM actions. Events that have location set to *global* go to the *global endpoint* that is currently in Frankfurt.
-
+This field must be set to the CRN of the service instance that generates the event. The information in the CRN indicates the user's account ID and the instance ID of your service in the user's account.
 
 The format of this field is the following:
 
@@ -472,7 +470,11 @@ crn:version:cname:ctype:service-name:location:scope:service-instance::
 ```
 {: codeblock}
 
-Where `scope` must be set to the user's account and `service-instance` must be set to the ID of the instance in the user's account
+Where:
+* `service-name` is as defined in the `action` field.
+* `location` must be set to the region or datacenter where the event occurred. The location can only be set to **global** if the action does not pertain to a specific location, for example, IAM actions. Events that have location set to *global* go to the *global endpoint* that is currently in Frankfurt.
+* `scope` must be set to the user's account. It must start with "a/", followed by the cloud account ID. LogDNA does not support the CloudFoundry values of `scope` ("o/" for the org or "s/" for the space).
+* `service-instance` must be set to the ID of the instance in the user's account.
 
 If you leave out logSourceCRN, it only saves the event to your account, not to the user's account. 
 {: important}
