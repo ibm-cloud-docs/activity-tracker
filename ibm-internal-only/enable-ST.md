@@ -116,7 +116,9 @@ volumes.
 
 You can write super tenant logs by writing to `stdout`. 
 Alternatively, you can write them to a subdirectory in `/var/log`, such as `/var/log/myservice`.
-You should mount `/var/log/myservice` in this case.
+You should mount `/var/log/myservice` in this case. 
+(Note that AT events cannot be written to `stdout`, but only to the directory as described above.
+Only super tenant logs have the `stdout` option.)
 
 Your service deployment .yaml file must be changed to add [hostPath volume mounts](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath). Listed below is an example deployment yaml. The fields of interest are **volumeMounts** and **volumes**.
 Again, "myservice" should be replaced by the CRN name of your service.
@@ -212,7 +214,7 @@ All commands should be run from a terminal that is logged into your service's IB
   
     * **myService-STS** is whatever you call your service, with STS appended by convention.
  
-    * **7-day** is the plan, which could also be `lite`, `14-day` or `30-day`.
+    * **7-day** is the plan, which could also be `14-day` or `30-day`. (Do not use a `lite` plan.)
   
     * **name-of-your-service** is the CRN service-name of your service. This name will appear in orange at the beginning of each line in the LogDNA UI, so be sure to get it right! For example, the name-of-your-service here is iam-am:
       ![Sample line](images/logdna-sample-line.png)
@@ -476,7 +478,7 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
    
     **myService-ATS** is whatever you call your service, with ATS appended to the end by convention.
     
-    **7-day** is the plan, which could also be `lite`, `14-day` or `30-day`.
+    **7-day** is the plan, which could also be `14-day` or `30-day`. (Do not use a `lite` plan.)
    
     **name-of-your-service** is the CRN service-name of your service.
    
