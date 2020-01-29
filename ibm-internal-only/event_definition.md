@@ -403,57 +403,18 @@ xxx.xxx.xxx.xxx
 
 **For services that run on Kubernetes:**
 
-By default, the source IP address of the client request is not preserved. When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer service that exposes the ALB. 
+By default, the source IP address of the client request is not preserved. When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer (LB) service that exposes the ALB. If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the app pod is running. 
 
-If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the app pod is running. 
+To preserve the source IP, you must change the LB service configuration to have the **externalTrafficPolicy** set to `Local` instead of `Cluster`. 
+* The change to the LB service is only needed when an ALB is created or enabled, and only if the LB service has `"externalTrafficPolicy":"Cluster"`.  
+* If it is already set with `"externalTrafficPolicy":"Local"`, then the change is not required. 
+* There is no need to do this each time a user updates their deployment, or microservice.
+* If you create or enable any additional ALBs for your service, you must enable source IP preservation for the ALBs.
 
-This setting can be automated in various ways.  It is the services' responsibility how they want to automate it. The way depends on how you deploy your environment. E.g. yaml, helm chart, terraform, etc 
+To be able to get the originating IP address, complete the following steps to enable IP preservation to all enabled public or private ALBs:  they'll need to first enable source IP preservation and then have code to actually fetch that off of a header
+1. Enable source IP preservation. [Learn more](/docs/containers?topic=containers-ingress-settings#preserve_source_ip).
+2. Obtain the IP from the `x-forwarded-for` property in the header. 
 
-To customize a cluster to preserve the external IPs by using a Helm chart, complete these steps:
-1. Add a line to the HELM chart to update the ALBs every time a microservice is deployed
-
-    ```
-    kubectl get svc -n kube-system | awk '/^public.*alb/{print $1}' | while read alb; do kubectl patch svc $alb -n kube-system -p '{"spec":{"externalTrafficPolicy":"Local"}}'; done
-    ```
-    {: codeblock}
-
-2. Update the microservice to pick up the client’s IP address from the headers. [Check out how this service has implemented it](https://github.ibm.com/oneibmcloud/control-center/pull/3028/files)
-
-    ```java
-           // X-Forwarded-For header contains: 'client_ip, proxy1_ip, proxy2_ip'
-            const clientIpAddress = req.headers["x-forwarded-for"].split(", ")[0];
-            let url = "";
-            let url = "";
-            if(req.query.option === "all") {
-            if(req.query.option === "all") {
-                // delete the toolchain
-                // delete the toolchain
-                url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}`;
-                url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}?client_ip_address=${encodeURIComponent(clientIpAddress)}`;
-            } else {
-            } else {
-                // V2 compatibility change.
-                // V2 compatibility change.
-                if (req.query.option === "branch_name") {
-                if (req.query.option === "branch_name") {
-                    // delete by branch
-                    // delete by branch
-                    url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}/buildartifacts/${encodeURIComponent(req.query.name)}/branches/${encodeURIComponent(req.query.branch)}`;
-                    url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}/buildartifacts/${encodeURIComponent(req.query.name)}/branches/${encodeURIComponent(req.query.branch)}?client_ip_address=${encodeURIComponent(clientIpAddress)}`;
-                } else {
-                } else {
-                    // delete by application or environment
-                    // delete by application or environment
-                    let option = req.query.option === "runtime_name" ? "build_artifact" : req.query.option;
-                    let option = req.query.option === "runtime_name" ? "build_artifact" : req.query.option;
-                    url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}?${option}=${encodeURIComponent(req.query.name)}`;
-                    url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}?${option}=${encodeURIComponent(req.query.name)}&client_ip_address=${encodeURIComponent(clientIpAddress)}`;
-                }
-                }
-            }
-            }
-    ```
-    {: codeblock}
 
  
 ### logSourceCRN  (string)
