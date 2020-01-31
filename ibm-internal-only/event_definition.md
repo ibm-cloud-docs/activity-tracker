@@ -342,9 +342,8 @@ This field can be set to any of the following values depending on the type of in
     
 * The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
 
-    Set this field to the value in the  **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=) for your service. In the catalog, some services include IBM Cloud nad others do not. To make sure it is clear that it is an IBM owned ID, add `IBM Cloud` to the name if your full legal name includes it.  If not sure, contact the AT team in slack.
+    Set this field to `IBM`. The rest of the initiatoer fields should be left empty.
 
-    Example: `IBM Cloud Certificate Manager`
 
 ### initiator.typeURI (string)
 {: #initiator.typeURI}
@@ -894,3 +893,9 @@ The following table outlines when the AT guidelines change to adapt to new requi
 
 `[*]` These fields are extensions of the CADF specification.
 
+Implementation change control:
+
+| Detail                             | Required                                          | Proposed        | Agreed                          |
+|------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
+| `Services do not need to change the UI to enable data events.` | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `17/1/2020` | SH meeting `24/1/2020` |
+{: caption="Table 5. Change control for implementation changes" caption-side="top"}
