@@ -29,29 +29,43 @@ subcollection: logdnaat
 
 ## Types of events
 
+A resource might be an entire service instance or a resource managed internally by a service. A resource can be whatever the user experiences as a "thing" that they can create/update/delete, regardless of its internal implementation. For example, creating a policy for a user. 
+
 There are two kinds of events in Activity Tracker:
 
-* **Management Events**:  These are events that are generated when an API call changes the state of a Cloud resource. A resource might be an entire service instance or a resource managed internally by a service. A resource can be whatever the user experiences as a "thing" that they can create/update/delete, regardless of its internal implementation. For example, creating a policy for a user. 
+* **Management Events**:  These are events that are generated when an API call that changes the state of a Cloud resource reports activity on operational platform actions on a Cloud resource.
 
-* **Data Events**: These are events that are generated when an API call reads or modifies a resource's data. Data events are stored with management events, but designated by the field: `dataEvent:true`. There are an order-of-magnitude more data events than management events, so the user must opt in to start saving them. Each service providing data events should offer the way to opt in for that service. In the future, opting in for all services may be centralized.
+    Designated by the field: `dataEvent:false`.
+
+* **Data Events**: These are events that are generated when an API call reads or modifies a resource's data. 
+
+    Data events are stored with management events, but designated by the field: `dataEvent:true`. 
+    
+    There are an order-of-magnitude more data events than management events. 
+    
+    By default, all data events are collected. However, if your service generates high volumes of data events, you might choose to offer the users a way to opt out. Contact the AT team to work on a consistent UI.
 
 ## What events to define
 
-* Only send events for customer initiated activities. These activities can be initiated by a physical person, by using an API key, or by using a token that is bound to a service.
+* Send events to report actions that report access, change, or management on resources in the IBM Cloud. These activities can be initiated by a physical person, by using an API key, or by using a token that is bound to a service.
 
-* Send events for your service, not for the microservices inside your service. You must hide the service's internal implementation.
+* Send events for your service, not for the microservices inside your service. **You must hide the service's internal implementation.**
 
 * A service in the IBM Cloud that starts sending audit events to Activity Tracker should generate an event for the following Cloud actions:
 
-    * Create resources.
-    * Update resources.
-    * Delete resources.
-    * Actions that involve access or retrieval of security data; for example, getting the details of a key in Key Protect.
+    * Access to resources (e.g. read action)
+    * Create resources (e.g. create action)
+    * Update resources (e.g. update action)
+    * Delete resources (e.g. delete action)
+    * Actions that involve access or retrieval of security data; for example, getting the details of a key in Key Protect, viewing metadata, listing resources.
 
-* BSS or Cloud Foundry will generate these events for you:
+    Denied access (401), successful, and failed actions must ge reported for each AT event.
+
+* The platform will generate these events for you:
     * Provisioning a service in the IBM Cloud.
     * Deprovisioning a service in the IBM Cloud.
     * Service plan changes.
+    * Tagging of resources.
 
 
 ## What event fields can be sent and be GDPR compliant?

@@ -342,7 +342,7 @@ This field can be set to any of the following values depending on the type of in
     
 * The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
 
-    Set this field to `IBM`. The rest of the initiatoer fields should be left empty.
+    Set this field to `IBM`. The rest of the initiator fields should be left empty.
 
 
 ### initiator.typeURI (string)
