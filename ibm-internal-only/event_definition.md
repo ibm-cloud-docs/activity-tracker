@@ -545,7 +545,8 @@ Add any information here that will enhance the user experience going through the
 * Must include information that is required to clarify the action.
 * Must be added as value pairs of information.
 
-
+Some fields:
+* [Optional] `targetAddress.type`: Set to the type of endpoint. Valid values are: `public` and `private`, in lowercase.
 
 
 ### observer.name (string)
