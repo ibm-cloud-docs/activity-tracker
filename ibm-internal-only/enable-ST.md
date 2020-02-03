@@ -486,7 +486,7 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
    
     **provision_key** is the same key you used to create your service's Logging STS instance.
    
-    **associated_logging_crn** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS. (It is possible to provision multiple ATS instances in a region, but you must link each ATS to a unique STS. Do not link two ATS instances to one STS instance.)
+    **associated_logging_crn** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS. (It is possible to provision multiple ATS instances in a region, but you must link each ATS to a unique STS. Do not link two ATS instances to one STS instance. You also cannot link two STS instances to one ATS.)
 
     An example command:
 
