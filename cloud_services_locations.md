@@ -190,7 +190,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|:----------------:|:--------------------------:|
-| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |          
+| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |          
 | {{site.data.keyword.containerlong_notm}}       |                     |                                      |
 {: caption="Container services integration in AP locations" caption-side="top"}
 {: #cs_container-table-2}
@@ -212,7 +212,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 
 | Service                                                       | Global |
 |---------------------------------------------------------------|:-------------------:|
-| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) `Events are available through the Activity Tracker Dallas (us-south) instance` |          
+| {{site.data.keyword.registrylong_notm}}        | `Events are available through the Activity Tracker Dallas (us-south) instance` |          
 | {{site.data.keyword.containerlong_notm}}       |                     |
 {: caption="Container services integration in Global" caption-side="top"}
 {: #cs_container-table-3}
