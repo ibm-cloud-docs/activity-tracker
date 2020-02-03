@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-02-03"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -179,8 +179,8 @@ The following table shows the locations where automatic collection of Cloud Foun
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|:-------------------:|:------------------------------------:|
-| {{site.data.keyword.registrylong_notm}}        |                     |                                      |          
-| {{site.data.keyword.containerlong}}            |                     |                                      |
+| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) Events are available through the `Dallas (us-south)` instance |          
+| {{site.data.keyword.containerlong_notm}}       |                     |                                      |
 {: caption="Container services integration in America's locations" caption-side="top"}
 {: #cs_container-table-1}
 {: tab-title="America"}
@@ -190,8 +190,8 @@ The following table shows the locations where automatic collection of Cloud Foun
 
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|:----------------:|:--------------------------:|
-| {{site.data.keyword.registrylong_notm}}        |                     |                                      |          
-| {{site.data.keyword.containerlong}}            |                     |                                      |
+| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) Events are available through the `Tokyo (jp-tok)` instance |          
+| {{site.data.keyword.containerlong_notm}}       |                     |                                      |
 {: caption="Container services integration in AP locations" caption-side="top"}
 {: #cs_container-table-2}
 {: tab-title="Asia Pacific"}
@@ -201,8 +201,8 @@ The following table shows the locations where automatic collection of Cloud Foun
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|:-------------------:|:----------------:|
-| {{site.data.keyword.registrylong_notm}}        |                     |                                      |          
-| {{site.data.keyword.containerlong}}            |                     |                                      |
+| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
+| {{site.data.keyword.containerlong_notm}}       |                     |                                      |
 {: caption="Container services integration in Europe locations" caption-side="top"}
 {: #cs_container-table-3}
 {: tab-title="Europe"}
