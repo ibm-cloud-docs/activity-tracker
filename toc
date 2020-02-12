@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="logdnaat" audience="service" arm="4379776" href="/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started" path="services/Activity-Tracker-with-LogDNA"}
+{: .toc subcollection="logdnaat" audience="service" href="/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started" path="Activity-Tracker-with-LogDNA"}
 IBM Cloud Activity Tracker with LogDNA
 
     {: .navgroup id="learn"}

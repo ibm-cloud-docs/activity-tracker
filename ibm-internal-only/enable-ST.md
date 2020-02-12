@@ -486,7 +486,7 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
    
     **provision_key** is the same key you used to create your service's Logging STS instance.
    
-    **associated_logging_crn** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS. (It is possible to provision multiple ATS instances in a region, but you must link each ATS to a unique STS. Do not link two ATS instances to one STS instance.)
+    **associated_logging_crn** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS. (It is possible to provision multiple ATS instances in a region, but you must link each ATS to a unique STS. Do not link two ATS instances to one STS instance. You also cannot link two STS instances to one ATS.)
 
     An example command:
 
@@ -730,11 +730,9 @@ do not see it. Below we outline the changes that customers will see.
 
 Normally, the `location` segment of `logSourceCRN` should match the location where the log or event is ingested. This situation is an exception.
 
-Here is how to send you events from your service in Sydney to another region. 
+Here is how to send you events from your service in Sydney to another region. The same approach also applies for supertenant logs.
 
 In the example below, the service's events are being sent to us-south. Services must document this deviation so their customers can find their events.
-Once Activity Tracker is available in Sydney, your service should switch to storing events in Sydney.
-
 
 1. Write your service's events and logs in Sydney. Fill in the `logSourceCRN` with the CRN of the customer instance of your service in Sydney.
 2. Create a Logging STS and Activity Tracker ATS for your service in us-south if they do not already exist. This is where you will find your service events and logs from Sydney.
@@ -747,6 +745,8 @@ Once Activity Tracker is available in Sydney, your service should switch to stor
     The `LDAPIHOST` and `LDLOGHOST` values in the yaml reference the us-south ingestion points. So that is where your logs and events will be sent.
 
 4. Users of your service will have to create a Logging STR and Activity Tracker ATR if they wish to view events and logs from your service in Sydney. Note, you do not have to create these instances if they already exist.
+
+Once Activity Tracker is available in Sydney, your service should switch to storing events (and supertenant logs) in Sydney. This will involve standing up an STS and ATS in Sydney, and pointing to them with your LogDNA agents in Sydney. 
 
 
 **My service sends global events which are not tied to any region. What can I do?**
