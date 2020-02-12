@@ -93,21 +93,23 @@ Following is a sample event that includes the fields that are required. You can 
     "requestData": {
         // This object is defined by the service
         // ResourceGroupID is optional
-        "resourceGroupID": "xxxx",
+        "resourceGroupId": "xxxx",
         // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
         "updateType": "xxxx",
         "initialValue": "xxxxx",
-        "newValue": "xxxxxx"
+        "newValue": "xxxxxx",
+        "reasonForFailure": "xxxxxx",
+        "platformSource" : "Watson xxxxx"
     },
 
     // responseData is optional
     "responseData": {
         // This object is defined by the service
-        "iam_id": "IBMid-550000HRWG",
+        "iamId": "IBMid-550000HRWG",
         "type": "user",
-        "created_at": "2019-11-03T21:40:53Z",
-        "created_by_id": "IBMid-120000QUJ0",
-        "status_code": 200
+        "createdAt": "2019-11-03T21:40:53Z",
+        "createdById": "IBMid-120000QUJ0",
+        "statusCode": 200
     },
     "dataEvent": false
 
@@ -163,7 +165,7 @@ Where
 
 * `action` defines the task requested by the user.  
 
-    Valid actions are: `add`, `create`, `read`, `update`,`delete`, `backup`, `capture`, `configure`, `deploy`, `disable`, `enable`, `import`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`
+    Valid actions are: `add`, `create`, `read`, `update`,`delete`, `backup`, `capture`, `configure`, `deploy`, `disable`, `enable`, `import`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`
 
     Not valid actions are: `info`, `unknown`
 
@@ -233,7 +235,7 @@ This field specifies the type of event, whether it is a management event or a da
 * For a `management event`, set this field to **false**.
 * For a `data event`, set this field to **true**.
 
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_faq#types-of-events).
+[Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_faq#types-of-events).
 
 
 
@@ -526,12 +528,17 @@ Add any information here that will enhance the user experience going through the
 * Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
 * Must include information that is required to clarify the action. For example, an event with action create might require information on the Software verison. An update event requires information on the initial value and final value. There may be cases where data is sensitive or too long, in this situation, add information about the type of update
 * Must be added as value pairs of information.
+* Must be formatted in camel case style.
 
 Some fields:
-* [Optional] `resourceGroupID`: Set to the CRN of the resource group
+* [Optional] `resourceGroupId`: Set to the CRN of the resource group
 * [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
 * [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
 * [`Required for update action`] `newValue`: Add the new value requested in the action
+* [`Required for Watson services`] `platformSource`: Add the UI catalog name of your service, for example, `Watson Discovery` This helps users identify your events quickly by your service, since the platform_source value is shared across all Watson services.
+* [Optional] `customizationId`
+* [Optional] `environmentId`
+* [Optional] `reasonForFailure`:  Include additional info as to why the action has failed.
 
 
 ### responseData (JSON)
@@ -543,6 +550,7 @@ Add any information here that will enhance the user experience going through the
 * Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
 * Must include information that is required to clarify the action.
 * Must be added as value pairs of information.
+* Must be formatted in camel case style.
 
 Some fields:
 * [Optional] `targetAddress.type`: Set to the type of endpoint. Valid values are: `public` and `private`, in lowercase.
@@ -611,9 +619,10 @@ If your actions are not REST API calls, set to 200 for success outcome and 500 f
 This field provides additional information about the result of the action requested. 
 {: note}
 
-This field is REQUIRED if the outcome of the action is **failure**. If you have events that do not require additional information in this field, leave the field empty.
+This field is REQUIRED for all events. 
 
-{: important}
+When the outcome is failure, you can also add additional information in the field `requestData.reasonForFailure`.
+{: tip}
 
 
 To set this field, you can use the description associated to the reasonCode (value) defined in [HTTP response codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xml). For example, for a reason.reasonCode = 200, set reasonType to **OK**.
@@ -849,7 +858,7 @@ The events that worked on legacy Activity will continue to work on the new Activ
 However, services should consider the following improvements:
 
 * `requestData`/`responseData` can be any JSON object, not just stringified JSON. A JSON object is now preferred over stringified JSON, for better parsing and searching. All events should include `requestData` and `responseData`, even if empty.
-* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` defaults to `false`, but events should specify `false` explicitly. Refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#optional) for more info.
+* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` defaults to `false`, but events should specify `false` explicitly. Refer [here](https://test.cloud.ibm.com/docs/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#optional) for more info.
 * The `observer` fields are no longer discouraged, and `observer.name` should be set to "ActivityTracker". `observer.name` may be used in the future to support sending events to AT via stdout.
 * Events should have the CADF fields at the top level, and no longer encapsulate the CADF fields in the `payload` structure. When an event does have `payload`, LogDNA removes it and promotes its internal fields to the top level.
 * The `meta` object is now ignored. Services should remove it.
