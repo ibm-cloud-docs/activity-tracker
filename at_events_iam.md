@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-10-06"
+  years: 2019, 2020
+lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -40,7 +40,9 @@ The {{site.data.keyword.at_full_notm}} service records user-initiated activities
 The following table lists the actions that generate an event:
 
 | Action                      | Description |
-|-----------------------------|---------|
+|-----------------------------|-------------|
+| `iam-groups.account-settings.update` | An event is generated when an initiator updates their account settings for the access groups service. |
+| `iam-groups.federated-member.add` | An event is generated when an initiator logs in to the account and gains federated membership to an access group. |
 | `iam-groups.group.create`   | An event is generated when an initiator creates an access group. | 
 | `iam-groups.group.read`     | An event is generated when an initiator looks at information that is related with access groups. |
 | `iam-groups.group.update`   | An event is generated when an initiator updates a group name or a description. |
@@ -52,7 +54,6 @@ The following table lists the actions that generate an event:
 | `iam-groups.rule.create`    | An event is generated when an initiator adds a rule to an access group. |
 | `iam-groups.rule.update`    | An event is generated when an initiator modifies the rule name. |
 | `iam-groups.rule.delete`    | An event is generated when an initiator deletes a rule from an access group. |
-| `iam-groups.federated-member.add` | An event is generated when an initiator logs in to the account and gains federated membership to an access group. |
 {: caption="Table 1. Manage access groups actions" caption-side="top"} 
 
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-05-31"
+  years: 2019, 2020
+lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, enable super tenancy
 
@@ -116,7 +116,9 @@ volumes.
 
 You can write super tenant logs by writing to `stdout`. 
 Alternatively, you can write them to a subdirectory in `/var/log`, such as `/var/log/myservice`.
-You should mount `/var/log/myservice` in this case.
+You should mount `/var/log/myservice` in this case. 
+(Note that AT events cannot be written to `stdout`, but only to the directory as described above.
+Only super tenant logs have the `stdout` option.)
 
 Your service deployment .yaml file must be changed to add [hostPath volume mounts](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath). Listed below is an example deployment yaml. The fields of interest are **volumeMounts** and **volumes**.
 Again, "myservice" should be replaced by the CRN name of your service.
@@ -212,9 +214,10 @@ All commands should be run from a terminal that is logged into your service's IB
   
     * **myService-STS** is whatever you call your service, with STS appended by convention.
  
-    * **7-day** is the plan, which could also be `lite`, `14-day` or `30-day`.
+    * **7-day** is the plan, which could also be `14-day` or `30-day`. (Do not use a `lite` plan.)
   
-    * **name-of-your-service** is the CRN service-name of your service.
+    * **name-of-your-service** is the CRN service-name of your service. This name will appear in orange at the beginning of each line in the LogDNA UI, so be sure to get it right! For example, the name-of-your-service here is iam-am:
+      ![Sample line](images/logdna-sample-line.png)
  
     * **us-south** is the region where your service instance will be created. Other choices include: `eu-de`, `eu-gb`, `au-syd`, etc.
  
@@ -303,6 +306,13 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     ```
     {: codeblock}
 
+     For **us-east**, run the following command:
+ 
+    ```
+    kubectl create -f  http://assets.us-east.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    ```
+    {: codeblock}
+
     For **eu-de**, run the following command: 
 
     ```
@@ -328,6 +338,13 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
     ```
     kubectl create -f http://assets.kr-seo.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    ```
+    {: codeblock}
+
+     For **au-syd**, run the following command:
+ 
+    ```
+    kubectl create -f  http://assets.au-syd.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
@@ -461,7 +478,7 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
    
     **myService-ATS** is whatever you call your service, with ATS appended to the end by convention.
     
-    **7-day** is the plan, which could also be `lite`, `14-day` or `30-day`.
+    **7-day** is the plan, which could also be `14-day` or `30-day`. (Do not use a `lite` plan.)
    
     **name-of-your-service** is the CRN service-name of your service.
    
@@ -469,7 +486,7 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
    
     **provision_key** is the same key you used to create your service's Logging STS instance.
    
-    **associated_logging_crn** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS.
+    **associated_logging_crn** is the CRN of your service's Logging STS that was obtained when you created it above. This links the ATS to the STS. (It is possible to provision multiple ATS instances in a region, but you must link each ATS to a unique STS. Do not link two ATS instances to one STS instance. You also cannot link two STS instances to one ATS.)
 
     An example command:
 
@@ -713,11 +730,9 @@ do not see it. Below we outline the changes that customers will see.
 
 Normally, the `location` segment of `logSourceCRN` should match the location where the log or event is ingested. This situation is an exception.
 
-Here is how to send you events from your service in Sydney to another region. 
+Here is how to send you events from your service in Sydney to another region. The same approach also applies for supertenant logs.
 
 In the example below, the service's events are being sent to us-south. Services must document this deviation so their customers can find their events.
-Once Activity Tracker is available in Sydney, your service should switch to storing events in Sydney.
-
 
 1. Write your service's events and logs in Sydney. Fill in the `logSourceCRN` with the CRN of the customer instance of your service in Sydney.
 2. Create a Logging STS and Activity Tracker ATS for your service in us-south if they do not already exist. This is where you will find your service events and logs from Sydney.
@@ -730,6 +745,8 @@ Once Activity Tracker is available in Sydney, your service should switch to stor
     The `LDAPIHOST` and `LDLOGHOST` values in the yaml reference the us-south ingestion points. So that is where your logs and events will be sent.
 
 4. Users of your service will have to create a Logging STR and Activity Tracker ATR if they wish to view events and logs from your service in Sydney. Note, you do not have to create these instances if they already exist.
+
+Once Activity Tracker is available in Sydney, your service should switch to storing events (and supertenant logs) in Sydney. This will involve standing up an STS and ATS in Sydney, and pointing to them with your LogDNA agents in Sydney. 
 
 
 **My service sends global events which are not tied to any region. What can I do?**
@@ -925,7 +942,50 @@ Now your service has the power to write events and logs to any account in its re
 - Before sending events in Production, please have them reviewed by  Marisa Lopez de Silanes Ruiz(e-mail: LOPEZDSR@uk.ibm.com, slack: @Marisa LOPEZ DE SILANES RUIZ). Malformed events can break AT event consumers like QRadar, Security Advisor, and custom tools by IBM customers such as Caterpillar. Use the [event linter](https://github.ibm.com/activity-tracker/helloATv3#at-event-linter) to help ensure valid events.
 
 
+### Troubleshooting
+{: #troubleshooting}
+
+#### I can't provision my STS or ATS; it fails with 401
+
+If you cannot provision an STS or ATS (i.e. the service-instance-create fails with 401), then you are probably using an expired provisioning key. Refer to step 2.1 in the instructions above.
 
 
+#### I can't get super tenancy or AT to start working
 
+Here are the common problems to check for:
+
+* Make sure you configured your agent to point to the super tenant endpoint. If you do a `kubectl describe` of the logdna-agent pod, you should see `LDLOGPATH` set to `/supertenant/logs/ingest`.  If not, you may have used the wrong yaml file to configure the agent. If this is the problem, you will see logs in the STS, but nothing in STR, ATS, or ATR.
+
+* If you are using a private endpoint, make sure your account is VRF-enabled. Make sure you configured the agent for private endpoint. If you do a `kubectl describe` of the logdna-agent pod, you should see `LDAPIHOST` and `LDLOGHOST` have values that include `...private...`.  If not, you may have used the wrong yaml file to configure the agent. If this is the problem, you will see nothing in STS, STR, ATS, or ATR.
+
+* Make sure the STS ingestion key is the one that is specified in the `secret` for `logdna-agent-key`. If this is wrong, then nothing will show up in STS, STR, ATS, or ATR.
+
+* Make sure the ATS was provisioned with the CRN of the STS. If this was not done correctly, the STS and STR will work as expected but logs will not be delivered to the ATS and ATR.
+
+* If you have provisioned multiple ATS instances in the same region, be sure that you linked each ATS to a unique STS when you provisioned it. You do this with the `associated_logging_crn` parameter when you create the ATS. You cannot link more than one ATS to a single STS.
+
+* If you accidentaly delete the ATS, you have to create a new STS before creating a new ATS. The old STS will not re-bind to a new ATS. If this is the problem, no logs will appear in the ATS or ATR.
+
+* For problems with AT events, use the [Event Linter](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_event_fields#validate) to verify that your event content is valid.
+
+
+#### My service name is wrong in the LogDNA lines
+
+Suppose your LogDNA lines look like this:
+![Sample line](images/wrong-name-LogDNA-line.png)
+
+The problem is that when you provisioned your STS (step 2, part 2 above), you set `service_supertenant` to "wrong-name". 
+
+You will need to provison a new STS (and ATS, if applicable), and follow the instructions for setting `service_supertenant`. It must be the CRN service-name, as defined near the top of this page.
+
+Create a new STS/ATS, and then set your cluster's secret to the new one's ingestion key. Keep the old STS/ATS around for the length of your plan, so that the old logs drain. If you have dashboards or other configurations in the old STS/ATS, be sure to export and import them to the new ones.
+
+
+#### I accidentally deleted my service's STS and/or ATS
+
+This is not recommended, especially in production! But if it happens, do not panic. Do not waste time trying to get LogDNA to recover your old STS/ATS; they may be able to recover data from it but they cannot restore it to function in the IBM Cloud. Instead, take the following approach.
+
+Hopefully your cluster's logdna-agent is not impacted by whatever you did, and it is continuing to write to `/var/log/*`. If so, then all you need to do is set up a new STS and ATS, and update your cluster's secret with the new ingestion key. The logdna-agent will start sending to the new STS where the old one left off, and catch up to the current time.
+
+Note that even if you only deleted the ATS, you will still need to create a new STS before creating a new ATS. Your new ATS will not bind to the old STS; STSs only bind once to ATSs.
 

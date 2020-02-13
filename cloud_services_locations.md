@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-17"
+  years: 2019, 2020
+lastupdated: "2020-02-03"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -179,8 +179,8 @@ The following table shows the locations where automatic collection of Cloud Foun
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|:-------------------:|:------------------------------------:|
-| {{site.data.keyword.registrylong_notm}}        |                     |                                      |          
-| {{site.data.keyword.containerlong}}            |                     |                                      |
+| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | `No` |          
+| {{site.data.keyword.containerlong_notm}}       |                     |                                      |
 {: caption="Container services integration in America's locations" caption-side="top"}
 {: #cs_container-table-1}
 {: tab-title="America"}
@@ -190,8 +190,8 @@ The following table shows the locations where automatic collection of Cloud Foun
 
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|:----------------:|:--------------------------:|
-| {{site.data.keyword.registrylong_notm}}        |                     |                                      |          
-| {{site.data.keyword.containerlong}}            |                     |                                      |
+| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |          
+| {{site.data.keyword.containerlong_notm}}       |                     |                                      |
 {: caption="Container services integration in AP locations" caption-side="top"}
 {: #cs_container-table-2}
 {: tab-title="Asia Pacific"}
@@ -201,11 +201,22 @@ The following table shows the locations where automatic collection of Cloud Foun
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|:-------------------:|:----------------:|
-| {{site.data.keyword.registrylong_notm}}        |                     |                                      |          
-| {{site.data.keyword.containerlong}}            |                     |                                      |
+| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
+| {{site.data.keyword.containerlong_notm}}       |                     |                                      |
 {: caption="Container services integration in Europe locations" caption-side="top"}
 {: #cs_container-table-3}
 {: tab-title="Europe"}
+{: tab-group="cs_container"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Service                                                       | Global |
+|---------------------------------------------------------------|:-------------------:|
+| {{site.data.keyword.registrylong_notm}}        | `Events are available through the Activity Tracker Dallas (us-south) instance` |          
+| {{site.data.keyword.containerlong_notm}}       |                     |
+{: caption="Container services integration in Global" caption-side="top"}
+{: #cs_container-table-3}
+{: tab-title="Global"}
 {: tab-group="cs_container"}
 {: class="simple-tab-table"}
 {: row-headers}
@@ -654,7 +665,7 @@ The following tables list the locations where automatic collection of security s
 | Service  | `Dallas (us-south)`  | `Washington (us-east)` |
 |----------|:--------------------:|:----------------------:|
 | {{site.data.keyword.conversationshort}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| {{site.data.keyword.discoveryfull}}    |  |  |
+| {{site.data.keyword.discoveryfull}}    | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.cncfullnotm}}      |  |  |
 | {{site.data.keyword.DSX_short}}        |  |  |
 | Watson Knowledge Catalog               |  |  |
@@ -675,7 +686,7 @@ The following tables list the locations where automatic collection of security s
 | Service | `Tokyo (jp-tok)` | `Sydney (au-syd)` |
 |---------|:----------------:|:-----------------:|
 | {{site.data.keyword.conversationshort}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| {{site.data.keyword.discoveryfull}}     |  |  |          
+| {{site.data.keyword.discoveryfull}}     | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
 | {{site.data.keyword.cncfullnotm}}       |  |  |
 | {{site.data.keyword.DSX_short}}         |  |  | 
 | Watson Knowledge Catalog                |  |  |
@@ -696,7 +707,7 @@ The following tables list the locations where automatic collection of security s
 | Service |`Frankfurt (eu-de)` | `London (eu-gb)` |
 |---------|:------------------:|:----------------:|
 | {{site.data.keyword.conversationshort}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| {{site.data.keyword.discoveryfull}}     |  |  |
+| {{site.data.keyword.discoveryfull}}     | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.cncfullnotm}}       |  |  |
 | {{site.data.keyword.DSX_short}}         |  |  | 
 | Watson Knowledge Catalog                |  |  |

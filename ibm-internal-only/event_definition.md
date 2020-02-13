@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-12"
+  years: 2019, 2020
+lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
 
@@ -52,8 +52,8 @@ Following is a sample event that includes the fields that are required. You can 
     // REQUIRED FIELDS:
 
     "initiator": {
-        "id": "IBMid-120000QUJ0",
-        "name": "rbertram@us.ibm.com",
+        "id": "IBMid-xxxxxxxxxx",
+        "name": "xxxxm@us.ibm.com",
         "typeURI": "service/security/account/user",
         "credential": {
             "type": "token"
@@ -71,37 +71,45 @@ Following is a sample event that includes the fields that are required. You can 
     "action": "iam-groups.member.add",
     "outcome": "success",
     "reason": {
-        "reasonCode": 200
-        // reasonType is optional here
+        "reasonCode": 200,
+        "reasonType": "OK"
     },
     "severity": "warning",
     "eventTime": "2019-11-03T21:40:53.94+0000",
 
-    // Three required fields are not part of CADF spec:
+    // The rest of the fields are not part of CADF spec:
     "message": "IAM Access Groups: add member Test Group",
     "logSourceCRN": "crn:v1:bluemix:public:iam-groups:global:a/7131c65c6ad70bdc209bb564997a5f1c:::",
     "saveServiceCopy": true,
 
-    // REMAINING FIELDS ARE OPTIONAL
-
+    // id is optional
     "id": "916faca9-4644-41ce-9e7c-b40a04738a16",
+
     "observer": {
         "name": "ActivityTracker"
     },
 
-    // The rest of the optional fields are not part of CADF spec:
+    // requestData is required for events that modify resources in the IBM Cloud and to add info that clarifies the action on an audit
     "requestData": {
         // This object is defined by the service
-        "iam_id": "IBMid-550000HRWG",
-        "type": "user"
+        // ResourceGroupID is optional
+        "resourceGroupId": "xxxx",
+        // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
+        "updateType": "xxxx",
+        "initialValue": "xxxxx",
+        "newValue": "xxxxxx",
+        "reasonForFailure": "xxxxxx",
+        "platformSource" : "Watson xxxxx"
     },
+
+    // responseData is optional
     "responseData": {
         // This object is defined by the service
-        "iam_id": "IBMid-550000HRWG",
+        "iamId": "IBMid-550000HRWG",
         "type": "user",
-        "created_at": "2019-11-03T21:40:53Z",
-        "created_by_id": "IBMid-120000QUJ0",
-        "status_code": 200
+        "createdAt": "2019-11-03T21:40:53Z",
+        "createdById": "IBMid-120000QUJ0",
+        "statusCode": 200
     },
     "dataEvent": false
 
@@ -110,10 +118,10 @@ Following is a sample event that includes the fields that are required. You can 
 {: codeblock}
 
 
-## Validating an AT event
+## Checking an AT event
 {: #validate}
 
-To validate an event, you must check the **formatting of each of its fields**, and also the **quality of the data**.
+You must check the **formatting of each of its fields**, the **platform_service** name, and also the **quality of the data**.
 {: note}
 
 To validate the formatting, you can use the [Activity Tracker linter tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/Yuqian-Chen/event-linter-web/blob/master/README.md){:new_window}. **Notice that this tool is offered and supported on a best-effort basis.** You can also use this tool through the following URL [AT linter tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://eventlinter.mybluemix.net/){:new_window}.
@@ -123,40 +131,10 @@ To validate the formatting, you can use the [Activity Tracker linter tool ![Exte
 
 To check the quality of the data, verify that the data provided by the event includes the information required for auditing your service. For example, if you update the name of a resource, indicate the old name and the new name. Use the requestData and responseData fields to include additonal information.
 
+To check the **platform_service** name, check the service name displayed that is displayed in the IBM section for your events. It should be set to the name of your service. 
 
-
-## Required event fields provided by the service to comply with AT guidelines
+## Event fields provided by the service to comply with AT guidelines
 {: #mandatory}
-
-The following table list the mandatory fields:
-
-| Field                              | CADF spec                                         | Extension of CADF                                 | Status                     |
-|------------------------------------|---------------------------------------------------|---------------------------------------------------|----------------------------|
-| `action`                           | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `dataEvent`                        |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
-| `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `logSourceCRN`                     |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
-| `message`                          |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
-| `initiator.id`                     | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `initiator.name`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `initiator.typeURI`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `initiator.credential.type`        | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `initiator.host.address`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `observer.name`                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `outcome`                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `reason.reasonCode`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | Varies `[1]`               |
-| `requestData`                      |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | Varies `[2]`               |
-| `responseData`                     |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Optional`                 |
-| `saveServiceCopy`                  |                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Required`                 |
-| `severity`                         | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `target.id`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `target.name`                      | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-| `target.typeURI`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                                   | `Required`                 |
-{: caption="Table 1. List of event fields in an AT event" caption-side="top"}
-
-`[1]`: This field is required for actions that fail.
-`[2]`: This field is required for actions that update or modify a resource in the Cloud.
 
 
 ### action (string)
@@ -165,7 +143,7 @@ The following table list the mandatory fields:
 This field indicates the action that triggers an event. 
 {: note}
 
-To identify the actions that a service should enable to generate an AT event, you can check the IAM actions that users can perform, the user actions that incur on resource changes in your service, etc. Then, define the list of actions. IAM and AT actions should match to enhance the user's experience.
+To identify the actions that a service should enable to generate an AT event, you can check the IAM actions that users can perform, the user actions that incur on resource changes in your service, etc. Then, define the list of actions. IAM and AT actions should match.
 {: tip}
 
 The format of this field is the following:
@@ -187,7 +165,9 @@ Where
 
 * `action` defines the task requested by the user.  
 
-    Valid actions are: `add`, `create`, `read`, `update`,`delete`, `backup`, `capture`, `configure`, `deploy`, `disable`, `enable`, `import`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `unknown`
+    Valid actions are: `add`, `create`, `read`, `update`,`delete`, `backup`, `capture`, `configure`, `deploy`, `disable`, `enable`, `import`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`
+
+    Not valid actions are: `info`, `unknown`
 
     More values will be added as needed.
 
@@ -196,6 +176,54 @@ Where
 
 **Use a dash `–` to separate complex objectTypes to make it more readable to the users.**
 {: important}
+
+The following table shows some actions and sample events:
+
+| Action      | Sample     |
+|-------------|------------|
+| `add`       | `containers-kubernetes.usersubnet.add` |
+| `allow`     | |
+| `attach`    | `global-search-tagging.tag.attach`  |
+| `authenticate` | |
+| `backup`    | |
+| `capture`   | |
+| `configure` | |
+| `connect`   | `mobile-foundation.server-db.connect` |
+| `create`    | `containers-kubernetes.alb.create` |
+| `delete`    | `cloudcerts.certificate.delete` |
+| `deny`      | |
+| `deploy`    | |
+| `detach`    | `global-search-tagging.tag.detach`  |
+| `disable`   | |
+| `enable`    | |
+| `evaluate`  | |
+| `export`    | `toolchain.pipeline-job-execution.export`|
+| `import`    | `cloudcerts.certificate.import` |
+| `inspect`   | `container-registry.image.inspect`   |
+| `list`      | `cloudcerts.certificates.list` </br>`container-registry.image.list` |
+| `monitor`   | |
+| `notify`    | |
+| `pull`      | `container-registry.image.pull` |
+| `push`      | `container-registry.image.push` |
+| `read`      | `cloudcerts.certificates.read` </br> `kms.policies.read`|
+| `receive`   | |
+| `reimport`  | `cloudcerts.certificate.reimport` |
+| `remove`    | |
+| `renew`     | |
+| `restore`   | `<service_id>.backup.restore` |
+| `revoke`    | |
+| `rewrap`    | `kms.secrets.rewrap`  |
+| `scale`     | `<service_id>.resources.scale`       |
+| `search`    | `cloudcerts.certificates-metadata.search` |
+| `send`      | |
+| `set-on`    | |
+| `set-off`   | |
+| `start`     | |
+| `stop`      | |
+| `test`      | `cloudcerts.notification-channel.test` |
+| `undeploy`  | |
+| `update`    | `containers-kubernetes.logging-config.update` |
+{: caption="Table 1. Actions and samples" caption-side="top"}
 
 
 ### dataEvent (boolean)
@@ -207,7 +235,7 @@ This field specifies the type of event, whether it is a management event or a da
 * For a `management event`, set this field to **false**.
 * For a `data event`, set this field to **true**.
 
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_faq#types-of-events).
+[Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_faq#types-of-events).
 
 
 
@@ -217,6 +245,9 @@ This field specifies the type of event, whether it is a management event or a da
 
 This field indicates the timestamp when the event was created. 
 {: note}
+
+The LogDNA timestamp is set from eventTime.
+{: important}
   
 The date is represented as Universal Time Coordinated (UTC). 
 
@@ -250,88 +281,6 @@ public class EventTime {
 ```
 {: codeblock}
 
- 
-### logSourceCRN  (string)
-{: #logSourceCRN}
-
-This field determines where a copy of the event is saved for the user. 
-{: note}
-
-This field must be set to the CRN of the service instance that generates the event. The information in the CRN indicates the user's account ID and the instance ID of your service in the user's account.
-
-The format of this field is the following:
-
-```
-crn:version:cname:ctype:service-name:location:scope:service-instance::
-```
-{: codeblock}
-
-Where `scope` must be set to the user's account and `service-instance` must be set to the ID of the instance in the user's account
-
-If you leave out logSourceCRN, it only saves the event to your account, not to the user's account. 
-{: important}
-
-If you leave out logSourceCRN AND set saveServiceCopy:false, then the event is not saved at all.
-{: important}
-
-
-
-### message (string)
-{: #message}
-
-Message that is associated with the event. 
-{: note}
-
-The format of this field is: 
-
-```
-serviceName: action objectType target.name [custom data per service][outcome]
-```
-{: codeblock}
-
-Where 
-
-* `servicename` is the name of the service as indicated under the **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=).  
-* `action` matches the action component as described in the CADF *action* field of the event. Must be in lowercase. 
-* `objectType` matches the objectType component as described in the CADF *action* field of the event. Must be in lowercase. 
-* `target.name` matches the value of the CADF field *target.name*. If a name is not available, leave it out. 
-* `[custom data per service]` has the format: 
-
-    ```
-    [for resourceType resourceID][custom information]
-    ```
-    {: codeblock}
-    
-    You can add information from data that is available through the AT fields requestData and responseData lowercase. 
-    
-    When the action applies to a sub resource component, for example, a policy for a user, or a worker for a cluster, the section [for resourceType resourceID] should be included. 
-    
-    `resourceType` defines the type of resource, for example, cluster, access group, serviceID, etc. 
-    
-    `resourceID` specifies the ID of the resource type to which the action applies. 
-    
-    The section `[custom information]` should include any relevant information that you consider important to the user for your event. 
-
-* `outcome` is set when the `outcome` field reports an action that is NOT `success`. 
-
-    The format is 
-    
-    ```
-    -outcome
-    ```
-    {: codeblock}
-    
-    Where `outcome` matches the outcome value as described in the CADF *outcome* field of the event. Valid values in message are `failure` and `warning`.
-
-
-For example: 
-
-```
-IAM Identity Service: delete user-apikey KeyProtectTest -failure  
-Key Protect: list secrets 
-IAM Identity Service: login user-apikey containers-kubernetes-key
-```
-{: codeblock}
 
 
 ### initiator.id (string)
@@ -389,10 +338,13 @@ This field can be set to any of the following values depending on the type of in
 
     **This service ID is not defined in the customer account.** 
 
-    Set this field to the value in the  **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=) for your service. 
+    Set this field to the value in the  **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=) for your service. In the catalog, some services include IBM Cloud nad others do not. To make sure it is clear that it is an IBM owned ID, add `IBM Cloud` to the name if your full legal name includes it.  If not sure, contact the AT team in slack.
 
-    Example: `Certificate Manager`
+    Example: `IBM Cloud Certificate Manager`
     
+* The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
+
+    Set this field to `IBM`. The rest of the initiator fields should be left empty.
 
 
 ### initiator.typeURI (string)
@@ -456,57 +408,114 @@ xxx.xxx.xxx.xxx
 
 **For services that run on Kubernetes:**
 
-By default, the source IP address of the client request is not preserved. When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer service that exposes the ALB. 
+By default, the source IP address of the client request is not preserved. When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer (LB) service that exposes the ALB. If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the app pod is running. 
 
-If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the app pod is running. 
+To preserve the source IP, you must change the LB service configuration to have the **externalTrafficPolicy** set to `Local` instead of `Cluster`. 
+* The change to the LB service is only needed when an ALB is created or enabled, and only if the LB service has `"externalTrafficPolicy":"Cluster"`.  
+* If it is already set with `"externalTrafficPolicy":"Local"`, then the change is not required. 
+* There is no need to do this each time a user updates their deployment, or microservice.
+* If you create or enable any additional ALBs for your service, you must enable source IP preservation for the ALBs.
 
-This setting can be automated in various ways.  It is the services' responsibility how they want to automate it. The way depends on how you deploy your environment. E.g. yaml, helm chart, terraform, etc 
+To be able to get the originating IP address, complete the following steps to enable IP preservation to all enabled public or private ALBs:  they'll need to first enable source IP preservation and then have code to actually fetch that off of a header
+1. Enable source IP preservation. [Learn more](/docs/containers?topic=containers-ingress-settings#preserve_source_ip).
+2. Obtain the IP from the `x-forwarded-for` property in the header. 
 
-To customize a cluster to preserve the external IPs by using a Helm chart, complete these steps:
-1. Add a line to the HELM chart to update the ALBs every time a microservice is deployed
+
+ 
+### logSourceCRN  (string)
+{: #logSourceCRN}
+
+This field determines where a copy of the event is saved for the user. 
+{: note}
+
+This field must be set to the CRN of the service instance that generates the event. The information in the CRN indicates the user's account ID and the instance ID of your service in the user's account.
+
+The format of this field is the following:
+
+```
+crn:version:cname:ctype:service-name:location:scope:service-instance::
+```
+{: codeblock}
+
+Where:
+* `service-name` is as defined in the `action` field.
+* `location` must be set to the region or datacenter where the event occurred. The location can only be set to **global** if the action does not pertain to a specific location, for example, IAM actions. Events that have location set to *global* go to the *global endpoint* that is currently in Frankfurt.
+* `scope` must be set to the user's account. It must start with "a/", followed by the cloud account ID. LogDNA does not support the CloudFoundry values of `scope` ("o/" for the org or "s/" for the space).
+* `service-instance` must be set to the ID of the instance in the user's account.
+
+If you leave out logSourceCRN, it only saves the event to your account, not to the user's account. 
+{: important}
+
+If you leave out logSourceCRN AND set saveServiceCopy:false, then the event is not saved at all.
+{: important}
+
+#### Information on how to set the logSourceCRN for services that on-boarded with the resource-controller
+{: #logSourceCRN-1}
+
+When an instance is provisioned by a user, the request calls the service’s broker via [IBM Cloud Open Service Broker API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://test.cloud.ibm.com/apidocs/resource-controller/ibm-cloud-osb-api#create-provision-a-service-instance){: new_window}. The response includes the instance’s CRN.
+
+When a user makes a call to one of your service's API endpoints, the user must pass the CRN as part of the call (can be a header, request Path, depends on your API), which you can then use to populate `target.id` and `logSourceCRN`.
+
+
+
+
+
+### message (string)
+{: #message}
+
+Message that is associated with the event. 
+{: note}
+
+The format of this field is: 
+
+```
+serviceName: action objectType target.name [custom data per service][outcome]
+```
+{: codeblock}
+
+Where 
+
+* `servicename` is the name of the service as indicated under the **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=).  
+* `action` matches the action component as described in the CADF *action* field of the event. Must be in lowercase. 
+* `objectType` matches the objectType component as described in the CADF *action* field of the event. Must be in lowercase. 
+* `target.name` matches the value of the CADF field *target.name*. If a name is not available, leave it out. 
+* `[custom data per service]` has the format: 
 
     ```
-    kubectl get svc -n kube-system | awk '/^public.*alb/{print $1}' | while read alb; do kubectl patch svc $alb -n kube-system -p '{"spec":{"externalTrafficPolicy":"Local"}}'; done
+    [for resourceType resourceID][custom information]
     ```
     {: codeblock}
+    
+    You can add information from data that is available through the AT fields requestData and responseData lowercase. 
+    
+    When the action applies to a sub resource component, for example, a policy for a user, or a worker for a cluster, the section [for resourceType resourceID] should be included. 
+    
+    `resourceType` defines the type of resource, for example, cluster, access group, serviceID, etc. 
+    
+    `resourceID` specifies the ID of the resource type to which the action applies. 
+    
+    The section `[custom information]` should include any relevant information that you consider important to the user for your event. 
 
-2. Update the microservice to pick up the client’s IP address from the headers. [Check out how this service has implemented it](https://github.ibm.com/oneibmcloud/control-center/pull/3028/files)
+* `outcome` is set when the `outcome` field reports an action that is NOT `success`. 
 
-    ```java
-           // X-Forwarded-For header contains: 'client_ip, proxy1_ip, proxy2_ip'
-            const clientIpAddress = req.headers["x-forwarded-for"].split(", ")[0];
-            let url = "";
-            let url = "";
-            if(req.query.option === "all") {
-            if(req.query.option === "all") {
-                // delete the toolchain
-                // delete the toolchain
-                url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}`;
-                url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}?client_ip_address=${encodeURIComponent(clientIpAddress)}`;
-            } else {
-            } else {
-                // V2 compatibility change.
-                // V2 compatibility change.
-                if (req.query.option === "branch_name") {
-                if (req.query.option === "branch_name") {
-                    // delete by branch
-                    // delete by branch
-                    url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}/buildartifacts/${encodeURIComponent(req.query.name)}/branches/${encodeURIComponent(req.query.branch)}`;
-                    url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}/buildartifacts/${encodeURIComponent(req.query.name)}/branches/${encodeURIComponent(req.query.branch)}?client_ip_address=${encodeURIComponent(clientIpAddress)}`;
-                } else {
-                } else {
-                    // delete by application or environment
-                    // delete by application or environment
-                    let option = req.query.option === "runtime_name" ? "build_artifact" : req.query.option;
-                    let option = req.query.option === "runtime_name" ? "build_artifact" : req.query.option;
-                    url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}?${option}=${encodeURIComponent(req.query.name)}`;
-                    url = `${config.get("dlms-server")}/v3/toolchainids/${req.query.toolchainId}?${option}=${encodeURIComponent(req.query.name)}&client_ip_address=${encodeURIComponent(clientIpAddress)}`;
-                }
-                }
-            }
-            }
+    The format is 
+    
+    ```
+    -outcome
     ```
     {: codeblock}
+    
+    Where `outcome` matches the outcome value as described in the CADF *outcome* field of the event. Valid values in message are `failure` and `warning`.
+
+
+For example: 
+
+```
+IAM Identity Service: delete user-apikey KeyProtectTest -failure  
+Key Protect: list secrets 
+IAM Identity Service: login user-apikey containers-kubernetes-key
+```
+{: codeblock}
 
 
   
@@ -519,12 +528,17 @@ Add any information here that will enhance the user experience going through the
 * Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
 * Must include information that is required to clarify the action. For example, an event with action create might require information on the Software verison. An update event requires information on the initial value and final value. There may be cases where data is sensitive or too long, in this situation, add information about the type of update
 * Must be added as value pairs of information.
+* Must be formatted in camel case style.
 
 Some fields:
-* [Optional] `ResourceGroupID`: Set to the CRN of the resource group
+* [Optional] `resourceGroupId`: Set to the CRN of the resource group
 * [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
 * [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
 * [`Required for update action`] `newValue`: Add the new value requested in the action
+* [`Required for Watson services`] `platformSource`: Add the UI catalog name of your service, for example, `Watson Discovery` This helps users identify your events quickly by your service, since the platform_source value is shared across all Watson services.
+* [Optional] `customizationId`
+* [Optional] `environmentId`
+* [Optional] `reasonForFailure`:  Include additional info as to why the action has failed.
 
 
 ### responseData (JSON)
@@ -536,8 +550,10 @@ Add any information here that will enhance the user experience going through the
 * Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
 * Must include information that is required to clarify the action.
 * Must be added as value pairs of information.
+* Must be formatted in camel case style.
 
-
+Some fields:
+* [Optional] `targetAddress.type`: Set to the type of endpoint. Valid values are: `public` and `private`, in lowercase.
 
 
 ### observer.name (string)
@@ -545,6 +561,9 @@ Add any information here that will enhance the user experience going through the
 
 This field must be set to the fixed value **ActivityTracker**.
 {: note}
+
+
+
 
 ### outcome (string)
 {: #outcome}
@@ -557,6 +576,32 @@ Valid values are: `success`, `pending`, `failure`, `unknown`
 Make sure that all values are in lowercase.
 {: tip}
  
+#### Use case 1: Someone calls an API to delete a resource that does not exist (RC 404)
+{: #case1}
+
+If someone calls an api to delete a resource that doesn't exist, the event will report `404 not found error` and the outcome will be `failure`.
+
+In this situation, you must set the following fields:
+* `reason.reasonType = resource not found`
+* `outcome = failure` because the action cannot be completed since the object does not exist.
+* `reason.reasonCode = 404`
+* `target.id =` CRN of the object that was requested to be deleted
+* `target.name` might be left empty if you do not have the human readable name of the object to be deleted.
+
+#### Use case 2: Someone calls an API and does not have the authorization to execute that action (RC 403)
+{: #case2}
+
+If someone calls an api to delete a resource, and they do not have the authorization to execute the task, the event will report `403 forbidden` and the outcome will be `failure`.
+
+In this situation, you must set the following fields:
+* `reason.reasonType = forbidden - not authorized`
+* `outcome = failure` 
+* `reason.reasonCode = 403`
+* `target.id =` CRN of the object on which the action was requested
+* `target.name` name of the object
+
+
+
 
 ### reason.reasonCode (numeric)
 {: #reason.reasonCode}
@@ -574,9 +619,10 @@ If your actions are not REST API calls, set to 200 for success outcome and 500 f
 This field provides additional information about the result of the action requested. 
 {: note}
 
-This field is REQUIRED if the outcome of the action is **failure**. If you have events that do not require additional information in this field, leave the field empty.
+This field is REQUIRED for all events. 
 
-{: important}
+When the outcome is failure, you can also add additional information in the field `requestData.reasonForFailure`.
+{: tip}
 
 
 To set this field, you can use the description associated to the reasonCode (value) defined in [HTTP response codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xml). For example, for a reason.reasonCode = 200, set reasonType to **OK**.
@@ -590,7 +636,7 @@ You can also set it to any message or information that you might have available 
 This field is used to control whether the IBM service gets a copy of the event or not.
 {: note} 
 
-The default value is **true* but the field must be set explicitly. 
+The default value is *true* but the field must be set explicitly. 
 
 * To save a copy of the event in your ATS ( in your service's account), set this field to **true**.
 * If you do not want a copy of the events saved in your ATS, set this field to **false**. 
@@ -640,7 +686,7 @@ When the reasonCode for an API call is any of the following values, you can appl
 | `504`      | `Gateway Timeout`             | `warning`      |
 | `505`      | `HTTP Version Not Supported`  | `warning`      |
 | `507`      | `Insufficient Storage`        | `critical`     |
-{: caption="Table 2. Severity value for some reason codes" caption-side="top"}
+{: caption="Table 3. Severity value for some reason codes" caption-side="top"}
 
 
 
@@ -676,6 +722,13 @@ A cloud resource can be a service, a service instance, or a service sub-resource
     ```
     {: codeblock}
 
+
+#### Information on how to set the target.id for services that on-boarded with the resource-controller
+{: #logSourceCRN-1}
+
+When an instance is provisioned by a user, the request calls the service’s broker via [IBM Cloud Open Service Broker API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://test.cloud.ibm.com/apidocs/resource-controller/ibm-cloud-osb-api#create-provision-a-service-instance){: new_window}. The response includes the instance’s CRN.
+
+When a user makes a call to one of your service's API endpoints, the user must pass the CRN as part of the call (can be a header, request Path, depends on your API), which you can then use to populate `target.id` and `logSourceCRN`.
 
 
 ### target.name (string)
@@ -716,76 +769,84 @@ This field does not include action information.
 
 Use forward slash `/` to separate complex objectTypes to make it more readable to the users. For example, `cloud-object-storage/bucket/cors`
 
+For example, check out the following samples:
 
+| action                                            | target.typeURI                                  |
+|---------------------------------------------------|-------------------------------------------------|
+| cloudcerts.certificate.import                     | cloudcerts/certificate                          |
+| container-registry.namespace.create               | container-registry/namespace                    |
+| kms.secrets.read                                  | kms/secrets                                     |
+| mqcloud.queue-manager.update                      | mqcloud/queue-manager                           |
+| cloud-object-storage.instance.create              | cloud-object-storage/instance                   |
+| cloud-object-storage.object-multipart.create      | cloud-object-storage/object/multipart           |
+{: caption="Table 4. target.typeURI examples" caption-side="top"}
 
 
 ## Optional event fields provided by the service to comply with CADF
 {: #optional}
 
-**Optional fields:**
 
-<table>
-  <caption>Optional fields</caption>
-  <tr>
-    <th width="20%">Field Name</th>
-	  <th width="30%">Description</th>
-	  <th width="30%">Value</th>
-  </tr>
-  <tr>
-    <td>id</td>
-	  <td>You can use this field to correlate events.</td>
-	  <td></td>
-  </tr>
-  <tr>
-    <td>target.host.address</td>
-	  <td>IP Address or URL of the target service. </td>
-	  <td></td>
-  </tr>
-  <tr>
-    <td>tags</td>
-	  <td>These field is an array of strings.</td>
-	  <td></td>
-  </tr>
-</table>
+### id (string)
+{: #id}
+
+Use this field to correlate events.
+{: note}
+
+This field is optional.
+
+
+### target.host.address (string)
+{: #target.host.address}
+
+Use this field to set the IP Address or URL of the target service.
+{: note}
+
+### tags (array of strings)
+{: #tags}
+
+Use this field to attach tags to an event.
+{: note}
 
 
 
-## Reserved fields for Activity Tracker
+## Reserved CADF fields
 {: #reserved}
 
-<table>
-  <caption>Reserved fields (reserved for Activity Tracker, may be used in the future)</caption>
-  <tr>
-    <th width="20%">Field Name</th>
-	<th width="30%">Description</th>
-	<th width="30%">Value</th>
-  </tr>
-  <tr>
-    <td>eventType</td>
-	  <td>This value is set to activity for Activity Tracker. (Other CADF values are "monitor" and "control".</td>
-	   <td>activity</td>
-  </tr>
-  <tr>
-    <td>typeURI</td>
-  	<td>This value must be set to: `http://schemas.dmtf.org/cloud/audit/1.0/event`</td>
-	  <td>http://schemas.dmtf.org/cloud/audit/1.0/event</td>
-  </tr>
-  <tr>
-    <td>type</td>
-	  <td>This field must be set to `ActivityTracker`.</td>
-	  <td>`ActivityTracker`</td>
-  </tr>
-  <tr>
-    <td>observer.id</td>
-	  <td>This field must be set to the CRN of the AT instance that the event is sent to.</td>
-	  <td></td>
-  </tr>
-  <tr>
-    <td>observer.typeURI</td>
-	  <td>This field must be set to `security/edge/activity-tracker`.</td>
-	  <td>`security/edge/activity-tracker`</td>
-  </tr>
-</table>
+These are reserved fields for Activity Tracker that might be used in the future.
+
+Do not set these fields.
+{: important}
+
+### eventType (string)
+{: #eventType}
+
+Set this field to **activity** for Activity Tracker. (Other CADF values are "monitor" and "control".
+{: note}
+
+
+### typeURI (string)
+{: #typeURI}
+
+This field would be set to: `http://schemas.dmtf.org/cloud/audit/1.0/event`.
+
+### type (string)
+{: #type}
+
+This field would be set to `ActivityTracker`.
+{: note}
+
+### observer.id (string)
+{: #observer.id}
+
+This field would be set to the CRN of the AT instance that the event is sent to.
+
+### observer.typeURI (string)
+{: #observer.typeURI}
+
+This field would be set to `security/edge/activity-tracker`.
+
+
+
 
 ## Differences in legacy and LogDNA Activity Tracker events
 {: #legacy_vs_new_at}
@@ -797,7 +858,7 @@ The events that worked on legacy Activity will continue to work on the new Activ
 However, services should consider the following improvements:
 
 * `requestData`/`responseData` can be any JSON object, not just stringified JSON. A JSON object is now preferred over stringified JSON, for better parsing and searching. All events should include `requestData` and `responseData`, even if empty.
-* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` defaults to `false`, but events should specify `false` explicitly. Refer [here](https://test.cloud.ibm.com/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#optional) for more info.
+* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` defaults to `false`, but events should specify `false` explicitly. Refer [here](https://test.cloud.ibm.com/docs/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#optional) for more info.
 * The `observer` fields are no longer discouraged, and `observer.name` should be set to "ActivityTracker". `observer.name` may be used in the future to support sending events to AT via stdout.
 * Events should have the CADF fields at the top level, and no longer encapsulate the CADF fields in the `payload` structure. When an event does have `payload`, LogDNA removes it and promotes its internal fields to the top level.
 * The `meta` object is now ignored. Services should remove it.
@@ -806,4 +867,44 @@ However, services should consider the following improvements:
    * `requestHeader`, `requestBody`, `responseHeader`, `responseBody`
    * `latencies`
 
+## Change control
+{: #change}
 
+The following table outlines when the AT guidelines change to adapt to new requirements:
+
+| Field                              | Required                                          | Field required  | Guideline changes               |
+|------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
+| `action`                           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
+| `dataEvent`                        |                                                   |  December 2019  |                                 |
+| `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
+| `id`                               |                                                   |                 |                                 | 
+| `logSourceCRN` `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      | June 2019 - when changes to migrate to LogDNA were requested                                 |
+| `message` `[*]`                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |                                 |
+| `initiator.id`                     | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `initiator.name`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
+| `initiator.typeURI`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `initiator.credential.type`        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `initiator.host.address`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `observer.name`                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |                                 |
+| `outcome`                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `reason.reasonCode`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check 403 is being generated to report on unauthorized access to run an action |
+| `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |  December 2019 - check that it is populated for failure events </br>January 2020 - required for all outcomes |
+| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check and request that update events all include information about the update (3 new subfields added to add consistency in the user experience) |
+| `responseData` `[*]`               |                                                   |                                                   |
+| `saveServiceCopy`  `[*]`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |  June 2019 - when changes to migrate to LogDNA were requested |
+| `severity`                         | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `target.id`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `target.name`                      | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `target.typeURI`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `target.host.address`              |                                                   |                 |                                 | 
+| `tags`                             |                                                   |                 |                                 | 
+{: caption="Table 4. Change control for list of event fields in an AT event" caption-side="top"}
+
+`[*]` These fields are extensions of the CADF specification.
+
+Implementation change control:
+
+| Detail                             | Required                                          | Proposed        | Agreed                          |
+|------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
+| `Services do not need to change the UI to enable data events.` | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `17/1/2020` | SH meeting `24/1/2020` |
+{: caption="Table 5. Change control for implementation changes" caption-side="top"}
