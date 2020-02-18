@@ -202,7 +202,7 @@ Complete the following steps to add the user to the access group:
 ## Step 3. Generate {{site.data.keyword.at_full_notm}} events
 {: #gs_step3}
 
-If you have a pay as you go account, you can use {{site.data.keyword.cloudcerts_short}} to create an event. If you don't have a pay as you go account, provisioning any of the available lite services triggers an event.
+If you have a pay-as-you-go account, you can use {{site.data.keyword.cloudcerts_short}} to create an event. If you don't have a pay-as-you-go account, provisioning any of the available lite services triggers an event.
 
 
 1. From the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog){:new_window}, select the category **Security and Identity**.
