@@ -165,7 +165,7 @@ Where
 
 * `action` defines the task requested by the user.  
 
-    Valid actions are: `add`, `create`, `read`, `update`,`delete`, `backup`, `capture`, `configure`, `deploy`, `disable`, `enable`, `import`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`
+    Valid actions are: `add`, `bulkdelete`, `create`, `read`, `update`,`delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`
 
     Not valid actions are: `info`, `unknown`
 
@@ -289,27 +289,28 @@ public class EventTime {
 ID of the initiator of the action. 
 {: note}
 
-There are different types of initiators: 
-* User in the user's account with an IBMID
+* When the request includes an IAM  token, set this value to the **access_token.iam_id** field value that is available in the IAM token that your service gets to run the action.
+* For Watson services that get the initiator information through the Watson Gateway header, set this value to the **x-watson-userinfo** &gt; **bluemix-subject**.
+* For actions (events)) that are published to Hyperwarp by an IBM Cloud service, and subscribed by an IBM Cloud service, set this value as follows:
 
-    For example: `IBMid-xxxxxxxx`
+    Publisher service: Set this field to the user or service ID that requests the action: **access_token.iam_id**. 
 
-* ServiceID in the user's account
-
-    For example: `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14`
-
-* Certificate
-
-    For example: `CertificateId-769b5c65-0165-4c89-847d-9660b1632e14`
-
-* IBM owned service ID
-
-    For example: `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14`
+    Subscriber service:  Set this field to the **publisher**.
 
 
-Set this value to the **access_token.iam_id** field value that is available in the IAM token that your service gets to run the action.
+| Who is the initiator                       | Value                                                                   | Example          |
+|--------------------------------------------|-------------------------------------------------------------------------|------------------|
+| `Certificate`                              | `access_token.iam_id`                                                   | `CertificateId-769b5c65-0165-4c89-847d-9660b1632e14` |
+| `User in the user's account with an IBMID where the action is requested` | `access_token.iam_id`                     | `IBMid-xxxxxxxx` | 
+| `ServiceID in the user's account where the action is requested`          | `access_token.iam_id`                     | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
+| `ServiceID not defined in the customer account and owned by a service`   | `access_token.iam_id`                     | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
+| `Action triggered via Hyperwarp`           | Publisher service: `access_token.iam_id`  </br>Subscriber service: `publisher`  | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
+| `Watson service - initiator is a user`     | `bluemix-subject`                                                       | `IBMid-xxxxxxxx` |
+| `Watson service - initiator is a service ID` | `bluemix-subject`                                                     | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
+| `No initiator - Action triggered by service` `(1)`  | Leave empty                                                    | `` | 
+{: caption="Table 2. Guidance setting initiator.id" caption-side="top"}
 
-
+`(1)` The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
 
 ### initiator.name (string)
 {: #initiator.name}
@@ -317,34 +318,30 @@ Set this value to the **access_token.iam_id** field value that is available in t
 Username of the user that initiated the action.
 {: note}
 
-This field can be set to any of the following values depending on the type of initiator:
-* Initiator is a user: 
+* When the request includes an IAM  token, set this value to the **access_token.sub** field value that is available in the IAM token that your service gets to run the action.
+* For Watson services that get the initiator information through the Watson Gateway header, set this value to the **x-watson-userinfo** &gt; **bluemix-iamid**.
+* For actions (events)) that are published to Hyperwarp by an IBM Cloud service, and subscribed by an IBM Cloud service, set this value as follows:
 
-    This user is a member in the customer account where the action is requested.
+    Publisher service: Set this field to the user or service ID that requests the action: **access_token.sub**. 
 
-    Set this field to the **access_token.sub** field value that is available in the IAM token that your service gets to run the action. 
+    Subscriber service:  Set this field to the **event_properties.publisher_name**.
 
-    Example: `joe@ibm.com`
 
-* Inititator is a service ID: 
+| Who is the initiator                                                                 | Value                                   | Example          |
+|--------------------------------------------------------------------------------------|-----------------------------------------|------------------|
+| `User is a member in the customer account where the action is requested`             | `access_token.sub`                      | `joe@ibm.com`    | 
+| `ServiceID in the user's account where the action is requested`                      | `access_token.sub`                      | `ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
+| `ServiceID not defined in the customer account and owned by a service`               | Set this field to the value in the  **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=) for your service. In the catalog, some services include IBM Cloud nad others do not. To make sure it is clear that it is an IBM owned ID, add `IBM Cloud` to the name if your full legal name includes it.  If not sure, contact the AT team in slack. | `IBM Cloud Certificate Manager` |
+| `Certificate`                                                                        | `access_token.sub`                      | `CertificateId-769b5c65-0165-4c89-847d-9660b1632e14` |
+| `Action triggered via Hyperwarp`                                                     | `event_properties.publisher_name`       | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
+| `Watson service - initiator is a user`                                               | `bluemix-iamid`                         | `IBMid-xxxxxxxx` |
+| `Watson service - initiator is a service ID`                                         | `bluemix-iamid`                         | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
+| `No initiator - Action triggered by service` `(1)`                                   | `IBM`                                   | `IBM`            |
+{: caption="Table 3. Guidance setting initiator.name" caption-side="top"}
 
-    This service ID is created in the customer account where the action is requested.
+`(1)` The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
 
-    Set this field to the **access_token.sub** field value that is available in the IAM token that your service gets to run the action. 
-
-    Example: `ServiceId-769b5c65-0165-4c89-847d-9660b1632e14`
-
-* The initiator is an IBM owned service ID: 
-
-    **This service ID is not defined in the customer account.** 
-
-    Set this field to the value in the  **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=) for your service. In the catalog, some services include IBM Cloud nad others do not. To make sure it is clear that it is an IBM owned ID, add `IBM Cloud` to the name if your full legal name includes it.  If not sure, contact the AT team in slack.
-
-    Example: `IBM Cloud Certificate Manager`
-    
-* The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
-
-    Set this field to `IBM`. The rest of the initiator fields should be left empty.
+ 
 
 
 ### initiator.typeURI (string)
@@ -355,20 +352,23 @@ This field defines the type of the source of the event.
 
 Valid values are: `service/security/account/user`, `service/security/account/serviceid`, `service/security/client/certificateid`, `service/security/clientid`
 
-* Set this field to `service/security/clientid` to indicate that the initiator is an registered IAM UI or service 
+| Who is the initiator                                                                 | Value                                   | 
+|--------------------------------------------------------------------------------------|-----------------------------------------|
+| `User is a member in the customer account where the action is requested`             | `service/security/account/user`         | 
+| `ServiceID in the user's account where the action is requested`                      | `service/security/account/serviceid`    | 
+| `ServiceID not defined in the customer account and owned by a service`               | `service/security/account/serviceid`    |
+| `Certificate`                                                                        | `service/security/client/certificateid` | 
+| `Action triggered via Hyperwarp`                                                     | `service/security/account/serviceid`    |
+| `Watson service - initiator is a user`                                               | `service/security/account/user`         |
+| `Watson service - initiator is a service ID`                                         | `service/security/account/serviceid`    |
+| `No initiator - Action triggered by service` `(1)`                                   | `service/security/account/service`      |
+| `Registered IAM UI or service` `(2)`                                                 | `service/security/clientid`             |
+{: caption="Table 4. Guidance setting initiator.tyepURI" caption-side="top"}
 
-    For example, when Cloud Console logs in users with IAM, they need a client id / secret. In this case, the Token Service will set this value for the initiator.typeURI field in the AT event.
+`(1)` The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
+
+`(2)` For example, when Cloud Console logs in users with IAM, they need a client id / secret. In this case, the Token Service will set this value for the initiator.typeURI field in the AT event.
     
-* Set this field to `service/security/account/user` to indicate that the initiator is a user.
-
-    For example, a user with an IBMid runs an action to create a certificate. 
-    
-* Set this field to `service/security/account/serviceid`to indicate that the initiator is a serviceID (a service or an app) 
-
-    For example, an app or a service call an API to trigger an action on a cloud resource. 
-    
-* Set this field to `service/security/client/certificateid` to indicate that the initiator runs an action by using a certificate.
-
 
 
 ### initiator.credential.type (string)
@@ -388,7 +388,7 @@ Guidance setting the value of this field:
 | `urn:ibm:params:oauth:grant-type:passcode`                      | `user`                                           |
 | `authorization_code`                                            | `user`                                           |
 | `password`                                                      | `user`                                           |
-{: caption="Table 2. Guidance setting credential type" caption-side="top"}
+{: caption="Table 5. Guidance setting credential type" caption-side="top"}
 
 
 ### initiator.host.address (string)
