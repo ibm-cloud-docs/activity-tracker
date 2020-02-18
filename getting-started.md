@@ -202,7 +202,7 @@ Complete the following steps to add the user to the access group:
 ## Step 3. Generate {{site.data.keyword.at_full_notm}} events
 {: #gs_step3}
 
-Complete the following steps to generate an event when an instance of the {{site.data.keyword.cloudcerts_short}} service is provisioned:
+If you have a pay as you go account, you can use {{site.data.keyword.cloudcerts_short}} to create an event. If you don't have a pay as you go account, provisioning any of the available lite services triggers an event.
 
 
 1. From the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog){:new_window}, select the category **Security and Identity**.
@@ -219,9 +219,7 @@ Complete the following steps to generate an event when an instance of the {{site
 
     **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
 
-6. Select the `Free` service plan. 
-
-7. Click **Create**.
+6. Click **Create**.
 
 An instance of the {{site.data.keyword.cloudcerts_short}} service is created.
 
