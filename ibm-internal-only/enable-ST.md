@@ -960,6 +960,8 @@ Here are the common problems to check for:
 
 * Make sure the STS ingestion key is the one that is specified in the `secret` for `logdna-agent-key`. If this is wrong, then nothing will show up in STS, STR, ATS, or ATR.
 
+* Make sure the STS, STR, ATS, and ATR are all in the same region, and all in production (or all in staging). Super tenancy does not work across regions, or between staging and production.
+
 * Make sure the ATS was provisioned with the CRN of the STS. If this was not done correctly, the STS and STR will work as expected but logs will not be delivered to the ATS and ATR.
 
 * If you have provisioned multiple ATS instances in the same region, be sure that you linked each ATS to a unique STS when you provisioned it. You do this with the `associated_logging_crn` parameter when you create the ATS. You cannot link more than one ATS to a single STS.
