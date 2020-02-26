@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-02-27"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event fields
 
@@ -29,12 +29,21 @@ subcollection: logdnaat
 {{site.data.keyword.at_full_notm}} events are based on the Cloud Auditing Data Federation (CADF) standard. 
 {:shortdesc}
 
+The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
 
-The CADF event model includes information about the observer, the initiator, the action, the target, and the outcome.
+The CADF event model includes the following components:
+
+| Component | Description |
+|------------|----------------------------|
+| `Action`   | The action is the operation or activity that an initiator performs, attempts to perform, or is waiting to complete. |
+| `Initiator`| The initiator is the resource that makes an API call and generates a CADF event. The event that is triggered depends on the action that is requested by the API call. |
+| `Observer` | The observer is the resource that creates and stores a CADF record from information available in a CADF event. |
+| `Outcome`  | The outcome is the status of the action against the target. |
+| `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
+{: caption="Table 2. Components that are available in a CADF event model" caption-side="top"} 
+
 
 The following fields are included in each Activity Tracker event:
-
-
 
 
 ## action (string)
@@ -282,7 +291,7 @@ The following table captures how theis field is set based on the type of action:
 |------------|----------------|------------------|
 | `normal`   | Routine actions in the Cloud | Start an instance | 
 | `warning`  | Actions that fail </br>Actions where a resource is updated or its metadata is modified | Rename a service instance | 
-| `critical` | Actions that affects security in the Cloud such as changing credentials of a user or deleting data </br>Actions where the initiator is not authorized to work with a Cloud resource | Delete a security key |
+| `critical` | Actions that affect security in the Cloud such as changing credentials of a user or deleting data </br>Actions where the initiator is not authorized to work with a Cloud resource | Delete a security key |
 {: caption="Table 2. Severity values by type of action" caption-side="top"}
 
 
@@ -321,7 +330,7 @@ The format of this field is a **CRN**. For more information, see [CRN format](/d
 This field indicates the human readable name of the cloud resource on which the action is executed.
 {: note}
 
-Make sure that the name of your resources, tags, and descriptions of these resources do not include sensitive or PII data.
+Make sure that the name of your resources does not include sensitive or PII data. This value is used to set target.name.
 {: important}
 
 
