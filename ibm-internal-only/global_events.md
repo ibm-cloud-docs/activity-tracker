@@ -36,7 +36,9 @@ LogDNA is now laying the groundwork to allow customers to select the location wh
 Events originating from the selected location will be stored in that location without ever leaving it.
 The first customers to use this feature will be hardcoded, but a configuration UI will be added later and the feature will be generally available.
 
-Global Activity Tracker events have previously been sent to the `eu-de` supertenant ingestion endpoint, in Frankfurt. This endpoint received not only global AT events, but also Frankfurt operational logs, platform logs, and regional Frankfurt AT events. But now, global AT events will be sent to a "global" endpoint. Any service that sends global AT events must send those events to the global endpoint. The service will still send its other Frankfurt logs (and events, if applicable) to the normal `eu-de` endpoint.
+To make it possible for LogDNA to identify and route the global events, we need IBM services to stop sending global events to eu-de and start sending global events to a unique global endpoint.
+
+Global Activity Tracker events have previously been sent to the `eu-de` supertenant ingestion endpoint, in Frankfurt. This endpoint received not only global AT events, but also Frankfurt operational logs, platform logs, and regional Frankfurt AT events. But now, global AT events will be sent to a `global` endpoint. Any service that sends global AT events must send those events to the global endpoint. The service will still send its other Frankfurt logs (and events, if applicable) to the normal `eu-de` endpoint.
 
 **TODO: add diagram to show how it works**
 
@@ -50,38 +52,36 @@ Assuming your global service uses the Kubernetes `logdna-agent`, you can send AT
 Start with the yaml file you use to deploy your agent in Frankfurt. This is probably http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml.  Make a copy of it for the AT agent; let's call it `logdna-at-agent-v2-st-private.yaml`. You will make minor changes to both the logging and AT copy of the yaml file. For reference, if you start with the yaml file downloaded on 2020/03/02, here is the [logging yaml](https://github.ibm.com/rbertram/scratch/blob/master/logdna-doc-files/logdna-agent-v2-st-private.yaml) and here is the [at yaml](https://github.ibm.com/rbertram/scratch/blob/master/logdna-doc-files/logdna-at-agent-v2-st-private.yaml).
 
 1. The **logging** agent will pick up all of the usual logs. But we want it to no longer pick up the AT events, so we add a `LOGDNA_EXCLUDE` to the logging yaml in the `env` section:
-
-```
+  ```
          - name: LOGDNA_EXCLUDE
            value: /var/log/at**
-```
+  ```
 2. Conversely, the **Activity Tracker** agent needs to only pick up the AT events and ignore the logs, so we make these changes to the AT yaml:
-
-```
+  ```
         volumeMounts:
         - name: varlogat
           mountPath: /var/log/at
-...
+  ...
       volumes:
       - name: varlogat
         hostPath:
           path: /var/log/at
-```
+  ```
 3. The **Activity Tracker** agent also needs to avoid naming conflicts with the logging agent, so we change its name in `metadata` & `containers`:
-```
-metadata:
-  name: logdna-agent-activity-tracker
-...
-      containers:
-      - name: logdna-agent-activity-tracker
-```
+  ```
+  metadata:
+    name: logdna-agent-activity-tracker
+  ...
+        containers:
+        - name: logdna-agent-activity-tracker
+  ```
 4. And finally, for AT, change "eu-de" to "global" to send to the new endpoint.
-```
+  ```
         - name: LDAPIHOST
           value: api.private.global.logging.cloud.ibm.com
         - name: LDLOGHOST
           value: logs.private.global.logging.cloud.ibm.com
-```
+  ```
 
 That's it.
 
