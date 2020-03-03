@@ -19,10 +19,10 @@ subcollection: logdnaat
 {:tip: .tip}
 {:download: .download}
 
-**This page is under construction.**
-
 # Global Events in Activity Tracker
 {: #global_events}
+
+**This page is under construction.**
 
 ## What's Changing
 {: #global_changing}
