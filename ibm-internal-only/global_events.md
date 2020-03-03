@@ -47,7 +47,7 @@ Global Activity Tracker events have previously been sent to the `eu-de` superten
 
 Assuming your global service uses the Kubernetes `logdna-agent`, you can send AT events to the global endpoint by installing a second instance of the `logdna-agent` that is specific to AT.
 
-Start with the yaml file you use to deploy your agent in Frankfurt. This is probably http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml.  Make a copy of it for the AT agent; let's call it `logdna-at-agent-v2-st-private.yaml`. You will make minor changes to both the logging and AT copy of the yaml file. For reference, if you start with the yaml file downloaded on 2020/03/02, here is the [logging yaml](images/logdna-agent-v2-st-private.yaml) and here is the [at yaml](images/logdna-at-agent-v2-st-private.yaml).
+Start with the yaml file you use to deploy your agent in Frankfurt. This is probably http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml.  Make a copy of it for the AT agent; let's call it `logdna-at-agent-v2-st-private.yaml`. You will make minor changes to both the logging and AT copy of the yaml file. For reference, if you start with the yaml file downloaded on 2020/03/02, here is the [logging yaml](https://github.ibm.com/rbertram/scratch/blob/master/logdna-doc-files/logdna-agent-v2-st-private.yaml) and here is the [at yaml](https://github.ibm.com/rbertram/scratch/blob/master/logdna-doc-files/logdna-at-agent-v2-st-private.yaml).
 
 1. The **logging** agent will pick up all of the usual logs. But we want it to no longer pick up the AT events, so we add a `LOGDNA_EXCLUDE` to the logging yaml in the `env` section:
 
@@ -55,7 +55,6 @@ Start with the yaml file you use to deploy your agent in Frankfurt. This is prob
          - name: LOGDNA_EXCLUDE
            value: /var/log/at**
 ```
-
 2. Conversely, the **Activity Tracker** agent needs to only pick up the AT events and ignore the logs, so we make these changes to the AT yaml:
 
 ```
@@ -68,7 +67,6 @@ Start with the yaml file you use to deploy your agent in Frankfurt. This is prob
         hostPath:
           path: /var/log/at
 ```
-
 3. The **Activity Tracker** agent also needs to avoid naming conflicts with the logging agent, so we change its name in `metadata` & `containers`:
 ```
 metadata:
@@ -77,7 +75,6 @@ metadata:
       containers:
       - name: logdna-agent-activity-tracker
 ```
-
 4. And finally, for AT, change "eu-de" to "global" to send to the new endpoint.
 ```
         - name: LDAPIHOST
