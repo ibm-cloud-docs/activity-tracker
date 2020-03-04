@@ -87,5 +87,5 @@ These yaml files are derived from http://assets.eu-de.logging.cloud.ibm.com/clie
           value: logs.private.global.logging.cloud.ibm.com
   ```
 
-That's it. Here's a [comparison of the two files](https://github.ibm.com/rbertram/scratch/blob/master/logdna-doc-files/yaml-compare.png).
+That's it. Here's a [comparison of the two files](https://raw.github.ibm.com/rbertram/scratch/master/logdna-doc-files/yaml-compare.png?token=AAALnoi_F4wW3IwrI2l_9VsFhcKEJpwjks5eaEQLwA%3D%3D).
 
