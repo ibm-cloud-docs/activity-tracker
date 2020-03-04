@@ -22,8 +22,6 @@ subcollection: logdnaat
 # Global Events in Activity Tracker
 {: #global_events}
 
-**This page is under construction.**
-
 ## What's Changing
 {: #global_changing}
 
@@ -89,5 +87,5 @@ These yaml files are derived from http://assets.eu-de.logging.cloud.ibm.com/clie
           value: logs.private.global.logging.cloud.ibm.com
   ```
 
-That's it.
+That's it. Here's a [comparison of the two files](https://github.ibm.com/rbertram/scratch/blob/master/logdna-doc-files/yaml-compare.png).
 
