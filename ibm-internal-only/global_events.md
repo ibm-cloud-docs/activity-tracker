@@ -46,6 +46,9 @@ Global Activity Tracker events have previously been sent to the `eu-de` superten
 
 The global endpoint, using `global` as the location instead of `eu-de`, is now available. If you send global events to this endpoint today, they will go to `eu-de` just as they did before, so you will see no change. However, by the end of March, the global events for Kaiser Permanente's accounts will be sent to their AT instances in Dallas. (Your service's copy will still be in your ATS in `eu-de`. You don't need to move your STS/ATS or set up new ones.)
 
+### Sending with the Agent
+{: #sending_agent}
+
 These instructions assume your global service uses the Kubernetes `logdna-agent`.
 
 To send AT events to the global endpoint, you will run two instances of `logdna-agent` - one for logs and one for global AT events. To deploy the two agents, you will use a modified yaml file for each one. Here are reference yaml files, for your convenience:
@@ -89,3 +92,11 @@ These yaml files are derived from http://assets.eu-de.logging.cloud.ibm.com/clie
 
 That's it. Here's a [comparison of the two files](https://raw.github.ibm.com/rbertram/scratch/master/logdna-doc-files/yaml-compare.png?token=AAALnoi_F4wW3IwrI2l_9VsFhcKEJpwjks5eaEQLwA%3D%3D).
 
+
+### Sending to the Ingestion API
+{: #sending_api}
+
+If your code is sending data directly to LogDNA via the [ingestion API](https://docs.logdna.com/reference#api), then you'll need to make your code send logs and AT events to separate endpoints.
+
+1. Logs go to `logs.private.eu-de.logging.cloud.ibm.com/supertenant/logs/ingest`. Replace `eu-de` with whatever location your code is logging in. AT regional events also go to this endpoint.
+2. AT global events go to `logs.private.global.logging.cloud.ibm.com/supertenant/logs/ingest`.
