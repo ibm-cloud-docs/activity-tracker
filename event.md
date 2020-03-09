@@ -112,6 +112,7 @@ The following table lists the common fields that are available for each event:
 | `initiator.name`            | Username of the initiator that initiated the action. | For example, an email address. |
 | `initiator.typeURI`         | Type of the source of the event. | `service/security/account/user` |
 | `initiator.credential.type` | Type of initiator ID credential. | `apikey` |
+| `initiator.host.address`    | IP address where the request came from | `19.12.134.145` |
 {: caption="Table 1. Common initiator fields" caption-side="top"} 
 
 
@@ -182,7 +183,7 @@ When the initiator of an action is an {{site.data.keyword.cloud_notm}} service, 
 ## logSourceCRN  (string)
 {: #logSourceCRN}
 
-This field defines the account where the event is generated. 
+This field defines the resource where the event is generated. 
 {: note}
 
 
@@ -268,11 +269,10 @@ This field is optional.
 ## saveServiceCopy (boolean)
 {: #saveServiceCopy}
 
-This field determines whether the IBM service that generates the event gets a copy of the event or not.
+This field determines whether the IBM service that generates the event saves a copy of the event for {{site.data.keyword.cloud_notm}} auditing.
 {: note} 
 
-When it is set to `true`, the service gets a copy.
-
+When it is set to `true`, the service that generates the event saves a copy.
 
 
 ## severity (string)
@@ -308,6 +308,7 @@ The following table lists common target fields that are available for each event
 | `target.id` | Cloud Resource Name (CRN) of the resource on which the action is executed. | For example, `crn:v1:bluemix:public:cloud-object-storage:global:a/12345678e6232019c6567c9123456789:fr56et47-befb-440a-a223c-12345678dae1:bucket:bucket1` |
 | `target.name` | Human-readable name of the cloud resource on which the action is executed. |  |
 | `target.typeURI` | Type of the cloud resource on which the action is executed. | For example, `iam-am/policy` or `cloud-object-storage/bucket/acl` |
+| `target.host.address` | IP Address or URL of the target service |  | 
 {: caption="Table 3. Common target fields" caption-side="top"} 
 
 
@@ -315,7 +316,7 @@ The following table lists common target fields that are available for each event
 ### target.id (string)
 {: #target.id}
 
-This value informs about the cloud resource on which the action is executed. 
+This value indicates the cloud resource on which the action is executed. 
 {: note}
 
 The format of this field is a **CRN**. For more information, see [CRN format](/docs/overview?topic=overview-crn#format-crn).
