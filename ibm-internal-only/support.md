@@ -26,7 +26,7 @@ subcollection: logdnaat
 
 This page tells how your service can get support from LogDNA for a problem with *Log Analysis with LogDNA* or *Activity Tracker with LogDNA*. Support is provided via IBM Cloud Support. To get started, open a case by following the steps below. 
 
-Support is supplemented by the Slack channel *ibm-guest-logdna-help*. However, incidents should be reported by opening cases.
+Support is supplemented by the Slack channel *ibm-guest-logdna-help*. However, incidents should be reported by opening cases. See notes below about getting help on a case in the Slack channel.
 
 ## To open a case on LogDNA
 {: #open_case}
