@@ -22,7 +22,7 @@ subcollection: logdnaat
 {:note: .note}
 
  
-# Managing access for {{site.data.keyword.at_full_notm}}
+# Managing access with IAM
 {: #iam}
 
 {{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Access to {{site.data.keyword.at_full_notm}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). 
