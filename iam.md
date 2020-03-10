@@ -22,13 +22,21 @@ subcollection: logdnaat
 {:note: .note}
 
  
-# Managing user access with IAM
+# Managing access for {{site.data.keyword.at_full_notm}}
 {: #iam}
 
-{{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. 
+{{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Access to {{site.data.keyword.at_full_notm}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). 
 {:shortdesc}
 
-**Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
+**Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined by the {{site.data.keyword.at_full_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
+
+Policies enable access to be granted at different levels. Some of the options include the following: 
+
+* Access across all instances of the service in your account
+* Access to an individual service instance in your account
+* Access to a specific resource within an instance
+
+After you define the scope of the access policy, you assign a role, which determines the user's level of access. For information about assigning user roles in the console, see [Managing access to resources](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
 
 *Policies* enable access to be granted at different levels. Some of the options include the following: 
 
@@ -76,8 +84,12 @@ Choose any of the following actions to manage IAM policies in the {{site.data.ke
 
 
 
+
+
 ## {{site.data.keyword.cloud_notm}} platform roles
 {: #platform}
+
+The following table details actions that are mapped to platform management roles. Platform management roles enable users to perform tasks on service resources at the platform level, for example, assign user access for the service, create or delete instances, and bind instances to applications.
 
 Use the following table to identify the platform role that you can grant a user in the {{site.data.keyword.cloud_notm}} to run any of the following platform actions:
 

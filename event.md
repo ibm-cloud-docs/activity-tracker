@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-03-09"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event fields
 
@@ -40,7 +40,7 @@ The CADF event model includes the following components:
 | `Observer` | The observer is the resource that creates and stores a CADF record from information available in a CADF event. |
 | `Outcome`  | The outcome is the status of the action against the target. |
 | `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
-{: caption="Table 2. Components that are available in a CADF event model" caption-side="top"} 
+{: caption="Table 1. Components that are available in a CADF event model" caption-side="top"} 
 
 
 The following fields are included in each Activity Tracker event:
@@ -113,7 +113,7 @@ The following table lists the common fields that are available for each event:
 | `initiator.typeURI`         | Type of the source of the event. | `service/security/account/user` |
 | `initiator.credential.type` | Type of initiator ID credential. | `apikey` |
 | `initiator.host.address`    | IP address where the request came from | `19.12.134.145` |
-{: caption="Table 1. Common initiator fields" caption-side="top"} 
+{: caption="Table 2. Common initiator fields" caption-side="top"} 
 
 
 
@@ -283,14 +283,14 @@ This field defines the level of threat an action may have on the {{site.data.key
 
 Valid values are: `normal`, `warning`, and `critical`
 
-The following table captures how theis field is set based on the type of action:
+The following table captures how this field is set based on the type of action:
 
 | Value      | Type of action | Sample of action |
 |------------|----------------|------------------|
 | `normal`   | Routine actions in the Cloud | Start an instance | 
 | `warning`  | Actions that fail </br>Actions where a resource is updated or its metadata is modified | Rename a service instance | 
 | `critical` | Actions that affect security in the Cloud such as changing credentials of a user or deleting data </br>Actions where the initiator is not authorized to work with a Cloud resource | Delete a security key |
-{: caption="Table 2. Severity values by type of action" caption-side="top"}
+{: caption="Table 3. Severity values by type of action" caption-side="top"}
 
 
 
@@ -309,7 +309,7 @@ The following table lists common target fields that are available for each event
 | `target.name` | Human-readable name of the cloud resource on which the action is executed. |  |
 | `target.typeURI` | Type of the cloud resource on which the action is executed. | For example, `iam-am/policy` or `cloud-object-storage/bucket/acl` |
 | `target.host.address` | IP Address or URL of the target service |  | 
-{: caption="Table 3. Common target fields" caption-side="top"} 
+{: caption="Table 4. Common target fields" caption-side="top"} 
 
 
 
@@ -360,7 +360,7 @@ For example, check out the following samples:
 | kms.secrets.read                                  | kms/secrets                                     |
 | cloud-object-storage.instance.create              | cloud-object-storage/instance                   |
 | cloud-object-storage.object-multipart.create      | cloud-object-storage/object/multipart           |
-{: caption="Table 4. target.typeURI examples" caption-side="top"}
+{: caption="Table 5. target.typeURI examples" caption-side="top"}
 
 
 
@@ -387,7 +387,7 @@ The following table outlines common labels and line identifiers that you can fin
 | `Line identifier`  | `Source`           | Service that generates the event                     | `host`           |
 | `Line identifier`  | `Env`              | Environment: `production`                            | `env`            |
 | `Line identifier`  | `App`              | CRN of the service instance in your account          | `app`            |
-{: caption="Table 5. labels and line identifiers" caption-side="top"}
+{: caption="Table 6. labels and line identifiers" caption-side="top"}
 
 
 
