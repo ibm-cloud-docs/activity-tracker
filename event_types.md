@@ -37,7 +37,7 @@ The common theme for management events is that they do not include, access, or m
 {: note}
 
 
-## Management events
+### Management events
 {: #event_types_management}
 
 **Management events** report on actions that are generated when an API call changes the state of a resource and does not include, access, or modify customer data, and on non-API actions that report DevOps actions on resources in the account.
@@ -79,8 +79,8 @@ Management events are enabled in all the {{site.data.keyword.cloud_notm}} accoun
 
 
 
-## Data events
-{: #event_types_management}
+### Data events
+{: #event_types_data}
 
 **Data events** report on actions where the initiator's request accesses, modifies, or operates on your data.
 

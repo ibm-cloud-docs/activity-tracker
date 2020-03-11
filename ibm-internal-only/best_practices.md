@@ -20,11 +20,31 @@ subcollection: logdnaat
 {:download: .download}
 
 
-# FAQ and Adoption guidelines (AT)
+# FAQ and Adoption guidelines (AT events)
 {: #ibm_faq}
 
-
 {:shortdesc}
+
+## How to join the Stakeholders meeting and office hours
+
+A stakeholders meeting runs weekly on Fridays. [Subscribe and enroll to the meeting](https://ec.yourlearning.ibm.com/w3/subscription/series/10008720)
+{: important}
+
+This meeting is an open invitation for Service Teams to learn more about what is happening with Activity Tracker, as well as get events reviewed.  Because Activity Tracker is required for One Cloud badging, and for Catalog Minimum (GA), there should be a plan for Activity Tracker by each Service team. This meeting is a good place to discuss your development of events, have questions answered, and evaluate your LogDNA entries in real time.
+
+In the meeting, the following areas are covered:
+* Activity Tracker news and updates 
+* Upcoming Activity Tracker things to be aware of
+* Event reviews
+* Q&A time
+
+The presentations and recordings of these sessions are available in the box folder [Recordings and ppts](https://ibm.box.com/s/47sqtlhgg21ck3nsuz9ib4kwbgupjlrd).
+
+
+## How do I engage the AT team to review my AT events? 
+
+To engage the AT tema to review your service's AT event prior to One Cloud badging, you must open an issue in the following git repo: [AT repo](https://github.ibm.com/activity-tracker/customer-issues/issues). Select the issue type `AT review`.
+{: important}
 
 
 ## Types of events
@@ -86,7 +106,7 @@ AT customers do require the above information for “security/audit logging”. 
 
 If you are unsure about the information that you are sending, contact the GDPR SME responsible for your service. 
 
-## Global domain
+## What global domain should I use?
 
 For global services in the IBM Cloud, use the <b>eu-de region</b> as the endpoint for global Activity Tracker events.
 

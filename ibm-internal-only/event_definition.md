@@ -29,6 +29,10 @@ This page defines all of the fields used by an Activity Tracker event. Events in
 {:shortdesc}
 
 
+Join the AT team in the stakeholders meeting that is run weekly on a Friday. [Subscribe and enroll to the meeting](https://ec.yourlearning.ibm.com/w3/subscription/series/10008720). The presentations and recordings of these sessions are available in the box folder [Recordings and ppts](https://ibm.box.com/s/47sqtlhgg21ck3nsuz9ib4kwbgupjlrd).
+{: important}
+
+
 ## Introduction
 {: #intro}
 
@@ -132,6 +136,12 @@ To validate the formatting, you can use the [Activity Tracker linter tool ![Exte
 To check the quality of the data, verify that the data provided by the event includes the information required for auditing your service. For example, if you update the name of a resource, indicate the old name and the new name. Use the requestData and responseData fields to include additonal information.
 
 To check the **platform_service** name, check the service name displayed that is displayed in the IBM section for your events. It should be set to the name of your service. 
+
+To engage the AT tema to review your service's AT event prior to One Cloud badging, you must open an issue in the following git repo: [AT repo](https://github.ibm.com/activity-tracker/customer-issues/issues). Select the issue type `AT review`.
+{: important}
+
+
+
 
 ## Event fields provided by the service to comply with AT guidelines
 {: #mandatory}
