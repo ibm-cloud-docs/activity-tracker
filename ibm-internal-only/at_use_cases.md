@@ -77,7 +77,7 @@ The following table outlines the AT event fields for the AT event:
 {: caption="Register- success" caption-side="top"}
 {: #reg-ok-table-1}
 {: tab-title="Register service - success"}
-{: tab-group="reg-ok"}
+{: tab-group="reg"}
 {: class="simple-tab-table"}
 {: row-headers}
 
@@ -110,7 +110,7 @@ The following table outlines the AT event fields for the AT event:
 {: caption="Register service- failure" caption-side="top"}
 {: #reg-not-ok-table-1}
 {: tab-title="Register service - failure"}
-{: tab-group="reg-not-ok"}
+{: tab-group="reg"}
 {: class="simple-tab-table"}
 {: row-headers}
 
@@ -119,11 +119,11 @@ The following table outlines the AT event fields for the AT event:
 ### Step 2: KP actions when an initiator changes the state of a key
 {: #kp-hyperwarp_step2}
 
-Everytime an initiator (user/serviceID) changes the state of a key (deletes a key, rotates a key, disables a key, or enables a key), KP generates 2 events:
+Everytime an initiator (user/serviceID) changes the state of a key (deletes a key, rotates a key, disables a key, enables a key, or restores a key), KP generates 2 events:
 
 * *AT event* that reports the action requested by the initiator. 
 
-    The following AT events are supported actions: **kms.secrets.delete**, **kms.secrets.rotate**, **kms.secrets.enable**, or **kms.secrets.disable**
+    The following AT events are supported actions: **kms.secrets.delete**, **kms.secrets.rotate**, **kms.secrets.enable**, **kms.secrets.disable**, or **kms.secrets.restore**
 
 * *Hyperwarp event* to notify subscribers of a change in the state of a key. The information in the event that is published includes the following information that will be useful later on when subscriber generate AT events for actions related:
 
@@ -136,7 +136,7 @@ Everytime an initiator (user/serviceID) changes the state of a key (deletes a ke
     `event_properties.correlation_id`: Set to the correlation ID that will link together actions across all services that are triggered as the result of the initiator's request
 
 
-The following table outlines the At fleds for the AT event that reports the delete key action:
+The following table outlines the At fleds for the AT event that reports the `delete` key action:
 
 | Field                       | Value                 |
 |-----------------------------|-----------------------|
@@ -156,7 +156,7 @@ The following table outlines the At fleds for the AT event that reports the dele
 | `target.id`                 | Key CRN |
 | `target.typeURI`            | `/kms/secrets` |
 | `target.host.address`       | Optional |
-| `id`                        | Optional | 
+| `id`                        | Optional - this is used for correlation of actions within a service | 
 | `requestData`               | Optional | 
 | `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `resourceCRN` |
 | `message`                   | `Key Protect: delete secret` |
@@ -167,7 +167,7 @@ The following table outlines the At fleds for the AT event that reports the dele
 {: caption="Delete key- success" caption-side="top"}
 {: #delete-ok-table-1}
 {: tab-title="Delete key - success"}
-{: tab-group="delete-ok"}
+{: tab-group="delete"}
 {: class="simple-tab-table"}
 {: row-headers}
 
@@ -200,7 +200,7 @@ The following table outlines the At fleds for the AT event that reports the dele
 {: caption="Delete key- failure" caption-side="top"}
 {: #delete-not-ok-table-1}
 {: tab-title="Delete key - failure"}
-{: tab-group="delete-not-ok"}
+{: tab-group="delete"}
 {: class="simple-tab-table"}
 {: row-headers}
 
@@ -215,12 +215,12 @@ When a service receives a notification on the change of the state of a key, the 
 
 2. The service notifies KP whether the related actions on the resource that uses that key have completed successfully or not. This action does not trigger an AT event.
 
-The following table outlines the AT event values for the update event that is generated:
+The following table outlines the AT event values for the update event that is generated when a key is deleted:
 
 | Field                       | Value                 | Example |
 |-----------------------------|-----------------------|---------|
 | `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field          |         |
-| `action`                    | `serviceName.objectType-key-state.update` | `cloud-object-storage.bucket-key-state.update |
+| `action`                    | `serviceName.objectType-key-state.update` | `cloud-object-storage.bucket-key-state.update` |
 | `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` | `2020-03-11T13:28:56.71+0000` 
 | `initiator.name`            | `IBM Cloud Key Protect` --> fixed value set from the data in the `event_properties.publisher_name` field  | `IBM Cloud Key Protect` |
 | `initiator.id`              | Set with the service ID value in the `publisher` field | `ServiceId-xxxxxxxxx` |
@@ -237,7 +237,7 @@ The following table outlines the AT event values for the update event that is ge
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
 | `id`                        | Optional | 
 | `requestData`               | Optional | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | `eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`status`: Valid values are: `success`, `failure` | |
+| `responseData`              | `eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`AckSentToKms`: Valid values are: `true`, `false` | |
 | `message`                   | `serviceName: update resource` | `Cloud Object Storage: update bucket key state ` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
@@ -246,7 +246,7 @@ The following table outlines the AT event values for the update event that is ge
 {: caption="subscriber- success" caption-side="top"}
 {: #subsc-ok-table-1}
 {: tab-title="Subscriber update event - success"}
-{: tab-group="subsc-ok"}
+{: tab-group="subsc"}
 {: class="simple-tab-table"}
 {: row-headers}
 
@@ -269,8 +269,8 @@ The following table outlines the AT event values for the update event that is ge
 | `target.typeURI`            | `/serviceName/objectType` | `clod-object-storage/bucket/key` |
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
 | `id`                        | Optional | 
-| `requestData`               | Optional | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | `eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`status`: Valid values are: `success`, `failure` | |
+| `requestData`               |  `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
+| `responseData`              | `eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`AckSentToKms`: Valid values are: `true`, `false` (tells the user that the ACK message has been sent successfully or not to KP) | |
 | `message`                   | `serviceName: update resource -failure` | `Cloud Object Storage: update bucket key state -failure` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
@@ -279,9 +279,21 @@ The following table outlines the AT event values for the update event that is ge
 {: caption="subscriber- failure" caption-side="top"}
 {: #subsc-not-ok-table-1}
 {: tab-title="Subscriber update event - failure"}
-{: tab-group="subsc-not-ok"}
+{: tab-group="subsc"}
 {: class="simple-tab-table"}
 {: row-headers}
+
+
+Notice that for different key actions, severity of the AT event would be different:
+
+| Initiator action | `Severity` |
+|------------------|-------------------------|
+| Delete secret    | `critical` |
+| Rotate secret    | `warning` |
+| Enable secret    | `warning` |
+| Disable secret   | `critical` |
+| Restore key      | `warning` |
+{: caption="ACK AT events" caption-side="top"} 
 
 
 ### Step 4: KP actions to ACK completion of registered services on a key
@@ -296,12 +308,16 @@ The following table outlines the AT event values for the update event that is ge
 | Rotate secret    | `kms.secrets.ack-rotate` |
 | Enable secret    | `kms.secrets.ack-enable` |
 | Disable secret   | `kms.secrets.ack-disable` |
+| Restore key      | `kms.secrets.ack-restore` |
 {: caption="ACK AT events" caption-side="top"} 
 
 
-If the service sends an ACK response with outcome success, KP generates an ACK AT event with outcome success.
+If the `service sends an ACK response with outcome success`, KP generates an ACK AT event with outcome success.
+{: note}
 
-If the service sends an ACK response with outcome failure, or the ACK response timesout before reaching to KP, KP generates an ACK AT event with outcome failure.
+If the `service fails to process action on key`, then no ACK message is sent to KP. Therefore KP sends an ACK AT event with outcome failure as a result of a timeout waiting for an event that will never arrive.
+{: note}
+
 
 The following table captures the AT event field values that the ACK AT event generates when the key is deleted:
 
@@ -334,7 +350,7 @@ The following table captures the AT event field values that the ACK AT event gen
 {: caption="ACK- success" caption-side="top"}
 {: #ack-ok-table-1}
 {: tab-title="ACK Delete key - success"}
-{: tab-group="ack-ok"}
+{: tab-group="ack"}
 {: class="simple-tab-table"}
 {: row-headers}
 
@@ -367,7 +383,7 @@ The following table captures the AT event field values that the ACK AT event gen
 {: caption="ACK- failure" caption-side="top"}
 {: #ack-not-ok-table-1}
 {: tab-title="ACK Delete key - failure"}
-{: tab-group="ack-not-ok"}
+{: tab-group="ack"}
 {: class="simple-tab-table"}
 {: row-headers}
 
