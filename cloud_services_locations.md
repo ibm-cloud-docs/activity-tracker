@@ -472,6 +472,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|:-------------------:|:------------------------------------:|
 | IBM Cloud Internet Services (CIS)              |                     |                                      |          
+| IBM Cloud DNS Services                         |                     |                                      |
 {: caption="Network services integration in America's locations" caption-side="top"}
 {: #cs_network-table-1}
 {: tab-title="America"}
@@ -482,6 +483,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|:----------------:|:--------------------------:|
 | IBM Cloud Internet Services (CIS)              |                     |                                      | 
+| IBM Cloud DNS Services                         |                     |                                      |
 {: caption="Network services integration in AP locations" caption-side="top"}
 {: #cs_network-table-2}
 {: tab-title="Asia Pacific"}
@@ -492,6 +494,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|:-------------------:|:----------------:|
 | IBM Cloud Internet Services (CIS)              |                     |                                      | 
+| IBM Cloud DNS Services                         |                     |                                      |
 {: caption="Network services integration in Europe locations" caption-side="top"}
 {: #cs_storage-table-3}
 {: tab-title="Europe"}
