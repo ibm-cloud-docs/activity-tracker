@@ -1,0 +1,381 @@
+---
+
+copyright:
+  years: 2019, 2020
+lastupdated: "2020-03-11"
+
+keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
+
+subcollection: logdnaat
+
+---
+
+{:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
+
+
+# Adoption guidelines: Cloud integration use cases
+{: #at_use_cases}
+
+This page shows use cases where services need to be aligned when sending events to AT:
+{:shortdesc}
+
+
+## Integration with Key Protect (KP)
+{: #kp-hyperwarp}
+
+If your service uses keys that are hosted in Key Protect, consider the following information when you code the At events for your service:
+
+### Step 1: Service X initial configuration actions
+{: #kp-hyperwarp_step1}
+
+Services that are Key Protect enabled must complete the following actions when using KP secrets:
+
+1. Define an authorization to work with KP. This generates an AT event with action ****. 
+
+2. Register with KP through the KP API. When the service registration completes, KP generates an AT event with action **kms.registrations.create** that informs the customer that service X is using a key hosted in Key Protect. 
+
+3. Subscribe to KP events in Hyperwarp. This action is internal and does not require an AT event.
+
+
+The following table outlines the AT event fields for the AT event:
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID           | 
+| `action`                    | `kms.registrations.create` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `IBM`   |
+| `initiator.id`              | CRN of the service that is being registered |
+| `initiator.typeURI`         | `service/security/account/clientid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 2xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `success` |
+| `severity`                  | `normal` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional |  
+| `responseData`              | Add the following information in JSON format: `resourceCRN`, `preventKeyDeletion`, `keyVersion.id`, `keyVersion.creationDate` |
+| `message`                   | `Key Protect: create registration` |
+| `dataEvent`                 | `false` |
+| `observer.name`             | `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="Register- success" caption-side="top"}
+{: #reg-ok-table-1}
+{: tab-title="Register service - success"}
+{: tab-group="reg-ok"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID           | 
+| `action`                    | `kms.registrations.create` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `IBM`   |
+| `initiator.id`              | CRN of the service that is being registered |
+| `initiator.typeURI`         | `service/security/account/clientid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 2xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `success` |
+| `severity`                  | `normal` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional |  
+| `responseData`              | Add the following information in JSON format: `resourceCRN`, `preventKeyDeletion`, `keyVersion.id`, `keyVersion.creationDate` |
+| `message`                   | `Key Protect: create registration -failure` |
+| `dataEvent`                 | `false` |
+| `observer.name`             | `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="Register service- failure" caption-side="top"}
+{: #reg-not-ok-table-1}
+{: tab-title="Register service - failure"}
+{: tab-group="reg-not-ok"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+
+
+### Step 2: KP actions when an initiator changes the state of a key
+{: #kp-hyperwarp_step2}
+
+Everytime an initiator (user/serviceID) changes the state of a key (deletes a key, rotates a key, disables a key, or enables a key), KP generates 2 events:
+
+* *AT event* that reports the action requested by the initiator. 
+
+    The following AT events are supported actions: **kms.secrets.delete**, **kms.secrets.rotate**, **kms.secrets.enable**, or **kms.secrets.disable**
+
+* *Hyperwarp event* to notify subscribers of a change in the state of a key. The information in the event that is published includes the following information that will be useful later on when subscriber generate AT events for actions related:
+
+    `publisher`: Service ID used by KP
+
+    `event_properties.correlation_id`: Correlation ID generated by KP to link any related actions by the initiator's request
+
+    `event_properties.publisher_name`: Set to **IBM Cloud Key Protect**
+
+    `event_properties.correlation_id`: Set to the correlation ID that will link together actions across all services that are triggered as the result of the initiator's request
+
+
+The following table outlines the At fleds for the AT event that reports the delete key action:
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set by KP and passed on through the published event in Hyperwarp in the `event_properties.correlation_id` field            | 
+| `action`                    | `kms.secrets.delete` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | Initiator name per the guidelines   |
+| `initiator.id`              | Initiator ID per the guidelines |
+| `initiator.typeURI`         | `service/security/account/serviceid` or `service/security/account/userid` |
+| `initiator.credential.type` | `apikey` or `token` | 
+| `initiator.host.address`    | Set per the guidelines|
+| `reason.reasonCode`         | 2xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `success` |
+| `severity`                  | `critical` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `resourceCRN` |
+| `message`                   | `Key Protect: delete secret` |
+| `dataEvent`                 | `false` |
+| `observer.name`             | `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="Delete key- success" caption-side="top"}
+{: #delete-ok-table-1}
+{: tab-title="Delete key - success"}
+{: tab-group="delete-ok"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set by KP and passed on through the published event in Hyperwarp in the `event_properties.correlation_id` field              | 
+| `action`                    | `kms.secrets.delete` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `IBM Cloud Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` or `service/security/account/userid` |
+| `initiator.credential.type` | `apikey` or `token` | 
+| `initiator.host.address`    | Set per the guidelines|
+| `reason.reasonCode`         | 4xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `failure` |
+| `severity`                  | `critical` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `ACKmessage`, `keyDeletionDate`, `outstandingResourceCRN` |
+| `message`                   |  `Key Protect: delete secret -failure` |
+| `dataEvent`                 | `false` |
+| `observer.name`             |  `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="Delete key- failure" caption-side="top"}
+{: #delete-not-ok-table-1}
+{: tab-title="Delete key - failure"}
+{: tab-group="delete-not-ok"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+
+
+### Step 3: Service X actions when notified of a change in the state of a key
+{: #kp-hyperwarp_step3}
+
+When a service receives a notification on the change of the state of a key, the following actions happen:
+
+1. The subscriber service takes action based on the event published and generates an AT event with action **serviceName.objectType-key-state.update**, for example, if the service is Cloud Object Storage, and the resource is a bucket, the action would be: `cloud-object-storage.bucket-key-state.update`
+
+2. The service notifies KP whether the related actions on the resource that uses that key have completed successfully or not. This action does not trigger an AT event.
+
+The following table outlines the AT event values for the update event that is generated:
+
+| Field                       | Value                 | Example |
+|-----------------------------|-----------------------|---------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field          |         |
+| `action`                    | `serviceName.objectType-key-state.update` | `cloud-object-storage.bucket-key-state.update |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` | `2020-03-11T13:28:56.71+0000` 
+| `initiator.name`            | `IBM Cloud Key Protect` --> fixed value set from the data in the `event_properties.publisher_name` field  | `IBM Cloud Key Protect` |
+| `initiator.id`              | Set with the service ID value in the `publisher` field | `ServiceId-xxxxxxxxx` |
+| `initiator.typeURI`         | `service/security/account/serviceid` | `service/security/account/serviceid` |
+| `initiator.credential.type` | `apikey` | `apikey` |
+| `initiator.host.address`    | Leave empty | |
+| `reason.reasonCode`         | 2xx | `200` |
+| `reason.reasonType`         | Add value per the guidance | `OK` |
+| `outcome`                   | `success` | `success` |
+| `severity`                  | `warning` | `warning` |
+| `target.name`               | Resource name | Bucket name |
+| `target.id`                 | Resource name CRN | Bucket CRN |
+| `target.typeURI`            | `/serviceName/objectType` | `clod-object-storage/bucket/key` |
+| `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
+| `id`                        | Optional | 
+| `requestData`               | Optional | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
+| `responseData`              | `eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`status`: Valid values are: `success`, `failure` | |
+| `message`                   | `serviceName: update resource` | `Cloud Object Storage: update bucket key state ` |
+| `dataEvent`                 | `false` | `false` |
+| `observer.name`             | `ActivityTracker` | `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |  |
+| `saveServiceCopy`           | `true` | `true` |
+{: caption="subscriber- success" caption-side="top"}
+{: #subsc-ok-table-1}
+{: tab-title="Subscriber update event - success"}
+{: tab-group="subsc-ok"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Field                       | Value                 | Example |
+|-----------------------------|-----------------------|---------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field          |         |
+| `action`                    | `serviceName.objectType-key-state.update` | `cloud-object-storage.bucket-key-state.update |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` | `2020-03-11T13:28:56.71+0000` 
+| `initiator.name`            | `IBM Cloud Key Protect` --> fixed value set from the data in the `event_properties.publisher_name` field  | `IBM Cloud Key Protect` |
+| `initiator.id`              | Set with the service ID value in the `publisher` field | `ServiceId-xxxxxxxxx` |
+| `initiator.typeURI`         | `service/security/account/serviceid` | `service/security/account/serviceid` |
+| `initiator.credential.type` | `apikey` | `apikey` |
+| `initiator.host.address`    | Leave empty | |
+| `reason.reasonCode`         | 2xx | `200` |
+| `reason.reasonType`         | Add value per the guidance | `OK` |
+| `outcome`                   | `failure` | `failure` |
+| `severity`                  | `critical` | `critical` |
+| `target.name`               | Resource name | Bucket name |
+| `target.id`                 | Resource name CRN | Bucket CRN |
+| `target.typeURI`            | `/serviceName/objectType` | `clod-object-storage/bucket/key` |
+| `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
+| `id`                        | Optional | 
+| `requestData`               | Optional | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
+| `responseData`              | `eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`status`: Valid values are: `success`, `failure` | |
+| `message`                   | `serviceName: update resource -failure` | `Cloud Object Storage: update bucket key state -failure` |
+| `dataEvent`                 | `false` | `false` |
+| `observer.name`             | `ActivityTracker` | `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |  |
+| `saveServiceCopy`           | `true` | `true` |
+{: caption="subscriber- failure" caption-side="top"}
+{: #subsc-not-ok-table-1}
+{: tab-title="Subscriber update event - failure"}
+{: tab-group="subsc-not-ok"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+
+### Step 4: KP actions to ACK completion of registered services on a key
+{: #kp-hyperwarp_step4}
+
+
+**For each service** that is registered with KP as an interested party on a key, KP generates an ACK AT event to the customer. The ACK event action depends on the original initiator request action. The following table outlines request actions and corresponding ACK AT events action: 
+
+| Initiator action | KP ACK AT event action |
+|------------------|-------------------------|
+| Delete secret    | `kms.secrets.ack-delete` |
+| Rotate secret    | `kms.secrets.ack-rotate` |
+| Enable secret    | `kms.secrets.ack-enable` |
+| Disable secret   | `kms.secrets.ack-disable` |
+{: caption="ACK AT events" caption-side="top"} 
+
+
+If the service sends an ACK response with outcome success, KP generates an ACK AT event with outcome success.
+
+If the service sends an ACK response with outcome failure, or the ACK response timesout before reaching to KP, KP generates an ACK AT event with outcome failure.
+
+The following table captures the AT event field values that the ACK AT event generates when the key is deleted:
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field            | 
+| `action`                    | `kms.secrets.ack-delete` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `IBM Cloud Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 2xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `success` |
+| `severity`                  | `normal` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `resourceCRN` |
+| `message`                   | `Key Protect: ACK delete secret` |
+| `dataEvent`                 | `false` |
+| `observer.name`             | `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="ACK- success" caption-side="top"}
+{: #ack-ok-table-1}
+{: tab-title="ACK Delete key - success"}
+{: tab-group="ack-ok"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field             | 
+| `action`                    | `kms.secrets.ack-delete` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `IBM Cloud Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 4xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `failure` |
+| `severity`                  | `warning` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `ACKmessage`, `keyDeletionDate`, `outstandingResourceCRN` |
+| `message`                   |  `Key Protect: ACK delete secret -failure` |
+| `dataEvent`                 | `false` |
+| `observer.name`             |  `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="ACK- failure" caption-side="top"}
+{: #ack-not-ok-table-1}
+{: tab-title="ACK Delete key - failure"}
+{: tab-group="ack-not-ok"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+
+
+
+
+
+
+
+

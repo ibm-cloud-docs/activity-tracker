@@ -20,7 +20,7 @@ subcollection: logdnaat
 {:download: .download}
 
 
-# FAQ and Adoption guidelines (AT events)
+# Adoption guidelines: FAQ on AT events
 {: #ibm_faq}
 
 {:shortdesc}

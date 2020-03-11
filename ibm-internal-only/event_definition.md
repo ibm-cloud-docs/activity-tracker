@@ -22,7 +22,7 @@ subcollection: logdnaat
 {:note: .note}
 
 
-# Event fields
+# Adoption guidelines: AT event fields
 {: #ibm_event_fields}
 
 This page defines all of the fields used by an Activity Tracker event. Events in Activity Tracker are expressed in JSON.
@@ -115,7 +115,10 @@ Following is a sample event that includes the fields that are required. You can 
         "createdById": "IBMid-120000QUJ0",
         "statusCode": 200
     },
-    "dataEvent": false
+    "dataEvent": false,
+
+    // Unique ID that is used to correlate events across multiple services
+    "correlationId": "xxxxxxxxxxxxxx"
 
 }
 ```
