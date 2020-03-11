@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-03-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, faq
 
@@ -27,7 +27,7 @@ subcollection: logdnaat
 
 ## How to join the Stakeholders meeting and office hours
 
-A stakeholders meeting runs weekly on Fridays. [Subscribe and enroll to the meeting](https://ec.yourlearning.ibm.com/w3/subscription/series/10008720)
+A stakeholders meeting runs fortnightly on Fridays. [Subscribe and enroll to the meeting](https://ec.yourlearning.ibm.com/w3/subscription/series/10008720)
 {: important}
 
 This meeting is an open invitation for Service Teams to learn more about what is happening with Activity Tracker, as well as get events reviewed.  Because Activity Tracker is required for One Cloud badging, and for Catalog Minimum (GA), there should be a plan for Activity Tracker by each Service team. This meeting is a good place to discuss your development of events, have questions answered, and evaluate your LogDNA entries in real time.

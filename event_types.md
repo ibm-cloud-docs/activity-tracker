@@ -25,13 +25,13 @@ subcollection: logdnaat
 # Event types
 {: #event_types}
 
-In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as global or location-based events, and by operational impact as management or data event.
+In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as global or location-based events, and by operational impact as management or data events.
 {:shortdesc}
 
 ## Classify events by operational impact
 {: #event_types_scope}
 
-Events can also be classified as `management` or `data` events. 
+Events can be classified as `management` or `data` events. 
 
 The common theme for management events is that they do not include, access, or modify customer data. Meanwhile, data events do.
 {: note}

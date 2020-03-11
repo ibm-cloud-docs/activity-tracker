@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-03-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
 
@@ -29,7 +29,7 @@ This page defines all of the fields used by an Activity Tracker event. Events in
 {:shortdesc}
 
 
-Join the AT team in the stakeholders meeting that is run weekly on a Friday. [Subscribe and enroll to the meeting](https://ec.yourlearning.ibm.com/w3/subscription/series/10008720). The presentations and recordings of these sessions are available in the box folder [Recordings and ppts](https://ibm.box.com/s/47sqtlhgg21ck3nsuz9ib4kwbgupjlrd).
+Join the AT team in the stakeholders meeting that is run fortnightly on Fridays. [Subscribe and enroll to the meeting](https://ec.yourlearning.ibm.com/w3/subscription/series/10008720). The presentations and recordings of these sessions are available in the box folder [Recordings and ppts](https://ibm.box.com/s/47sqtlhgg21ck3nsuz9ib4kwbgupjlrd).
 {: important}
 
 
