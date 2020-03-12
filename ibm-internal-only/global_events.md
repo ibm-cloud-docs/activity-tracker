@@ -91,7 +91,7 @@ These yaml files are derived from http://assets.eu-de.logging.cloud.ibm.com/clie
   ```
   Most services should use the private global endpoints. To use the public global endpoints instead, set the values to `api.global.logging.cloud.ibm.com` and `logs.global.logging.cloud.ibm.com`.
 
-That's it. Here's a [comparison of the two files](https://raw.github.ibm.com/rbertram/scratch/master/logdna-doc-files/yaml-compare.png?token=AAALnoi_F4wW3IwrI2l_9VsFhcKEJpwjks5eaEQLwA%3D%3D).
+That's it. Here's a [comparison of the two files](https://github.ibm.com/rbertram/scratch/blob/master/logdna-doc-files/yaml-compare.png).
 
 
 ### Sending to the Ingestion API
