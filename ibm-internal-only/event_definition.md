@@ -140,7 +140,7 @@ To check the quality of the data, verify that the data provided by the event inc
 
 To check the **platform_service** name, check the service name displayed that is displayed in the IBM section for your events. It should be set to the name of your service. 
 
-To engage the AT tema to review your service's AT event prior to One Cloud badging, you must open an issue in the following git repo: [AT repo](https://github.ibm.com/activity-tracker/customer-issues/issues). Select the issue type `AT review`.
+To engage the AT team to review your service's AT event prior to One Cloud badging, you must open an issue in the following git repo: [AT repo](https://github.ibm.com/activity-tracker/customer-issues/issues). Select the issue type `AT review`.
 {: important}
 
 
@@ -421,20 +421,19 @@ xxx.xxx.xxx.xxx
 
 **For services that run on Kubernetes:**
 
-By default, the source IP address of the client request is not preserved. When a client request to your app is sent to your cluster, the request is routed to a pod for the load balancer (LB) service that exposes the ALB. If no app pod exists on the same worker node as the load balancer service pod, the load balancer forwards the request to an app pod on a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the app pod is running. 
+Services running Kubernetes on classic should update to [v2 loadbalancer](https://cloud.ibm.com/docs/containers?topic=containers-loadbalancer-v2) when enabling source IP preservation.  v1 of load balancer may cause outages with IP preservation enabled during rolling updates to the load balancer and should NOT be used without careful consideration.  While the v2 load balancer is publicly listed as beta it is approved for production use and is only beta due to a manual SL step that is required.  See [docs](https://cloud.ibm.com/docs/containers?topic=containers-loadbalancer-about) for differences between v1 and v2.
+{: important}
 
-To preserve the source IP, you must change the LB service configuration to have the **externalTrafficPolicy** set to `Local` instead of `Cluster`. 
-* The change to the LB service is only needed when an ALB is created or enabled, and only if the LB service has `"externalTrafficPolicy":"Cluster"`.  
-* If it is already set with `"externalTrafficPolicy":"Local"`, then the change is not required. 
-* There is no need to do this each time a user updates their deployment, or microservice.
-* If you create or enable any additional ALBs for your service, you must enable source IP preservation for the ALBs.
+For services running on Kubernetes on VPC (available 2Q 2020) source IP preservation will not work until 2H 2020. 
+{: note}
 
-To be able to get the originating IP address, complete the following steps to enable IP preservation to all enabled public or private ALBs:  they'll need to first enable source IP preservation and then have code to actually fetch that off of a header
-1. Enable source IP preservation. [Learn more](/docs/containers?topic=containers-ingress-settings#preserve_source_ip).
-2. Obtain the IP from the `x-forwarded-for` property in the header. 
+Refer to [docs](https://cloud.ibm.com/docs/containers?topic=containers-loadbalancer-v2) for details on the following steps 
+1. Check which version of load balancers are in use 
+2. Create an upgrade and test schedule for migration from v1 to v2 load balancers 
+3. Upgrade to v2 loadbalancers 
+4. Scale out v2 loadbalancers for high availability across zones 
+5. Obtain the IP from the `x-forwarded-for` property in the header
 
-
- 
 ### logSourceCRN  (string)
 {: #logSourceCRN}
 
