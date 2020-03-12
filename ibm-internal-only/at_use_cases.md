@@ -36,7 +36,7 @@ Services can publish actions via Hyperwarp that other services (subscribers) can
 
 When a service publishes an action or a family of actions, the service sends an event to Hyperwarp. This event is triggered by an initiator request on the publishing service. Subscribers get notified and take action on their own services according to the event published.
 
-![Scenario overview](../images/kpscenario.png "KP scenario overview")
+![Scenario overview](images/kpscenario.png "KP scenario overview")
 
 
 
