@@ -239,6 +239,16 @@ The following table shows some actions and sample events:
 {: caption="Table 1. Actions and samples" caption-side="top"}
 
 
+### correlationId (string)
+{: #dataEvent}
+
+Use this field to specify the unique GUID that a user can use to correlate events across multiple services in IBM Cloud.
+{: note}
+
+For example, there are specific use cases where the field must be set:
+* [Integration with Key Protect (KP)](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-at_use_cases#kp-hyperwarp)
+
+
 ### dataEvent (boolean)
 {: #dataEvent}
 
@@ -802,7 +812,7 @@ For example, check out the following samples:
 ### id (string)
 {: #id}
 
-Use this field to correlate events.
+Use this field to correlate AT events within your service.
 {: note}
 
 This field is optional.
@@ -888,7 +898,8 @@ The following table outlines when the AT guidelines change to adapt to new requi
 | Field                              | Required                                          | Field required  | Guideline changes               |
 |------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
 | `action`                           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
-| `dataEvent`                        |                                                   |  December 2019  |                                 |
+| `correlationId`                    |                                                   |                 | March 2020 - added this new field to guidelines  (use this field to correlate across multiple services in the IBM Cloud - [Required for integration use cases](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-at_use_cases)  | 
+| `dataEvent`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  | December 2019 - added this new field to guidelines    |
 | `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
 | `id`                               |                                                   |                 |                                 | 
 | `logSourceCRN` `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      | June 2019 - when changes to migrate to LogDNA were requested                                 |
@@ -902,8 +913,8 @@ The following table outlines when the AT guidelines change to adapt to new requi
 | `outcome`                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `reason.reasonCode`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check 403 is being generated to report on unauthorized access to run an action |
 | `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |  December 2019 - check that it is populated for failure events </br>January 2020 - required for all outcomes |
-| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check and request that update events all include information about the update (3 new subfields added to add consistency in the user experience) |
-| `responseData` `[*]`               |                                                   |                                                   |
+| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - update events must include information about the update (3 new subfields added to add consistency in the user experience) and should be JSON formatted |
+| `responseData` `[*]`               |                                                   |  January 2019   |  December 2019 - Check that is JSON formatted |
 | `saveServiceCopy`  `[*]`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |  June 2019 - when changes to migrate to LogDNA were requested |
 | `severity`                         | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `target.id`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
