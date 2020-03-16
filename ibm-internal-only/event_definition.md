@@ -178,9 +178,8 @@ Where
 
 * `action` defines the task requested by the user.  
 
-    Valid actions are: `add`, `bulkdelete`, `create`, `read`, `update`,`delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`
-
-    Not valid actions are: `info`, `unknown`
+    Valid actions are: `add`, `bulkdelete`, `create`, `read`, `update`,`delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`, `ack-delete`, `ack-restore`, `ack-disable`, `ack-enable`, `ack-rotate`, `edit`, `publish`
+, `publish`    Not valid actions are: `info`, `unknown`
 
     More values will be added as needed.
 
@@ -240,7 +239,7 @@ The following table shows some actions and sample events:
 
 
 ### correlationId (string)
-{: #dataEvent}
+{: #correlationId}
 
 Use this field to specify the unique GUID that a user can use to correlate events across multiple services in IBM Cloud.
 {: note}
@@ -553,11 +552,28 @@ Add any information here that will enhance the user experience going through the
 * Must be added as value pairs of information.
 * Must be formatted in camel case style.
 
+When you add fields, notice that the maximum size of an AT event is 16K.
+{: important}
+
 Some fields:
 * [Optional] `resourceGroupId`: Set to the CRN of the resource group
 * [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
 * [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
+    
+    When the data is PII or sensitive data, consider adding a reference ID so the user can easily identify it. Notice that you should not include in this field data that is sensitive or PII. 
+
+    When the data is a script or file, consider adding the object name and version.
+
+    If you cannot reference by ID, version, or any other way data that is either too big in size or includes sensitive data, do not include this field. Document in your topic the reason why this information is not included so customers are aware as to why is not available.
+
 * [`Required for update action`] `newValue`: Add the new value requested in the action
+
+    When the data is PII or sensitive data, consider adding a reference ID so the user can easily identify it. Notice that you should not include in this field data that is sensitive or PII. 
+
+    When the data is a script or file, consider adding the object name and version.
+
+    If you cannot reference by ID, version, or any other way data that is either too big in size or includes sensitive data, do not include this field. Document in your topic the reason why this information is not included so customers are aware as to why is not available.
+
 * [`Required for Watson services`] `platformSource`: Add the UI catalog name of your service, for example, `Watson Discovery` This helps users identify your events quickly by your service, since the platform_source value is shared across all Watson services.
 * [Optional] `customizationId`
 * [Optional] `environmentId`
@@ -574,6 +590,9 @@ Add any information here that will enhance the user experience going through the
 * Must include information that is required to clarify the action.
 * Must be added as value pairs of information.
 * Must be formatted in camel case style.
+
+When you add fields, notice that the maximum size of an AT event is 16K.
+{: important}
 
 Some fields:
 * [Optional] `targetAddress.type`: Set to the type of endpoint. Valid values are: `public` and `private`, in lowercase.
@@ -763,9 +782,11 @@ Set this value to the human readable name of the cloud resource on which the act
 The value is a human readable name of the service, service instance or service sub-resource that matches the CRN specified on the field target.id 	
 
 For example, 
-* When the action requested is on the instance of your service ( rename an instance), the name of the service must match the name as indicated under the **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=).
+* When the action requested is on the instance of your service ( for example, a user requests to rename an instance), the name of the service must match the name as indicated under the `Name` column in the resource list.
 * If the action requested is on a certificate, set the value to the name of the certificate that a user could see in the Cloud UI.
 * If you have resources that do not have a name, set this value to  `<resource-type>-<ID of the resource modified>` For example, `model-xxxxx`
+
+
 
 ### target.typeURI (string)
 {: #target.typeURI}
