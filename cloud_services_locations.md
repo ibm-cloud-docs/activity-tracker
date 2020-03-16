@@ -230,6 +230,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 | Managing an account                            |                     |                                      |          
 | Managing users                                 |                     |                                      |
 | Managing organizations                         |                     |                                      |
+| Catalog management                             |                     |                                      | 
 | Provisioning and managing catalog {{site.data.keyword.iamshort}} (IAM) enabled services  |                     |                                      |
 | Working with service aliases                   |                     |                                      |
 | Working with service credentials               |                     |                                      |
