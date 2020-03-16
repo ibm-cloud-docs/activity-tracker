@@ -346,6 +346,7 @@ The following tables list the locations where automatic collection of database s
 | Log in to the {{site.data.keyword.cloud_notm}} |                     |                                      |
 | Managing platform API keys                     |                     |                                      |
 | Managing service IDs                           |                     |                                      |
+| Continuous Delivery                            | ![Checkmark icon]   | ![Checkmark icon]                    |
 {: caption="Developer tools services integration in America's locations" caption-side="top"}
 {: #cs_dev-tools-table-1}
 {: tab-title="America"}
@@ -360,6 +361,7 @@ The following tables list the locations where automatic collection of database s
 | Log in to the {{site.data.keyword.cloud_notm}} |                     |                                      |
 | Managing platform API keys                     |                     |                                      |
 | Managing service IDs                           |                     |                                      |
+| Continuous Delivery                            | ![Checkmark icon]   | `NO`                                 |
 {: caption="Developer tools services integration in AP locations" caption-side="top"}
 {: #cs_dev-tools-table-2}
 {: tab-title="Asia Pacific"}
@@ -374,6 +376,7 @@ The following tables list the locations where automatic collection of database s
 | Log in to the {{site.data.keyword.cloud_notm}} |                     |                                      |
 | Managing platform API keys                     |                     |                                      |
 | Managing service IDs                           |                     |                                      |
+| Continuous Delivery                            | ![Checkmark icon]   | ![Checkmark icon]                    |
 {: caption="Developer tools services integration in Europe locations" caption-side="top"}
 {: #cs_dev-tools-table-3}
 {: tab-title="Europe"}

@@ -61,7 +61,7 @@ These yaml files are derived from http://assets.eu-de.logging.cloud.ibm.com/clie
 2. The **logging** agent will pick up all of the usual logs. But we want it to no longer pick up the AT events, so we add a `LOGDNA_EXCLUDE` to the logging yaml in the `env` section:
   ```
          - name: LOGDNA_EXCLUDE
-           value: /var/log/at**
+           value: /var/log/at/**
   ```
 3. Conversely, the **Activity Tracker** agent needs to only pick up the AT events and ignore the logs, so we make these changes to the AT yaml:
   ```
