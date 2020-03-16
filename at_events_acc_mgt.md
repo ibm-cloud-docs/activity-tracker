@@ -88,6 +88,23 @@ The following table lists the actions that generate an event:
 {: caption="Table 4. Actions that generate events" caption-side="top"} 
 
 
+## Events for catalog mangement
+{: #at_events_catalog_management}
+
+The following table lists the actions that generate an event:
+
+| Action                                           | Description                                                           | 
+|--------------------------------------------------|-----------------------------------------------------------------------|
+| globalcatalog-collection.instance.update         | An event is generated when an initiator updates the catalog.          |
+| globalcatalog-collection.instance.read           | An event is generated when an initiator views the catalog.            | 
+| globalcatalog-collection.offering.create         | An event is generated when an initiator creates an offering.          |
+| globalcatalog-collection.offering.update         | An event is generated when an initiator updates an offering.          |
+| globalcatalog-collection.offering.delete         | An event is generated when an initiator deletes an offering.          |
+| globalcatalog-collection.offering.read           | An event is generated when an initiator views an offering.            |
+| globalcatalog-collection.account-settings.update | An event is generated when an initiator updates the account settings. |
+| globalcatalog-collection.account-settings.read   | An event is generated when an initiator views the account settings.   | 
+{: caption="Table 1. Actions that generate catalog management events" caption-side="top"}
+
 
 ## Where to look for the events
 {: #at_events_acc_mgt_ui}
