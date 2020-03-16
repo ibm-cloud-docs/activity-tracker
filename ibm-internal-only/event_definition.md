@@ -313,11 +313,13 @@ ID of the initiator of the action.
 
 * When the request includes an IAM  token, set this value to the **access_token.iam_id** field value that is available in the IAM token that your service gets to run the action.
 * For Watson services that get the initiator information through the Watson Gateway header, set this value to the **x-watson-userinfo** &gt; **bluemix-subject**.
-* For actions (events)) that are published to Hyperwarp by an IBM Cloud service, and subscribed by an IBM Cloud service, set this value as follows:
+* For actions (events) that are published to Hyperwarp by an IBM Cloud service, and subscribed by an IBM Cloud service, set this value as follows:
 
-    Publisher service: Set this field to the user or service ID that requests the action: **access_token.iam_id**. 
+    Publisher service: Set this field to the IBMid or service ID that requests the action: **access_token.iam_id**. 
 
-    Subscriber service:  Set this field to the **publisher**.
+    Subscriber service:  Set this field with the service ID value in the `publisher` field
+
+* For actions between services, set this field to the **crnToken.iam_id** field value that is available in the CRN token.
 
 
 | Who is the initiator                       | Value                                                                   | Example          |
@@ -348,6 +350,7 @@ Username of the user that initiated the action.
 
     Subscriber service:  Set this field to the **event_properties.publisher_name**.
 
+* For actions between services, set this field to **IBM**. 
 
 | Who is the initiator                                                                 | Value                                   | Example          |
 |--------------------------------------------------------------------------------------|-----------------------------------------|------------------|
@@ -384,7 +387,7 @@ Valid values are: `service/security/account/user`, `service/security/account/ser
 | `Watson service - initiator is a user`                                               | `service/security/account/user`         |
 | `Watson service - initiator is a service ID`                                         | `service/security/account/serviceid`    |
 | `No initiator - Action triggered by service` `(1)`                                   | `service/security/account/service`      |
-| `Registered IAM UI or service` `(2)`                                                 | `service/security/clientid`             |
+| `Registered IAM UI or service to service request` `(2)`                              | `service/security/clientid`             |
 {: caption="Table 4. Guidance setting initiator.tyepURI" caption-side="top"}
 
 `(1)` The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
