@@ -182,7 +182,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.BluDirectLink}}          |                     |                                      |          
+| {{site.data.keyword.BluDirectLink}} Dedicated solution | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
 {: caption="Network foundation services integration in America's locations" caption-side="top"}
 {: #net-foun-table-1}
 {: tab-title="America"}
@@ -192,7 +192,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.BluDirectLink}}          |                     |                                      |
+| {{site.data.keyword.BluDirectLink}} Dedicated solution |                     |                                      |
 {: caption="Network foundation services integration in AP locations" caption-side="top"}
 {: #net-foun-table-2}
 {: tab-title="Asia Pacific"}
@@ -202,7 +202,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.BluDirectLink}}          |                     |                                      |
+| {{site.data.keyword.BluDirectLink}} Dedicated solution | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Network foundation services integration in Europe locations" caption-side="top"}
 {: #net-foun-table-3}
 {: tab-title="Europe"}
@@ -253,7 +253,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 
 For {{site.data.keyword.containerlong_notm}}, see [Locations](/docs/containers?topic=containers-at_events#at-ui).
 
-For {{site.data.keyword.openshiftlong}}, see [Locations](/docs/openshift?topic=openshift-at_events#at-ui).
+For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?topic=openshift-at_events#at-ui).
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
@@ -299,103 +299,35 @@ For {{site.data.keyword.openshiftlong}}, see [Locations](/docs/openshift?topic=o
 ## Platform core integrated services
 {: #cloud_services_locations_core_integrated}
 
-| Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
-|------------------------------------------------|---------------------|--------------------------------------|
-| Managing an account                            |                     |                                      |          
-| Managing users                                 |                     |                                      |
-| Managing organizations                         |                     |                                      |
-| Provisioning and managing catalog {{site.data.keyword.iamshort}} (IAM) enabled services  |                     |                                      |
-| Working with service aliases                   |                     |                                      |
-| Working with service credentials               |                     |                                      |
-| Binding a service instance to an app           |                     |                                      |
-| Managing tags                                  |                     |                                      |
+| Service                                        | Location              |
+|------------------------------------------------|---------------------|
+| Managing an account                            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |        
+| Managing users                                 | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Managing organizations                         | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Provisioning and managing catalog {{site.data.keyword.iamshort}} (IAM) enabled services   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Working with service aliases                    | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Working with service credentials                | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Binding a service instance to an app            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Managing tags                                   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
 {: caption="Core integrated services integration in America's locations" caption-side="top"}
-{: #cs_int_core-table-1}
-{: tab-title="America"}
-{: tab-group="cs_int_core"}
-{: class="simple-tab-table"}
-{: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|------------------------------------------------|------------------|----------------------------|
-| Managing an account                            |                     |                                      |          
-| Managing users                                 |                     |                                      |
-| Managing organizations                         |                     |                                      |
-| Provisioning and managing catalog {{site.data.keyword.iamshort}} (IAM) enabled services  |                     |                                      |
-| Working with service aliases                   |                     |                                      |
-| Working with service credentials               |                     |                                      |
-| Binding a service instance to an app           |                     |                                      |
-| Managing tags                                  |                     |                                      |
-{: caption="Core integrated services integration in AP locations" caption-side="top"}
-{: #cs_int_core-table-2}
-{: tab-title="Asia Pacific"}
-{: tab-group="cs_int_core"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|---------------------------------------------------------------|---------------------|------------------|
-| Managing an account                            |                     |                                      |          
-| Managing users                                 |                     |                                      |
-| Managing organizations                         |                     |                                      |
-| Provisioning and managing catalog {{site.data.keyword.iamshort}} (IAM) enabled services  |                     |                                      |
-| Working with service aliases                   |                     |                                      |
-| Working with service credentials               |                     |                                      |
-| Binding a service instance to an app           |                     |                                      |
-| Managing tags                                  |                     |                                      |
-{: caption="Core integrated services integration in Europe locations" caption-side="top"}
-{: #cs_int_core-table-3}
-{: tab-title="Europe"}
-{: tab-group="cs_int_core"}
-{: class="simple-tab-table"}
-{: row-headers}
 
 
 
 ## Platform core integrated security services
 {: #cloud_services_locations_integrated_security}
 
-| Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
-|------------------------------------------------|---------------------|--------------------------------------|
-| Managing access groups                         |                     |                                      |          
-| Managing policies                              |                     |                                      |
-| Log in to the {{site.data.keyword.cloud_notm}} |                     |                                      |
-| Managing platform API keys                     |                     |                                      |
-| Managing service IDs                           |                     |                                      |
+| Service                                         | Location | 
+|-------------------------------------------------|---------------------|
+| Managing access groups                          | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |        
+| Managing policies                               | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Log in to the {{site.data.keyword.cloud_notm}}  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Managing platform API keys                      | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Managing service IDs                            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
 {: caption="Integrated security services integration in America's locations" caption-side="top"}
-{: #cs_int_sec-table-1}
-{: tab-title="America"}
-{: tab-group="cs_int_sec"}
-{: class="simple-tab-table"}
-{: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|------------------------------------------------|------------------|----------------------------|
-| Managing access groups                         |                     |                                      |          
-| Managing policies                              |                     |                                      |
-| Log in to the {{site.data.keyword.cloud_notm}} |                     |                                      |
-| Managing platform API keys                     |                     |                                      |
-| Managing service IDs                           |                     |                                      |
-{: caption="Integrated security services integration in AP locations" caption-side="top"}
-{: #cs_int_sec-table-2}
-{: tab-title="Asia Pacific"}
-{: tab-group="cs_int_sec"}
-{: class="simple-tab-table"}
-{: row-headers}
 
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|---------------------------------------------------------------|---------------------|------------------|
-| Managing access groups                         |                     |                                      |          
-| Managing policies                              |                     |                                      |
-| Log in to the {{site.data.keyword.cloud_notm}} |                     |                                      |
-| Managing platform API keys                     |                     |                                      |
-| Managing service IDs                           |                     |                                      |
-{: caption="Integrated security services integration in Europe locations" caption-side="top"}
-{: #cs_int_sec-table-3}
-{: tab-title="Europe"}
-{: tab-group="cs_int_sec"}
-{: class="simple-tab-table"}
-{: row-headers}
+
 
 ## Platform: Database services
 {: #cloud_services_locations_database}
@@ -404,7 +336,7 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                                         | `Dallas (us-south)` | `Washington (us-east)`  |
 |-----------------------------------------------------------------|---------------------|---------------------|
-| {{site.data.keyword.cloudant_short_notm}}                       | ![Checkmark icon](../../icons/checkmark-icon.svg) `(beta)`        | `NO`                |
+| {{site.data.keyword.cloudant_short_notm}}                       | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
 | {{site.data.keyword.databases-for-elasticsearch_full_notm}}     | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
 | {{site.data.keyword.databases-for-etcd_full_notm}}              | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
 | {{site.data.keyword.databases-for-mongodb_full_notm}}           | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                |
@@ -422,7 +354,7 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                                         | `Tokyo (jp-tok)`   |`Sydney (au-syd)` | `Seoul 01 (seo01)`       | `Chennai 01 (che01)`     |
 |-----------------------------------------------------------------|--------------------|------------------|--------------------------|--------------------------|
-| {{site.data.keyword.cloudant_short_notm}}                       | `NO`               | `NO`             | `NO`                     | `NO`                     |
+| {{site.data.keyword.cloudant_short_notm}}                       | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                     | `NO`                     |
 | {{site.data.keyword.databases-for-elasticsearch_full_notm}}     | ![Checkmark icon](../../icons/checkmark-icon.svg)   | `NO`             | `Events are available through the Log Analysis Tokyo instance` | `Events are available through the Log Analysis Tokyo instance` |
 | {{site.data.keyword.databases-for-etcd_full_notm}}              | ![Checkmark icon](../../icons/checkmark-icon.svg)   | `NO`             | `Events are available through the Log Analysis Tokyo instance` | `Events are available through the Log Analysis Tokyo instance` |
 | {{site.data.keyword.databases-for-mongodb_full_notm}}           | ![Checkmark icon](../../icons/checkmark-icon.svg)    | `NO`             | `Events are available through the Log Analysis Tokyo instance` | `Events are available through the Log Analysis Tokyo instance` |
@@ -440,7 +372,7 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Oslo 01 (osl01)`         |
 |---------------------------------------------------------------|---------------------|------------------|---------------------------|
-| {{site.data.keyword.cloudant_short_notm}}                     | `NO`                | `NO`             | `NO`                      |
+| {{site.data.keyword.cloudant_short_notm}}                     | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                      |
 | {{site.data.keyword.databases-for-elasticsearch_full_notm}}   | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis London instance` |
 | {{site.data.keyword.databases-for-etcd_full_notm}}            | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis London instance` |
 | {{site.data.keyword.databases-for-mongodb_full_notm}}         | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis London instance` |
@@ -462,9 +394,9 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon]   | ![Checkmark icon]                    |         
-| {{site.data.keyword.mobilepush}}               |                     |                                      |
-| {{site.data.keyword.DRA_full}}                 |                     |                                      |
+| {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | ![Checkmark icon](../../icons/checkmark-icon.svg)                   |         
+| {{site.data.keyword.mobilepush}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.DRA_full}}                 |![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Developer tools services integration in America's locations" caption-side="top"}
 {: #cs_dev-tools-table-1}
 {: tab-title="America"}
@@ -474,9 +406,9 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon]   | `NO`                                 |       
-| {{site.data.keyword.mobilepush}}               |                     |                                      |
-| {{site.data.keyword.DRA_full}}                 |                     |                                      |                      
+| {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   |  `NO`                                |       
+| {{site.data.keyword.mobilepush}}               | `NO`  | `NO` |
+| {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                     |                      
 {: caption="Developer tools services integration in AP locations" caption-side="top"}
 {: #cs_dev-tools-table-2}
 {: tab-title="Asia Pacific"}
@@ -486,9 +418,9 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon]   | ![Checkmark icon]                    |   
-| {{site.data.keyword.mobilepush}}               |                     |                                      |
-| {{site.data.keyword.DRA_full}}                 |                     |                                      |      
+| {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)                    |   
+| {{site.data.keyword.mobilepush}}               | `NO`  | `NO`  |
+| {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |      
 {: caption="Developer tools services integration in Europe locations" caption-side="top"}
 {: #cs_dev-tools-table-3}
 {: tab-title="Europe"}
