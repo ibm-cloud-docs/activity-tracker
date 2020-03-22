@@ -177,38 +177,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 {: row-headers}
 
 
-## Network foundation services
-{: #cloud_services_locations_network-foundations}
-
-| Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
-|------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.BluDirectLink}} Dedicated solution | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
-{: caption="Network foundation services integration in America's locations" caption-side="top"}
-{: #net-foun-table-1}
-{: tab-title="America"}
-{: tab-group="net-foun"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.BluDirectLink}} Dedicated solution |                     |                                      |
-{: caption="Network foundation services integration in AP locations" caption-side="top"}
-{: #net-foun-table-2}
-{: tab-title="Asia Pacific"}
-{: tab-group="net-foun"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|---------------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.BluDirectLink}} Dedicated solution | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-{: caption="Network foundation services integration in Europe locations" caption-side="top"}
-{: #net-foun-table-3}
-{: tab-title="Europe"}
-{: tab-group="net-foun"}
-{: class="simple-tab-table"}
-{: row-headers}
 
 
 ## Compute: Cloud Foundry
@@ -257,7 +225,7 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | `No` |          
+| {{site.data.keyword.registrylong_notm}} `[*]`       | ![Checkmark icon](../../icons/checkmark-icon.svg) | `No` |          
 {: caption="Container services integration in America's locations" caption-side="top"}
 {: #cs_container-table-1}
 {: tab-title="America"}
@@ -267,7 +235,7 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |          
+| {{site.data.keyword.registrylong_notm}}  `[*]`   | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |          
 {: caption="Container services integration in AP locations" caption-side="top"}
 {: #cs_container-table-2}
 {: tab-title="Asia Pacific"}
@@ -277,7 +245,7 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.registrylong_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
+| {{site.data.keyword.registrylong_notm}} `[*]`    | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
 {: caption="Container services integration in Europe locations" caption-side="top"}
 {: #cs_container-table-3}
 {: tab-title="Europe"}
@@ -285,21 +253,16 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                                       | Location     |
-|---------------------------------------------------------------|---------------------|
-| {{site.data.keyword.registrylong_notm}} global registry       | `Events are available through the Activity Tracker Dallas (us-south) instance` |          
-{: caption="Container services integration in Global" caption-side="top"}
-{: #cs_container-table-3}
-{: tab-title="Global"}
-{: tab-group="cs_container"}
-{: class="simple-tab-table"}
-{: row-headers}
+
+`[*]` {{site.data.keyword.registrylong_notm}} global registry events are available through the Activity Tracker Dallas (us-south) instance.  
+
+
 
 
 ## Platform core integrated services
 {: #cloud_services_locations_core_integrated}
 
-| Service                                        | Location              |
+| Gobal service                                        | Location               |
 |------------------------------------------------|---------------------|
 | Managing an account                            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |        
 | Managing users                                 | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
@@ -317,7 +280,7 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 ## Platform core integrated security services
 {: #cloud_services_locations_integrated_security}
 
-| Service                                         | Location | 
+| Global service                                  | Location | 
 |-------------------------------------------------|---------------------|
 | Managing access groups                          | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |        
 | Managing policies                               | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
@@ -438,7 +401,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
 | {{site.data.keyword.messagehub}}               |                     |                                      |          
-| MQ on IBM Cloud                                |                     |                                      |
+| MQ on IBM Cloud                                | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                     |
 {: caption="Integration services integration in America's locations" caption-side="top"}
 {: #cs_integration-table-1}
 {: tab-title="America"}
@@ -449,7 +412,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
 | {{site.data.keyword.messagehub}}               |                     |                                      |          
-| MQ on IBM Cloud                                |                     |                                      |
+| MQ on IBM Cloud                                | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
 {: caption="Integration services integration in AP locations" caption-side="top"}
 {: #cs_integration-table-2}
 {: tab-title="Asia Pacific"}
@@ -460,7 +423,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.messagehub}}               |                     |                                      |          
-| MQ on IBM Cloud                                |                     |                                      |
+| MQ on IBM Cloud                                | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Integration services integration in Europe locations" caption-side="top"}
 {: #cs_integration-table-3}
 {: tab-title="Europe"}
@@ -471,9 +434,16 @@ The following tables list the locations where automatic collection of database s
 ## Platform network services
 {: #cloud_services_locations_network}
 
+| Global service                                 | Location |
+|------------------------------------------------|--------------------|
+| IBM Cloud Internet Services (CIS)              | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |              
+{: caption="Network services that are global" caption-side="top"}
+
+
+
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| IBM Cloud Internet Services (CIS)              |                     |                                      |          
+| {{site.data.keyword.BluDirectLink}} Dedicated solution | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |            
 {: caption="Network services integration in America's locations" caption-side="top"}
 {: #cs_network-table-1}
 {: tab-title="America"}
@@ -481,9 +451,9 @@ The following tables list the locations where automatic collection of database s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|------------------------------------------------|------------------|----------------------------|
-| IBM Cloud Internet Services (CIS)              |                     |                                      | 
+| Service                                                 | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
+|---------------------------------------------------------|------------------|----------------------------|
+| {{site.data.keyword.BluDirectLink}} Dedicated solution  |  `NO`            |   `NO`         |
 {: caption="Network services integration in AP locations" caption-side="top"}
 {: #cs_network-table-2}
 {: tab-title="Asia Pacific"}
@@ -491,9 +461,9 @@ The following tables list the locations where automatic collection of database s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|---------------------------------------------------------------|---------------------|------------------|
-| IBM Cloud Internet Services (CIS)              |                     |                                      | 
+| Service                                                |`Frankfurt (eu-de)`  | `London (eu-gb)` |
+|--------------------------------------------------------|---------------------|------------------|
+| {{site.data.keyword.BluDirectLink}} Dedicated solution | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Network services integration in Europe locations" caption-side="top"}
 {: #cs_storage-table-3}
 {: tab-title="Europe"}
@@ -504,19 +474,18 @@ The following tables list the locations where automatic collection of database s
 
 
 
-
 ## Platform: Security services
 {: #cloud_services_locations_security}
 
 The following tables list the locations where automatic collection of security service logs is enabled. You can monitor logs through the Log Analysis instance that is available in the same location as your security resources, if you enable 1 instance in this location to host service platform logs. For locations where you can provision a service instance but the {{site.data.keyword.at_full_notm}} service is not available, specific detail about the location where you can monitor those logs is provided in each case.
 
 
-| Service                                                         | `Dallas (us-south)` | `Washington (us-east)`                |
-|-----------------------------------------------------------------|---------------------|---------------------------------------|
-| {{site.data.keyword.cloudcerts_full_notm}}                      | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`                                 |  
-| {{site.data.keyword.appid_full}}                                |         |             |        
-| {{site.data.keyword.keymanagementservicelong}}                  | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `Events are available through the Log Analysis Dallas (us-south) instance` |
-| {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} |     |      |
+| Service                                                         | `Dallas (us-south)`                               | `Washington (us-east)`                |
+|-----------------------------------------------------------------|---------------------------------------------------|---------------------------------------|
+| {{site.data.keyword.cloudcerts_full_notm}}                      | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                 |  
+| {{site.data.keyword.appid_full}}                                | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |        
+| {{site.data.keyword.keymanagementservicelong}}                  | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | ![Checkmark icon](../../icons/checkmark-icon.svg) |  `NO` |
 {: caption="Security services integration in America's locations" caption-side="top"}
 {: #cs-sec-table-1}
 {: tab-title="America"}
@@ -524,12 +493,12 @@ The following tables list the locations where automatic collection of security s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                                         | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|-----------------------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.cloudcerts_full_notm}}                      | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `NO`                       |
-| {{site.data.keyword.appid_full}}                                |         |             |   
-| {{site.data.keyword.keymanagementservicelong}}                  | ![Checkmark icon](../../icons/checkmark-icon.svg)            | `Events are available through the Log Analysis Tokyo instance`   |
-| {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} |     |      |
+| Service                                                         | `Tokyo (jp-tok)`                                   |`Sydney (au-syd)`           |
+|-----------------------------------------------------------------|----------------------------------------------------|----------------------------|
+| {{site.data.keyword.cloudcerts_full_notm}}                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.appid_full}}                                | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |   
+| {{site.data.keyword.keymanagementservicelong}}                  | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | `NO`    | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Security services integration in AP locations" caption-side="top"}
 {: #cs-sec-table-2}
 {: tab-title="Asia Pacific"}
@@ -537,12 +506,12 @@ The following tables list the locations where automatic collection of security s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|---------------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.cloudcerts_full_notm}}                    | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`             |
-| {{site.data.keyword.appid_full}}                                |         |             |   
-| {{site.data.keyword.keymanagementservicelong}}                | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`             |
-| {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} |     |      |
+| Service                                                       |`Frankfurt (eu-de)`                                 | `London (eu-gb)` |
+|---------------------------------------------------------------|----------------------------------------------------|------------------|
+| {{site.data.keyword.cloudcerts_full_notm}}                    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.appid_full}}                              | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |   
+| {{site.data.keyword.keymanagementservicelong}}                | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`  |
 {: caption="Security services integration in Europe locations" caption-side="top"}
 {: #cs-sec-table-3}
 {: tab-title="Europe"}
@@ -556,7 +525,7 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.cos_full_notm}}            |                     |                                      |          
+| {{site.data.keyword.cos_full_notm}}  `[*]`          | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)  |          
 {: caption="Storage services integration in America's locations" caption-side="top"}
 {: #cs_storage-table-1}
 {: tab-title="America"}
@@ -566,7 +535,7 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.cos_full_notm}}            |                     |                                      |     
+| {{site.data.keyword.cos_full_notm}}  `[*]`        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |     
 {: caption="Storage services integration in AP locations" caption-side="top"}
 {: #cs_storage-table-2}
 {: tab-title="Asia Pacific"}
@@ -576,13 +545,22 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.cos_full_notm}}            |                     |                                      |     
+| {{site.data.keyword.cos_full_notm}}  `[*]`        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |     
 {: caption="Storage services integration in Europe locations" caption-side="top"}
 {: #cs_storage-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs_storage"}
 {: class="simple-tab-table"}
 {: row-headers}
+
+`[*]` {{site.data.keyword.cos_full_notm}} (COS) generates global, management, and data events. 
+* By default, events that report on global actions such as the creation of a bucket are collected automatically. You can monitor these events through the {{site.data.keyword.at_short}} instance that is located in the Frankfurt location.
+* Collection of management and data events in your account is optional. 
+* **You must configure each bucket to enable management events, or management and data events.** Notice that you cannot enable data events only for a bucket. 
+
+    * To monitor management events, you must configure a bucket and specify the {{site.data.keyword.at_short}} instance where those events will be available for monitoring.
+    * To monitor data events, you must select the option **Track data events** when you associate a bucket with an {{site.data.keyword.at_short}} instance. 
+
 
 ## Platform web and mobile services
 {: #cloud_services_locations_web}
@@ -620,11 +598,11 @@ The following tables list the locations where automatic collection of security s
 ## VPC infrastructure services
 {: #cloud_services_locations_vpc_infrastructure}
 
-The following tables list the locations where automatic collection of security service logs is enabled. You can monitor logs through the Log Analysis instance that is available in the same location as your security resources, if you enable 1 instance in this location to host service platform logs. For locations where you can provision a service instance but the {{site.data.keyword.at_full_notm}} service is not available, specific detail about the location where you can monitor those logs is provided in each case.
+The followinf locations are valid for VPC Gen 1 and VPC Gen 2:
 
-| Service                                                         | `Dallas (us-south)` | `Washington (us-east)`               |
-|-----------------------------------------------------------------|---------------------|--------------------------------------|
-| Storage resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `NO`   |            
+| Service                                | `Dallas (us-south)`                                | `Washington (us-east)`               |
+|----------------------------------------|----------------------------------------------------|--------------------------------------|
+| Storage resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | `NO`   |            
 | Compute resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` |
 | Network resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` |
 | Load Balancer                          | ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` |
