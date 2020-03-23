@@ -287,8 +287,8 @@ The following table outlines the AT event values for the update event that is ge
 | `correlationId`             | Unique GUID  -->  set from the data in the `context.correlation_id` field          |         |
 | `action`                    | `serviceName.objectType-key-state.update` | `cloud-object-storage.bucket-key-state.update |
 | `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` | `2020-03-11T13:28:56.71+0000` 
-| `initiator.name`            | `Key Protect` --> fixed value set from the data in the `context.publisher_name` field  | `Key Protect` |
-| `initiator.id`              | Set with the service ID value in the `publisher` field | `ServiceId-xxxxxxxxx` |
+| `initiator.name`            | `Key Protect` --> fixed value   | `Key Protect` |
+| `initiator.id`              | Set to `crn:v1:bluemix:public:kms` | `crn:v1:bluemix:public:kms` |
 | `initiator.typeURI`         | `service/security/account/serviceid` | `service/security/account/serviceid` |
 | `initiator.credential.type` | `apikey` | `apikey` |
 | `initiator.host.address`    | Leave empty | |

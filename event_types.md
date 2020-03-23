@@ -30,20 +30,23 @@ In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as 
 
 Events can be classified as `management` or `data` events. 
 
-The common theme for management events is that they do not include, access, or modify customer data. Meanwhile, data events do.
+Data events access or modify customer data. Management events report on operational actions on {{site.data.keyword.cloud_notm}} resources.
 {: note}
 
 
 Events can also be classified as `global` or `location-based`. The scope of the event determines where you monitor events.
 
-The common theme for global events is a single, synchronized location where account administrators can monitor certain types of activity across the {{site.data.keyword.cloud_notm}}. Meanwhile, location-based events remain local to the location where a subscribed cloud service is hosted.
+Global events report user actions in the {{site.data.keyword.cloud_notm}} whose scope expands beyond a single region. Meanwhile, location-based events remain local to the location where a subscribed cloud service is hosted.
 {: note}
+
 
 
 ## Management events
 {: #event_types_management}
 
-**Management events** report on actions that are generated when an API call changes the state of a resource and does not include, access, or modify customer data, and on non-API actions that report DevOps actions on resources in the account.
+**Management events** report on the following actions:
+* Actions that are generated when an API call reads or changes the state of a resource and does not access or modify customer data
+* Actions on non-API actions that report DevOps actions on resources in the account
 
 * Report activity on CRUD operational platform actions, for example: 
 
@@ -57,13 +60,13 @@ The common theme for global events is a single, synchronized location where acco
 
     CRUD actions managing service instances
 
-* Report activity on CRUD actions on resources that do not include, access, or modify customer data, for example:
+* Report activity on CRUD actions on resources that do not access, or modify customer data, for example:
 
     Create a resource that does not include customer metadata such as create a toolchain
 
     Send a notification
 
-* Report configuration changes to resources that do not include, access, or modify customer data, for example:
+* Report configuration changes to resources that do not access, or modify customer data, for example:
 
     Enable archiving
 
@@ -85,7 +88,7 @@ Management events are enabled in all the {{site.data.keyword.cloud_notm}} accoun
 ## Data events
 {: #event_types_data}
 
-**Data events** report on actions where the initiator's request accesses, modifies, or operates on your data.
+**Data events** report on actions where the initiator's request modifies, or operates on your data.
 
 You identify data events by the value of the field **dataEvent**. When this field is set to **true**, the event is a data event.
 
@@ -100,7 +103,6 @@ Data events are enabled in all the {{site.data.keyword.cloud_notm}} accounts. Ho
 
 * Services might require a service plan to opt-in to data events, such as some Watson services.
 
-    
 
 ## Global events
 {: #event_types_global}

@@ -371,7 +371,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   |  `NO`                                |       
-| {{site.data.keyword.mobilepush}}               | `NO`  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.mobilepush}}               | `NO`  | `NO` |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                     |                      
 {: caption="Developer tools services integration in AP locations" caption-side="top"}
 {: #cs_dev-tools-table-2}
@@ -383,7 +383,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)                    |   
-| {{site.data.keyword.mobilepush}}               | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.mobilepush}}               | `NO` | `NO` |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |      
 {: caption="Developer tools services integration in Europe locations" caption-side="top"}
 {: #cs_dev-tools-table-3}
@@ -574,7 +574,7 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.mobilefoundation_short}}   |                     |                                      |          
+| {{site.data.keyword.mobilefoundation_short}}   |![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
 {: caption="Web adn mobile services integration in America's locations" caption-side="top"}
 {: #cs_web-table-1}
 {: tab-title="America"}
@@ -584,7 +584,7 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.mobilefoundation_short}}   |                     |                                      |           
+| {{site.data.keyword.mobilefoundation_short}}   | `NO`             | ![Checkmark icon](../../icons/checkmark-icon.svg) |           
 {: caption="Web and mobile services integration in AP locations" caption-side="top"}
 {: #cs_web-table-2}
 {: tab-title="Asia Pacific"}
@@ -594,7 +594,7 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.mobilefoundation_short}}   |                     |                                      |   
+| {{site.data.keyword.mobilefoundation_short}}   | [Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg)   |   
 {: caption="Web and mobile services integration in Europe locations" caption-side="top"}
 {: #cs_web-table-3}
 {: tab-title="Europe"}
