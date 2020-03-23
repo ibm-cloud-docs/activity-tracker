@@ -355,6 +355,7 @@ The following tables list the locations where automatic collection of database s
 ## Platform developer tools
 {: #cloud_services_locations_devops}
 
+
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | ![Checkmark icon](../../icons/checkmark-icon.svg)                   |         
@@ -370,7 +371,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   |  `NO`                                |       
-| {{site.data.keyword.mobilepush}}               | `NO`  | `NO` |
+| {{site.data.keyword.mobilepush}}               | `NO`  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                     |                      
 {: caption="Developer tools services integration in AP locations" caption-side="top"}
 {: #cs_dev-tools-table-2}
@@ -382,7 +383,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)                    |   
-| {{site.data.keyword.mobilepush}}               | `NO`  | `NO`  |
+| {{site.data.keyword.mobilepush}}               | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |      
 {: caption="Developer tools services integration in Europe locations" caption-side="top"}
 {: #cs_dev-tools-table-3}
@@ -398,9 +399,11 @@ The following tables list the locations where automatic collection of database s
 ## Platform integration services
 {: #cloud_services_locations_integration}
 
+hub regions. Plus San Jose, and Seoul.
+
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.messagehub}}               |                     |                                      |          
+| {{site.data.keyword.messagehub}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
 | MQ on IBM Cloud                                | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                     |
 {: caption="Integration services integration in America's locations" caption-side="top"}
 {: #cs_integration-table-1}
@@ -409,10 +412,10 @@ The following tables list the locations where automatic collection of database s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.messagehub}}               |                     |                                      |          
-| MQ on IBM Cloud                                | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
+| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           | `Seoul (kr-seo)` |
+|------------------------------------------------|------------------|----------------------------|---------------------|
+| {{site.data.keyword.messagehub}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
+| MQ on IBM Cloud                                | `NO`                | ![Checkmark icon](../../icons/checkmark-icon.svg)  | |
 {: caption="Integration services integration in AP locations" caption-side="top"}
 {: #cs_integration-table-2}
 {: tab-title="Asia Pacific"}
@@ -422,7 +425,7 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.messagehub}}               |                     |                                      |          
+| {{site.data.keyword.messagehub}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
 | MQ on IBM Cloud                                | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Integration services integration in Europe locations" caption-side="top"}
 {: #cs_integration-table-3}
@@ -431,12 +434,15 @@ The following tables list the locations where automatic collection of database s
 {: class="simple-tab-table"}
 {: row-headers}
 
+
+
+
 ## Platform network services
 {: #cloud_services_locations_network}
 
 | Global service                                 | Location |
 |------------------------------------------------|--------------------|
-| IBM Cloud Internet Services (CIS)              | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |              
+| IBM Cloud Internet Services (CIS)              | `Events are available through the Activity Tracker Dallas (us-south) instance` |              
 {: caption="Network services that are global" caption-side="top"}
 
 
