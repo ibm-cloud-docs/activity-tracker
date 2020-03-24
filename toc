@@ -33,7 +33,6 @@ IBM Cloud Activity Tracker with LogDNA
     {: .topicgroup}
     Security and compliance
         adoption.md
-        iam.md
 
     {: .topicgroup}
     Tutorials
@@ -55,6 +54,14 @@ IBM Cloud Activity Tracker with LogDNA
     {: .navgroup id="howto"}
     provision.md
     remove.md
+
+    {: .topicgroup}
+    Enhancing security for IBM Log Analysis with LogDNA
+        data-security.md
+        iam.md
+        ha-dr.md
+        service-connection.md
+        architecture-workload-isolation.md
 
     {: .topicgroup}
     DevOps tasks
@@ -84,6 +91,7 @@ IBM Cloud Activity Tracker with LogDNA
     endpoints.md
     service_plan.md
     channels.md
+    shared-responsibilities.md
 
     {: .topicgroup}
     Events
