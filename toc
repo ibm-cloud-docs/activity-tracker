@@ -56,7 +56,7 @@ IBM Cloud Activity Tracker with LogDNA
     remove.md
 
     {: .topicgroup}
-    Enhancing security for IBM Log Analysis with LogDNA
+    Enhancing security for IBM Cloud Activity Tracker with LogDNA
         data-security.md
         iam.md
         ha-dr.md
