@@ -672,6 +672,7 @@ The followinf locations are valid for VPC Gen 1 and VPC Gen 2:
 | {{site.data.keyword.visualrecognitionshort}} |  |  | 
 | {{site.data.keyword.texttospeechshort}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.speechtotextshort}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.wh-acd_short}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Watson AI services integration in America's locations" caption-side="top"}
 {: #cs_watsonai-table-1}
 {: tab-title="America"}
