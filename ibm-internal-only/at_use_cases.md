@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-26"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
+keywords: IBM Cloud, LogDNA, Activity Tracker, use cases
 
 subcollection: logdnaat
 
@@ -70,7 +70,7 @@ Services that are Key Protect enabled must complete the following actions when u
 3. Subscribe to KP events in Hyperwarp. This action is internal and does not require an AT event.
 
 
-The following table outlines the AT event fields for the AT event:
+The following table outlines the event fields for the AT event:
 
 | Field                       | Value                 |
 |-----------------------------|-----------------------|
@@ -93,7 +93,7 @@ The following table outlines the AT event fields for the AT event:
 | `id`                        | Optional | 
 | `requestData`               | Optional |  
 | `responseData`              | Add the following information in JSON format: `resourceCRN`, `preventKeyDeletion`, `keyVersion.id`, `keyVersion.creationDate` |
-| `message`                   | `Key Protect: create registration` |
+| `message`                   | `Key Protect: create registration for {serviceName}` |
 | `dataEvent`                 | `false` |
 | `observer.name`             | `ActivityTracker` |
 | `logSourceCRN`              | Add value per the guidance |
@@ -117,16 +117,16 @@ The following table outlines the AT event fields for the AT event:
 | `initiator.host.address`    | Leave empty |
 | `reason.reasonCode`         | 2xx |
 | `reason.reasonType`         | Add value per the guidance |
-| `outcome`                   | `success` |
-| `severity`                  | `normal` |
+| `outcome`                   | `failure` |
+| `severity`                  | `warning` |
 | `target.name`               | Key name |
 | `target.id`                 | Key CRN |
-| `target.typeURI`            | `/kms/secrets` |
+| `target.typeURI`            | `/kms/registrations` |
 | `target.host.address`       | Optional |
 | `id`                        | Optional | 
 | `requestData`               | Optional |  
 | `responseData`              | Add the following information in JSON format: `resourceCRN`, `preventKeyDeletion`, `keyVersion.id`, `keyVersion.creationDate` |
-| `message`                   | `Key Protect: create registration -failure` |
+| `message`                   | `Key Protect: create registration for {serviceName} -failure` |
 | `dataEvent`                 | `false` |
 | `observer.name`             | `ActivityTracker` |
 | `logSourceCRN`              | Add value per the guidance |
@@ -139,6 +139,101 @@ The following table outlines the AT event fields for the AT event:
 {: row-headers}
 
 
+#### Sample of the iam-am.policy.create event
+{: #kp_event1}
+
+```
+    {
+    "outcome": "success",
+    "eventTime": "2020-03-17T22:18:40.325+0000",
+    "action": "iam-am.policy.create",
+    "initiator": {
+        "id": "IBMid-xxxxxxx",
+        "name": "xxxxx@.ibm.com",
+        "typeURI": "/service/security/account/user",
+        "credential": {
+            "type": "token"
+        }
+    },
+    "target": {
+        "id": "crn:v1:bluemix:public:iam-am::a/xxxxxxx::policy:",
+        "name": "policy-guid",
+        "typeURI": "iam-am/policy"
+    },
+    "reason": {
+        "reasonCode": 201
+    },
+    "requestData": {
+        "url": "",
+        "api_name": "postPolicyV1",
+        "method": "POST",
+        "body": {
+            "type": "authorization",
+            "roles": [
+                {
+                    "role_id": "crn:v1:bluemix:public:iam::::serviceRole:Reader"
+                }
+            ],
+            "subjects": [
+                {
+                    "attributes": [
+                        {
+                            "name": "serviceName",
+                            "value": "cloud-object-storage"
+                        },
+                        {
+                            "name": "accountId",
+                            "value": "xxxxxxx"
+                        }
+                    ]
+                }
+            ],
+            "resources": [
+                {
+                    "attributes": [
+                        {
+                            "name": "serviceName",
+                            "value": "kms"
+                        },
+                        {
+                            "name": "accountId",
+                            "value": "xxxxxxx"
+                        }
+                    ]
+                }
+            ],
+            "scope": "a/xxxxxxx"
+        }
+    },
+    "responseData": {
+        "status": "201 Created",
+        "elapsed_time": "265.168ms",
+        "transaction_id": "8de14fb7-24b2-4d14-8d95-2d5496b83f2a",
+        "response_body": "{\"id\":\"dfa2326b-2904-465e-a3f7-dff81e8b0b34\",\"type\":\"authorization\",\"subjects\":[{\"attributes\":[{\"name\":\"serviceName\",\"value\":\"cloud-object-storage\"},{\"name\":\"accountId\",\"value\":\"xxxxxxx\"}]}],\"roles\":[{\"role_id\":\"crn:v1:bluemix:public:iam::::serviceRole:Reader\",\"display_name\":\"Reader\",\"description\":\"As a reader, you can perform read-only actions within a service such as viewing service-specific resources.\"}],\"resources\":[{\"attributes\":[{\"name\":\"serviceName\",\"value\":\"kms\",\"operator\":\"stringEquals\"},{\"name\":\"accountId\",\"value\":\"xxxxxxx\",\"operator\":\"stringEquals\"}]}],\"href\":\"https://iam.cloud.ibm.com/v1/policies/dfa2326b-2904-465e-a3f7-dff81e8b0b34\",\"created_at\":\"2020-03-17T22:18:40.190Z\",\"created_by_id\":\"IBMid-xxxxxxx\",\"last_modified_at\":\"2020-03-17T22:18:40.190Z\",\"last_modified_by_id\":\"IBMid-xxxxxxx\"}"
+    },
+    "message": "IAM Access Management: create policy ",
+    "additonalData": {},
+    "meta": {
+        "serviceProviderName": "iam-am",
+        "serviceProviderRegion": "ng",
+        "serviceProviderProjectId": "53c0f9a6-c07e-4ac0-b933-7327b6ca3c84",
+        "userAccountIds": [
+            "xxxxxxx"
+        ]
+    },
+    "logSourceCRN": "crn:v1:bluemix:public:iam-am::a/xxxxxxx:::",
+    "saveServiceCopy": true
+    }
+```
+{: screen}
+
+#### Sample of the kms.registrations.create
+{: #kp_event2}
+
+```
+
+```
+{: screen}
 
 ### Step 2: KP actions when an initiator changes the state of a key
 {: #kp-hyperwarp_step2}
@@ -153,21 +248,51 @@ Everytime an initiator (user/serviceID) changes the state of a key (deletes a ke
 
     `publisher`: Service ID used by KP
 
-    `context.correlation_id`: Correlation ID generated by KP to link any related actions by the initiator's request
+    `event_properties.correlation_id`: Correlation ID generated by KP to link any related actions by the initiator's request
 
-    `context.publisher_name`: Set to **Key Protect** (name of teh service as shown in the catalog)
+    `event_properties.publisher_name`: Set to **Key Protect** (name of the service as shown in the catalog)
+
+    ```
+    {
+  "event_properties": {
+    "correlation_id": "fff8e057-3e4r-4de8-123b-w234ab0ea92b",
+    "key_crn": "crn:v1:staging:public:kms:us-south:a/xxxxxxxxxxxxx:dc607292-e5e4-467b-836c-719b876faa5a:key:0bce65f8-d7bd-4edr-83ff-06a3a998bddc",
+    "key_id": "0bce65f8-d7bd-4edr-83ff-06a3a998bddc",
+    "key_event": "deletion",
+    "resource_crn": "crn:v1:staging:public:kms:us-south:a/xxxxxxxxxxxxx:e5fabe7f-3rdf-4417-b2f2-3edr6928fe1a:eWhWIYKX:stizZVjO",
+    "deletion_date": "2020-03-19T15:00:56Z",
+    "overdue": false,
+    "registration_metadata": "some registration metadata"
+  },
+  "metadata": {
+    "hypersyncReceivedAt": "2020-03-19T15:00:58.080Z",
+    "beforeIamTimestamp": "2020-03-19T15:00:58.081Z",
+    "hypersyncSentAt": "2020-03-19T15:00:58.215Z",
+    "afterIamTimestamp": "2020-03-19T15:00:58.214Z"
+  },
+  "publisher": "crn:v1:bluemix:public:kms",
+  "timestamp": "2020-03-19T15:00:56Z",
+  "family": "key.lifecycle.event.kms",
+  "event_id": "1fa1216a-8eb7-4b8c-ba0a-aaf99d723383",
+  "account_id": "xxxxxxxxxxxxx",
+  "event_type": "key.lifecycle.event.kms:us-south",
+  "publisher_id": "kms_hw_publisher",
+  "version": "1.0"
+  }
+    ```
+    {: screen}
 
 
 The following table outlines the AT fields for the AT event that reports the `delete` key action:
 
 | Field                       | Value                 |
 |-----------------------------|-----------------------|
-| `correlationId`             | Unique GUID  -->  set by KP and passed on through the published event in Hyperwarp in the `context.correlation_id` field            | 
+| `correlationId`             | Unique GUID  -->  set by KP. </br>This ID will be passed on through the published event in Hyperwarp in the `event_properties.correlation_id` field            | 
 | `action`                    | `kms.secrets.delete` |
 | `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
 | `initiator.name`            | Initiator name per the guidelines   |
 | `initiator.id`              | Initiator ID per the guidelines |
-| `initiator.typeURI`         | `service/security/account/serviceid` or `service/security/account/userid` |
+| `initiator.typeURI`         | `service/security/account/serviceid` or `service/security/account/user` |
 | `initiator.credential.type` | `apikey` or `token` | 
 | `initiator.host.address`    | Set per the guidelines|
 | `reason.reasonCode`         | 2xx |
@@ -180,7 +305,7 @@ The following table outlines the AT fields for the AT event that reports the `de
 | `target.host.address`       | Optional |
 | `id`                        | Optional - this is used for correlation of actions within a service | 
 | `requestData`               | Optional | 
-| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `resourceCRN` |
+| `responseData`              | Optional |
 | `message`                   | `Key Protect: delete secret` |
 | `dataEvent`                 | `false` |
 | `observer.name`             | `ActivityTracker` |
@@ -195,12 +320,12 @@ The following table outlines the AT fields for the AT event that reports the `de
 
 | Field                       | Value                 |
 |-----------------------------|-----------------------|
-| `correlationId`             | Unique GUID  -->  set by KP and passed on through the published event in Hyperwarp in the `context.correlation_id` field              | 
+| `correlationId`             | Unique GUID  -->  set by KP. </br>This ID will be passed on through the published event in Hyperwarp in the `event_properties.correlation_id` field             | 
 | `action`                    | `kms.secrets.delete` |
 | `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
-| `initiator.name`            | `Key Protect`   |
-| `initiator.id`              | KP service ID |
-| `initiator.typeURI`         | `service/security/account/serviceid` or `service/security/account/userid` |
+| `initiator.name`            | Initiator name per the guidelines   |
+| `initiator.id`              | Initiator ID per the guidelines |
+| `initiator.typeURI`         | `service/security/account/serviceid` or `service/security/account/user` |
 | `initiator.credential.type` | `apikey` or `token` | 
 | `initiator.host.address`    | Set per the guidelines|
 | `reason.reasonCode`         | 4xx |
@@ -213,7 +338,7 @@ The following table outlines the AT fields for the AT event that reports the `de
 | `target.host.address`       | Optional |
 | `id`                        | Optional | 
 | `requestData`               | Optional | 
-| `responseData`              | Add the following information in JSON format: `ACKmessage`, `keyDeletionDate`, `outstandingResourceCRN` |
+| `responseData`              | Optional |
 | `message`                   |  `Key Protect: delete secret -failure` |
 | `dataEvent`                 | `false` |
 | `observer.name`             |  `ActivityTracker` |
@@ -238,6 +363,68 @@ Notice that for different key actions, `severity` of the AT event would be diffe
 {: caption="Severity by type of AT events" caption-side="top"} 
 
 
+#### Sample of the kms.secrets.delete
+{: #kp_event3}
+
+```
+{
+    "typeURI": "http://schemas.dmtf.org/cloud/audit/1.0/event",
+    "type": "ActivityTracker",
+    "eventType": "activity",
+    "eventTime": "2020-03-22T09:36:07Z",
+    "outcome": "success",
+    "message": "kms: delete secrets Key Protect",
+    "action": "kms.secrets.delete",
+    "initiator": {
+        "id": "IBMid-xxxxxxx",
+        "name": "lopezdsr@uk.ibm.com",
+        "typeURI": "service/security/account/user",
+        "credential": {
+            "type": "token"
+        }
+    },
+    "target": {
+        "id": "crn:v1:bluemix:public:kms:us-south:a/xxxxxxx:0d86b31a-5b37-4305-8760-7683d356d1b2:key:fde132c3-4c1b-4520-97fd-d7c1da097ee8",
+        "name": "Key Protect",
+        "typeURI": "kms/secrets"
+    },
+    "observer": {
+        "name": "ActivityTracker",
+        "typeURI": "security/edge/activity-tracker"
+    },
+    "requestPath": "/api/v2/keys/fde132c3-4c1b-4520-97fd-d7c1da097ee8",
+    "reason": {
+        "reasonCode": 204
+    },
+    "severity": "normal",
+    "requestHeader": {
+        "bluemixInstance": "0d86b31a-5b37-4305-8760-7683d356d1b2",
+        "authMethod": "IAM"
+    },
+    "responseBody": {
+        "correlationId": "5df6070a-253d-4e72-8045-df92f2b378c4",
+        "keyId": "fde132c3-4c1b-4520-97fd-d7c1da097ee8",
+        "requestURI": "/api/v2/keys/fde132c3-4c1b-4520-97fd-d7c1da097ee8?include_resource=true",
+        "keyType": "root",
+        "instanceName": "Key Protect-tb"
+    },
+    "dataEvent": true,
+    "saveServiceCopy": true,
+    "meta": {
+        "serviceProviderName": "kms",
+        "serviceProviderProjectId": "2c6de36d-5348-43aa-bdb8-0cfba36a6be2",
+        "serviceProviderRegion": "ng",
+        "userAccountIds": [
+            "xxxxxxx"
+        ]
+    },
+    "logSourceCRN": "crn:v1:bluemix:public:kms:us-south:a/xxxxxxx:0d86b31a-5b37-4305-8760-7683d356d1b2::"
+}
+```
+{: screen}
+
+
+
 ### Step 3: Service X actions when notified of a change in the state of a key
 {: #kp-hyperwarp_step3}
 
@@ -249,13 +436,13 @@ When a service receives a notification on the change of the state of a key, the 
 
 The following table outlines the AT event values for the update event that is generated when a key is deleted:
 
-| Field                       | Value                 | Example |
+| Field                       | Value                 | Example for COS |
 |-----------------------------|-----------------------|---------|
-| `correlationId`             | Unique GUID  -->  set from the data in the `context.correlation_id` field          |         |
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field          |         |
 | `action`                    | `serviceName.objectType-key-state.update` | `cloud-object-storage.bucket-key-state.update` |
 | `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` | `2020-03-11T13:28:56.71+0000` 
-| `initiator.name`            | `Key Protect` --> fixed value set from the data in the `context.publisher_name` field  | `Key Protect` |
-| `initiator.id`              | Set with the service ID value in the `publisher` field  (extract the value from the CRN value)| `ServiceId-xxxxxxxxx` |
+| `initiator.name`            | `Key Protect` --> fixed value set from the data in the `event_properties.publisher_name` field (the field is available in the KP published event to Hyperwarp) | `Key Protect` |
+| `initiator.id`              | Set with the value in the `publisher` field  (the field is available in the KP published event to Hyperwarp)| `crn:v1:bluemix:public:kms` |
 | `initiator.typeURI`         | `service/security/account/serviceid` | `service/security/account/serviceid` |
 | `initiator.credential.type` | `apikey` | `apikey` |
 | `initiator.host.address`    | Leave empty | |
@@ -269,7 +456,7 @@ The following table outlines the AT event values for the update event that is ge
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
 | `id`                        | Optional | 
 | `requestData`               | Optional | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`ackSentToKms`: Valid values are: `true`, `false` </br>agentID is optional | |
+| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`ackSentToKms`: Valid values are: `true`, `false` </br>agentId is optional </br>`status`: Valid values are: `success` and `failure` | |
 | `message`                   | `serviceName: update resource` | `Cloud Object Storage: update bucket key state ` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
@@ -284,11 +471,11 @@ The following table outlines the AT event values for the update event that is ge
 
 | Field                       | Value                 | Example |
 |-----------------------------|-----------------------|---------|
-| `correlationId`             | Unique GUID  -->  set from the data in the `context.correlation_id` field          |         |
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field          |         |
 | `action`                    | `serviceName.objectType-key-state.update` | `cloud-object-storage.bucket-key-state.update |
 | `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` | `2020-03-11T13:28:56.71+0000` 
-| `initiator.name`            | `Key Protect` --> fixed value   | `Key Protect` |
-| `initiator.id`              | Set to `crn:v1:bluemix:public:kms` | `crn:v1:bluemix:public:kms` |
+| `initiator.name`            | `Key Protect` --> fixed value set from the data in the `event_properties.publisher_name` field (the field is available in the KP published event to Hyperwarp) | `Key Protect` |
+| `initiator.id`              | Set with the value in the `publisher` field  (the field is available in the KP published event to Hyperwarp)| `crn:v1:bluemix:public:kms` |
 | `initiator.typeURI`         | `service/security/account/serviceid` | `service/security/account/serviceid` |
 | `initiator.credential.type` | `apikey` | `apikey` |
 | `initiator.host.address`    | Leave empty | |
@@ -302,7 +489,7 @@ The following table outlines the AT event values for the update event that is ge
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
 | `id`                        | Optional | 
 | `requestData`               |  `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`ackSentToKms`: Valid values are: `true`, `false` (tells the user that the ACK message has been sent successfully or not to KP </br>agentID is optional) | |
+| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`ackSentToKms`: Valid values are: `true`, `false` (tells the user that the ACK message has been sent successfully or not to KP </br>agentId is optional) | |
 | `message`                   | `serviceName: update resource -failure` | `Cloud Object Storage: update bucket key state -failure` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
@@ -350,11 +537,11 @@ If the `service fails to process action on key`, then no ACK message is sent to 
 {: note}
 
 
-The following table captures the AT event field values that the ACK AT event generates when the key is deleted:
+The following tables captures the AT event field values for the ACK AT events:
 
 | Field                       | Value                 |
 |-----------------------------|-----------------------|
-| `correlationId`             | Unique GUID  -->  set from the data in the `context.correlation_id` field            | 
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field            | 
 | `action`                    | `kms.secrets.ack-delete` |
 | `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
 | `initiator.name`            | `Key Protect`   |
@@ -387,7 +574,7 @@ The following table captures the AT event field values that the ACK AT event gen
 
 | Field                       | Value                 |
 |-----------------------------|-----------------------|
-| `correlationId`             | Unique GUID  -->  set from the data in the `context.correlation_id` field             | 
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field             | 
 | `action`                    | `kms.secrets.ack-delete` |
 | `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
 | `initiator.name`            | `Key Protect`   |
@@ -405,7 +592,7 @@ The following table captures the AT event field values that the ACK AT event gen
 | `target.host.address`       | Optional |
 | `id`                        | Optional | 
 | `requestData`               | Optional | 
-| `responseData`              | Add the following information in JSON format: `ACKmessage`, `keyDeletionDate`, `outstandingResourceCRN` |
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `outstandingResourceCRN` |
 | `message`                   |  `Key Protect: ACK delete secret -failure` |
 | `dataEvent`                 | `false` |
 | `observer.name`             |  `ActivityTracker` |
@@ -419,7 +606,274 @@ The following table captures the AT event field values that the ACK AT event gen
 {: row-headers}
 
 
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field            | 
+| `action`                    | `kms.secrets.ack-rotate` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 2xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `success` |
+| `severity`                  | `normal` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `resourceCRN` |
+| `message`                   | `Key Protect: ACK rotate secret` |
+| `dataEvent`                 | `false` |
+| `observer.name`             | `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="ACK- success" caption-side="top"}
+{: #ack-ok-table-2}
+{: tab-title="ACK Rotate key - success"}
+{: tab-group="ack1"}
+{: class="simple-tab-table"}
+{: row-headers}
 
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field             | 
+| `action`                    | `kms.secrets.ack-rotate` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 4xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `failure` |
+| `severity`                  | `warning` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `outstandingResourceCRN` |
+| `message`                   |  `Key Protect: ACK rotate secret -failure` |
+| `dataEvent`                 | `false` |
+| `observer.name`             |  `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="ACK- failure" caption-side="top"}
+{: #ack-not-ok-table-2}
+{: tab-title="ACK Rotate key - failure"}
+{: tab-group="ack1"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field            | 
+| `action`                    | `kms.secrets.ack-disable` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 2xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `success` |
+| `severity`                  | `normal` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `resourceCRN` |
+| `message`                   | `Key Protect: ACK disable secret` |
+| `dataEvent`                 | `false` |
+| `observer.name`             | `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="ACK- success" caption-side="top"}
+{: #ack-ok-table-3}
+{: tab-title="ACK Disable key - success"}
+{: tab-group="ack2"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field             | 
+| `action`                    | `kms.secrets.ack-disable` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 4xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `failure` |
+| `severity`                  | `warning` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `outstandingResourceCRN` |
+| `message`                   |  `Key Protect: ACK disable secret -failure` |
+| `dataEvent`                 | `false` |
+| `observer.name`             |  `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="ACK- failure" caption-side="top"}
+{: #ack-not-ok-table-3}
+{: tab-title="ACK Disable key - failure"}
+{: tab-group="ack2"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field            | 
+| `action`                    | `kms.secrets.ack-enable` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 2xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `success` |
+| `severity`                  | `normal` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `resourceCRN` |
+| `message`                   | `Key Protect: ACK disable secret` |
+| `dataEvent`                 | `false` |
+| `observer.name`             | `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="ACK- success" caption-side="top"}
+{: #ack-ok-table-4}
+{: tab-title="ACK Enable key - success"}
+{: tab-group="ack3"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field             | 
+| `action`                    | `kms.secrets.ack-enable` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 4xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `failure` |
+| `severity`                  | `warning` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `outstandingResourceCRN` |
+| `message`                   |  `Key Protect: ACK disable secret -failure` |
+| `dataEvent`                 | `false` |
+| `observer.name`             |  `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="ACK- failure" caption-side="top"}
+{: #ack-not-ok-table-4}
+{: tab-title="ACK Enable key - failure"}
+{: tab-group="ack3"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field            | 
+| `action`                    | `kms.secrets.ack-rotate` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 2xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `success` |
+| `severity`                  | `normal` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `resourceCRN` |
+| `message`                   | `Key Protect: ACK disable secret` |
+| `dataEvent`                 | `false` |
+| `observer.name`             | `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="ACK- success" caption-side="top"}
+{: #ack-ok-table-5}
+{: tab-title="ACK Rotate key - success"}
+{: tab-group="ack4"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Field                       | Value                 |
+|-----------------------------|-----------------------|
+| `correlationId`             | Unique GUID  -->  set from the data in the `event_properties.correlation_id` field             | 
+| `action`                    | `kms.secrets.ack-rotate` |
+| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
+| `initiator.name`            | `Key Protect`   |
+| `initiator.id`              | KP service ID |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | `token` | 
+| `initiator.host.address`    | Leave empty |
+| `reason.reasonCode`         | 4xx |
+| `reason.reasonType`         | Add value per the guidance |
+| `outcome`                   | `failure` |
+| `severity`                  | `warning` |
+| `target.name`               | Key name |
+| `target.id`                 | Key CRN |
+| `target.typeURI`            | `/kms/secrets` |
+| `target.host.address`       | Optional |
+| `id`                        | Optional | 
+| `requestData`               | Optional | 
+| `responseData`              | Add the following information in JSON format: `messageACK`, `keyDeletionDate`, `outstandingResourceCRN` |
+| `message`                   |  `Key Protect: ACK disable secret -failure` |
+| `dataEvent`                 | `false` |
+| `observer.name`             |  `ActivityTracker` |
+| `logSourceCRN`              | Add value per the guidance |
+| `saveServiceCopy`           | `true` |
+{: caption="ACK- failure" caption-side="top"}
+{: #ack-not-ok-table-5}
+{: tab-title="ACK Rotate key - failure"}
+{: tab-group="ack4"}
+{: class="simple-tab-table"}
+{: row-headers}
 
 
 
