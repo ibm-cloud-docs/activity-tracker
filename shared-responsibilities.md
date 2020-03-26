@@ -56,7 +56,7 @@ You and {{site.data.keyword.IBM_notm}} share responsibilities for keeping {{site
 
 | Task                                                    | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |---------------------------------------------------------|-----------------------|--------|
-| `Update the {{site.data.keyword.at_full_notm}} service` | Provide regular updates to the service with new features, fixes for defects, and security fixes. | `N/A` |
+| `Update the {{site.data.keyword.at_full_notm}} service` | Provide regular updates to the service with new features, fixes for defects, and security fixes. Document changes in the [LogDNA release notes](https://logdna.zendesk.com/hc/en-us/categories/360001626492-Release-Notes)| `N/A` |
 | `Track versions of custom views, dashboards, screens, parsing templates, and alerts`    | `N/A` | Use your own change management process to control versions of metadata resources such as views, dashboards, screens, parsing templates, and alerts`. | 
 {: caption="Table 2. Responsibilities for change management" caption-side="top"}
 
@@ -100,7 +100,7 @@ You and {{site.data.keyword.IBM_notm}} share responsibilities for keeping {{site
 | `Backup the {{site.data.keyword.at_full_notm}} service`        | Daily backup of the {{site.data.keyword.at_full_notm}} infrastructure and components. | `N/A` |
 | `Recovery of the {{site.data.keyword.at_full_notm}} service`   | Re-establish the {{site.data.keyword.at_full_notm}} service after any disaster event. | `N/A` |
 | `Backup data that is available for search`                     | Backup data in the region that the service operates in every 24 hrs. | Use access groups to manage permissions to work with the {{site.data.keyword.at_full_notm}}. |
-| `Restore data that is available for search`                    | Restore auditing data after any disaster event.   | Add or modify policies to the access groups in your asccount that control permissions to work with the auditing service in the new location where the region is recovered. |
+| `Restore data that is available for search`                    | Restore auditing data after any disaster event.   | Add or modify policies to the access groups in your account that control permissions to work with the auditing service in the new location where the region is recovered. |
 | `Backup the metadata of a LogDNA instance`                          | `N/A` | Backup the metadata such as views, dashboards, screens, parsing templates, and alerts for each LogDNA instance. |
 | `Restore the metadata of a LogDNA instance`                         | `N/A` | Restore the metadata such as views, dashboards, screens, parsing templates, and alerts for each LogDNA instance. |
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="top"}

@@ -456,7 +456,7 @@ The following table outlines the AT event values for the update event that is ge
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
 | `id`                        | Optional | 
 | `requestData`               | Optional | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`ackSentToKms`: Valid values are: `true`, `false` </br>agentId is optional </br>`status`: Valid values are: `success` and `failure` | |
+| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional  </br>agentId is optional </br>`status`: Valid values are: `success` and `failure` | |
 | `message`                   | `serviceName: update resource` | `Cloud Object Storage: update bucket key state ` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
@@ -489,7 +489,7 @@ The following table outlines the AT event values for the update event that is ge
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
 | `id`                        | Optional | 
 | `requestData`               |  `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>`ackSentToKms`: Valid values are: `true`, `false` (tells the user that the ACK message has been sent successfully or not to KP </br>agentId is optional) | |
+| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>agentId is optional) | |
 | `message`                   | `serviceName: update resource -failure` | `Cloud Object Storage: update bucket key state -failure` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
