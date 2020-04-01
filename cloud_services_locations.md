@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-04-01"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -230,11 +230,11 @@ The following table shows the locations where automatic collection of Cloud Foun
 | Managing an account                            |                     |                                      |          
 | Managing users                                 |                     |                                      |
 | Managing organizations                         |                     |                                      |
-| Catalog management                             |                     |                                      | 
-| Provisioning and managing catalog {{site.data.keyword.iamshort}} (IAM) enabled services  |                     |                                      |
+| Managing catalogs                             |                     |                                      | 
+| Managing {{site.data.keyword.iamshort}} (IAM) enabled services  |                     |                                      |
 | Working with service aliases                   |                     |                                      |
 | Working with service credentials               |                     |                                      |
-| Binding a service instance to an app           |                     |                                      |
+| Connecting a service instance to an app           |                     |                                      |
 | Managing tags                                  |                     |                                      |
 {: caption="Core integrated services integration in America's locations" caption-side="top"}
 {: #cs_int_core-table-1}
@@ -248,10 +248,11 @@ The following table shows the locations where automatic collection of Cloud Foun
 | Managing an account                            |                     |                                      |          
 | Managing users                                 |                     |                                      |
 | Managing organizations                         |                     |                                      |
-| Provisioning and managing catalog {{site.data.keyword.iamshort}} (IAM) enabled services  |                     |                                      |
+| Managing catalogs                             |                     |                                      | 
+| Managing {{site.data.keyword.iamshort}} (IAM) enabled services  |                     |                                      |
 | Working with service aliases                   |                     |                                      |
 | Working with service credentials               |                     |                                      |
-| Binding a service instance to an app           |                     |                                      |
+| Connecting a service instance to an app           |                     |                                      |
 | Managing tags                                  |                     |                                      |
 {: caption="Core integrated services integration in AP locations" caption-side="top"}
 {: #cs_int_core-table-2}
@@ -265,10 +266,11 @@ The following table shows the locations where automatic collection of Cloud Foun
 | Managing an account                            |                     |                                      |          
 | Managing users                                 |                     |                                      |
 | Managing organizations                         |                     |                                      |
-| Provisioning and managing catalog {{site.data.keyword.iamshort}} (IAM) enabled services  |                     |                                      |
+| Managing catalogs                             |                     |                                      | 
+| Managing  {{site.data.keyword.iamshort}} (IAM) enabled services  |                     |                                      |
 | Working with service aliases                   |                     |                                      |
 | Working with service credentials               |                     |                                      |
-| Binding a service instance to an app           |                     |                                      |
+| Connecting a service instance to an app           |                     |                                      |
 | Managing tags                                  |                     |                                      |
 {: caption="Core integrated services integration in Europe locations" caption-side="top"}
 {: #cs_int_core-table-3}
