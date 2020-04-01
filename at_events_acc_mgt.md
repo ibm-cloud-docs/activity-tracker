@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-04-01"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, account events, catalog management events
+keywords: IBM Cloud, LogDNA, Activity Tracker, account events, catalog, tags
 
 subcollection: logdnaat
 
@@ -51,8 +51,10 @@ The following table lists the actions that generate an event:
 
 | Action                                           | Description                                                           | 
 |--------------------------------------------------|-----------------------------------------------------------------------|
-| globalcatalog-collection.instance.update         | An event is generated when you update the catalog.          |
-| globalcatalog-collection.instance.read           | An event is generated when you view the catalog.            | 
+| globalcatalog-collection.instance.update         | An event is generated when you update a catalog.          |
+| globalcatalog-collection.instance.read           | An event is generated when you view a catalog.            | 
+| globalcatalog-collection.instances.list           | An event is generated when you get a list of the catalogs in an account.           | 
+| globalcatalog-collection.offerings.list         |  An event is generated when you get a list of the products in a catalog.          |
 | globalcatalog-collection.offering.create         | An event is generated when you create a product.          |
 | globalcatalog-collection.offering.update         | An event is generated when you update a product.          |
 | globalcatalog-collection.offering.delete         | An event is generated when you delete a product.          |
