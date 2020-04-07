@@ -26,7 +26,7 @@ subcollection: logdnaat
 # Cloud services
 {: #cloud_services}
 
-Use the {{site.data.keyword.at_full}} service to monitor user-initiated activities that change the state of any of the following services in {{site.data.keyword.cloud_notm}}.
+Use the {{site.data.keyword.at_full}} service to monitor user-initiated activities that change the state of any of the following services in the {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
 ## Analytics services
