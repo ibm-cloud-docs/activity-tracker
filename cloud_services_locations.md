@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-26"
+lastupdated: "2020-04-01"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
@@ -266,14 +266,14 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 |------------------------------------------------|---------------------|
 | Managing an account                            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |        
 | Managing users                                 | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Managing organizations                         | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Provisioning and managing catalog {{site.data.keyword.iamshort}} (IAM) enabled services   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Managing organizations                         | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |   
+| Managing catalogs                              | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
+| Managing {{site.data.keyword.iamshort}} (IAM) enabled services  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
 | Working with service aliases                    | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
 | Working with service credentials                | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Binding a service instance to an app            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Connecting a service instance to an app         | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
 | Managing tags                                   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
 {: caption="Core integrated services integration in America's locations" caption-side="top"}
-
 
 
 
