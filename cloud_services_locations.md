@@ -443,14 +443,14 @@ hub regions. Plus San Jose, and Seoul.
 | Global service                                 | Location |
 |------------------------------------------------|--------------------|
 | {{site.data.keyword.dns_full}} (currently in Beta release)  | `Events are available through the Activity Tracker Dallas (us-south) instance` |  
-| IBM Cloud Internet Services (CIS)              | `Events are available through the Activity Tracker Dallas (us-south) instance` |              
+| {{site.data.keyword.cis_full}}  (CIS)          | `Events are available through the Activity Tracker Dallas (us-south) instance` |              
 {: caption="Network services that are global" caption-side="top"}
 
 
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.BluDirectLink}} Dedicated solution | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |            
+| {{site.data.keyword.BluDirectLink}} Dedicated solution | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |      
 {: caption="Network services integration in America's locations" caption-side="top"}
 {: #cs_network-table-1}
 {: tab-title="America"}

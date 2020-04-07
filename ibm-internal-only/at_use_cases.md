@@ -456,7 +456,7 @@ The following table outlines the AT event values for the update event that is ge
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
 | `id`                        | Optional | 
 | `requestData`               | Optional | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional  </br>agentId is optional </br>`status`: Valid values are: `success` and `failure` | |
+| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional  </br>agentId is optional  | |
 | `message`                   | `serviceName: update resource` | `Cloud Object Storage: update bucket key state ` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
@@ -476,10 +476,10 @@ The following table outlines the AT event values for the update event that is ge
 | `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` | `2020-03-11T13:28:56.71+0000` 
 | `initiator.name`            | `Key Protect` --> fixed value set from the data in the `event_properties.publisher_name` field (the field is available in the KP published event to Hyperwarp) | `Key Protect` |
 | `initiator.id`              | Set with the value in the `publisher` field  (the field is available in the KP published event to Hyperwarp)| `crn:v1:bluemix:public:kms` |
-| `initiator.typeURI`         | `service/security/account/serviceid` | `service/security/account/serviceid` |
-| `initiator.credential.type` | `apikey` | `apikey` |
-| `initiator.host.address`    | Leave empty | |
-| `reason.reasonCode`         | 2xx | `200` |
+| `initiator.typeURI`         | `service/security/account/service` | `service/security/account/service` |
+| `initiator.credential.type` | Leave empty |  |
+| `initiator.host.address`    | Leave empty |  |
+| `reason.reasonCode`         | 4xx | `400` |
 | `reason.reasonType`         | Add value per the guidance | `OK` |
 | `outcome`                   | `failure` | `failure` |
 | `severity`                  | `critical` | `critical` |
@@ -488,8 +488,8 @@ The following table outlines the AT event values for the update event that is ge
 | `target.typeURI`            | `/serviceName/objectType` | `clod-object-storage/bucket/key` |
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
 | `id`                        | Optional | 
-| `requestData`               |  `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional </br>agentId is optional) | |
+| `requestData`               |  `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, `destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
+| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `1 - Active`, `3 - deactivated`, `5 - destroyed` </br>`adopterKeyVersion` is optional </br>agentId is optional) | |
 | `message`                   | `serviceName: update resource -failure` | `Cloud Object Storage: update bucket key state -failure` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
@@ -505,13 +505,13 @@ The following table outlines the AT event values for the update event that is ge
 
 Notice that the field `adopterKeyState` defines the value of the `severity` field in the AT event:
 
-| adopterKeyState | `Severity`   |
-|------------------|-------------|
-| `enable`         | `warning`   | 
-| `disable    `    | `critical`  |
+| adopterKeyState    | `Severity`  |
+|--------------------|-------------|
+| `1 - Active`       | `warning`   | 
+| `3 - deactivated`  | `critical`  |
+| `5 - destroyed`    | `critical`  |
 {: caption="ACK AT events" caption-side="top"} 
 
-For example, notice that if the adopterKeyState is disable then the severity of the action should be critical.
 
 
 ### Step 4: KP actions to ACK completion of registered services on a key
