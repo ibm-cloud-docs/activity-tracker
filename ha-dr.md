@@ -72,7 +72,7 @@ Where
 ## Availability of a auditing instance
 {: #ha-dr-region}
 
-When you provision a auditing instance, you select the MZR (location) where the instance is created. The region determines where the auditing data is processed and the data is hosted. 
+When you provision an auditing instance, you select the MZR (location) where the instance is created. The region determines where the auditing data is processed and the data is hosted. 
 
 A multizone region (MZR) consist of 3 or more availability zones that are independent from each other to ensure that single failure events affect only a single zone.
 
