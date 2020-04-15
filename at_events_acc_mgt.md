@@ -63,7 +63,7 @@ The following table lists the actions that generate an event:
 | globalcatalog-collection.account-settings.read   | An event is generated when you view the account settings.   | 
 {: caption="Table 2. Actions that generate catalog management events" caption-side="top"}
 
-For updates, you can see an update has been made, but you can't view what was updated. The default entry for an update is `redacted`.
+`unavailable` indicates when an update is made, but specific details about the update aren't included. 
 {: important}
 
 ## Events for managing organizations
