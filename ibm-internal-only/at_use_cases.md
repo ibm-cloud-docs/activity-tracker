@@ -456,7 +456,7 @@ The following table outlines the AT event values for the update event that is ge
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
 | `id`                        | Optional | 
 | `requestData`               | Optional | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional  </br>agentId is optional  | |
+| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional  </br>agentId is optional </br>`bucketLocation`  | |
 | `message`                   | `serviceName: update resource` | `Cloud Object Storage: update bucket key state ` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
@@ -489,7 +489,7 @@ The following table outlines the AT event values for the update event that is ge
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
 | `id`                        | Optional | 
 | `requestData`               |  `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, `destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `1 - Active`, `3 - deactivated`, `5 - destroyed` </br>`adopterKeyVersion` is optional </br>agentId is optional) | |
+| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `1 - Active`, `3 - deactivated`, `5 - destroyed` </br>`adopterKeyVersion` is optional </br>agentId is optional) </br>`bucketLocation` | |
 | `message`                   | `serviceName: update resource -failure` | `Cloud Object Storage: update bucket key state -failure` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
