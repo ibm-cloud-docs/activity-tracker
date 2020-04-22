@@ -991,3 +991,23 @@ Hopefully your cluster's logdna-agent is not impacted by whatever you did, and i
 
 Note that even if you only deleted the ATS, you will still need to create a new STS before creating a new ATS. Your new ATS will not bind to the old STS; STSs only bind once to ATSs.
 
+
+#### I need to delete some of my service's logs
+
+Suppose your service has saved some data in its logs that you would like to delete. LogDNA can delete all logs on specific days. LogDNA cannot delete specific logs inside of a day--for instance, by hour or by some other criteria. Therefore, you have two options, as shown below. If you have enabled archiving, remember to also consider any data saved in COS.
+
+**Option 1:**
+
+1. Open a ticket on LogDNA, asking them to delete your data from day 3 (or whatever) to the end.
+2. Wait 3 days, for the last of the unwanted data to become >3 days old.
+3. Repeat step 1.
+
+The number of days can be more or less than 3. Pick a number that strikes a balance between deleted unwanted data vs. keeping enough logs to operate your service if something goes wrong.
+
+**Option 2:**
+
+Assume you have a 30-day plan.
+
+1. Switch to 7-day plan. Within 24 hours, the data from day 8+ will be deleted.
+2. Wait 8 days, to be sure unwanted data rolls off the end of the retention period.
+3. Switch back to 30-day plan.
