@@ -90,6 +90,8 @@ These yaml files are derived from http://assets.eu-de.logging.cloud.ibm.com/clie
           value: logs.private.global.logging.cloud.ibm.com
   ```
   Most services should use the private global endpoints. To use the public global endpoints instead, set the values to `api.global.logging.cloud.ibm.com` and `logs.global.logging.cloud.ibm.com`.
+  
+One more thing: If your current yaml uses any custom tags in `LOGDNA_TAGS`, be sure to copy them into both of the new yaml files.
 
 That's it. Here's a [comparison of the two files](https://github.ibm.com/rbertram/scratch/blob/master/logdna-doc-files/yaml-compare.png).
 
