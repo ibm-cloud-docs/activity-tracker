@@ -93,12 +93,12 @@ You and {{site.data.keyword.IBM_notm}} share responsibilities for keeping {{site
 ## Disaster recovery
 {: #disaster-recovery}
 
-{{site.data.keyword.IBM_notm}} is responsible for the recovery of {{site.data.keyword.at_full_notm}} components in case of disaster. You are responsible for the resources to manage data like views, dashboards, screens, parsing templates, and alerts`.
+{{site.data.keyword.IBM_notm}} is responsible for the recovery of {{site.data.keyword.at_full_notm}} components in case of disaster. You are responsible for the resources to manage metadata like views, dashboards, screens, parsing templates, and alerts`.
 {: note}
 
 | Task                                                            | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-----------------------------------------------------------------|-------------------------------------------------|-----------------------|
-| `Applications` |Automatically recover and restart service components after any disaster event. | Enable archiving and check archive data is valid.  |
+| `Applications` |Automatically recover and restart service components after any disaster event. | Enable archiving and check archive data is valid. </br>Restore metadata. |
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="top"}
 
 Recovered and restarted service components will not have customer data reloaded.
