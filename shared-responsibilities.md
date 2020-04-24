@@ -98,7 +98,7 @@ You and {{site.data.keyword.IBM_notm}} share responsibilities for keeping {{site
 
 | Task                                                            | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-----------------------------------------------------------------|-------------------------------------------------|-----------------------|
-| `Applications` |Automatically recover and restart service components after any disaster event. | Enable archiving and check archive data is valid. </br>Recovery of metadata. |
+| `Applications` |Automatically recover and restart service components after any disaster event. | Enable archiving and check archive data is valid.  |
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="top"}
 
 Recovered and restarted service components will not have customer data reloaded.
