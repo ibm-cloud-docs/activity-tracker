@@ -252,8 +252,8 @@ After you have the file converted to 'PARQUET` format, you can run queries to an
 To report on the total number of events that are included in the archive file, run the following query:
 
 ```
-SELECT COUNT(*) AS NUMBER_EVENTS FROM PARQUET_FILE STORED AS PARQUET
-INTO RESULTS_BUCKET STORED AS CSV
+SELECT COUNT(*) AS NUMBER_EVENTS FROM <PARQUET_FILE> STORED AS PARQUET
+INTO <RESULTS_BUCKET> STORED AS CSV
 ```
 {: codeblock}
 
@@ -277,8 +277,8 @@ INTO cos://eu-de/results-marisa STORED AS CSV
 To see information about each event, run the following query:
 
 ```
-SELECT FIELDS FROM PARQUET_FILE STORED AS PARQUET
-INTO RESULTS_BUCKET STORED AS CSV
+SELECT <FIELDS> FROM <PARQUET_FILE> STORED AS PARQUET
+INTO <RESULTS_BUCKET> STORED AS CSV
 ```
 {: codeblock}
 
@@ -287,6 +287,26 @@ Where
 * **FIELDS** is the list of fields that you want to get information on for the different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME, _source.o_initiator.id AS INITIATOR_ID, _source.o_initiator.name AS INITIATOR_NAME`
 * **PARQUET_FILE** is the **Result location URL** that you get when you transform the archive file from JSON to PARQUET
 * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
+
+For example, to get the list of actions, you can run the following query:
+
+```
+SELECT DISTINCT  _source.action
+FROM cos://eu-gb/sql-results/jobid=17cee056-4da1-4429-8aca-3a7eb320ee27 STORED AS PARQUET 
+INTO cos://eu-gb/sql-results STORED AS CSV
+```
+{: screen}
+
+For example, to get the list of actions for a user, you can run the following query:
+
+```
+SELECT  _source.eventTime, _source.action, _source.o_target.name
+FROM cos://eu-gb/sql-results/jobid=3aa9e732-ba88-4ffe-b9fc-b8a265876467 STORED AS PARQUET 
+WHERE _source.o_initiator.name = "xxx@ibm.com"
+ORDER BY _source.eventTime
+INTO cos://eu-gb/sql-results STORED AS CSV
+```
+{: screen}
 
 For example, to get the event time, the action, the criticality of the action, and the outcome, you can run the following query:
 

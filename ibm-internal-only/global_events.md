@@ -61,7 +61,7 @@ These yaml files are derived from http://assets.eu-de.logging.cloud.ibm.com/clie
 2. The **logging** agent will pick up all of the usual logs. But we want it to no longer pick up the AT events, so we add a `LOGDNA_EXCLUDE` to the logging yaml in the `env` section:
   ```
          - name: LOGDNA_EXCLUDE
-           value: /var/log/at**
+           value: /var/log/at/**
   ```
 3. Conversely, the **Activity Tracker** agent needs to only pick up the AT events and ignore the logs, so we make these changes to the AT yaml:
   ```
@@ -90,8 +90,10 @@ These yaml files are derived from http://assets.eu-de.logging.cloud.ibm.com/clie
           value: logs.private.global.logging.cloud.ibm.com
   ```
   Most services should use the private global endpoints. To use the public global endpoints instead, set the values to `api.global.logging.cloud.ibm.com` and `logs.global.logging.cloud.ibm.com`.
+  
+One more thing: If your current yaml uses any custom tags in `LOGDNA_TAGS`, be sure to copy them into both of the new yaml files.
 
-That's it. Here's a [comparison of the two files](https://raw.github.ibm.com/rbertram/scratch/master/logdna-doc-files/yaml-compare.png?token=AAALnoi_F4wW3IwrI2l_9VsFhcKEJpwjks5eaEQLwA%3D%3D).
+That's it. Here's a [comparison of the two files](https://github.ibm.com/rbertram/scratch/blob/master/logdna-doc-files/yaml-compare.png).
 
 
 ### Sending to the Ingestion API

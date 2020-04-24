@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-18"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -32,17 +32,16 @@ For regulated and highly available workloads, consider the following adoption gu
 ## 1. Define resources naming standards for compliance
 {: #adoption_naming}
 
-When you create resources in the {{site.data.keyword.cloud_notm}}, you can choose how to name them, what information to include in their description fields, which tags to use to group them, associate metadata, and more. You have a potential risk of exposing PII data and other sensitive information through any of these actions to other users in the account. 
+When you create resources in the {{site.data.keyword.cloud_notm}}, you can choose how to name them, what information to include in their description fields, which tags to use to group them, associate metadata, and more. 
 
 **Define naming standards that do not include PII and other sensitive information across all resources that are created in the {{site.data.keyword.cloud_notm}}.**
 {: tip}
 
 
-
 ## 2. Define the account management strategy
 {: #adoption_account}
 
-In {{site.data.keyword.cloud_notm}}, you can have 1 of more **stand-alone** accounts. You can manage each account individually or within an **enterprise** by configuring a multitiered hierarchy of accounts. 
+In {{site.data.keyword.cloud_notm}}, you can have 1 or more **stand-alone** accounts. You can manage each account individually or within an **enterprise** by configuring a multitiered hierarchy of accounts. 
 
 Within an enterprise account, you create a multitiered hierarchy of accounts, with billing and payments for all accounts managed at the enterprise level. [Learn more](/docs/account?topic=account-enterprise).  
 * The top enterprise account serves as the parent account to all other accounts in the enterprise. 
@@ -80,7 +79,7 @@ In addition to these benefits, when you look into auditing and how it fits with 
 ## 3. Configure account settings for compliance
 {: #adoption_acc_settings}
 
-Across every industry, organizations require tighter controls and visibility into where their data is stored and processed. 
+Across every industry, organizations require tight controls and visibility into where their data is stored and processed. 
 
 **Indicate to {{site.data.keyword.IBM_notm}} your compliance requirements by enabling your {{site.data.keyword.cloud_notm}} account or {{site.data.keyword.cloud_notm}} Entreprise account as HIPAA or EU supported.**
 {: tip}
@@ -314,14 +313,18 @@ You can configure multiple notification channels. Valid channels are: `email`, `
 | `Webhook`    | A webhook is another method that you can configure to provide other applications information. **Define a webhook alert if you have a third party tool that you can configure with a LogDNA instance via a webhook, and where you plan to manage notifications.** |
 {: caption="Table 4. Guidance for notification channel" caption-side="top"}
 
-**Use at least 2 notification methods to monitor actions that require your attention. For example, use Slack to share alerts and information, and PagerDuty to automate and take prompt action on problems.**
+**Configure PagerDuty alerts to be notified immediately so that you can take action promptly on problems and automate their resolution. In addition, configure Slack alerts to share alerts and information.**
 {: tip}
 
 In LogDNA, you can also define a **preset**. A preset is an alert template that you can attach to any number of views.
 
-To reuse an alert configuration with different views and enforce notification channels across users that analyze data through that instance, configure **alert presets**.
+**To reuse an alert configuration with different views and enforce notification channels across users that analyze data through that instance, configure alert presets**.
 {: tip}
 
+When you send a notification, you can include log data as part of the notification. 
+
+**Customize the data that is included in a notification for situations where the receiver of the notification does not have access to the log data.**
+{: tip}
 
 ## 8. Define the archive strategy
 {: #adoption_archive}
@@ -580,9 +583,9 @@ You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.dat
 
 The {{site.data.keyword.sqlquery_short}} service provides a server-less, no-ETL solution to easily query data stored in {{site.data.keyword.cos_short}}. Underneath, SQL Query uses Apache Spark SQL as its underlying query engine. You can use the {{site.data.keyword.sqlquery_short}} to run SQL queries (that is, `SELECT` statements) to analyze, transform structured and semi-structured data, or clean up rectangular data. You cannot run actions such as `CREATE`, `DELETE`, `INSERT`, and `UPDATE`.
 
-The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. Archived files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format. When you use the {{site.data.keyword.sqlquery_short}} service, each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in {an {{site.data.keyword.cos_short}}instance of your choice. 
+The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. Archived files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format. When you use the {{site.data.keyword.sqlquery_short}} service, each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in an {{site.data.keyword.cos_short}}instance of your choice. 
 
-**When you query an {{site.data.keyword.at_full_notm}} archive file, you must convert the JSON formatted file into `PARQUET` format to be able to query the contents successfully.**
+**When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-sqlquery#sqlquery_step3-4) to be able to query the contents successfully.**
 {: tip}
 
 **Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and test your queries, and the [SQL Query REST API](#restapi) to automate them.**

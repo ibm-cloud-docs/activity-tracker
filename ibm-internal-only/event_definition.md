@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-03-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
 
@@ -22,11 +22,15 @@ subcollection: logdnaat
 {:note: .note}
 
 
-# Event fields
+# Adoption guidelines: AT event fields
 {: #ibm_event_fields}
 
 This page defines all of the fields used by an Activity Tracker event. Events in Activity Tracker are expressed in JSON.
 {:shortdesc}
+
+
+Join the AT team in the stakeholders meeting that is run fortnightly on Fridays. [Subscribe and enroll to the meeting](https://ec.yourlearning.ibm.com/w3/subscription/series/10008720). The presentations and recordings of these sessions are available in the box folder [Recordings and ppts](https://ibm.box.com/s/47sqtlhgg21ck3nsuz9ib4kwbgupjlrd).
+{: important}
 
 
 ## Introduction
@@ -111,7 +115,10 @@ Following is a sample event that includes the fields that are required. You can 
         "createdById": "IBMid-120000QUJ0",
         "statusCode": 200
     },
-    "dataEvent": false
+    "dataEvent": false,
+
+    // Unique ID that is used to correlate events across multiple services
+    "correlationId": "xxxxxxxxxxxxxx"
 
 }
 ```
@@ -132,6 +139,12 @@ To validate the formatting, you can use the [Activity Tracker linter tool ![Exte
 To check the quality of the data, verify that the data provided by the event includes the information required for auditing your service. For example, if you update the name of a resource, indicate the old name and the new name. Use the requestData and responseData fields to include additonal information.
 
 To check the **platform_service** name, check the service name displayed that is displayed in the IBM section for your events. It should be set to the name of your service. 
+
+To engage the AT tema to review your service's AT event prior to One Cloud badging, you must open an issue in the following git repo: [AT repo](https://github.ibm.com/activity-tracker/customer-issues/issues). Select the issue type `AT review`.
+{: important}
+
+
+
 
 ## Event fields provided by the service to comply with AT guidelines
 {: #mandatory}
@@ -165,9 +178,8 @@ Where
 
 * `action` defines the task requested by the user.  
 
-    Valid actions are: `add`, `bulkdelete`, `create`, `read`, `update`,`delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`
-
-    Not valid actions are: `info`, `unknown`
+    Valid actions are: `add`, `bulkdelete`, `create`, `read`, `update`,`delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`, `ack-delete`, `ack-restore`, `ack-disable`, `ack-enable`, `ack-rotate`, `edit`, `publish`
+, `publish`    Not valid actions are: `info`, `unknown`
 
     More values will be added as needed.
 
@@ -224,6 +236,16 @@ The following table shows some actions and sample events:
 | `undeploy`  | |
 | `update`    | `containers-kubernetes.logging-config.update` |
 {: caption="Table 1. Actions and samples" caption-side="top"}
+
+
+### correlationId (string)
+{: #correlationId}
+
+Use this field to specify the unique GUID that a user can use to correlate events across multiple services in IBM Cloud.
+{: note}
+
+For example, there are specific use cases where the field must be set:
+* [Integration with Key Protect (KP)](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-at_use_cases#kp-hyperwarp)
 
 
 ### dataEvent (boolean)
@@ -291,11 +313,13 @@ ID of the initiator of the action.
 
 * When the request includes an IAM  token, set this value to the **access_token.iam_id** field value that is available in the IAM token that your service gets to run the action.
 * For Watson services that get the initiator information through the Watson Gateway header, set this value to the **x-watson-userinfo** &gt; **bluemix-subject**.
-* For actions (events)) that are published to Hyperwarp by an IBM Cloud service, and subscribed by an IBM Cloud service, set this value as follows:
+* For actions (events) that are published to Hyperwarp by an IBM Cloud service, and subscribed by an IBM Cloud service, set this value as follows:
 
-    Publisher service: Set this field to the user or service ID that requests the action: **access_token.iam_id**. 
+    Publisher service: Set this field to the IBMid or service ID that requests the action: **access_token.iam_id**. 
 
-    Subscriber service:  Set this field to the **publisher**.
+    Subscriber service:  Set this field with the service ID value in the `publisher` field
+
+* For actions between services, set this field to the **crnToken.iam_id** field value that is available in the CRN token.
 
 
 | Who is the initiator                       | Value                                                                   | Example          |
@@ -326,6 +350,7 @@ Username of the user that initiated the action.
 
     Subscriber service:  Set this field to the **event_properties.publisher_name**.
 
+* For actions between services, set this field to **IBM**. 
 
 | Who is the initiator                                                                 | Value                                   | Example          |
 |--------------------------------------------------------------------------------------|-----------------------------------------|------------------|
@@ -362,7 +387,7 @@ Valid values are: `service/security/account/user`, `service/security/account/ser
 | `Watson service - initiator is a user`                                               | `service/security/account/user`         |
 | `Watson service - initiator is a service ID`                                         | `service/security/account/serviceid`    |
 | `No initiator - Action triggered by service` `(1)`                                   | `service/security/account/service`      |
-| `Registered IAM UI or service` `(2)`                                                 | `service/security/clientid`             |
+| `Registered IAM UI or service to service request` `(2)`                              | `service/security/clientid`             |
 {: caption="Table 4. Guidance setting initiator.tyepURI" caption-side="top"}
 
 `(1)` The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
@@ -530,11 +555,28 @@ Add any information here that will enhance the user experience going through the
 * Must be added as value pairs of information.
 * Must be formatted in camel case style.
 
+When you add fields, notice that the maximum size of an AT event is 16K.
+{: important}
+
 Some fields:
 * [Optional] `resourceGroupId`: Set to the CRN of the resource group
 * [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
 * [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
+    
+    When the data is PII or sensitive data, consider adding a reference ID so the user can easily identify it. Notice that you should not include in this field data that is sensitive or PII. 
+
+    When the data is a script or file, consider adding the object name and version.
+
+    If you cannot reference by ID, version, or any other way data that is either too big in size or includes sensitive data, do not include this field. Document in your topic the reason why this information is not included so customers are aware as to why is not available.
+
 * [`Required for update action`] `newValue`: Add the new value requested in the action
+
+    When the data is PII or sensitive data, consider adding a reference ID so the user can easily identify it. Notice that you should not include in this field data that is sensitive or PII. 
+
+    When the data is a script or file, consider adding the object name and version.
+
+    If you cannot reference by ID, version, or any other way data that is either too big in size or includes sensitive data, do not include this field. Document in your topic the reason why this information is not included so customers are aware as to why is not available.
+
 * [`Required for Watson services`] `platformSource`: Add the UI catalog name of your service, for example, `Watson Discovery` This helps users identify your events quickly by your service, since the platform_source value is shared across all Watson services.
 * [Optional] `customizationId`
 * [Optional] `environmentId`
@@ -551,6 +593,9 @@ Add any information here that will enhance the user experience going through the
 * Must include information that is required to clarify the action.
 * Must be added as value pairs of information.
 * Must be formatted in camel case style.
+
+When you add fields, notice that the maximum size of an AT event is 16K.
+{: important}
 
 Some fields:
 * [Optional] `targetAddress.type`: Set to the type of endpoint. Valid values are: `public` and `private`, in lowercase.
@@ -740,9 +785,11 @@ Set this value to the human readable name of the cloud resource on which the act
 The value is a human readable name of the service, service instance or service sub-resource that matches the CRN specified on the field target.id 	
 
 For example, 
-* When the action requested is on the instance of your service ( rename an instance), the name of the service must match the name as indicated under the **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=).
+* When the action requested is on the instance of your service ( for example, a user requests to rename an instance), the name of the service must match the name as indicated under the `Name` column in the resource list.
 * If the action requested is on a certificate, set the value to the name of the certificate that a user could see in the Cloud UI.
 * If you have resources that do not have a name, set this value to  `<resource-type>-<ID of the resource modified>` For example, `model-xxxxx`
+
+
 
 ### target.typeURI (string)
 {: #target.typeURI}
@@ -789,7 +836,7 @@ For example, check out the following samples:
 ### id (string)
 {: #id}
 
-Use this field to correlate events.
+Use this field to correlate AT events within your service.
 {: note}
 
 This field is optional.
@@ -875,7 +922,8 @@ The following table outlines when the AT guidelines change to adapt to new requi
 | Field                              | Required                                          | Field required  | Guideline changes               |
 |------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
 | `action`                           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
-| `dataEvent`                        |                                                   |  December 2019  |                                 |
+| `correlationId`                    |                                                   |                 | March 2020 - added this new field to guidelines  (use this field to correlate across multiple services in the IBM Cloud - [Required for integration use cases](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-at_use_cases)  | 
+| `dataEvent`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  | December 2019 - added this new field to guidelines    |
 | `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
 | `id`                               |                                                   |                 |                                 | 
 | `logSourceCRN` `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      | June 2019 - when changes to migrate to LogDNA were requested                                 |
@@ -889,8 +937,8 @@ The following table outlines when the AT guidelines change to adapt to new requi
 | `outcome`                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `reason.reasonCode`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check 403 is being generated to report on unauthorized access to run an action |
 | `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |  December 2019 - check that it is populated for failure events </br>January 2020 - required for all outcomes |
-| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check and request that update events all include information about the update (3 new subfields added to add consistency in the user experience) |
-| `responseData` `[*]`               |                                                   |                                                   |
+| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - update events must include information about the update (3 new subfields added to add consistency in the user experience) and should be JSON formatted |
+| `responseData` `[*]`               |                                                   |  January 2019   |  December 2019 - Check that is JSON formatted |
 | `saveServiceCopy`  `[*]`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |  June 2019 - when changes to migrate to LogDNA were requested |
 | `severity`                         | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `target.id`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
