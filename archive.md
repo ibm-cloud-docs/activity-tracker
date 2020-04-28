@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-04-27"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, archive logs, COS, cloud object storage
 
@@ -197,7 +197,7 @@ Complete the following steps to create a service ID with writing permissions for
 
 3. Enter a name that it is easy to recognize. For example, you can name the service ID `activity-tracker-cos-serviceID`. 
 
-4. Select the **Writer** role.
+4. Select the **Reader** role.
 
 5. Click **Add**.
 
@@ -280,7 +280,7 @@ Complete the following steps to assign a user permission to archive events:
     
     You can select **No access**, if you want the user to only have access to the {{site.data.keyword.at_full_notm}} service in the resource group.
 
-6. Select **IBM Log Analysis with LogDNA**.
+6. Select **{{site.data.keyword.at_full_notm}}**.
 7. Select the platform role **Viewer**.
 8. Select the service role **Manager**.
 9. Click **Assign**.

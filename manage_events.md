@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-04-27"
 subcollection: logdnaat
 
 ---
@@ -66,22 +66,37 @@ You can define categories through the **Categories** section in the web UI.
 
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving).
 
-* Events are automatically archived once a day in a compressed format **(.json.gz)**. Each event preserves its metadata.
+* Events are automatically archived in a compressed format **(.json.gz)**. Each event preserves its metadata.
 * Events are archived within 24-48 hours after you save the configuration. 
-* The events that are archived on a file correspond to a single day of data. **The timestamp that is used to determine whether the event is included in an archive is the UTC timestamp.**
+* Events are archived hourly. 
 
-    Notice that depending on your location, there might be events that you see in local time in your views on a specific day. However, you cannot find them on the archive file for that day. You are most likely viewing events in local time and the archive process uses the UTC timestamp of the event.
+    The name of the file has the following format:
+
+    ```
+    year=YYYY/month=MM/day=DD/<accountID>.<YYYY>-<MM>-<DD>.<HH>00.json.gz 
+    ```
+    {: codeblock}
+
+    Where `HH` is hours in 24 format and `accountID` corresponds to the LogDNA instance ID. You can get the LogDNA instance ID from the URL that you get when you launch the LogDNA web UI. 
+
+    For example, an archive file can have the following name: `2020/03/18/0f6efbef16.2020-03-18.1800.json.gz`
+
+    The events that are included in a file correspond to the period of time that is indicated as part of the name of the file. 
+
+* The timestamp that is used to determine whether the event is included in an archive is the UTC timestamp.
+
+    Notice that depending on your location, there might be events that you see in local time in your views on a specific day. However, you cannot find them on the archive file. You are most likely viewing events in local time and the archive process uses the UTC timestamp.
 
 * After you configure archiving, the first archive file is created when the archiving process runs and there is data.
-* The first time the archive process runs, you get an archive file for each day that you have data.
+* The first time the archive process runs, consider the following information:
 
-    * The maximum number of days that is archived includes events for the past 30 days when the instance has a `30 day search` plan.
+    * The maximum number of days that data is archived includes events for the past 30 days when the instance has a `30 day search` plan.
 
-    * The maximum number of days that is archived includes events for the past 14 days when the instance has a `14 day search` plan.
+    * The maximum number of days that data is archived includes events for the past 14 days when the instance has a `14 day search` plan.
 
-    * The maximum number of days that is archived includes events for the past 7 days when the instance has a `7 day search` plan.
+    * The maximum number of days that data is archived includes events for the past 7 days when the instance has a `7 day search` plan.
 
-For example, you have a service plan of 30 days. You configured the instance 10 days ago. You enable archiving on the 10th day. Your first archive generates 10 files, one for each day that you have data, Each file includes events for that date. If there is no data on a specific day, the archive file is empty.
+For example, you have a service plan of 30 days. You configured the instance 10 days ago. You enable archiving on the 10th day. The archiving process generates multiple files. Each file includes events for the period of time indicated as part of its name. If there is no data, the archive file for that period is empty.
 
 Each {{site.data.keyword.at_full_notm}} instance has its own archiving configuration.
 {: important}
@@ -95,6 +110,7 @@ The {{site.data.keyword.cos_full_notm}} instance is provisioned within the conte
 {{site.data.keyword.at_full_notm}} uses a service ID to communicate with the {{site.data.keyword.cos_full_notm}} service.
 * The service ID that you create for an {{site.data.keyword.cos_full_notm}} instance is used by the {{site.data.keyword.at_full_notm}} to authenticate and access the {{site.data.keyword.cos_full_notm}} instance. 
 * You can assign specific access policies to the service ID that restrict permissions on the {{site.data.keyword.cos_full_notm}} instance. Restrict the service ID to only have writing permissions on the bucket where you plan to archive the events.
+* You can also restrict the IP addresses that are allowed to manage the bucket.
 
 **Archiving in an EU-managed location:** You must configure a bucket that complies with the EU-managed and GDPR regulations.
 {: important}
