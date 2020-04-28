@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-27"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
@@ -360,7 +360,8 @@ The following tables list the locations where automatic collection of database s
 |------------------------------------------------|---------------------|--------------------------------------|
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | ![Checkmark icon](../../icons/checkmark-icon.svg)                   |         
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| {{site.data.keyword.DRA_full}}                 |![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.bplong}}                   |  ![Checkmark icon](../../icons/checkmark-icon.svg)  | `NO` |
 {: caption="Developer tools services integration in America's locations" caption-side="top"}
 {: #cs_dev-tools-table-1}
 {: tab-title="America"}
@@ -372,7 +373,8 @@ The following tables list the locations where automatic collection of database s
 |------------------------------------------------|------------------|----------------------------|
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   |  `NO`                                |       
 | {{site.data.keyword.mobilepush}}               | `NO`  | `NO` |
-| {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                     |                      
+| {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                     |    
+| {{site.data.keyword.bplong}}                   |  `NO`  | `NO` |                  
 {: caption="Developer tools services integration in AP locations" caption-side="top"}
 {: #cs_dev-tools-table-2}
 {: tab-title="Asia Pacific"}
@@ -384,7 +386,8 @@ The following tables list the locations where automatic collection of database s
 |---------------------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)                    |   
 | {{site.data.keyword.mobilepush}}               | `NO` | `NO` |
-| {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |      
+| {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |  
+| {{site.data.keyword.bplong}}                   |  `NO`  | `NO` |    
 {: caption="Developer tools services integration in Europe locations" caption-side="top"}
 {: #cs_dev-tools-table-3}
 {: tab-title="Europe"}
