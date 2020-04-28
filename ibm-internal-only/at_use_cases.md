@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-26"
+lastupdated: "2020-04-26"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, use cases
 
@@ -29,8 +29,15 @@ This page shows use cases where services need to be aligned when sending events 
 {:shortdesc}
 
 
-## Integration with Key Protect (KP)
+## IBM Cloud service integration with Key Protect (KP)
 {: #kp-hyperwarp}
+
+[REQUIRED] This scenario must be implemented by services that are KP-enabled.
+{: important}
+
+
+### Intro
+{: #kp-hyperwarp_intro}
 
 Services can publish actions via Hyperwarp that other services (subscribers) can consume. 
 
@@ -454,9 +461,9 @@ The following table outlines the AT event values for the update event that is ge
 | `target.id`                 | Resource name CRN | Bucket CRN |
 | `target.typeURI`            | `/serviceName/objectType` | `clod-object-storage/bucket/key` |
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
-| `id`                        | Optional | 
-| `requestData`               | Optional | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, 'destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional  </br>agentId is optional </br>`bucketLocation`  | |
+| `id`                        | Optional | |
+| `requestData`               | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, `destroyed` </br>`requestedKeyVersion` is optional </br>[Optional] `bucketLocation` indicates the location of the bucket  |  |
+| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `enable`, `disable` </br>`adopterKeyVersion` is optional  </br>agentId is optional  | |
 | `message`                   | `serviceName: update resource` | `Cloud Object Storage: update bucket key state ` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |
@@ -487,9 +494,9 @@ The following table outlines the AT event values for the update event that is ge
 | `target.id`                 | Resource name CRN | Bucket CRN |
 | `target.typeURI`            | `/serviceName/objectType` | `clod-object-storage/bucket/key` |
 | `target.host.address`       |  Server name | `s3.us-south.cloud-object-storage.test.appdomain.cloud` |
-| `id`                        | Optional | 
-| `requestData`               |  `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, `destroyed`,`Unknown` </br>`requestedKeyVersion` is optional |  |
-| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `1 - Active`, `3 - deactivated`, `5 - destroyed` </br>`adopterKeyVersion` is optional </br>agentId is optional) </br>`bucketLocation` | |
+| `id`                        | Optional | |
+| `requestData`               | `eventType`: Valid values are: `delete`,`rotate`,`enable`,`disable`,`restore` </br>`requestedKeyState`: Valid values are: `active`, `deactivated`, `destroyed` </br>`requestedKeyVersion` is optional </br>[Optional] `bucketLocation` indicates the location of the bucket |  |
+| `responseData`              | JSON object that includes the following fields: </br>`eventId` </br>`adopterKeyState`: Valid values are: `1 - Active`, `3 - deactivated`, `5 - destroyed` </br>`adopterKeyVersion` is optional </br>agentId is optional)  | |
 | `message`                   | `serviceName: update resource -failure` | `Cloud Object Storage: update bucket key state -failure` |
 | `dataEvent`                 | `false` | `false` |
 | `observer.name`             | `ActivityTracker` | `ActivityTracker` |

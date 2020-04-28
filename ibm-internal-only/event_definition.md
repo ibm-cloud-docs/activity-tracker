@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-04-27"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
 
@@ -146,7 +146,7 @@ To engage the AT tema to review your service's AT event prior to One Cloud badgi
 
 
 
-## Event fields provided by the service to comply with AT guidelines
+## Required event fields provided by the service to comply with AT guidelines
 {: #mandatory}
 
 
@@ -187,6 +187,15 @@ Where
 {: important}
 
 **Use a dash `–` to separate complex objectTypes to make it more readable to the users.**
+{: important}
+
+**Use the action type `create` when you create a new resource in your service instance. Use the action type `add` when you add an existing resource to your service instance.**
+{: important}
+
+**Use the action type `read` for events that report a viewing request on a resource (Get).** 
+{: important}
+
+**Use the action type `list` for events that report a user's request to view all resources for a type of a resource in your service.**
 {: important}
 
 The following table shows some actions and sample events:
@@ -331,7 +340,8 @@ ID of the initiator of the action.
 | `Action triggered via Hyperwarp`           | Publisher service: `access_token.iam_id`  </br>Subscriber service: `publisher`  | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
 | `Watson service - initiator is a user`     | `bluemix-subject`                                                       | `IBMid-xxxxxxxx` |
 | `Watson service - initiator is a service ID` | `bluemix-subject`                                                     | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
-| `No initiator - Action triggered by service` `(1)`  | Leave empty                                                    | `` | 
+| `No initiator - Action triggered by own service` `(1)`  | Leave empty                                                    | `` | 
+| `IBM Cloud service service to service request`      | `crnToken.iam_id`            | `crn-crn:v1:bluemix:public:cloud-object-storage:global:a/xxxxxxxx:69002255-e226-424e-b6c7-23c887fdb8bf::` |
 {: caption="Table 2. Guidance setting initiator.id" caption-side="top"}
 
 `(1)` The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
@@ -361,7 +371,8 @@ Username of the user that initiated the action.
 | `Action triggered via Hyperwarp`                                                     | `event_properties.publisher_name`       | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
 | `Watson service - initiator is a user`                                               | `bluemix-iamid`                         | `IBMid-xxxxxxxx` |
 | `Watson service - initiator is a service ID`                                         | `bluemix-iamid`                         | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
-| `No initiator - Action triggered by service` `(1)`                                   | `IBM`                                   | `IBM`            |
+| `No initiator - Action triggered by own service` `(1)`                               | `IBM`                                   | `IBM`            |
+| `IBM Cloud service (service to service request)`                                     |  `crnToken.sub` | `crn-crn:v1:bluemix:public:cloud-object-storage:global:a/xxxxxxxx:69002255-e226-424e-b6c7-23c887fdb8bf::` |
 {: caption="Table 3. Guidance setting initiator.name" caption-side="top"}
 
 `(1)` The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
@@ -441,10 +452,20 @@ To preserve the source IP, you must change the LB service configuration to have 
 * There is no need to do this each time a user updates their deployment, or microservice.
 * If you create or enable any additional ALBs for your service, you must enable source IP preservation for the ALBs.
 
-To be able to get the originating IP address, complete the following steps to enable IP preservation to all enabled public or private ALBs:  they'll need to first enable source IP preservation and then have code to actually fetch that off of a header
+To be able to get the originating IP address, complete the following steps to enable IP preservation to all enabled public or private ALBs:
 1. Enable source IP preservation. [Learn more](/docs/containers?topic=containers-ingress-settings#preserve_source_ip).
 2. Obtain the IP from the `x-forwarded-for` property in the header. 
 
+`Services running Kubernetes on classic should update to v2 loadbalancer when enabling source IP preservation.`
+{: important}
+
+V1 of the load balancer may cause outages with IP preservation enabled during rolling updates to the load balancer and should **NOT** be used without careful consideration.
+While the v2 load balancer is publicly listed as beta it is approved for production use and is only beta due to a manual SL step that is required. 
+Services in classic infrastructure can swap to v2.  There is a script you can use that will delete your v1 LBs and replace them with v2. There will be a few seconds downtime if you do that. 
+
+If you are running your cluster in an MZR (multiple zones), the LB won't work across zones unless you create a customer ticket to allow capacity aggregation. [Learn more](/docs/containers?topic=containers-loadbalancer-v2#ipvs_provision).
+
+For questions implementing the solution, ask in the slack channel `#armada-users`.
 
  
 ### logSourceCRN  (string)
@@ -550,6 +571,9 @@ IAM Identity Service: login user-apikey containers-kubernetes-key
 Add any information here that will enhance the user experience going through ther audit trail of your service events.  
 {: note}
 
+**There is a 16k max field limit in LogDNA. Anything bigger than 16k is truncated and lost when the event is consumed by LogDNA.**
+{: important}
+
 * Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
 * Must include information that is required to clarify the action. For example, an event with action create might require information on the Software verison. An update event requires information on the initial value and final value. There may be cases where data is sensitive or too long, in this situation, add information about the type of update
 * Must be added as value pairs of information.
@@ -583,11 +607,55 @@ Some fields:
 * [Optional] `reasonForFailure`:  Include additional info as to why the action has failed.
 
 
+**For update actions where only 1 change** is reported through the event, you can add the fields required as follows:
+
+```
+"requestData": {
+        // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
+        "updateType": "xxxx",
+        "initialValue": "xxxxx",
+        "newValue": "xxxxxx"
+    },
+```
+{: codeblock}
+
+**For update actions where a small number of changes** are reported through the event, you can add the fields as follows:
+
+```
+"requestData": {
+        // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
+        "update": [{"updateType": "xxxx",
+        "initialValue": "xxxxx",
+        "newValue": "xxxxxx"}]
+    },
+```
+{: codeblock}
+
+**For update actions where a large number of changes** are reported through the event, consider the following approach:
+1. Create 1 Activity Tracker event (parent event) that reports the main update action and include in requestData information about the number of changes that are affected by that user request. Set the field `totalNumberChanges`. Set also the `id` field. The `id` field is used to correlate this event with the individual events that report detailed information on each change.
+2. Generate 1 Activity Tracker event per change. Set the `id` field to the value set in the parent event. Add in requestData the required fields for updates:
+
+    ```
+    "requestData": {
+        // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
+        "updateType": "xxxx",
+        "initialValue": "xxxxx",
+        "newValue": "xxxxxx"
+    },
+    ```
+    {: codeblock}
+
+
+
+
 ### responseData (JSON)
 {: #responseData}
  
 Add any information here that will enhance the user experience going through ther audit trail of your service events. 
 {: note}
+
+**There is a 16k max field limit in LogDNA. Anything bigger than 16k is truncated and lost when the event is consumed by LogDNA.**
+{: important}
 
 * Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
 * Must include information that is required to clarify the action.
@@ -691,10 +759,13 @@ The default value is *true* but the field must be set explicitly.
 ### severity (string)
 {: #severity}
 
-This field defines the level of threat an action may have on the Cloud.
+This field defines the **level of threat** an action may have on the Cloud. This field allows a user to filter events by severity so that they can monitor the serious things that are happening in their account, and hide what is more likely to be background noise.
 {: note}
 
 Valid values are: `normal`, `warning`, and `critical`
+
+The value of the severity field is intended to be the same, regardless of the outcome (success or failure). The severity field indicates the inherent `threat level` of the action, that is, how much damage it could do if the request completes successfully as a mistake or a malicious action. The word `severity` is often associated with an error, but CADF slant is slightly different. 
+
 
 * Set to **normal** for routine actions in the Cloud. 
 
