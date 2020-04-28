@@ -854,10 +854,13 @@ Set this value to the human readable name of the cloud resource on which the act
 {: note}
 
 The value is a human readable name of the service, service instance or service sub-resource that matches the CRN specified on the field target.id 	
+ 
+* When the action requested is on the instance of your service ( for example, a user requests to rename an instance), the name of the service should match the name as indicated under the `Name` column in the resource list. 
 
-For example, 
-* When the action requested is on the instance of your service ( for example, a user requests to rename an instance), the name of the service must match the name as indicated under the `Name` column in the resource list.
+    If you cannot provide the name of the instance because getting that information can impact performance and a re-architecture of your service, set this field to the `objectType` value that is part of the action field. For example, if the action is `dns-svc.zones.read`,  set target.name to `zones`.
+
 * If the action requested is on a certificate, set the value to the name of the certificate that a user could see in the Cloud UI.
+
 * If you have resources that do not have a name, set this value to  `<resource-type>-<ID of the resource modified>` For example, `model-xxxxx`
 
 

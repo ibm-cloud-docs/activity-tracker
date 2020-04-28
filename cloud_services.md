@@ -192,8 +192,6 @@ The following table lists integration services that send events to {{site.data.k
 ## Platform network services
 {: #network}
 
-[IBM Cloud Internet Services (CIS)](/docs/infrastructure/cis?topic=cis-about-ibm-cloud-internet-services-cis#about-ibm-cloud-internet-services-cis)
-
 
 The following table lists network services that send events to {{site.data.keyword.at_short}}:
 
