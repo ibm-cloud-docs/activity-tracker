@@ -51,16 +51,19 @@ The following table lists the actions that generate an event:
 
 | Action                                           | Description                                                           | 
 |--------------------------------------------------|-----------------------------------------------------------------------|
-| globalcatalog-collection.instance.update         | An event is generated when you update a catalog.          |
-| globalcatalog-collection.instance.read           | An event is generated when you view a catalog.            | 
-| globalcatalog-collection.instances.list           | An event is generated when you get a list of the catalogs in an account.           | 
-| globalcatalog-collection.offerings.list         |  An event is generated when you get a list of the products in a catalog.          |
-| globalcatalog-collection.offering.create         | An event is generated when you create a product.          |
-| globalcatalog-collection.offering.update         | An event is generated when you update a product.          |
-| globalcatalog-collection.offering.delete         | An event is generated when you delete a product.          |
-| globalcatalog-collection.offering.read           | An event is generated when you view a product in a catalog.            |
-| globalcatalog-collection.account-settings.update | An event is generated when you update the account settings. |
-| globalcatalog-collection.account-settings.read   | An event is generated when you view the account settings.   | 
+| `globalcatalog-collection.instance.update`         | An event is generated when you update a catalog.          |
+| `globalcatalog-collection.instance.read`           | An event is generated when you view a catalog.            | 
+| `globalcatalog-collection.instances.list`           | An event is generated when you get a list of the catalogs in an account.           | 
+| `globalcatalog-collection.offerings.list`         |  An event is generated when you get a list of the products in a catalog.          |
+| `globalcatalog-collection.offering.create`         | An event is generated when you create a product.          |
+| `globalcatalog-collection.offering.update`         | An event is generated when you update a product.          |
+| `globalcatalog-collection.offering.delete`         | An event is generated when you delete a product.          |
+| `globalcatalog-collection.offering.read`           | An event is generated when you view a product in a catalog.            |
+| `globalcatalog-collection.account-settings.update` | An event is generated when you update the account settings. |
+| `globalcatalog-collection.account-settings.read`   | An event is generated when you view the account settings.   | 
+| `globalcatalog-collection.enterprise-settings.read` | An event is generated when you view the enterprise settings. |
+| `globalcatalog-collection.enterprise-settings.update` | An event is generated when you update the enterprise settings. |
+| `globalcatalog-collection.enterprise-settings.list` | An event is generated when you get a list of the enterprises in an account and their corresponding settings. | 
 {: caption="Table 2. Actions that generate catalog management events" caption-side="top"}
 
 `unavailable` indicates when an update is made, but specific details about the update aren't included. 
