@@ -413,7 +413,7 @@ Valid values are: `service/security/account/user`, `service/security/account/ser
 This field defines the type of credential that is used by the initiator to run the action.
 {: note}
 
-Valid values are: `token`, `user`, `apikey`, `certificate`
+Valid values are: `token`, `user`, `apikey`, `certificate`, `public-access`
 
 Guidance setting the value of this field:
 

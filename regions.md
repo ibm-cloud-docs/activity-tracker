@@ -32,6 +32,7 @@ subcollection: logdnaat
 
 | Geography             | Region                   | EU-Supported | HA Status |
 |-----------------------|--------------------------|--------------|-----------|
+| `Asia Pacific`        | `Chennai (in-che)`       | `N/A`        | `SZR`     |
 | `Asia Pacific`        | `Tokyo (jp-tok)`         | `N/A`        | `MZR`     |
 | `Asia Pacific`        | `Seoul (kr-seo)`         | `N/A`        | `SZR`     |
 | `Europe`              | `Frankfurt (eu-de) (*)`  | `YES`        | `MZR`     |
