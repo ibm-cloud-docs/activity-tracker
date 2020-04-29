@@ -54,6 +54,8 @@ IBM Cloud Activity Tracker with LogDNA
     {: .navgroup id="howto"}
     provision.md
     remove.md
+    observe.md
+    upgrade.md
 
     {: .topicgroup}
     Enhancing security for IBM Cloud Activity Tracker with LogDNA

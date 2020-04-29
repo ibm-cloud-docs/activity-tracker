@@ -71,7 +71,7 @@ The following tables list the actions that generate an event:
 | `globalcatalog-collection.offering.delete`         | An event is generated when you delete a product.          |
 {: caption="Table 3. Actions that generate product catalog management events" caption-side="top"}
 
-### Events for managing account settings related to catalogs
+### Events for managing account settings that are related to catalogs
 {: #at_events_catalog_3}
 
 | Action                                           | Description                                                           | 
@@ -80,7 +80,7 @@ The following tables list the actions that generate an event:
 | `globalcatalog-collection.account-settings.update` | An event is generated when you update the account settings. |
 {: caption="Table 4. Actions that generate account settings management events" caption-side="top"}
 
-### Events for managing enterprise account settings related to catalogs
+### Events for managing enterprise account settings that are related to catalogs
 {: #at_events_catalog_4}
 
 | Action                                           | Description                                                           | 

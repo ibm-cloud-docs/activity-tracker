@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-04-28"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, endpoints
 
@@ -35,6 +35,7 @@ The following table shows the API endpoints:
 
 | Region                   |  Public Endpoint                                   |
 |--------------------------|----------------------------------------------------|
+| `Chennai (in-che)`       | `https://api.in-che.logging.cloud.ibm.com`       |
 | `Dallas (us-south)`      | `https://api.us-south.logging.cloud.ibm.com`       |
 | `Frankfurt (eu-de)`      | `https://api.eu-de.logging.cloud.ibm.com`          |
 | `London (eu-gb)`         | `https://api.eu-gb.logging.cloud.ibm.com`          |
