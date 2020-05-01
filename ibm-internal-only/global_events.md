@@ -103,3 +103,20 @@ If your code is sending data directly to LogDNA via the [ingestion API](https://
 
 1. Logs go to `logs.private.eu-de.logging.cloud.ibm.com/supertenant/logs/ingest`. Replace `eu-de` with whatever location your code is logging in. AT regional events also go to this endpoint.
 2. AT global events go to `logs.private.global.logging.cloud.ibm.com/supertenant/logs/ingest`.
+
+## Super Tenant Sender (STS) in Dallas
+{: #sts_dallas}
+
+Your service will need an STS in Dallas (`us-south`), even if you don't use it for anything. LogDNA needs it for storing a Dallas copy of the ingestion key. It will use the STS to authenticate your AT events before storing them in the users' Dallas AT instances.
+
+1. Does your service already have an STS in Dallas? If yes, skip to 2.
+
+    Otherwise, create an STS in your service's account in the `us-south` region. The instructions are [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-enable_st#STS), sub-step 2 only ("Provision your service's Logging Super Tenant Sender (STS)"). 
+    - Use a 7-day plan, or whatever plan you want. No data will be saved in this STS unless you save it yourself.
+    - Specify `us-south` in the command.
+    - Use the same `name-of-your-service` as you did in `eu-de`. This is your CRN service name.
+    - Use the latest ingestion key (last rotated in mid-April).
+    
+2. Get the LogDNA UI URL of your Dallas STS, and slack it to Randy Bertram.
+
+That's all! When LogDNA enables global routing, a copy of your `eu-de` ingestion key will magically appear in the API keys of your `us-south` STS. Information on how to rotate the shared ingestion key will be available soon.
