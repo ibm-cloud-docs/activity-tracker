@@ -111,12 +111,19 @@ Your service will need an STS in Dallas (`us-south`), even if you don't use it f
 
 1. Does your service already have an STS in Dallas? If yes, skip to 2.
 
-    Otherwise, create an STS in your service's account in the `us-south` region. The instructions are [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-enable_st#STS), sub-step 2 only ("Provision your service's Logging Super Tenant Sender (STS)"). 
+    Otherwise, create an STS in your service's account in the `us-south` region. The full instructions are [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-enable_st#STS). The summary is that you will issue a command like the following:
+    
+    ```
+    ibmcloud resource service-instance-create myService-STS logdna 7-day us-south \
+       -p '{"service_supertenant": "name-of-your-service" , "provision_key": "123"}'
+    ```
+    {: codeblock}
+    
     - Use a 7-day plan, or whatever plan you want. No data will be saved in this STS unless you save it yourself.
     - Specify `us-south` in the command.
     - Use the same `name-of-your-service` as you did in `eu-de`. This is your CRN service name.
-    - Use the latest ingestion key (last rotated in mid-April).
+    - Use the latest ingestion key.
     
-2. Get the LogDNA UI URL of your Dallas STS, and slack it to Randy Bertram.
+2. Get the LogDNA UI URL of your Dallas STS, and copy it to the boxnote provided by Randy Bertram.
 
 That's all! When LogDNA enables global routing, a copy of your `eu-de` ingestion key will magically appear in the API keys of your `us-south` STS. Information on how to rotate the shared ingestion key will be available soon.
