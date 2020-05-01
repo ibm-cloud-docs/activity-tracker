@@ -121,7 +121,7 @@ Your service will need an STS in Dallas (`us-south`), even if you don't use it f
     
     - Use a 7-day plan, or whatever plan you want. No data will be saved in this STS unless you save it yourself.
     - Specify `us-south` in the command.
-    - Use the same `name-of-your-service` as you did in `eu-de`. This is your CRN service name.
+    - Use the same `name-of-your-service` as you did in `eu-de`. This is the CRN service-name of your service, i.e. its programmatic name in the catalog. You can look it up [here](http://resource-catalog.bluemix.net/search) in the Name column. For example, the service-name for Event Streams is `messagehub`. 
     - Get the latest provision key. It rotates in the middle of Jan, Apr, Jul, and Oct.
     
 2. Get the LogDNA UI URL of your Dallas STS, and copy it to the boxnote provided by Randy Bertram.
