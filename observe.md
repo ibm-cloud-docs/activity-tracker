@@ -51,7 +51,7 @@ In the *Activity Tracker UI*, you can manage your audit instances.
 * You can view all instances across all the resource groups in your account. You can also select 1 resource group and view the instances that are available in that resource group.
 * You can create instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-provision).
 * You can remove instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-remove).
-* You can change the service plan of an instance. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-upgrade)
+* You can change the service plan of an instance. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-upgrade).
 
 For each instance, you can view the following information:
 * The status of an instance
