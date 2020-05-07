@@ -1011,3 +1011,7 @@ Assume you have a 30-day plan.
 1. Switch to 7-day plan. Within 24 hours, the data from day 8+ will be deleted.
 2. Wait 8 days, to be sure unwanted data rolls off the end of the retention period.
 3. Switch back to 30-day plan.
+
+#### I need to delete an instance of the old AT service, pre-LogDNA
+
+Wow, that's really old! You can't delete the service instance yourself, because the old AT service is gone, including its service broker. Instead, refer to [this document](https://ibm.ent.box.com/notes/462134173388?s=okim8oc58vs2fs3ef04dtp0dvvo9go7u). (It is linked as the FAQ in the "About" section of the `#rc-adopters` channel description.). In the FAQ at the bottom of the document, PQ5 says to open an issue [here](https://github.ibm.com/Bluemix-Admin/Bluemix-Admin) to get your instances deleted.
