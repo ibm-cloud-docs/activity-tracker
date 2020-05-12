@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-05-12"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
@@ -358,6 +358,7 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
+| {{site.data.keyword.cloud-shell_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | `NO`                   |   
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | ![Checkmark icon](../../icons/checkmark-icon.svg)                   |         
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
@@ -371,7 +372,8 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   |  `NO`                                |       
+| {{site.data.keyword.cloud-shell_notm}}        | `NO`   | `NO`                   |        
+| {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | `NO`                   | 
 | {{site.data.keyword.mobilepush}}               | `NO`  | `NO` |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                     |    
 | {{site.data.keyword.bplong}}                   |  `NO`  | `NO` |                  
@@ -384,6 +386,7 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
+| {{site.data.keyword.cloud-shell_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | `NO`                   |  
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)                    |   
 | {{site.data.keyword.mobilepush}}               | `NO` | `NO` |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |  
