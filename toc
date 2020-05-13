@@ -58,14 +58,6 @@ IBM Cloud Activity Tracker with LogDNA
     upgrade.md
 
     {: .topicgroup}
-    Enhancing security for IBM Cloud Activity Tracker with LogDNA
-        data-security.md
-        iam.md
-        ha-dr.md
-        service-connection.md
-        architecture-workload-isolation.md
-
-    {: .topicgroup}
     DevOps tasks
         archive.md
         control_usage.md
@@ -74,6 +66,14 @@ IBM Cloud Activity Tracker with LogDNA
         iam_view_events.md
         reuse_resource_definitions.md
         sqlquery.md
+
+    {: .topicgroup}
+    Enhancing security for IBM Cloud Activity Tracker with LogDNA
+        data-security.md
+        iam.md
+        ha-dr.md
+        service-connection.md
+        architecture-workload-isolation.md
 
     {: .topicgroup}
     Export logs
