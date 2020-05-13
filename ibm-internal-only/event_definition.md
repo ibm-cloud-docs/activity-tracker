@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-05-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
 
@@ -192,59 +192,13 @@ Where
 **Use the action type `create` when you create a new resource in your service instance. Use the action type `add` when you add an existing resource to your service instance.**
 {: important}
 
-**Use the action type `read` for events that report a viewing request on a resource (Get).** 
+**Use the action type `read` for events that report a viewing request on 1 resource (Get).** 
 {: important}
 
 **Use the action type `list` for events that report a user's request to view all resources for a type of a resource in your service.**
 {: important}
 
-The following table shows some actions and sample events:
 
-| Action      | Sample     |
-|-------------|------------|
-| `add`       | `containers-kubernetes.usersubnet.add` |
-| `allow`     | |
-| `attach`    | `global-search-tagging.tag.attach`  |
-| `authenticate` | |
-| `backup`    | |
-| `capture`   | |
-| `configure` | |
-| `connect`   | `mobile-foundation.server-db.connect` |
-| `create`    | `containers-kubernetes.alb.create` |
-| `delete`    | `cloudcerts.certificate.delete` |
-| `deny`      | |
-| `deploy`    | |
-| `detach`    | `global-search-tagging.tag.detach`  |
-| `disable`   | |
-| `enable`    | |
-| `evaluate`  | |
-| `export`    | `toolchain.pipeline-job-execution.export`|
-| `import`    | `cloudcerts.certificate.import` |
-| `inspect`   | `container-registry.image.inspect`   |
-| `list`      | `cloudcerts.certificates.list` </br>`container-registry.image.list` |
-| `monitor`   | |
-| `notify`    | |
-| `pull`      | `container-registry.image.pull` |
-| `push`      | `container-registry.image.push` |
-| `read`      | `cloudcerts.certificates.read` </br> `kms.policies.read`|
-| `receive`   | |
-| `reimport`  | `cloudcerts.certificate.reimport` |
-| `remove`    | |
-| `renew`     | |
-| `restore`   | `<service_id>.backup.restore` |
-| `revoke`    | |
-| `rewrap`    | `kms.secrets.rewrap`  |
-| `scale`     | `<service_id>.resources.scale`       |
-| `search`    | `cloudcerts.certificates-metadata.search` |
-| `send`      | |
-| `set-on`    | |
-| `set-off`   | |
-| `start`     | |
-| `stop`      | |
-| `test`      | `cloudcerts.notification-channel.test` |
-| `undeploy`  | |
-| `update`    | `containers-kubernetes.logging-config.update` |
-{: caption="Table 1. Actions and samples" caption-side="top"}
 
 
 ### correlationId (string)
@@ -862,6 +816,8 @@ The value is a human readable name of the service, service instance or service s
 * If the action requested is on a certificate, set the value to the name of the certificate that a user could see in the Cloud UI.
 
 * If you have resources that do not have a name, set this value to  `<resource-type>-<ID of the resource modified>` For example, `model-xxxxx`
+
+* When the action is **list**, set this field to `*`.
 
 
 
