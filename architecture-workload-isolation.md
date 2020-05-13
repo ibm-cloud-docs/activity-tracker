@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020{{site.data.keyword.at_full}}
 lastupdated: "2020-05-11"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing
+keywords: IBM Cloud, LogDNA, Activity Tracker, architecture, workload isolation
 
 subcollection: logdnaat
 

@@ -358,7 +358,7 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.cloud-shell_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | `NO`                   |   
+| {{site.data.keyword.cloud-shell_notm}}         | ![Checkmark icon](../../icons/checkmark-icon.svg)   | `NO`                   |   
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | ![Checkmark icon](../../icons/checkmark-icon.svg)                   |         
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |

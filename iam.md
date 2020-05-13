@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2019-01-08"
+lastupdated: "2020-05-14"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, iam, manage user access
 
@@ -114,6 +114,7 @@ Use the following table to identify the service roles that you can grant a user 
 | Actions                                                                 | Manager                                           | Standard-Member                     | Reader |
 |-------------------------------------------------------------------------|:-------------------------------------------------:|:-----------------------------------:|:------:|
 | `Create and delete service keys through the LogDNA web UI`              | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
+| `Configure account settings`                                            | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
 | `Configure archiving`                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
 | `Define exclusion rules`                                                | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
 | `Create and delete categories`                                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
@@ -124,10 +125,12 @@ Use the following table to identify the service roles that you can grant a user 
 | `View usage`                                                            | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
 | `Create views`                                                          | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
 | `Create dashboards`                                                     | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
+| `Create screens`                                                        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
 | `Configure user preferences in the LogDNA web UI`                       | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg)                    | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
 | `Filter and search data`                                                | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)                    | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
 | `Use views to monitor events`                                           | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)                    | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
 | `Use dashboards to monitor events`                                      | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)                    | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
+| `Use screens to monitor events`                                         | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)                    | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
 {: caption="Table 2. IAM service roles and actions" caption-side="top"}
 
 

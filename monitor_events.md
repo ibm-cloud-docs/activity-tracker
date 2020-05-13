@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2019-01-08"
+lastupdated: "2020-05-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, monitor events
 
@@ -182,14 +182,12 @@ You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} i
 
 You can export events through a view in the web UI, or programmatically by using a REST API.
 
-Consider the following information when you export events:
-* You export a set of event entries. 
-* To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
-* The maximum number of lines that you can export is 20,000.
-
-
-To make the EU-DE (Frankfurt) location EU compliant, the export function is **not available** in **Frankfurt**. The download website for the exported logs is currently located outside the EU.
-{: important}
+Consider the following information when you export log data:
+* You export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
+* From the Web UI, when you export events, you get an email that is sent to your email address, with a link to a compressed file that includes the data. To get the data, you must click the link and download the compressed file.
+* When you export events programmatically, you can choose to send an email or to write events into your terminal.
+* The compressed log file that contains the data that you want to export is available for a maximum of 12 hours. 
+* When you export events, you have a limit of lines that you can export in a request. You can specify to export older lines or newer lines in case you reach the limit in the time range that you specify for the export. The maximum number of lines that you can export through the UI is `10.000` lines. The maximum number of lines that you can export per API request is `500.000` lines.
 
 
 ### By using the REST API
@@ -199,7 +197,7 @@ You can export events programmatically by using the LogDNA REST API. [Learn more
 
 When you export events programmatically, consider the following information:
 
-* You can choose to send an email or to stream events in to your terminal.
+* You can choose to send an email or to stream events into your terminal.
 * You must use a service key that is used to pass the credentials that must be used when you make an export REST API call. 
 
     You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to view and generate service keys in the web UI.
