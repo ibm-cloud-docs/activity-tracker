@@ -6,7 +6,7 @@ lastupdated: "2020-04-28"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, provision instance
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -27,7 +27,7 @@ subcollection: logdnaat
 When you provision an instance of the {{site.data.keyword.at_full_notm}} service, you must choose a service plan. Different plans offer different features. You can change the service plan at any time.
 {:shortdesc}
 
-[Learn more about service plans.](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan)
+[Learn more about service plans.](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan)
 
 ## Changing the service plan through the Observability dashboard
 {: #upgrade_ui}
@@ -62,7 +62,7 @@ Complete the following steps to change the service plan:
 
 2. Log in to the location in the {{site.data.keyword.cloud_notm}} where the instance is provisioned. Run the following command: [`ibmcloud login`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login)
 
-    To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
+    To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
 
 3. Set the resource group where the instance is available. Run the following command: [`ibmcloud target`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_target)
 

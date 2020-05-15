@@ -29,14 +29,14 @@ lastupdated: "2020-01-08"
 
 # Introduction
 
-You can use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account, investigate for abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For details about using the {{site.data.keyword.at_full}} service, see the {{site.data.keyword.cloud_notm}} [docs](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started).
+You can use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account, investigate for abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For details about using the {{site.data.keyword.at_full}} service, see the {{site.data.keyword.cloud_notm}} [docs](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).
 
-The {{site.data.keyword.at_full}} service provides a REST API that you can use to export events in JSONL format. For more information on how to use the API, see [Exporting events programmatically by using the API](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-export#export_api).
+The {{site.data.keyword.at_full}} service provides a REST API that you can use to export events in JSONL format. For more information on how to use the API, see [Exporting events programmatically by using the API](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export#export_api).
 
 Consider the following information when you work with the API:
-* You must have a **paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan). 
+* You must have a **paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan). 
 * You need a **service key**. The {{site.data.keyword.at_full}} administrator can generate one. The service key is different per location, that is, you need a service key per endpoint.
-* You must use the **endpoint** for the location where the data that you want to export is available. Each location (region) has a different URL. To get the list of available endpoints, see [Endpoints](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-endpoints#endpoints).
+* You must use the **endpoint** for the location where the data that you want to export is available. Each location (region) has a different URL. To get the list of available endpoints, see [Endpoints](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints).
 * You must specify the version of the API.
 * API requests are limited to 100 requests per second.
 * 10,000 lines per batch are returned. 
@@ -56,7 +56,7 @@ curl "ENDPOINT/v1/export?QUERY_PARAMETERS" -u SERVICE_KEY:
 
 ### API endpoint 
 
-Each location (region) has a different endpoint. To get the list of available endpoints, see [Endpoints](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-endpoints#endpoints)
+Each location (region) has a different endpoint. To get the list of available endpoints, see [Endpoints](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints)
 
 For example, for us-south, the endpoint is the following:
 

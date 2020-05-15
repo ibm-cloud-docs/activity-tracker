@@ -6,7 +6,7 @@ lastupdated: "2020-04-28"
 
 keywords: LogDNA, IBM Cloud, Activity Tracker, logging, web UI, observability
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -49,9 +49,9 @@ Complete the following steps to launch the Activity Tracker dashboard in {{site.
 In the *Activity Tracker UI*, you can manage your audit instances. 
 * You can view all instances across all locations. You can also specify 1 location and view the instances that are available in that location. 
 * You can view all instances across all the resource groups in your account. You can also select 1 resource group and view the instances that are available in that resource group.
-* You can create instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-provision).
-* You can remove instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-remove).
-* You can change the service plan of an instance. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-upgrade).
+* You can create instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
+* You can remove instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-remove).
+* You can change the service plan of an instance. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-upgrade).
 
 For each instance, you can view the following information:
 * The status of an instance

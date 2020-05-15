@@ -6,7 +6,7 @@ lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, enable activity tracker
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -31,8 +31,8 @@ LogDNA supports two related capabilities: Super Tenancy and Activity Tracking.
 
 * *Activity Tracker with LogDNA* (AT) is a special LogDNA instance that allows your customers to see their activities on your service. Your service will have its own instance of AT for saving its AT log lines, which are called *events*. But since AT is a super tenant, your service can also save its events in the AT instances of your customers.
 
-* [Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#super_tenancy)
-* [Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#activity_tracker)
+* [Super Tenancy](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-understand_st#super_tenancy)
+* [Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-understand_st#activity_tracker)
 
 The following diagram shows a **customer** view of how Activity Tracker compares to Log Analysis:
 

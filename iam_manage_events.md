@@ -6,7 +6,7 @@ lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, iam, manage user access, viewer
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -28,7 +28,7 @@ subcollection: logdnaat
 {{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Complete the following steps to grant a user or service ID administration permissions to work with the {{site.data.keyword.at_full_notm}} service:
 {:shortdesc}
 
-For example, as an administrator of the service, you can provison and remove instances of the service, grant other users permissions to work with the service, archive logs to an {{site.data.keyword.cos_full_notm}} (COS) instance, and more. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
+For example, as an administrator of the service, you can provison and remove instances of the service, grant other users permissions to work with the service, archive logs to an {{site.data.keyword.cos_full_notm}} (COS) instance, and more. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#iam).
 
 ## Prerequisites
 {: #iam_manage_events_prereq}
@@ -81,7 +81,7 @@ When you define the policy, you need to select a platform role and a service rol
 To manage the {{site.data.keyword.at_full_notm}} service, a user needs the following roles:
 * Platform role: **Administrator**. 
 * Service role: **Manager**. 
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#iam).
 
 Complete the following steps to assign a policy to an access group through the UI:
 

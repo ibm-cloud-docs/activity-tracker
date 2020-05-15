@@ -6,7 +6,7 @@ lastupdated: "2020-05-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -208,7 +208,7 @@ Use this field to specify the unique GUID that a user can use to correlate event
 {: note}
 
 For example, there are specific use cases where the field must be set:
-* [Integration with Key Protect (KP)](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-at_use_cases#kp-hyperwarp)
+* [Integration with Key Protect (KP)](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_use_cases#kp-hyperwarp)
 
 
 ### dataEvent (boolean)
@@ -220,7 +220,7 @@ This field specifies the type of event, whether it is a management event or a da
 * For a `management event`, set this field to **false**.
 * For a `data event`, set this field to **true**.
 
-[Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_faq#types-of-events).
+[Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-ibm_faq#types-of-events).
 
 
 
@@ -935,7 +935,7 @@ The events that worked on legacy Activity will continue to work on the new Activ
 However, services should consider the following improvements:
 
 * `requestData`/`responseData` can be any JSON object, not just stringified JSON. A JSON object is now preferred over stringified JSON, for better parsing and searching. All events should include `requestData` and `responseData`, even if empty.
-* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` defaults to `false`, but events should specify `false` explicitly. Refer [here](https://test.cloud.ibm.com/docs/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#optional) for more info.
+* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` defaults to `false`, but events should specify `false` explicitly. Refer [here](https://test.cloud.ibm.com/docs/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-ibm_event_fields#optional) for more info.
 * The `observer` fields are no longer discouraged, and `observer.name` should be set to "ActivityTracker". `observer.name` may be used in the future to support sending events to AT via stdout.
 * Events should have the CADF fields at the top level, and no longer encapsulate the CADF fields in the `payload` structure. When an event does have `payload`, LogDNA removes it and promotes its internal fields to the top level.
 * The `meta` object is now ignored. Services should remove it.
@@ -952,7 +952,7 @@ The following table outlines when the AT guidelines change to adapt to new requi
 | Field                              | Required                                          | Field required  | Guideline changes               |
 |------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
 | `action`                           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
-| `correlationId`                    |                                                   |                 | March 2020 - added this new field to guidelines  (use this field to correlate across multiple services in the IBM Cloud - [Required for integration use cases](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-at_use_cases)  | 
+| `correlationId`                    |                                                   |                 | March 2020 - added this new field to guidelines  (use this field to correlate across multiple services in the IBM Cloud - [Required for integration use cases](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_use_cases)  | 
 | `dataEvent`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  | December 2019 - added this new field to guidelines    |
 | `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
 | `id`                               |                                                   |                 |                                 | 

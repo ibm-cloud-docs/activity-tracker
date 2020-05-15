@@ -6,7 +6,7 @@ lastupdated: "2020-05-14"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account settings, config
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 

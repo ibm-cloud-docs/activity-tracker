@@ -6,7 +6,7 @@ lastupdated: "2020-03-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, events, global, regional, data, management
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -132,7 +132,7 @@ Another example, you might provision or delete a service instance in a location.
 {: note}
 
 
-When clients and applications interact with cloud services hosted within a location, location-based events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in that location. You view these events by [launching the web UI](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-launch) in that location.
+When clients and applications interact with cloud services hosted within a location, location-based events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in that location. You view these events by [launching the web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch) in that location.
     
 Location-based events maintain data locality to the services that run in that Cloud location.
 {: important}

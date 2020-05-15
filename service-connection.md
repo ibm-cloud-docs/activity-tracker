@@ -6,7 +6,7 @@ lastupdated: "2020-03-25"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, auditing, security, connection
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 

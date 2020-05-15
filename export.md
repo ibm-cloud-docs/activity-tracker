@@ -6,7 +6,7 @@ lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, export
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -32,23 +32,23 @@ You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} i
 ## Prerequisites
 {: #export_prereqs}
 
-* [Learn more about exporting events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_export).
+* [Learn more about exporting events](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-monitor_events#mon_export).
 
-* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan). 
+* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan). 
 
-* Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+* Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
 
 ## Step 1. Go to the web UI
 {: #export_step1}
 
-[Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch).
+[Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
 
 
 ## Step 2. Create a view
 {: #export_step2}
 
-[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views).
+[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views).
 
 
 ## Step 3. Export data
@@ -82,7 +82,7 @@ Complete the following steps to export events programmatically:
     
     If you are a user with the **LogDNA user** service role permissions, you can get an active service key through the LogDNA web UI. Go to **Settings** &gt; **Organization** &gt; **API keys** section to view the active service keys.
 
-    1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch_step2).
+    1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_step2).
 
     2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
 
@@ -101,7 +101,7 @@ Complete the following steps to export events programmatically:
 
     Where 
 
-    * ENDPOINT represents the entry point to the service. Each region has a different URL. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-endpoints#endpoints).
+    * ENDPOINT represents the entry point to the service. Each region has a different URL. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints).
     * QUERY_PARAMETERS are parameters that define the filtering criteria that is applied to the export request.
     * SERVICE_KEY is the service key that you created in the previous step.
 

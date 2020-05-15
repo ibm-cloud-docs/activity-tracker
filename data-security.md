@@ -6,7 +6,7 @@ lastupdated: "2020-03-25"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, auditing, overview, personal data, data deletion, PHI, data, data security, _service-name_
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 
 ---
@@ -30,7 +30,7 @@ To ensure that you can securely manage your data when you use {{site.data.keywor
 ## How your data is collected in {{site.data.keyword.at_full_notm}}
 {: #data-collection}
 
-Data from [{{site.data.keyword.cloud_notm}} services and resources](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-cloud_services) is collected automatically and available for analysis through the web UI. 
+Data from [{{site.data.keyword.cloud_notm}} services and resources](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services) is collected automatically and available for analysis through the web UI. 
 
 {{site.data.keyword.at_full_notm}} collects management and data events from {{site.data.keyword.cloud_notm}} services and resources: 
 * **Management Events** are generated when an API call changes the state of a Cloud resource. A resource might be an entire service instance or a resource managed by the service. 
@@ -49,7 +49,7 @@ Data from [{{site.data.keyword.cloud_notm}} services and resources](/docs/servic
 
 Data is hosted on the {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.at_full_notm}} service is operated by LogDNA.
 
-Events can be classified as global or location-based. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-event_types).
+Events can be classified as global or location-based. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types).
 * **Location-based events** maintain data locality to the services that run in that Cloud location.
 * **Global events** are collected and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt.
 
@@ -76,7 +76,7 @@ For example, if you choose the *Lite* plan, data is not stored at all. However, 
 ## Data archives
 {: #data_archives}
 
-You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving).
+You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
 
 When data is archived, data going from LogDNA to {{site.data.keyword.cos_full_notm}} (COS) is encrypted in transit over HTTPS.
 
@@ -87,7 +87,7 @@ You can use the {{site.data.keyword.sqlquery_short}} service to query data in ar
 ## Data exports
 {: #data_exports}
 
-You can export data in JSONL format locally, write data to your terminal, or request an email with a link to the data. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-export).
+You can export data in JSONL format locally, write data to your terminal, or request an email with a link to the data. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export).
 
 Consider the following information when you export log data:
 * You export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
@@ -102,7 +102,7 @@ Consider the following information when you export log data:
 ### Deleting events when an instance is deleted
 {: #service-delete-logs}
 
-When you delete a LogDNA instance, the instance is automatically deactivated, and ingestion of events is stopped. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-remove).
+When you delete a LogDNA instance, the instance is automatically deactivated, and ingestion of events is stopped. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-remove).
 
 LogDNA deletes all events that are already ingested. Deletion is completed within 24 hours after receiving your request.
 

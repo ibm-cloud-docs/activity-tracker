@@ -6,7 +6,7 @@ lastupdated: "2020-05-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, monitor events
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -33,7 +33,7 @@ There is 1 instance of the {{site.data.keyword.at_full_notm}} service per locati
 In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) > **Observability** > **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
 {: tip}
 
-To view events, you must [launch the web UI](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-launch) in the location where events are available. Then, you can work with views to monitor those events. You view events in your local time.
+To view events, you must [launch the web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch) in the location where events are available. Then, you can work with views to monitor those events. You view events in your local time.
 
 You can select the events that are displayed through a view by applying a timestamp, a search query, or both.
 
@@ -42,7 +42,7 @@ You can select the events that are displayed through a view by applying a timest
 
 When you apply a search query, you can save that view for reuse later. However, timestamps are not saved.
 
-Notice that instances might have different service plans, and consequently different data retention periods that determine the number of days that you have data available for search though the web UI. You can only monitor events within your retention period. Different [service plans](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan) have different retention periods.
+Notice that instances might have different service plans, and consequently different data retention periods that determine the number of days that you have data available for search though the web UI. You can only monitor events within your retention period. Different [service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan) have different retention periods.
 
 
 ## Monitoring global and location-based events
@@ -64,21 +64,21 @@ As soon as you open the web UI in a location, this is the view that you see.
 
 All events in your instance are displayed through this view.
 
-To learn how to view events through this view, see [Viewing events](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events#view_events_step1).
+To learn how to view events through this view, see [Viewing events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-view_events#view_events_step1).
 
 ## Monitoring events through custom views
 {: #mon_cus_view}
 
 You might want to monitor a set of events in your account. To anayze a subset of events, you can create custom views. 
 
-You create a custom view by applying a search query that defines what events to display through the view. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events#view_events_step2).
+You create a custom view by applying a search query that defines what events to display through the view. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-view_events#view_events_step2).
 
 You can also run any of the following tasks:
 
-* [Attach an alert](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts) to a custom view
-* [Export data](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-export) from a custom view 
-* [Rename, and add or modify the description of a view](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_step5)
-* [Apply a line template](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_step4) to a view to customize how the data is displayed
+* [Attach an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts) to a custom view
+* [Export data](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export) from a custom view 
+* [Rename, and add or modify the description of a view](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step5)
+* [Apply a line template](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step4) to a view to customize how the data is displayed
 * Organize views by grouping them into **categories**
 
 
@@ -87,7 +87,7 @@ You can also run any of the following tasks:
 
 You might want to see events within a specific timeframe.
 
-You can select the events that are displayed through a view by [applying a timeframe](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-view_events#view_events_step3).
+You can select the events that are displayed through a view by [applying a timeframe](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-view_events#view_events_step3).
 
 You can apply a timestamp by specifying an absolute time, a relative time, or a time range.
 
@@ -107,19 +107,19 @@ There are scenarios where you might want to be notified if specific events are g
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search queries to define the events that are displayed through a custom view. Then, you can attach an alert to that view to be notified when a condition occurs. A bell icon is displayed with the view to indicate that this view has an alert attached to it.
 
 Consider the following information when you configure alerts:
-* You can [attach one alert](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step4) per custom view. There are 2 types of alerts: presence alert and absence alert.
+* You can [attach one alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#alerts_step4) per custom view. There are 2 types of alerts: presence alert and absence alert.
 
 * You can configure conditions that are based on the number of event lines that meet the search query in the view, on a time frequency, or both. 
 
 * The time frequency that is specified as part of the condition defines the reset time of an alert after it is triggered.
 
-* You can define multiple notification channels for an alert. For information about the supported channels, see [Alert notification channels](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
+* You can define multiple notification channels for an alert. For information about the supported channels, see [Alert notification channels](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-channels).
 
-* You can [define **presets**](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step3). A preset is an alert template that users can attach to any number of views. Service administrators define presets. Notice that when you delete a preset, any alerts that are defined by using this preset are automatically deleted.
+* You can [define **presets**](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#alerts_step3). A preset is an alert template that users can attach to any number of views. Service administrators define presets. Notice that when you delete a preset, any alerts that are defined by using this preset are automatically deleted.
 
 * You can enable or disable the feature on alerts that allow a user to mute an alert for a period of time. This feature only applies to email notification channels.
 
-* You can [detach an alert](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_delete_view) from a view. 
+* You can [detach an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#alerts_delete_view) from a view. 
 
 * The timestamp that you see in a notification is set to UTC. For email notifications, you can set the **Timezone** to define a different timestamp value such as local time, for example. 
 
@@ -193,7 +193,7 @@ Consider the following information when you export log data:
 ### By using the REST API
 {: #mon_export_api}
 
-You can export events programmatically by using the LogDNA REST API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-export#export_api).
+You can export events programmatically by using the LogDNA REST API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export#export_api).
 
 When you export events programmatically, consider the following information:
 
@@ -214,7 +214,7 @@ After you submit a request, you get an email that is sent to your email address,
 * To get the data, you must click the link and download the compressed file. 
 * The compressed file that contains the data that you want to export is available for a maximum of 48 hours. 
 
-[Learn more about exporting events through the web UI](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-export#export_ui).
+[Learn more about exporting events through the web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export#export_ui).
 
 
 
