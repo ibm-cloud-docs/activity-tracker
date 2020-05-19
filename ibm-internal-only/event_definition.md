@@ -537,7 +537,11 @@ When you add fields, notice that the maximum size of an AT event is 16K.
 {: important}
 
 Some fields:
-* [Optional] `resourceGroupId`: Set to the CRN of the resource group
+* [`Required when event reports a failure`] `reasonForFailure`:  Include additional info as to why the action has failed.
+* [Required] `resourceGroupId`: Set to the CRN of the resource group
+* [Optional] `serviceInstanceId`: Set to the service instance ID (not the CRN value)
+* [Optional] `accountID`: Set to the account ID 
+* [Optional] `resourceType`: Type of resource
 * [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
 * [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
     
@@ -558,7 +562,7 @@ Some fields:
 * [`Required for Watson services`] `platformSource`: Add the UI catalog name of your service, for example, `Watson Discovery` This helps users identify your events quickly by your service, since the platform_source value is shared across all Watson services.
 * [Optional] `customizationId`
 * [Optional] `environmentId`
-* [Optional] `reasonForFailure`:  Include additional info as to why the action has failed.
+
 
 
 **For update actions where only 1 change** is reported through the event, you can add the fields required as follows:
@@ -587,9 +591,19 @@ Some fields:
 
 **For update actions where a large number of changes** are reported through the event, consider the following approach:
 1. Create 1 Activity Tracker event (parent event) that reports the main update action and include in requestData information about the number of changes that are affected by that user request. Set the field `totalNumberChanges`. Set also the `id` field. The `id` field is used to correlate this event with the individual events that report detailed information on each change.
+
+    ```
+    "id": "xxxxxx",
+    "requestData": {
+        "totalNumberChanges": xx,
+    },
+    ```
+    {: codeblock}
+
 2. Generate 1 Activity Tracker event per change. Set the `id` field to the value set in the parent event. Add in requestData the required fields for updates:
 
     ```
+    "id": "xxxxx",
     "requestData": {
         // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
         "updateType": "xxxx",
@@ -967,7 +981,7 @@ The following table outlines when the AT guidelines change to adapt to new requi
 | `outcome`                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `reason.reasonCode`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check 403 is being generated to report on unauthorized access to run an action |
 | `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |  December 2019 - check that it is populated for failure events </br>January 2020 - required for all outcomes |
-| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - update events must include information about the update (3 new subfields added to add consistency in the user experience) and should be JSON formatted |
+| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - update events must include information about the update (3 new subfields added to add consistency in the user experience) and should be JSON formatted </br>May 2020:  2 fields (resourceGroupId and reasonForFailure) have changed from optional to required |
 | `responseData` `[*]`               |                                                   |  January 2019   |  December 2019 - Check that is JSON formatted |
 | `saveServiceCopy`  `[*]`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |  June 2019 - when changes to migrate to LogDNA were requested |
 | `severity`                         | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
@@ -980,9 +994,15 @@ The following table outlines when the AT guidelines change to adapt to new requi
 
 `[*]` These fields are extensions of the CADF specification.
 
-Implementation change control:
+**Changes to guidelines** - Implementation change control:
 
-| Detail                             | Required                                          | Proposed        | Agreed                          |
-|------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
-| `Services do not need to change the UI to enable data events.` | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `17/1/2020` | SH meeting `24/1/2020` |
+| Detail                             | Required                                          | Date             |
+|------------------------------------|---------------------------------------------------|-----------------|
+| `Services do not need to change the UI to enable data events.` | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `24/1/2020` |
+| requestData fields: `reasonForFailure` and `resourceGroupId` are changed from optional to required.    | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `14/5/2020` |
 {: caption="Table 5. Change control for implementation changes" caption-side="top"}
+
+A service has 3 months, from the date listed on the table, to implement changes and be compliant with AT guidelines.
+{: important}
+
+
