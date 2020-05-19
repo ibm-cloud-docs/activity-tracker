@@ -6,7 +6,7 @@ lastupdated: "2019-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, reuse
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -34,7 +34,7 @@ To avoid recreating definitions of views, boards, parsing templates, and exclusi
 
 Complete the following steps to export the configuration of your resources:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch).
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Organization**. 
 
@@ -55,7 +55,7 @@ Complete the following steps to export the configuration of your resources:
 
 Complete the following steps to import the configuration of your resources:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch).
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Organization**. 
 

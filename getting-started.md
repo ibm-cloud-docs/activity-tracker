@@ -6,7 +6,7 @@ lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -123,7 +123,7 @@ Complete the following steps to provision an instance:
 
 5. Select the **Frankfurt** location. 
 
-    For more information about the regions where the service is available, see [Regions](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
+    For more information about the regions where the service is available, see [Regions](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
 
 6. Select a resource group. 
 
@@ -143,7 +143,7 @@ After you provision an instance, the *Activity Tracker* dashboard opens.
 ## Step 2. Manage access to the service
 {: #gs_step2}
 
-**Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam).
+**Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).
 
 In this tutorial, you will learn how to grant a user management permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a resource group.
 
@@ -259,7 +259,7 @@ The {{site.data.keyword.at_full_notm}} service captures activity data that is re
 
 When the web UI opens, the **Everything** view is displayed. You can see events through this view.
 
-You can also define custom views to view a set of events by applying a timestamp, a search query, or both. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views).
+You can also define custom views to view a set of events by applying a timestamp, a search query, or both. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views).
 
 
 ## Step 6. Learn about the structure of an event
@@ -278,16 +278,16 @@ The CADF event model includes the following components:
 | `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
 {: caption="Table 2. Components that are available in a CADF event model" caption-side="top"} 
 
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-event#event).
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event#event).
 
 
 
 ## Next steps
 {: #gs_next_steps}
 
-[Define custom views](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views). 
+[Define custom views](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views). 
 
-Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [search events by applying a query](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_step2), and [configure alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts). 
+Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [search events by applying a query](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step2), and [configure alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts). 
 
-For more information about {{site.data.keyword.at_full_notm}} service plans, see [Service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan).
+For more information about {{site.data.keyword.at_full_notm}} service plans, see [Service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan).
 

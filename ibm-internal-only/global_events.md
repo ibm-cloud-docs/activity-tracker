@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, global events
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -111,7 +111,7 @@ Your service will need an STS in Dallas (`us-south`), even if you don't use it f
 
 1. Does your service already have an STS in Dallas? If yes, skip to 2.
 
-    Otherwise, create an STS in your service's account in the `us-south` region. The full instructions are [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-enable_st#STS). The summary is that you will issue a command like the following:
+    Otherwise, create an STS in your service's account in the `us-south` region. The full instructions are [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-enable_st#STS). The summary is that you will issue a command like the following:
     
     ```
     ibmcloud resource service-instance-create myService-STS logdna 7-day us-south \

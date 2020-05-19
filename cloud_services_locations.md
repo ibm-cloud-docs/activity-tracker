@@ -6,7 +6,7 @@ lastupdated: "2020-05-12"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 
 ---

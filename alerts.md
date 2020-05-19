@@ -6,7 +6,7 @@ lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, alerts, events
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -35,9 +35,9 @@ Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search quer
 ### Prerequisites
 {: #alerts_prereqs}
 
-* [Learn more about alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_alerts).
+* [Learn more about alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-monitor_events#mon_alerts).
 
-* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan).
+* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan).
 
 * Check that your user ID has permissions to launch the web UI and view events. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
 
@@ -47,7 +47,7 @@ Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search quer
 | Service role: `Reader`      | Allows the user to launch the web UI and view events in the web UI.  |
 {: caption="Table 1. IAM roles" caption-side="top"} 
 
-For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
  
 
@@ -55,13 +55,13 @@ For more information on how to configure policies for a user, see [Granting user
 ### Step 1. Go to the web UI
 {: #alerts_step1}
 
-[Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch).
+[Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
 
 
 ### Step 2. Create a view
 {: #alerts_step2}
 
-[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views).
+[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views).
 
 
 ### Step 3. Configure an alert
@@ -76,7 +76,7 @@ Complete the following steps to attach a preset to a view:
 
 1. In the web UI, click the **Views** icon ![Views icon](images/views.png).
 2. Click the view name to which you want to attach an alert. Then, select **Attach an alert**.
-3. Enable or disable the ability of a user to [mute an alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_alerts_mute). By default, it is enabled. This step only applies if you are configuring an email notification channel.
+3. Enable or disable the ability of a user to [mute an alert](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-monitor_events#mon_alerts_mute). By default, it is enabled. This step only applies if you are configuring an email notification channel.
 4. Choose a preset to reuse an alert definition. 
 5. Click **Save alert**. 
 
@@ -89,7 +89,7 @@ Complete the following steps to attach an alert to a view:
 
 1. In the web UI, click the **Views** icon ![Views icon](images/views.png).
 2. Click the view name. Then, select **Attach an alert**.
-3. Enable or disable the ability of a user to [mute an alert](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-monitor_events#mon_alerts_mute). By default, it is enabled. This step only applies if you are configuring an email notification channel.
+3. Enable or disable the ability of a user to [mute an alert](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-monitor_events#mon_alerts_mute). By default, it is enabled. This step only applies if you are configuring an email notification channel.
 4. Choose **view-specific alert**.
 5. Choose a notification channel. 
 6. Select the type of alert. Choose the **Presence alert** type to notify when the number of events that show in a view is more than what you expect. Choose the **Absence alert** type to notify when the number of events that show in a view is less than what you expect, or none. 
@@ -119,9 +119,9 @@ Complete the following steps to configure a preset:
 1. In the web UI, select the **Settings** icon ![Settings icon](images/admin.png "Admin icon").
 2. Select **Alerts**.
 3. Select **Add a preset alert**.
-4. Choose a notification channel. For the list of supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
+4. Choose a notification channel. For the list of supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-channels).
 5. Select the type of alert. Choose the **Presence alert** type to notify when the number of events that show in a view is more than what you expect. Choose the **Absence alert** type to notify when the number of events that show in a view is less than what you expect, or none. 
-5. Choose a notification channel. For the list of supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-channels).
+5. Choose a notification channel. For the list of supported channels, see [Alert notification channels](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-channels).
 6. Define the threshold conditions.
 
     1. Select a time frequency. For example, 12 hours.

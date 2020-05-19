@@ -6,7 +6,7 @@ lastupdated: "2020-05-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, architecture, workload isolation
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -58,7 +58,7 @@ Each regional deployment of the {{site.data.keyword.at_full_notm}} service serve
 * Within a service instance, data is isolated per LogDNA instance within a region. 
 * The {{site.data.keyword.at_full_notm}} service offers soft isolation for data storage. Data is mixed together in the same data stores and segmented by tags that are associated with each of the records to enforce access control policies.
 
-You can use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to control which users see, create, use, and manage resources in your service instance. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-iam).
+You can use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to control which users see, create, use, and manage resources in your service instance. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).
 * To grant access to manage the {{site.data.keyword.at_full_notm}} in {{site.data.keyword.cloud_notm}}, you can assign platform roles that define users levels of access for completing platform management tasks and accessing account resources. 
 * To grant access to manage the service instance and its resources, you can assign service roles that define users levels of access for viewing data and managing features such as dashboards, screens, and alerts.
 

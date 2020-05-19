@@ -6,7 +6,7 @@ lastupdated: "2020-03-18"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -121,7 +121,7 @@ The {{site.data.keyword.at_full_notm}} service offers a HIPAA service plan. By d
 ### Locations
 {: #adoption_resource_svc_location}
 
-You can provision instances of the {{site.data.keyword.at_full_notm}} service in any of the supported locations in the {{site.data.keyword.cloud_notm}}. For more information, see [Locations](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-regions).
+You can provision instances of the {{site.data.keyword.at_full_notm}} service in any of the supported locations in the {{site.data.keyword.cloud_notm}}. For more information, see [Locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
 
 Per location (region), you can provision 1 auditing instance. 
 * Events from enabled-AT services in the {{site.data.keyword.cloud_notm}} are collected automatically.
@@ -165,7 +165,7 @@ If you add PII or other sensitive information in the name or the description of 
 ### Service plan
 {: #adoption_resource_svc_plan}
 
-The service plan that you choose for a LogDNA instance determines the number of days that data is available for search. For more information, see [Service plans](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan).
+The service plan that you choose for a LogDNA instance determines the number of days that data is available for search. For more information, see [Service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
 
 **Choose your plan based on the number of days that you need to be able to search data online through the web UI.**
 {: tip}
@@ -249,8 +249,8 @@ Access to resources within a resource group can be granted to all resources in a
 Access policies set a target, which is typically a service instance or all instances of a service in a resource group, and a role, which defines what type of access is allowed.
 
 Roles define the actions that a user or serviceID can run. There are different types of roles in the {{site.data.keyword.cloud_notm}}:
-* *Platform management roles* define permissions to work with the service at the platform level, for example, some actions are assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, and bind instances to applications. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#platform).
-* *Service access roles* define permissions for calling the service's API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#service).
+* *Platform management roles* define permissions to work with the service at the platform level, for example, some actions are assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, and bind instances to applications. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#platform).
+* *Service access roles* define permissions for calling the service's API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#service).
 
 **For each access group, define a policy for each resource group that specifies the permissions granted to work with the resource group, the permissions to manage instances of the {{site.data.keyword.at_full_notm}} service in that resource group, and the permissions to run {{site.data.keyword.at_full_notm}} tasks.**
 {: tip}
@@ -271,7 +271,7 @@ You can assign a single policy to the access group instead of assigning the same
 **Add users and service IDs to an access group. Grant permissions to these users and service IDs through the access group.**
 {: tip}
 
-For more information, see [Granting administration permissions to a user or service ID](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_manage_events).
+For more information, see [Granting administration permissions to a user or service ID](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_manage_events).
 
 
 ## 6. Configure the account settings for authentication into your account
@@ -291,7 +291,7 @@ You can also configure MFA options such as security questions, using a time-base
 ## 7. Define the notification strategy 
 {: #adoption_alerts}
 
-In a LogDNA instance, you define views to analyze the data. Then, you can configure 1 or more alerts per view to notify of an abnormal situation. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts).
+In a LogDNA instance, you define views to analyze the data. Then, you can configure 1 or more alerts per view to notify of an abnormal situation. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
 
 You can choose to be notified by using an absence alert that is triggered when no data is available.
 
@@ -355,7 +355,7 @@ There are 2 types of data that you should consider archiving:
 
 In the LogDNA web UI, you can define custom views, dashboards, parsing templates, screens, and exclusion rules that you can use to view and analyze data.
 
-To reuse resource definitions that you define in your LogDNA instance, you can export these resources from {an {{site.data.keyword.at_full_notm}} instance as a JSON file. Then, you can import the definitions into other LogDNA instances. For example, you can reuse your LogDNA resources across different environments for your stage, pre-production, and production instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-reuse_resource_definitions).
+To reuse resource definitions that you define in your LogDNA instance, you can export these resources from {an {{site.data.keyword.at_full_notm}} instance as a JSON file. Then, you can import the definitions into other LogDNA instances. For example, you can reuse your LogDNA resources across different environments for your stage, pre-production, and production instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions).
 
 **Backup LogDNA resource definitions into a version control system such as a git repository where you can control access to the archived files and manage versions.**
 {: tip}
@@ -393,7 +393,7 @@ When you plan the bucket for a LogDNA instance, consider the following informati
 `[6]`: Resiliency refers to the scope and scale of the geographic area across which your data is distributed. For example, you can choose cross region resiliency to spread your data across several geographical areas, or regional resiliency to spread data across a single region. Notice that a single data centre distributes data across devices within a single site only.
 
 
-**Create a custom COS bucket with the storage features and the policies that you identify.** [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving).
+**Create a custom COS bucket with the storage features and the policies that you identify.** [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
 {: tip}
 
 **Do not configure a long-term retention policy on a COS bucket if you need access to the data and query it with the {{site.data.keyword.sqlquery_short}} service.**
@@ -550,7 +550,7 @@ For more information, see [Activity Tracker events](/docs/cloud-object-storage?t
 **Enable collection of COS management and data events on the bucket that you use to archive data from a LogDNA instance. Use these events to monitor activity in your COS bucket.**
 {: tip}
 
-In {{site.data.keyword.at_full}}, you can define views, dashboard, and screens to monitor COS management and data events. You can also configure alerts on views to notify you when a specific condition occurs. On a view, you can configure an email alert, a Slack alert, a PagerDuty alert, or any combination of the above. For more information, see [Creating custom views](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-views) and [Managing alerts](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts).
+In {{site.data.keyword.at_full}}, you can define views, dashboard, and screens to monitor COS management and data events. You can also configure alerts on views to notify you when a specific condition occurs. On a view, you can configure an email alert, a Slack alert, a PagerDuty alert, or any combination of the above. For more information, see [Creating custom views](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views) and [Managing alerts](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
 
 For example, you can define a view that reports when an object is archived in a bucket. On that view, you can configure an email alert to notify you when an object has been archived. You might have compliance requirements that require you to control who accesses data that is archived. You can define a view that reports access to a bucket, and define an alert to notify you when that happens.
 
@@ -585,7 +585,7 @@ The {{site.data.keyword.sqlquery_short}} service provides a server-less, no-ETL 
 
 The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. Archived files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format. When you use the {{site.data.keyword.sqlquery_short}} service, each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in an {{site.data.keyword.cos_short}}instance of your choice. 
 
-**When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-sqlquery#sqlquery_step3-4) to be able to query the contents successfully.**
+**When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-sqlquery#sqlquery_step3-4) to be able to query the contents successfully.**
 {: tip}
 
 **Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and test your queries, and the [SQL Query REST API](#restapi) to automate them.**

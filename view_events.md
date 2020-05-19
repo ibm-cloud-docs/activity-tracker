@@ -6,7 +6,7 @@ lastupdated: "2020-04-27"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, view events
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -54,9 +54,9 @@ Complete the following steps to view events:
       </tr>
     </table>
 
-    For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+    For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
-2. [Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch).
+2. [Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
 
 3. Click the **Views** icon ![Configuration icon](images/views.png).
 
@@ -69,7 +69,7 @@ You can view events through the view that you have selected.
 ## View a subset of the events by applying a search query
 {: #view_events_step2}
 
-You can select the events that are displayed through a view by applying a search query. You can save that view for reuse later. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-views#views_step2).
+You can select the events that are displayed through a view by applying a search query. You can save that view for reuse later. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step2).
 
  
 
@@ -82,7 +82,7 @@ You can select the events that are displayed through a view by applying a timefr
 You can apply a timestamp by specifying an absolute time, a relative time, or a time range.
 
 Complete the following steps to jump to a specific time:
-1. [Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch#launch).
+1. [Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
 2. Click the **Views** icon ![Configuration icon](images/views.png).
 3. Select **Everything** or a view.
 4. Enter a time query. Choose any of the following options:

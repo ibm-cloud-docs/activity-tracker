@@ -6,7 +6,7 @@ lastupdated: "2020-04-27"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, archive logs, COS, cloud object storage
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -35,9 +35,9 @@ Complete the following steps to archive an {{site.data.keyword.at_full_notm}} in
 ## Prerequisites
 {: #archiving_prereqs}
 
-* [Learn more about archiving events](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-manage_events#manage_events_archive).
+* [Learn more about archiving events](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-manage_events#manage_events_archive).
 
-* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-service_plan#service_plan). 
+* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan). 
 
 * Check that your user ID has permissions to launch the web UI and manage events. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
 
@@ -47,7 +47,7 @@ Complete the following steps to archive an {{site.data.keyword.at_full_notm}} in
 | Service role: `Manager`      | Allows the user to launch the web UI and manage events in the web UI.  |
 {: caption="Table 1. IAM roles" caption-side="top"} 
 
-For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
 
 ## Step 1. Grant IAM policies to a user to work with {{site.data.keyword.cos_full_notm}}
@@ -266,7 +266,7 @@ The following table lists the policies that a user must have to configure archiv
 | `{{site.data.keyword.at_full_notm}}` | Service role: Manager     | Allows the user to launch the web UI and view events in the web UI.                             |
 {: caption="Table 2. IAM policies" caption-side="top"} 
 
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#iam).
 
 Complete the following steps to assign a user permission to archive events: 
 
@@ -293,7 +293,7 @@ Complete the following steps to assign a user permission to archive events:
 
 Complete the following steps to configure archiving of your {{site.data.keyword.at_full_notm}} instance into a COS bucket:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch).
 
 2. Select the **Configuration** icon. Then select **Archiving**. 
 

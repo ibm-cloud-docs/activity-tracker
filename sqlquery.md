@@ -6,7 +6,7 @@ lastupdated: "2019-01-08"
 
 keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU-supported
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -57,7 +57,7 @@ To be able to use the {{site.data.keyword.sqlquery_short}} service to query arch
 
     You must have access to a bucket that contains the {{site.data.keyword.at_full_notm}} archive files and a bucket to use to store results from your queries. 
 
-* You must have an {{site.data.keyword.at_full_notm}} instance provisioned in your account that has [archiving configured to a bucket in the COS instance in your account](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-archiving). 
+* You must have an {{site.data.keyword.at_full_notm}} instance provisioned in your account that has [archiving configured to a bucket in the COS instance in your account](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving). 
 
     Events are archived daily to a file in a COS bucket. 
 

@@ -6,7 +6,7 @@ lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, enable super tenancy
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -29,11 +29,11 @@ This document is for **services** on-boarding to `Logging Super Tenancy` and `Ac
 
 Services are producers of logs and events.
 
-If you are a consumer of events or logs, see [IBM Cloud Activity Tracker with LogDNA. ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started){:new_window}
+If you are a consumer of events or logs, see [IBM Cloud Activity Tracker with LogDNA. ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started#getting-started){:new_window}
 
 **Super tenancy** allows a service to send logs and events to customers. Activity Tracker requires super tenancy.
 
-Before continuing, review [Understanding Super Tenancy and Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#understand_st) to learn about the architecture of the service.
+Before continuing, review [Understanding Super Tenancy and Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-understand_st#understand_st) to learn about the architecture of the service.
 
 ## Acronyms
 {: #st_acronyms}
@@ -87,7 +87,7 @@ Three optional fields are available to use in the Logging and Activity Tracker J
 
 * **logSourceCRN**: This field is used to determine the customer whom you want to receive the log or event. The logSourceCRN is the CRN of the service instance (or internal resource) of your service created by the customer. If not present, no event will be sent to a customer.  The CRN `scope` segment must be the customer's account, and the `location` segment must be the location of the service instance or resource--normally the region where the event is ingested.
 * **saveServiceCopy**: This field indicates if your service wants a copy of the log or event. This is an `optional` field. If the field is not present, the default of true will be used and your service will get a copy of the log or event. Set this field to false if your service does not want a copy of the log record or event. If the field is false, LogDNA will not charge your service for the event since it only charges each service or customer for what is stored.
-* **message**: This field will be displayed as the summary line of the log/event in the LogDNA UI. The message field has a prescribed format for Activity Tracker, and is **required** for Activity Tracker. Refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields) for format information.
+* **message**: This field will be displayed as the summary line of the log/event in the LogDNA UI. The message field has a prescribed format for Activity Tracker, and is **required** for Activity Tracker. Refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-ibm_event_fields) for format information.
 
 The below listing shows how these fields fit into the overall JSON that describes the event.
 
@@ -102,7 +102,7 @@ The below listing shows how these fields fit into the overall JSON that describe
 {: codeblock}
 
 
-If your service is adopting Activity Tracker, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#ibm_event_fields) to understand how an event must be formatted and the definitions of the CADF event fields.
+If your service is adopting Activity Tracker, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-ibm_event_fields#ibm_event_fields) to understand how an event must be formatted and the definitions of the CADF event fields.
 
 ### Deployment changes to support Kubernetes volumes
 Activity Tracker requires services to write events to a file in a subdirectory of `/var/log/at` on the worker node.
@@ -646,7 +646,7 @@ A simple solution is to create a **LogDNA absence alert** in your service STS an
 As of April 17,2019, the Pager Duty integration does not work in our IBM environment. LogDNA is working on a resolution to this issue.
 {: note}
 
-To create an alert, you must create a view and then attach an alert to it. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts).
+To create an alert, you must create a view and then attach an alert to it. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
 
 The following example shows how to create an absence alert for a service ATS and trigger a Slack message if no events match the view criteria in 15 minutes.
 
@@ -682,7 +682,7 @@ The following example shows how to create an absence alert for a service ATS and
 
     ![ATS Alert](images/ATS_alert.png)
 
-    [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step2).
+    [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#alerts_step2).
   
 4. Test your alert
 
@@ -968,7 +968,7 @@ Here are the common problems to check for:
 
 * If you accidentaly delete the ATS, you have to create a new STS before creating a new ATS. The old STS will not re-bind to a new ATS. If this is the problem, no logs will appear in the ATS or ATR.
 
-* For problems with AT events, use the [Event Linter](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_event_fields#validate) to verify that your event content is valid.
+* For problems with AT events, use the [Event Linter](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-ibm_event_fields#validate) to verify that your event content is valid.
 
 
 #### My service name is wrong in the LogDNA lines
