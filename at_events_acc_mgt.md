@@ -100,8 +100,8 @@ The following table lists the actions that generate an event:
 | `entitlement.entitlement.create`       | An event is generated when an initiator binds a license to an account. |  
 | `entitlement.entitlement.delete`       | An event is generated when an initiator deletes an entitlement. |  
 | `entitlement.entitlement.delete_purge` | An event is generated when an initiator purges an entitlement. |
-| `entitlement.entitlement.update`       | An event is generated when an initiator updates an entilement. |
-| `entitlement.entitlement.check`        | An event is generated when an initiator has used an entitlement to pull an image from the goverend IBM Container Registry. |
+| `entitlement.entitlement.update`       | An event is generated when an initiator updates an entitlement. |
+| `entitlement.entitlement.check`        | An event is generated when an initiator uses an entitlement to pull an image from the governed IBM Container Registry. |
 | `entitlement.entitlement.invalidate`   | An event is generated when an entitlement's license is not valid anymore. |
 {: caption="Table 6. User entitlement actions" caption-side="top"}
 
