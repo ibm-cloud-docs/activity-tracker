@@ -90,7 +90,7 @@ The following tables list the actions that generate an event:
 | `globalcatalog-collection.enterprise-settings.list` | An event is generated when you get a list of the enterprises in an account and their corresponding settings. | 
 {: caption="Table 5. Actions that generate enterprise account settings management events" caption-side="top"}
 
-### Event for license and entitlement events
+### Events for managing license and entitlement events
 {: #at_events_catalog_entitlement}
 
 The following table lists the actions that generate an event:
@@ -102,7 +102,7 @@ The following table lists the actions that generate an event:
 | `entitlement.entitlement.delete_purge` | An event is generated when an initiator purges an entitlement. |
 | `entitlement.entitlement.update`       | An event is generated when an initiator updates an entilement. |
 | `entitlement.entitlement.check`        | An event is generated when an initiator has used an entitlement to pull an image from the goverend IBM Container Registry. |
-| `entitlement.entitlement.invalidate`   | An event is generated when a system event is validating if the assigned entitlement’s license is still valid. |
+| `entitlement.entitlement.invalidate`   | An event is generated when an entitlement's license is not valid anymore. |
 {: caption="Table 6. User entitlement actions" caption-side="top"}
 
 ## Events for managing organizations
