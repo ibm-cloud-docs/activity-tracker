@@ -86,9 +86,6 @@ Following is a sample event that includes the fields that are required. You can 
     "logSourceCRN": "crn:v1:bluemix:public:iam-groups:global:a/7131c65c6ad70bdc209bb564997a5f1c:::",
     "saveServiceCopy": true,
 
-    // id is optional
-    "id": "916faca9-4644-41ce-9e7c-b40a04738a16",
-
     "observer": {
         "name": "ActivityTracker"
     },
@@ -96,13 +93,12 @@ Following is a sample event that includes the fields that are required. You can 
     // requestData is required for events that modify resources in the IBM Cloud and to add info that clarifies the action on an audit
     "requestData": {
         // This object is defined by the service
-        // ResourceGroupID is optional
         "resourceGroupId": "xxxx",
-        // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
         "updateType": "xxxx",
         "initialValue": "xxxxx",
         "newValue": "xxxxxx",
         "reasonForFailure": "xxxxxx",
+        "requestId": "xxxxxxxxx-xxxx-xxxx-xxxxxxxxxxx"
         "platformSource" : "Watson xxxxx"
     },
 
@@ -117,7 +113,10 @@ Following is a sample event that includes the fields that are required. You can 
     },
     "dataEvent": false,
 
-    // Unique ID that is used to correlate events across multiple services
+    // id is optional - use it to correlate events within your service
+    "id": "916faca9-4644-41ce-9e7c-b40a04738a16",
+
+    // Unique ID that is used to correlate events across multiple services in IBM Cloud
     "correlationId": "xxxxxxxxxxxxxx"
 
 }
@@ -542,6 +541,7 @@ Some fields:
 * [Optional] `serviceInstanceId`: Set to the service instance ID (not the CRN value)
 * [Optional] `accountID`: Set to the account ID 
 * [Optional] `resourceType`: Type of resource
+* [Optional] `requestId`: The value of this field includes a UUID that can be used to identify a request in IBM Cloud. Customers should include this value in a support ticket.
 * [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
 * [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
     
@@ -748,6 +748,8 @@ The value of the severity field is intended to be the same, regardless of the ou
     For example: adding or removing proviledges to a user, deleting a security key, deleting logs, running an action against a resource where the user does not have permissions to work with, etc.
 
 For example, if the action is:
+* `read`: Set this value to `normal`
+* `list`: Set this value to `normal`
 * `create`: Set the value to `normal` 
 * `update`: Set the value to `warning`
 * `delete`: Set the value to `critical`
@@ -831,7 +833,7 @@ The value is a human readable name of the service, service instance or service s
 
 * If you have resources that do not have a name, set this value to  `<resource-type>-<ID of the resource modified>` For example, `model-xxxxx`
 
-* When the action is **list**, set this field to `*`.
+* When the action is **list**, set `target.name` to `*`.
 
 
 
