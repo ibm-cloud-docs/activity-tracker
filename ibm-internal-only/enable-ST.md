@@ -251,31 +251,37 @@ All commands should be run from a terminal that is logged into your service's IB
 ## Step 3. Install LogDNA Agents in your Kubernetes cluster
 {: #agent}
 
+These instructons are in transition, as a new LogDNA agent version is being introduced: version 2.1. The instructions currently have some temporary work-arounds and pull yamls from staging, but that will be resolved soon.
+{: note}
+
 The LogDNA Agent sends logs and events to LogDNA. The agent will collect the following data:
 * Logs from stdout/stderr, applications and node logs, and anything in `/var/log`. 
 * For Activity Tracker, it will collect anything under `/var/log/at`. 
 
-By default, the logDNA agent will be installed in the cluster default namespace. The agent will collect logs from all namespaces on each node (including kube-system). You can install the agent in a different namespace, but logs will still be collected from all namespaces. The logDNA agent and secret must be installed in the same namespace.
+These instructions will install the logDNA agent in the `ibm-observe` namespace in your cluster, along with Sysdig. The agent will collect logs from all namespaces on each node (including `kube-system`). You can install the agent in a different namespace, but logs will still be collected from all namespaces. The logDNA agent and secret must be installed in the same namespace.
 {: note}  
 
 Below we will show you how to install the agent pod in each node in your cluster.
 
 If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#nokube) for other options.
 
-1. Add your Logging STS ingestion key as a secret in your cluster
+1. Create the `ibm-observe` namespace, if it does not already exist.
 
     ```
-    kubectl create secret generic logdna-agent-key --from-literal=logdna-agent-key=<INGESTION KEY>
+    kubectl create namespace ibm-observe
     ```
     {: codeblock}
 
-2. Install the LogDNA agent with super tenancy 
+2. Add your Logging STS ingestion key as a secret in your cluster
 
-    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. We now have private endpoints for the agents. This allows your logs and events to stay withing the IBM network and not travel through the public internet.
+    ```
+    kubectl create secret generic logdna-agent-key -n ibm-observe --from-literal=logdna-agent-key=<INGESTION KEY>
+    ```
+    {: codeblock}
 
-    To use private endpoints your account must have Service Endpoint enabled.
+3.  All services should use private endpoints to send logs and AT events to LogDNA. This allows your logs and events to stay within the IBM network and not travel through the public internet. Enable your account to use private endpoints by enabling Service Endpoint.
 
-    Verify if your account has Service Endpoint enabled. If it is enabled, proceed to creating the logDNA agents below.
+    First, see if your account already has Service Endpoint enabled. If it is enabled, proceed to installing the logDNA agent below.
 
     ```
     ibmcloud account show
@@ -298,56 +304,81 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
     Do you want to open a ticket to enable it? [y/N] > 
     ```  
-    
+ 
+
+4. Install the LogDNA agent with super tenancy 
+
+    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. These yaml files use private endpoints. Temporary: These files are downloaded from staging.
+   
     For **us-south**, run the following command:
  
     ```
-    kubectl create -f  http://assets.us-south.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.us-south.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
      For **us-east**, run the following command:
  
     ```
-    kubectl create -f  http://assets.us-east.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.us-east.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
     For **eu-de**, run the following command: 
 
     ```
-    kubectl create -f http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.eu-de.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
     For **eu-gb**, run the following command: 
 
     ```
-    kubectl create -f http://assets.eu-gb.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.eu-gb.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock} 
 
     For **jp-tok**, run the following command: 
 
     ```
-    kubectl create -f http://assets.jp-tok.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.jp-tok.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
     For **kr-seo**, run the following command: 
 
     ```
-    kubectl create -f http://assets.kr-seo.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.kr-seo.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
      For **au-syd**, run the following command:
  
     ```
-    kubectl create -f  http://assets.au-syd.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.au-syd.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
+    Make the following modifications to the file you downloaded:
+    
+    - Change the line that says `image: logdna/logdna-agent-v2:stable` to instead specify an exact version you want to use, and pull it from `icr.io`. For example, `image: icr.io/ext/logdna-agent:2.1.8`. You should use an exact version in a highly regulated environment like IBM Cloud, and pull it from `icr.io` so that Vulnerability Advisor ensures compliance.
+    
+    - Temporary: Remove the namespace section at the top of the file, deleting lines 1-5. This is vital, because otherwise if you delete the agent with this yaml file it will also remove the namespace--uninstalling Sysdig agent and other things.
+    
+    - Temporary: Globally change `namespace: logdna-agent` to `namespace: ibm-observe` in 6 places.
+    
+    - Temporary: Insert `namespace: ibm-observe` into the ClusterRole section, under `metadata`.
+    
+    - Temporary: Insert `namespace: ibm-observe` into the ClusterRoleBinding section, under `metadata`.
+
+    - Temporary: Need to fix an indentation problem in `spec: template: spec: containers: name: env:`. Starting with `- name: LDLOGPATH`, six lines need to be indented by 2.  (Different yaml files have different lines that need to be indented/unindented, so verify with `kubectl create --dry-run --validate -f logdna-agent-v2-st-private.yaml`.)
+    
+    Now that the yaml file has been modified, install the agent with this command:
+    
+    ```
+    kubectl create -f logdna-agent-v2-st-private.yaml
+    ```
+    {: codeblock}
 
 ## Step 4. Set up a test Super Tenant Receiver (STR) instance 
 {: #STR}
