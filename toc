@@ -48,6 +48,7 @@ IBM Cloud Activity Tracker with LogDNA
         ibm-internal-only/at_use_cases.md
         ibm-internal-only/documentation.md
         ibm-internal-only/support.md
+        ibm-internal-only/wip.md
         tutorial.md
     {: .navgroup-end}
 
