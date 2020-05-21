@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-05-20"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -68,7 +68,7 @@ The following table lists the actions that generate an event:
 | `iam-am.policy.create` | An event is generated when an initiator adds a policy to a user or access group. |
 | `iam-am.policy.delete` | An event is generated when an initiator modifies permissions to a policy of a user or access group.|
 | `iam-am.policy.update` | An event is generated when an initiator deletes a policy that is assigned to a user or access group. |
-{: caption="Table 5. Managing policy actions" caption-side="top"} 
+{: caption="Table 2. Managing policy actions" caption-side="top"} 
 
 
 
@@ -82,7 +82,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.account-serviceid.create` | An event is generated when an initiator creates a service ID.  | 
 | `iam-identity.account-serviceid.update` | An event is generated when an initiator renames a service ID or modifies its description. | 
 | `iam-identity.account-serviceid.delete` | An event is generated when an initiator deletes a service ID. | 
-{: caption="Table 2. Working with service IDs actions" caption-side="top"} 
+{: caption="Table 3. Working with service IDs actions" caption-side="top"} 
 
 
 ## API key events
@@ -98,7 +98,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.serviceid-apikey.create` | An event is generated when an initiator creates an API key for a service ID. |  
 | `iam-identity.serviceid-apikey.delete` | An event is generated when an initiator deletes an API key for a service ID. |  
 | `iam-identity.serviceid-apikey.update` | An event is generated when an initiator renames an API key for a service ID or modifies its description. |
-{: caption="Table 3. Working with API keys actions" caption-side="top"} 
+{: caption="Table 4. Working with API keys actions" caption-side="top"} 
 
 
 ## Login events
@@ -112,20 +112,8 @@ The following table lists the actions that generate an event:
 | `iam-identity.serviceid-apikey.login`    | An event is generated when an initiator logs in to the {{site.data.keyword.cloud_notm}} by using an API key that is associated with a service ID. |  
 | `iam-identity.user-identitycookie.login` | This is an event that is generated when an initiator requests an identity cookie to run an action. |
 | `iam-identity.user-refreshtoken.login`   | This is an event that is generated when the initiator logs in to the IBM Cloud , or when an initiator that has already logged in to the IBM Cloud requests a new refresh token to run an action. |
-{: caption="Table 4. User login actions" caption-side="top"} 
-
-## License and entitlement events
-{: #at_events_iam_entitlement}
-
-The following table lists the actions that generate an event:
-
-| Action                                   | Description |
-|------------------------------------------|---------|
-| `entitlement.entitlement.create`         | An event is generated when an initiator binds a license to an account. |  
-| `entitlement.entitlement.delete`    | An event is generated when an initiator deletes an entitlment. |  
-| `entitlement.entitlement.update`   | An event is generated when an initiator updates an entilement. |
-| `entitlement.entitlement.check`   | An event is generated when an initiator has used an entitlement to pull an image from the goverend IBM Container Registry. |
-{: caption="Table 5. User entitlement actions" caption-side="top"} 
+{: caption="Table 5. User login actions" caption-side="top"} 
+ 
 
 ## Viewing events
 {: #at_events_iam_ui}
