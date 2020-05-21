@@ -304,7 +304,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
     Do you want to open a ticket to enable it? [y/N] > 
     ```  
- 
+    {: codeblock}
 
 4. Install the LogDNA agent with super tenancy 
 
