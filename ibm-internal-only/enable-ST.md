@@ -308,7 +308,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
 4. Install the LogDNA agent with super tenancy 
 
-    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. These yaml files use private endpoints. Temporary: These files are downloaded from staging.
+    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. These yaml files use private endpoints. **Temporary**: These files are downloaded from staging.
    
     For **us-south**, run the following command:
  
@@ -361,17 +361,17 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
     Make the following modifications to the file you downloaded:
     
-    * Change the line that says `image: logdna/logdna-agent-v2:stable` to instead specify an exact version you want to use, and pull it from `icr.io`. For example, `image: icr.io/ext/logdna-agent:2.1.8`. You should use an exact version in a highly regulated environment like IBM Cloud, and pull it from `icr.io` so that Vulnerability Advisor ensures compliance.
+    Change the line that says `image: logdna/logdna-agent-v2:stable` to instead specify an exact version you want to use, and pull it from `icr.io`. For example, `image: icr.io/ext/logdna-agent:2.1.8`. You should use an exact version in a highly regulated environment like IBM Cloud, and pull it from `icr.io` so that Vulnerability Advisor ensures compliance.
     
-    * Temporary: Remove the namespace section at the top of the file, deleting lines 1-5. This is vital, because otherwise if you delete the agent with this yaml file it will also remove the namespace--uninstalling Sysdig agent and other things.
+    **Temporary**: Remove the namespace section at the top of the file, deleting lines 1-5. This is vital, because otherwise if you delete the agent with this yaml file it will also remove the namespace--uninstalling Sysdig agent and other things.
     
-    * Temporary: Globally change `namespace: logdna-agent` to `namespace: ibm-observe` in 6 places.
+    **Temporary**: Globally change `namespace: logdna-agent` to `namespace: ibm-observe` in 6 places.
     
-    * Temporary: Insert `namespace: ibm-observe` into the ClusterRole section, under `metadata`.
+    **Temporary**: Insert `namespace: ibm-observe` into the ClusterRole section, under `metadata`.
     
-    * Temporary: Insert `namespace: ibm-observe` into the ClusterRoleBinding section, under `metadata`.
+    **Temporary**: Insert `namespace: ibm-observe` into the ClusterRoleBinding section, under `metadata`.
 
-    * Temporary: Need to fix an indentation problem in `spec: template: spec: containers: name: env:`. Starting with `- name: LDLOGPATH`, six lines need to be indented by 2.  (Different yaml files have different lines that need to be indented/unindented, so verify with `kubectl create --dry-run --validate -f logdna-agent-v2-st-private.yaml`.)
+    **Temporary**: Need to fix an indentation problem in `spec: template: spec: containers: name: env:`. Starting with `- name: LDLOGPATH`, six lines need to be indented by 2.  (Different yaml files have different lines that need to be indented/unindented, so verify with `kubectl create --dry-run --validate -f logdna-agent-v2-st-private.yaml`.)
     
     Now that the yaml file has been modified, install the agent with this command:
     
@@ -379,6 +379,9 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     kubectl create -f logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
+
+
+
 
 ## Step 4. Set up a test Super Tenant Receiver (STR) instance 
 {: #STR}
