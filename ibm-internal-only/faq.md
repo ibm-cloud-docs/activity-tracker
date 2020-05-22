@@ -22,7 +22,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 
 # FAQ
-{: #enable_st_faq}
+{: #faq}
 
 
 ## Differences in customer logs and events
