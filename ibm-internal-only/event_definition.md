@@ -177,7 +177,7 @@ Where
 
 * `action` defines the task requested by the user.  
 
-    Valid actions are: `add`, `bulkdelete`, `create`, `read`, `update`,`delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`, `ack-delete`, `ack-restore`, `ack-disable`, `ack-enable`, `ack-rotate`, `edit`, `publish`
+    Valid actions are: `add`, `bulkdelete`, `create`, `read`, `update`,`delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`, `ack-delete`, `ack-restore`, `ack-disable`, `ack-enable`, `ack-rotate`, `edit`, `publish`, `authorize`
 , `publish`    Not valid actions are: `info`, `unknown`
 
     More values will be added as needed.
