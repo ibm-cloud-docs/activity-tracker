@@ -297,7 +297,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
     Note: You may get an error that Virtual Forwarding and Routing (VFR) is not enabled. Answer yes to the question to have a SoftLayer ticket opened to enable VFR. Once VFR has been enabled, run the command above one more time.
 
-    Example of the message if VFR is not enabled 
+    Example of the message if VFR is not enabled: 
 
     ```
     Service Endpoint is not available in linked Softlayer Account 1900403. Enable VRF(Virtual Routing and Forwarding) first to proceed. Learn more about VRF here - https://cloud.ibm.com/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html.
@@ -361,7 +361,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
     Make the following modifications to the file you downloaded:
     
-    Change the line that says `image: logdna/logdna-agent-v2:stable` to instead specify an exact version you want to use, and pull it from `icr.io`. For example, `image: icr.io/ext/logdna-agent:2.1.8`. You should use an exact version in a highly regulated environment like IBM Cloud, and pull it from `icr.io` so that Vulnerability Advisor ensures compliance.
+    **Temporary**: Change the line that says *image: logdna/logdna-agent-v2:stable* to instead specify an exact version you want to use, and pull it from `icr.io`. For example, *image: icr.io/ext/logdna-agent:2.1.8*. You should use an exact version in a highly regulated environment like IBM Cloud, and pull it from `icr.io` so that Vulnerability Advisor ensures compliance.
     
     **Temporary**: Remove the namespace section at the top of the file, deleting lines 1-5. This is vital, because otherwise if you delete the agent with this yaml file it will also remove the namespace--uninstalling Sysdig agent and other things.
     
