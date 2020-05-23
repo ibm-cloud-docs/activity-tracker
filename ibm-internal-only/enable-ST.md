@@ -1052,16 +1052,14 @@ Wow, that's really old! You can't delete the service instance yourself, because 
 
 Typically, LogDNA customers delete the old agent and then install the new one. The 2.1.x agent does a reasonable job of picking up in the log files where the previous agent left off. However, it is not foolproof; it is possible to have duplicate logs or missed logs. Therefore, the recommendation for IBM Cloud services is to install the new version and then delete the old one. This can cause duplicate logs, but will not miss any.
 
-##### Migrating from version 2.0 or earlier to 2.1.x
+**Migrating from version 2.0 or earlier to 2.1.x**
 
 1. Make sure your Kubernetes cluster must be version 1.18 or later.
 2. Follow the instructions in [Step 3 above](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#agent) to install the new agent.
 3. Delete the old agent by running: `kubectl delete daemonset.apps/logdna-agent`. This assumes you have not changed the namespace in the context to other than "default".
 4. Delete the old copy of the secret in the default namespace, by running: `kubectl delete secret logdna-agent-key`
 
-##### Migrating from version 2.1.x to 2.1.y
+**Migrating from version 2.1.x to 2.1.y**
 
-1. 2. Follow the instructions in [Step 3 above](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#agent) to install the new agent. The `ibm-observe` namespace and the secret should already be created, so skip those steps.
+1. Follow the instructions in [Step 3 above](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#agent) to install the new agent. The `ibm-observe` namespace and the secret should already be created, so skip those steps.
 2. Delete the old agent by running: `kubectl delete -f logdna-agent-v2-st-private.yaml`.
-
-1. 
