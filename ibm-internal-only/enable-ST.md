@@ -372,6 +372,8 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     **Temporary**: Remove the namespace section at the top of the file, deleting lines 1-5. This is vital, because otherwise if you delete the agent with this yaml file it will also remove the namespace--uninstalling Sysdig agent and other things.
     
     **Temporary**: Globally change `namespace: logdna-agent` to `namespace: ibm-observe` in 6 places.
+    
+    **Temporary** Globally change `test.cloud.` to `cloud.` in two places.
 
     **Temporary**: Need to fix an indentation problem in `spec: template: spec: containers: name: env:`. Starting with `- name: LDLOGPATH`, six lines need to be indented by 2.  (Different yaml files have different lines that need to be indented/unindented, so verify with `kubectl create --dry-run --validate -f logdna-agent-v2-st-private.yaml`.)
     
