@@ -364,7 +364,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     Change the line that says *image: icr.io/ext/logdna-agent:stable* to instead specify an exact version you want to use, and pull it from `icr.io`. For example, *image: icr.io/ext/logdna-agent:2.1.9*. You should use an exact version in a highly regulated environment like IBM Cloud, and pull it from `icr.io` so that Vulnerability Advisor ensures compliance. 
     To see the available versions of the agent, use these commands:
     ```
-    ibmcloud cr loging
+    ibmcloud cr login
     ibmcloud cr region-set global
     ibmcloud cr images --restrict ext/logdna-agent
     ```
