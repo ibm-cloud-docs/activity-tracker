@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="logdnaat" audience="service" category="dev_ops" href="/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started" path="Activity-Tracker-with-LogDNA"}
+{: .toc subcollection="Activity-Tracker-with-LogDNA" audience="service" category="dev_ops" href="/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started" path="Activity-Tracker-with-LogDNA"}
 IBM Cloud Activity Tracker with LogDNA
 
     {: .navgroup id="learn"}
@@ -42,6 +42,7 @@ IBM Cloud Activity Tracker with LogDNA
     Internal adopters
         ibm-internal-only/enable-AT.md
         ibm-internal-only/enable-ST.md
+        ibm-internal/faq.md
         ibm-internal-only/global_events.md
         ibm-internal-only/best_practices.md
         ibm-internal-only/event_definition.md
@@ -54,6 +55,20 @@ IBM Cloud Activity Tracker with LogDNA
     {: .navgroup id="howto"}
     provision.md
     remove.md
+    observe.md
+    upgrade.md
+
+    {: .topicgroup}
+    DevOps admin tasks
+        archive.md
+        config_account.md
+        control_usage.md
+        logdna_parsing.md
+        exclusion_rules.md
+        iam_manage_events.md
+        iam_view_events.md
+        reuse_resource_definitions.md
+        sqlquery.md
 
     {: .topicgroup}
     Enhancing security for IBM Cloud Activity Tracker with LogDNA
@@ -62,16 +77,6 @@ IBM Cloud Activity Tracker with LogDNA
         ha-dr.md
         service-connection.md
         architecture-workload-isolation.md
-
-    {: .topicgroup}
-    DevOps tasks
-        archive.md
-        control_usage.md
-        exclusion_rules.md
-        iam_manage_events.md
-        iam_view_events.md
-        reuse_resource_definitions.md
-        sqlquery.md
 
     {: .topicgroup}
     Export logs

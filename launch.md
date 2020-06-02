@@ -6,7 +6,7 @@ lastupdated: "2019-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, web UI, browser
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -41,7 +41,7 @@ The following table lists the minimum policy that a user must have to be able to
 | Service role: `Reader`    | Allows the user to view events through the web UI. | 
 {: caption="Table 1. IAM policies" caption-side="top"} 
 
-For more information, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam_view_events#iam_view_events).
+For more information, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
 
 ## Step 2. Launching the web UI through the {{site.data.keyword.cloud_notm}} UI
