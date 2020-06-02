@@ -6,7 +6,7 @@ lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, faq
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -54,8 +54,8 @@ See [AT events template](https://github.ibm.com/Bluemix/docs/blob/staging/develo
 After you create the topic, complete the following steps:
 
 1. Add the topic to the `Reference` section of your service documentation. 
-2. Add your service information to [Cloud services](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-cloud_services)
-3. Add your service information to [Cloud services locations](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-cloud_services_locations)
+2. Add your service information to [Cloud services](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services)
+3. Add your service information to [Cloud services locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations)
 4. Submit a PR. Then, notify the Activity Tracker docs owner to merge your PR. Slack handle: **@Marisa** or email: lopezdsr@uk.ibm.com. 
 
 
@@ -66,7 +66,7 @@ After you create the topic, complete the following steps:
 Specific event information for a service is provided through a reference topic that is owned and maintained by your service.
 
 General overview services information about the events that services send to AT will be available through the following URL: 
-* [Cloud services](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-cloud_services)
-* [Cloud services locations](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-cloud_services_locations)
+* [Cloud services](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services)
+* [Cloud services locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations)
 
 

@@ -6,7 +6,7 @@ lastupdated: "2020-03-25"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, auditing, disaster recovery, ha, high availability, redundancy
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 
 

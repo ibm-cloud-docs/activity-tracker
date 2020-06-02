@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2019-01-08"
+lastupdated: "2020-04-28"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, delete instance
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 

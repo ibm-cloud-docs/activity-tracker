@@ -6,7 +6,7 @@ lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, enable super tenancy
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -29,11 +29,11 @@ This document is for **services** on-boarding to `Logging Super Tenancy` and `Ac
 
 Services are producers of logs and events.
 
-If you are a consumer of events or logs, see [IBM Cloud Activity Tracker with LogDNA. ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started){:new_window}
+If you are a consumer of events or logs, see [IBM Cloud Activity Tracker with LogDNA. ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started#getting-started){:new_window}
 
 **Super tenancy** allows a service to send logs and events to customers. Activity Tracker requires super tenancy.
 
-Before continuing, review [Understanding Super Tenancy and Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-understand_st#understand_st) to learn about the architecture of the service.
+Before continuing, review [Understanding Super Tenancy and Activity Tracker](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-understand_st#understand_st) to learn about the architecture of the service.
 
 ## Acronyms
 {: #st_acronyms}
@@ -87,7 +87,7 @@ Three optional fields are available to use in the Logging and Activity Tracker J
 
 * **logSourceCRN**: This field is used to determine the customer whom you want to receive the log or event. The logSourceCRN is the CRN of the service instance (or internal resource) of your service created by the customer. If not present, no event will be sent to a customer.  The CRN `scope` segment must be the customer's account, and the `location` segment must be the location of the service instance or resource--normally the region where the event is ingested.
 * **saveServiceCopy**: This field indicates if your service wants a copy of the log or event. This is an `optional` field. If the field is not present, the default of true will be used and your service will get a copy of the log or event. Set this field to false if your service does not want a copy of the log record or event. If the field is false, LogDNA will not charge your service for the event since it only charges each service or customer for what is stored.
-* **message**: This field will be displayed as the summary line of the log/event in the LogDNA UI. The message field has a prescribed format for Activity Tracker, and is **required** for Activity Tracker. Refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields) for format information.
+* **message**: This field will be displayed as the summary line of the log/event in the LogDNA UI. The message field has a prescribed format for Activity Tracker, and is **required** for Activity Tracker. Refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-ibm_event_fields) for format information.
 
 The below listing shows how these fields fit into the overall JSON that describes the event.
 
@@ -102,7 +102,7 @@ The below listing shows how these fields fit into the overall JSON that describe
 {: codeblock}
 
 
-If your service is adopting Activity Tracker, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#ibm_event_fields) to understand how an event must be formatted and the definitions of the CADF event fields.
+If your service is adopting Activity Tracker, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-ibm_event_fields#ibm_event_fields) to understand how an event must be formatted and the definitions of the CADF event fields.
 
 ### Deployment changes to support Kubernetes volumes
 Activity Tracker requires services to write events to a file in a subdirectory of `/var/log/at` on the worker node.
@@ -251,31 +251,37 @@ All commands should be run from a terminal that is logged into your service's IB
 ## Step 3. Install LogDNA Agents in your Kubernetes cluster
 {: #agent}
 
+These instructons are in transition, as a new LogDNA agent version is being introduced: version 2.1. The instructions currently have some temporary work-arounds and pull yamls from staging, but that will be resolved soon.
+{: note}
+
 The LogDNA Agent sends logs and events to LogDNA. The agent will collect the following data:
 * Logs from stdout/stderr, applications and node logs, and anything in `/var/log`. 
 * For Activity Tracker, it will collect anything under `/var/log/at`. 
 
-By default, the logDNA agent will be installed in the cluster default namespace. The agent will collect logs from all namespaces on each node (including kube-system). You can install the agent in a different namespace, but logs will still be collected from all namespaces. The logDNA agent and secret must be installed in the same namespace.
+These instructions will install the logDNA agent in the `ibm-observe` namespace in your cluster, along with Sysdig. The agent will collect logs from all namespaces on each node (including `kube-system`). You can install the agent in a different namespace, but logs will still be collected from all namespaces. The logDNA agent and secret must be installed in the same namespace.
 {: note}  
 
 Below we will show you how to install the agent pod in each node in your cluster.
 
 If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#nokube) for other options.
 
-1. Add your Logging STS ingestion key as a secret in your cluster
+1. Create the `ibm-observe` namespace, if it does not already exist.
 
     ```
-    kubectl create secret generic logdna-agent-key --from-literal=logdna-agent-key=<INGESTION KEY>
+    kubectl create namespace ibm-observe
     ```
     {: codeblock}
 
-2. Install the LogDNA agent with super tenancy 
+2. Add your Logging STS ingestion key as a secret in your cluster
 
-    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. We now have private endpoints for the agents. This allows your logs and events to stay withing the IBM network and not travel through the public internet.
+    ```
+    kubectl create secret generic logdna-agent-key -n ibm-observe --from-literal=logdna-agent-key=<INGESTION KEY>
+    ```
+    {: codeblock}
 
-    To use private endpoints your account must have Service Endpoint enabled.
+3.  All services should use private endpoints to send logs and AT events to LogDNA. This allows your logs and events to stay within the IBM network and not travel through the public internet. Enable your account to use private endpoints by enabling Service Endpoint.
 
-    Verify if your account has Service Endpoint enabled. If it is enabled, proceed to creating the logDNA agents below.
+    First, see if your account already has Service Endpoint enabled. If it is enabled, proceed to installing the logDNA agent below.
 
     ```
     ibmcloud account show
@@ -291,62 +297,94 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
     Note: You may get an error that Virtual Forwarding and Routing (VFR) is not enabled. Answer yes to the question to have a SoftLayer ticket opened to enable VFR. Once VFR has been enabled, run the command above one more time.
 
-    Example of the message if VFR is not enabled 
+    Example of the message if VFR is not enabled: 
 
     ```
     Service Endpoint is not available in linked Softlayer Account 1900403. Enable VRF(Virtual Routing and Forwarding) first to proceed. Learn more about VRF here - https://cloud.ibm.com/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html.
 
     Do you want to open a ticket to enable it? [y/N] > 
     ```  
-    
+    {: codeblock}
+
+4. Install the LogDNA agent with super tenancy 
+
+    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. These yaml files use private endpoints. **Temporary**: These files are downloaded from staging.
+   
     For **us-south**, run the following command:
  
     ```
-    kubectl create -f  http://assets.us-south.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.us-south.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
      For **us-east**, run the following command:
  
     ```
-    kubectl create -f  http://assets.us-east.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.us-east.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
     For **eu-de**, run the following command: 
 
     ```
-    kubectl create -f http://assets.eu-de.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.eu-de.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
     For **eu-gb**, run the following command: 
 
     ```
-    kubectl create -f http://assets.eu-gb.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.eu-gb.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock} 
 
     For **jp-tok**, run the following command: 
 
     ```
-    kubectl create -f http://assets.jp-tok.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.jp-tok.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
     For **kr-seo**, run the following command: 
 
     ```
-    kubectl create -f http://assets.kr-seo.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.kr-seo.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
 
      For **au-syd**, run the following command:
  
     ```
-    kubectl create -f  http://assets.au-syd.logging.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.au-syd.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
     ```
     {: codeblock}
+
+    Make the following modifications to the file you downloaded:
+    
+    Change the line that says *image: icr.io/ext/logdna-agent:stable* to instead specify an exact version you want to use, and pull it from `icr.io`. For example, *image: icr.io/ext/logdna-agent:2.1.9*. You should use an exact version in a highly regulated environment like IBM Cloud, and pull it from `icr.io` so that Vulnerability Advisor ensures compliance. 
+    To see the available versions of the agent, use these commands:
+    ```
+    ibmcloud cr login
+    ibmcloud cr region-set global
+    ibmcloud cr images --restrict ext/logdna-agent
+    ```
+    
+    **Temporary**: Remove the namespace section at the top of the file, deleting lines 1-5. This is vital, because otherwise if you delete the agent with this yaml file it will also remove the namespace--uninstalling Sysdig agent and other things.
+    
+    **Temporary**: Globally change `namespace: logdna-agent` to `namespace: ibm-observe` in 6 places.
+    
+    **Temporary** Globally change `test.cloud.` to `cloud.` in two places.
+
+    **Temporary**: Need to fix an indentation problem in `spec: template: spec: containers: name: env:`. Starting with `- name: LDLOGPATH`, six lines need to be indented by 2.  (Different yaml files have different lines that need to be indented/unindented, so verify with `kubectl create --dry-run --validate -f logdna-agent-v2-st-private.yaml`.)
+    
+    Now that the yaml file has been modified, install the agent with this command:
+    
+    ```
+    kubectl create -f logdna-agent-v2-st-private.yaml
+    ```
+    {: codeblock}
+
+
 
 
 ## Step 4. Set up a test Super Tenant Receiver (STR) instance 
@@ -646,7 +684,7 @@ A simple solution is to create a **LogDNA absence alert** in your service STS an
 As of April 17,2019, the Pager Duty integration does not work in our IBM environment. LogDNA is working on a resolution to this issue.
 {: note}
 
-To create an alert, you must create a view and then attach an alert to it. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts).
+To create an alert, you must create a view and then attach an alert to it. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
 
 The following example shows how to create an absence alert for a service ATS and trigger a Slack message if no events match the view criteria in 15 minutes.
 
@@ -682,7 +720,7 @@ The following example shows how to create an absence alert for a service ATS and
 
     ![ATS Alert](images/ATS_alert.png)
 
-    [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-alerts#alerts_step2).
+    [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#alerts_step2).
   
 4. Test your alert
 
@@ -968,7 +1006,7 @@ Here are the common problems to check for:
 
 * If you accidentaly delete the ATS, you have to create a new STS before creating a new ATS. The old STS will not re-bind to a new ATS. If this is the problem, no logs will appear in the ATS or ATR.
 
-* For problems with AT events, use the [Event Linter](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_event_fields#validate) to verify that your event content is valid.
+* For problems with AT events, use the [Event Linter](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-ibm_event_fields#validate) to verify that your event content is valid.
 
 
 #### My service name is wrong in the LogDNA lines
@@ -991,3 +1029,45 @@ Hopefully your cluster's logdna-agent is not impacted by whatever you did, and i
 
 Note that even if you only deleted the ATS, you will still need to create a new STS before creating a new ATS. Your new ATS will not bind to the old STS; STSs only bind once to ATSs.
 
+
+#### I need to delete some of my service's logs
+
+Suppose your service has saved some data in its logs that you would like to delete. LogDNA can delete all logs on specific days. LogDNA cannot delete specific logs inside of a day--for instance, by hour or by some other criteria. Therefore, you have two options, as shown below. If you have enabled archiving, remember to also consider any data saved in COS.
+
+**Option 1:**
+
+1. Open a ticket on LogDNA, asking them to delete your data from day 3 (or whatever) to the end.
+2. Wait 3 days, for the last of the unwanted data to become >3 days old.
+3. Repeat step 1.
+
+The number of days can be more or less than 3. Pick a number that strikes a balance between deleted unwanted data vs. keeping enough logs to operate your service if something goes wrong.
+
+**Option 2:**
+
+Assume you have a 30-day plan.
+
+1. Switch to 7-day plan. Within 24 hours, the data from day 8+ will be deleted.
+2. Wait 8 days, to be sure unwanted data rolls off the end of the retention period.
+3. Switch back to 30-day plan.
+
+#### I need to delete an instance of the old AT service, pre-LogDNA
+
+Wow, that's really old! You can't delete the service instance yourself, because the old AT service is gone, including its service broker. Instead, refer to [this document](https://ibm.ent.box.com/notes/462134173388?s=okim8oc58vs2fs3ef04dtp0dvvo9go7u). (It is linked as the FAQ in the "About" section of the `#rc-adopters` channel description.). In the FAQ at the bottom of the document, PQ5 says to open an issue [here](https://github.ibm.com/Bluemix-Admin/Bluemix-Admin) to get your instances deleted.
+
+#### I need to migrate my service's LogDNA agent to the latest version.
+
+*These instructions are under construction, and not ready for production usage yet.*
+
+Typically, LogDNA customers delete the old agent and then install the new one. The 2.1.x agent does a reasonable job of picking up in the log files where the previous agent left off. However, it is not foolproof; it is possible to have duplicate logs or missed logs. Therefore, the recommendation for IBM Cloud services is to install the new version and then delete the old one. This can cause duplicate logs, but will not miss any.
+
+**Migrating from version 2.0 or earlier to 2.1.x**
+
+1. Make sure your Kubernetes cluster must be version 1.18 or later.
+2. Follow the instructions in [Step 3 above](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#agent) to install the new agent.
+3. Delete the old agent by running: `kubectl delete daemonset.apps/logdna-agent`. This assumes you have not changed the namespace in the context to other than "default".
+4. Delete the old copy of the secret in the default namespace, by running: `kubectl delete secret logdna-agent-key`
+
+**Migrating from version 2.1.x to 2.1.y**
+
+1. Follow the instructions in [Step 3 above](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#agent) to install the new agent. The `ibm-observe` namespace and the secret should already be created, so skip those steps.
+2. Delete the old agent by running: `kubectl delete -f logdna-agent-v2-st-private.yaml`.

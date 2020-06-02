@@ -2,10 +2,10 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-22"
+lastupdated: "2020-05-14"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, regions
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -32,13 +32,14 @@ subcollection: logdnaat
 
 | Geography             | Region                   | EU-Supported | HA Status |
 |-----------------------|--------------------------|--------------|-----------|
+| `Asia Pacific`        | `Chennai (in-che)`       | `N/A`        | `SZR`     |
 | `Asia Pacific`        | `Tokyo (jp-tok)`         | `N/A`        | `MZR`     |
 | `Asia Pacific`        | `Seoul (kr-seo)`         | `N/A`        | `SZR`     |
-| `Europe`              | `Frankfurt (eu-de) (*)`  | `YES`        | `MZR`     |
+| `Asia Pacific`        | `Sydney (au-syd)`        | `N/A`        | `MZR`     |
+| `Europe`              | `Frankfurt (eu-de) (*) (**)`  | `YES`        | `MZR`     |
 | `Europe`              | `London (eu-gb)`         | `NO`         | `MZR`     |
 | `North America`       | `Dallas (us-south)`      | `N/A`        | `MZR`     |
 | `North America`       | `Washington (us-east)`   | `N/A`        | `MZR`     |
-| `Sydney`              | `Sydney (au-syd)`        | `N/A`        | `MZR`     |
 {: caption="Table 1. List of locations where the service is available" caption-side="top"}
 
 {: #end-api-table-1}
@@ -50,3 +51,6 @@ Where
 * `N/A` means feature that is not applicable to that geography.
 
 `(*)` For more information, see [Enabling the EU Supported setting](/docs/account?topic=account-eu-hipaa-supported#bill_eusupported).
+
+`(**)` Fixes to bugs and new features take a few days more to deploy into Frankfurt than to other regions. 
+
