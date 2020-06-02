@@ -6,7 +6,7 @@ lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, support
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -41,9 +41,9 @@ Support is supplemented by the Slack channel *ibm-guest-logdna-help*. However, i
 1. Category: select "Developer Tools and Runtimes."
 1. Offering: usually have to leave it blank. You are usually using a different account for support than where the LogDNA instance is.
 1. Severity: Select the appropriate Severity.
-    - See [below](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-support_cases#severity) for guidance on selecting the appropriate severity.
-    - If you do not see a place to set the Severity, then you do not have Advanced or Premium support. Your cases will have severity 4 only. See [this section](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-support_cases#adv-prem) below.
-    - If your team does have Adv/Prem support and you still can't set the severity, then consider whether you are logged into the right account for it. See [this section](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-support_cases#adv-prem) below.
+    - See [below](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-support_cases#severity) for guidance on selecting the appropriate severity.
+    - If you do not see a place to set the Severity, then you do not have Advanced or Premium support. Your cases will have severity 4 only. See [this section](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-support_cases#adv-prem) below.
+    - If your team does have Adv/Prem support and you still can't set the severity, then consider whether you are logged into the right account for it. See [this section](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-support_cases#adv-prem) below.
 1. Subject: Mention "LogDNA" in the subject. This is important, so the support team will quickly see they need to route the case to LogDNA.
 1. Fill out the rest of the form. Include this information:
     - Account Information, Environment, Region (URL included)<br>- You can get all three (account, environment, and region) by copying the URL from the LogDNA UI.<br>- Response to tickets is often delayed because this vital information is missing.

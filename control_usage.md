@@ -6,7 +6,7 @@ lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, usage
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -40,7 +40,7 @@ Events that are excluded do not count towards your data usage quota. Also, event
 
 When you exclude events through an exclusion rule, you can choose to **Preserve these lines for live-tail and alerting**. When you check this option, log lines that match the exclusion rule are shown through the live tail and you can set up an alert for that data.
 
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-exclusion).
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-exclusion).
 
 ​
 
@@ -52,7 +52,7 @@ In a {{site.data.keyword.at_full_notm}} instance, you can define an alert to not
 
 Complete the following steps to configure an alert that informs you when you reach a specific data volume in the instance:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-launch).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch).
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Usage**.
 

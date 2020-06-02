@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-04-08"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, resource controller events
+keywords: IBM Cloud, LogDNA, Activity Tracker, CF events
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -21,8 +21,8 @@ subcollection: Activity-Tracker-with-LogDNA
 {:important: .important}
 {:note: .note}
 
-# Service instance events  
-{: #at_events_rc}
+# Cloud Foundry events  
+{: #at_events_cf}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.cloud_notm}} services. 
 {:shortdesc}
@@ -30,8 +30,8 @@ As a security officer, auditor, or manager, you can use the {{site.data.keyword.
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. To get started monitoring your user's actions, see [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started#getting-started). 
 
 
-## Events for provisioning and managing service instances
-{: #rc_provision}
+## Events for managing user permissions
+{: #cf_user}
 
 The following table lists the actions that generate an event:
 
@@ -43,53 +43,65 @@ The following table lists the actions that generate an event:
 | `service_name.instance.schedule_reclaim` | An event is generated when a service instance is pending_reclamation. |
 | `service_name.instance.restore`          | An event is generated when a service instance is restored. |
 {: caption="Table 1. Actions that generate events" caption-side="top"} 
+ 
 
+Add/remove user to an org and space does not include the target.name with the human readable name of the user that is being added or removed:
+Cloudfoundry does only provide the guid of the "changed" user (actee) but the field actee_name (which is normally forwarded to target.name) is always empty for these events:
 
-##  Events for managing aliases that are associated to a service instance
-{: #rc_alias}
-
-An alias is a connection between your IAM-managed service within a resource group and an application within an org or a space.
-
-The following table lists the actions that generate an event:
-
-| Action                         | Description |
-|--------------------------------|---------|
-| `service_name.alias.create` | An event is generated when an alias for an instance is created. |
-| `service_name.alias.update` | An event is generated when an alias for an instance is updated. |
-| `service_name.alias.delete` | An event is generated when an alias for an instance is deleted. |
-{: caption="Table 2. Actions that generate events" caption-side="top"} 
-
-
-##  Events for managing service credentials that are associated to a service instance
-{: #rc_keys}
-
-A service credential provides the necessary information to connect an application to a service instance. 
-
-The following table lists the actions that generate an event:
-
-| Action                         | Description |
-|--------------------------------|---------|
-| `service_name.key.create` | An event is generated when an API key is created for a service instance through the *Service credentials* section of the service instance UI. |
-| `service_name.key.delete` | An event is generated when an API key that is associated with a service instance is deleted from the *Service credentials* section of the service instance UI. |
-{: caption="Table 3. Actions that generate events" caption-side="top"} 
+    audit.user.space_auditor_add
+    audit.user.space_auditor_remove
+    audit.user.space_manager_add
+    audit.user.space_manager_remove
+    audit.user.space_developer_add
+    audit.user.space_developer_remove
+    audit.user.organization_auditor_add
+    audit.user.organization_auditor_remove
+    audit.user.organization_billing_manager_add
+    audit.user.organization_billing_manager_remove
+    audit.user.organization_manager_add
+    audit.user.organization_manager_remove
+    audit.user.organization_user_add
+    audit.user.organization_user_remove
 
 
 
-##  Events for binding and unbinding a service instance to an app
-{: #rc_bind}
 
-The following table lists the actions that generate an event:
+    Some fields do not follow AT guidance like:
 
-| Action                         | Description |
-|--------------------------------|---------|
-| `service_name.binding.create` | An event is generated when you bind a service instance to an application. |
-| `service_name.binding.delete` | An event is generated when you unbind a service instance from an application. |
-{: caption="Table 4. Actions that generate events" caption-side="top"} 
+    target.id which is not a fully defined crn
+    CF does not know the concept of CRNs. In order to make that happen, we would need to compute the CRN based on the ID we have and the type of event, its a different id and a different format for the CRN.
+    Severity field does not contain values per the guidelines
+    According to the internal activity tracker documentation the severity field should contain the values : "Normal", "Warning" and "Crititcal". CF does not provide these informations. Right now the field contains the hardcoded value "INFO"
+
+    Create a service instance is missing information on the organization:
+    Cloudfoundry does provide org and space guid in the events table. Eventforwarder reads given information and has it available but does not forward the given information. It would be super easy to add the values in the meta-data in at-events
+
+
+
+
+
+
+
+
+-	Renaming a service instance is missing the original name
+Update information on old value is not included. Only the new value is included.
+o	 
+o	State reports if the application has been stopped or started. When it is restarted, you get 2 events, one reporting the stop, and the other one reporting the start.
+o	Name reports the new name of the CF app. The CF app ID does not change.To get the CF app GUID:
+ibmcloud cf app GetStartedJava-demo –guid
+If you search by target.id:5feaa322-0a48-4a64-ba41-236f861e489c, you can get all the activity in the account for that CF app
+ 
+
+-	Some events like audit.user.space_add_auditor are missing information on the target.name.
+
+
+
+
 
 
 
 ## Where to look for the events
-{: #rc_ui}
+{: #cf_ui}
 
 Events are available in the **Frankfurt (eu-de)** region. 
 
@@ -98,7 +110,7 @@ To view these events, you must [provision an instance](/docs/services/Activity-T
 
 
 ## Analyzing events
-{: #rc_analyze}
+{: #cf_analyze}
 
 **Action: service_name.instance.delete**
 
@@ -115,6 +127,3 @@ Apr 30 09:41:20 IAM Access Management: delete policy -failure
 Apr 30 09:41:20 IAM Access Management: delete policy -failure
 ```
 {: screen}
-
-
-

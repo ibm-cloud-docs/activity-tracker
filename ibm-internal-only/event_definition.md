@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-05-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -86,9 +86,6 @@ Following is a sample event that includes the fields that are required. You can 
     "logSourceCRN": "crn:v1:bluemix:public:iam-groups:global:a/7131c65c6ad70bdc209bb564997a5f1c:::",
     "saveServiceCopy": true,
 
-    // id is optional
-    "id": "916faca9-4644-41ce-9e7c-b40a04738a16",
-
     "observer": {
         "name": "ActivityTracker"
     },
@@ -96,13 +93,12 @@ Following is a sample event that includes the fields that are required. You can 
     // requestData is required for events that modify resources in the IBM Cloud and to add info that clarifies the action on an audit
     "requestData": {
         // This object is defined by the service
-        // ResourceGroupID is optional
         "resourceGroupId": "xxxx",
-        // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
         "updateType": "xxxx",
         "initialValue": "xxxxx",
         "newValue": "xxxxxx",
         "reasonForFailure": "xxxxxx",
+        "requestId": "xxxxxxxxx-xxxx-xxxx-xxxxxxxxxxx"
         "platformSource" : "Watson xxxxx"
     },
 
@@ -117,7 +113,10 @@ Following is a sample event that includes the fields that are required. You can 
     },
     "dataEvent": false,
 
-    // Unique ID that is used to correlate events across multiple services
+    // id is optional - use it to correlate events within your service
+    "id": "916faca9-4644-41ce-9e7c-b40a04738a16",
+
+    // Unique ID that is used to correlate events across multiple services in IBM Cloud
     "correlationId": "xxxxxxxxxxxxxx"
 
 }
@@ -146,7 +145,7 @@ To engage the AT team to review your service's AT event prior to One Cloud badgi
 
 
 
-## Event fields provided by the service to comply with AT guidelines
+## Required event fields provided by the service to comply with AT guidelines
 {: #mandatory}
 
 
@@ -178,9 +177,8 @@ Where
 
 * `action` defines the task requested by the user.  
 
-    Valid actions are: `add`, `bulkdelete`, `create`, `read`, `update`,`delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`
-
-    Not valid actions are: `info`, `unknown`
+    Valid actions are: `add`, `bulkdelete`, `create`, `read`, `update`,`delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`, `ack-delete`, `ack-restore`, `ack-disable`, `ack-enable`, `ack-rotate`, `edit`, `publish`, `authorize`
+, `publish`    Not valid actions are: `info`, `unknown`
 
     More values will be added as needed.
 
@@ -190,53 +188,26 @@ Where
 **Use a dash `–` to separate complex objectTypes to make it more readable to the users.**
 {: important}
 
-The following table shows some actions and sample events:
+**Use the action type `create` when you create a new resource in your service instance. Use the action type `add` when you add an existing resource to your service instance.**
+{: important}
 
-| Action      | Sample     |
-|-------------|------------|
-| `add`       | `containers-kubernetes.usersubnet.add` |
-| `allow`     | |
-| `attach`    | `global-search-tagging.tag.attach`  |
-| `authenticate` | |
-| `backup`    | |
-| `capture`   | |
-| `configure` | |
-| `connect`   | `mobile-foundation.server-db.connect` |
-| `create`    | `containers-kubernetes.alb.create` |
-| `delete`    | `cloudcerts.certificate.delete` |
-| `deny`      | |
-| `deploy`    | |
-| `detach`    | `global-search-tagging.tag.detach`  |
-| `disable`   | |
-| `enable`    | |
-| `evaluate`  | |
-| `export`    | `toolchain.pipeline-job-execution.export`|
-| `import`    | `cloudcerts.certificate.import` |
-| `inspect`   | `container-registry.image.inspect`   |
-| `list`      | `cloudcerts.certificates.list` </br>`container-registry.image.list` |
-| `monitor`   | |
-| `notify`    | |
-| `pull`      | `container-registry.image.pull` |
-| `push`      | `container-registry.image.push` |
-| `read`      | `cloudcerts.certificates.read` </br> `kms.policies.read`|
-| `receive`   | |
-| `reimport`  | `cloudcerts.certificate.reimport` |
-| `remove`    | |
-| `renew`     | |
-| `restore`   | `<service_id>.backup.restore` |
-| `revoke`    | |
-| `rewrap`    | `kms.secrets.rewrap`  |
-| `scale`     | `<service_id>.resources.scale`       |
-| `search`    | `cloudcerts.certificates-metadata.search` |
-| `send`      | |
-| `set-on`    | |
-| `set-off`   | |
-| `start`     | |
-| `stop`      | |
-| `test`      | `cloudcerts.notification-channel.test` |
-| `undeploy`  | |
-| `update`    | `containers-kubernetes.logging-config.update` |
-{: caption="Table 1. Actions and samples" caption-side="top"}
+**Use the action type `read` for events that report a viewing request on 1 resource (Get).** 
+{: important}
+
+**Use the action type `list` for events that report a user's request to view all resources for a type of a resource in your service.**
+{: important}
+
+
+
+
+### correlationId (string)
+{: #correlationId}
+
+Use this field to specify the unique GUID that a user can use to correlate events across multiple services in IBM Cloud.
+{: note}
+
+For example, there are specific use cases where the field must be set:
+* [Integration with Key Protect (KP)](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_use_cases#kp-hyperwarp)
 
 
 ### dataEvent (boolean)
@@ -248,7 +219,7 @@ This field specifies the type of event, whether it is a management event or a da
 * For a `management event`, set this field to **false**.
 * For a `data event`, set this field to **true**.
 
-[Learn more](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-ibm_faq#types-of-events).
+[Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-ibm_faq#types-of-events).
 
 
 
@@ -304,11 +275,13 @@ ID of the initiator of the action.
 
 * When the request includes an IAM  token, set this value to the **access_token.iam_id** field value that is available in the IAM token that your service gets to run the action.
 * For Watson services that get the initiator information through the Watson Gateway header, set this value to the **x-watson-userinfo** &gt; **bluemix-subject**.
-* For actions (events)) that are published to Hyperwarp by an IBM Cloud service, and subscribed by an IBM Cloud service, set this value as follows:
+* For actions (events) that are published to Hyperwarp by an IBM Cloud service, and subscribed by an IBM Cloud service, set this value as follows:
 
-    Publisher service: Set this field to the user or service ID that requests the action: **access_token.iam_id**. 
+    Publisher service: Set this field to the IBMid or service ID that requests the action: **access_token.iam_id**. 
 
-    Subscriber service:  Set this field to the **publisher**.
+    Subscriber service:  Set this field with the service ID value in the `publisher` field
+
+* For actions between services, set this field to the **crnToken.iam_id** field value that is available in the CRN token.
 
 
 | Who is the initiator                       | Value                                                                   | Example          |
@@ -320,7 +293,8 @@ ID of the initiator of the action.
 | `Action triggered via Hyperwarp`           | Publisher service: `access_token.iam_id`  </br>Subscriber service: `publisher`  | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
 | `Watson service - initiator is a user`     | `bluemix-subject`                                                       | `IBMid-xxxxxxxx` |
 | `Watson service - initiator is a service ID` | `bluemix-subject`                                                     | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
-| `No initiator - Action triggered by service` `(1)`  | Leave empty                                                    | `` | 
+| `No initiator - Action triggered by own service` `(1)`  | Leave empty                                                    | `` | 
+| `IBM Cloud service service to service request`      | `crnToken.iam_id`            | `crn-crn:v1:bluemix:public:cloud-object-storage:global:a/xxxxxxxx:69002255-e226-424e-b6c7-23c887fdb8bf::` |
 {: caption="Table 2. Guidance setting initiator.id" caption-side="top"}
 
 `(1)` The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
@@ -339,6 +313,7 @@ Username of the user that initiated the action.
 
     Subscriber service:  Set this field to the **event_properties.publisher_name**.
 
+* For actions between services, set this field to **IBM**. 
 
 | Who is the initiator                                                                 | Value                                   | Example          |
 |--------------------------------------------------------------------------------------|-----------------------------------------|------------------|
@@ -349,7 +324,8 @@ Username of the user that initiated the action.
 | `Action triggered via Hyperwarp`                                                     | `event_properties.publisher_name`       | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
 | `Watson service - initiator is a user`                                               | `bluemix-iamid`                         | `IBMid-xxxxxxxx` |
 | `Watson service - initiator is a service ID`                                         | `bluemix-iamid`                         | `iam-ServiceId-769b5c65-0165-4c89-847d-9660b1632e14` |
-| `No initiator - Action triggered by service` `(1)`                                   | `IBM`                                   | `IBM`            |
+| `No initiator - Action triggered by own service` `(1)`                               | `IBM`                                   | `IBM`            |
+| `IBM Cloud service (service to service request)`                                     |  `crnToken.sub` | `crn-crn:v1:bluemix:public:cloud-object-storage:global:a/xxxxxxxx:69002255-e226-424e-b6c7-23c887fdb8bf::` |
 {: caption="Table 3. Guidance setting initiator.name" caption-side="top"}
 
 `(1)` The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
@@ -375,7 +351,7 @@ Valid values are: `service/security/account/user`, `service/security/account/ser
 | `Watson service - initiator is a user`                                               | `service/security/account/user`         |
 | `Watson service - initiator is a service ID`                                         | `service/security/account/serviceid`    |
 | `No initiator - Action triggered by service` `(1)`                                   | `service/security/account/service`      |
-| `Registered IAM UI or service` `(2)`                                                 | `service/security/clientid`             |
+| `Registered IAM UI or service to service request` `(2)`                              | `service/security/clientid`             |
 {: caption="Table 4. Guidance setting initiator.tyepURI" caption-side="top"}
 
 `(1)` The action does not have an initiator because the event that is generated reports an action on a customer resource and this action is executed by the service as a scheduled job.
@@ -390,7 +366,7 @@ Valid values are: `service/security/account/user`, `service/security/account/ser
 This field defines the type of credential that is used by the initiator to run the action.
 {: note}
 
-Valid values are: `token`, `user`, `apikey`, `certificate`
+Valid values are: `token`, `user`, `apikey`, `certificate`, `public-access`
 
 Guidance setting the value of this field:
 
@@ -421,18 +397,35 @@ xxx.xxx.xxx.xxx
 
 **For services that run on Kubernetes:**
 
-Services running Kubernetes on classic should update to [v2 loadbalancer](https://cloud.ibm.com/docs/containers?topic=containers-loadbalancer-v2) when enabling source IP preservation.  v1 of load balancer may cause outages with IP preservation enabled during rolling updates to the load balancer and should NOT be used without careful consideration.  While the v2 load balancer is publicly listed as beta it is approved for production use and is only beta due to a manual SL step that is required.  See [docs](https://cloud.ibm.com/docs/containers?topic=containers-loadbalancer-about) for differences between v1 and v2.
-{: important}
-
 For services running on Kubernetes on VPC (available 2Q 2020) source IP preservation will not work until 2H 2020. 
 {: note}
 
-Refer to [docs](https://cloud.ibm.com/docs/containers?topic=containers-loadbalancer-v2) for details on the following steps 
+Services running Kubernetes on classic should update to [v2 loadbalancer](https://cloud.ibm.com/docs/containers?topic=containers-loadbalancer-v2) when enabling source IP preservation.  v1 of load balancer may cause outages with IP preservation enabled during rolling updates to the load balancer and should NOT be used without careful consideration.  While the v2 load balancer is publicly listed as beta it is approved for production use and is only beta due to a manual SL step that is required.  See [docs](https://cloud.ibm.com/docs/containers?topic=containers-loadbalancer-about) for differences between v1 and v2.
+{: important}
+
+To be able to get the originating IP address, complete the following steps to enable IP preservation to all enabled public or private ALBs:
+1. Enable source IP preservation. [Learn more](/docs/containers?topic=containers-ingress-settings#preserve_source_ip).
+2. Obtain the IP from the `x-forwarded-for` property in the header. 
+
+Refer to [docs](https://cloud.ibm.com/docs/containers?topic=containers-loadbalancer-v2) for details on the following steps: 
 1. Check which version of load balancers are in use 
 2. Create an upgrade and test schedule for migration from v1 to v2 load balancers 
 3. Upgrade to v2 loadbalancers 
 4. Scale out v2 loadbalancers for high availability across zones 
 5. Obtain the IP from the `x-forwarded-for` property in the header
+
+
+`Services running Kubernetes on classic should update to v2 loadbalancer when enabling source IP preservation.`
+{: important}
+
+V1 of the load balancer may cause outages with IP preservation enabled during rolling updates to the load balancer and should **NOT** be used without careful consideration.
+While the v2 load balancer is publicly listed as beta it is approved for production use and is only beta due to a manual SL step that is required. 
+Services in classic infrastructure can swap to v2.  There is a script you can use that will delete your v1 LBs and replace them with v2. There will be a few seconds downtime if you do that. 
+
+If you are running your cluster in an MZR (multiple zones), the LB won't work across zones unless you create a customer ticket to allow capacity aggregation. [Learn more](/docs/containers?topic=containers-loadbalancer-v2#ipvs_provision).
+
+For questions implementing the solution, ask in the slack channel `#armada-users`.
+
 
 ### logSourceCRN  (string)
 {: #logSourceCRN}
@@ -537,20 +530,96 @@ IAM Identity Service: login user-apikey containers-kubernetes-key
 Add any information here that will enhance the user experience going through ther audit trail of your service events.  
 {: note}
 
+**There is a 16k max field limit in LogDNA. Anything bigger than 16k is truncated and lost when the event is consumed by LogDNA.**
+{: important}
+
 * Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
 * Must include information that is required to clarify the action. For example, an event with action create might require information on the Software verison. An update event requires information on the initial value and final value. There may be cases where data is sensitive or too long, in this situation, add information about the type of update
 * Must be added as value pairs of information.
 * Must be formatted in camel case style.
 
+When you add fields, notice that the maximum size of an AT event is 16K.
+{: important}
+
 Some fields:
-* [Optional] `resourceGroupId`: Set to the CRN of the resource group
+* [`Required when event reports a failure`] `reasonForFailure`:  Include additional info as to why the action has failed.
+* [Required] `resourceGroupId`: Set to the CRN of the resource group
+* [Optional] `serviceInstanceId`: Set to the service instance ID (not the CRN value)
+* [Optional] `accountID`: Set to the account ID 
+* [Optional] `resourceType`: Type of resource
+* [Optional] `requestId`: The value of this field includes a UUID that can be used to identify a request in IBM Cloud. Customers should include this value in a support ticket.
 * [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
 * [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
+    
+    When the data is PII or sensitive data, consider adding a reference ID so the user can easily identify it. Notice that you should not include in this field data that is sensitive or PII. 
+
+    When the data is a script or file, consider adding the object name and version.
+
+    If you cannot reference by ID, version, or any other way data that is either too big in size or includes sensitive data, do not include this field. Document in your topic the reason why this information is not included so customers are aware as to why is not available.
+
 * [`Required for update action`] `newValue`: Add the new value requested in the action
+
+    When the data is PII or sensitive data, consider adding a reference ID so the user can easily identify it. Notice that you should not include in this field data that is sensitive or PII. 
+
+    When the data is a script or file, consider adding the object name and version.
+
+    If you cannot reference by ID, version, or any other way data that is either too big in size or includes sensitive data, do not include this field. Document in your topic the reason why this information is not included so customers are aware as to why is not available.
+
 * [`Required for Watson services`] `platformSource`: Add the UI catalog name of your service, for example, `Watson Discovery` This helps users identify your events quickly by your service, since the platform_source value is shared across all Watson services.
 * [Optional] `customizationId`
 * [Optional] `environmentId`
-* [Optional] `reasonForFailure`:  Include additional info as to why the action has failed.
+
+
+
+**For update actions where only 1 change** is reported through the event, you can add the fields required as follows:
+
+```
+"requestData": {
+        // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
+        "updateType": "xxxx",
+        "initialValue": "xxxxx",
+        "newValue": "xxxxxx"
+    },
+```
+{: codeblock}
+
+**For update actions where a small number of changes** are reported through the event, you can add the fields as follows:
+
+```
+"requestData": {
+        // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
+        "update": [{"updateType": "xxxx",
+        "initialValue": "xxxxx",
+        "newValue": "xxxxxx"}]
+    },
+```
+{: codeblock}
+
+**For update actions where a large number of changes** are reported through the event, consider the following approach:
+1. Create 1 Activity Tracker event (parent event) that reports the main update action and include in requestData information about the number of changes that are affected by that user request. Set the field `totalNumberChanges`. Set also the `id` field. The `id` field is used to correlate this event with the individual events that report detailed information on each change.
+
+    ```
+    "id": "xxxxxx",
+    "requestData": {
+        "totalNumberChanges": xx,
+    },
+    ```
+    {: codeblock}
+
+2. Generate 1 Activity Tracker event per change. Set the `id` field to the value set in the parent event. Add in requestData the required fields for updates:
+
+    ```
+    "id": "xxxxx",
+    "requestData": {
+        // updateType, initialValue, newValue are REQUIRED when the action of the event is UPDATE or the event reports on a change to the object
+        "updateType": "xxxx",
+        "initialValue": "xxxxx",
+        "newValue": "xxxxxx"
+    },
+    ```
+    {: codeblock}
+
+
 
 
 ### responseData (JSON)
@@ -559,10 +628,16 @@ Some fields:
 Add any information here that will enhance the user experience going through ther audit trail of your service events. 
 {: note}
 
+**There is a 16k max field limit in LogDNA. Anything bigger than 16k is truncated and lost when the event is consumed by LogDNA.**
+{: important}
+
 * Must be formatted as JSON.  Not stringified JSON, as was required by legacy AT
 * Must include information that is required to clarify the action.
 * Must be added as value pairs of information.
 * Must be formatted in camel case style.
+
+When you add fields, notice that the maximum size of an AT event is 16K.
+{: important}
 
 Some fields:
 * [Optional] `targetAddress.type`: Set to the type of endpoint. Valid values are: `public` and `private`, in lowercase.
@@ -658,10 +733,13 @@ The default value is *true* but the field must be set explicitly.
 ### severity (string)
 {: #severity}
 
-This field defines the level of threat an action may have on the Cloud.
+This field defines the **level of threat** an action may have on the Cloud. This field allows a user to filter events by severity so that they can monitor the serious things that are happening in their account, and hide what is more likely to be background noise.
 {: note}
 
 Valid values are: `normal`, `warning`, and `critical`
+
+The value of the severity field is intended to be the same, regardless of the outcome (success or failure). The severity field indicates the inherent `threat level` of the action, that is, how much damage it could do if the request completes successfully as a mistake or a malicious action. The word `severity` is often associated with an error, but CADF slant is slightly different. 
+
 
 * Set to **normal** for routine actions in the Cloud. 
 
@@ -676,6 +754,8 @@ Valid values are: `normal`, `warning`, and `critical`
     For example: adding or removing proviledges to a user, deleting a security key, deleting logs, running an action against a resource where the user does not have permissions to work with, etc.
 
 For example, if the action is:
+* `read`: Set this value to `normal`
+* `list`: Set this value to `normal`
 * `create`: Set the value to `normal` 
 * `update`: Set the value to `warning`
 * `delete`: Set the value to `critical`
@@ -750,11 +830,18 @@ Set this value to the human readable name of the cloud resource on which the act
 {: note}
 
 The value is a human readable name of the service, service instance or service sub-resource that matches the CRN specified on the field target.id 	
+ 
+* When the action requested is on the instance of your service ( for example, a user requests to rename an instance), the name of the service should match the name as indicated under the `Name` column in the resource list. 
 
-For example, 
-* When the action requested is on the instance of your service ( rename an instance), the name of the service must match the name as indicated under the **Display Name** column in the [global catalog](https://globalcatalog.cloud.ibm.com/search?q=).
+    If you cannot provide the name of the instance because getting that information can impact performance and a re-architecture of your service, set this field to the `objectType` value that is part of the action field. For example, if the action is `dns-svc.zones.read`,  set target.name to `zones`.
+
 * If the action requested is on a certificate, set the value to the name of the certificate that a user could see in the Cloud UI.
+
 * If you have resources that do not have a name, set this value to  `<resource-type>-<ID of the resource modified>` For example, `model-xxxxx`
+
+* When the action is **list**, set `target.name` to `*`.
+
+
 
 ### target.typeURI (string)
 {: #target.typeURI}
@@ -801,7 +888,7 @@ For example, check out the following samples:
 ### id (string)
 {: #id}
 
-Use this field to correlate events.
+Use this field to correlate AT events within your service.
 {: note}
 
 This field is optional.
@@ -870,7 +957,7 @@ The events that worked on legacy Activity will continue to work on the new Activ
 However, services should consider the following improvements:
 
 * `requestData`/`responseData` can be any JSON object, not just stringified JSON. A JSON object is now preferred over stringified JSON, for better parsing and searching. All events should include `requestData` and `responseData`, even if empty.
-* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` defaults to `false`, but events should specify `false` explicitly. Refer [here](https://test.cloud.ibm.com/docs/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=logdnaat-ibm_event_fields#optional) for more info.
+* The `dataEvent` flag is supported. `true` indicates a data event. `dataEvent` defaults to `false`, but events should specify `false` explicitly. Refer [here](https://test.cloud.ibm.com/docs/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-ibm_event_fields#optional) for more info.
 * The `observer` fields are no longer discouraged, and `observer.name` should be set to "ActivityTracker". `observer.name` may be used in the future to support sending events to AT via stdout.
 * Events should have the CADF fields at the top level, and no longer encapsulate the CADF fields in the `payload` structure. When an event does have `payload`, LogDNA removes it and promotes its internal fields to the top level.
 * The `meta` object is now ignored. Services should remove it.
@@ -887,7 +974,8 @@ The following table outlines when the AT guidelines change to adapt to new requi
 | Field                              | Required                                          | Field required  | Guideline changes               |
 |------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
 | `action`                           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
-| `dataEvent`                        |                                                   |  December 2019  |                                 |
+| `correlationId`                    |                                                   |                 | March 2020 - added this new field to guidelines  (use this field to correlate across multiple services in the IBM Cloud - [Required for integration use cases](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_use_cases)  | 
+| `dataEvent`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  | December 2019 - added this new field to guidelines    |
 | `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
 | `id`                               |                                                   |                 |                                 | 
 | `logSourceCRN` `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      | June 2019 - when changes to migrate to LogDNA were requested                                 |
@@ -901,8 +989,8 @@ The following table outlines when the AT guidelines change to adapt to new requi
 | `outcome`                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `reason.reasonCode`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check 403 is being generated to report on unauthorized access to run an action |
 | `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |  December 2019 - check that it is populated for failure events </br>January 2020 - required for all outcomes |
-| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check and request that update events all include information about the update (3 new subfields added to add consistency in the user experience) |
-| `responseData` `[*]`               |                                                   |                                                   |
+| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - update events must include information about the update (3 new subfields added to add consistency in the user experience) and should be JSON formatted </br>May 2020:  2 fields (resourceGroupId and reasonForFailure) have changed from optional to required |
+| `responseData` `[*]`               |                                                   |  January 2019   |  December 2019 - Check that is JSON formatted |
 | `saveServiceCopy`  `[*]`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |  June 2019 - when changes to migrate to LogDNA were requested |
 | `severity`                         | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `target.id`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
@@ -914,9 +1002,15 @@ The following table outlines when the AT guidelines change to adapt to new requi
 
 `[*]` These fields are extensions of the CADF specification.
 
-Implementation change control:
+**Changes to guidelines** - Implementation change control:
 
-| Detail                             | Required                                          | Proposed        | Agreed                          |
-|------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
-| `Services do not need to change the UI to enable data events.` | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `17/1/2020` | SH meeting `24/1/2020` |
+| Detail                             | Required                                          | Date             |
+|------------------------------------|---------------------------------------------------|-----------------|
+| `Services do not need to change the UI to enable data events.` | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `24/1/2020` |
+| requestData fields: `reasonForFailure` and `resourceGroupId` are changed from optional to required.    | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `14/5/2020` |
 {: caption="Table 5. Change control for implementation changes" caption-side="top"}
+
+A service has 3 months, from the date listed on the table, to implement changes and be compliant with AT guidelines.
+{: important}
+
+

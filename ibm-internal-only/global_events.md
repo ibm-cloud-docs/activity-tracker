@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, global events
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -61,7 +61,7 @@ These yaml files are derived from http://assets.eu-de.logging.cloud.ibm.com/clie
 2. The **logging** agent will pick up all of the usual logs. But we want it to no longer pick up the AT events, so we add a `LOGDNA_EXCLUDE` to the logging yaml in the `env` section:
   ```
          - name: LOGDNA_EXCLUDE
-           value: /var/log/at**
+           value: /var/log/at/**
   ```
 3. Conversely, the **Activity Tracker** agent needs to only pick up the AT events and ignore the logs, so we make these changes to the AT yaml:
   ```
@@ -90,6 +90,8 @@ These yaml files are derived from http://assets.eu-de.logging.cloud.ibm.com/clie
           value: logs.private.global.logging.cloud.ibm.com
   ```
   Most services should use the private global endpoints. To use the public global endpoints instead, set the values to `api.global.logging.cloud.ibm.com` and `logs.global.logging.cloud.ibm.com`.
+  
+One more thing: If your current yaml uses any custom tags in `LOGDNA_TAGS`, be sure to copy them into both of the new yaml files.
 
 That's it. Here's a [comparison of the two files](https://github.ibm.com/rbertram/scratch/blob/master/logdna-doc-files/yaml-compare.png).
 
@@ -101,3 +103,27 @@ If your code is sending data directly to LogDNA via the [ingestion API](https://
 
 1. Logs go to `logs.private.eu-de.logging.cloud.ibm.com/supertenant/logs/ingest`. Replace `eu-de` with whatever location your code is logging in. AT regional events also go to this endpoint.
 2. AT global events go to `logs.private.global.logging.cloud.ibm.com/supertenant/logs/ingest`.
+
+## Super Tenant Sender (STS) in Dallas
+{: #sts_dallas}
+
+Your service will need an STS in Dallas (`us-south`), even if you don't use it for anything. LogDNA needs it for storing a Dallas copy of the ingestion key. It will use the STS to authenticate your AT events before storing them in the users' Dallas AT instances.
+
+1. Does your service already have an STS in Dallas? If yes, skip to 2.
+
+    Otherwise, create an STS in your service's account in the `us-south` region. The full instructions are [here](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only?topic=Activity-Tracker-with-LogDNA-enable_st#STS). The summary is that you will issue a command like the following:
+    
+    ```
+    ibmcloud resource service-instance-create myService-STS logdna 7-day us-south \
+       -p '{"service_supertenant": "name-of-your-service" , "provision_key": "123"}'
+    ```
+    {: codeblock}
+    
+    - Use a 7-day plan, or whatever plan you want. No data will be saved in this STS unless you save it yourself.
+    - Specify `us-south` in the command.
+    - Use the same `name-of-your-service` as you did in `eu-de`. This is the CRN service-name of your service, i.e. its programmatic name in the catalog. You can look it up [here](http://resource-catalog.bluemix.net/search) in the Name column. For example, the service-name for Event Streams is `messagehub`. 
+    - Get the latest provision key. It rotates in the middle of Jan, Apr, Jul, and Oct.
+    
+2. Get the LogDNA UI URL of your Dallas STS, and copy it to the boxnote provided by Randy Bertram.
+
+That's all! When LogDNA enables global routing, a copy of your `eu-de` ingestion key will magically appear in the API keys of your `us-south` STS. Information on how to rotate the shared ingestion key will be available soon.

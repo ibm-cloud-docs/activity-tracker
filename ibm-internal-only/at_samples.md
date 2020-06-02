@@ -6,7 +6,7 @@ lastupdated: "2020-03-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -32,6 +32,8 @@ This page shows samples of different AT type of actions:
 {: #list}
 
 Sample when a user lists resources that are available in a service instance, for example, see all certificates in Certificate Manager:
+
+
 
 
 
@@ -84,7 +86,44 @@ Sample when a user lists resources that are available in a service instance, for
 {: #create}
 
 ```
-
+{
+    "logSourceCRN": "crn:v1:bluemix:public:cloud-object-storage:global:a/xxxxxxxxxxxxxxxxxxxxxxx:69002255-e226-424e-b6c7-23c887fdb8bf::",
+    "dataEvent": "true",
+    "saveServiceCopy": true,
+    "initiator": {
+        "id": "iam-ServiceId-2a456728-0cfc-4ece-a061-26d7be298645",
+        "name": "ServiceId-2a456728-0cfc-4ece-a061-26d7be298645",
+        "typeURI": "service/security/account/service-id",
+        "host": {
+            "address": "10.123.77.122",
+            "agent": "ibm-cos-sdk-nodejs/1.4.3 linux/v10.15.3 callback"
+        }
+    },
+    "target": {
+        "name": "3a941d8f1f.2020-03-07.70.json.gz",
+        "id": "crn:v1:bluemix:public:cloud-object-storage:global:a/xxxxxxxxxxxxxxxxxxxxxxx:69002255-e226-424e-b6c7-23c887fdb8bf:bucket:at-frankfurt",
+        "typeURI": "cloud-object-storage/object",
+        "host": {
+            "address": "at-frankfurt.s3.private.eu-de.cloud-object-storage.appdomain.cloud"
+        }
+    },
+    "action": "cloud-object-storage.object.create",
+    "outcome": "success",
+    "reason": {
+        "reasonCode": "200",
+        "reasonType": "OK"
+    },
+    "severity": "normal",
+    "eventTime": "2020-03-08T12:22:01+00:00",
+    "responseData": {
+        "serviceInstanceId": "69002255-e226-424e-b6c7-23c887fdb8bf",
+        "bucketLocation": "eu-de",
+        "requestId": "9aa6b5a9-fc03-42bb-9794-2a1241696545",
+        "objectLengthInBytes": "22319",
+        "objectLifecycle": {}
+    },
+    "message": "Cloud Object Storage: create object 3a941d8f1f.2020-03-07.70.json.gz in bucket at-frankfurt"
+}
 ```
 {: screen}
 

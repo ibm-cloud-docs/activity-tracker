@@ -6,7 +6,7 @@ lastupdated: "2019-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, cloud foundry
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 

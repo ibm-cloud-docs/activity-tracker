@@ -6,7 +6,7 @@ lastupdated: "2019-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, iam, manage user access, viewer
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
@@ -79,7 +79,7 @@ When you define the policy, you need to select a platform role and a service rol
 To manage the {{site.data.keyword.at_full_notm}} service, a user needs the following roles:
 * Platform role: **Viewer**. 
 * Service role: **Reader**. 
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-iam#iam).
+[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#iam).
 
 
 

@@ -6,7 +6,7 @@ lastupdated: "2020-03-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, faq
 
-subcollection: logdnaat
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 
