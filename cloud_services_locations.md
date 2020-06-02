@@ -448,7 +448,7 @@ hub regions. Plus San Jose, and Seoul.
 
 | Global service                                 | Location |
 |------------------------------------------------|--------------------|
-| {{site.data.keyword.dns_full}} (currently in Beta release)  | `Events are available through the Activity Tracker Dallas (us-south) instance` |  
+| {{site.data.keyword.dns_full}}   | `Events are available through the Activity Tracker Dallas (us-south) instance` |  
 | {{site.data.keyword.cis_full}}  (CIS)          | `Events are available through the Activity Tracker Dallas (us-south) instance` |              
 {: caption="Network services that are global" caption-side="top"}
 
