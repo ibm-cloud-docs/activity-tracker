@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-12"
+lastupdated: "2020-06-02"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
@@ -405,8 +405,6 @@ The following tables list the locations where automatic collection of database s
 ## Platform integration services
 {: #cloud_services_locations_integration}
 
-hub regions. Plus San Jose, and Seoul.
-
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
 | {{site.data.keyword.messagehub}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
@@ -448,42 +446,11 @@ hub regions. Plus San Jose, and Seoul.
 
 | Global service                                 | Location |
 |------------------------------------------------|--------------------|
-| {{site.data.keyword.dns_full}} (currently in Beta release)  | `Events are available through the Activity Tracker Dallas (us-south) instance` |  
-| {{site.data.keyword.cis_full}}  (CIS)          | `Events are available through the Activity Tracker Dallas (us-south) instance` |              
+| {{site.data.keyword.dns_full}}   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
+| {{site.data.keyword.BluDirectLink}} | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
+| {{site.data.keyword.cis_full}}  (CIS)          | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
+| {{site.data.keyword.tg_full}} | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |              
 {: caption="Network services that are global" caption-side="top"}
-
-
-
-| Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
-|------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.BluDirectLink}} Dedicated solution | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |      
-{: caption="Network services integration in America's locations" caption-side="top"}
-{: #cs_network-table-1}
-{: tab-title="America"}
-{: tab-group="cs_network"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                                 | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|---------------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.BluDirectLink}} Dedicated solution  |  `NO`            |   `NO`         |
-{: caption="Network services integration in AP locations" caption-side="top"}
-{: #cs_network-table-2}
-{: tab-title="Asia Pacific"}
-{: tab-group="cs_network"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                                |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|--------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.BluDirectLink}} Dedicated solution | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-{: caption="Network services integration in Europe locations" caption-side="top"}
-{: #cs_storage-table-3}
-{: tab-title="Europe"}
-{: tab-group="cs_network"}
-{: class="simple-tab-table"}
-{: row-headers}
-
 
 
 
@@ -611,16 +578,17 @@ The following tables list the locations where automatic collection of security s
 ## VPC infrastructure services
 {: #cloud_services_locations_vpc_infrastructure}
 
-The followinf locations are valid for VPC Gen 1 and VPC Gen 2:
+### VPC Gen 1 (Classic)
+{: #cloud_services_locations_vpc_infrastructure_gen1}
 
 | Service                                | `Dallas (us-south)`                                | `Washington (us-east)`               |
 |----------------------------------------|----------------------------------------------------|--------------------------------------|
-| Storage resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | `NO`   |            
-| Compute resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` |
-| Network resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` |
-| Load Balancer                          | ![Checkmark icon](../../icons/checkmark-icon.svg)  |  `NO` |
-| VPN                                    | `Events are available through the Activity Tracker US-South instance` | `Events are available through the Activity Tracker US-South instance` |
-| Images                                 |     |     |
+| Storage resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)   |            
+| Compute resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| Network resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| Load Balancer                          | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| VPN                                    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| Images                                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
 {: caption="VPC events in America's locations" caption-side="top"}
 {: #cs-vpc-table-1}
 {: tab-title="America"}
@@ -655,6 +623,54 @@ The followinf locations are valid for VPC Gen 1 and VPC Gen 2:
 {: #cs-vpc-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs_vpc"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+### VPC Gen 2
+{: #cloud_services_locations_vpc_infrastructure_gen2}
+
+| Service                                | `Dallas (us-south)`                                | `Washington (us-east)`               |
+|----------------------------------------|----------------------------------------------------|--------------------------------------|
+| Storage resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)   |            
+| Compute resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| Network resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| Load Balancer                          | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| VPN                                    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| Images                                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+{: caption="VPC events in America's locations" caption-side="top"}
+{: #cs-vpc-gen2-table-1}
+{: tab-title="America"}
+{: tab-group="cs_vpc_gen2"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Service                                                         | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
+|-----------------------------------------------------------------|------------------|----------------------------|
+| Storage resources                      |               |  |            
+| Compute resources                      |          |  |            
+| Network resources                      |               |  |            
+| Load Balancer                          |  |  |
+| VPN                                    |        | | 
+| Images                                 |     |     |           
+{: caption="VPC events in AP locations" caption-side="top"}
+{: #cs-vpc-gen2-table-2}
+{: tab-title="Asia Pacific"}
+{: tab-group="cs_vpc_gen2"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
+|---------------------------------------------------------------|---------------------|------------------|
+| Storage resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)   | ![Checkmark icon](../../icons/checkmark-icon.svg) |            
+| Compute resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)               | ![Checkmark icon](../../icons/checkmark-icon.svg) |            
+| Network resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)               | ![Checkmark icon](../../icons/checkmark-icon.svg) |            
+| Load Balancer                          | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| VPN                                    | ![Checkmark icon](../../icons/checkmark-icon.svg)               | ![Checkmark icon](../../icons/checkmark-icon.svg) |   
+| Images                                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg)    |         
+{: caption="VPC events in Europe locations" caption-side="top"}
+{: #cs-vpc-gen2-table-3}
+{: tab-title="Europe"}
+{: tab-group="cs_vpc_gen2"}
 {: class="simple-tab-table"}
 {: row-headers}
 
