@@ -684,9 +684,6 @@ Services are responsible for monitoring that their logs and Activity Tracker eve
 
 A simple solution is to create a **LogDNA absence alert** in your service STS and ATS instances. These alerts can notify you via a variety of methods when the alert condition is met.
 
-As of April 17,2019, the Pager Duty integration does not work in our IBM environment. LogDNA is working on a resolution to this issue.
-{: note}
-
 To create an alert, you must create a view and then attach an alert to it. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
 
 The following example shows how to create an absence alert for a service ATS and trigger a Slack message if no events match the view criteria in 15 minutes.
@@ -863,7 +860,7 @@ spec:
 ### Not on Kubernetes
 {: #nokube}
 
-Our design is optimized for services running in Kubernetes. Listed below are some possible remedies for your service.
+Our design is optimized for services running in Kubernetes. If your service is not running in Kubernetes, below is a list of possible remedies for your service.
 
 #### Migrate your service to Kubernetes
 If you can not do this right now, proceed to other options below.
