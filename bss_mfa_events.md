@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-03"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account events
 
@@ -42,8 +42,8 @@ IBMid MFA for an account requires a time-based one-time passcode in addition to 
 This type of MFA applies to all account resources. 
 
 To configure ID-based MFA for users that log in to your account, you must complete the following steps:
-1. As the account owner or an administrator for the billing service, you can turn it on or off from the **Manage** &gt; **Access (IAM)** &gt; **Settings** page in the {{site.data.keyword.cloud_notm}} console. For more information, see [enable MFA for all users in the account](/docs/iam?topic=iam-enablemfa#enabling).
-2. Each user in the account must [set up TOTP](/docs/iam?topic=iam-enablemfa#enabling).
+1. As the account owner or an administrator for the billing service, turn it on or off from the **Manage** &gt; **Access (IAM)** &gt; **Settings** page in the {{site.data.keyword.cloud_notm}} console. For more information, see [enable MFA for all users in the account](/docs/iam?topic=iam-enablemfa#enabling).
+2. Each user in the account must [set up TOTP](/docs/iam?topic=iam-enablemfa#enabling) to log in to your account.
 
 You get the following events:
 * An event with action **billing.account.update**

@@ -44,10 +44,10 @@ The following table lists the actions that generate an event:
 | `billing.account.subscription.create` | An event is generated when you create a <a href="/docs/account?topic=account-accounts#subscription-account">Subscription account</a>. |
 {: caption="Table 1. Actions that generate account management events" caption-side="top"} 
 
-## Events for managing account settings
-{: #at_events_acc_mgt_acc_set}
+## Events for managing IAM account settings
+{: #at_events_acc_mgt_acc_iam}
 
-The following table lists the actions that generate an event when an account setting that is controlled from the **Manage** &gt; **Access IAM** &gt; **Settings** dashboard is modified.:
+The following table lists the actions that generate an event when an account setting that is controlled from the **Manage** &gt; **Access IAM** &gt; **Settings** dashboard is modified:
 
 | Action                               | Description |
 |--------------------------------------|-------------|
