@@ -45,7 +45,8 @@ To configure ID-based MFA for users that log in to your account, you must comple
 1. As the account owner or an administrator for the billing service, turn it on or off from the **Manage** &gt; **Access (IAM)** &gt; **Settings** page in the {{site.data.keyword.cloud_notm}} console. For more information, see [enable MFA for all users in the account](/docs/iam?topic=iam-enablemfa#enabling).
 2. Each user in the account must [set up TOTP](/docs/iam?topic=iam-enablemfa#enabling) to log in to your account.
 
-You get the following events:
+You get the following events in your account:
+
 * An event with action **billing.account.update**
 
    When you select **None** as the MFA option, you get the following event:
@@ -68,6 +69,9 @@ You get the following events:
     Add info
     ```
     {: screen}
+
+* An event with action **billing.account-mfa.set-on**
+
 
 * An event per user when they set up the TOTP with action **user-management.user-setting.update**.
 

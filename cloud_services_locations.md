@@ -446,10 +446,10 @@ The following tables list the locations where automatic collection of database s
 
 | Global service                                 | Location |
 |------------------------------------------------|--------------------|
-| {{site.data.keyword.dns_full}}   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
-| {{site.data.keyword.BluDirectLink}} | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
+| {{site.data.keyword.dns_full}}                 | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
+| {{site.data.keyword.BluDirectLink}}            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
 | {{site.data.keyword.cis_full}}  (CIS)          | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
-| {{site.data.keyword.tg_full}} | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |              
+| {{site.data.keyword.tg_full}}                  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |              
 {: caption="Network services that are global" caption-side="top"}
 
 
