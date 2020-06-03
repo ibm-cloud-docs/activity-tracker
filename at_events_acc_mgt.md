@@ -113,6 +113,9 @@ The following table lists the actions that generate an event:
 | Action                               | Description |
 |--------------------------------------|-------------|
 | `billing.account.org.create`         | An event is generated when you add an organization to the account. |
+| `billing.account-traits.update`      | An event is generated when an account setting that is controlled from the **Manage** &gt; **Access IAM** &gt; **Settings** dashboard is modified. |
+| `billing.account-mfa.set-on`         | An event is generated when the `Account Login` setting that is controlled from the **Manage** &gt; **Access IAM** &gt; **Settings** dashboard sets on multifactor authentication in the account. |
+| `billing.account-mfa.set-off`        | An event is generated when the `Account Login` setting that is controlled from the **Manage** &gt; **Access IAM** &gt; **Settings** dashboard sets off multifactor authentication in the account.
 {: caption="Table 7. Actions that generate events" caption-side="top"} 
 
 
