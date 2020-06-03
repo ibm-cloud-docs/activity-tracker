@@ -313,49 +313,56 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     For **us-south**, run the following command:
  
     ```
-    wget http://assets.us-south.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.us-south.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
     ```
     {: codeblock}
 
      For **us-east**, run the following command:
  
     ```
-    wget http://assets.us-east.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.us-east.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
     ```
     {: codeblock}
 
     For **eu-de**, run the following command: 
 
     ```
-    wget http://assets.eu-de.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.eu-de.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
     ```
     {: codeblock}
 
     For **eu-gb**, run the following command: 
 
     ```
-    wget http://assets.eu-gb.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.eu-gb.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
     ```
     {: codeblock} 
 
     For **jp-tok**, run the following command: 
 
     ```
-    wget http://assets.jp-tok.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.jp-tok.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
     ```
     {: codeblock}
 
     For **kr-seo**, run the following command: 
 
     ```
-    wget http://assets.kr-seo.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.kr-seo.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
     ```
     {: codeblock}
 
      For **au-syd**, run the following command:
  
     ```
-    wget http://assets.au-syd.logging.test.cloud.ibm.com/clients/logdna-agent-v2-st-private.yaml
+    wget http://assets.au-syd.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
+    ```
+    {: codeblock}
+
+     For **in-che**, run the following command:
+ 
+    ```
+    wget http://assets.in-che.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
     ```
     {: codeblock}
 
@@ -369,14 +376,10 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     ibmcloud cr images --restrict ext/logdna-agent
     ```
     
-    **Temporary**: Remove the namespace section at the top of the file, deleting lines 1-5. This is vital, because otherwise if you delete the agent with this yaml file it will also remove the namespace--uninstalling Sysdig agent and other things.
-    
-    **Temporary**: Globally change `namespace: logdna-agent` to `namespace: ibm-observe` in 6 places.
+    **Temporary**: Globally change `ibm-observer` to `ibm-observe` in six places.
     
     **Temporary** Globally change `test.cloud.` to `cloud.` in two places.
 
-    **Temporary**: Need to fix an indentation problem in `spec: template: spec: containers: name: env:`. Starting with `- name: LDLOGPATH`, six lines need to be indented by 2.  (Different yaml files have different lines that need to be indented/unindented, so verify with `kubectl create --dry-run --validate -f logdna-agent-v2-st-private.yaml`.)
-    
     Now that the yaml file has been modified, install the agent with this command:
     
     ```
@@ -681,9 +684,6 @@ Services are responsible for monitoring that their logs and Activity Tracker eve
 
 A simple solution is to create a **LogDNA absence alert** in your service STS and ATS instances. These alerts can notify you via a variety of methods when the alert condition is met.
 
-As of April 17,2019, the Pager Duty integration does not work in our IBM environment. LogDNA is working on a resolution to this issue.
-{: note}
-
 To create an alert, you must create a view and then attach an alert to it. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
 
 The following example shows how to create an absence alert for a service ATS and trigger a Slack message if no events match the view criteria in 15 minutes.
@@ -860,7 +860,7 @@ spec:
 ### Not on Kubernetes
 {: #nokube}
 
-Our design is optimized for services running in Kubernetes. Listed below are some possible remedies for your service.
+Our design is optimized for services running in Kubernetes. If your service is not running in Kubernetes, below is a list of possible remedies for your service.
 
 #### Migrate your service to Kubernetes
 If you can not do this right now, proceed to other options below.
@@ -1062,7 +1062,7 @@ Typically, LogDNA customers delete the old agent and then install the new one. T
 
 **Migrating from version 2.0 or earlier to 2.1.x**
 
-1. Make sure your Kubernetes cluster must be version 1.18 or later.
+1. Make sure your Kubernetes cluster is version 1.18 or later.
 2. Follow the instructions in [Step 3 above](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#agent) to install the new agent.
 3. Delete the old agent by running: `kubectl delete daemonset.apps/logdna-agent`. This assumes you have not changed the namespace in the context to other than "default".
 4. Delete the old copy of the secret in the default namespace, by running: `kubectl delete secret logdna-agent-key`
@@ -1070,4 +1070,4 @@ Typically, LogDNA customers delete the old agent and then install the new one. T
 **Migrating from version 2.1.x to 2.1.y**
 
 1. Follow the instructions in [Step 3 above](/docs/services/Activity-Tracker-with-LogDNA/ibm-internal-only/enable-ST.html#agent) to install the new agent. The `ibm-observe` namespace and the secret should already be created, so skip those steps.
-2. Delete the old agent by running: `kubectl delete -f logdna-agent-v2-st-private.yaml`.
+2. Delete the old agent by running: `kubectl delete -f agent-resources-supertenant-private.yaml` 
