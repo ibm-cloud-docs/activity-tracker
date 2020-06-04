@@ -855,6 +855,8 @@ spec:
       runAsUser: 0
  ```
  {: codeblock}
+ 
+The above example uses `alpine` as the image for the init-container. In order to only use images from IBM, services are now using their own images bassed on Red Hat Universal Base Images like `ubi-init` or `ubi-minimum`. Then the images can be scanned for vulnerabilities in the registry.
 
 
 ### Not on Kubernetes
