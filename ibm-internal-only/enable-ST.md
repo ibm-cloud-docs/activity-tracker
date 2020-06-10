@@ -682,7 +682,7 @@ In this test we are going to simulate that your service is writing an event line
 
 Services are responsible for monitoring that their logs and Activity Tracker events are being received by LogDNA. 
 
-A simple solution is to create a **LogDNA absence alert** in your service STS and ATS instances. These alerts can notify you via a variety of methods when the alert condition is met.
+A simple solution is to create a **LogDNA absence alert** in your service STS and ATS instances. These alerts can notify you via a variety of methods when the alert condition is met. The alert will watch for periodic events from your service, which might come from continuous tests that your service is already running. The alert would trigger if any of these events ever stop coming.
 
 To create an alert, you must create a view and then attach an alert to it. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
 
