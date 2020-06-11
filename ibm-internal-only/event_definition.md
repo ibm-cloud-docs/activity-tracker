@@ -839,7 +839,7 @@ The value is a human readable name of the service, service instance or service s
 
 * If you have resources that do not have a name, set this value to  `<resource-type>-<ID of the resource modified>` For example, `model-xxxxx`
 
-* When the action is **list**, set `target.name` to `*`.
+* When the action is **list**, and the target is the account or an instance, set `target.name` to the name of the account or the instance if you have it. If you cannot get it, leave it empty.
 
 
 
