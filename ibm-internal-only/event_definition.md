@@ -206,13 +206,13 @@ Add this JSON object to the Activity Tracker event **if your service is integrat
 
 The following data must be defined for each event:
 
-| Field                        | Type             | Description |
-|------------------------------|------------------|-------------|
-| `isComplaint`                | `boolean`        | Defines the status of the action and flags out governance issues. </br>Set to `true` when the action is compliant with governance policies.  </br>Valid values are: `true`, `false`  |
-| `complianceTraceId`          | `string`         | Defines the unique ID that a user can use to get details of the governance policy, and the rules that are included in that policy and apply to the action. |
-| `disallow`                   | `boolean`        | Defines whether the action is permitted or not. </br>When this field is set to `true`, the action must be rejected with a RC = 403. </br>Valid values are: `true`, `false`   |
-| `notify`                     | `boolean`        | Defines whether a notification is requested.   </br>Valid values are: `true`, `false` |
-| `channel`                    | `string`         | Defines the notification channels that a user has configured.    |
+| Field                               | Type             | Description |
+|-------------------------------------|------------------|-------------|
+| `isComplaint`                       | `boolean`        | Defines the status of the action and flags out governance issues. </br>Set to `true` when the action is compliant with governance policies.  </br>Valid values are: `true`, `false`  |
+| `complianceTraceId`                 | `string`         | Defines the unique ID that a user can use to get details of the governance policy, and the rules that are included in that policy and apply to the action. |
+| `disallow`                          | `boolean`        | Defines whether the action is permitted or not. </br>When this field is set to `true`, the action must be rejected with a RC = 403. </br>Valid values are: `true`, `false`   |
+| `notify`                            | `boolean`        | Defines whether a notification is requested.   </br>Valid values are: `true`, `false` |
+| `channel`                           | `string`         | Defines the notification channels that a user has configured.    |
 {: caption="Table 1. Compliance fields" caption-side="top"}
 
 

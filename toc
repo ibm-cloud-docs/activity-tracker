@@ -22,17 +22,22 @@ IBM Cloud Activity Tracker with LogDNA
     {: .topicgroup}
     Monitoring activity
         monitor_events.md
-        iam_manage_login.md
-        bss_mfa_events.md
-        iam_users_events.md
-        iam_serviceIDs_events.md
-        iam_ag_events.md
-        iam_apikeys_events.md
-        service_instance_events.md
+        analyze/iam_manage_login.md
+        analyze/bss_mfa_events.md
+        analyze/iam_users_events.md
+        analyze/iam_serviceIDs_events.md
+        analyze/iam_ag_events.md
+        analyze/iam_apikeys_events.md
+        analyze/service_instance_events.md
 
     {: .topicgroup}
     Security and compliance
         adoption.md
+        data-security.md
+        iam.md
+        ha-dr.md
+        service-connection.md
+        architecture-workload-isolation.md
 
     {: .topicgroup}
     Tutorials
@@ -71,14 +76,6 @@ IBM Cloud Activity Tracker with LogDNA
         sqlquery.md
 
     {: .topicgroup}
-    Enhancing security for IBM Cloud Activity Tracker with LogDNA
-        data-security.md
-        iam.md
-        ha-dr.md
-        service-connection.md
-        architecture-workload-isolation.md
-
-    {: .topicgroup}
     Export logs
         export.md
 
@@ -111,4 +108,5 @@ IBM Cloud Activity Tracker with LogDNA
 
     {: .navgroup id="help"}
     gettinghelp.md
+    at_faq.md
     {: .navgroup-end}
