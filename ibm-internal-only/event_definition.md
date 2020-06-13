@@ -198,6 +198,54 @@ Where
 {: important}
 
 
+### compliance (JSON)
+{: #compliance}
+
+Add this JSON object to the Activity Tracker event **if your service is integrated with the IBM Cloud Configuration Governance service.** The IBM Cloud Configuration Governance enables you to define, manage, enforce, and monitor the configuration rules of your IBM Cloud resources.
+{: note}
+
+The following data must be defined for each event:
+
+| Field                        | Type             | Description |
+|------------------------------|------------------|-------------|
+| `isComplaint`                | `boolean`        | Defines the status of the action and flags out governance issues. </br>Set to `true` when the action is compliant with governance policies.  </br>Valid values are: `true`, `false`  |
+| `complianceTraceId`          | `string`         | Defines the unique ID that a user can use to get details of the governance policy, and the rules that are included in that policy and apply to the action. |
+| `disallow`                   | `boolean`        | Defines whether the action is permitted or not. </br>When this field is set to `true`, the action must be rejected with a RC = 403. </br>Valid values are: `true`, `false`   |
+| `notify`                     | `boolean`        | Defines whether a notification is requested.   </br>Valid values are: `true`, `false` |
+| `channel`                    | `string`         | Defines the notification channels that a user has configured.    |
+{: caption="Table 1. Compliance fields" caption-side="top"}
+
+
+There are different scenarios that you should consider:
+
+| Scenario      | `isCompliant` | `enforcementAction - disallow` | AT  field: resource.resourceCode | AT field: severity |
+|---------------|---------------|--------------------------------|----------------------------------|--------------------|
+| Compliant and allowed | `true`    | `true`    | Set per the AT guidance | Set per the AT guidance |
+| Not compliant but action allowed | `false`       | `true`     | Set per the AT guidance | Set per the AT guidance |
+| Not compliant and action not allowed | `false`       | `false`     | `RC = 403`    | `critical` |
+{: caption="Table 1b. Compliance fields by scenario" caption-side="top"}
+
+
+**Service Provider**: To obtain the information that you can use to set these fields, you must query the IBM Cloud Configuration Governance service. For more information, see [Config-Management APIs](https://pages.github.ibm.com/project-fortress/gov-config-apidoc/#/).
+
+**Customers**: Users can use the `complianceTraceId` to get a static report, which is appropriate for audits and forensic analysis.
+
+The JSON structure for this field should map the following one:
+
+```
+"compliance": {
+    "isCompliant": false,
+    "complianceTraceId": "801d5387-45f7-457e-920a-6d1696d2bf0b",
+    "enforcementActions": {
+      "disallow": true,
+      "notify": true
+    },
+    "notificationDetails": {
+      "channel": ""
+  }
+```
+{: codeblock}
+
 
 
 ### correlationId (string)
