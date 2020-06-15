@@ -25,15 +25,17 @@ subcollection: Activity-Tracker-with-LogDNA
 # Collecting events
 {: #events_collect}
 
-In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as global or location-based events. The scope determines where an event is available for analysis. In an event, the field [**logSourceCRN**](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event#logSourceCRN) includes information about the scope.
+In {{site.data.keyword.at_full_notm}} (AT), events are collected automatically for most enabled-AT services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them. 
 {:shortdesc}
 
 To collect and monitor activity in your account, you must provision the {{site.data.keyword.at_full_notm}} (AT) service in your account. Then, 
 as soon as an instance of an AT-enabled service is provisioned, events are collected and available for monitoring.
 
-**Collection of management events** is automatic for AT-enabled services, except Watson services that require a paid plan. 
+You can differentiate events by scope as global or location-based events. The scope determines where an event is collected and available for analysis:
 
-**Collection of data events** is also automatic with the exception of some services where you must opt-in to collect those events. To opt-in, you might need to configure the service, upgrade the service plan, or both.
+* **Collection of management events** is automatic for AT-enabled services, except Watson services that require a paid plan. 
+
+* **Collection of data events** is also automatic with the exception of some services where you must opt-in to collect those events. To opt-in, you might need to configure the service, upgrade the service plan, or both.
 
 
 

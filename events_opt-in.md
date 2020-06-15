@@ -38,10 +38,10 @@ The following table lists the services that require additional steps for you to 
 
 | Service                            | Upgrade plan                       | Configure the service              | More info |
 |------------------------------------|------------------------------------|------------------------------------|-----------|
-| [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai)                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  |   |
+| [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai) `[*]`    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  |   |
 {: caption="Table 1. {{site.data.keyword.cloud_notm}} services that require opt-in actions for management events" caption-side="top"}
 
-
+`[*]` You must upgrade to a paid plan to enable collection of Watson Activity Tracker events in your account.
 
 
 ## Data events

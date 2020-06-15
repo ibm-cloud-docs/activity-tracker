@@ -29,9 +29,7 @@ Collect, archive, view and analyze events.
 ## Collecting events to monitor activity in the account
 {: #manage_events_provision}
 
-In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as global or location-based events. The scope determines where an event is collected and available for analysis. In an event, the field [**logSourceCRN**](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event#logSourceCRN) includes information about the scope.
-
-[Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-events_collect).
+In {{site.data.keyword.at_full_notm}}, events are collected automatically for most enabled-AT services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-events_collect).
 
 
 ## Defining views, dashboards, and screens to analyze events
