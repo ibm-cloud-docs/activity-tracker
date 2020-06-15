@@ -40,9 +40,7 @@ as soon as an instance of an AT-enabled service is provisioned, events are colle
 ## Collecting Global events
 {: #events_collect_global}
 
-[Global events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_global) 
-
-Global events are available through the Activity Tracker instance in Frankfurt. Therefore, to collect and view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
+[Global events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_global) are available through the Activity Tracker instance in Frankfurt. Therefore, to collect and view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
 
 
 ## Collecting Location-based events

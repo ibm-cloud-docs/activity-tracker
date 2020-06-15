@@ -462,7 +462,7 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                                         | `Dallas (us-south)`                               | `Washington (us-east)`                |
 |-----------------------------------------------------------------|---------------------------------------------------|---------------------------------------|
-| {{site.data.keyword.cloudcerts_full_notm}}                      | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                 |  
+| {{site.data.keyword.cloudcerts_full_notm}}                      | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |  
 | {{site.data.keyword.appid_full}}                                | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |        
 | {{site.data.keyword.keymanagementservicelong}}                  | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | ![Checkmark icon](../../icons/checkmark-icon.svg) |  `NO` |
