@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-05-11"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
+keywords: IBM Cloud, LogDNA, Activity Tracker, faq
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -110,10 +110,23 @@ You cannot import archived data into the LogDNA web UI.
 To configure archiving see [Archiving events to IBM Cloud Object Storage](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
 
 ## I get an error when I try to provision an Activity Tracker instance
-{: #faq_6}
+{: #faq_7}
 {: faq}
 
-You can only have 1 instance of the {{site.data.keyword.at_full_notm}} service per region. Most likely, your account administrator has already provisioned the auditing instances. To see them, you must have IAM platform permissions. 
+You can only have 1 instance of the {{site.data.keyword.at_full_notm}} service per region. 
+
+
+When an auditing instance already exists in a region, you get the following message when you try to provision it a second one: 
+
+```
+Service Broker returned error status code 400 when creating LogDNA-AT 
+```
+{: screen}
+
+
+Most likely, your account administrator has already provisioned the auditing instances and has not given you permisisons to see work with them. 
+
+To see auditing instances, you must have IAM platform permissions for the {{site.data.keyword.at_full_notm}} service. 
 
 Therefore, if you cannot see any Auditing instances when you [launch the Activity Tracker observability dashboard](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch), check that you have permissions to at least view them. You need at least the **viewer** platform role to see the auditing instances. To learn more about IAM permissions, see [Managing access with IAM](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam). 
 
