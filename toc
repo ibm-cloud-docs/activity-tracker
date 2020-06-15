@@ -17,8 +17,7 @@ IBM Cloud Activity Tracker with LogDNA
         event.md
         event_types.md
         events_opt-in.md
-        manage_events.md
-        manage_eu_acc.md
+        events_collect.md
         
     {: .topicgroup}
     Monitoring activity
@@ -34,6 +33,7 @@ IBM Cloud Activity Tracker with LogDNA
     {: .topicgroup}
     Security and compliance
         adoption.md
+        manage_eu_acc.md
         data-security.md
         iam.md
         ha-dr.md
@@ -66,6 +66,7 @@ IBM Cloud Activity Tracker with LogDNA
 
     {: .topicgroup}
     DevOps admin tasks
+        manage_events.md
         archive.md
         config_account.md
         control_usage.md

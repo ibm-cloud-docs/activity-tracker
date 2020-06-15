@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-06-15"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, events, global, regional, data, management
 
@@ -25,16 +25,9 @@ subcollection: Activity-Tracker-with-LogDNA
 # Enabling Activity Tracker events
 {: #events_opt-in}
 
-In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as global or location-based events, and by operational impact as management or data events.
+In {{site.data.keyword.at_full_notm}} (AT), events are collected automatically for most enabled-AT services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them.
 {:shortdesc}
 
-
-
-## Analyzing events
-{: #event_types_analyze}
-
-
-You might need to configure your service, upgrade your plan, or both to be able to collect Activity Tracker events.
 
 The following table lists the services that require additional steps for you to be able to monitor the events that they generate:
 
@@ -44,9 +37,19 @@ The following table lists the services that require additional steps for you to 
 | {{site.data.keyword.cos_full}}    |
 
 
+[Tracking events using Activity Tracker with LogDNA](/docs/cloud-object-storage?topic=cloud-object-storage-at).
+
+ you can differentiate events by scope as global or location-based events, and by operational impact as management or data events
+
+
+
 
 
 In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as [global events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_global) or [location-based events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_location), and by operational impact as management or data events. 
+
+
+
+
 
 First, you need to check if you need to configure your service, upgrade your plan, or both to be able to collect Activity Tracker events.
 
@@ -64,7 +67,7 @@ First, you need to check if you need to configure your service, upgrade your pla
 
 Then, you need to determine the location of the events based on scope.
 
-Global events are available through the Activity Tracker instance in Frankfurt. Therefore, to view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
+
 
 For location-based events, you need to check the following scenarios to determine the Activity Tracker instance where the events are available for analysis:
 
@@ -76,12 +79,22 @@ For location-based events, you need to check the following scenarios to determin
 
     3. Check that you have an Activity Tracker instance provisioned in the same location where your service is provisioned.
 
-    In this scenario, you can find the Activity Tracker events that the service generates through the Activity Tracker instance in that location.
+    In this scenario, you can collect the Activity Tracker events that the service generates through the Activity Tracker instance in that location.
 
 * Scenario 2: The service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is not available.
 
     1. Identify the location where your service is provisioned. 
         
     2. Check the [Cloud services locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions) to identify the Activity Tracker instance where events are available.
+
+
+
+
+
+
+
+
+
+[Tracking events using Activity Tracker with LogDNA](/docs/cloud-object-storage?topic=cloud-object-storage-at).
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-06-15"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, events, global, regional, data, management
 
@@ -78,10 +78,7 @@ Global events report user actions in the {{site.data.keyword.cloud_notm}} whose 
 
 You identify management events by the value of the field **dataEvent**. When this field is set to **false**, the event is a management event.
 
-Management events are enabled in all the {{site.data.keyword.cloud_notm}} accounts.
-
-
-
+Management events are enabled in all the {{site.data.keyword.cloud_notm}} accounts. Some services, such as Watson services, require an upgrade of the service plan if you want to receive them. 
 
 
 
@@ -140,6 +137,23 @@ Location-based events maintain data locality to the services that run in that Cl
 {: important}
 
 For example, if you provision the {{site.data.keyword.cloudcerts_short}} service in the Frankfurt location, events from that instance will be sent to the {{site.data.keyword.at_full_notm}} instance that is provisioned in Frankfurt. If you provision the {{site.data.keyword.cloudcerts_short}} service in the Dallas location, events from that instance will be sent to the {{site.data.keyword.at_full_notm}} instance that is provisioned in Dallas. In both cases, events are kept local to the region and location of the subscribed Cloud Service.
+
+
+## Exception: {{site.data.keyword.cos_full_notm}}
+{: #event_types_cos}
+
+In {{site.data.keyword.cos_full_notm}}, some management events are global events. Other management events are location-based events.
+
+To see the list of actions that generate managements events that are global, see [Global events](/docs/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-global).
+
+For example, the following are some actions that generate global events:
+* List the buckets in the service instance.
+* Create a bucket in the service instance.
+* Delete a bucket in the service instance.
+* Delete a Key Protect root encryption key.
+
+[Learn more](/docs/cloud-object-storage?topic=cloud-object-storage-at-events).
+
 
 
 
