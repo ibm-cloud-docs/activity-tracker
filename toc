@@ -16,6 +16,7 @@ IBM Cloud Activity Tracker with LogDNA
     Events
         event.md
         event_types.md
+        events_opt-in.md
         manage_events.md
         manage_eu_acc.md
         

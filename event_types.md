@@ -104,6 +104,8 @@ Data events are enabled in all the {{site.data.keyword.cloud_notm}} accounts. Ho
 * Services might require a service plan to opt-in to data events, such as some Watson services.
 
 
+
+
 ## Global events
 {: #event_types_global}
 
@@ -138,7 +140,6 @@ Location-based events maintain data locality to the services that run in that Cl
 {: important}
 
 For example, if you provision the {{site.data.keyword.cloudcerts_short}} service in the Frankfurt location, events from that instance will be sent to the {{site.data.keyword.at_full_notm}} instance that is provisioned in Frankfurt. If you provision the {{site.data.keyword.cloudcerts_short}} service in the Dallas location, events from that instance will be sent to the {{site.data.keyword.at_full_notm}} instance that is provisioned in Dallas. In both cases, events are kept local to the region and location of the subscribed Cloud Service.
-
 
 
 
