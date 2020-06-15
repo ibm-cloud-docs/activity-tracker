@@ -34,11 +34,11 @@ Service teams are expected to provide the following documentation:
 
     **Location:**: Add your topic in the **Observability** topic group in the **How to** nav group* section  
 
-    **Template:** [Sample](https://github.ibm.com/Bluemix/docs/blob/staging/developing/content-kit/at-events-docs-template.md)
+    **Template:** 
 
     **Service Framework requirement:** [ONECLOUD: ARCH001oc.3 Internal and External Logging with LogDNA](/docs/service-framework?topic=service-framework-one-cloud-requirements#onecloud-arch001oc-3-internal-and-external-logging-with-logdna)
 
-    **Sample:** [](/docs/Cloudant?topic=Cloudant-log-analysis-integration)
+    **Sample:** 
 
 2. Create a PR against the [AT Cloud Services page](https://github.ibm.com/cloud-docs/Activity-Tracker-with-LogDNA/blob/draft/cloud_services.md) to provide a link to your documentation page ( from step 1 ).
 3. Create a PR against the [AT Cloud Services Locations page](https://github.ibm.com/cloud-docs/Activity-Tracker-with-LogDNA/blob/draft/cloud_services_locations.md) to indicate which production environments are currently supported.
