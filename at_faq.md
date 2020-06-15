@@ -47,46 +47,75 @@ You can link to the list of events that each service generates from the followin
 {: #faq_3}
 {: faq}
 
-If you cannot find the events in the Activity Tracker instance that you are looking. 
-You can link to the list of events that each service generates from the following documentation topic: [Cloud services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services).
+In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as [global events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_global) or [location-based events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_location), and by operational impact as management or data events. 
+
+First, you need to check if you need to configure your service, upgrade your plan, or both to be able to collect Activity Tracker events.
+
+* Management events are collected automatically for most services except Watson services that require a paid plan.
+
+    If you are looking for Watson Activity Tracker events, check your plan and make sure you have a service plan that includes them.
+
+* Data events are collected automatically for most services except the following ones:
+
+    AppID requires a paid plan and you opting in.
+
+    Cloud Object Storage requires that you enable them by bucket.
+
+    Cloudant Database requires that you enable them per service instance.
+
+Then, you need to determine the location of the events based on scope.
+
+Global events are available through the Activity Tracker instance in Frankfurt. Therefore, to view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
+
+For location-based events, you need to check the following scenarios to determine the Activity Tracker instance where the events are available for analysis:
+
+* Scenario 1: The service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is available.
+
+    1. Identify the location where your service is provisioned. 
+    
+    2. Check whether the {{site.data.keyword.at_full_notm}} service is available in that region. See [Locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
+
+    3. Check that you have an Activity Tracker instance provisioned in the same location where your service is provisioned.
+
+    In this scenario, you can find the Activity Tracker events that the service generates through the Activity Tracker instance in that location.
+
+* Scenario 2: The service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is not available.
+
+    1. Identify the location where your service is provisioned. 
+        
+    2. Check the [Cloud services locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions) to identify the Activity Tracker instance where events are available.
 
 
-## How do I query data that has been archived for long term storage?
+
+
+## How do I access and query data that has been archived for long term storage in COS?
 {: #faq_4}
 {: faq}
+
+To access data, you can download the archived file locally.
+
+To query the data, you can also use a service like SQL Query to query your COS archives and get information based on queries that you define. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-sqlquery).
 
 
 ## Can I import archived data back into the LogDNA web UI?
 {: #faq_5}
 {: faq}
 
-
+You cannot import archived data into the LogDNA web UI. 
 
 ## How do I configure archiving for my instance?
 {: #faq_6}
 {: faq}
 
+To configure archiving see [Archiving events to IBM Cloud Object Storage](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
 
-## 
+## I get an error when I try to provision an Activity Tracker instance
 {: #faq_6}
 {: faq}
 
+You can only have 1 instance of the {{site.data.keyword.at_full_notm}} service per region. Most likely, your account administrator has already provisioned the auditing instances. To see them, you must have IAM platform permissions. 
 
-
-
-
-
-To list public images, run the following `ibmcloud` commands to target the global registry and list the public images that are provided by {{site.data.keyword.IBM}}:
-
-```
-ibmcloud cr region-set global
-```
-{: pre}
-
-```
-ibmcloud cr images --include-ibm
-```
-{: pre}
+Therefore, if you cannot see any Auditing instances when you [launch the Activity Tracker observability dashboard](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch), check that you have permissions to at least view them. You need at least the **viewer** platform role to see the auditing instances. To learn more about IAM permissions, see [Managing access with IAM](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam). 
 
 
 
