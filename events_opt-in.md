@@ -29,72 +29,34 @@ In {{site.data.keyword.at_full_notm}} (AT), events are collected automatically f
 {:shortdesc}
 
 
-The following table lists the services that require additional steps for you to be able to monitor the events that they generate:
-
-| Service                    | Upgrade plan                       | Configure the service              |
-|----------------------------|------------------------------------|------------------------------------|
-| {{site.data.keyword.appid_full}}  | 
-| {{site.data.keyword.cos_full}}    |
 
 
-[Tracking events using Activity Tracker with LogDNA](/docs/cloud-object-storage?topic=cloud-object-storage-at).
+## Management events
+{: #events_opt-in_mgt}
 
- you can differentiate events by scope as global or location-based events, and by operational impact as management or data events
+The following table lists the services that require additional steps for you to be able to monitor [management events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_management) that they generate:
 
-
-
-
-
-In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as [global events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_global) or [location-based events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_location), and by operational impact as management or data events. 
+| Service                            | Upgrade plan                       | Configure the service              | More info |
+|------------------------------------|------------------------------------|------------------------------------|-----------|
+| [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai)                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  |   |
+{: caption="Table 1. {{site.data.keyword.cloud_notm}} services that require opt-in actions for management events" caption-side="top"}
 
 
 
 
+## Data events
+{: #events_opt-in_data}
 
-First, you need to check if you need to configure your service, upgrade your plan, or both to be able to collect Activity Tracker events.
+The following table lists the services that require additional steps for you to be able to monitor [data events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_data) that they generate:
 
-* Management events are collected automatically for most services except Watson services that require a paid plan.
-
-    If you are looking for Watson Activity Tracker events, check your plan and make sure you have a service plan that includes them.
-
-* Data events are collected automatically for most services except the following ones:
-
-    AppID requires a paid plan and you opting in.
-
-    Cloud Object Storage requires that you enable them by bucket.
-
-    Cloudant Database requires that you enable them per service instance.
-
-Then, you need to determine the location of the events based on scope.
+| Service                            | Upgrade plan                       | Configure the service              | More info |
+|------------------------------------|------------------------------------|------------------------------------|-----------|
+| {{site.data.keyword.appid_full}}   | ![Checkmark icon](../../icons/checkmark-icon.svg) |    | [Monitoring runtime activity](/docs/appid?topic=appid-at-events#at-monitor-runtime-activity)   |
+| {{site.data.keyword.cos_full}}     |  | ![Checkmark icon](../../icons/checkmark-icon.svg) | [Tracking events using Activity Tracker with LogDNA](/docs/cloud-object-storage?topic=cloud-object-storage-at) |
+| {{site.data.keyword.cloudantfull}} |  | ![Checkmark icon](../../icons/checkmark-icon.svg) | [Types of events](/docs/Cloudant?topic=Cloudant-at_events#at_event_types-at) |
+| [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai)                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  |   |
+{: caption="Table 2. {{site.data.keyword.cloud_notm}} services that require opt-in actions for data events" caption-side="top"}
 
 
-
-For location-based events, you need to check the following scenarios to determine the Activity Tracker instance where the events are available for analysis:
-
-* Scenario 1: The service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is available.
-
-    1. Identify the location where your service is provisioned. 
-    
-    2. Check whether the {{site.data.keyword.at_full_notm}} service is available in that region. See [Locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
-
-    3. Check that you have an Activity Tracker instance provisioned in the same location where your service is provisioned.
-
-    In this scenario, you can collect the Activity Tracker events that the service generates through the Activity Tracker instance in that location.
-
-* Scenario 2: The service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is not available.
-
-    1. Identify the location where your service is provisioned. 
-        
-    2. Check the [Cloud services locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions) to identify the Activity Tracker instance where events are available.
-
-
-
-
-
-
-
-
-
-[Tracking events using Activity Tracker with LogDNA](/docs/cloud-object-storage?topic=cloud-object-storage-at).
 
 
