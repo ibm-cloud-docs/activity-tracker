@@ -20,7 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 
 
-# Documenting events
+# Documenting Activity Tracker events
 {: #ibm_docs}
 
 Information about AT events that customers can monitor must be documented. 
@@ -28,9 +28,7 @@ Information about AT events that customers can monitor must be documented.
 
 Service teams are expected to provide the following documentation:
 
-Service teams are expected to provide the following documentation:
-
-1. Publish the metrics they expose to customers in a dictionary format.  This document explains how to create that dictionary from the onboarding json document which contains most of the information required to build the dictionary.
+1. Publish the events they expose to customers.
 
     **Topic title:** Auditing events for servicename
 
@@ -91,16 +89,5 @@ Add information on custom fields that are included in requestData and responseDa
 {: codeblock}
 
 
-
-
-
-## Where will the information be available?
-{: #docs_3}
-
-Specific event information for a service is provided through a reference topic that is owned and maintained by your service.
-
-General overview services information about the events that services send to AT will be available through the following URL: 
-* [Cloud services](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services)
-* [Cloud services locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations)
 
 
