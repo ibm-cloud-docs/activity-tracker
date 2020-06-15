@@ -26,37 +26,71 @@ subcollection: Activity-Tracker-with-LogDNA
 Information about AT events that customers can monitor must be documented. 
 {:shortdesc}
 
+Service teams are expected to provide the following documentation:
+
+Service teams are expected to provide the following documentation:
+
+1. Publish the metrics they expose to customers in a dictionary format.  This document explains how to create that dictionary from the onboarding json document which contains most of the information required to build the dictionary.
+
+    **Topic title:** Auditing events for servicename
+
+    **Location:**: Add your topic in the **Enhancing security** topic group in the **How to** nav group* section  
+
+    **Template:** [Sample](https://github.ibm.com/Bluemix/docs/blob/staging/developing/content-kit/at-events-docs-template.md)
+
+    **Service Framework requirement:** [ONECLOUD: ARCH001oc.1 Customer Audit Logs via Activity Tracker with LogDNA](/docs/service-framework?topic=service-framework-one-cloud-requirements#onecloud-arch001oc-1-customer-audit-logs-via-activity-tracker-with-logdna)
+
+2. Create a PR against the [AT Cloud Services page](https://github.ibm.com/cloud-docs/Activity-Tracker-with-LogDNA/blob/draft/cloud_services.md) to provide a link to your documentation page ( from step 1 ).
+3. Create a PR against the [AT Cloud Services Locations page](https://github.ibm.com/cloud-docs/Activity-Tracker-with-LogDNA/blob/draft/cloud_services_locations.md) to indicate which production environments are currently supported.
+
+Once you have a PR in place for 2 and 3, please contact [Marisa](mailto:lopezdsr@uk.ibm.com) (slack:@Marisa) to review and merge the changes.
+{: note }
+
+
 **Contacts for queries:**
 * For any documentation queries, contact Marisa (lopezdsr@uk.ibm.com) in slack.
 * For CADF compliance queries, contact Brendan Hayes (brendan.hayes@us.ibm.com) in slack.
 
 
-## Who needs to document events that a service generated
-{: #docs_0}
+## Sections in the Auditing topic
 
-Your services technical writer must complete the following steps to document the Activity Tracker events that your service generates:
+The topic should include the following sections:
+
+```md
+## List of management events
+
+You can classify by sub-resource/ sub-component type or other classification that can help the customer identify actions.
+
+## List of data events
+
+You can classify by sub-resource type or other classification that can help the customer identify actions.
+
+## Enabling events
+
+Some services requore a paid plan or additional configuration to enable events. Add any information on how to allow the customer to enable collection of events. 
+
+### Enabling events through the UI
+
+### Enabling events by using the command line
+
+### Enabling events by using an API call
+
+add example of cURL command including any headers like authorization headers that might be required.
+
+## Viewing events
 
 
+Add link to the section where your service is listed in the topic [Cloud services by location](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations).
 
-## What information should be documented
-{: #docs_1}
+## Analyzing events
 
-You must create a topic that list all the Activity Tracker events. The name of the file should be: `at_events.md`. **All the events that are available in the Production environment must be documented.**
+Add information on custom fields that are included in requestData and responseData fields and that can help users understand your events.
 
-This topic should include the following information:
-* Link to the [Getting started](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
-* List of actions and a brief description.
-* Any information that might be useful to the user related to each event.
-* Information on where to find the events in the customer account.
 
-See [AT events template](https://github.ibm.com/Bluemix/docs/blob/staging/developing/content-kit/at-events-docs-template.md) and [Creating the Activity Tracker reference topic](/docs/developing/writing/markdown?topic=writing-atref).
+```
+{: codeblock}
 
-After you create the topic, complete the following steps:
 
-1. Add the topic to the `Reference` section of your service documentation. 
-2. Add your service information to [Cloud services](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services)
-3. Add your service information to [Cloud services locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations)
-4. Submit a PR. Then, notify the Activity Tracker docs owner to merge your PR. Slack handle: **@Marisa** or email: lopezdsr@uk.ibm.com. 
 
 
 
