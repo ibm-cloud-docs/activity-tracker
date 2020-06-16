@@ -45,33 +45,47 @@ To configure ID-based MFA for users that log in to your account, you must comple
 1. As the account owner or an administrator for the billing service, turn it on or off from the **Manage** &gt; **Access (IAM)** &gt; **Settings** page in the {{site.data.keyword.cloud_notm}} console. For more information, see [enable MFA for all users in the account](/docs/iam?topic=iam-enablemfa#enabling).
 2. Each user in the account must [set up TOTP](/docs/iam?topic=iam-enablemfa#enabling) to log in to your account.
 
-You get the following events in your account:
+You get the following events in your account when you set on MFA in the account:
 
-* An event with action **billing.account.update**
+* An event with action **billing.account-traits.update**
 
-   When you select **None** as the MFA option, you get the following event:
+    When you select **None** as the MFA option, MFA is not enabled in the account, and all users log in by using a standard ID and password. You get the following event:
 
-    ```
-    ADD info
-    ```
-    {: screen}
-
-    When you select **Non-federated users only** as the MFA option, you get the following event:
-
-    ```
-
+    ```json
+    "action": "billing.account-traits.update",
+    "message": "Billing service: update account traits",
+    "requestData": {
+        "mfa": "",
+        "origin": "BSS"
+    }
     ```
     {: screen}
 
-    When you select **All users** as the MFA option, you get the following event:
+    When you select **Non-federated users only** as the MFA option, the account requires MFA for non-federated users only. You get the following event:
 
-    ```
-    Add info
+    ```json
+    "action": "billing.account-traits.update",
+    "message": "Billing service: update account traits",
+    "requestData": {
+        "mfa": "TOTP",
+        "origin": "BSS"
+    }
     ```
     {: screen}
 
-* An event with action **billing.account-mfa.set-on**
+    When you select **All users** as the MFA option, the account requires MFA for all users. You get the following event:
 
+    ```json
+    "action": "billing.account-traits.update",
+    "message": "Billing service: update account traits",
+    "requestData": {
+        "mfa": "TOTP4ALL",
+        "origin": "BSS"
+    }
+    ```
+    {: screen}
+
+* An event with action **billing.account-mfa.set-on** if an MFA option is set on. 
 
 * An event per user when they set up the TOTP with action **user-management.user-setting.update**.
 
