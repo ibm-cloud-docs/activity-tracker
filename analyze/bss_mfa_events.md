@@ -47,7 +47,7 @@ To configure ID-based MFA for users that log in to your account, you must comple
 
 You get the following events in your account when you set on MFA in the account:
 
-* An event with action **billing.account-traits.update**
+* One event with action **billing.account-traits.update**.
 
     When you select **None** as the MFA option, MFA is not enabled in the account, and all users log in by using a standard ID and password. You get the following event:
 
@@ -85,27 +85,11 @@ You get the following events in your account when you set on MFA in the account:
     ```
     {: screen}
 
-* An event with action **billing.account-mfa.set-on** if an MFA option is set on. 
+* One event that reports whether MFA is enabled or disabled in the account.
 
-* An event per user when they set up the TOTP with action **user-management.user-setting.update**.
+    When MFA is enabled, you get an event with action **billing.account-mfa.set-on**. 
 
-    ```
-    Add info
-    ```
-    {: screen}
-
-
-
-## Events that are generated when you disable MFA for all users in your account
-{: #mfa_events_id_based_dis}
-
-When you [disable MFA for all users in your account](/docs/iam?topic=iam-enablemfa#disablemfa), you get the following events:
-
-```
-Add info
-```
-{: screen}
-
+    When MFA is disabled, you get an event with action **billing.account-mfa.set-off**. 
 
 
 
@@ -121,28 +105,39 @@ You can modify any of the following settings:
 * **User one-time passcode authentication**: Prompts the user for a one-time passcode at log in. To enable this setting, the user must set up a password expiration time in their profile.
 * **This user has no external authentication set up**: Sets an external authentication provider.
 
+In the events that are generated, `requestData` includes information that you can use to monitor these actions in your account:
+* Field **iam_id**: Informs about the user in your account that has a login setting updated.
+* Field **2FA**: Defines whether MFA is set on or off for the user. When it is set to false, MFA is not set for that user. Valid values are *true* and *false*.
+* Field **security_questions_setup**: Defines whether the user has defined the security questions in his profile. Valid values are *true* and *false*.
+* Field **self_manage**: Defines whether a user can configure his log in settings on how to log in to the account. This field is set to `true` to allow a user to set password expiration, turn on security questions for login, and define allowed IP addresses for log in to {{site.data.keyword.cloud_notm}} and from classic infrastructure API calls.  
 
-### Requiring a security question at login
+### Requiring security questions at login
 {: #mfa_events_acc_1}
 
 You can add an extra layer of security at login by requiring users to answer a security question. 
 
 You set on this setting per user.
 
-To be able to set on this setting, the user must set up answers to three security questions in their profile. When a user that is logged in to your account [sets on security questions](/docs/account?topic=account-login-settings#security-questions), you get an event with action **user-management.user-setting.update** for each question. 
-
-```
-ADD event
-```
-{: screen}
-
+To be able to set on this setting, the user must set up answers to three security questions in their profile. [Leaern more](/docs/account?topic=account-login-settings#security-questions). 
 
 After the user has configured the 3 security questions, you can [set on the setting **Require MFA security questions at login**](/docs/iam?topic=iam-questions). This action generates an event with action **user-management.user-setting.update**. 
 
-```
-ADD event
+See the sample of the `requestData` field when the **Require MFA security questions at login:** property is enabled. Notice that the `requestData.security_questions_setup` field is set to `true`.
+
+```json
+"action": "user-management.user-setting.update",
+"message": "User management service: update user settings",
+"requestData": {
+    "2FA": true,
+    "iam_id": "IBMid-xxxxxx",
+    "origin": "BSS",
+    "security_questions_setup": true,
+    "self_manage": false
+ }
+}
 ```
 {: screen}
+
 
 
 ### Requiring a passcode at login
@@ -152,16 +147,25 @@ You can add an extra layer of security at login by prompting a user for a one-ti
 
 You set on this setting per user.
 
-To be able to set on this setting, the user must set up a password expiration in their profile. When a user that is logged in to your account [sets up a password expiration](/docs/account?topic=account-login-settings#password-expiration), you get an event with action **user-management.user-setting.update**
+To be able to set on this setting, the user must set up a password expiration in their profile. [Learn more](/docs/account?topic=account-login-settings#password-expiration).
 
+After the user has configured a password expiration, you can [set on the setting **User one-time passcode authentication**](/docs/iam?topic=iam-totp). This action generates an event with action **user-management.user-setting.update**. 
 
-```
-ADD event
+See the sample of the `requestData` field when the **User one-time passcode authentication:** property is enabled. The `requestData.2FA` field is set to `true`.
+
+```json
+"action": "user-management.user-setting.update",
+"message": "User management service: update user settings",
+"requestData": {
+    "2FA": true,
+    "iam_id": "IBMid-xxxxx",
+    "origin": "BSS",
+    "security_questions_setup": true,
+    "self_manage": false
+ }
+}
 ```
 {: screen}
-
-
-After the user has configured a password expiration, you can [set on the setting **User one-time passcode authentication**](/docs/iam?topic=iam-totp).
 
 
 
@@ -172,20 +176,24 @@ You can grant users permissions to configure MFA settings when they log in to yo
 
 When you set on or off the **User-managed login** setting, an event is generated with action **user-management.user-setting.update**.
 
-```
-ADD event
+See the sample of the `requestData` field when the **User-managed login:** property is disabled:
+
+```json
+"action": "user-management.user-setting.update",
+ "message": "User management service: update user settings",
+"requestData": {
+    "iam_id": "IBMid-27000757DW",
+    "origin": "BSS",
+    "self_manage": false
+}
 ```
 {: screen}
 
 
-In the event, `requestData` includes more information that can help you monitor these actions in your account:
-* **iam_id** informs about the user in your account that has a login setting updated.
-* **2FA** defines whether MFA is set on or off for the user. When it is set to false, MFA is not set for that user. Valid values are *true* and *false*.
-* **security_questions_required** defines whether the user is required to set security questions to log in to the account. Valid values are *true* and *false*.
-* **security_questions_setup** defines whether the user has defined the security questions in his profile. Valid values are *true* and *false*.
 
 
-Notice that a user that has the **User-managed login** setting enabled, can also set on the **Require MFA security questions at login** through the *Access IAM* dashboard or through their profile. This request generates an event with action **user-management.user-setting.update**. 
+A user that has the **User-managed login** setting enabled, can also set on the **Require MFA security questions at login** through the *Access IAM* dashboard or through their profile. This request generates an event with action **user-management.user-setting.update**. 
+{: note}
 
 
 

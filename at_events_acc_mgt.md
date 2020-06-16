@@ -315,7 +315,7 @@ See the sample of the `requestData` field when the **User one-time passcode auth
 "message": "User management service: update user settings",
 "requestData": {
     "2FA": true,
-    "iam_id": "IBMid-310000D73E",
+    "iam_id": "IBMid-xxxxx",
     "origin": "BSS",
     "security_questions_setup": true,
     "self_manage": false
@@ -331,7 +331,7 @@ See the sample of the `requestData` field when the **Require MFA security questi
 "message": "User management service: update user settings",
 "requestData": {
     "2FA": true,
-    "iam_id": "IBMid-310000D73E",
+    "iam_id": "IBMid-xxxxxx",
     "origin": "BSS",
     "security_questions_setup": true,
     "self_manage": false
