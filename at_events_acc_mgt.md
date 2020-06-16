@@ -183,8 +183,8 @@ When you analyze user management events, `target.name` is set to the user ID of 
 
 The following table lists *requestData* fields that you can find in user management events that are generated when the user's log in properties are modified from the **Users** dashboard:
 
-| Field                      | Type            | Description                   |
-|----------------------------|-----------------|-------------------------------|
+| Field | Type | Description |
+|-------|------|-------------|
 | `2FA`                      | Boolean         | Defines the MFA requirements for users in the account. </br>This field is set to `true` when MFA is enabled for users. </br>This setting is configurable from the the **Users** &gt; **Manage user's login** section. | 
 | `allowed_ip_addresses`     | String          | List of IP addresses from where a user is allowed to access account resources. </br>This setting is configurable from the the **Users** &gt; **IP address restrictions** section.|
 | `iam_id`                   | String          | Defines the IBM ID of the user whose settings are being modified. |
@@ -209,8 +209,8 @@ When you modify the **Users** &gt; **IP address restrictions** in the user's con
 The following table lists *requestData* fields that you can find in user management events that are generated when the user's log in properties are modified from the **Access (IAM)** &gt; **Settings** dashboard:
 
 
-| Field                      | Type            | Description                   |
-|----------------------------|-----------------|-------------------------------|
+| Field | Type | Description |
+|-------|------|-------------|
 | `team_directory_enabled`   | Boolean         | Defines the status of the *User list visibility restriction* IAM account setting. </br>When it is set to `true`, users in your account can view other users from the Users page. |
 | `mfa`                      | String          | Defines the MFA method that is required for users to log in to the account. </br>Valid values are *TOTP*, and *TOTP4ALL* </br>This field is set to `TOTP` when the account requires MFA for non-federated users only. Users are required an ID, password, and a time-based one-time passcode to log in. </br>This field is set to `TOTP4ALL` when the account requires MFA for all users.</br>All users by requiring an ID, password, and a time-based one-time passcode. </br>When this field is empty, MFA is not enabled in the account, and all users log in by using a standard ID and password. |
 {: caption="Table 12. Account IAM settings requestData fields" caption-side="top"} 
