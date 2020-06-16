@@ -87,4 +87,5 @@ IBM Cloud Activity Tracker with LogDNA
 
     {: .navgroup id="help"}
     gettinghelp.md
+    at_faq.md
     {: .navgroup-end}

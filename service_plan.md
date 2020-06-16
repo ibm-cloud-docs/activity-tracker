@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-17"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, service plan, price
 subcollection: Activity-Tracker-with-LogDNA
@@ -33,8 +33,11 @@ Different pricing plans are available that you can choose for an {{site.data.key
 | `30 days log search`     | 30                                              | Unlimitted               |
 | `14 days log search`     | 14                                              | Unlimitted               |
 | `7-day log search`       | 7                                               | Unlimitted               |
-| `Lite`                   | Data is not available for search                | 1                        |
+| `Lite`   `[*]`           | Data is not available for search                | 1                        |
 {: caption="Table 1. List of service plans" caption-side="top"} 
+
+`[*]` In the lite plan, the log line is not formatted.
+{: important}
 
 {{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your logs as they pass through the system. You can view logs by using log tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
 
