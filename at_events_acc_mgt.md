@@ -198,9 +198,10 @@ When you modify the user's log in properties in a non-Lite account, you get 2 ev
 * Event with action `user-management.user-setting.update` that indicates the values of the user's properties after the update request completes.
 Depending on the request, you might get additional events with action `user-management.user-setting.update`. If your account is a Lite one, you only get 1 event with action `user-management.user.update`.
 
-When you modify the user's log in setting through the **Users** &gt; **Manage user's login**  dashboard, you only get 1 event with action `user-management.user-setting.update`.
+When you modify the **Users** &gt; **Manage user's login** in the user's configuration dashboard, you only get 1 event with action `user-management.user-setting.update`.
 
-When you modify the **IP address restrictions** in the user's configuration dashboard, you only get 1 event with action `user-management.user-setting.update`.
+When you modify the **Users** &gt; **IP address restrictions** in the user's configuration dashboard, you only get 1 event with action `user-management.user-setting.update`.
+
 
 ### Account IAM settings events
 {: #at_events_analyze_3}
@@ -222,6 +223,6 @@ When you set off MFA, you get 2 events:
 * Event with action `billing.account-traits.update` that reports the type of MFA that is configured in the account.
 * Event with action `billing.account-mfa.set-off` that indicates that MFA is disabled in the account.
 
-
+When you modify the *User list visibility restriction* IAM account setting, you get an event with action `billing.account-traits.update`.
 
 
