@@ -881,13 +881,13 @@ The value is a human readable name of the service, service instance or service s
  
 * When the action requested is on the instance of your service ( for example, a user requests to rename an instance), the name of the service should match the name as indicated under the `Name` column in the resource list. 
 
-    If you cannot provide the name of the instance because getting that information can impact performance and a re-architecture of your service, set this field to the `objectType` value that is part of the action field. For example, if the action is `dns-svc.zones.read`,  set target.name to `zones`.
+    If you cannot provide the name of the instance because getting that information can impact performance and a re-architecture of your service, leave this field empty.
 
 * If the action requested is on a certificate, set the value to the name of the certificate that a user could see in the Cloud UI.
 
-* If you have resources that do not have a name, set this value to  `<resource-type>-<ID of the resource modified>` For example, `model-xxxxx`
+* If you have resources that do not have a name, you can set this value to  `<resource-type>-<ID of the resource modified>`, for example, `model-xxxxx` or leave empty.
 
-* When the action is **list**, and the target is the account or an instance, set `target.name` to the name of the account or the instance if you have it. If you cannot get it, leave it empty.
+* When the action is **list**, and the target is the account or an instance, set `target.name` to the name of the account or the service instance if you have it. If you cannot get it, leave it empty.
 
 
 
