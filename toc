@@ -64,6 +64,7 @@ IBM Cloud Activity Tracker with LogDNA
     {: .topicgroup}
     Export logs
         export.md
+    {: .navgroup-end}
 
     {: .navgroup id="reference"}
     regions.md
