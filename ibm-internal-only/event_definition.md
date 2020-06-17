@@ -591,7 +591,7 @@ When you add fields, notice that the maximum size of an AT event is 16K.
 
 Some fields:
 * [`Required when event reports a failure`] `reasonForFailure`:  Include additional info as to why the action has failed.
-* [Required] `resourceGroupId`: Set to the CRN of the resource group
+* [Required] `resourceGroupId`: Set to the resource group ID  
 * [Optional] `serviceInstanceId`: Set to the service instance ID (not the CRN value)
 * [Optional] `accountID`: Set to the account ID 
 * [Optional] `resourceType`: Type of resource
@@ -862,6 +862,8 @@ A cloud resource can be a service, a service instance, or a service sub-resource
     ```
     {: codeblock}
 
+* If the action requested is on a user, set this field to the user IBMid value. Notice that users do not belong exclusively to an account and cannot be defined by using a crn.
+
 
 #### Information on how to set the target.id for services that on-boarded with the resource-controller
 {: #logSourceCRN-1}
@@ -888,6 +890,7 @@ The value is a human readable name of the service, service instance or service s
 * If you have resources that do not have a name, you can set this value to  `<resource-type>-<ID of the resource modified>`, for example, `model-xxxxx` or leave empty.
 
 * When the action is **list**, and the target is the account or an instance, set `target.name` to the name of the account or the service instance if you have it. If you cannot get it, leave it empty.
+
 
 
 
@@ -1023,6 +1026,7 @@ The following table outlines when the AT guidelines change to adapt to new requi
 |------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
 | `action`                           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
 | `correlationId`                    |                                                   |                 | March 2020 - added this new field to guidelines  (use this field to correlate across multiple services in the IBM Cloud - [Required for integration use cases](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_use_cases)  | 
+| `compliance`                       | ![Checkmark icon](../../icons/checkmark-icon.svg) | July 2020       | Required only for services that integrate with the Governance service | 
 | `dataEvent`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  | December 2019 - added this new field to guidelines    |
 | `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
 | `id`                               |                                                   |                 |                                 | 

@@ -46,8 +46,8 @@ Once you have a PR in place for 2 and 3, please contact [Marisa](mailto:lopezdsr
 
 
 **Contacts for queries:**
-* For any documentation queries, contact Marisa (lopezdsr@uk.ibm.com) in slack.
-* For CADF compliance queries, contact Brendan Hayes (brendan.hayes@us.ibm.com) in slack.
+* For any documentation and CADF compliance queries, contact Marisa (lopezdsr@uk.ibm.com) in slack.
+* For SF queries, contact Brendan Hayes (brendan.hayes@us.ibm.com) in slack.
 
 
 ## Sections in the Auditing topic
@@ -83,6 +83,10 @@ Add link to the section where your service is listed in the topic [Cloud service
 ## Analyzing events
 
 Add information on custom fields that are included in requestData and responseData fields and that can help users understand your events.
+
+## Mapping API actions to Activity Tracker events
+
+Document in a table style your APIs and what AT events are generated. As you build this table, take notes of the endpoints that do not generate an AT event (backlog issue). Every endpoint that a user can call should have an AT event generated.  
 
 
 ```
