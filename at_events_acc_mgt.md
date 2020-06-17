@@ -151,10 +151,11 @@ The following table lists the actions that generate an event:
 
 | Action                               | Description |
 |--------------------------------------|-------------|
-| `user-management.user.create`        | An event is generated when you send an invitation to a user to join an account. |
-| `user-management.user.active`        | An event is generated when you activate the user in the account. When the user verifies the email address, the event is generated. |
+| `user-management.user.create`        | An event is generated when you invite a user to the account. |
+| `billing.user.active`                | An event is generated when a user, that has received an email invitation to join an account, verifies the email address. |
+| `user-management.user.update`        | An event is generated when log in configurations are modified for a user from the {{site.data.keyword.cloud_notm}} UI. |
 | `user-management.user.delete`        | An event is generated when you remove a user from the account. |
-| `user-management.user-setting.update` | An event is generated when you update the user's login configuration settings: User one-time passcode authentication, Require MFA security questions at login, User-managed login or Setting up security questions |
+| `user-management.user-setting.update` | An event is generated when you update the user's login configuration settings: User one-time passcode authentication ,Require MFA security questions at login, User-managed login or Setting up security questions |
 {: caption="Table 10. Actions that generate events" caption-side="top"} 
 
 
@@ -169,10 +170,193 @@ To view these events, you must [provision an instance](/docs/services/Activity-T
 ## Analyzing events
 {: #at_events_analyze}
 
+### Account IAM settings events
+{: #at_events_analyze_3}
+
+These section explains events that are generated when you configure the IAM account settings from the **Access (IAM)** &gt; **Settings** dashboard.
+
+#### Configuring MFA
+{: #at_events_analyze_mfa}
+
+When you set on MFA in your account by configuring the **Account Login** section in the **Access (IAM)** &gt; **Settings** dashboard, you get 2 events:
+* Event with action `billing.account-traits.update` that reports the type of MFA that is configured in the account in the `requestData.mfa` field.
+* Event with action `billing.account-mfa.set-on` that indicates that MFA is enabled in the account.
+
+When you set off MFA, you get the following 2 events:
+* Event with action `billing.account-traits.update` that reports the type of MFA that is configured in the account in the `requestData.mfa` field.
+* Event with action `billing.account-mfa.set-off` that indicates that MFA is disabled in the account.
+
+For example, see the `requestData` field for the event `billing.account-traits.update`: 
+
+```json
+"action": "billing.account-traits.update",
+"message": "Billing service: update account traits",
+"requestData": {
+    "mfa": "",
+    "origin": "BSS"
+}
+```
+{: screen}
+
+#### Configuring user list visibility restriction
+{: #at_events_analyze_visibility}
+
+When you modify the *User list visibility restriction* IAM account setting in the **Manage** &gt; **Access (IAM)** &gt; **Settings** dashboard, you get 1 event with action `billing.account-traits.update`.
+
+For example, see the `requestData` field for the event `billing.account-traits.update`: 
+
+```json
+"action": "billing.account-traits.update",
+"message": "Billing service: update account traits",
+"requestData": {
+    "origin": "BSS",
+    "team_directory_enabled": false
+}
+```
+{: screen}
+
+#### requestData fields
+{: #at_events_analyze_1_reqdata}
+
+The following table lists *requestData* fields that you can find in events that are generated when the IAM account settings are modified from the **Access (IAM)** &gt; **Settings** dashboard:
+
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `team_directory_enabled`   | Boolean         | Defines the status of the *User list visibility restriction* IAM account setting. </br>When it is set to `true`, users in your account can view other users from the Users page. |
+| `mfa`                      | String          | Defines the MFA method that is required for users to log in to the account. </br>Valid values are *TOTP*, and *TOTP4ALL* </br>This field is set to `TOTP` when the account requires MFA for non-federated users only. Users are required an ID, password, and a time-based one-time passcode to log in. </br>This field is set to `TOTP4ALL` when the account requires MFA for all users.</br>All users by requiring an ID, password, and a time-based one-time passcode. </br>When this field is empty, MFA is not enabled in the account, and all users log in by using a standard ID and password. |
+{: caption="Table 11. Account IAM settings requestData fields" caption-side="top"} 
+
+
+
+
 ### Catalog events
 {: #at_events_analyze_1}
 
 You can find the value `unavailable` in catalog events. This value indicates when an update is made, but specific details about the update aren't included. 
 {: important}
+
+
+
+### User management events
+{: #at_events_analyze_2}
+
+These section explains events that are generated when you manage users from the **Manage** &gt; **Access IAM** &gt; **Users** dashboard.
+
+When you analyze user management events, `target.name` is set to the user ID of the user on which the action is requested.
+
+
+#### Modify the status of a user
+{: #at_events_analyze_2_1}
+
+When you modify information about the user status from the **User Details** section, you get the following 2 events:
+* Event with action `user-management.user.update` that reports a request in the account to modify the user's properties.
+* Event with action `user-management.user-setting.update` that indicates the values of the user's properties after the update request completes.
+
+Depending on the request, you might get additional events with action `user-management.user-setting.update`. If your account is a Lite one, you only get 1 event with action `user-management.user.update`.
+
+For example, see the `requestData` field for the event `user-management.user-setting.update`: 
+
+```json
+"action": "user-management.user-setting.update",
+"message": "User management service: update user settings",
+"requestData": {
+    "2FA": false,
+    "allowed_ip_addresses": "",
+    "iam_id": "IBMid-xxxxxxx",
+    "origin": "BSS",
+    "security_questions_setup": false
+}
+```
+{: screen}
+
+#### Restrict IP addresses
+{: #at_events_analyze_2_2}
+
+When you configure IP address restrictions from the **IP address restrictions** section, you get 1 event with action `user-management.user-setting.update`.
+
+For example, see the `requestData` field for the event `user-management.user-setting.update`: 
+
+```json
+"action": "user-management.user-setting.update",
+"message": "User management service: update user settings",
+"requestData": {
+    "allowed_ip_addresses": "14.15.98.123",
+    "iam_id": "IBMid-xxxxxxx",
+    "origin": "BSS"
+}
+```
+{: screen}
+
+
+#### Manage user's login
+{: #at_events_analyze_2_3}
+
+When you modify information about a user's login from the **Manage** &gt; **Access IAM** &gt; **Users** &gt; **User Details** section, you get 1 event with action `user-management.user-setting.update`.
+
+See the sample of the `requestData` field when the **User-managed login:** property is disabled:
+
+```json
+"action": "user-management.user-setting.update",
+ "message": "User management service: update user settings",
+"requestData": {
+    "iam_id": "IBMid-27000757DW",
+    "origin": "BSS",
+    "self_manage": false
+}
+```
+{: screen}
+
+
+See the sample of the `requestData` field when the **User one-time passcode authentication:** property is enabled. The `requestData.2FA` field is set to `true`.
+
+```json
+"action": "user-management.user-setting.update",
+"message": "User management service: update user settings",
+"requestData": {
+    "2FA": true,
+    "iam_id": "IBMid-xxxxx",
+    "origin": "BSS",
+    "security_questions_setup": true,
+    "self_manage": false
+ }
+}
+```
+{: screen}
+
+See the sample of the `requestData` field when the **Require MFA security questions at login:** property is enabled. The `requestData.security_questions_setup` field is set to `true`.
+
+```json
+"action": "user-management.user-setting.update",
+"message": "User management service: update user settings",
+"requestData": {
+    "2FA": true,
+    "iam_id": "IBMid-xxxxxx",
+    "origin": "BSS",
+    "security_questions_setup": true,
+    "self_manage": false
+ }
+}
+```
+{: screen}
+
+
+
+
+#### requestData fields
+{: #at_events_analyze_2_reqdata}
+
+The following table lists *requestData* fields that you can find in events that are generated when user details are modified from the **Users** dashboard:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `2FA`                      | Boolean         | Defines the MFA requirements for users in the account. </br>This field is set to `true` when MFA is enabled for users.  | 
+| `allowed_ip_addresses`     | String          | List of IP addresses from where a user is allowed to access account resources. |
+| `iam_id`                   | String          | Defines the IBM ID of the user whose settings are being modified. |
+| `security_questions_setup` | Boolean         | Defines when a user requires security questions to log in to the account. </br>This field is set to `true` to indicate that questions are required.  |
+| `self_manage`              | Boolean         | Defines whether a user can configure his log in settings on how to log in to the account.  </br>This field is set to `true` to allow a user to set password expiration, turn on security questions for login, and define allowed IP addresses for log in to {{site.data.keyword.cloud_notm}} and from classic infrastructure API calls.  | 
+{: caption="Table 12. User management requestData fields" caption-side="top"} 
+
+
 
 
