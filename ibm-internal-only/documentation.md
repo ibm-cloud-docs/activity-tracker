@@ -83,12 +83,6 @@ Add link to the section where your service is listed in the topic [Cloud service
 ## Analyzing events
 
 Add information on custom fields that are included in requestData and responseData fields and that can help users understand your events.
-
-## Mapping API actions to Activity Tracker events
-
-Document in a table style your APIs and what AT events are generated. As you build this table, take notes of the endpoints that do not generate an AT event (backlog issue). Every endpoint that a user can call should have an AT event generated.  
-
-
 ```
 {: codeblock}
 

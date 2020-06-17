@@ -18,6 +18,8 @@ subcollection: Activity-Tracker-with-LogDNA
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Testing and validating integration of your service with AT 
