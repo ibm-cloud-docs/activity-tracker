@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-18"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, getting started
+keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -28,6 +28,7 @@ subcollection: Activity-Tracker-with-LogDNA
 Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate for abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 {:shortdesc}
 
+
 ![The {{site.data.keyword.at_full_notm}} service](images/atov.png "The {{site.data.keyword.at_full_notm}} service")
 
 
@@ -47,14 +48,38 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 * {{site.data.keyword.at_full_notm}} provides a solution for administrators to capture, store, view, search, and monitor API activity in a single place. It also offers a notifications feature to alert you by using any of the supported notification channels.
 * {{site.data.keyword.at_full_notm}} provides capabilities to export events that you can then use to generate an audit trail report. You might require these reports so that your organization complies with internal regulations and external industry and country regulations.
 
+
+### Features
+{: #gs_ov_features}
+
+* **Simplify compliance sign-off tasks**
+
+    Boost audit tasks on your {{site.data.keyword.cloud_notm}} by automatically collecting events that report on actions to resources in your {{site.data.keyword.cloud_notm}} account. Analyze and get notified on the events that report out of compliance actions. 
+
+* **Accelerate detection of security incidents** 
+
+    Get alert notifications of important events and errors when things are out of compliance. Create custom views and  get notified immediately.  You can configure multi-channel alert notifications based on pattern matching to a variety of direct integrations such as email, Slack, PagerDuty, or your own custom webhooks.
+
+* **Improve visibility on actions in your {{site.data.keyword.cloud_notm}} account**
+
+    Improve the visibility into user and resource activity in your account by easily identifying the initiator who requested an action, the object on which the action was requested, and the time when the action took place. 
+
+* **Adhere to standards**
+
+   Events comply with the Cloud Auditing Data Federation (CADF) standard. Use simple to use keyword based search to search across your events instead of fiddling with custom query languages. Apply the same keyword search to build time series graphs instantly.
+
+
+
 ![Core features offered by the {{site.data.keyword.at_full_notm}} service](images/features.png "Core features offered by the {{site.data.keyword.at_full_notm}} service")
 
 For example, you can use the {{site.data.keyword.at_full_notm}} events to identify the following information:
 * The users who made API calls to cloud services
 * The time-stamp when the API calls were made
 * The status of the API call
-* The criticallity of the action
+* The criticality of the action
 
+### Security
+{: #gs_ov_security}
 
 Consider the following information about security when you work with the {{site.data.keyword.at_full_notm}} service:
 
@@ -75,7 +100,7 @@ Complete this tutorial to learn how to provision a service in the {{site.data.ke
 
 * You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
-* If you prefer to work with the command line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+* If you prefer to work with the command line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
 * To complete the steps to manage access to the service, your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. Contact the account administrator. The account owner can grant another user access to the account for the purposes of managing user access, and managing account resources. [Learn more](/docs/iam?topic=iam-userroles).
 
@@ -177,7 +202,7 @@ Complete the following steps to add the user to the access group:
 ## Step 3. Generate {{site.data.keyword.at_full_notm}} events
 {: #gs_step3}
 
-Complete the following steps to generate an event when an instance of the {{site.data.keyword.cloudcerts_short}} service is provisioned:
+If you have a pay-as-you-go account, you can use {{site.data.keyword.cloudcerts_short}} to create an event. If you don't have a pay-as-you-go account, provisioning any of the available lite services triggers an event.
 
 
 1. From the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog){:new_window}, select the category **Security and Identity**.
@@ -194,9 +219,7 @@ Complete the following steps to generate an event when an instance of the {{site
 
     **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
 
-6. Select the `Free` service plan. 
-
-7. Click **Create**.
+6. Click **Create**.
 
 An instance of the {{site.data.keyword.cloudcerts_short}} service is created.
 
