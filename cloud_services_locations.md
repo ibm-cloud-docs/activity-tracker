@@ -374,7 +374,7 @@ The following tables list the locations where automatic collection of database s
 |------------------------------------------------|------------------|----------------------------|
 | {{site.data.keyword.cloud-shell_notm}}        | `NO`   | `NO`                   |        
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | `NO`                   | 
-| {{site.data.keyword.mobilepush}}               | `NO`  | `NO` |
+| {{site.data.keyword.mobilepush}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                                     |    
 | {{site.data.keyword.bplong}}                   |  `NO`  | `NO` |                  
 {: caption="Developer tools services integration in AP locations" caption-side="top"}
@@ -388,7 +388,7 @@ The following tables list the locations where automatic collection of database s
 |---------------------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.cloud-shell_notm}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)   | `NO`                   |  
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)                    |   
-| {{site.data.keyword.mobilepush}}               | `NO` | `NO` |
+| {{site.data.keyword.mobilepush}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |  
 | {{site.data.keyword.bplong}}                   |  `NO`  | `NO` |    
 {: caption="Developer tools services integration in Europe locations" caption-side="top"}
