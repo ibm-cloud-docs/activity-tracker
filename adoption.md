@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-06-19"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -146,7 +146,7 @@ Resource groups are a logical container for organizing your IAM-enabled resource
 * You can't change the resource group assignment after you set it, which is why it's important to plan and set up your resource groups.
 * If you add PII information in the resource group name, you might be disclosing sensitive data to others in the same account.
 
-**Use resource groups to organize your {{site.data.keyword.at_full_notm}} instances for access control and billing purposes.**
+**Use a resource group, that only includes Activity Tracker instances, to organize your {{site.data.keyword.at_full_notm}} instances for access control and billing purposes.**
 {: tip}
 
 Account owners can add resources to any resource group. Other users must be granted access by using an IAM access policy to add resources to resource groups. For more information, see [Best practices for organizing resources in a resource group](/docs/resources?topic=resources-bp_resourcegroups).

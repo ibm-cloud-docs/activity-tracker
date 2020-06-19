@@ -591,7 +591,7 @@ When you add fields, notice that the maximum size of an AT event is 16K.
 
 Some fields:
 * [`Required when event reports a failure`] `reasonForFailure`:  Include additional info as to why the action has failed.
-* [Required] `resourceGroupId`: Set to the resource group ID  
+* [Required] `resourceGroupId`: Set to the resource group CRN. See [Resource Group API](https://cloud.ibm.com/apidocs/resource-controller/resource-manager#get-a-resource-group).  
 * [Optional] `serviceInstanceId`: Set to the service instance ID (not the CRN value)
 * [Optional] `accountID`: Set to the account ID 
 * [Optional] `resourceType`: Type of resource
