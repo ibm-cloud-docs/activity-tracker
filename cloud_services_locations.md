@@ -148,7 +148,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.openwhisk_short}}          | ![Checkmark icon](../../icons/checkmark-icon.svg) | `Events are available through the Dallas instance` |          
+| {{site.data.keyword.openwhisk_short}}          | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |          
 {: caption="Compute serverless services integration in America's locations" caption-side="top"}
 {: #cs_comp-table-1}
 {: tab-title="America"}
