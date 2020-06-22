@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-11"
+lastupdated: "2020-06-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, monitor events
 
@@ -48,7 +48,7 @@ Notice that instances might have different service plans, and consequently diffe
 ## Monitoring global and location-based events
 {: #mon_def_event_type}
 
-Events can be classified as global or location-based. The type of event determines where you must monitor events. [Learn more]().
+Events can be classified as global or location-based. The type of event determines where you must monitor events. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types).
 
 Global events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt.
 
@@ -190,7 +190,7 @@ Consider the following information when you export log data:
 * When you export events, you have a limit of lines that you can export in a request. You can specify to export older lines or newer lines in case you reach the limit in the time range that you specify for the export. The maximum number of lines that you can export through the UI is `10.000` lines. The maximum number of lines that you can export per API request is `500.000` lines.
 
 
-### By using the REST API
+### Exporting events by using the REST API
 {: #mon_export_api}
 
 You can export events programmatically by using the LogDNA REST API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export#export_api).
@@ -203,7 +203,7 @@ When you export events programmatically, consider the following information:
     You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to view and generate service keys in the web UI.
 
 
-### Through a view in the web UI
+### Exporting events through a view in the web UI
 {: #mon_export_ui}
 
 You can export events through a view in the web UI. 
