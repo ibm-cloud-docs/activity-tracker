@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-22"
 
 keywords: LogDNA, IBM, Log Analysis, logging, config agent
 
@@ -22,7 +22,7 @@ subcollection: LogDNA
 {:note: .note}
 
 # Excluding data by using exclusion rules in the web UI
-{: #exclusion rules}
+{: #exclusion_rules}
 
 In an {{site.data.keyword.at_full_notm}} instance, you can configure exclusion rules through the LogDNA web UI to stop events from counting against your data usage quota and from being stored for search.
 {:shortdesc}
@@ -50,7 +50,7 @@ Complete the following steps to define an exclusion rule:
 
 
 ## Exclude events from a service
-{: #exclusion rules_sample}
+{: #exclusion_rules_sample}
 
 You will configure the rule so that you are able to see all excluded data through views and be able to define alerts on all that data.
 
