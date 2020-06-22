@@ -20,6 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
 
 # Managing events from log in actions in an account
@@ -38,7 +39,7 @@ As a user, you can log in to the {{site.data.keyword.cloud_notm}} in any of the 
 
 As a service, you log in to the {{site.data.keyword.cloud_notm}} by using an API key that is associated to a service ID.
 
-If you are a new user of the {{site.data.keyword.cloud_notm}}, [you must request an IBMid ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}. When you register to work in the {{site.data.keyword.cloud_notm}}, you get an IBMid, and an account is created and associated to your IBMid. 
+If you are a new user of the {{site.data.keyword.cloud_notm}}, [you must request an IBMid](https://cloud.ibm.com/login){: external}. When you register to work in the {{site.data.keyword.cloud_notm}}, you get an IBMid, and an account is created and associated to your IBMid. 
 
 Once you have registered to {{site.data.keyword.cloud_notm}}, you can be invited to be a member in other accounts in {{site.data.keyword.cloud_notm}}. When you are invited to work in an account that is different from the default account that is associated with your IBMid, an event with action **user-management.user.create** is generated and available in the  account where you are invited to work. Users in the account with permissions to monitor Activity Tracker events can monitor these events through the {{site.data.keyword.at_full_notm}} instance in Frankfurt.
 
@@ -69,7 +70,7 @@ As owner or person responsible of the account access management, you can expect 
 
 For a user to log in successfully to your account through the {{site.data.keyword.cloud_notm}} UI, consider the following information:
 
-1. To initiate the log in requets, the user must launch the [{{site.data.keyword.cloud_notm}} UI ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. To initiate the log in requets, the user must launch the [{{site.data.keyword.cloud_notm}} UI](https://cloud.ibm.com/login){: external}.
 
 2. After the user enters the IBMid credentials into the browser, the data is forwarded to the IAM Identity Service.
 
@@ -108,8 +109,6 @@ For a user to log in successfully to your account from the CLI by using an API k
 
 1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-   If the CLI is installed, continue with the next step.
-
 2. Log in to the {{site.data.keyword.cloud_notm}} by using an API key. Run the following command: [`ibmcloud login --apikey`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login). The API key is forwarded to the IAM Identity Service.
 
     Notice that the API key includes information about the account.
@@ -125,8 +124,6 @@ For a user to log in successfully to your account from the CLI by using a one-ti
 
 
 1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
-
-   If the CLI is installed, continue with the next step.
 
 2. Log in to the {{site.data.keyword.cloud_notm}} by using a one-time passcode. Run the following command: [`ibmcloud login --sso`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
@@ -150,8 +147,6 @@ For a user to log in successfully to your account from the CLI by using a one-ti
 For a user to log in successfully to your account from the CLI by using a user ID and password, consider the following information:
 
 1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
-
-   If the CLI is installed, continue with the next step.
 
 2. Log in to the {{site.data.keyword.cloud_notm}} by using an API key. Run the following command: [`ibmcloud login –u USER –p password`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login). The API key is forwarded to the IAM Identity Service.
 

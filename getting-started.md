@@ -52,19 +52,19 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 ### Features
 {: #gs_ov_features}
 
-* **Simplify compliance sign-off tasks**
+* Simplify compliance sign-off tasks
 
     Boost audit tasks on your {{site.data.keyword.cloud_notm}} by automatically collecting events that report on actions to resources in your {{site.data.keyword.cloud_notm}} account. Analyze and get notified on the events that report out of compliance actions. 
 
-* **Accelerate detection of security incidents** 
+* Accelerate detection of security incidents
 
     Get alert notifications of important events and errors when things are out of compliance. Create custom views and  get notified immediately.  You can configure multi-channel alert notifications based on pattern matching to a variety of direct integrations such as email, Slack, PagerDuty, or your own custom webhooks.
 
-* **Improve visibility on actions in your {{site.data.keyword.cloud_notm}} account**
+* Improve visibility on actions in your {{site.data.keyword.cloud_notm}} account
 
     Improve the visibility into user and resource activity in your account by easily identifying the initiator who requested an action, the object on which the action was requested, and the time when the action took place. 
 
-* **Adhere to standards**
+* Adhere to standards
 
    Events comply with the Cloud Auditing Data Federation (CADF) standard. Use simple to use keyword based search to search across your events instead of fiddling with custom query languages. Apply the same keyword search to build time series graphs instantly.
 
@@ -145,10 +145,10 @@ After you provision an instance, the *Activity Tracker* dashboard opens.
 
 **Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).
 
-In this tutorial, you will learn how to grant a user management permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a resource group.
+To grant a user management permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a resource group, complete the following steps:
 
 
-### 1. Create an access group
+### Step 1. Create an access group
 {: #gs_step2_1}
 
 Complete the following steps to create an access group:
@@ -156,7 +156,7 @@ Complete the following steps to create an access group:
 2. Click **Create**.
 3. Enter a name and optional description for your group, and click **Create**.
 
-### 2. Add permissions to manage events
+### Step 2. Add permissions to manage events
 {: #gs_step2_2}
 
 After you set up your group, you must assign a common access policy to the group. Any policy that you set for an access group applies to all entities, users and service IDs, within the group.
@@ -191,7 +191,7 @@ Complete the following steps to assign a policy through the UI:
 12. Click **Assign**.
 
 
-### 3. Add the user to the group
+### Step 3. Add the user to the group
 {: #gs_step2_3}
 
 Complete the following steps to add the user to the access group:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, provision instance
 
@@ -20,6 +20,8 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
+
 
 # Provisioning an instance
 {: #provision}
@@ -28,7 +30,7 @@ Before you can monitor and manage event data with {{site.data.keyword.at_full_no
 {:shortdesc}
 
 To provision an {{site.data.keyword.at_full_notm}} instance in a Public Cloud region, consider the following information:
-* You must select the service plan that is associated with the instance, the region where your logs are collected, and the plan that determines the retention period for your logs. You can choose from 7, 14, or 30-day retention periods. Alternatively, {{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your events as they pass through the system. You can view events by using event tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
+* You must select the service plan that is associated with the instance, the region where your events are collected, and the plan that determines the retention period for your events. You can choose from 7, 14, or 30-day retention periods. Alternatively, {{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your events as they pass through the system. You can view events by using event tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
 * Your user ID must have permisisons to provision a service in a resource group. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#groups).
 
 
@@ -40,7 +42,7 @@ You can only provision 1 instance of the service per {{site.data.keyword.cloud_n
 
 To provision an instance from the Observability dashboard in the {{site.data.keyword.cloud_notm}}, complete the following steps:
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
@@ -75,7 +77,7 @@ Next, go to the web UI to view the events in your account. [Learn more](/docs/se
 
 To provision an instance of {{site.data.keyword.at_full_notm}} through the {{site.data.keyword.cloud_notm}} catalog, complete the following steps:
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
@@ -111,21 +113,19 @@ Next, go to the web UI to manage events in your account. [Learn more](/docs/serv
 ## Provisioning an instance through the CLI
 {: #provision_cli}
 
-To provision an instance of {{site.data.keyword.at_full_notm}} through the command line, complete the following steps:
+Complete the following steps:
 
-1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-   If the CLI is installed, continue with the next step.
-
-2. Log in to the location in the {{site.data.keyword.cloud_notm}} where you want to provision the instance. Run the following command: [`ibmcloud login`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login)
+2. Log in to the location in the {{site.data.keyword.cloud_notm}} where you want to provision the instance. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
     To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
 
-3. Set the resource group where you want to provision the instance. Run the following command: [`ibmcloud target`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_target)
+3. Set the resource group where you want to provision the instance. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
     By default, the `default` resource group is set.
 
-4. Create the instance. Run the [`ibmcloud resource service-instance-create`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command:
+4. Create the instance. Run the [ibmcloud resource service-instance-create](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command:
 
     ```
     ibmcloud resource service-instance-create NAME logdnaat SERVICE_PLAN_NAME LOCATION
@@ -149,6 +149,4 @@ For example, to provision an instance with the 7 days retention plan, run the fo
 ibmcloud resource service-instance-create logdna-instance-01 logdnaat 7-day us-south
 ```
 {: codeblock}
-
-
 

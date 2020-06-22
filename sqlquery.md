@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-22"
 
 keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU-supported
 
@@ -20,6 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
 # Searching archive data by using the {{site.data.keyword.sqlquery_short}} service
 {: #sqlquery}
@@ -40,9 +41,12 @@ The {{site.data.keyword.sqlquery_short}} service provides a serverless, no-ETL s
 
 You can use the {{site.data.keyword.sqlquery_short}} to run SQL queries (that is, `SELECT` statements) to analyze, transform structured and semi-structured data, or clean up rectangular data. You cannot run actions such as `CREATE`, `DELETE`, `INSERT`, and `UPDATE`.
 
-The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. **Notice that the archive files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format.**
+The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. The archive files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format.
 
-Each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in a {{site.data.keyword.cos_short}} instance of your choice. **When you query an {{site.data.keyword.at_full_notm}} archive file, you must convert the JSON formatted file into `PARQUET` format to be able to query the contents successfully.**
+Each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in a {{site.data.keyword.cos_short}} instance of your choice. 
+
+When you query an {{site.data.keyword.at_full_notm}} archive file, you must convert the JSON formatted file into `PARQUET` format to be able to query the contents successfully.
+{: important}
 
 
 
@@ -124,7 +128,7 @@ To run a query, complete the following steps:
 ### Step 1. Launch the {{site.data.keyword.sqlquery_short}} query UI
 {: #sqlquery_step3-1}
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
@@ -252,8 +256,8 @@ After you have the file converted to 'PARQUET` format, you can run queries to an
 To report on the total number of events that are included in the archive file, run the following query:
 
 ```
-SELECT COUNT(*) AS NUMBER_EVENTS FROM PARQUET_FILE STORED AS PARQUET
-INTO RESULTS_BUCKET STORED AS CSV
+SELECT COUNT(*) AS NUMBER_EVENTS FROM <PARQUET_FILE> STORED AS PARQUET
+INTO <RESULTS_BUCKET> STORED AS CSV
 ```
 {: codeblock}
 
@@ -277,8 +281,8 @@ INTO cos://eu-de/results-marisa STORED AS CSV
 To see information about each event, run the following query:
 
 ```
-SELECT FIELDS FROM PARQUET_FILE STORED AS PARQUET
-INTO RESULTS_BUCKET STORED AS CSV
+SELECT <FIELDS> FROM <PARQUET_FILE> STORED AS PARQUET
+INTO <RESULTS_BUCKET> STORED AS CSV
 ```
 {: codeblock}
 
@@ -287,6 +291,26 @@ Where
 * **FIELDS** is the list of fields that you want to get information on for the different records. For example, you can enter `_source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME, _source.o_initiator.id AS INITIATOR_ID, _source.o_initiator.name AS INITIATOR_NAME`
 * **PARQUET_FILE** is the **Result location URL** that you get when you transform the archive file from JSON to PARQUET
 * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
+
+For example, to get the list of actions, you can run the following query:
+
+```
+SELECT DISTINCT  _source.action
+FROM cos://eu-gb/sql-results/jobid=17cee056-4da1-4429-8aca-3a7eb320ee27 STORED AS PARQUET 
+INTO cos://eu-gb/sql-results STORED AS CSV
+```
+{: screen}
+
+For example, to get the list of actions for a user, you can run the following query:
+
+```
+SELECT  _source.eventTime, _source.action, _source.o_target.name
+FROM cos://eu-gb/sql-results/jobid=3aa9e732-ba88-4ffe-b9fc-b8a265876467 STORED AS PARQUET 
+WHERE _source.o_initiator.name = "xxx@ibm.com"
+ORDER BY _source.eventTime
+INTO cos://eu-gb/sql-results STORED AS CSV
+```
+{: screen}
 
 For example, to get the event time, the action, the criticality of the action, and the outcome, you can run the following query:
 
@@ -385,7 +409,7 @@ The following table lists the event fields and the column name that you must use
 | `severity`                    | `_source.severity`    |
 | `requestData`                 | `_source.requestData` |
 | `responseData`                | `_source.responseData` |
-{: caption="Table 1. Mapping of event fields to SQL query column names" caption-side="top"} 
+{: caption="Table 3. Mapping of event fields to SQL query column names" caption-side="top"} 
 
 
 

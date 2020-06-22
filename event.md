@@ -316,7 +316,7 @@ The following table lists common target fields that are available for each event
 ### target.id (string)
 {: #target.id}
 
-This value indicates the cloud resource on which the action is executed. 
+This field indicates the cloud resource on which the action is executed. 
 {: note}
 
 The format of this field is a **CRN**. For more information, see [CRN format](/docs/resources?topic=resources-crn).

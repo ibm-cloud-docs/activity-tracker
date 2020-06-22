@@ -20,6 +20,8 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
+
 
 
 # IAM events
@@ -113,7 +115,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.user-identitycookie.login` | This is an event that is generated when an initiator requests an identity cookie to run an action. |
 | `iam-identity.user-refreshtoken.login`   | This is an event that is generated when the initiator logs in to the IBM Cloud , or when an initiator that has already logged in to the IBM Cloud requests a new refresh token to run an action. |
 {: caption="Table 5. User login actions" caption-side="top"} 
-
+ 
 
 ## Viewing events
 {: #at_events_iam_ui}
@@ -127,7 +129,7 @@ To view these events, you must [provision an instance](/docs/services/Activity-T
 {: #at_events_iam_analyze}
 
 ### Login events
-{: #an_login_events} 
+{: #at_events_iam_analyze_login_events} 
 
 In the {{site.data.keyword.cloud_notm}}, an administrator, or a user that has the correct access in your account, has different options to manage a user's login settings. For example, an administrator can order external authentication options, enable a one-time passcode to be used during login, enable the use of security questions at login, or set a password expiration time period. [Learn more](/docs/iam?topic=iam-loginsettings). 
 
@@ -140,15 +142,17 @@ The following fields include extra information:
 * The `X-Global-Transaction-Id` includes an ID that you can use when you open a support ticket if you need to get more information.
 
 
-**Log in from the {{site.data.keyword.cloud_notm}} UI**
+#### Log in from the {{site.data.keyword.cloud_notm}} UI
+{: #at_events_iam_analyze_login_events-1}
+
 
 When a user logs in from the {{site.data.keyword.cloud_notm}} UI, you get an event in the account with action `iam-identity.user-refreshtoken.login`.
 
 The following field includes extra information:
 * In requestData, the `client_id` field is set to **HOP55v1CCT**. This value indicates a UI request.
 
-
-**Log in with a federated ID from the {{site.data.keyword.cloud_notm}} CLI by using a one-time passcode or an API key**
+#### Log in with a federated ID from the {{site.data.keyword.cloud_notm}} CLI by using a one-time passcode or an API key
+{: #at_events_iam_analyze_login_events-2}
 
 When a user [logs in from the {{site.data.keyword.cloud_notm}} CLI by using a one-time passcode](/docs/iam?topic=iam-federated_id#onetime_passcode), you get an event in the account with action `iam-identity.user-refreshtoken.login`.
 
@@ -158,8 +162,9 @@ The following field includes extra information:
 * In requestData, the `client_id` field is set to **bx**. This value indicates a CLI request.
 
 
+#### Failed log in actions
+{: #at_events_iam_analyze_login_events-3}
 
-**Failed log in actions**
 
 When a user logs in to the {{site.data.keyword.cloud_notm}}, the user ID (IBMid) and credentiasls are validated first. At this point, the user has not selected an account. Notice that a user can belong to multiple accounts. 
 
@@ -168,30 +173,9 @@ After the user ID is authenticated successfully in the {{site.data.keyword.cloud
 In Activity Tracker, you can see events that are associated to your account. Failed log in actions do not generate an event that you can monitor in your account.
 
 
-### Delete an access group
-{: #an_del_ag}
-
-When you delete an access group, the event that is triggered has an `action` field set to `iam-groups.group.delete`.
-
-When an access group is deleted, consider the following information:
-* Other actions are automatically triggered to clean up other resources that are associated with the group. Some actions that are triggered report events that are related to deletion of members in an access group, deletion of policies, and deletion of dynamic rules. 
-* The initiator of these actions is an {{site.data.keyword.IBM_notm}} service ID.
-
-
-When the access group that is deleted does not have members, policies, and rules assigned, the events that are generated for any of these resources report an outcome of`failure` with a `404` outcome code. The following sample shows the events that are generated when an access group that does not have members, policies or dynamic rules assigned is deleted:
-
-```
-Apr 29 14:11:22 IAM Access Groups: delete group test5
-Apr 29 14:11:24 IAM Access Groups: delete members -failure
-Apr 29 14:11:24 IAM Access Groups: delete rules -failure
-Apr 29 14:11:24 IAM Access Management: delete policy -failure
-```
-{: screen}
-
-
 
 ### Update an account service ID
-{: #an_update_acc_scvid}
+{: #at_events_iam_analyze_update_acc_scvid}
 
 A service ID identifies a service or application similar to how a user ID identifies a user. [Learn more](/docs/iam?topic=iam-serviceids).
 
@@ -202,19 +186,21 @@ The following fields include extra information:
 * The `target.name` field includes information about the service ID that is changed.
 * The `initiator.host.agent` field indicates if the request comes from the UI or the CLI. When the field is set to **NotSet**, the request originates in the UI. When the field is set to **IBM Cloud CLI...**, the request originates in the command-line. 
 
-**Lock and unlock a service ID**
+#### Lock and unlock a service ID
+{: #at_events_iam_analyze_update_acc_scvid-1}
 
 The following field includes extra information:
 * In requestData, the `lock` field is set to **true** when the service ID is locked, and to **false** when it is unlocked.
 
-
-**Add or modify a description**
+#### Add or modify a description
+{: #at_events_iam_analyze_update_acc_scvid-2}
 
 When a request to change a description generates an event, the following fields include information that can help you determine this action:
 * In requestData, the `lock` field is set to **false**.
 * In requestData, the `prev_instance_name` field and the `instance_name` field are set to the same value.
 
-**Change the name of a service ID**
+#### Change the name of a service ID
+{: #at_events_iam_analyze_update_acc_scvid-3}
 
 The following fields include extra information:
 * In requestData, the `lock` field is set to **false**.
@@ -224,7 +210,7 @@ The following fields include extra information:
 
 
 ### Update a user API key or a service ID API key
-{: #an_update_apikey}
+{: #at_events_iam_update_apikey}
 
 When an action to update an API key is requested, you get an event in the account with one of the following actions:
 * To update a user API key, the action is `iam-identity.user-apikey.update`.
@@ -235,20 +221,21 @@ The following fields include extra information:
 * The `target.name` field includes information about the API key that is changed.
 * The `initiator.host.agent` field indicates if the request comes from the UI or the CLI. When the field is set to **NotSet**, the request originates in the UI. When the field is set to **IBM Cloud CLI...**, the request originates in the command-line. 
 
-
-**Lock and unlock a service ID**
+#### Lock and unlock a service ID
+{: #at_events_iam_update_apikey-1}
 
 The following field includes extra information:
 * In requestData, the `lock` field is set to **true** when the API key is locked, and to **false** when it is unlocked.
 
-
-**Add or modify a description**
+#### Add or modify a description
+{: #at_events_iam_update_apikey-2}
 
 When a request to change a description generates an event, the following fields include information that can help you determine this action:
 * In requestData, the `lock` field is set to **false**.
 * In requestData, the `prev_instance_name` field and the `instance_name` field are set to the same value.
 
-**Change the name of a service ID**
+#### Change the name of a service ID
+{: #at_events_iam_update_apikey-3}
 
 The following fields include extra information:
 * In requestData, the `lock` field is set to **false**.
