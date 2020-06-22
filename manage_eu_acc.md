@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-22"
 
 keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU-supported
 
@@ -116,7 +116,7 @@ To grant administrator permissions to users, complete the following steps:
 1. Create an access group, then add users to it. For example, create an access group named `logdna-at-eu-sec-admins`. [Learn more](/docs/iam?topic=iam-groups#create_ag).
 2. [Assign administrator access to a group](/docs/iam?topic=iam-groups#access_ag) by configuring policies.
 
-    For example, add a policy where you select the {{site.data.keyword.at_short}} instance in Frankfurt only. Select the platform role **administrator**, or if you want to remove permissions to manage users, choose the platform role **editor**. Select the service role **manager**. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_manage_events.)
+    For example, add a policy where you select the {{site.data.keyword.at_short}} instance in Frankfurt only. Select the platform role **administrator**, or if you want to remove permissions to manage users, choose the platform role **editor**. Select the service role **manager**. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_manage_events).
 
 
 ### Grant permissions to users to view events
@@ -126,22 +126,31 @@ To grant viewer permissions to users, complete the following steps:
 1. Create an access group, then add users to it. For example, create an access group named `logdna-at-eu-users`. [Learn more](/docs/iam?topic=iam-groups#create_ag).
 2. [Assign access to a group](/docs/iam?topic=iam-groups#access_ag) by configuring policies.
 
-    For example, add a policy where you select the {{site.data.keyword.at_short}} instance in Frankfurt only. Select the platform role **viewer** to grant users permissions to view events. Select the service role **reader**. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events.)
+    For example, add a policy where you select the {{site.data.keyword.at_short}} instance in Frankfurt only. Select the platform role **viewer** to grant users permissions to view events. Select the service role **reader**. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events).
 
 
 ## Step 6. Exporting logs
 {: #manage_eu_acc_step6}
 
-The web UI export functionality is not available for the {{site.data.keyword.at_short}} instance that is provisioned in Frankfurt. In addition, you cannot use the API to export data to an email address. 
+In an {{site.data.keyword.at_full_notm}} instance, you can manage the export feature. If the feature is enabled, users can export data.
 
-Users can export data to a local file or to a terminal by using the LogDNA export API and a service key. 
-* Users with **manager** permissions to administer the Frankfurt {{site.data.keyword.at_short}} instance can create and view service keys. 
-* Users with **manager** or **Standard-Member** permissions to work with the Frankfurt {{site.data.keyword.at_short}} instance can view active service keys, and therefore, can export data locally.
-* Users with **user** permissions to work with the Frankfurt {{site.data.keyword.at_short}} instance cannot see service keys. Therefore, these users cannot use the export API to download data.
+Users can export data through the LogDNA web UI or by using the *Export* LogDNA API:
 
-Service keys are only used to export data from a LogDNA instance by using the Export API. [Learn more](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-export#api).
+* Users can export data to a local file or to a terminal by using the LogDNA export API and a service key. 
 
+    * Users with **manager** permissions to administer the Frankfurt {{site.data.keyword.at_short}} instance can create and view service keys. 
 
+    * Users with **manager** or **Standard-Member** permissions to work with the Frankfurt {{site.data.keyword.at_short}} instance can view active service keys, and therefore, can export data locally.
+
+    * Users with **user** permissions to work with the Frankfurt {{site.data.keyword.at_short}} instance cannot see service keys. Therefore, these users cannot use the export API to download data.
+
+    * Service keys are only used to export data from a LogDNA instance by using the Export API. 
+    
+    [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export#export_api).
+
+* Users can request the export of data through the LogDNA web UI. 
+
+    [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export#export_ui).
 
 
 ## Step 7. Archiving logs

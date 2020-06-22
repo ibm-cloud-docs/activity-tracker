@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-03"
+lastupdated: "2020-06-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account events, catalog, tags
 
@@ -41,7 +41,7 @@ The following table lists the actions that generate an event:
 | `billing.account.create`             | An event is generated when you create an account after the account ID is assigned to the account. |
 | `billing.account.update`             | An event is generated when you update information about the account.  |
 | `billing.account.active`             | An event is generated when you verify the account, that is, an event is generated when the account becomes active. |
-| `billing.account.subscription.create` | An event is generated when you create a <a href="/docs/account?topic=account-accounts#subscription-account">Subscription account</a>. |
+| `billing.account-subscription.create` | An event is generated when you create a <a href="/docs/account?topic=account-accounts#subscription-account">Subscription account</a>. |
 {: caption="Table 1. Actions that generate account management events" caption-side="top"} 
 
 ## Events for managing IAM account settings
@@ -125,7 +125,7 @@ The following table lists the actions that generate an event:
 
 | Action                               | Description |
 |--------------------------------------|-------------|
-| `billing.account.org.create`         | An event is generated when you add an organization to the account. |
+| `billing.account-org.create`         | An event is generated when you add an organization to the account. |
 {: caption="Table 8. Actions that generate events" caption-side="top"} 
 
 

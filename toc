@@ -33,11 +33,6 @@ IBM Cloud Activity Tracker with LogDNA
         architecture-workload-isolation.md
     {: .navgroup-end}
 
-    {: .topicgroup}
-    Tutorials
-        tutorial_iam_apikeys.md
-    {: .navgroup-end}
-
     {: .navgroup id="howto"}
     provision.md
     remove.md

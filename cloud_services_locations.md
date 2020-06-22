@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-02"
+lastupdated: "2020-06-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
@@ -35,8 +35,8 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`  |
 |------------------------------------------------|---------------------|-------------------------|
-| `{{site.data.keyword.iae_full}}`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                      |        
-| `{{site.data.keyword.sqlquery_full}}`          | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                      |  
+| {{site.data.keyword.iae_full}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                      |        
+| {{site.data.keyword.sqlquery_full}}          | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                      |  
 {: caption="Analytics services integration in America's locations" caption-side="top"}
 {: #analytics-table-1}
 {: tab-title="America"}
@@ -46,8 +46,8 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                        | `Tokyo (jp-tok)`    |`Sydney (au-syd)` |
 |------------------------------------------------|---------------------|------------------|
-| `{{site.data.keyword.iae_full}}`               | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                         |        
-| `{{site.data.keyword.sqlquery_full}}`          | `NO`            | `NO`                           |  
+| {{site.data.keyword.iae_full}}               | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                         |        
+| {{site.data.keyword.sqlquery_full}}          | `NO`            | `NO`                           |  
 {: caption="Analytics services integration in AP locations" caption-side="top"}
 {: #analytics-table-2}
 {: tab-title="Asia Pacific"}
@@ -57,8 +57,8 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                        |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |------------------------------------------------|---------------------|------------------|
-| `{{site.data.keyword.iae_full}}`               | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |        
-| `{{site.data.keyword.sqlquery_full}}`          | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                               |  
+| {{site.data.keyword.iae_full}}               | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |        
+| {{site.data.keyword.sqlquery_full}}          | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`                               |  
 {: caption="Analytics services integration in Europe locations" caption-side="top"}
 {: #analytics-table-3}
 {: tab-title="Europe"}
