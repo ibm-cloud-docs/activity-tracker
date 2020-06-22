@@ -69,7 +69,7 @@ As owner or person responsible of the account access management, you can expect 
 
 For a user to log in successfully to your account through the {{site.data.keyword.cloud_notm}} UI, consider the following information:
 
-1. To initiate the log in requets, the user must launch the [{{site.data.keyword.cloud_notm}} UI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. To initiate the log in requets, the user must launch the [{{site.data.keyword.cloud_notm}} UI ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
 2. After the user enters the IBMid credentials into the browser, the data is forwarded to the IAM Identity Service.
 
@@ -106,11 +106,11 @@ In this scenario, a user is already logged in successfully to your account and r
 
 For a user to log in successfully to your account from the CLI by using an API key, consider the following information:
 
-1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
 
    If the CLI is installed, continue with the next step.
 
-2. Log in to the {{site.data.keyword.cloud_notm}} by using an API key. Run the following command: [`ibmcloud login --apikey`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login). The API key is forwarded to the IAM Identity Service.
+2. Log in to the {{site.data.keyword.cloud_notm}} by using an API key. Run the following command: [`ibmcloud login --apikey`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login). The API key is forwarded to the IAM Identity Service.
 
     Notice that the API key includes information about the account.
 
@@ -124,11 +124,11 @@ For a user to log in successfully to your account from the CLI by using an API k
 For a user to log in successfully to your account from the CLI by using a one-time passcode, consider the following information:
 
 
-1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
 
    If the CLI is installed, continue with the next step.
 
-2. Log in to the {{site.data.keyword.cloud_notm}} by using a one-time passcode. Run the following command: [`ibmcloud login --sso`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login)
+2. Log in to the {{site.data.keyword.cloud_notm}} by using a one-time passcode. Run the following command: [`ibmcloud login --sso`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
 3. After the credentials are validated and the user is authenticated, a token is returned.
 
@@ -149,11 +149,11 @@ For a user to log in successfully to your account from the CLI by using a one-ti
 
 For a user to log in successfully to your account from the CLI by using a user ID and password, consider the following information:
 
-1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
 
    If the CLI is installed, continue with the next step.
 
-2. Log in to the {{site.data.keyword.cloud_notm}} by using an API key. Run the following command: [`ibmcloud login –u USER –p password`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login). The API key is forwarded to the IAM Identity Service.
+2. Log in to the {{site.data.keyword.cloud_notm}} by using an API key. Run the following command: [`ibmcloud login –u USER –p password`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login). The API key is forwarded to the IAM Identity Service.
 
     Notice that the API key includes information about the account.
 
