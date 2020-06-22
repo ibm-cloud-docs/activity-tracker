@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-09"
+lastupdated: "2020-06-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event fields
 
@@ -319,7 +319,7 @@ The following table lists common target fields that are available for each event
 This value indicates the cloud resource on which the action is executed. 
 {: note}
 
-The format of this field is a **CRN**. For more information, see [CRN format](/docs/overview?topic=overview-crn#format-crn).
+The format of this field is a **CRN**. For more information, see [CRN format](/docs/resources?topic=resources-crn).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-06-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, view events
 
