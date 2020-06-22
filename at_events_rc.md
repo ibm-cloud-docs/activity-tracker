@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, resource controller events
 
@@ -20,6 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
 # Service instance events  
 {: #at_events_rc}
@@ -100,7 +101,8 @@ To view these events, you must [provision an instance](/docs/services/Activity-T
 ## Analyzing events
 {: #rc_analyze}
 
-**Action: service_name.instance.delete**
+### Action service_name.instance.delete
+{: #rc_analyze-1}
 
 When a service instance is deleted, consider the following information:
 * Other actions are automatically triggered to clean up IAM permissions. These actions remove policies that are configured for users and service IDs in the account to work with the service instance. 
