@@ -368,7 +368,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
     Make the following modifications to the file you downloaded:
     
-    Change the line that says *image: icr.io/ext/logdna-agent:stable* to instead specify an exact version you want to use, and pull it from `icr.io`. For example, *image: icr.io/ext/logdna-agent:2.1.9*. You should use an exact version in a highly regulated environment like IBM Cloud, and pull it from `icr.io` so that Vulnerability Advisor ensures compliance. 
+    Change the line that says `image: icr.io/ext/logdna-agent:stable` to instead specify an exact version you want to use. For example, `image: icr.io/ext/logdna-agent:2.1.9`. You should use an exact version in a highly regulated environment like IBM Cloud. 
     To see the available versions of the agent, use these commands:
     ```
     ibmcloud cr login
@@ -376,14 +376,12 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     ibmcloud cr images --restrict ext/logdna-agent
     ```
     
-    **Temporary**: Globally change `ibm-observer` to `ibm-observe` in six places.
-    
-    **Temporary** Globally change `test.cloud.` to `cloud.` in two places.
+    **Temporary**: Globally change `test.cloud.` to `cloud.` in two places.
 
     Now that the yaml file has been modified, install the agent with this command:
     
     ```
-    kubectl create -f logdna-agent-v2-st-private.yaml
+    kubectl create -f agent-resources-supertenant-private.yaml
     ```
     {: codeblock}
 
