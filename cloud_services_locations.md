@@ -466,6 +466,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.appid_full}}                                | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |        
 | {{site.data.keyword.keymanagementservicelong}}                  | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | ![Checkmark icon](../../icons/checkmark-icon.svg) |  `NO` |
+| {{site.data.keyword.security-advisor_long}}                     | ![Checkmark icon](../../icons/checkmark-icon.svg) |  `NO` |   
 {: caption="Security services integration in America's locations" caption-side="top"}
 {: #cs-sec-table-1}
 {: tab-title="America"}
@@ -479,6 +480,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.appid_full}}                                | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |   
 | {{site.data.keyword.keymanagementservicelong}}                  | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | `NO`    | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.security-advisor_long}}                     | `NO`    |  `NO`  |         
 {: caption="Security services integration in AP locations" caption-side="top"}
 {: #cs-sec-table-2}
 {: tab-title="Asia Pacific"}
@@ -491,7 +493,8 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.cloudcerts_full_notm}}                    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | {{site.data.keyword.appid_full}}                              | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |   
 | {{site.data.keyword.keymanagementservicelong}}                | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`  |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | ![Checkmark icon](../../icons/checkmark-icon.svg) | `NO`  
+| {{site.data.keyword.security-advisor_long}}                     | `NO` | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Security services integration in Europe locations" caption-side="top"}
 {: #cs-sec-table-3}
 {: tab-title="Europe"}
