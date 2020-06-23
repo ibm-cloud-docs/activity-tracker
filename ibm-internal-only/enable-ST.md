@@ -308,7 +308,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
 4. Install the LogDNA agent with super tenancy 
 
-    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. These yaml files use private endpoints. **Temporary**: These files are downloaded from staging.
+    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. These yaml files use private endpoints. **Temporary**: These files are downloaded from staging. **us-south is the only region that works in staging, since staging is Dallas only** So download the one from `us-south`, and then edit the file and change the two "us-south" strings to the region you want.
    
     For **us-south**, run the following command:
  
