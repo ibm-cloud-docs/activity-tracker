@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-24"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, export
 
@@ -20,6 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
  
 # Exporting events
@@ -79,6 +80,9 @@ Complete the following steps to export events programmatically:
 1. Generate a Service Key. 
 
     You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to complete this step. 
+
+    You can only generate a service Key through the LogDNA web UI.
+    {: important}
     
     If you are a user with the **LogDNA user** service role permissions, you can get an active service key through the LogDNA web UI. Go to **Settings** &gt; **Organization** &gt; **API keys** section to view the active service keys.
 

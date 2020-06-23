@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-06-24"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, usage
 
@@ -20,6 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
 
 # Controlling data usage
@@ -40,7 +41,7 @@ Events that are excluded do not count towards your data usage quota. Also, event
 
 When you exclude events through an exclusion rule, you can choose to **Preserve these lines for live-tail and alerting**. When you check this option, log lines that match the exclusion rule are shown through the live tail and you can set up an alert for that data.
 
-[Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-exclusion).
+[Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-exclusion_rules).
 
 ​
 

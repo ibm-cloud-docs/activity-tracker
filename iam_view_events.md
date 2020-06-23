@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-24"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, iam, manage user access, viewer
 
@@ -20,6 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
  
 # Granting user permissions to a user or service ID

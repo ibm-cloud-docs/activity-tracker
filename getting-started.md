@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-18"
+lastupdated: "2020-06-24"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing
 
@@ -175,20 +175,13 @@ Complete the following steps to assign a policy through the UI:
 1. From the menu bar, click **Manage** &gt; **Access (IAM)**.
 2. Select **Access Groups**.
 3. Select the name of the group that you want to assign access to. 
-4. Click **Access policies**.
-5. Click **Assign access**.
-6. Select **Assign access within a resource group**.
-7. Select a resource group.
-8. If the user does not have a role that is already granted for the selected resource group, choose a role for the **Assign access to a resource group** field. 
-
-    Depending on the role that you select, the user can view the resource group on their dashboard, edit the resource group name, or manage user access to the group. 
-    
-    You can select **No access**, if you want the user to have access only to the {{site.data.keyword.at_full_notm}} service in the resource group.
-
-9. Select **IBM Cloud Activity Tracker with LogDNA**.
-10. Select the platform role **Administrator**.
-11. Select the service role **Manager**.
-12. Click **Assign**.
+4. Click **Access policies** &gt; **Assign access**.
+5. Select **IAM services**.
+6. For the field *What type of access do you want to assign?*, select **{{site.data.keyword.at_full_notm}}**.
+7. For the *in* field, select the resource group. 
+8. Select the platform role **Administrator**.
+9. Select the service role **Manager**.
+10. Click **Add**. Then, select **Assign**.
 
 
 ### Step 3. Add the user to the group
@@ -205,30 +198,18 @@ Complete the following steps to add the user to the access group:
 If you have a pay-as-you-go account, you can use {{site.data.keyword.cloudcerts_short}} to create an event. If you don't have a pay-as-you-go account, provisioning any of the available lite services triggers an event.
 
 
-1. From the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog){:new_window}, select the category **Security and Identity**.
+1. From the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external}, select the category **Security and Identity**.
 
 2. Select the {{site.data.keyword.cloudcerts_short}} service.
 
-3. Enter a name for the service instance.
-
-4. Select the region where you plan to provision the instance.
-
-5. Select a resource group. 
-
-    By default, the **Default** resource group is set.
-
-    **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
-
-6. Click **Create**.
-
-An instance of the {{site.data.keyword.cloudcerts_short}} service is created.
+3. [Provision an instance of the {{site.data.keyword.cloudcerts_short}} service](/docs/certificate-manager?topic=certificate-manager-getting-started).
 
 ## Step 4. Launch the web UI 
 {: #gs_step4}
 
 Complete the following steps to launch the web UI:
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
