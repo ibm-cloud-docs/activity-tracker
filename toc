@@ -80,14 +80,14 @@ IBM Cloud Activity Tracker with LogDNA
         sqlquery.md
 
     {: .topicgroup}
-    Export logs
+    Export events
         export_config.md
         service_keys.md
         export.md
         export_api.md
 
     {: .topicgroup}
-    View logs
+    View events
         launch.md
         config.md
         views.md

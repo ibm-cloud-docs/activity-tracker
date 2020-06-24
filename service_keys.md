@@ -26,14 +26,14 @@ subcollection: Activity-Tracker-with-LogDNA
 # Managing service keys
 {: #service_keys}
 
-In an {{site.data.keyword.at_full_notm}} instance, you can create, delete, and view service keys through the LogDNA web UI.
+In an {{site.data.keyword.at_full_notm}} instance, you can create, delete, and view service keys through the LogDNA web UI. A service key is an API key that you must use to validate your credentials with the auditing instance when you export data programmatically.
 {:shortdesc}
 
 
 ## Creating a service key
 {: #service_keys_create}
 
-You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to complete this step.
+You must have **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
 {: important} 
 
 You can only generate a service Key through the LogDNA web UI.
@@ -56,7 +56,7 @@ Complete the following steps to create a service key:
 ## Deleting a service key
 {: #service_keys_delete}
 
-You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to complete this step.
+You must have **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
 {: important} 
 
 You can only delete a service Key through the LogDNA web UI.

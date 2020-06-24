@@ -30,26 +30,40 @@ From an {{site.data.keyword.at_full_notm}} instance, you can export events progr
 {:shortdesc}
 
 
+## Prerequisites
+{: #export_api_prereqs}
+
+To export events, consider the following information:
+
+1. You must have a paid service plan for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan). 
+
+2. You must have a user ID that has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
+
+3. You must check that the LogDNA instance has the export feature enabled.
+
+
 ## Export API
 {: #export_api_info}
 
-Use `ENDPOINT/v1/export` to export events.
+Use `ENDPOINT/v1/export?QUERY_PARAMETERS" -u SERVICE_KEY:` to export events.
 {: note}
 
-    ```
-    curl "ENDPOINT/v1/export?QUERY_PARAMETERS" -u SERVICE_KEY:
-    ```
-    {: codeblock}
+*ENDPOINT* represents the entry point to the service. Each region has a different URL. To export events from an auditing instance, see [Endpoints](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints).
 
-    Where 
+*QUERY_PARAMETERS* are parameters that define the filtering criteria that is applied to the export request.
 
-    * ENDPOINT represents the entry point to the service. Each region has a different URL. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints).
-    * QUERY_PARAMETERS are parameters that define the filtering criteria that is applied to the export request.
-    * SERVICE_KEY is the service key that you created in the previous step.
+*SERVICE_KEY* is an API key that you must use to validate your credentials with the auditing instance.
 
 
-### Query parameters
+
+
+## Query parameters
 {: #export_api_info_parameters}
+
+You can define query parameters to refine the events that you want to export.
+
+
+
 
 The following table lists the query parameters that you can set:
 
@@ -71,72 +85,105 @@ The following table lists the query parameters that you can set:
 When you include a query or a subject to an email, use `%20` to represent a space.
 {: important}
 
+For example, you can define a set of parameters to include information:
+
+```
+ENDPOINT/v1/export?to=START_TIME&from=END_TIME&hosts=SERVICE_LIST&level=SEVERITY_LIST&size=N&query=(SEARCH_QUERY)" -u $TOKEN:
+```
+{: codeblock}
 
 
 
-## Prerequisites
-{: #export_api_prereqs}
-
-1. You must have a paid service plan for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan). 
-
-2. You must have a service key.
-
-3. You must have a user ID that has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
-
-4. You must check that the LogDNA instance has the export feature enabled.
-
-## Step 1. Get a service key
-{: #export_api_step_1}
+## Exporting events
+{: #export_api_events}
 
 Complete the following steps to export events programmatically:
 
-1. Generate a Service Key. 
 
-    You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to complete this step. 
+### Step 1. Get a service key
+{: #export_api_step_1}
 
-    You can only generate a service Key through the LogDNA web UI.
-    {: important}
-    
-    If you are a user with the **LogDNA user** service role permissions, you can get an active service key through the LogDNA web UI. Go to **Settings** &gt; **Organization** &gt; **API keys** section to view the active service keys.
-
-    1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_step2).
-
-    2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
-
-    3. Select **API keys**.
-
-        You can see the service keys that are created. 
-
-    4. Click **Generate Service Key**. A new key is added to the list. Copy this key.
+[Get a service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys). 
 
 
-## Step 2. Define the export parameters
+## Step 2. Identify the data to pass through the export parameters
 {: #export_api_step_2}
 
+When you use the export API, you might define 1 or more parameters to refine the set of events that you export. For example, consider the following parameters:
+* `level`: This parameter is used to filter events based on the criticality of a request.
+* `query`: This parameter is used to define the search query that is used to filter events.
+* `hosts`: This parameter is used to list the services from which you want to export data. 
 
-## Step 3. Export the events
+To verify that the query that you enter returns the set of events that you are looking for, define the search query through the LogDNA web UI.
+{: tip}
+
+Consider the following information when you define the search query through the LogDNA web UI 
+1. Select the sources. 
+
+    Sources represent {{site.data.keyword.cloud_notm}} services. 
+    
+    The values that you identify will be required to set the *hosts* parameter. 
+
+    If you set the host field in the query, this parameter is not required.
+    {: note}
+
+2. Select the level.
+
+    In Activity Tracker, level maps to the [severity event field](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event#severity). Severity defines the level of threat an action may have on the {{site.data.keyword.cloud_notm}}.
+
+    Valid severity values are *critical*, *warning*, and *normal*.
+
+    If you set the field severity in the query, this parameter is not required.
+    {: note}
+
+3. Define the search query. 
+
+    To get more informatiomn on how to search, see [Searching Your Logs](https://docs.logdna.com/docs/search){: external}.
+
+    Refine the query until you can only see the events that you want to export.
+    {: tip}
+
+
+
+## Step 3. Map the data to the query parameters
 {: #export_api_step_3}
 
-2. Export events. Run the following cURL command:
+To define the parameters that you need for the export request, complete the following steps:
+
+1. Map your sources to the hosts parameter. The `hosts` parameter is a comma-separated list of services.
+
+2. Map the severity to the `level` parameter.
+
+3. Map the query to the query parameter. 
+
+    Notice that when you copy the query from the LogDNA web UI, you must replace every space with %20.
+    {: important}
 
 
+Then, build the query parameters.
 
-   ```
-    curl "ENDPOINT/v1/export?QUERY_PARAMETERS" -u SERVICE_KEY:
-    ```
-    {: codeblock}
 
-    Where 
+## Step 4. Export the events
+{: #export_api_step_4}
 
-    * ENDPOINT represents the entry point to the service. Each region has a different URL. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints).
-    * QUERY_PARAMETERS are parameters that define the filtering criteria that is applied to the export request.
-    * SERVICE_KEY is the service key that you created in the previous step.
+Run the following cURL command to export events:
+
+```
+curl "ENDPOINT/v1/export?QUERY_PARAMETERS" -u SERVICE_KEY:
+```
+{: codeblock}
+
+Where 
+
+* ENDPOINT represents the entry point to the service. Each region has a different URL. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints).
+* QUERY_PARAMETERS are parameters that define the filtering criteria that is applied to the export request.
+* SERVICE_KEY is the service key that you created in the previous step.
 
 
 ## Samples
 {: #export_api_samples}
 
-For example, to query events for a service, you can run the following command:
+To query events for a service in us-south, you can run the following command:
 
 ```
 curl 'https://api.us-south.logging.cloud.ibm.com/v1/export?to=1592337600&from=1592179200&hosts=kms&size=10&query=(target.id:crn:v1:bluemix:public:kms:us-south:a/xxxxxxx:xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx%20(action:kms.secrets.create%20%20OR%20action:kms.secrets.delete%20))' -u $TOKEN:
@@ -146,14 +193,14 @@ curl 'https://api.us-south.logging.cloud.ibm.com/v1/export?to=1592337600&from=15
 To write events into the terminal, you can run the following command:
 
 ```
-curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&from=$(($(date +%s)-86400))000" -u e08c0c759663491880b0d61712346789:
+curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&from=$(($(date +%s)-86400))000" -u $TOKEN:
 ```
 {: codeblock}
 
 To send an email with the link to download the events that are specified on the export, you can run the following command:
 
 ```
-curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&from=$(($(date +%s)-86400))000&email=joe@ibm.com" -u e08c0c759663491880b0d61712346789:
+curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&from=$(($(date +%s)-86400))000&email=joe@ibm.com" -u $TOKEN:
 ```
 {: codeblock}
 
@@ -161,12 +208,8 @@ curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&fro
 To send an email with a custom subject, you can run the following command:
 
 ```
-curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&from=$(($(date +%s)-86400))000&email=joe@ibm.com&emailSubject=Export%20test" -u e08c0c759663491880b0d61712346789:
+curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&from=$(($(date +%s)-86400))000&email=joe@ibm.com&emailSubject=Export%20test" -u $TOKEN:
 ```
 {: codeblock}
 
-## Step 2. Create a view
-{: #export_step2}
-
-[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views).
 
