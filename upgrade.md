@@ -23,13 +23,13 @@ subcollection: Activity-Tracker-with-LogDNA
 {:external: target="_blank" .external}
 
 
-# Change the service plan of an instance
+# Changing the service plan of an instance
 {: #upgrade}
 
 When you provision an instance of the {{site.data.keyword.at_full_notm}} service, you must choose a service plan. Different plans offer different features. You can change the service plan at any time.
 {:shortdesc}
 
-[Learn more about service plans.](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan)
+[Learn more about service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
 
 ## Changing the service plan through the Observability dashboard
 {: #upgrade_ui}
@@ -62,8 +62,6 @@ Complete the following steps to change the service plan:
 
 1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-ibmcloud-cli#ibmcloud-cli).
 
-   If the CLI is installed, continue with the next step.
-
 2. Log in to the location in the {{site.data.keyword.cloud_notm}} where the instance is provisioned. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
     To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
@@ -74,7 +72,7 @@ Complete the following steps to change the service plan:
 
 4. [Optional] Get the current service plan ID.
 
-    To get the current service plan of an instance, you can run the following command and check the value of the value of the **resource_plan_id** field:
+    To get the current service plan of an instance, you can run the following command and check the value of the **resource_plan_id** field:
 
     ```
     ibmcloud resource service-instance INSTANCE_NAME --output JSON
@@ -90,11 +88,11 @@ Complete the following steps to change the service plan:
 
     Where
 
-    * NAME is the name of the instance
+    * `NAME` is the name of the instance
 
-    * SERVICE_PLAN_NAME is the type of plan. Valid values are *lite*, *7-day*, *14-day*, *30-day*
+    * `service-plan-id` indicates the type of plan.
 
-    * RESOURCE_PLAN_ID is the ID of the plan that you want to set. To get the service plan IDs, see [Service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
+    * `RESOURCE_PLAN_ID` is the ID of the plan that you want to set. To get the service plan IDs, see [Service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
     
 
 For example, to change the service plan of an instance to the 7 days retention plan, run the following command:

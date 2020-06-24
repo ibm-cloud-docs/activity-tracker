@@ -48,11 +48,11 @@ IBM Cloud Activity Tracker with LogDNA
     Internal adopters
         ibm-internal-only/enable-AT.md
         ibm-internal-only/enable-ST.md
-        ibm-internal/faq.md
         ibm-internal-only/global_events.md
         ibm-internal-only/best_practices.md
         ibm-internal-only/event_definition.md
         ibm-internal-only/at_use_cases.md
+        ibm-internal-only/at_new.md
         ibm-internal-only/at_validate.md
         ibm-internal-only/documentation.md
         ibm-internal-only/documentation-logging.md
