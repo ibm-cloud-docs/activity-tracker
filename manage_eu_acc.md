@@ -31,7 +31,7 @@ Across every industry, organizations require tighter controls and visibility int
 * [You must enable your account to be EU-supported](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-manage_eu_acc#manage_eu_acc_step1), so support is handled by team members in the European Union. 
 * To monitor activity from {{site.data.keyword.cloud_notm}} services and Cloud Foundry (CF) resources, you must provision these resources in the Frankfurt location.
     
-    Notice that the {{site.data.keyword.cos_full_notm}} (COS) service is a global service. When you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location bound. As soon as you provision a COS instance, you get [global events](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-monitor_events#mon_def_global) automatically through the Frankfurt {{site.data.keyword.at_full_notm}} instance. You can also enable management and data events on a bucket to go to the Frankfurt {{site.data.keyword.at_full_notm}} instance. **When you enable all events to go to the Frankfurt instance, notice that global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt.**
+    Notice that the {{site.data.keyword.cos_full_notm}} (COS) service is a global service. When you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location bound. As soon as you provision a COS instance, you get [global events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_global) automatically through the Frankfurt {{site.data.keyword.at_full_notm}} instance. You can also enable management and data events on a bucket to go to the Frankfurt {{site.data.keyword.at_full_notm}} instance. **When you enable all events to go to the Frankfurt instance, notice that global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt.**
 
 * You must **restrict access to users** to see and manage events in the {{site.data.keyword.at_short}} instance provisioned in Frankfurt.  
 * You must ensure that you **archive to an EU-Supported {{site.data.keyword.cos_full_notm}} (COS) bucket**. 
@@ -132,7 +132,7 @@ To grant viewer permissions to users, complete the following steps:
 ## Step 6. Exporting logs
 {: #manage_eu_acc_step6}
 
-In an {{site.data.keyword.at_full_notm}} instance, you can manage the export feature. If the feature is enabled, users can export data.
+In an {{site.data.keyword.at_full_notm}} instance, you can configure and control whether users can export data. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_config).
 
 Users can export data through the LogDNA web UI or by using the *Export* LogDNA API:
 
@@ -146,11 +146,11 @@ Users can export data through the LogDNA web UI or by using the *Export* LogDNA 
 
     * Service keys are only used to export data from a LogDNA instance by using the Export API. 
     
-    [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export#export_api).
+    [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
 
 * Users can request the export of data through the LogDNA web UI. 
 
-    [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export#export_ui).
+    [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export).
 
 
 ## Step 7. Archiving logs

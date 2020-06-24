@@ -69,8 +69,8 @@ Complete the following steps to export data through the LogDNA web UI:
 2. Click the **Views** icon ![Configuration icon](images/views.png).
 3. Select **Everything**.
 4. Apply filters and search criteria until you see the entries that you want to export.
-4. Click **Unsaved View**. Then, save the view.
-5. Click the view name. Then, select **Export lines**. A new window opens.
+4. Click **Unsaved View**.
+5. Select **Export lines**. A new window opens.
 6. Check the time range. If you need to change it, click the predefined time range in the *Change the Time Range for export* field.
 7. Select **Prefer newer lines** or **Prefer older lines** in case the export request exceeds the line limit.
 8. Check your email. You receive an email from **LogDNA** with a link to download your exported lines.

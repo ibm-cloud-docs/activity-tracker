@@ -2,7 +2,7 @@
 
 copyright:
   years:  2018, 2020
-lastupdated: "2020-04-28"
+lastupdated: "2020-06-24"
 
 keywords: LogDNA, IBM Cloud, Activity Tracker, logging, web UI, observability
 
@@ -20,6 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
 # Managing Activity Tracker instances in the Observability UI
 {: #observe}
@@ -34,7 +35,7 @@ You can manage your Activity Tracker instances through the `Observability` dashb
 
 Complete the following steps to launch the Activity Tracker dashboard in {{site.data.keyword.cloud_notm}}:
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**. 
 

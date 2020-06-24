@@ -54,6 +54,9 @@ Use `ENDPOINT/v1/export?QUERY_PARAMETERS" -u SERVICE_KEY:` to export events.
 
 *SERVICE_KEY* is an API key that you must use to validate your credentials with the auditing instance.
 
+Add `:` after *SERVICE_KEY*.
+{: important}
+
 
 
 
@@ -106,7 +109,7 @@ Complete the following steps to export events programmatically:
 [Get a service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys). 
 
 
-## Step 2. Identify the data to pass through the export parameters
+### Step 2. Identify the data to pass through the export parameters
 {: #export_api_step_2}
 
 When you use the export API, you might define 1 or more parameters to refine the set of events that you export. For example, consider the following parameters:
@@ -145,7 +148,7 @@ Consider the following information when you define the search query through the 
 
 
 
-## Step 3. Map the data to the query parameters
+### Step 3. Map the data to the query parameters
 {: #export_api_step_3}
 
 To define the parameters that you need for the export request, complete the following steps:
@@ -163,7 +166,7 @@ To define the parameters that you need for the export request, complete the foll
 Then, build the query parameters.
 
 
-## Step 4. Export the events
+### Step 4. Export the events
 {: #export_api_step_4}
 
 Run the following cURL command to export events:
