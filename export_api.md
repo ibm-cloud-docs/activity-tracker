@@ -155,15 +155,13 @@ To define the parameters that you need for the export request, complete the foll
 
 1. Map your sources to the hosts parameter. The `hosts` parameter is a comma-separated list of services.
 
-2. Map the severity to the `level` parameter.
+2. Map the severity to the `level` parameter. The `level` parameter is a comma-separated list of severity values.
 
 3. Map the query to the query parameter. 
 
     Notice that when you copy the query from the LogDNA web UI, you must replace every space with %20.
     {: important}
 
-
-Then, build the query parameters.
 
 
 ### Step 4. Export the events

@@ -72,10 +72,19 @@ Complete the following steps to change the service plan:
 
     By default, the `default` resource group is set.
 
+4. [Optional] Get the current service plan ID.
+
+    To get the current service plan of an instance, you can run the following command and check the value of the value of the **resource_plan_id** field:
+
+    ```
+    ibmcloud resource service-instance INSTANCE_NAME --output JSON
+    ```
+    {: codeblock}
+
 4. Change the service plan. Run the [ibmcloud resource service-instance-update](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command:
 
     ```
-    ibmcloud resource service-instance-update NAME --service-plan-id SERVICE_PLAN_NAME
+    ibmcloud resource service-instance-update NAME --service-plan-id RESOURCE_PLAN_ID
     ```
     {: codeblock}
 
@@ -85,11 +94,14 @@ Complete the following steps to change the service plan:
 
     * SERVICE_PLAN_NAME is the type of plan. Valid values are *lite*, *7-day*, *14-day*, *30-day*
 
-
+    * RESOURCE_PLAN_ID is the ID of the plan that you want to set. To get the service plan IDs, see [Service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
     
+
 For example, to change the service plan of an instance to the 7 days retention plan, run the following command:
 
 ```
-ibmcloud resource service-instance-update logdna-instance-01 7-day
+ibmcloud resource service-instance-update logdna-instance-01 9aae7491-5cb6-43eb-9b7a-3e0456c781f0
 ```
 {: codeblock}
+
+

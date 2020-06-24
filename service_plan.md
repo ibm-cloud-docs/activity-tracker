@@ -28,18 +28,19 @@ Different pricing plans are available that you can choose for an {{site.data.key
 
 
 
-| Plan                     | Number of days that data is available for seach | Number of users per plan |
-|--------------------------|-------------------------------------------------|--------------------------|
-| `30 days log search`     | 30                                              | Unlimitted               |
-| `14 days log search`     | 14                                              | Unlimitted               |
-| `7-day log search`       | 7                                               | Unlimitted               |
-| `Lite`   `[*]`           | Data is not available for search                | 1                        |
+| Plan                     | Number of days that data is available for seach | Number of users per plan | Plan ID |
+|--------------------------|-------------------------------------------------|--------------------------|---------|
+| `HIPAA service plan`     | 30                                              | 25                       | 254d26dc-3ef5-4006-912c-954186a0d033 |
+| `30 days log search`     | 30                                              | Unlimitted               | e914263e-8b62-475e-8206-938e3a31ad26 |
+| `14 days log search`     | 14                                              | Unlimitted               | b7f77c86-adde-4e32-8a1b-daba35b1d4fa |
+| `7-day log search`       | 7                                               | Unlimitted               | 9aae7491-5cb6-43eb-9b7a-3e0456c781f0 |
+| `Lite`   `[*]`           | Data is not available for search                | 1                        | 6efc5a58-4289-4632-867f-5a25e817bfe9 |
 {: caption="Table 1. List of service plans" caption-side="top"} 
 
 `[*]` In the lite plan, the log line is not formatted.
 {: important}
 
-{{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your logs as they pass through the system. You can view logs by using log tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
+{{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your events as they pass through the system. You can view events by using event tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
 
 
 ## Features by plan
