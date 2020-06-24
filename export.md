@@ -23,10 +23,10 @@ subcollection: Activity-Tracker-with-LogDNA
 {:external: target="_blank" .external}
 
  
-# Exporting events
+# Exporting events through the LogDNA web UI
 {: #export}
 
-You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance into a local file. You can export logs programmatically by using the LogDNA REST API or through the web UI. 
+You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance graphically through the web UI. 
 {:shortdesc}
 
 
@@ -39,122 +39,40 @@ You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} i
 
 * Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
+* Check that the LogDNA instance has the export feature enabled.
 
-## Step 1. Go to the web UI
-{: #export_step1}
+## Exporting events from a custom view
+{: #export_ui_view}
 
-[Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
+You can create a custom view and then export data for a period of time.
+
+Complete the following steps to export data through the LogDNA web UI:
+
+1. [Launch the LogDNA web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
+2. Click the **Views** icon ![Configuration icon](images/views.png).
+3. Select a view.
+4. Select the view name. 
+5. Select **Export lines**. A new window opens.
+6. Check the time range. If you need to change it, click the predefined time range in the *Change the Time Range for export* field.
+7. Select **Prefer newer lines** or **Prefer older lines** in case the export request exceeds the line limit.
+8. Check your email. You should receive an email from **LogDNA** with a link to download your exported lines.
 
 
-## Step 2. Create a view
-{: #export_step2}
+## Exporting events from a search
+{: #export_ui_search}
 
-[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views).
+You can export data from a custom search.
 
+Complete the following steps to export data through the LogDNA web UI:
 
-## Step 3. Export data
-{: #export_step3}
-
-Choose one of the following options to export events:
-
-### Option 1. Exporting events from the web UI
-{: #export_ui}
-
-Complete the following steps to export data:
-
-1. Click the **Views** icon ![Configuration icon](images/views.png).
-2. Select **Everything** or a view.
-3. Apply a time frame, filters and search criteria until you see the entries that you want to export.
-4. Click **Unsaved View** if you are starting from the **Everything** view. Click your view name if you selected a view in the previous step.
+1. [Launch the LogDNA web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
+2. Click the **Views** icon ![Configuration icon](images/views.png).
+3. Select **Everything**.
+4. Apply filters and search criteria until you see the entries that you want to export.
+4. Click **Unsaved View**.
 5. Select **Export lines**. A new window opens.
 6. Check the time range. If you need to change it, click the predefined time range in the *Change the Time Range for export* field.
 7. Select **Prefer newer lines** or **Prefer older lines** in case the export request exceeds the line limit.
 8. Check your email. You receive an email from **LogDNA** with a link to download your exported lines.
 
-
-### Option 2. Exporting events programmatically by using the API
-{: #export_api}
-
-Complete the following steps to export events programmatically:
-
-1. Generate a Service Key. 
-
-    You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to complete this step. 
-
-    You can only generate a service Key through the LogDNA web UI.
-    {: important}
-    
-    If you are a user with the **LogDNA user** service role permissions, you can get an active service key through the LogDNA web UI. Go to **Settings** &gt; **Organization** &gt; **API keys** section to view the active service keys.
-
-    1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_step2).
-
-    2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
-
-    3. Select **API keys**.
-
-        You can see the service keys that are created. 
-
-    4. Click **Generate Service Key**. A new key is added to the list. Copy this key.
-
-2. Export events. Run the following cURL command:
-
-    ```
-    curl "ENDPOINT/v1/export?QUERY_PARAMETERS" -u SERVICE_KEY:
-    ```
-    {: codeblock}
-
-    Where 
-
-    * ENDPOINT represents the entry point to the service. Each region has a different URL. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints).
-    * QUERY_PARAMETERS are parameters that define the filtering criteria that is applied to the export request.
-    * SERVICE_KEY is the service key that you created in the previous step.
-
-The following table lists the query parameters that you can set:
-
-| Query parameter | Type       | Status     | Description |
-|-----------|------------|------------|-------------|
-| `from`      | `int32`      | Required   | Start time. Set as UNIX timestamp in seconds or milliseconds. |
-| `to`        | `int32`      | Required   | End time. Set as UNIX timestamp in seconds or milliseconds.    |
-| `size`      | `string`     | Optional   | Number of event lines to include in the export.  | 
-| `hosts`     | `string`     | Optional   | Comma-separated list of services. </br>To get the value that you can set for a specific service, you can check the label `Source` in an event tha is generated by the service. |
-| `apps`      | `string`     | Optional   | Comma-separated list of service instances represented as crns. </br>To get the value that you can set for a specific service, you can check the label `App` in an event tha is generated by the service. |
-| `levels`    | `string`     | Optional   | Comma-separated list of severities. </br>Use this field to set the severity of the events that you want to export. |
-| `query`     | `string`     | Optional   | [Search query](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step2).  </br>You can test your query in a view in the LogDNA web UI. Then, when you copy the query to use for the export, replace each blank space in the query with `%20`.|
-| `prefer`    | `string`     | Optional   | Defines the log lines that you want to export. Valid values are `head`, first log lines, and `tail`, last log lines. If not specified, defaults to tail.  |
-| `email`     | `string`     | Optional   | Specifies the email with the downloadable link of your export. By default, the event lines are streamed.|
-| `emailSubject` | `string`     | Optional   | Use to set the subject of the email. </br>Use `%20` to represent a space. For example, a sample value is `Export%20logs`. |
-{: caption="Query parameters" caption-side="top"} 
-
-
-When you include a query or a subject to an email, use `%20` to represent a space.
-{: important}
-
-For example, to query events for a service, you can run the following command:
-
-```
-curl 'https://api.us-south.logging.cloud.ibm.com/v1/export?to=1592337600&from=1592179200&hosts=kms&size=10&query=(target.id:crn:v1:bluemix:public:kms:us-south:a/xxxxxxx:xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx%20(action:kms.secrets.create%20%20OR%20action:kms.secrets.delete%20))' -u $TOKEN:
-```
-{: codeblock}
-
-To write events into the terminal, you can run the following command:
-
-```
-curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&from=$(($(date +%s)-86400))000" -u e08c0c759663491880b0d61712346789:
-```
-{: codeblock}
-
-To send an email with the link to download the events that are specified on the export, you can run the following command:
-
-```
-curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&from=$(($(date +%s)-86400))000&email=joe@ibm.com" -u e08c0c759663491880b0d61712346789:
-```
-{: codeblock}
-
-
-To send an email with a custom subject, you can run the following command:
-
-```
-curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=$(date +%s)000&from=$(($(date +%s)-86400))000&email=joe@ibm.com&emailSubject=Export%20test" -u e08c0c759663491880b0d61712346789:
-```
-{: codeblock}
 

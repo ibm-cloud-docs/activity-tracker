@@ -36,6 +36,8 @@ IBM Cloud Activity Tracker with LogDNA
     {: .navgroup id="howto"}
     provision.md
     remove.md
+    upgrade.md
+    observe.md
 
     {: .topicgroup}
     DevOps tasks
@@ -49,16 +51,19 @@ IBM Cloud Activity Tracker with LogDNA
         sqlquery.md
 
     {: .topicgroup}
-    View logs
+    Export events
+        export_config.md
+        service_keys.md
+        export.md
+        export_api.md
+
+    {: .topicgroup}
+    View events
         launch.md
         config.md
         views.md
         view_events.md
         alerts.md
-
-    {: .topicgroup}
-    Export logs
-        export.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
