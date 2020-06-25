@@ -43,8 +43,9 @@ CIS supports IPv4 and IPv6. Most services have IPv6 turned off, but when the pro
 
 Proposal: (Complete within the next 6 months)
 
-initiator.host.address = IPv4 or IPv6 formatted IP address
-initiator.host.addressType = IPv4 / IPv6   The default value is `IPv4`. However, services should start adding this field. 
+1. `initiator.host.address` = IPv4 or IPv6 formatted IP address
+
+2. `initiator.host.addressType` = `IPv4` / `IPv6`   The default value is `IPv4`. However, services should start adding this field. 
 
 
 ## reasonForFailure
@@ -75,41 +76,85 @@ Services who already implement it: As services transition, 30 days notice needs 
 ## Provider that is authorized by a service requests an action on the customer's account
 {: #at_new_4}
 
-There are services like DirectLink and Transit Gateway that allow customers to run actions in their account directly by using the service API/UI, and by using the provider's API.
+There are services like DirectLink and Transit Gateway that allow customers to run actions by using the service's API, and by using the provider's API. When the Provider's API is used, a provider, that is registered with the service, makes the request on the customer account. 
+
+1. [Pre-req] Provider registers with the IBM Cloud service. (1 time only)
+
+    Provider has a unique ID.
+
+    This action generates an AT event (`svc.provider.register`)in the IBM Cloud services account.
+    
+    Providers use a service ID that is also registered with the IBM Cloud service - preferably when a provider registers, gets a service ID that is created in the service's account. This service ID can be granted permissions to perform tasks. 
+
+2. Provider requests an action like create gateway on customer account. This action generates the following AT events in the customer account: 
+
+    1 AT event (`svc.provider-request.authorize`) to notify customer that provider `X` has requested an action on their account and is authorize to make the request because it a registered provider. 
+
+    1 AT event (`svc.gateway.create`) to report the create gateway request (this action is run by the service and does not use an IAM token or credential.)
+
+3. Customer approves the provider's request.
+
+    This action generates an AT event (`svc.gateway-provider-request.approve` or `svc.gateway-provider-request.denied`) in the customer account.
 
 ![Pattern 2](images/pattern2.png "Pattern 2")
 
-* Providers are registered with the IBM Cloud service.
-* Providers use a service ID that is also registered with the IBM Cloud service. 
-* When a provoder makes the request, the customer needs to accept the request.
+When the customer uses the service's API, only 1 AT event (`svc.gateway.create`) is generated in the customer account.
 
 
-### Customer creates a gateway directly
+The following table shows the AT event fields that must be set per the template. AT fields not included in the table must follow AT guidelines.
 
-The following actions would be expected:
-
-1. `dl.provider-gateway.request`
-2. `dl.gateway.create`
-3. `dl.gateway-create-request.approve` or `dl.gateway-create-request.reject`
-
-
-
-| Field                       | `dl.provider-gateway.request` | `dl.gateway.create` |`dl.gateway-create-request.approve` | `dl.gateway-create-request.reject` |
-|-----------------------------|-------------------------------|---------------------|------------------------------------|-----------------------|
-| `eventTime`                 | `YYYY-MM-DDTHH:mm:ss.SS+0000` | `YYYY-MM-DDTHH:mm:ss.SS+0000`| `YYYY-MM-DDTHH:mm:ss.SS+0000` | `YYYY-MM-DDTHH:mm:ss.SS+0000` |
-| `initiator.name`            | `Provider's name`             | `IBM`               | `user` or `service ID` in customer's account | `user` or `service ID` in customer's account |
-| `initiator.id`              | `Provider's service ID`       | Leave empty         | IBMid or serviceID  | IBMid or serviceID  | 
-| `initiator.typeURI`         | `service/security/account/serviceid` | `service/security/account/service` | `service/security/account/user` or `service/security/account/serviceid` | `service/security/account/user` or `service/security/account/serviceid` | 
-| `initiator.credential.type` | Check guidelines | Leave empty | Check guidelines | Check guidelines | |
-| `initiator.host.address`    | provider's IP address | Leave empty | User's IP address | User's IP address |
-| `target.name`               | Key name |
-| `target.id`                 | Key CRN |
-| `target.typeURI`            | `dl/gateway/request` | `dl/gateway` | `dl/gateway/request` | `dl/gateway/request` |
-| `requestData / `responseData`    | Add information on request |  Add information on request | Add information on request | Add information on request |
-| `dataEvent`                 | `false` | `false` | `false` | `false` |
-| `logSourceCRN`              | Per User's account | Per User's account | Per User's account | Per User's account |
-| `saveServiceCopy`           | `true` | `true` | `true` | `true` |
+| Field                       | `svc.provider.register`             |
+|-----------------------------|-------------------------------------|
+| `initiator.name`            | `[*]` `Provider's name` (IAM token) |
+| `initiator.id`              | `Provider's service ID` (IAM token) |
+| `initiator.typeURI`         | `service/security/account/serviceid` |
+| `initiator.credential.type` | Check guidelines                     | 
+| `initiator.host.address`    | Provider's IP address |
+| `target.name`               | IBM Cloud Service Name as shown in the catalog |
+| `target.id`                 | Services CRN |
+| `target.typeURI`            | `svc/provider` |
+| `requestData` / `responseData`  | Add information that might be useful related to provider |
+| `dataEvent`                 | `false` | 
+| `logSourceCRN`              | Set with info from the service's account | 
+| `saveServiceCopy`           | `true` |
 {: caption="Register- success" caption-side="top"}
+
+`[*]` The providers should use an IAM token (serviceId) that is provided by the service to register. Info should be provided based on AT guidelines and content in IAM token
+
+| Field                       | `svc.gateway.create`                           | `svc.provider-request.authorize` |
+|-----------------------------|------------------------------------------------|---------------------|
+| `initiator.name`            | `IBM`                                          | `IBM`     | 
+| `initiator.id`              | Leave empty                                    | Leave empty  |
+| `initiator.typeURI`         | `service/security/account/service`             | `service/security/account/service` | 
+| `initiator.credential.type` |  Leave empty                                   | Leave empty | 
+| `initiator.host.address`    |  Leave empty                                   | Leave empty | 
+| `target.name`               | Gateway name                                   | Povider's name | 
+| `target.id`                 | gateway CRN                                    | provider's ID | 
+| `target.typeURI`            | `svc/gateway`                                  | `svc/provider`  |
+| `requestData` / `responseData`  |  Add information about the gateway         | Add information about provider and what is requesting (providerRequest: "create gateway") | 
+| `dataEvent`                 | `false`                                        | `false` |
+| `logSourceCRN`              | Set with info from the user's account          |  Set with info from the user's account |
+| `saveServiceCopy`           | `true`                                         | `true` | 
+{: caption="Register- success" caption-side="top"}
+
+
+
+| Field                       | `svc.gateway-create-request.approve`            | `svc.gateway-create-request.reject` |
+|-----------------------------|-------------------------------------------------|-------------------------------------|
+| `initiator.name`            | `user` or `service ID` in customer's account    | `user` or `service ID` in customer's account | 
+| `initiator.id`              | IBMid or serviceID                             | IBMid or serviceID  | 
+| `initiator.typeURI`         | `service/security/account/user` </br>`service/security/account/serviceid` | `service/security/account/user` </br>`service/security/account/serviceid` | 
+| `initiator.credential.type` | Check guidelines                              | Check guidelines | |
+| `initiator.host.address`    | User's IP address | User's IP address |
+| `target.name`               | gateway name | gateway name |
+| `target.id`                 | gateway CRN | gateway CRN |
+| `target.typeURI`            |  `svc/gateway`                                  | `svc/gateway`                                  |
+| `requestData` / `responseData`  |  Add information  | Add information |
+| `dataEvent`                 | `false` | `false` |
+| `logSourceCRN`              | Set with info from the user's account | Set with info from the user's account | 
+| `saveServiceCopy`           | `true` | `true` |
+{: caption="Register- success" caption-side="top"}
+
 
 
 
