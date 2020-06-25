@@ -73,7 +73,7 @@ Services who already implement it: As services transition, 30 days notice needs 
 
 
 
-## Provider that is authorized by a service requests an action on the customer's account
+## Provider requests an action on the customer's account
 {: #at_new_4}
 
 There are services like DirectLink and Transit Gateway that allow customers to run actions by using the service's API, and by using the provider's API. When the Provider's API is used, a provider, that is registered with the service, makes the request on the customer account. 
@@ -95,6 +95,8 @@ There are services like DirectLink and Transit Gateway that allow customers to r
 3. Customer approves the provider's request.
 
     This action generates an AT event (`svc.gateway-provider-request.approve` or `svc.gateway-provider-request.denied`) in the customer account.
+
+To correlate all events, the field `id` should be set with a unique identifier that all events in a trail must include.
 
 ![Pattern 2](images/pattern2.png "Pattern 2")
 
@@ -123,6 +125,7 @@ The following table shows the AT event fields that must be set per the template.
 
 | Field                       | `svc.gateway.create`                           | `svc.provider-request.authorize` |
 |-----------------------------|------------------------------------------------|---------------------|
+| `id`                        | Unique identified to correlate events          |Unique identified to correlate events          |
 | `initiator.name`            | `IBM`                                          | `IBM`     | 
 | `initiator.id`              | Leave empty                                    | Leave empty  |
 | `initiator.typeURI`         | `service/security/account/service`             | `service/security/account/service` | 
@@ -141,6 +144,7 @@ The following table shows the AT event fields that must be set per the template.
 
 | Field                       | `svc.gateway-create-request.approve`            | `svc.gateway-create-request.reject` |
 |-----------------------------|-------------------------------------------------|-------------------------------------|
+| `id`                        | Unique identified to correlate events          |Unique identified to correlate events          |
 | `initiator.name`            | `user` or `service ID` in customer's account    | `user` or `service ID` in customer's account | 
 | `initiator.id`              | IBMid or serviceID                             | IBMid or serviceID  | 
 | `initiator.typeURI`         | `service/security/account/user` </br>`service/security/account/serviceid` | `service/security/account/user` </br>`service/security/account/serviceid` | 
@@ -156,14 +160,27 @@ The following table shows the AT event fields that must be set per the template.
 {: caption="Register- success" caption-side="top"}
 
 
+## Multi-Account Interconnected VPCs
+{: #at_new_5}
+
+A customer provisions Transit Gateway in an account. This service provides connectivity across different IBM Cloud accounts on private network between VPCs (same or different region).
+
+The network owner must opt-in to allow account-to-account interconnectivity.
+
+Scenarios:
+
+1. Single customer with multiple IBM Cloud accounts. (Enterpise Cloud account)
+
+2. Different customers, each one with their own IBM Cloud account
 
 
+## Multi-Account Interconnected VPCs - scenario 1
+{: #at_new_5}
 
 
+1. The account that owns the Transit gateway registers VPC networks.
 
-
-
-
+    This action generates 1 AT event (`svc.vpc-network.register`).
 
 
 
