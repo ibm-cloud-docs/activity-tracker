@@ -32,6 +32,8 @@ This page shows use cases where services need to be aligned when sending events 
 ## initiator.host.address (review guidelines)
 {: #at_new_1}
 
+[issue](https://github.ibm.com/activity-tracker/customer-issues/issues/624)
+
 * Provides information about the address where the request came from. 
 * Formatted as IPv4
 
