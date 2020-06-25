@@ -91,7 +91,7 @@ When you include a query or a subject to an email, use `%20` to represent a spac
 For example, you can define a set of parameters to include information:
 
 ```
-ENDPOINT/v1/export?to=START_TIME&from=END_TIME&hosts=SERVICE_LIST&level=SEVERITY_LIST&size=N&query=(SEARCH_QUERY)" -u $TOKEN:
+ENDPOINT/v1/export?to=START_TIME&from=END_TIME&hosts=SERVICE_LIST&levels=SEVERITY_LIST&size=N&query=(SEARCH_QUERY)" -u $TOKEN:
 ```
 {: codeblock}
 
@@ -113,7 +113,7 @@ Complete the following steps to export events programmatically:
 {: #export_api_step_2}
 
 When you use the export API, you might define 1 or more parameters to refine the set of events that you export. For example, consider the following parameters:
-* `level`: This parameter is used to filter events based on the criticality of a request.
+* `levels`: This parameter is used to filter events based on the criticality of a request.
 * `query`: This parameter is used to define the search query that is used to filter events.
 * `hosts`: This parameter is used to list the services from which you want to export data. 
 
@@ -130,7 +130,7 @@ Consider the following information when you define the search query through the 
     If you set the host field in the query, this parameter is not required.
     {: note}
 
-2. Select the level.
+2. Select the levels.
 
     In Activity Tracker, level maps to the [severity event field](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event#severity). Severity defines the level of threat an action may have on the {{site.data.keyword.cloud_notm}}.
 
@@ -155,12 +155,13 @@ To define the parameters that you need for the export request, complete the foll
 
 1. Map your sources to the hosts parameter. The `hosts` parameter is a comma-separated list of services.
 
-2. Map the severity to the `level` parameter. The `level` parameter is a comma-separated list of severity values.
+2. Map the severity to the `levels` parameter. The `levels` parameter is a comma-separated list of severity values.
 
 3. Map the query to the query parameter. 
 
     Notice that when you copy the query from the LogDNA web UI, you must replace every space with %20.
     {: important}
+
 
 
 
