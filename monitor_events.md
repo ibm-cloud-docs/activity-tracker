@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-25"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, monitor events
 
@@ -193,7 +193,7 @@ Consider the following information when you export log data:
 ### Exporting events by using the REST API
 {: #mon_export_api}
 
-You can export events programmatically by using the LogDNA REST API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export#export_api).
+You can export events programmatically by using the LogDNA REST API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
 
 When you export events programmatically, consider the following information:
 
@@ -214,7 +214,7 @@ After you submit a request, you get an email that is sent to your email address,
 * To get the data, you must click the link and download the compressed file. 
 * The compressed file that contains the data that you want to export is available for a maximum of 48 hours. 
 
-[Learn more about exporting events through the web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export#export_ui).
+[Learn more about exporting events through the web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export).
 
 
 
