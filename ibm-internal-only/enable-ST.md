@@ -216,7 +216,7 @@ All commands should be run from a terminal that is logged into your service's IB
  
     * **7-day** is the plan, which could also be `14-day` or `30-day`. (Do not use a `lite` plan.)
   
-    * **name-of-your-service** is the CRN service-name of your service. This name will appear in orange at the beginning of each line in the LogDNA UI, so be sure to get it right! For example, the name-of-your-service here is iam-am:
+    * **name-of-your-service** is the name of your service as shown in the CRN. (For example, `kms`) This name will appear in orange at the beginning of each line in the LogDNA UI, so be sure to get it right! For example, the name-of-your-service here is iam-am:
       ![Sample line](images/logdna-sample-line.png)
  
     * **us-south** is the region where your service instance will be created. Other choices include: `eu-de`, `eu-gb`, `au-syd`, etc.
@@ -519,7 +519,7 @@ The Activity Tracker Sender (ATS) instance is where your service's Activity Trac
     
     **7-day** is the plan, which could also be `14-day` or `30-day`. (Do not use a `lite` plan.)
    
-    **name-of-your-service** is the CRN service-name of your service.
+    **name-of-your-service** is the name of your service as shown in the CRN. For example, `kms`.
    
     **us-south** is the region your service instance will be created. Other choices include: `eu-de`, `eu-gb`, `au-syd`, etc.
    
@@ -579,13 +579,13 @@ You must create one for testing purposes.  Your service would use the CRN of the
 ## Step 8. Setting up your test environment
 {: testenv}
 
- We have limited space in staging for services to do full blown testing. This is due to the limits of white listing and resources allocated in staging. Below are two approaches for services to test in staging:
+ We have limited space in staging for services to do full blown testing. This is due to the limits of allow-listing and resources allocated in staging. Below are two approaches for services to test in staging:
 
-1. White listing for a limited time
+1. Allow-listing for a limited time
 
     We can support a limited number of services at any give time in staging.  Follow these steps to run tests in staging:
 
-    Request to be white listed by opening a git hub issue. Include the account's e-mail you want white listed. This should be the account your service runs under.
+    Request to be allow-listed by opening a git hub issue. Include the account's e-mail you want allow-listed. This should be the account your service runs under.
 
     You will have approximately two weeks to test.
 
@@ -596,7 +596,7 @@ You must create one for testing purposes.  Your service would use the CRN of the
 
 2. Test in staging but direct your events/logs to production
 
-    No white listing is required for this environment. The drawback is that you can not simulate customer Logging and Activity Tracker (STR/ATR) instances.  Follow the steps below:
+    No allow-listing is required for this environment. The drawback is that you can not simulate customer Logging and Activity Tracker (STR/ATR) instances.  Follow the steps below:
 
     In production, create your service Logging and Activity Tracker (STS/ATS) instances.
 

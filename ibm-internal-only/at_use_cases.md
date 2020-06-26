@@ -22,14 +22,14 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 
 
-# Adoption guidelines: Cloud integration use cases
+# Adoption guidelines: Cloud integration patterns
 {: #at_use_cases}
 
-This page shows use cases where services need to be aligned when sending events to AT:
+This page shows patterns that must be addopted by services for the integration use cases that have been identified:
 {:shortdesc}
 
 
-## IBM Cloud service integration with Key Protect (KP)
+## Pattern1: IBM Cloud service integration with Key Protect (KP)
 {: #kp-hyperwarp}
 
 [REQUIRED] This scenario must be implemented by services that are KP-enabled.

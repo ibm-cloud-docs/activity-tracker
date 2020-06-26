@@ -428,18 +428,36 @@ Guidance setting the value of this field:
 {: caption="Table 5. Guidance setting credential type" caption-side="top"}
 
 
+### initiator.host.addressType (string)
+{: #initiator.host.addresstype}
+
+This field provides information about the type of IP address where the request came from. 
+{: note}
+
+Valid values are `IPv4` and `IPv6`.
+
+The default value is `IPv4`
+
+
 ### initiator.host.address (string)
 {: #initiator.host.address}
 
-This field provides information about the address where the request came from. 
+This field provides information about the IP address where the request came from. 
 {: note}
 
 Set this field to the originating IP address. 
 
-The format of this field is:
+The format for IPv4 addresses is:
 
 ```
 xxx.xxx.xxx.xxx
+```
+{: codeblock}
+
+The format for IPv6 addresses is: (The format is still under review)
+
+```
+2001:db8:: 2001:db8:ffff:ffff:ffff:ffff:ffff:ffff
 ```
 {: codeblock}
 
@@ -590,8 +608,6 @@ When you add fields, notice that the maximum size of an AT event is 16K.
 {: important}
 
 Some fields:
-* [`Required when event reports a failure`] `reasonForFailure`:  Include additional info as to why the action has failed.
-* [Required] `resourceGroupId`: Set to the resource group CRN. See [Resource Group API](https://cloud.ibm.com/apidocs/resource-controller/resource-manager#get-a-resource-group).  
 * [Optional] `serviceInstanceId`: Set to the service instance ID (not the CRN value)
 * [Optional] `accountID`: Set to the account ID 
 * [Optional] `resourceType`: Type of resource
@@ -764,6 +780,26 @@ To set this field, you can use the description associated to the reasonCode (val
 
 You can also set it to any message or information that you might have available in your service when you receive a specific reasonCode and outcome.
 
+### reason.reasonForFailure (string)
+{: #reason.reasonForFailure}
+
+This field provides additional information as to why the action has failed.
+{: note}
+
+### resourceGroupId (string)
+{: #resourceGroupId}
+
+Set to the resource group CRN. 
+{: note}
+
+For example, 
+
+```
+crn:v1:bluemix:public:resource-controller:global:a/59bcbfa6ea2f006b4ed7094c1a08dcdd:resource-group:59bcbfa6ea2f006b4ed7094c1a08dcdd
+```
+{: screen}
+
+See [Resource Group API](https://cloud.ibm.com/apidocs/resource-controller/resource-manager#get-a-resource-group).  
 
 ### saveServiceCopy (boolean)
 {: #saveServiceCopy}
@@ -864,6 +900,8 @@ A cloud resource can be a service, a service instance, or a service sub-resource
 
 * If the action requested is on a user, set this field to the user IBMid value. Notice that users do not belong exclusively to an account and cannot be defined by using a crn.
 
+* **Exception:** Users are not unique to an account. They cannot be defined with a CRN. IAM and BSS actions where the target is a user that is a member of an account, the target.id does not have a crn formatted value.
+{: note}
 
 #### Information on how to set the target.id for services that on-boarded with the resource-controller
 {: #logSourceCRN-1}
@@ -1037,10 +1075,13 @@ The following table outlines when the AT guidelines change to adapt to new requi
 | `initiator.typeURI`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `initiator.credential.type`        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `initiator.host.address`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `initiator.host.addressType`       | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2020      |  Includedd to support IPv6 addresses |
 | `observer.name`                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |                                 |
 | `outcome`                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `reason.reasonCode`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check 403 is being generated to report on unauthorized access to run an action |
 | `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |  December 2019 - check that it is populated for failure events </br>January 2020 - required for all outcomes |
+| `reason.reasonForFailure`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  September 2020     |  This field was initially part of requestData and location inherited from legacy. For consistency, has been moved to this new section of CADF.</br>January 2021 - required for all outcomes |
+| `resourceGroupId`                  | ![Checkmark icon](../../icons/checkmark-icon.svg)  | September 2020 | This fie;d is included to support the AIM enhancements and integartion of AT with the CLoud platform. |
 | `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - update events must include information about the update (3 new subfields added to add consistency in the user experience) and should be JSON formatted </br>May 2020:  2 fields (resourceGroupId and reasonForFailure) have changed from optional to required |
 | `responseData` `[*]`               |                                                   |  January 2019   |  December 2019 - Check that is JSON formatted |
 | `saveServiceCopy`  `[*]`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |  June 2019 - when changes to migrate to LogDNA were requested |
@@ -1059,7 +1100,7 @@ The following table outlines when the AT guidelines change to adapt to new requi
 | Detail                             | Required                                          | Date             |
 |------------------------------------|---------------------------------------------------|-----------------|
 | `Services do not need to change the UI to enable data events.` | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `24/1/2020` |
-| requestData fields: `reasonForFailure` and `resourceGroupId` are changed from optional to required.    | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `14/5/2020` |
+| `reasonForFailure` and `resourceGroupId` are changed from optional to required.        | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `14/5/2020` |
 {: caption="Table 5. Change control for implementation changes" caption-side="top"}
 
 A service has 3 months, from the date listed on the table, to implement changes and be compliant with AT guidelines.

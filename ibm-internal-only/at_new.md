@@ -29,7 +29,7 @@ This page shows use cases where services need to be aligned when sending events 
 {:shortdesc}
 
 
-## initiator.host.address (review guidelines)
+## initiator.host.address (NEW guideline)
 {: #at_new_1}
 
 [issue](https://github.ibm.com/activity-tracker/customer-issues/issues/624)
@@ -42,7 +42,6 @@ Currently, most services suppport IPv4, but IPv6 is also supported by some servi
 CIS supports IPv4 and IPv6. Most services have IPv6 turned off, but when the proxy-mode in CIS  is enabled, IPv6 addresses are accepted. (This can be turned off via CLI).
 
 
-
 Proposal: (Complete within the next 6 months)
 
 1. `initiator.host.address` = IPv4 or IPv6 formatted IP address
@@ -50,7 +49,7 @@ Proposal: (Complete within the next 6 months)
 2. `initiator.host.addressType` = `IPv4` / `IPv6`   The default value is `IPv4`. However, services should start adding this field. 
 
 
-## reasonForFailure
+## reasonForFailure  (NEW guideline)
 {: #at_new_2}
 
 Currently, and to add consistency with services that adopted this value early, `reasonForFailure` is located in requestData. 
@@ -61,7 +60,7 @@ The proposal is to move `requestData.reasonForFailure` to `reason.reasonForFailu
 As services transition, 30 days notice needs to be given to users per the notification guidelines so customers can fix their queries and resources.
 
 
-## resourceGroupId
+## resourceGroupId  (NEW guideline)
 {: #at_new_3}
 
 Currently, `resourceGroupId` is located in requestData and set to the CRN value.
