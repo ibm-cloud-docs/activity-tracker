@@ -30,19 +30,19 @@ Up to now, all global events have been stored in the `eu-de` (Frankfurt) locatio
 However, customers require the ability to save their global events in the location of their choice.
 In fact, some customers require that global events should not leave the location where they are generated.
 
-**Kaiser Permanente is requiring that their global events be stored only in Dallas, starting at the end of March 2020.**
-Therefore, LogDNA is now laying the groundwork to allow customers to select the location where their global events will be saved.
+**Kaiser Permanente is requiring that their global events be stored only in Dallas (as of March 2020).**
+Therefore, LogDNA has laid the groundwork to allow customers to select the location where their global events will be saved.
 Events originating from the selected location will be stored in that location without ever leaving it.
 The first customers to use this feature, starting with Kaiser Permanente, will be hardcoded. But a configuration UI will be added later and the feature will be generally available.
 
-To make it possible for LogDNA to identify and route the global events, we need IBM services to stop sending global events to eu-de and start sending global events to a unique global endpoint.
+To make it possible for LogDNA to identify and route the global events, IBM services no longer send global events to `eu-de`; instead, services send global events to a unique global endpoint.
 
-Global Activity Tracker events have previously been sent to the `eu-de` supertenant ingestion endpoint, in Frankfurt. This endpoint received not only global AT events, but also Frankfurt operational logs, platform logs, and regional Frankfurt AT events. But now, global AT events will be sent to a `global` endpoint. Any service that sends global AT events must send those events to the global endpoint. The service will still send its other Frankfurt logs (and events, if applicable) to the normal `eu-de` endpoint.
+Global Activity Tracker events have previously been sent to the `eu-de` supertenant ingestion endpoint, in Frankfurt. This endpoint received not only global AT events, but also Frankfurt operational logs, platform logs, and regional Frankfurt AT events. But now, global AT events are sent to a `global` endpoint. Any service that sends global AT events must send those events to the global endpoint. The service will still send its other Frankfurt logs (and events, if applicable) to the normal `eu-de` endpoint.
 
 ## Sending Global Events
 {: #global_sending}
 
-The global endpoint, using `global` as the location instead of `eu-de`, is now available. If you send global events to this endpoint today, they will go to `eu-de` just as they did before, so you will see no change. However, by the end of March, the global events for Kaiser Permanente's accounts will be sent to their AT instances in Dallas. (Your service's copy will still be in your ATS in `eu-de`. You don't need to move your STS/ATS or set up new ones.)
+The global endpoint, using `global` as the location instead of `eu-de`, is now available. If you send global events to this endpoint today, they will go to `eu-de` just as they did before, so you will see no change. With one important exception: the global events for Kaiser Permanente's accounts will be sent to their AT instances in Dallas. (Your service's copy will still be in your ATS in `eu-de`. You don't need to move your STS/ATS or set up new ones.)
 
 ### Sending with the Agent
 {: #sending_agent}
