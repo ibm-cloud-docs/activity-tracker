@@ -63,7 +63,8 @@ Following is a sample event that includes the fields that are required. You can 
             "type": "token"
         },
         "host": {
-            "address": "169.62.30.22"
+            "address": "169.62.30.22",
+            "addressType": "IPv4"
         }
     },
     "target": {
@@ -76,8 +77,10 @@ Following is a sample event that includes the fields that are required. You can 
     "outcome": "success",
     "reason": {
         "reasonCode": 200,
-        "reasonType": "OK"
+        "reasonType": "OK",
+        "reasonForFailure": "xxxxxx"
     },
+    "resourceGroupId": "crn:v1:bluemix:public:resource-controller:global:a/7131c65c6ad70bdc209bb564997a5f1c::resource-group:89094792-aa7c-48de-a1a0-7cbac484f072",
     "severity": "warning",
     "eventTime": "2019-11-03T21:40:53.94+0000",
 
@@ -93,11 +96,9 @@ Following is a sample event that includes the fields that are required. You can 
     // requestData is required for events that modify resources in the IBM Cloud and to add info that clarifies the action on an audit
     "requestData": {
         // This object is defined by the service
-        "resourceGroupId": "xxxx",
         "updateType": "xxxx",
         "initialValue": "xxxxx",
         "newValue": "xxxxxx",
-        "reasonForFailure": "xxxxxx",
         "requestId": "xxxxxxxxx-xxxx-xxxx-xxxxxxxxxxx"
         "platformSource" : "Watson xxxxx"
     },

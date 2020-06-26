@@ -911,7 +911,9 @@ There are services like DirectLink and Transit Gateway that allow customers to r
 
 3. Customer approves the provider's request.
 
-    This action generates an AT event (`svc.gateway-provider-request.approve` or `svc.gateway-provider-request.denied`) in the customer account.
+    This action generates an AT event (`svc.action-request.approve` or `svc.action-request.reject`) in the customer account.
+
+    For example: `svc.gateway-provider-request.approve` or `svc.gateway-provider-request.reject`
 
 To correlate all events, the field `id` should be set with a unique identifier that all events in a trail must include.
 
@@ -919,7 +921,8 @@ To correlate all events, the field `id` should be set with a unique identifier t
 
 When the customer uses the service's API, only 1 AT event (`svc.gateway.create`) is generated in the customer account.
 
-The following tables shows the AT event fields that must be set per the template. AT fields not included in the table must follow AT guidelines.
+
+The following tables shows the AT event fields that must be set. AT fields not included in the table must follow AT guidelines.
 
 
 ### A provider register's with an IBM Cloud service
@@ -986,19 +989,19 @@ Use lower case for actions and resource types.
 {: #pattern2_2}
 
 
-| Field                       | `svc.gateway-create-request.approve`            | `svc.gateway-create-request.reject` |
+| Field                       | `svc.action-request.approve`                    | `svc.action-request.reject` |
 |-----------------------------|-------------------------------------------------|-------------------------------------|
-| `id`                        | Unique identified to correlate events          |Unique identified to correlate events          |
+| `id`                        | Unique identified to correlate events           | Unique identified to correlate events          |
 | `initiator.name`            | `user` or `service ID` in customer's account    | `user` or `service ID` in customer's account | 
-| `initiator.id`              | IBMid or serviceID                             | IBMid or serviceID  | 
+| `initiator.id`              | IBMid or serviceID                              | IBMid or serviceID  | 
 | `initiator.typeURI`         | `service/security/account/user` </br>`service/security/account/serviceid` | `service/security/account/user` </br>`service/security/account/serviceid` | 
-| `initiator.credential.type` | Check guidelines                              | Check guidelines | |
-| `initiator.host.address`    | User's IP address | User's IP address |
-| `target.name`               | gateway name | gateway name |
-| `target.id`                 | gateway CRN | gateway CRN |
-| `target.typeURI`            |  `svc/gateway`                                  | `svc/gateway`                                  |
-| `requestData` / `responseData`  |  Add information  | Add information |
-| `dataEvent`                 | `false` | `false` |
+| `initiator.credential.type` | Check guidelines                                | Check guidelines | |
+| `initiator.host.address`    | User's IP address                               | User's IP address |
+| `target.name`               | gateway name                                    | gateway name |
+| `target.id`                 | gateway CRN                                     | gateway CRN |
+| `target.typeURI`            | `svc/gateway`                                   | `svc/gateway`                                  |
+| `requestData` / `responseData`  |  Add information                            | Add information |
+| `dataEvent`                 | `true`                                          | `true` |
 | `logSourceCRN`              | Set with info from the user's account | Set with info from the user's account | 
 | `saveServiceCopy`           | `true` | `true` |
 {: caption="Register- success" caption-side="top"}
