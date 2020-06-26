@@ -16,6 +16,7 @@ IBM Cloud Activity Tracker with LogDNA
     Events
         event.md
         event_types.md
+        events_collect.md
 
     {: .topicgroup}
     Monitoring activity
