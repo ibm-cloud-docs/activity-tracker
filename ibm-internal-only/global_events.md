@@ -39,8 +39,6 @@ To make it possible for LogDNA to identify and route the global events, we need 
 
 Global Activity Tracker events have previously been sent to the `eu-de` supertenant ingestion endpoint, in Frankfurt. This endpoint received not only global AT events, but also Frankfurt operational logs, platform logs, and regional Frankfurt AT events. But now, global AT events will be sent to a `global` endpoint. Any service that sends global AT events must send those events to the global endpoint. The service will still send its other Frankfurt logs (and events, if applicable) to the normal `eu-de` endpoint.
 
-**Coming soon: global routing diagram, additional explanation**
-
 ## Sending Global Events
 {: #global_sending}
 
@@ -127,3 +125,19 @@ Your service will need an STS in Dallas (`us-south`), even if you don't use it f
 2. Get the LogDNA UI URL of your Dallas STS, and copy it to the boxnote provided by Randy Bertram.
 
 That's all! When LogDNA enables global routing, a copy of your `eu-de` ingestion key will magically appear in the API keys of your `us-south` STS. Information on how to rotate the shared ingestion key will be available soon.
+
+## Ingestion Key Rotation
+
+To rotate the ingestion key  in your service's STS, you must take some extra steps so that your Dallas STS stays in sync with your Frankfurt STS. Here is the process to follow.
+
+1. Create the new ingestion key in your Frankfurt STS using the LogDNA web app. The existing ingestion key is not deleted, so both the old and new keys are active.
+2. Send an email to support@logdna.com to tell them the key rotation has started. Send the following info:
+    - Subject of the email: "IBM Global Endpoints Key Rotation request"
+    - Dallas STS account (10-char LogDNA account id - this is from the Web UI URL, after ".logging.cloud.ibm.com/")
+    - Frankfurt STS account (10-char LogDNA account id)
+    - Last 4 digits of the new ingestion key
+3. LogDNA will respond to your email, saying that the key has been copied from the Frankfurt STS to the Dallas STS.
+4. Verify that the new key exists in Dallas using LogDNA web app.
+5. Deploy the new key to your agent config.
+6. Remove the old key in Frankfurt using the LogDNA web app.
+7. Remove the old key in Dallas using the LogDNA web app.
