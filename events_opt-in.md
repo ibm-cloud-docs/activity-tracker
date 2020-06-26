@@ -51,7 +51,7 @@ The following table lists the services that require additional steps for you to 
 
 | Service                            | Upgrade plan                       | Configure the service              | More info |
 |------------------------------------|------------------------------------|------------------------------------|-----------|
-| {{site.data.keyword.appid_full}}   | ![Checkmark icon](../../icons/checkmark-icon.svg) |    | [Monitoring runtime activity](/docs/appid?topic=appid-at-events#at-monitor-runtime-activity)   |
+| {{site.data.keyword.appid_full}}   | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg)   | [Monitoring runtime activity](/docs/appid?topic=appid-at-events#at-monitor-runtime-activity)   |
 | {{site.data.keyword.cos_full}}     |  | ![Checkmark icon](../../icons/checkmark-icon.svg) | [Tracking events using Activity Tracker with LogDNA](/docs/cloud-object-storage?topic=cloud-object-storage-at) |
 | {{site.data.keyword.cloudantfull}} |  | ![Checkmark icon](../../icons/checkmark-icon.svg) | [Types of events](/docs/Cloudant?topic=Cloudant-at_events#at_event_types-at) |
 | [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai)                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  |   |

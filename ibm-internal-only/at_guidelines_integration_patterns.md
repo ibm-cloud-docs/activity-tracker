@@ -32,7 +32,7 @@ This page shows patterns that must be addopted by services for the integration u
 ## Pattern1: IBM Cloud service integration with Key Protect (KP)
 {: #kp-hyperwarp}
 
-[REQUIRED] This scenario must be implemented by services that are KP-enabled.
+[REQUIRED] This scenario must be implemented by services that are KP-enabled and on-boarded with AT.
 {: important}
 
 
@@ -884,6 +884,121 @@ The following tables captures the AT event field values for the ACK AT events:
 
 
 
+## Pattern2: IBM Cloud service integration with Key Protect (KP)
+{: #pattern2}
+
+[REQUIRED] This scenario must be implemented by services that are KP-enabled and on-boarded with AT.
+{: important}
+
+### Intro
+{: #pattern2_intro}
+
+There are services like DirectLink and Transit Gateway that allow customers to run actions by using the service's API, and by using the provider's API. When the Provider's API is used, a provider, that is registered with the service, makes the request on the customer account. 
+
+1. [Pre-req] Provider registers with the IBM Cloud service. (1 time only)
+
+    Provider has a unique ID.
+
+    This action generates an AT event (`svc.provider.register`)in the IBM Cloud services account.
+    
+    Providers use a service ID that is also registered with the IBM Cloud service - preferably when a provider registers, gets a service ID that is created in the service's account. This service ID can be granted permissions to perform tasks. 
+
+2. Provider requests an action like create gateway on customer account. This action generates the following AT events in the customer account: 
+
+    1 AT event (`svc.provider-request.authorize`) to notify customer that provider `X` has requested an action on their account and is authorize to make the request because it a registered provider. 
+
+    1 AT event (`svc.gateway.create`) to report the create gateway request (this action is run by the service and does not use an IAM token or credential.)
+
+3. Customer approves the provider's request.
+
+    This action generates an AT event (`svc.gateway-provider-request.approve` or `svc.gateway-provider-request.denied`) in the customer account.
+
+To correlate all events, the field `id` should be set with a unique identifier that all events in a trail must include.
+
+![Pattern 2](images/pattern2.png "Pattern 2")
+
+When the customer uses the service's API, only 1 AT event (`svc.gateway.create`) is generated in the customer account.
+
+The following tables shows the AT event fields that must be set per the template. AT fields not included in the table must follow AT guidelines.
 
 
+### A provider register's with an IBM Cloud service
+{: #pattern2_1}
 
+
+| Field                           | `svc.provider.register`                                  |
+|---------------------------------|----------------------------------------------------------|
+| `initiator.name`                | `[*]` `Provider's name` (IAM token)                      |
+| `initiator.id`                  | `Provider's service ID` (IAM token)                      |
+| `initiator.typeURI`             | `service/security/account/serviceid`                     |
+| `initiator.credential.type`     | Check guidelines                                         | 
+| `initiator.host.address`        | Provider's IP address                                    |
+| `target.name`                   | IBM Cloud Service Name as shown in the catalog           |
+| `target.id`                     | Services CRN                                             |
+| `target.typeURI`                | `svc/provider`                                           |
+| `requestData` / `responseData`  | Add information that might be useful related to provider |
+| `dataEvent`                     | `false`                                                  | 
+| `logSourceCRN`                  | Set with info from the service's account                 | 
+| `saveServiceCopy`               | `true`                                                   |
+{: caption="Provider's registration event with IBM Cloud service" caption-side="top"}
+
+`[*]` The providers should use an IAM token (serviceId) that is provided by the service to register. Info should be provided based on AT guidelines and content in IAM token
+
+
+### Service generates AT events in customer account to notify of the provider's request
+{: #pattern2_1}
+
+The event with action `svc.provider-request.authorize` notifies the customer that a provider that is making a request in their account is an authorized one by IBM.
+
+| Field                       | E.G. `svc.gateway.create`                      | `svc.provider-request.authorize`              |
+|-----------------------------|------------------------------------------------|-----------------------------------------------|
+| `id`                        | Unique identified to correlate events          | Unique identified to correlate events         |
+| `initiator.name`            | `IBM`                                          | `IBM`                                         | 
+| `initiator.id`              | Leave empty                                    | Leave empty                                   |
+| `initiator.typeURI`         | `service/security/account/service`             | `service/security/account/service`            | 
+| `initiator.credential.type` | Leave empty                                    | Leave empty                                   | 
+| `initiator.host.address`    | Leave empty                                    | Leave empty                                   | 
+| `target.name`               | Gateway name                                   | Povider's name                                | 
+| `target.id`                 | gateway CRN                                    | provider's ID                                 | 
+| `target.typeURI`            | `svc/gateway`                                  | `svc/provider`                                |
+| `requestData` </br>`responseData`  |  Add information about the action       | Add information about the provider and what is requesting `[**]` | 
+| `dataEvent`                 | Per service's action type                      | `false`                                       |
+| `logSourceCRN`              | Set with info from the user's account          |  Set with info from the user's account        |
+| `saveServiceCopy`           | `true`                                         | `true`                                        | 
+{: caption="Register- success" caption-side="top"}
+
+
+`[**]` The following table outlines the requestData fields for the action `svc.provider-request.authorize`:
+
+Use lower case for actions and resource types.
+{: important}
+
+| `requestData` Field         | Info                        | Example    |
+|-----------------------------|-----------------------------|------------------|
+| `providerRequestAction`     | Add the action              | create           |
+| `providerRequestResource`   | Add the resource tyep       | gateway          |
+| `providerName`              | Name of the provider        |                  |
+| `providerId`                | ID of the provider          |                  |
+{: caption="Register- success" caption-side="top"}
+
+
+### Service generates AT events in customer account to notify of the user's approval
+{: #pattern2_2}
+
+
+| Field                       | `svc.gateway-create-request.approve`            | `svc.gateway-create-request.reject` |
+|-----------------------------|-------------------------------------------------|-------------------------------------|
+| `id`                        | Unique identified to correlate events          |Unique identified to correlate events          |
+| `initiator.name`            | `user` or `service ID` in customer's account    | `user` or `service ID` in customer's account | 
+| `initiator.id`              | IBMid or serviceID                             | IBMid or serviceID  | 
+| `initiator.typeURI`         | `service/security/account/user` </br>`service/security/account/serviceid` | `service/security/account/user` </br>`service/security/account/serviceid` | 
+| `initiator.credential.type` | Check guidelines                              | Check guidelines | |
+| `initiator.host.address`    | User's IP address | User's IP address |
+| `target.name`               | gateway name | gateway name |
+| `target.id`                 | gateway CRN | gateway CRN |
+| `target.typeURI`            |  `svc/gateway`                                  | `svc/gateway`                                  |
+| `requestData` / `responseData`  |  Add information  | Add information |
+| `dataEvent`                 | `false` | `false` |
+| `logSourceCRN`              | Set with info from the user's account | Set with info from the user's account | 
+| `saveServiceCopy`           | `true` | `true` |
+{: caption="Register- success" caption-side="top"}
