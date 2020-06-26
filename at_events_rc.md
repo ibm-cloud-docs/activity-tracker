@@ -22,7 +22,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 {:external: target="_blank" .external}
 
-# Service instance events  
+# Auditing events for service instances  
 {: #at_events_rc}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.cloud_notm}} services. 

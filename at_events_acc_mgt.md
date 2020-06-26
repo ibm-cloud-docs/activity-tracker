@@ -21,7 +21,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:important: .important}
 {:note: .note}
 
-# Account management events  
+# Auditing events for account management  
 {: #at_events_acc_mgt}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with an {{site.data.keyword.cloud}} account. 
