@@ -37,14 +37,17 @@ API for configuring IBM Cloud Object Storage buckets: [COS Resource Configuratio
 |-------------------------------------------|---------------|
 | Returns metadata for the specified bucket | `GET {endpoint}/{version}/{bucket}` |
 | Make changes to a bucket's configuration  | `PATCH {endpoint}/{version}/{bucket}` | 
+{: caption="Register- success" caption-side="top"}
+
 
 ## Compatibility API (B)
 
 API for reading and writing objects: [COS Compatibility S3 API](https://cloud.ibm.com/apidocs/cos/cos-compatibility#introduction)
+* Endpoint URL is different by region: [Endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints)
 
 | Action                                    | Method |
 |-------------------------------------------|-------------------|
-| List buckets                              | `GET {endpoint}/{bucket}` |
+| List buckets                              | `GET {endpoint}/` |
 | Create a bucket                           | `PUT {endpoint}/{Bucket}?{LocationConstraint}` |
 | List objects                              | `GET {endpoint}/{Bucket}?` |
 | Check a bucket's headers                  | `HEAD {endpoint}/{Bucket}?`|
@@ -104,28 +107,27 @@ Jun 29 11:12:30 cloud-object-storage warning cloud-object-storage.bucket-lifecyc
 
 ## Bucket configuration
 
-| Action                                   | Method (External API) | Method (Internal)           | IAM Action            | API |  AT action       |
-|------------------------------------------|--------------------|-------------------------------------------------------|------|-----------------|
-
-| Enable Activity Tracker    | PUT Bucket Activity Tracking | `cloud-object-storage.bucket.put_activity_tracking` | A | `cloud-object-storage.resource-configuration.update` |
-| Disable AT configuration   |      |       |      |      |   |
-| Read AT tracking configuration | GET Bucket Activity Tracking | `cloud-object-storage.bucket.get_activity_tracking` | A | `cloud-object-storage.resource-configuration.read`|
+| Action                            | Method (External API) | Method (Internal)           | IAM Action            | API |  AT action       |
+|-----------------------------------|--------------------|-------------------------------------------------------|------|-----------------|
+| Enable Activity Tracker           | `PATCH {endpoint}/{version}/{bucket}` |  | `cloud-object-storage.bucket.put_activity_tracking` | A | `cloud-object-storage.resource-configuration.update` |
+| Disable AT configuration          |      |       |      |      |   |
+| Read AT tracking configuration    | `GET {endpoint}/{version}/{bucket}` |  | `cloud-object-storage.bucket.get_activity_tracking` | A | `cloud-object-storage.resource-configuration.read`|
 | | | | | |
-| Enable monitoring with Sysdig    | PUT Bucket Metrics Monitoring | `cloud-object-storage.bucket.put_metrics_monitoring` | A | `cloud-object-storage.resource-configuration.update` |
-| Disable monitoring with Sysdig |     |     |     |      |    |
-| Read monitoring configuration | GET Bucket Metrics Monitoring | `cloud-object-storage.bucket.get_metrics_monitoring` | A | `cloud-object-storage.resource-configuration.read` |
+| Enable monitoring with Sysdig     | `PATCH {endpoint}/{version}/{bucket}` |  | `cloud-object-storage.bucket.put_metrics_monitoring` | A | `cloud-object-storage.resource-configuration.update` |
+| Disable monitoring with Sysdig    |     |     |     |      |    |
+| Read monitoring configuration     | `GET {endpoint}/{version}/{bucket}` |  | `cloud-object-storage.bucket.get_metrics_monitoring` | A | `cloud-object-storage.resource-configuration.read` |
 | | | | | | |
-| Configure Firewall IPs (Add / remove)     | PUT Bucket Firewall | `cloud-object-storage.bucket.put_firewall` | A | `cloud-object-storage.resource-configuration.update` |
-| Read configured firewall IPs | GET Bucket Firewall | `cloud-object-storage.bucket.get_firewall` | A | `cloud-object-storage.resource-configuration.read` |
+| Configure Firewall IPs (Add / remove) | `PATCH {endpoint}/{version}/{bucket}` |  | `cloud-object-storage.bucket.put_firewall` | A | `cloud-object-storage.resource-configuration.update` |
+| Read configured firewall IPs      | `GET {endpoint}/{version}/{bucket}` |  | `cloud-object-storage.bucket.get_firewall` | A | `cloud-object-storage.resource-configuration.read` |
 | | | | | | |
-| Read logging configuration |  | GET Bucket Logging | `cloud-object-storage.bucket.get_logging` | B |  |
-| Configure logging (automatic)  | PUT Bucket Logging | `cloud-object-storage.bucket.put_logging` | B |  |
+| Read logging configuration        |  | PUT Bucket Logging | `cloud-object-storage.bucket.get_logging` | B |  |
+| Configure logging (automatic)     |  | PUT Bucket Logging | `cloud-object-storage.bucket.put_logging` | B |  |
 
 
 
 
 
-## Lifecycle actions
+## Bucket lifecycle actions
 
 | Action                                   | Method (External API) | Method (Internal)           | IAM Action           | API |  AT action       |
 |------------------------------------------|--------------------|-------------------------------------------------------|------|-----------------|
@@ -160,46 +162,10 @@ Jun 29 11:12:30 cloud-object-storage warning cloud-object-storage.bucket-lifecyc
 
 
 
-GET Bucket Tagging	Manager, Writer, Reader	cloud-object-storage.bucket.get_tagging	s3:GetBucketTagging
-PUT Bucket Tagging	Manager, Writer	cloud-object-storage.bucket.put_tagging	s3:PutBucketTagging
-DELETE Bucket Tagging	Manager, Writer	cloud-object-storage.bucket.delete_tagging	s3:DeleteBucketTagging
-
-
-ListCrkId	Manager, Writer	cloud-object-storage.bucket.list_crk_id	s3:ListBucket
-
-
-GET Bucket Object versions	Manager, Writer, Reader, ContentReader	cloud-object-storage.bucket.get_versions	s3:ListBucketVersions
-
-List Multipart Uploads	Manager, Writer, Reader	cloud-object-storage.bucket.get_uploads	s3:ListBucketMultipartUploads
 
 
 
-GET Bucket Versioning	Manager, Writer, Reader	cloud-object-storage.bucket.get_versioning	s3:GetBucketVersioning
-PUT Bucket Versioning	Manager, Writer	cloud-object-storage.bucket.put_versioning	s3:PutBucketVersioning
-GET Bucket FASP Connection Info	Manager, Writer, Reader	cloud-object-storage.bucket.get_fasp_connection_info	ibm:GetFaspConnectionInfo
-DELETE Bucket FASP Connection Info	Manager, Writer	cloud-object-storage.account.delete_fasp_connection_info	ibm:DeleteFaspConnectionInfo
-
-GET Bucket Notifications	NotificationsManager	cloud-object-storage.bucket.get_notifications	ibm:GetBucketNotifications
-PUT Bucket Notifications	NotificationsManager	cloud-object-storage.bucket.put_notifications	ibm:PutBucketNotifications
-
-
-
-GET Bucket Website	Manager, Writer, Reader	cloud-object-storage.bucket.get_website	s3:GetBucketWebsite
-PUT Bucket Website	Manager, Writer	cloud-object-storage.bucket.put_website	s3:PutBucketWebsite
-DELETE Bucket Website	Manager, Writer	cloud-object-storage.bucket.delete_website	s3:DeleteBucketWebsite
-
-GET Bucket Replication	Manager, Writer, Reader	cloud-object-storage.bucket.get_replication	s3:GetReplicationConfiguration
-PUT Bucket Replication	Manager, Writer	cloud-object-storage.bucket.put_replication	s3:PutReplicationConfiguration
-DELETE Bucket Replication	Manager, Writer	cloud-object-storage.bucket.delete_replication	s3:DeleteReplicationConfiguration
-
-PUT Bucket protection	Manager	cloud-object-storage.bucket.put_protection	s3:PutBucketProtection
-GET Bucket protection	Manager, Writer, Reader	cloud-object-storage.bucket.get_protection	s3:GetBucketProtection
-
-
-GET Bucket Accelerate	Manager, Writer, Reader	cloud-object-storage.bucket.get_accelerate	s3:GetAccelerateConfiguration
-PUT Bucket Accelerate	Manager, Writer	cloud-object-storage.bucket.put_accelerate	s3:PutAccelerateConfiguration
-
-
+## Object actions
 
 Object actions:
 
@@ -242,6 +208,9 @@ POST Object legalHold	Manager, Writer	cloud-object-storage.object.post_legal_hol
 GET Object legalHold	Manager, Writer, Reader	cloud-object-storage.object.get_legal_hold	s3:GetObjectLegalHold
 POST Object extendRetention	Manager, Writer	cloud-object-storage.object.post_extend_retention	s3:PostObjectExtendRetention
 
-{: caption="Register- success" caption-side="top"}
 
+
+
+
+List Multipart Uploads	Manager, Writer, Reader	cloud-object-storage.bucket.get_uploads	s3:ListBucketMultipartUploads
 
