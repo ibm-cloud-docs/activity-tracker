@@ -324,8 +324,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     ```
     {: codeblock}
 
-    For **eu-de**, run the following command: 
-    **Temporary**: Use the `us-south` file instead, and edit it to change `us-south` to `eu-de` in two places.
+    For **eu-de**, run the following command:
 
     ```
     wget http://assets.eu-de.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
