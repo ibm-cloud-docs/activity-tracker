@@ -251,7 +251,7 @@ All commands should be run from a terminal that is logged into your service's IB
 ## Step 3. Install LogDNA Agents in your Kubernetes cluster
 {: #agent}
 
-These instructons are in transition, as a new LogDNA agent version is being introduced: version 2.1. The instructions currently have some temporary work-arounds and pull yamls from staging, but that will be resolved soon.
+These instructons are in transition, as a new LogDNA agent version is being introduced: version 2.1. The instructions currently have some temporary work-arounds, but that will be resolved soon.
 {: note}
 
 The LogDNA Agent sends logs and events to LogDNA. The agent will collect the following data:
@@ -308,7 +308,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
 4. Install the LogDNA agent with super tenancy 
 
-    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. These yaml files use private endpoints. **Temporary**: These files are downloaded from staging. **us-south is the only region that works in staging, since staging is Dallas only** So download the one from `us-south`, and then edit the file and change the two "us-south" strings to the region you want.
+    The commands below automatically install a logdna-agent pod into each node in your cluster. Install the agent for the region you are working in. These yaml files use private endpoints.
    
     For **us-south**, run the following command:
  
@@ -325,6 +325,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     {: codeblock}
 
     For **eu-de**, run the following command: 
+    **Temporary**: Use the `us-south` file instead, and edit it to change `us-south` to `eu-de` in two places.
 
     ```
     wget http://assets.eu-de.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
@@ -332,6 +333,7 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     {: codeblock}
 
     For **eu-gb**, run the following command: 
+    **Temporary**: Use the `us-south` file instead, and edit it to change `us-south` to `eu-gb` in two places.
 
     ```
     wget http://assets.eu-gb.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
@@ -360,7 +362,8 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     {: codeblock}
 
      For **in-che**, run the following command:
- 
+     **Temporary**: Use the `us-south` file instead, and edit it to change `us-south` to `in-che` in two places.
+     
     ```
     wget http://assets.in-che.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
     ```
@@ -368,15 +371,13 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
 
     Make the following modifications to the file you downloaded:
     
-    Change the line that says `image: icr.io/ext/logdna-agent:stable` to instead specify an exact version you want to use. For example, `image: icr.io/ext/logdna-agent:2.1.9`. You should use an exact version in a highly regulated environment like IBM Cloud. 
+    Change the line that says `image: ...:stable` to instead specify an exact version you want to use, and download it from icr.io rather than logdna. For example, `image: icr.io/ext/logdna-agent:2.1.9`. You should use an exact version in a highly regulated environment like IBM Cloud. 
     To see the available versions of the agent, use these commands:
     ```
     ibmcloud cr login
     ibmcloud cr region-set global
     ibmcloud cr images --restrict ext/logdna-agent
     ```
-    
-    **Temporary**: Globally change `test.cloud.` to `cloud.` in two places.
 
     Now that the yaml file has been modified, install the agent with this command:
     
