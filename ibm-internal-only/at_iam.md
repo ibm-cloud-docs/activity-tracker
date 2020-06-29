@@ -28,6 +28,8 @@ subcollection: Activity-Tracker-with-LogDNA
 
 {:shortdesc}
 
+## Config API (A)
+
 API for configuring IBM Cloud Object Storage buckets: [COS Resource Configuration API](https://cloud.ibm.com/apidocs/cos/cos-configuration#introduction)
 *  Endpoint URL: `https://config.cloud-object-storage.cloud.ibm.com/v1`
 
@@ -36,21 +38,21 @@ API for configuring IBM Cloud Object Storage buckets: [COS Resource Configuratio
 | Returns metadata for the specified bucket | `GET {endpoint}/{version}/{bucket}` |
 | Make changes to a bucket's configuration  | `PATCH {endpoint}/{version}/{bucket}` | 
 
-
+## Compatibility API (B)
 
 API for reading and writing objects: [COS Compatibility S3 API](https://cloud.ibm.com/apidocs/cos/cos-compatibility#introduction)
 
 | Action                                    | Method |
 |-------------------------------------------|-------------------|
 | List buckets                              | `GET {endpoint}/{bucket}` |
-| Create a bucket | `PUT {endpoint}/{Bucket}?{LocationConstraint}` |
-| List objects    | `GET {endpoint}/{Bucket}?` |
-| Check a bucket's headers | `HEAD {endpoint}/{Bucket}?`|
-| Delete a bucket | `DELETE {endpoint}/{Bucket}?` |
-| Upload an object | `PUT {endpoint}/{Bucket}/{Key}` |
-| Download an object | `GET {endpoint}/{Bucket}/{Key}` |
-| Check an object''s headers | `HEAD {endpoint}/{Bucket}/{Key}`|
-| Delete an object | `DELETE {endpoint}/{Bucket}/{Key}` | 
+| Create a bucket                           | `PUT {endpoint}/{Bucket}?{LocationConstraint}` |
+| List objects                              | `GET {endpoint}/{Bucket}?` |
+| Check a bucket's headers                  | `HEAD {endpoint}/{Bucket}?`|
+| Delete a bucket                           | `DELETE {endpoint}/{Bucket}?` |
+| Upload an object                          | `PUT {endpoint}/{Bucket}/{Key}` |
+| Download an object                        | `GET {endpoint}/{Bucket}/{Key}` |
+| Check an object''s headers                | `HEAD {endpoint}/{Bucket}/{Key}`|
+| Delete an object                          | `DELETE {endpoint}/{Bucket}/{Key}` | 
 
 
 ## Bucket actions
@@ -59,24 +61,40 @@ Bucket actions:
 
 `cloud-object-storage.bucket.read`  ????
 
-| Action                                   | Method             | IAM Action                                            | Permission Keyword    | AT action       |
-|------------------------------------------|--------------------|-------------------------------------------------------|-----------------------|-----------------|
-| List the buckets in the service instance | GET Capabilities   | `cloud-object-storage.account.get_account_buckets`	| s3:ListAllMyBuckets   | `cloud-object-storage.instance.list` |
-| Create a bucket in the service instance  | POST Bucket	    | `cloud-object-storage.bucket.post_bucket`             | s3:CreateBucket       | `cloud-object-storage.bucket.create` |
-| Delete a bucket in the service instance  | DELETE Bucket      | `cloud-object-storage.bucket.delete_bucket`           | s3:DeleteBucket       | `cloud-object-storage.bucket.delete` |
-| | | | | |
-| List the objects in the bucket           | GET Bucket         | `cloud-object-storage.bucket.get`                     | s3:ListBucket         | `cloud-object-storage.bucket.list`   |
-| | | | | |
-| Get the CORS configuration               | GET Bucket cors    | `cloud-object-storage.bucket.get_cors`                | s3:GetBucketcors     | `cloud-object-storage.bucket-cors.read`|
-| Create the CORS configuration            | PUT Bucket cors    | `cloud-object-storage.bucket.put_cors`                | s3:PutBucketcors     | `cloud-object-storage.bucket-cors.create` |
-| Delete the CORS configuration            | DELETE Bucket cors | `cloud-object-storage.bucket.delete_cors`             | s3:DeleteBucketcors  | `cloud-object-storage.bucket-cors.delete` |
-| | | | | |
-| Get the bucket ACL                        | GET Bucket acl     | `cloud-object-storage.bucket.get_acl`                 | s3:GetBucketAcl       | `cloud-object-storage.bucket-acl.read` |
-| Create the bucket ACL                     | PUT Bucket acl     | `cloud-object-storage.bucket.put_acl`                 | s3:PutBucketAcl       | `cloud-object-storage.bucket-acl.create` |
-| | | | | |
-| Get the bucket CRN                        | Get Bucket CRN     | `cloud-object-storage.bucket.list_bucket_crn`         | s3:GetBucketCrn | `cloud-object-storage.bucket-crn.read` |
-| | | | | |
-| Get the bucket location                   | GET Bucket Location | `cloud-object-storage.bucket.get_location`       | s3:GetBucketLocation  | `cloud-object-storage.bucket-location.read` |
+| Action                                   | Method (External API) | Method (Internal)           | IAM Action            | API |  AT action       |
+|------------------------------------------|--------------------|---------------------|----------------------------------|-----------------------|-----------------|
+| List the buckets in the service instance | `GET {endpoint}/{bucket}` |  | `cloud-object-storage.account.get_account_buckets`	| B  | `cloud-object-storage.instance.list` |
+| Create a bucket in the service instance  | `PUT {endpoint}/{Bucket}?` |  | `cloud-object-storage.bucket.post_bucket`         | B  | `cloud-object-storage.bucket.create` |
+| Delete a bucket in the service instance  | `DELETE {endpoint}/{Bucket}?` |  | `cloud-object-storage.bucket.delete_bucket`    | B  | `cloud-object-storage.bucket.delete` |
+| | | | | | |
+| List the objects in the bucket           | `GET {endpoint}/{Bucket}?` |  | `cloud-object-storage.bucket.get`                 | B  | `cloud-object-storage.bucket.list`   |
+| | | | | | |
+| Get the bucket metadata                  | `GET {endpoint}/{version}/{bucket}`  |   |   | A | `cloud-object-storage.bucket-metadata.read` |
+| | | | | | |
+| Get the CORS configuration               |  | GET Bucket cors    | `cloud-object-storage.bucket.get_cors`                | B  | `cloud-object-storage.bucket-cors.read`|
+| Create the CORS configuration            |  | PUT Bucket cors    | `cloud-object-storage.bucket.put_cors`                | B  | `cloud-object-storage.bucket-cors.create` |
+| Delete the CORS configuration            |  | DELETE Bucket cors | `cloud-object-storage.bucket.delete_cors`             | B  | `cloud-object-storage.bucket-cors.delete` |
+| | | | | | |
+| Get the bucket ACL                        |  | GET Bucket acl     | `cloud-object-storage.bucket.get_acl`                 | B | `cloud-object-storage.bucket-acl.read` |
+| Create the bucket ACL                     |  | PUT Bucket acl     | `cloud-object-storage.bucket.put_acl`                 | B | `cloud-object-storage.bucket-acl.create` |
+| | | | | | |
+| Get the bucket CRN                        |  | Get Bucket CRN     | `cloud-object-storage.bucket.list_bucket_crn`         | B| `cloud-object-storage.bucket-crn.read` |
+| | | | | | |
+| Get the bucket location                   |  | GET Bucket Location | `cloud-object-storage.bucket.get_location`           | B | `cloud-object-storage.bucket-location.read` |
+
+
+
+Go to a bucket and list objects:
+
+```
+Jun 29 11:12:09 cloud-object-storage normal cloud-object-storage.bucket-metadata.read  LINE: Cloud Object Storage: read bucket-metadata for bucket logdna-dallas in location us-south
+Jun 29 11:12:14 cloud-object-storage normal cloud-object-storage.resource-configuration.read  LINE: Cloud Object Storage: read Resource Configuration for bucket logdna-dallas in instance id 69002255-e226-424e-b6c7-23c887fdb8bf
+Jun 29 11:12:20 cloud-object-storage normal cloud-object-storage.bucket.list  LINE: Cloud Object Storage: list objects for bucket logdna-dallas in location us-south
+Jun 29 11:12:30 cloud-object-storage warning cloud-object-storage.bucket-lifecycle.read  LINE: Cloud Object Storage: read bucket-lifecycle on logdna-dallas in location us-south -failure
+```
+
+
+## KP related actions
 
 
 | Action                                   | Method             | IAM Action                                            | Permission Keyword    | AT action       |
@@ -84,34 +102,67 @@ Bucket actions:
 | Delete a Key Protect root encryption key |  |  |  | `cloud-object-storage.bucket-key-state.update`|
 
 
-| Action                                   | Method             | IAM Action                                            | Permission Keyword    | AT action       |
-|------------------------------------------|--------------------|-------------------------------------------------------|-----------------------|-----------------|
-| Get the metadata for the bucket          | GET Bucket Basic   | `cloud-object-storage.bucket.get_basic`               | ibm:GetBucketBasic    | `cloud-object-storage.bucket-lifecycle.read`   |
-| Check a bucket's headers                 | HEAD Bucket        | `cloud-object-storage.bucket.head`                    | s3:ListBucket         |  `cloud-object-storage.bucket-lifecycle.read` (outcome failure) |
+## Bucket configuration
+
+| Action                                   | Method (External API) | Method (Internal)           | IAM Action            | API |  AT action       |
+|------------------------------------------|--------------------|-------------------------------------------------------|------|-----------------|
+
+| Enable Activity Tracker    | PUT Bucket Activity Tracking | `cloud-object-storage.bucket.put_activity_tracking` | A | `cloud-object-storage.resource-configuration.update` |
+| Disable AT configuration   |      |       |      |      |   |
+| Read AT tracking configuration | GET Bucket Activity Tracking | `cloud-object-storage.bucket.get_activity_tracking` | A | `cloud-object-storage.resource-configuration.read`|
 | | | | | |
-| Get the bucket lifecycle configuration    | GET Bucket Lifecycle | `cloud-object-storage.bucket.get_lifecycle` | s3:GetLifecycleConfiguration | `cloud-object-storage.bucket-lifecycle.read ` |
-| Create the bucket lifecycle configuration | PUT Bucket Lifecycle | `cloud-object-storage.bucket.put_lifecycle` | s3:PutLifecycleConfiguration | `cloud-object-storage.bucket-lifecycle.create` |
-| Delete the bucket lifecycle configuration |                   |                                                       |                       | `cloud-object-storage.bucket-lifecycle.delete` |
+| Enable monitoring with Sysdig    | PUT Bucket Metrics Monitoring | `cloud-object-storage.bucket.put_metrics_monitoring` | A | `cloud-object-storage.resource-configuration.update` |
+| Disable monitoring with Sysdig |     |     |     |      |    |
+| Read monitoring configuration | GET Bucket Metrics Monitoring | `cloud-object-storage.bucket.get_metrics_monitoring` | A | `cloud-object-storage.resource-configuration.read` |
+| | | | | | |
+| Configure Firewall IPs (Add / remove)     | PUT Bucket Firewall | `cloud-object-storage.bucket.put_firewall` | A | `cloud-object-storage.resource-configuration.update` |
+| Read configured firewall IPs | GET Bucket Firewall | `cloud-object-storage.bucket.get_firewall` | A | `cloud-object-storage.resource-configuration.read` |
+| | | | | | |
+| Read logging configuration |  | GET Bucket Logging | `cloud-object-storage.bucket.get_logging` | B |  |
+| Configure logging (automatic)  | PUT Bucket Logging | `cloud-object-storage.bucket.put_logging` | B |  |
+
+
+
+
+
+## Lifecycle actions
+
+| Action                                   | Method (External API) | Method (Internal)           | IAM Action           | API |  AT action       |
+|------------------------------------------|--------------------|-------------------------------------------------------|------|-----------------|
+| Get the bucket lifecycle configuration   |       | GET Bucket Lifecycle | `cloud-object-storage.bucket.get_lifecycle` | B | `cloud-object-storage.bucket-lifecycle.read ` |
+| Get the bucket basic info                | `GET {endpoint}/{version}/{bucket}` |   | `cloud-object-storage.bucket.get_basic` | A  | `cloud-object-storage.bucket-lifecycle.read`   |
 | | | | | |
-| Read the retention policy of a bucket | GET Bucket Policy | `cloud-object-storage.bucket.get_policy` | s3:GetBucketPolicy  | ``|
-| Set the retention policy of a bucket | PUT Bucket Policy | `cloud-object-storage.bucket.put_policy` | s3:PutBucketPolicy  | ``|
+| Check a bucket's headers                 | `HEAD {endpoint}/{Bucket}?` |  | `cloud-object-storage.bucket.head`         | B   |  `cloud-object-storage.bucket-lifecycle.read` (outcome failure) |
+| | | | | |
+| Create the bucket lifecycle configuration </br>Add an expiration rule | | PUT Bucket Lifecycle | `cloud-object-storage.bucket.put_lifecycle` | B | `cloud-object-storage.bucket-lifecycle.create` |
+| | | | | |
+| Delete the bucket lifecycle configuration </br>AT event generated when all expiration rules are deleted | | | | | `cloud-object-storage.bucket-lifecycle.delete` |
+| | | | | |
+| Read the retention policy of a bucket |  | GET Bucket Policy | `cloud-object-storage.bucket.get_policy` | B | `cloud-object-storage.bucket-retention.read`|
+| Create the retention policy of a bucket  |  | PUT Bucket Policy | `cloud-object-storage.bucket.put_policy` | B | `cloud-object-storage.bucket-retention.create`|
+| Enable the retention policy of a bucket  |  |  |  |   |  |
+| Disable the retention policy of a bucket  |  |  |  |   |  |
 | Modify the retention policy of a bucket |   |   |   |  |
-| Delete the retention policy     | DELETE Bucket Policy | cloud-object-storage.buket.delete_policy | s3:DeleteBucketPolicy   | `` |
+| Delete the retention policy     |  | DELETE Bucket Policy | cloud-object-storage.buket.delete_policy | B  | `` |
 | | | | | |
-| Enable Activity Tracker    | PUT Bucket Activity Tracking | `cloud-object-storage.bucket.put_activity_tracking` | ibm:PutBucketActivityTracking | `cloud-object-storage.resource-configuration.update` |
-| Read AT tracking configuration | GET Bucket Activity Tracking | `cloud-object-storage.bucket.get_activity_tracking` | ibm:GetBucketActivityTracking | `cloud-object-storage.bucket-lifecycle.read`|
+| Add expiration rule |     |   |    |     | `cloud-object-storage.bucket-lifecycle.create` |
+| Modify expriration rule | | | | | |
+| Enable expriration rule|     |   |  |     | `cloud-object-storage.bucket-lifecycle.create` |
+| Disable an expiration rule |     |   |  |     | `cloud-object-storage.bucket-lifecycle.create` |
+| Delete expiration rule |
 | | | | | |
-| Enable montioring with Sysdig    | PUT Bucket Metrics Monitoring | `cloud-object-storage.bucket.put_metrics_monitoring` | ibm:PutBucketMetricsMonitoring | `cloud-object-storage.resource-configuration.update` |
-| Read monitoring configuration | GET Bucket Metrics Monitoring | `cloud-object-storage.bucket.get_metrics_monitoring` | ibm:GetBucketMetricsMonitoring | `cloud-object-storage.resource-configuration.read` |
-| | | | | |
-| Configure Firewall IPs      | PUT Bucket Firewall | `cloud-object-storage.bucket.put_firewall` | ibm:PutBucketFirewall | `cloud-object-storage.resource-configuration.update` |
-| Read configured firewall IPs | GET Bucket Firewall | `cloud-object-storage.bucket.get_firewall` | ibm:GetBucketFirewall | `cloud-object-storage.resource-configuration.read` |
-| | | | | |
-| Add an expriration rule | PUT Bucket Policy | `cloud-object-storage.bucket.put_policy` | s3:PutBucketPolicy | `cloud-object-storage.bucket-lifecycle.create` |
+| Configure the archive rule |    |   |  |     | `cloud-object-storage.bucket-lifecycle.create` |
+| Modify the archive rule || | | | |
+| Enable the archive rule | | | | | |
+| Disable the archive rule | | | | | |
+| Delete the archive rule | | | | | |
 
 
 
 
+GET Bucket Tagging	Manager, Writer, Reader	cloud-object-storage.bucket.get_tagging	s3:GetBucketTagging
+PUT Bucket Tagging	Manager, Writer	cloud-object-storage.bucket.put_tagging	s3:PutBucketTagging
+DELETE Bucket Tagging	Manager, Writer	cloud-object-storage.bucket.delete_tagging	s3:DeleteBucketTagging
 
 
 ListCrkId	Manager, Writer	cloud-object-storage.bucket.list_crk_id	s3:ListBucket
@@ -131,12 +182,7 @@ DELETE Bucket FASP Connection Info	Manager, Writer	cloud-object-storage.account.
 GET Bucket Notifications	NotificationsManager	cloud-object-storage.bucket.get_notifications	ibm:GetBucketNotifications
 PUT Bucket Notifications	NotificationsManager	cloud-object-storage.bucket.put_notifications	ibm:PutBucketNotifications
 
-GET Bucket Logging	Manager, Writer, Reader	cloud-object-storage.bucket.get_logging	s3:GetBucketLogging
-PUT Bucket Logging	Manager, Writer	cloud-object-storage.bucket.put_logging	s3:PutBucketLogging
 
-GET Bucket Tagging	Manager, Writer, Reader	cloud-object-storage.bucket.get_tagging	s3:GetBucketTagging
-PUT Bucket Tagging	Manager, Writer	cloud-object-storage.bucket.put_tagging	s3:PutBucketTagging
-DELETE Bucket Tagging	Manager, Writer	cloud-object-storage.bucket.delete_tagging	s3:DeleteBucketTagging
 
 GET Bucket Website	Manager, Writer, Reader	cloud-object-storage.bucket.get_website	s3:GetBucketWebsite
 PUT Bucket Website	Manager, Writer	cloud-object-storage.bucket.put_website	s3:PutBucketWebsite
