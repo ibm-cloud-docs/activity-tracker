@@ -610,7 +610,7 @@ When you add fields, notice that the maximum size of an AT event is 16K.
 
 Some fields:
 * [Optional] `serviceInstanceId`: Set to the service instance ID (not the CRN value)
-* [Optional] `accountID`: Set to the account ID 
+* [Optional] `accountId`: Set to the account ID 
 * [Optional] `resourceType`: Type of resource
 * [Optional] `requestId`: The value of this field includes a UUID that can be used to identify a request in IBM Cloud. Customers should include this value in a support ticket.
 * [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
@@ -630,7 +630,10 @@ Some fields:
 
     If you cannot reference by ID, version, or any other way data that is either too big in size or includes sensitive data, do not include this field. Document in your topic the reason why this information is not included so customers are aware as to why is not available.
 
-* [`Required for Watson services`] `platformSource`: Add the UI catalog name of your service, for example, `Watson Discovery` This helps users identify your events quickly by your service, since the platform_source value is shared across all Watson services.
+* [`Required for services that share a common cluster`] `platformSource`: Add the UI catalog name of your service, for example, `Watson Discovery` This helps users identify your events quickly by your service, since the platform_source value is shared across all Watson services.
+
+    For example, Watson, DirectLink
+
 * [Optional] `customizationId`
 * [Optional] `environmentId`
 
