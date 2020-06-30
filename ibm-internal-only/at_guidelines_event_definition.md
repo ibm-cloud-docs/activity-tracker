@@ -105,12 +105,6 @@ Following is a sample event that includes the fields that are required. You can 
 
     // responseData is optional
     "responseData": {
-        // This object is defined by the service
-        "iamId": "IBMid-550000HRWG",
-        "type": "user",
-        "createdAt": "2019-11-03T21:40:53Z",
-        "createdById": "IBMid-120000QUJ0",
-        "statusCode": 200
     },
     "dataEvent": false,
 
