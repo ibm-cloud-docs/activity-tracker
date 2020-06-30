@@ -22,7 +22,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 
 
-# Aligning IAM and Activity Tracker (COS prototype)
+# Aligning IAM and Activity Tracker (Registry prototype)
 {: #at_iam_registry}
 
 
