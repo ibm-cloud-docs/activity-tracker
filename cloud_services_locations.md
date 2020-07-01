@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-07-01"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
@@ -589,8 +589,8 @@ The following tables list the locations where automatic collection of security s
 | Storage resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)   |            
 | Compute resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | Network resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Load Balancer                          | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| VPN                                    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| Load Balancer                          | ![Checkmark icon](../../icons/checkmark-icon.svg)  | `Events are available through the Activity Tracker US-South instance` |
+| VPN                                    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | `Events are available through the Activity Tracker US-South instance` |
 | Images                                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
 {: caption="VPC events in America's locations" caption-side="top"}
 {: #cs-vpc-table-1}
@@ -605,7 +605,7 @@ The following tables list the locations where automatic collection of security s
 | Compute resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `Events are available through the Activity Tracker US-South instance` |            
 | Network resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `Events are available through the Activity Tracker US-South instance` |            
 | Load Balancer                          | `Events are available through the Activity Tracker US-South instance` | `Events are available through the Activity Tracker US-South instance` |
-| VPN                                    | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `Events are available through the Activity Tracker US-South instance` | 
+| VPN                                    | `Events are available through the Activity Tracker US-South instance` | `Events are available through the Activity Tracker US-South instance` | 
 | Images                                 |     |     |           
 {: caption="VPC events in AP locations" caption-side="top"}
 {: #cs-vpc-table-2}
@@ -620,7 +620,7 @@ The following tables list the locations where automatic collection of security s
 | Compute resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `Events are available through the Activity Tracker EU-DE instance` |            
 | Network resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `Events are available through the Activity Tracker EU-DE instance` |            
 | Load Balancer                          | `Events are available through the Activity Tracker US-South instance` | `Events are available through the Activity Tracker US-South instance` |
-| VPN                                    | ![Checkmark icon](../../icons/checkmark-icon.svg)               | `Events are available through the Activity Tracker EU-DE instance` |   
+| VPN                                    | `Events are available through the Activity Tracker US-South instance` | `Events are available through the Activity Tracker US-South instance` |   
 | Images                                 |     |     |         
 {: caption="VPC events in Europe locations" caption-side="top"}
 {: #cs-vpc-table-3}
@@ -637,8 +637,8 @@ The following tables list the locations where automatic collection of security s
 | Storage resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)   |            
 | Compute resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | Network resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Load Balancer                          | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| VPN                                    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| Load Balancer                          | ![Checkmark icon](../../icons/checkmark-icon.svg)  | `Events are available through the Activity Tracker US-South instance` |
+| VPN                                    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | `Events are available through the Activity Tracker US-South instance` |
 | Images                                 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="VPC events in America's locations" caption-side="top"}
 {: #cs-vpc-gen2-table-1}
@@ -667,8 +667,8 @@ The following tables list the locations where automatic collection of security s
 | Storage resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)   | ![Checkmark icon](../../icons/checkmark-icon.svg) |            
 | Compute resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)               | ![Checkmark icon](../../icons/checkmark-icon.svg) |            
 | Network resources                      | ![Checkmark icon](../../icons/checkmark-icon.svg)               | ![Checkmark icon](../../icons/checkmark-icon.svg) |            
-| Load Balancer                          | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| VPN                                    | ![Checkmark icon](../../icons/checkmark-icon.svg)               | ![Checkmark icon](../../icons/checkmark-icon.svg) |   
+| Load Balancer                          | `Events are available through the Activity Tracker US-South instance` | `Events are available through the Activity Tracker US-South instance` |
+| VPN                                    | `Events are available through the Activity Tracker US-South instance` | `Events are available through the Activity Tracker US-South instance` |   
 | Images                                 | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg)    |         
 {: caption="VPC events in Europe locations" caption-side="top"}
 {: #cs-vpc-gen2-table-3}
