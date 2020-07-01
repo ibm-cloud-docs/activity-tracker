@@ -73,7 +73,6 @@ IBM Cloud Activity Tracker with LogDNA
     DevOps admin tasks
         manage_events.md
         archive.md
-        config_account.md
         control_usage.md
         logdna_parsing.md
         exclusion_rules.md

@@ -29,17 +29,21 @@ subcollection: Activity-Tracker-with-LogDNA
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance graphically through the web UI. 
 {:shortdesc}
 
+Consider the following information when you export events:
+* You can export a set of log entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
+* From the Web UI, when you export logs, you get an email that is sent to your email address, with a link to a compressed file that includes the data. To get the data, you must click the link and download the compressed file.
+* The compressed log file that contains the data that you want to export is available for a maximum of 12 hours. 
+* When you export logs, you have a limit of lines that you can export in a request. You can specify to export older lines or newer lines in case you reach the limit in the time range that you specify for the export. 
+
 
 ## Prerequisites
 {: #export_prereqs}
-
-* [Learn more about exporting events](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-monitor_events#mon_export).
 
 * **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan). 
 
 * Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
-* Check that the LogDNA instance has the export feature enabled.
+* Check that the LogDNA instance has the export feature enabled. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_config).
 
 ## Exporting events from a custom view
 {: #export_ui_view}
