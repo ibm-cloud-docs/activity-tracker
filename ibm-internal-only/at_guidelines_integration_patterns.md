@@ -884,10 +884,10 @@ The following tables captures the AT event field values for the ACK AT events:
 
 
 
-## Pattern2: IBM Cloud service integration with Key Protect (KP)
+## Pattern2: Provider requests an action on the customer's account
 {: #pattern2}
 
-[REQUIRED] This scenario must be implemented by services that are KP-enabled and on-boarded with AT.
+[REQUIRED] This scenario must be implemented by services that allow providers to request actions on a customer's account.
 {: important}
 
 ### Intro
@@ -1005,3 +1005,10 @@ Use lower case for actions and resource types.
 | `logSourceCRN`              | Set with info from the user's account | Set with info from the user's account | 
 | `saveServiceCopy`           | `true` | `true` |
 {: caption="Register- success" caption-side="top"}
+
+
+
+
+
+
+

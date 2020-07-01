@@ -29,48 +29,24 @@ This page shows use cases where services need to be aligned when sending events 
 {:shortdesc}
 
 
-## initiator.host.address (NEW guideline)
+## Capturing information on where the request initiated (initiator.requestOrigin)
 {: #at_new_1}
 
-[issue](https://github.ibm.com/activity-tracker/customer-issues/issues/624)
+This field would allow users to differentiate UI, CLI and API requests.
 
-* Provides information about the address where the request came from. 
-* Formatted as IPv4
+New field name: **initiator.requestOrigin**
 
-Currently, most services suppport IPv4, but IPv6 is also supported by some services.
-
-CIS supports IPv4 and IPv6. Most services have IPv6 turned off, but when the proxy-mode in CIS  is enabled, IPv6 addresses are accepted. (This can be turned off via CLI).
+Valid values: **API**, **CLI**, **UI**
 
 
-Proposal: (Complete within the next 6 months)
+CLI:
 
-1. `initiator.host.address` = IPv4 or IPv6 formatted IP address
+Incoming HTTP requests, that are initiatied from the CLI, have the **User-Agent** header. 
+This header includes as part of the value **IBM Cloud CLI** or **Bluemix CLI** for old versions. 
 
-2. `initiator.host.addressType` = `IPv4` / `IPv6`   The default value is `IPv4`. However, services should start adding this field. 
-
-
-## reasonForFailure  (NEW guideline)
-{: #at_new_2}
-
-Currently, and to add consistency with services that adopted this value early, `reasonForFailure` is located in requestData. 
-
-Proposal: (Complete within the next 6 months)
-The proposal is to move `requestData.reasonForFailure` to `reason.reasonForFailure`. 
-
-As services transition, 30 days notice needs to be given to users per the notification guidelines so customers can fix their queries and resources.
+Set to **CLI** if the incoming HTTP requests include in the **User-Agent** header set  **IBM Cloud CLI** or **Bluemix CLI** for old versions.
 
 
-## resourceGroupId  (NEW guideline)
-{: #at_new_3}
-
-Currently, `resourceGroupId` is located in requestData and set to the CRN value.
-
-Proposal: (Complete within the next 6 months)
-The proposal is to move `requestData.resourceGroupId` to a top level field: `resourceGroupId`. 
-
-Services who have not yet implemented `resourceGroupId`, should make it a top level field. 
-
-Services who already implement it: As services transition, 30 days notice needs to be given to users per the notification guidelines so customers can fix their queries and resources.
 
 
 
