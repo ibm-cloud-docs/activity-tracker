@@ -20,6 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
 # Navigating to the web UI
 {: #launch}
@@ -28,7 +29,7 @@ After you provision an instance of the {{site.data.keyword.at_full_notm}} servic
 {:shortdesc}
 
 
-## Step 1. Granting IAM policies to a user to view data 
+## Granting IAM policies to a user to view data 
 {: #step1}
 
 **Note:** You must be an administrator of the {{site.data.keyword.at_full_notm}} service, an administrator of an {{site.data.keyword.at_full_notm}} instance, or have account IAM permissions to grant other users policies.
@@ -44,14 +45,14 @@ The following table lists the minimum policy that a user must have to be able to
 For more information, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
 
-## Step 2. Launching the web UI through the {{site.data.keyword.cloud_notm}} UI
+## Launching the web UI through the {{site.data.keyword.cloud_notm}} UI
 {: #launch_step2}
 
-You launch the web UI within the context of an {{site.data.keyword.at_full_notm}} instance, from the {{site.data.keyword.cloud_notm}} UI. 
+You can launch the web UI within the context of an {{site.data.keyword.at_full_notm}} instance, from the {{site.data.keyword.cloud_notm}} UI. 
 
 Complete the following steps to launch the web UI:
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
@@ -67,6 +68,7 @@ Complete the following steps to launch the web UI:
 4. Select the instance in the region where you want to view events. Then, click **View LogDNA**.
 
 The {{site.data.keyword.at_full_notm}} web UI opens and shows the **Everything** view. Through this view, you can see the events in your account for the region that you have selected.
+
 
 
 

@@ -64,3 +64,11 @@ The following tables outline the different features that are included in each se
 {: caption="Table 2. List of features available that are available for each service plan" caption-side="top"} 
 
 
+## LogDNA features that are not available with {{site.data.keyword.at_full_notm}} service plans
+{: #svcplan_exc_features}
+
+The following LogDNA features are not available:
+* Embedding views and registering domains
+* Sharing a line 
+* Role Based Access Control (RBAC)
+
