@@ -131,8 +131,8 @@ Jun 29 11:12:30 cloud-object-storage warning cloud-object-storage.bucket-lifecyc
 
 | Action                                   | Method (External API) | Method (Internal)           | IAM Action           | API |  AT action       |
 |------------------------------------------|--------------------|-------------------------------------------------------|------|-----------------|
-| Get the bucket lifecycle configuration   |       | GET Bucket Lifecycle | `cloud-object-storage.bucket.get_lifecycle` | B | `cloud-object-storage.bucket-lifecycle.read ` |
-| Get the bucket basic info                | `GET {endpoint}/{version}/{bucket}` |   | `cloud-object-storage.bucket.get_basic` | A  | `cloud-object-storage.bucket-lifecycle.read`   |
+| Get the bucket lifecycle configuration   |       | GET Bucket Lifecycle            | `cloud-object-storage.bucket.get_lifecycle` | B | `cloud-object-storage.bucket-lifecycle.read ` |
+| Get the bucket basic info                | `GET {endpoint}/{version}/{bucket}` |   | `cloud-object-storage.bucket.get_basic`     | A  | `cloud-object-storage.bucket-lifecycle.read`   |
 | | | | | |
 | Check a bucket's headers                 | `HEAD {endpoint}/{Bucket}?` |  | `cloud-object-storage.bucket.head`         | B   |  `cloud-object-storage.bucket-lifecycle.read` (outcome failure) |
 | | | | | |
@@ -147,7 +147,7 @@ Jun 29 11:12:30 cloud-object-storage warning cloud-object-storage.bucket-lifecyc
 | Modify the retention policy of a bucket |   |   |   |  |
 | Delete the retention policy     |  | DELETE Bucket Policy | cloud-object-storage.buket.delete_policy | B  | `` |
 | | | | | |
-| Add expiration rule |     |   |    |     | `cloud-object-storage.bucket-lifecycle.create` |
+| Add expiration rule |     |   |    |       | `cloud-object-storage.bucket-lifecycle.create` |
 | Modify expriration rule | | | | | |
 | Enable expriration rule|     |   |  |     | `cloud-object-storage.bucket-lifecycle.create` |
 | Disable an expiration rule |     |   |  |     | `cloud-object-storage.bucket-lifecycle.create` |
