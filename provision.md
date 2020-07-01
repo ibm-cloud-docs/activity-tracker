@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-07-01"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, provision instance
 
@@ -83,7 +83,7 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the {{sit
 
 2. Click **Catalog**. The list of the services that are available in {{site.data.keyword.cloud_notm}} opens.
 
-3. To filter the list of services that is displayed, select the **Developer Tools** category.
+3. To filter the list of services that is displayed, select the **Logging and Monitoring** category.
 
 4. Click the **{{site.data.keyword.at_full_notm}}** tile. 
 
@@ -99,7 +99,7 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the {{sit
 
     **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
 
-8. Select the `Lite` service plan. 
+8. Select a service plan. 
 
     By default, the lite plan is set.
 
