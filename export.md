@@ -39,7 +39,7 @@ You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} i
 
 * Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
-* Check that the LogDNA instance has the export feature enabled.
+* Check that the LogDNA instance has the export feature enabled. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_config).
 
 ## Exporting events from a custom view
 {: #export_ui_view}

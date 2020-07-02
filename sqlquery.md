@@ -97,13 +97,13 @@ To run queries with the SQL query service, a user needs a platform role and a se
 
 | Platform actions                        | Administrator                                     | Editor | Operator | Viewer  |
 |---------------------------------------------------------------------------|:-------------------------------------------------:|:-------:|:--------:|:------:|
-| `View details of the {{site.data.keyword.sqlquery_short}} service instance`    | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)    | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
+| `View details of the {{site.data.keyword.sqlquery_short}} service instance`    | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)    | ![Checkmark icon](../icons/checkmark-icon.svg)      | ![Checkmark icon](../icons/checkmark-icon.svg)    |
 {: caption="Table 1. Platform roles" caption-side="top"}
 
 
 | Service actions                 | Manager                                           | Writer                                            | Reader           |
 |:-------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|:----------------:|
-| `Run an SQL query`              | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |                  |
+| `Run an SQL query`              | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |                  |
 {: caption="Table 2. Service roles" caption-side="top"}
 
 Notice that users with the service role **reader** get an access error when they launch the SQL Query UI.
