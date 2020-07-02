@@ -2,7 +2,7 @@
 
 copyright:
   years:  2018, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-02"
 
 keywords: LogDNA, IBM Cloud, Activity Tracker, logging, web UI, observability
 
@@ -40,7 +40,7 @@ To change the service plan of an instance from the Observability dashboard in th
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. Go to the menu icon ![menu icon](../../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
+2. Go to the menu icon ![menu icon](../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
 
 3. Select **Activity Tracker**.
 

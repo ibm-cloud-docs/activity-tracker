@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-02"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing
 
@@ -20,6 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
 
 # Getting started tutorial
@@ -83,7 +84,7 @@ For example, you can use the {{site.data.keyword.at_full_notm}} events to identi
 
 Consider the following information about security when you work with the {{site.data.keyword.at_full_notm}} service:
 
-* IBM services that generate {{site.data.keyword.at_full_notm}} events follow the {{site.data.keyword.IBM_notm}} Cloud security policy. For more information, see [Trust the security and privacy of IBM Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/security){: new_window}.
+* IBM services that generate {{site.data.keyword.at_full_notm}} events follow the {{site.data.keyword.IBM_notm}} Cloud security policy. For more information, see [Trust the security and privacy of IBM Cloud](https://www.ibm.com/cloud/security){: external}.
 * The {{site.data.keyword.at_full_notm}} service captures user-initiated actions that change the state of Cloud services. The information does not provide direct access to databases or applications.
 * Only authorized users can view and monitor {{site.data.keyword.at_full_notm}} event logs. Each user is identified by their unique ID in the {{site.data.keyword.cloud_notm}}.
 * You can only provision 1 instance of the service per {{site.data.keyword.cloud_notm}} location (region).
@@ -98,7 +99,7 @@ Complete this tutorial to learn how to provision a service in the {{site.data.ke
 ## Prerequisites
 {: #gs_prereq}
 
-* You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+* You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration](https://cloud.ibm.com/login){: external}.
 
 * If you prefer to work with the command line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
@@ -111,11 +112,11 @@ Complete this tutorial to learn how to provision a service in the {{site.data.ke
 
 Complete the following steps to provision an instance:
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. Go to the menu icon ![menu icon](../../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
+2. Go to the menu icon ![Menu icon](../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
 
 3. Select **Activity Tracker**, then click **Create instance**. 
 

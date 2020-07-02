@@ -56,3 +56,10 @@ tags
 
 https://app.us-south.logging.cloud.ibm.com/9bd0f9b063/logs/view?t=timestamp%3A1593583439648&a=1593583439648.1231378191822954515
 
+
+https://app.eu-de.logging.cloud.ibm.com/3a941d8f1f/logs/view
+
+
+https://app.eu-de.logging.cloud.ibm.com/ext/ibm-sso/3a941d8f1f
+
+https://app.eu-de.logging.cloud.ibm.com/3a941d8f1f/logs/view

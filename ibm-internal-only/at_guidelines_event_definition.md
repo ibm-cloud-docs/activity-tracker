@@ -1060,33 +1060,33 @@ The following table outlines when the AT guidelines change to adapt to new requi
 
 | Field                              | Required                                          | Field required  | Guideline changes               |
 |------------------------------------|---------------------------------------------------|-----------------|---------------------------------|
-| `action`                           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
+| `action`                           | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 | 
 | `correlationId`                    |                                                   |                 | March 2020 - added this new field to guidelines  (use this field to correlate across multiple services in the IBM Cloud - [Required for integration use cases](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_use_cases)  | 
-| `compliance`                       | ![Checkmark icon](../../icons/checkmark-icon.svg) | July 2020       | Required only for services that integrate with the Governance service | 
-| `dataEvent`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  | December 2019 - added this new field to guidelines    |
-| `eventTime`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
+| `compliance`                       | ![Checkmark icon](../icons/checkmark-icon.svg) | July 2020       | Required only for services that integrate with the Governance service | 
+| `dataEvent`                        | ![Checkmark icon](../icons/checkmark-icon.svg) |  December 2019  | December 2019 - added this new field to guidelines    |
+| `eventTime`                        | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 | 
 | `id`                               |                                                   |                 |                                 | 
-| `logSourceCRN` `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      | June 2019 - when changes to migrate to LogDNA were requested                                 |
-| `message` `[*]`                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |                                 |
-| `initiator.id`                     | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
-| `initiator.name`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 | 
-| `initiator.typeURI`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
-| `initiator.credential.type`        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
-| `initiator.host.address`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
-| `initiator.host.addressType`       | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2020      |  Includedd to support IPv6 addresses |
-| `observer.name`                    | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |                                 |
-| `outcome`                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
-| `reason.reasonCode`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check 403 is being generated to report on unauthorized access to run an action |
-| `reason.reasonType`                | ![Checkmark icon](../../icons/checkmark-icon.svg) |  December 2019  |  December 2019 - check that it is populated for failure events </br>January 2020 - required for all outcomes |
-| `reason.reasonForFailure`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  September 2020     |  This field was initially part of requestData and location inherited from legacy. For consistency, has been moved to this new section of CADF.</br>January 2021 - required for all outcomes |
-| `resourceGroupId`                  | ![Checkmark icon](../../icons/checkmark-icon.svg)  | September 2020 | This fie;d is included to support the AIM enhancements and integartion of AT with the CLoud platform. |
-| `requestData`  `[*]`               | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - update events must include information about the update (3 new subfields added to add consistency in the user experience) and should be JSON formatted </br>May 2020:  2 fields (resourceGroupId and reasonForFailure) have changed from optional to required |
+| `logSourceCRN` `[*]`               | ![Checkmark icon](../icons/checkmark-icon.svg) |  June 2019      | June 2019 - when changes to migrate to LogDNA were requested                                 |
+| `message` `[*]`                    | ![Checkmark icon](../icons/checkmark-icon.svg) |  June 2019      |                                 |
+| `initiator.id`                     | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `initiator.name`                   | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 | 
+| `initiator.typeURI`                | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `initiator.credential.type`        | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `initiator.host.address`           | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `initiator.host.addressType`       | ![Checkmark icon](../icons/checkmark-icon.svg) |  June 2020      |  Includedd to support IPv6 addresses |
+| `observer.name`                    | ![Checkmark icon](../icons/checkmark-icon.svg) |  December 2019  |                                 |
+| `outcome`                          | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `reason.reasonCode`                | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - check 403 is being generated to report on unauthorized access to run an action |
+| `reason.reasonType`                | ![Checkmark icon](../icons/checkmark-icon.svg) |  December 2019  |  December 2019 - check that it is populated for failure events </br>January 2020 - required for all outcomes |
+| `reason.reasonForFailure`           | ![Checkmark icon](../icons/checkmark-icon.svg) |  September 2020     |  This field was initially part of requestData and location inherited from legacy. For consistency, has been moved to this new section of CADF.</br>January 2021 - required for all outcomes |
+| `resourceGroupId`                  | ![Checkmark icon](../icons/checkmark-icon.svg)  | September 2020 | This fie;d is included to support the AIM enhancements and integartion of AT with the CLoud platform. |
+| `requestData`  `[*]`               | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |  December 2019 - update events must include information about the update (3 new subfields added to add consistency in the user experience) and should be JSON formatted </br>May 2020:  2 fields (resourceGroupId and reasonForFailure) have changed from optional to required |
 | `responseData` `[*]`               |                                                   |  January 2019   |  December 2019 - Check that is JSON formatted |
-| `saveServiceCopy`  `[*]`           | ![Checkmark icon](../../icons/checkmark-icon.svg) |  June 2019      |  June 2019 - when changes to migrate to LogDNA were requested |
-| `severity`                         | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
-| `target.id`                        | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
-| `target.name`                      | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
-| `target.typeURI`                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `saveServiceCopy`  `[*]`           | ![Checkmark icon](../icons/checkmark-icon.svg) |  June 2019      |  June 2019 - when changes to migrate to LogDNA were requested |
+| `severity`                         | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `target.id`                        | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `target.name`                      | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 |
+| `target.typeURI`                   | ![Checkmark icon](../icons/checkmark-icon.svg) |  January 2019   |                                 |
 | `target.host.address`              |                                                   |                 |                                 | 
 | `tags`                             |                                                   |                 |                                 | 
 {: caption="Table 4. Change control for list of event fields in an AT event" caption-side="top"}
@@ -1097,8 +1097,8 @@ The following table outlines when the AT guidelines change to adapt to new requi
 
 | Detail                             | Required                                          | Date             |
 |------------------------------------|---------------------------------------------------|-----------------|
-| `Services do not need to change the UI to enable data events.` | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `24/1/2020` |
-| `reasonForFailure` and `resourceGroupId` are changed from optional to required.        | ![Checkmark icon](../../icons/checkmark-icon.svg) | SH meeting `14/5/2020` |
+| `Services do not need to change the UI to enable data events.` | ![Checkmark icon](../icons/checkmark-icon.svg) | SH meeting `24/1/2020` |
+| `reasonForFailure` and `resourceGroupId` are changed from optional to required.        | ![Checkmark icon](../icons/checkmark-icon.svg) | SH meeting `14/5/2020` |
 {: caption="Table 5. Change control for implementation changes" caption-side="top"}
 
 A service has 3 months, from the date listed on the table, to implement changes and be compliant with AT guidelines.

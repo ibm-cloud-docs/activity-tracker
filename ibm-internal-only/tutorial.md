@@ -94,7 +94,7 @@ Complete the following steps to provision an Activity Tracker instance:
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. Go to the menu icon ![menu icon](../../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
+2. Go to the menu icon ![menu icon](../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
 
 3. Select **Activity Tracker**, then click **Create instance**. 
 
