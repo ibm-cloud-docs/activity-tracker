@@ -95,14 +95,14 @@ Use the following table to identify the platform role that you can grant a user 
 
 | Platform actions                                                          | Administrator                                     | Editor | Operator | Viewer  |
 |---------------------------------------------------------------------------|:-------------------------------------------------:|:-------:|:--------:|:------:|
-| `Grant other account members access to work with the service`             | ![Checkmark icon](../../icons/checkmark-icon.svg) |         |          |        |
-| `View the ingestion key in the {{site.data.keyword.cloud_notm}} console`  | ![Checkmark icon](../../icons/checkmark-icon.svg) |         |          |        |
-| `Provision a service instance`                                            | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |      |      |
-| `Delete a service instance`                                               | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)    |        |      |
-| `Update a service instance`                                               | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)    |        |      |
-| `Create a service ID`                                                     | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)    |        |      |
-| `View details of a service instance`                                      | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)    | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
-| `View service instances in the Observability Activity Tracker dashboard`  | ![Checkmark icon](../../icons/checkmark-icon.svg)  | ![Checkmark icon](../../icons/checkmark-icon.svg)    | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
+| `Grant other account members access to work with the service`             | ![Check mark icon](check.png "Check mark icon indicating correct usage") |         |          |        |
+| `View the ingestion key in the {{site.data.keyword.cloud_notm}} console`  | ![Check mark icon](check.png "Check mark icon indicating correct usage") |         |          |        |
+| `Provision a service instance`                                            | ![Check mark icon](check.png "Check mark icon indicating correct usage") | ![Check mark icon](check.png "Check mark icon indicating correct usage") |      |      |
+| `Delete a service instance`                                               | ![Check mark icon](check.png "Check mark icon indicating correct usage")  | ![Check mark icon](check.png "Check mark icon indicating correct usage")    |        |      |
+| `Update a service instance`                                               | ![Check mark icon](check.png "Check mark icon indicating correct usage")  | ![Check mark icon](check.png "Check mark icon indicating correct usage")    |        |      |
+| `Create a service ID`                                                     | ![Check mark icon](check.png "Check mark icon indicating correct usage")  | ![Check mark icon](check.png "Check mark icon indicating correct usage")    |        |      |
+| `View details of a service instance`                                      | ![Check mark icon](check.png "Check mark icon indicating correct usage")  | ![Check mark icon](check.png "Check mark icon indicating correct usage")    | ![Check mark icon](check.png "Check mark icon indicating correct usage")      | ![Check mark icon](check.png "Check mark icon indicating correct usage")    |
+| `View service instances in the Observability Activity Tracker dashboard`  | ![Check mark icon](check.png "Check mark icon indicating correct usage")  | ![Check mark icon](check.png "Check mark icon indicating correct usage")    | ![Check mark icon](check.png "Check mark icon indicating correct usage")      | ![Check mark icon](check.png "Check mark icon indicating correct usage")    |
 {: caption="Table 1. IAM user platform roles and actions" caption-side="top"}
 
 
@@ -113,24 +113,24 @@ Use the following table to identify the service roles that you can grant a user 
 
 | Actions                                                                 | Manager                                           | Standard-Member                     | Reader |
 |-------------------------------------------------------------------------|:-------------------------------------------------:|:-----------------------------------:|:------:|
-| `Create and delete service keys through the LogDNA web UI`              | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
-| `Configure account settings`                                            | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
-| `Configure archiving`                                                   | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
-| `Define exclusion rules`                                                | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
-| `Create and delete categories`                                          | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
-| `Manage how views and dashboards are grouped in categories`             | ![Checkmark icon](../../icons/checkmark-icon.svg) |                                     |        |
-| `Export data`                                                           | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
-| `View service keys through the LogDNA web UI`                           | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
-| `Configure alerts`                                                      | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
-| `View usage`                                                            | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
-| `Create views`                                                          | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
-| `Create dashboards`                                                     | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
-| `Create screens`                                                        | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
-| `Configure user preferences in the LogDNA web UI`                       | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg)                    | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
-| `Filter and search data`                                                | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)                    | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
-| `Use views to monitor events`                                           | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)                    | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
-| `Use dashboards to monitor events`                                      | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)                    | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
-| `Use screens to monitor events`                                         | ![Checkmark icon](../../icons/checkmark-icon.svg)      | ![Checkmark icon](../../icons/checkmark-icon.svg)                    | ![Checkmark icon](../../icons/checkmark-icon.svg)    |
+| `Create and delete service keys through the LogDNA web UI`              | ![Check mark icon](check.png "Check mark icon indicating correct usage") |                                     |        |
+| `Configure account settings`                                            | ![Check mark icon](check.png "Check mark icon indicating correct usage") |                                     |        |
+| `Configure archiving`                                                   | ![Check mark icon](check.png "Check mark icon indicating correct usage") |                                     |        |
+| `Define exclusion rules`                                                | ![Check mark icon](check.png "Check mark icon indicating correct usage") |                                     |        |
+| `Create and delete categories`                                          | ![Check mark icon](check.png "Check mark icon indicating correct usage") |                                     |        |
+| `Manage how views and dashboards are grouped in categories`             | ![Check mark icon](check.png "Check mark icon indicating correct usage") |                                     |        |
+| `Export data`                                                           | ![Check mark icon](check.png "Check mark icon indicating correct usage") | ![Check mark icon](check.png "Check mark icon indicating correct usage") | |
+| `View service keys through the LogDNA web UI`                           | ![Check mark icon](check.png "Check mark icon indicating correct usage") | ![Check mark icon](check.png "Check mark icon indicating correct usage") | |
+| `Configure alerts`                                                      | ![Check mark icon](check.png "Check mark icon indicating correct usage") | ![Check mark icon](check.png "Check mark icon indicating correct usage") | |
+| `View usage`                                                            | ![Check mark icon](check.png "Check mark icon indicating correct usage") | ![Check mark icon](check.png "Check mark icon indicating correct usage") | |
+| `Create views`                                                          | ![Check mark icon](check.png "Check mark icon indicating correct usage") | ![Check mark icon](check.png "Check mark icon indicating correct usage") | |
+| `Create dashboards`                                                     | ![Check mark icon](check.png "Check mark icon indicating correct usage") | ![Check mark icon](check.png "Check mark icon indicating correct usage") | |
+| `Create screens`                                                        | ![Check mark icon](check.png "Check mark icon indicating correct usage") | ![Check mark icon](check.png "Check mark icon indicating correct usage") | |
+| `Configure user preferences in the LogDNA web UI`                       | ![Check mark icon](check.png "Check mark icon indicating correct usage") | ![Check mark icon](check.png "Check mark icon indicating correct usage")                    | ![Check mark icon](check.png "Check mark icon indicating correct usage")    |
+| `Filter and search data`                                                | ![Check mark icon](check.png "Check mark icon indicating correct usage")      | ![Check mark icon](check.png "Check mark icon indicating correct usage")                    | ![Check mark icon](check.png "Check mark icon indicating correct usage")    |
+| `Use views to monitor events`                                           | ![Check mark icon](check.png "Check mark icon indicating correct usage")      | ![Check mark icon](check.png "Check mark icon indicating correct usage")                    | ![Check mark icon](check.png "Check mark icon indicating correct usage")    |
+| `Use dashboards to monitor events`                                      | ![Check mark icon](check.png "Check mark icon indicating correct usage")      | ![Check mark icon](check.png "Check mark icon indicating correct usage")                    | ![Check mark icon](check.png "Check mark icon indicating correct usage")    |
+| `Use screens to monitor events`                                         | ![Check mark icon](check.png "Check mark icon indicating correct usage")      | ![Check mark icon](check.png "Check mark icon indicating correct usage")                    | ![Check mark icon](check.png "Check mark icon indicating correct usage")    |
 {: caption="Table 2. IAM service roles and actions" caption-side="top"}
 
 
