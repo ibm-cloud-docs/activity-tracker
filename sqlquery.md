@@ -97,13 +97,13 @@ To run queries with the SQL query service, a user needs a platform role and a se
 
 | Platform actions                        | Administrator                                     | Editor | Operator | Viewer  |
 |---------------------------------------------------------------------------|:-------------------------------------------------:|:-------:|:--------:|:------:|
-| `View details of the {{site.data.keyword.sqlquery_short}} service instance`    | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)    | ![Checkmark icon](../icons/checkmark-icon.svg)      | ![Checkmark icon](../icons/checkmark-icon.svg)    |
+| `View details of the {{site.data.keyword.sqlquery_short}} service instance`    | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg)     | ![Checkmark icon](images/checkmark-icon.svg)       | ![Checkmark icon](images/checkmark-icon.svg)     |
 {: caption="Table 1. Platform roles" caption-side="top"}
 
 
 | Service actions                 | Manager                                           | Writer                                            | Reader           |
 |:-------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|:----------------:|
-| `Run an SQL query`              | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |                  |
+| `Run an SQL query`              | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)  |                  |
 {: caption="Table 2. Service roles" caption-side="top"}
 
 Notice that users with the service role **reader** get an access error when they launch the SQL Query UI.
@@ -132,7 +132,7 @@ To run a query, complete the following steps:
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
-2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Resource list** &gt; **Services**.
+2. Click the **Menu** icon ![Menu icon](images/icon_hamburger.svg) &gt; **Resource list** &gt; **Services**.
 
 3. Select an {{site.data.keyword.sqlquery_short}} instance.
 
@@ -148,7 +148,7 @@ Wen you run queries, you can specify a custom bucket to store results in. If you
 
 Complete the following steps:
 
-1. In the {{site.data.keyword.cloud_notm}} dashboard, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Resource list** &gt; **Storage**.
+1. In the {{site.data.keyword.cloud_notm}} dashboard, click the **Menu** icon ![Menu icon](images/icon_hamburger.svg) &gt; **Resource list** &gt; **Storage**.
 
 2. Select the {{site.data.keyword.sqlquery_short}} instance that has the bucket with the archive files.
 

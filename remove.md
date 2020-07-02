@@ -39,7 +39,7 @@ To remove an instance of {{site.data.keyword.at_full_notm}} by using the {{site.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. Go to the menu icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability** to access the *Observability* Dashboard.
+2. Go to the menu icon ![Menu icon](images/icon_hamburger.svg) &gt; **Observability** to access the *Observability* Dashboard.
 
 3. Select **Activity Tracker**. The list of instances is displayed.
 

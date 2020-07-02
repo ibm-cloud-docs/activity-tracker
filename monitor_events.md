@@ -30,7 +30,7 @@ You can monitor activity in your account through the {{site.data.keyword.at_full
 
 There is 1 instance of the {{site.data.keyword.at_full_notm}} service per location. Therefore, to monitor activity in your account, you might need to view and analyze events through different {{site.data.keyword.at_full_notm}} instances. 
 
-In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) > **Observability** > **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
+In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](images/icon_hamburger.svg) > **Observability** > **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
 {: tip}
 
 To view events, you must [launch the web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch) in the location where events are available. Then, you can work with views to monitor those events. You view events in your local time.
