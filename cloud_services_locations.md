@@ -573,7 +573,7 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.mobilefoundation_short}}   | [Checkmark icon](images/checkmark.svg) | ![Checkmark icon](images/checkmark-icon.svg)   |   
+| {{site.data.keyword.mobilefoundation_short}}   | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |   
 {: caption="Web and mobile services integration in Europe locations" caption-side="top"}
 {: #cs_web-table-3}
 {: tab-title="Europe"}
