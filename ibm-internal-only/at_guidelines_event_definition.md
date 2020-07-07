@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-11"
+lastupdated: "2020-07-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event definition
 
@@ -53,8 +53,6 @@ Following is a sample event that includes the fields that are required. You can 
 
 ```js
 {
-    // REQUIRED FIELDS:
-
     "initiator": {
         "id": "IBMid-xxxxxxxxxx",
         "name": "xxxxm@us.ibm.com",
@@ -64,7 +62,8 @@ Following is a sample event that includes the fields that are required. You can 
         },
         "host": {
             "address": "169.62.30.22",
-            "addressType": "IPv4"
+            "addressType": "IPv4",
+            "agent": "python-requests/2.18.4"
         }
     },
     "target": {
@@ -99,7 +98,9 @@ Following is a sample event that includes the fields that are required. You can 
         "updateType": "xxxx",
         "initialValue": "xxxxx",
         "newValue": "xxxxxx",
-        "requestId": "xxxxxxxxx-xxxx-xxxx-xxxxxxxxxxx"
+        // Set requestId to the X-Correlation-Id header field that is part of the request and a user can include in Ticket for additional information
+        "requestId": "xxxxxxxxx-xxxx-xxxx-xxxxxxxxxxx"   
+        // Set platformSource to service name as shown in the crn when you share a cluster for multiple services, e.g. Watson, Internet services, Gateway services, VPC
         "platformSource" : "Watson xxxxx"
     },
 
@@ -606,7 +607,7 @@ Some fields:
 * [Optional] `serviceInstanceId`: Set to the service instance ID (not the CRN value)
 * [Optional] `accountId`: Set to the account ID 
 * [Optional] `resourceType`: Type of resource
-* [Optional] `requestId`: The value of this field includes a UUID that can be used to identify a request in IBM Cloud. Customers should include this value in a support ticket.
+* [Optional] `requestId`: The value of this field includes a UUID that can be used to identify a request in IBM Cloud. Set to the X-Correlation-Id header field that is part of the request. Customers should use this value in a support ticket to request more information.
 * [`Required for update action`] `updateType`: Indicate if it is a name change, description change, or other type Valid values are: `Name changed`, `Description changed`, and others (the services may have their own set of values and might vary per service)
 * [`Required for update action`] `initialValue`: Add the original value of the resource that is updated
     
@@ -624,9 +625,7 @@ Some fields:
 
     If you cannot reference by ID, version, or any other way data that is either too big in size or includes sensitive data, do not include this field. Document in your topic the reason why this information is not included so customers are aware as to why is not available.
 
-* [`Required for services that share a common cluster`] `platformSource`: Add the UI catalog name of your service, for example, `Watson Discovery` This helps users identify your events quickly by your service, since the platform_source value is shared across all Watson services.
-
-    For example, Watson, DirectLink
+* [`Required for services that share a common cluster`] `platformSource`: Add the name of your service as shown in the crn. This information helps users identify your events quickly by your service, since the platform_source value is shared across by multiple services. Services that are affected by this scenarion are: Watson, gateway services, internet services,
 
 * [Optional] `customizationId`
 * [Optional] `environmentId`
@@ -681,7 +680,8 @@ Some fields:
     ```
     {: codeblock}
 
-
+If you have an update action that only allows to `enable` or `disable` a setting, con sider using the action `configure` instead.
+{: tip}
 
 
 ### responseData (JSON)
@@ -980,6 +980,12 @@ Use this field to correlate AT events within your service.
 
 This field is optional.
 
+
+### initiator.host.agent (string)
+{: #initiator.host.agent}
+
+This field provides information about the agent that was used in the request. 
+{: note}
 
 ### target.host.address (string)
 {: #target.host.address}
