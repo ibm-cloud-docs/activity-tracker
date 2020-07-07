@@ -173,8 +173,9 @@ Where
 
 * `action` defines the task requested by the user.  
 
-    Valid actions are: `add`, `bulkdelete`, `create`, `read`, `update`,`delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`, `authenticate`, `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`, `ack-delete`, `ack-restore`, `ack-disable`, `ack-enable`, `ack-rotate`, `edit`, `publish`, `authorize`
-, `publish`    Not valid actions are: `info`, `unknown`
+    Valid actions are: `add`, `approve`, `authenticate`, `authorize`, `publish`, `bulkdelete`, `create`, `delete`, `backup`, `build`, `capture`, `configure`, `deploy`, `disable`, `enable`, `get`, `import`, `inspect`, `list`, `monitor`, `pull`, `push`, `restore`, `start`, `stop`, `undeploy`, `update`, `read`, `reject`,`receive`, `reimport`, `remove`, `send`, `set`, `set-on`, `set-off`,  `read`, `renew`, `revoke`, `allow`, `deny`, `evaluate`, `notify`, `rotate`, `ack-delete`, `ack-restore`, `ack-disable`, `ack-enable`, `ack-rotate`, `edit`, `publish`
+
+    Not valid actions are: `info`, `unknown`
 
     More values will be added as needed.
 
@@ -193,6 +194,8 @@ Where
 **Use the action type `list` for events that report a user's request to view all resources for a type of a resource in your service.**
 {: important}
 
+**Use the action `configure` instead of `update` for events that report a user's request to enable or disable a setting, a feature, or a resource.** This action applies to update actions that only allow 2 values as part of the change. You must specify in requestData or responseData the value that is set with the request so the users are clear on what value has been defined.
+{: important}
 
 ### compliance (JSON)
 {: #compliance}

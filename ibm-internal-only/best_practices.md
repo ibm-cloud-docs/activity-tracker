@@ -67,9 +67,19 @@ There are two kinds of events in Activity Tracker:
 
 ## What events to define
 
-* Send events to report actions that report access, change, or management on resources in the IBM Cloud. These activities can be initiated by a physical person, by using an API key, or by using a token that is bound to a service.
+Activity Tracker reports actions on the customer account. The actions can be initiated by a user, a service ID, or the IBM Cloud service.
 
-* Send events for your service, not for the microservices inside your service. **You must hide the service's internal implementation.**
+    * A service should send events to report actions that report access, change, or management on resources in the IBM Cloud. These activities can be initiated by a physical person, by using an API key, or by using a token that is bound to a service.
+
+    * A service should send events to report actions that the IBM Cloud service does in the customer account. These actions report access, change, or management on resources that is initiated by the service, for example, schedule a backup of a database that contains customer data. 
+
+    * A service should send events for API calls that are made to the service and available externally. A service should not send events for the actions performed by microservices inside your service. **You must hide the service's internal implementation.**
+
+A service should report `read`, `create`, `update`, and `delete` actions. 
+
+    * Use the action `configure` to report update actions that report a toggle-type action (enable/disable or set-on/set-off).
+
+    * AT events are not required for read operations that are triggered by an IBM Cloud service as part of their internal operations.
 
 * A service in the IBM Cloud that starts sending audit events to Activity Tracker should generate an event for the following Cloud actions:
 
@@ -78,8 +88,7 @@ There are two kinds of events in Activity Tracker:
     * Update resources (e.g. update action)
     * Delete resources (e.g. delete action)
     * Actions that involve access or retrieval of security data; for example, getting the details of a key in Key Protect, viewing metadata, listing resources.
-
-    Denied access (401), successful, and failed actions must ge reported for each AT event.
+    * Denied access (403), successful, and failed actions must ge reported for each AT event.
 
 * The platform will generate these events for you:
     * Provisioning a service in the IBM Cloud.
