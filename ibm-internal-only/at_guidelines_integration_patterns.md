@@ -1009,6 +1009,119 @@ Use lower case for actions and resource types.
 
 
 
+## Pattern3: Transparency pattern
+{: #transparency}
+
+
+[REQUIRED] This scenario must be implemented by services that pass the user's credentials to a different service or keep it to perform actions later on. It's main objective is to be transparent with a customer and let them know when the service is about to use their credential to talk to another service to complete a request they have made.”
+{: important}
+
+### Intro
+{: #pattern3_intro}
+
+A service might pass the user's credentials to a different service to perform a task or store the credentials in a secrets file. The service that gets the user's credentials might be another IBM Cloud service or an external service.
+
+For transparency, whenever a service passes the user's credentials to another service or stores it for later reuse generates the following AT events:
+
+1. One AT event to report the user's request. 
+
+    * The AT action is defined as `svc.resource.action`.  
+
+    * This is an action that is listed by the service in their AT topic.
+
+2. One AT event to report that the user's credentials are about to be passed on to a different service to complete the user's action. 
+
+    * The AT action is defined as `svc.credentials.ready-to-use`. 
+    
+    * This action must also be documented in the AT topic.
+
+    * This event is only triggered if credentials are used.
+
+### AT event to report the user's request
+
+The following table shows a subset of the AT fields and how they must be set for the action `svc.resource.action`:
+
+| Field                       | `svc.resource.action`                           |
+|-----------------------------|-------------------------------------------------|
+| `correlationId`             | Unique identified to correlate events. </br>Set to the `X-Correlation-Id` header field that is part of the request.  |
+| `initiator.name`            | `user` or `service ID` used by the user         |
+| `initiator.id`              | IBMid or serviceID used by the user             |
+| `initiator.typeURI`         | `service/security/account/user` </br>`service/security/account/serviceid` |
+| `initiator.credential.type` | Per AT guidelines                               |
+| `initiator.host.address`    | User's IP address                               |
+| `target.name`               | resource name (per AT guidelines)               |
+| `target.id`                 | resource CRN (per AT guidelines)                |
+| `target.typeURI`            | `svc/resource` (per AT guidelines)              |
+| `requestData`               |  Add information  (per AT guidelines)           |
+| `responseData`              |  Add information  (per AT guidelines)           |
+| `outcome`                   | Per AT guidelines                               |
+| `severity`                  | Per AT guidelines                               |
+| `dataEvent`                 | Per service classification                      |
+| `logSourceCRN`              | Set CRN with info from the user's account       |
+| `saveServiceCopy`           | `true`                                          |
+{: caption="Event fields for action svc.resource.action" caption-side="top"}
+
+### AT event to report that the user's credentials are about to be passed
+
+The following table shows a subset of the AT fields and how they must be set for the action `svc.credentials.ready-to-use`:
+
+| Field                       | `svc.credentials.ready-to-use` |
+|-----------------------------|-------------------------------------------------|
+| `correlationId`             | Unique identified to correlate events  </br>Must match the correlationId set in action `svc.resource.action`.        |
+| `initiator.name`            | Set to `IBM`                             |
+| `initiator.id`              | Leave empty                              |
+| `initiator.typeURI`         | `service/security/account/service`       |
+| `initiator.credential.type` | Leave empty                              |
+| `initiator.host.address`    | Leave empty                              |
+| `target.name`               | resource name </br>Must match the target.name field value in `svc.resource.action`.  |
+| `target.id`                 | resource CRN </br>Must match the target.id field value in `svc.resource.action`.   |
+| `target.typeURI`            | `svc/resource` </br>Must match the target.typeURI field value in `svc.resource.action`. |
+| `requestData`               |  Add information about the credentials that are going to be used  </br>See the requestData scenarios for requestData fields that should be set |
+| `responseData`              | Leave empty                              |
+| `outcome`                   | Set to `success`                                |
+| `severity`                  | Set to `normal`                                 |
+| `dataEvent`                 | `true`                                          |
+| `logSourceCRN`              | Set with info from the user's account           |
+| `saveServiceCopy`           | `true`                                          |
+{: caption="Event fields for action svc.credentials.ready-to-use" caption-side="top"}
+
+
+#### RequestData scenario 1. User initiates the request and credentials are pass to an IBM Cloud service
+
+| Field                            | Info                                            | Status | 
+|----------------------------------|-------------------------------------------------|--------|
+| `requestData.targetServiceType`  | Set to `ibm-cloud-service`                      | Required | 
+| `requestData.targetServiceName`  | Set the name from the global catalog of the service to whom the credential is being sent | Required | 
+| `requestData.credentialType`     | Choose one from the list: ‘user-supplied’, ‘stored-api-key’, ‘stored-infrastructure-key’. Additional values will be added as more services adopt the transparency pattern. | Required | 
+| `requestData.credentialID`       | Set the user ID that is associated with the credential | Optional |
+| `requestData.credentialName`     | Set the name that is associated with a credential (e.g. API key name from IAM token) | Optional |
+{: caption="RequestData fields for action svc.credentials.ready-to-use" caption-side="top"}
+
+
+#### RequestData scenario 2. User initiates the request and credentials are pass to a service outside the IBM Cloud
+
+| Field                            | Info                                            |Status | 
+|----------------------------------|-------------------------------------------------|--------|
+| `requestData.targetServiceType`  | Set to `external-service`                       | Required | 
+| `requestData.targetServiceName`  | Set the name of the external service            | Required | 
+| `requestData.credentialType`     | Choose one from the list: ‘user-supplied’, ‘stored-api-key’, ‘stored-infrastructure-key’. Additional values will be added as more services adopt the transparency pattern. | Required | 
+| `requestData.credentialID`       | Set the user ID that is associated with the credential | Optional |
+| `requestData.credentialName`     | Set the name that is associated with a credential (e.g. API key name from IAM token) | Optional |
+{: caption="RequestData fields for action svc.credentials.ready-to-use and external service" caption-side="top"}
+
+
+#### RequestData scenario 3. User initiates the request and credentials are stored in the cluster's master secret file
+
+| Field                            | Info                                            |Status | 
+|----------------------------------|-------------------------------------------------|--------|
+| `requestData.targetServiceType`  | Set to `ibm-cloud-service`                      | Required | 
+| `requestData.targetServiceName`  | Set the name from the global catalog of your service     | Required |
+| `requestData.credentialType`     | Choose one from the list: ‘user-supplied’, ‘stored-api-key’, ‘stored-infrastructure-key’. Additional values will be added as more services adopt the transparency pattern. | Required |
+| `requestData.credentialID`       | Set the user ID that is associated with the credential | Optional |
+| `requestData.credentialName`     | Set the name that is associated with a credential (e.g. API key name from IAM token) | Optional |
+{: caption="RequestData fields for action svc.credentials.ready-to-use" caption-side="top"}
+
+
 
 
 
