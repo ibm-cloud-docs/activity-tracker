@@ -332,7 +332,6 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     {: codeblock}
 
     For **eu-gb**, run the following command: 
-    **Temporary**: Use the `us-south` file instead, and edit it to change `us-south` to `eu-gb` in two places.
 
     ```
     wget http://assets.eu-gb.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
@@ -361,7 +360,6 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     {: codeblock}
 
      For **in-che**, run the following command:
-     **Temporary**: Use the `us-south` file instead, and edit it to change `us-south` to `in-che` in two places.
      
     ```
     wget http://assets.in-che.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
