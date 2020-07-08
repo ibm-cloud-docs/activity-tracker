@@ -251,7 +251,7 @@ All commands should be run from a terminal that is logged into your service's IB
 ## Step 3. Install LogDNA Agents in your Kubernetes cluster
 {: #agent}
 
-These instructons are in transition, as a new LogDNA agent version is being introduced: version 2.1. The instructions currently have some temporary work-arounds, but that will be resolved soon.
+These instructons are updated for the new LogDNA agent version 2.1. 
 {: note}
 
 The LogDNA Agent sends logs and events to LogDNA. The agent will collect the following data:
