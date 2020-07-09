@@ -987,8 +987,12 @@ This field is optional.
 ### initiator.host.agent (string)
 {: #initiator.host.agent}
 
-This field provides information about the agent that was used in the request. 
+This field contains information about the user agent that triggers the request.
 {: note}
+
+In the request header, the `user-agent` parameter allows a client to report information about itself. [Learn more](/docs/api-handbook?topic=api-handbook-headers#context-headers).
+
+Set the field `initiator.host.agent` to the `user-agent` value in the request.
 
 ### target.host.address (string)
 {: #target.host.address}
