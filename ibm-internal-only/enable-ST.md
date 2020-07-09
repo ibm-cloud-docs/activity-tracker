@@ -251,7 +251,7 @@ All commands should be run from a terminal that is logged into your service's IB
 ## Step 3. Install LogDNA Agents in your Kubernetes cluster
 {: #agent}
 
-These instructons are in transition, as a new LogDNA agent version is being introduced: version 2.1. The instructions currently have some temporary work-arounds, but that will be resolved soon.
+These instructons are updated for the new LogDNA agent version 2.1. 
 {: note}
 
 The LogDNA Agent sends logs and events to LogDNA. The agent will collect the following data:
@@ -332,7 +332,6 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     {: codeblock}
 
     For **eu-gb**, run the following command: 
-    **Temporary**: Use the `us-south` file instead, and edit it to change `us-south` to `eu-gb` in two places.
 
     ```
     wget http://assets.eu-gb.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
@@ -361,7 +360,6 @@ If your service is **NOT** running on Kubernetes, refer [here](/docs/services/Ac
     {: codeblock}
 
      For **in-che**, run the following command:
-     **Temporary**: Use the `us-south` file instead, and edit it to change `us-south` to `in-che` in two places.
      
     ```
     wget http://assets.in-che.logging.test.cloud.ibm.com/clients/agent-resources-supertenant-private.yaml
