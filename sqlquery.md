@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-07-09"
 
 keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU-supported
 
@@ -86,7 +86,7 @@ You must provision the {{site.data.keyword.sqlquery_short}} service in the same 
 To provision an instance, see [Create your {{site.data.keyword.sqlquery_short}} service instance](/docs/services/sql-query?topic=sql-query-gettingstarted#sql_query).
 
 
-Once you have {{site.data.keyword.sqlquery_short}} running on {{site.data.keyword.cloud_notm}}, you can immediately start querying your data by using the {{site.data.keyword.sqlquery_short}} UI, or programmatically by using either [the {{site.data.keyword.sqlquery_short}} REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/sql-query){:new_window}, or the Python `ibmcloudsql` library. 
+Once you have {{site.data.keyword.sqlquery_short}} running on {{site.data.keyword.cloud_notm}}, you can immediately start querying your data by using the {{site.data.keyword.sqlquery_short}} UI, or programmatically by using either [the {{site.data.keyword.sqlquery_short}} REST API](https://cloud.ibm.com/apidocs/sql-query){: external}, or the Python `ibmcloudsql` library. 
 
 
 ## Granting user permissions to run a query
@@ -97,13 +97,13 @@ To run queries with the SQL query service, a user needs a platform role and a se
 
 | Platform actions                        | Administrator                                     | Editor | Operator | Viewer  |
 |---------------------------------------------------------------------------|:-------------------------------------------------:|:-------:|:--------:|:------:|
-| `View details of the {{site.data.keyword.sqlquery_short}} service instance`    | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg)     | ![Checkmark icon](images/checkmark-icon.svg)       | ![Checkmark icon](images/checkmark-icon.svg)     |
+| `View details of the {{site.data.keyword.sqlquery_short}} service instance`    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)    | ![Checkmark icon](images/checkmark-icon.svg)      | ![Checkmark icon](images/checkmark-icon.svg)    |
 {: caption="Table 1. Platform roles" caption-side="top"}
 
 
 | Service actions                 | Manager                                           | Writer                                            | Reader           |
 |:-------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|:----------------:|
-| `Run an SQL query`              | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)  |                  |
+| `Run an SQL query`              | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |                  |
 {: caption="Table 2. Service roles" caption-side="top"}
 
 Notice that users with the service role **reader** get an access error when they launch the SQL Query UI.
@@ -132,7 +132,7 @@ To run a query, complete the following steps:
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
-2. Click the **Menu** icon ![Menu icon](images/icon_hamburger.svg) &gt; **Resource list** &gt; **Services**.
+2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Resource list** &gt; **Services**.
 
 3. Select an {{site.data.keyword.sqlquery_short}} instance.
 
@@ -148,7 +148,7 @@ Wen you run queries, you can specify a custom bucket to store results in. If you
 
 Complete the following steps:
 
-1. In the {{site.data.keyword.cloud_notm}} dashboard, click the **Menu** icon ![Menu icon](images/icon_hamburger.svg) &gt; **Resource list** &gt; **Storage**.
+1. In the {{site.data.keyword.cloud_notm}} dashboard, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Resource list** &gt; **Storage**.
 
 2. Select the {{site.data.keyword.sqlquery_short}} instance that has the bucket with the archive files.
 
@@ -196,29 +196,32 @@ Parquet is an open source file format that stores nested data structures into a 
 
 The {{site.data.keyword.sqlquery_short}} UI is an editor that lets you immediately start composing SQL queries. Since SQL Query uses Spark SQL, you can use Spark SQL functions and ANSI SQL to compose both simple and complex queries that involve large amounts of data.
 
-In the {{site.data.keyword.sqlquery_short}} UI, you must run the following query to transform content from JSON into **PARQUET** format:
 
-```
-SELECT * FROM SQL_URL STORED AS JSON 
-INTO RESULTS_BUCKET STORED AS PARQUET
-```
-{: codeblock}
+Complete the following steps to run the query to transform content from JSON into PARQUET:
+1. In the SQL editor field of the {{site.data.keyword.sqlquery_short}} UI, enter the following SELECT statement:
 
-Where
+    ```
+    SELECT * FROM cleancols(SQL_URL STORED AS JSON) 
+    INTO RESULTS_BUCKET STORED AS PARQUET
+    ```
+    {: codeblock}
 
-* **SQL_URL** is the SQL URL of the archive file in COS
-* **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
+    Where
 
-For example, the following query is used to transform an archive file:
+    * **SQL_URL** is the SQL URL of the archive file in COS
+    
+    * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
 
-```
-SELECT * FROM cos://ams03/at-logdna-eu-de/999999d8f1f.2019-06-03.62.json.gz STORED AS JSON 
-INTO cos://eu-de/results-at STORED AS PARQUET
-```
-{: screen}
+    * Use [cleancols](/docs/sql-query?topic=sql-query-sql-reference#tableTransformer) to avoid transformation problems into PARQUET format when the name of the columns include special characters or blanks.
 
-Complete the following steps to run the query:
-1. In the SQL editor field of the {{site.data.keyword.sqlquery_short}} UI, enter a SELECT statement.
+    For example, the following query is used to transform an archive file:
+
+    ```
+    SELECT * FROM cleancols(cos://ams03/at-logdna-eu-de/999999d8f1f.2019-06-03.62.json.gz STORED AS JSON)
+    INTO cos://eu-de/results-at STORED AS PARQUET
+    ```
+    {: screen}
+
 2. Click **Run**.
 
     You can see the query result in the *Result* area of the UI. 
