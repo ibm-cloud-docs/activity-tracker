@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-07-09"
 
 keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU-supported
 
@@ -198,27 +198,32 @@ The {{site.data.keyword.sqlquery_short}} UI is an editor that lets you immediate
 
 In the {{site.data.keyword.sqlquery_short}} UI, you must run the following query to transform content from JSON into **PARQUET** format:
 
-```
-SELECT * FROM SQL_URL STORED AS JSON 
-INTO RESULTS_BUCKET STORED AS PARQUET
-```
-{: codeblock}
 
-Where
-
-* **SQL_URL** is the SQL URL of the archive file in COS
-* **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
-
-For example, the following query is used to transform an archive file:
-
-```
-SELECT * FROM cos://ams03/at-logdna-eu-de/999999d8f1f.2019-06-03.62.json.gz STORED AS JSON 
-INTO cos://eu-de/results-at STORED AS PARQUET
-```
-{: screen}
-
-Complete the following steps to run the query:
+Complete the following steps to run the query to transform content from JSON into PARQUET:
 1. In the SQL editor field of the {{site.data.keyword.sqlquery_short}} UI, enter a SELECT statement.
+
+    ```
+    SELECT * FROM cleancols(SQL_URL STORED AS JSON) 
+    INTO RESULTS_BUCKET STORED AS PARQUET
+    ```
+    {: codeblock}
+
+    Where
+
+    * **SQL_URL** is the SQL URL of the archive file in COS
+    
+    * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
+
+    * Use [cleancols](/docs/sql-query?topic=sql-query-sql-reference#tableTransformer) to avoid transformation problems into PARQUET format when the name of the columns include special characters or blanks.
+
+    For example, the following query is used to transform an archive file:
+
+    ```
+    SELECT * FROM cleancols(cos://ams03/at-logdna-eu-de/999999d8f1f.2019-06-03.62.json.gz STORED AS JSON)
+    INTO cos://eu-de/results-at STORED AS PARQUET
+    ```
+    {: screen}
+
 2. Click **Run**.
 
     You can see the query result in the *Result* area of the UI. 
