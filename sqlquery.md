@@ -196,11 +196,9 @@ Parquet is an open source file format that stores nested data structures into a 
 
 The {{site.data.keyword.sqlquery_short}} UI is an editor that lets you immediately start composing SQL queries. Since SQL Query uses Spark SQL, you can use Spark SQL functions and ANSI SQL to compose both simple and complex queries that involve large amounts of data.
 
-In the {{site.data.keyword.sqlquery_short}} UI, you must run the following query to transform content from JSON into **PARQUET** format:
-
 
 Complete the following steps to run the query to transform content from JSON into PARQUET:
-1. In the SQL editor field of the {{site.data.keyword.sqlquery_short}} UI, enter a SELECT statement.
+1. In the SQL editor field of the {{site.data.keyword.sqlquery_short}} UI, enter the following SELECT statement:
 
     ```
     SELECT * FROM cleancols(SQL_URL STORED AS JSON) 
