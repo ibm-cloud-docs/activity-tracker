@@ -50,7 +50,7 @@ The following table lists the actions that generate an event:
 
 These events are generated when a user looks at the information that is provided through the  **Manage** &gt; **Billing adn usage** &gt; **Usage** section, or request an export of the data.
 
-## Events for managing single account usage reports
+### Events for managing single account usage reports
 {: #at_events_acc_mgt_account_reporst_std}
 
 The following table lists the actions that generate an event:
