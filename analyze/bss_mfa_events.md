@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-07-12"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account events
 
@@ -118,7 +118,7 @@ You can add an extra layer of security at login by requiring users to answer a s
 
 You set on this setting per user.
 
-To be able to set on this setting, the user must set up answers to three security questions in their profile. [Leaern more](/docs/account?topic=account-login-settings#security-questions). 
+To be able to set on this setting, the user must set up answers to three security questions in their profile. [Leaern more](/docs/account?topic=account-types#security-questions). 
 
 After the user has configured the 3 security questions, you can [set on the setting **Require MFA security questions at login**](/docs/iam?topic=iam-questions). This action generates an event with action **user-management.user-setting.update**. 
 
@@ -147,7 +147,7 @@ You can add an extra layer of security at login by prompting a user for a one-ti
 
 You set on this setting per user.
 
-To be able to set on this setting, the user must set up a password expiration in their profile. [Learn more](/docs/account?topic=account-login-settings#password-expiration).
+To be able to set on this setting, the user must set up a password expiration in their profile. [Learn more](/docs/account?topic=account-types#password-expiration).
 
 After the user has configured a password expiration, you can [set on the setting **User one-time passcode authentication**](/docs/iam?topic=iam-totp). This action generates an event with action **user-management.user-setting.update**. 
 
