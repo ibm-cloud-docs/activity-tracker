@@ -25,6 +25,6 @@ subcollection: Activity-Tracker-with-LogDNA
 # Adoption guidelines: AT event fields
 {: #ibm_event_fields}
 
-The information on this page has moved to the new Observability internal repo. See [AT event overview](/docs/observability?topic=observability-ibm_event_fields)
+The information on this page has moved to the new Observability internal repo. See [AT event overview](/docs/observability?topic=observability-at_event_ov)
 {:shortdesc}
 

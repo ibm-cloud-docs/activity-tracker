@@ -25,5 +25,5 @@ subcollection: Activity-Tracker-with-LogDNA
 # Adoption guidelines: Cloud integration patterns
 {: #at_use_cases}
 
-The information on this page has moved to the new Observability internal repo. See [AT integration patterns]().
+The information on this page has moved to the new Observability internal repo. See [AT integration patterns](/docs/observability?topic=observability-patterns).
 {:shortdesc}

@@ -22,5 +22,5 @@ subcollection: Activity-Tracker-with-LogDNA
 # Understanding Super Tenancy and Activity Tracker
 {: #understand_st}
 
-The content on this page has moved to the new Observability repo. See [Understanding Super Tenancy and Activity Tracker](The content on this page has moved to the new Observability repo. See ).
+The content on this page has moved to the new Observability repo. See [Understanding Super Tenancy and Activity Tracker](/docs/observability?topic=observability-understand_st).
 
