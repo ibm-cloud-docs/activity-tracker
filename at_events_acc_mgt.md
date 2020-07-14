@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-07-15"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account events, catalog, tags
 
@@ -48,7 +48,8 @@ The following table lists the actions that generate an event:
 ## Events for managing account usage reports
 {: #at_events_acc_mgt_account_reporst}
 
-These events are generated when a user looks at the information that is provided through the  **Manage** &gt; **Billing adn usage** &gt; **Usage** section, or request an export of the data.
+These events are generated when a user looks at usage information in the account. For example, the user can look at usage data through the **Manage** &gt; **Billing and usage** &gt; **Usage** section, or request an export of the data. Also, users can request usage information through the CLI or by making direct [API calls](/apidocs/metering-reporting#introduction). 
+
 
 ### Events for managing single account usage reports
 {: #at_events_acc_mgt_account_reporst_std}
@@ -60,7 +61,7 @@ The following table lists the actions that generate an event:
 | `billing.account-summary.read`                       | An event is generated when a user views the account level summary usage page that is displayed by default. |
 | `billing.account-summary.download`                   | An event is generated when a user requests a **summary** export of the data in csv format from the account level summary usage page. |
 | `billing.account-usage-report.read`                  | An event is generated when a user views the usage data that is displayed after the user configures a time frame, a resource group, or both in the default account level summary usage page. |
-| `billing.account-instances-usage-report.read`        | An event is generated when a user requests an export of the data in csv format from the configured account level summary usage page. |
+| `billing.account-instances-usage-report.read`        | An event is generated when a user views the instances’ usage data page. |
 | `billing.account-instances-usage-report.download`    | An event is generated when a user requests an **instances** export of the data in csv format from the account level summary usage page. |
 {: caption="Table 2. Actions that generate account management events" caption-side="top"} 
 
@@ -396,7 +397,7 @@ The following table lists *requestData* fields that you can find in events that 
 ### Events for managing account usage reports
 {: #at_events_analyze_4}
 
-This section explains events that are generated when a user looks at the information that is provided through the  **Manage** &gt; **Billing adn usage** &gt; **Usage** section, or request an export of the data.
+This section explains events that are generated when a user looks at the information that is provided through the  **Manage** &gt; **Billing and usage** &gt; **Usage** section, or request an export of the data.
 
 #### requestData fields
 {: #at_events_analyze_4_reqdata}
