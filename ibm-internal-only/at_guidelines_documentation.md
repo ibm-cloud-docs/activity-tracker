@@ -23,6 +23,6 @@ subcollection: Activity-Tracker-with-LogDNA
 # Documenting Activity Tracker events
 {: #ibm_docs}
 
-Information has moved to [Documenting Activity Tracker events](/docs/observability?topic=observability-ibm_docs).
+Information has moved to [Documenting Activity Tracker events](/docs/observability?topic=observability-documentation-at).
 {:shortdesc}
 
