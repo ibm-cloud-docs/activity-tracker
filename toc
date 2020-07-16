@@ -92,7 +92,7 @@ IBM Cloud Activity Tracker with LogDNA
         export_api.md
 
     {: .topicgroup}
-    Managing events
+    View events
         views.md
         view_events.md
         alerts.md
@@ -119,4 +119,5 @@ IBM Cloud Activity Tracker with LogDNA
     {: .navgroup id="help"}
     gettinghelp.md
     at_faq.md
+    faq_request.md
     {: .navgroup-end}
