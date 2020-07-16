@@ -29,6 +29,7 @@ After you provision an instance of the {{site.data.keyword.at_full_notm}} servic
 {:shortdesc}
 
 
+
 ## Granting IAM policies to a user to launch the web UI
 {: #launch_iam}
 
@@ -81,7 +82,13 @@ Complete the following steps:
 
     For example, a LogDNA web UI looks like `https://app.eu-gb.logging.cloud.ibm.com/ext/ibm-sso/xxxxxxxxxx`.
 
-2. Enter the dashboard URL in a browser and log in to {{site.data.keyword.cloud_notm}.
+    You can also copy the LogDNA web UI URL that you get when you launch the LogDNA web UI through the {{site.data.keyword.cloud_notm}} UI. For example, a LogDNA web UI looks like `https://app.eu-gb.logging.cloud.ibm.com/xxxxxxxxxx/logs/view`.
+
+2. Enter the dashboard URL in a browser and log in to {{site.data.keyword.cloud_notm}}.
+
+    Notice that when you enter the following URL `https://app.eu-de.logging.cloud.ibm.com/xxxxxxxx`, you get a `404 page not found` error.
+
+    Valid formats are `https://<ENDPOINT>/ext/ibm-sso/xxxxxxxxxx` or `https://<ENDPOINT>/xxxxxxxxxx/logs/view`
 
 3. [Optional] You can also pass query parameters to refine the view that is displayed.
 
@@ -115,6 +122,5 @@ Complete the following steps:
         When you specify a timeframe of `July 12, 2020`, the value is `t=July%2012%2C%202020`. 
 
         When you specify a timeframe of `July 12, 2020 to July 15,2020`, the value is `t=July%2012%2C%202020%20to%20July%2015%2C2020`.
-
 
 
