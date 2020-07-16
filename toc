@@ -83,6 +83,7 @@ IBM Cloud Activity Tracker with LogDNA
         iam_view_events.md
         reuse_resource_definitions.md
         sqlquery.md
+        faq_request.md
 
     {: .topicgroup}
     Export events
@@ -119,5 +120,4 @@ IBM Cloud Activity Tracker with LogDNA
     {: .navgroup id="help"}
     gettinghelp.md
     at_faq.md
-    faq_request.md
     {: .navgroup-end}

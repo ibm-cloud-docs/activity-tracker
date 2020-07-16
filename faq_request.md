@@ -23,7 +23,8 @@ subcollection: Activity-Tracker-with-LogDNA
 {:external: target="_blank" .external}
 
 
-# What can I do when my request fails to complete successfully due to a network transmission interruption?
+
+# Recovering from a network transmission interruption
 {: #faq_request}
 
 When LogDNA operations are affected by a network transmission interruption in {{site.data.keyword.cloud_notm}}, you may experience a delay viewing your data or processing a request. 
@@ -46,8 +47,7 @@ When an interruption happens, there are specific requests where LogDNA notifies 
 Check the status of the {{site.data.keyword.at_full}} service in the [support page](https://cloud.ibm.com/status?selected=status){: external}.
 
 You can also use {{site.data.keyword.mon_full_notm}} to monitor the status of enabled-Sysdig services in {{site.data.keyword.cloud_notm}}. The monitoring service offers additonal information that can help troubleshoot network transmission interruption problems.
-
-    * If you are interested in [{{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-getting_started), you can monitor your {{site.data.keyword.messagehub}} instance and analyze authentication failures or bandwidth problems. For example, when you exceed `17.7 MB per min` or `25GB per day` extracting data, LogDNA reports a network transmission interruption. 
+* If you are interested in [{{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-getting_started), you can monitor your {{site.data.keyword.messagehub}} instance and analyze authentication failures or bandwidth problems. For example, when you exceed `17.7 MB per min` or `25GB per day` extracting data, LogDNA reports a network transmission interruption. 
 
 
 
