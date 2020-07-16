@@ -45,3 +45,8 @@ To get the LogDNA web UI URL, complete the following steps from a terminal:
     ```
     {: codeblock}
     
+Where *INSTANCE_NAME* is the name of the instance.
+
+To get the name of the instances that are available in a resource group, you can run `ibmcloud resource service-instances`.
+{: tip}
+

@@ -47,6 +47,20 @@ The following table shows the API endpoints:
 
 
 
+## LogDNA web UI endpoints
+{: #endpoints_logdna_ui}
 
+The following table shows the LogDNA web UI endpoints:
 
+| Region                   |  Public Endpoint                                   |
+|--------------------------|----------------------------------------------------|
+| `Chennai (in-che)`       | `https://app.in-che.logging.cloud.ibm.com`       |
+| `Dallas (us-south)`      | `https://app.us-south.logging.cloud.ibm.com`       |
+| `Frankfurt (eu-de)`      | `https://app.eu-de.logging.cloud.ibm.com`          |
+| `London (eu-gb)`         | `https://app.eu-gb.logging.cloud.ibm.com`          |
+| `Tokyo (jp-tok)`         | `https://app.jp-tok.logging.cloud.ibm.com`         |
+| `Seoul (kr-seo)`         | `https://app.kr-seo.logging.cloud.ibm.com`         |
+| `Sydney (au-syd)`        | `https://app.au-syd.logging.cloud.ibm.com`         |
+| `Washington (us-east)`   | `https://app.us-east.logging.cloud.ibm.com`         |
+{: caption="Table 2. Lists of LogDNA web UI endpoints" caption-side="top"}
 
