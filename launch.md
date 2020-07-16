@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2019-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, web UI, browser
 
@@ -20,16 +20,18 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
-# Navigating to the web UI
+# Navigating to the LogDNA web UI
 {: #launch}
 
-After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view, monitor, and manage events through the {{site.data.keyword.at_full_notm}} web UI.
+After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view, monitor, and manage events through the {{site.data.keyword.at_full_notm}} web UI. You can launch the LogDNA web UI from the {{site.data.keyword.cloud_notm}} UI or directly from a browser.
 {:shortdesc}
 
 
-## Step 1. Granting IAM policies to a user to view data 
-{: #step1}
+
+## Granting IAM policies to a user to launch the web UI
+{: #launch_iam}
 
 **Note:** You must be an administrator of the {{site.data.keyword.at_full_notm}} service, an administrator of an {{site.data.keyword.at_full_notm}} instance, or have account IAM permissions to grant other users policies.
 
@@ -44,18 +46,18 @@ The following table lists the minimum policy that a user must have to be able to
 For more information, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
 
-## Step 2. Launching the web UI through the {{site.data.keyword.cloud_notm}} UI
-{: #launch_step2}
+## Launching the LogDNA web UI through the {{site.data.keyword.cloud_notm}} UI
+{: #launch_cloud_ui}
 
-You launch the web UI within the context of an {{site.data.keyword.at_full_notm}} instance, from the {{site.data.keyword.cloud_notm}} UI. 
+You can launch the LogDNA web UI within the context of an {{site.data.keyword.at_full_notm}} instance, from the {{site.data.keyword.cloud_notm}} UI. 
 
 Complete the following steps to launch the web UI:
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
-2. Click the **Menu** icon ![Menu icon](images/icon_hamburger.svg) > **Observability**. 
+2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**. 
 
 3. Select **Activity Tracker**. 
 
@@ -69,62 +71,56 @@ Complete the following steps to launch the web UI:
 The {{site.data.keyword.at_full_notm}} web UI opens and shows the **Everything** view. Through this view, you can see the events in your account for the region that you have selected.
 
 
+## Launching the LogDNA web UI from a browser
+{: #launch_browser}
 
-## Getting the web UI URL from the {{site.data.keyword.cloud_notm}}
-{: #launch_get}
+You can launch the LogDNA web UI directly from a browser. 
 
-To get the web UI URL, complete the following steps from a terminal:
+Complete the following steps:
 
-1. Set the resource group where the {{site.data.keyword.at_full_notm}} instance is provisioned.
+1. [Get the LogDNA web UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_logdna_web_url).
 
-    ```
-    export logdna_rg_name=<Resource_Group_Name_Where_LogDNA_Instance_Is_Created>
-    ```
-    {: codeblock}
+    For example, a LogDNA web UI looks like `https://app.eu-gb.logging.cloud.ibm.com/ext/ibm-sso/xxxxxxxxxx`.
 
-2. Set the {{site.data.keyword.at_full_notm}} instance name.
+    You can also copy the LogDNA web UI URL that you get when you launch the LogDNA web UI through the {{site.data.keyword.cloud_notm}} UI. For example, a LogDNA web UI looks like `https://app.eu-gb.logging.cloud.ibm.com/xxxxxxxxxx/logs/view`.
 
-    ```
-    export logdna_instance_name=<Your_LogDNA_Instance_Name>
-    ```
-    {: codeblock}
+2. Enter the dashboard URL in a browser and log in to {{site.data.keyword.cloud_notm}}.
 
-3. Set the endpoint.
+    Notice that when you enter the following URL `https://app.eu-de.logging.cloud.ibm.com/xxxxxxxx`, you get a `404 page not found` error.
 
-    ```
-    export rc_endpoint=resource-controller.cloud.ibm.com
-    ```
-    {: codeblock}
+    Valid formats are `https://<ENDPOINT>/ext/ibm-sso/xxxxxxxxxx` or `https://<ENDPOINT>/xxxxxxxxxx/logs/view`
 
-4. Set the IAM token.
+3. [Optional] You can also pass query parameters to refine the view that is displayed.
 
     ```
-    export iam_token=$(ibmcloud iam oauth-tokens | grep IAM | grep -oP  "eyJ.*")
+    https://<ENDPOINT>/ext/ibm-sso/LOGDNA_ID?q=<QUERY>&hosts=<HOSTS>&apps=<APPS>&levels=<LEVELS>&t=<TIMEFRAME>
     ```
     {: codeblock}
 
-    **Note:** If you are working on a MacOS terminal, the command is as follows: `export iam_token=$(ibmcloud iam oauth-tokens | grep IAM | grep -o  "eyJ.*")`
+    Where
 
-5. Set the resource group ID.
+    * `<ENDPOINT>` represents the dashboard URL in the region where the instance is available. See [LogDNA web UI endpoints](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints_logdna_ui).
 
-    ```
-    export resource_group_id=$(ibmcloud resource groups | grep "^$logdna_rg_name" | awk '{print $2}')
-    ```
-    {: codeblock}
+    * `<QUERY>` represents the search query that is applied for the view, for example, `q=table%3Amangle%20reason%3A%27refresh%20timer%27`. 
 
-6. Set the web UI URL in a variable.
+        Use `%3A` to represent a colon (`:`).
 
-    ```
-    export dashboard_url=$(curl -H "Accept: application/json" -H "Authorization: Bearer $iam_token" "https://$rc_endpoint/v1/resource_instances?resource_group_id=$resource_group_id&type=service_instance" | jq ".resources[] | select(.name==\"$logdna_instance_name\") | .dashboard_url")
-    ```
-    {: codeblock}
+        Use `%20` to represent a space.
 
-7. Get the web UI URL.
+        Use `%27` to represent a quote (`'`).
 
-    ```
-    echo $dashboard_url
-    ```
-    {: codeblock}
+    * `<HOSTS>` represents the list of services for which data is included in the view. Notice that these are values that you select in the *Sources* section of the LogDNA web UI. Multiple hosts are separated by commas, for example,  `hosts=logdna-agent-trkq9,logdna-agent-trkq7`.
 
+    * `<APPS>` represents the list of apps for which data is included in the view. Multiple apps are separated by commas.
+
+    * `<LEVELS>` represents the list of levels for which data is included in the view. Multiple levels are separated by commas, for example, `levels=normal,critical`.
+
+    * `<TIMEFRAME>` represents the timeframe that you apply to the data that is displayed through the view. For example, look at the following samples:
     
+        When you specify a timeframe of `July 12`, the value is `t=July%2012`. 
+        
+        When you specify a timeframe of `July 12, 2020`, the value is `t=July%2012%2C%202020`. 
+
+        When you specify a timeframe of `July 12, 2020 to July 15,2020`, the value is `t=July%2012%2C%202020%20to%20July%2015%2C2020`.
+
 

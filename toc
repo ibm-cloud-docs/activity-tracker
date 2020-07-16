@@ -41,6 +41,12 @@ IBM Cloud Activity Tracker with LogDNA
     observe.md
 
     {: .topicgroup}
+    LogDNA web UI
+        launch.md
+        config.md
+        get_logdna_web_url.md
+
+    {: .topicgroup}
     DevOps tasks
         manage_events.md
         archive.md
@@ -60,8 +66,6 @@ IBM Cloud Activity Tracker with LogDNA
 
     {: .topicgroup}
     View events
-        launch.md
-        config.md
         views.md
         view_events.md
         alerts.md
