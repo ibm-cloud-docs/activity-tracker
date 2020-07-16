@@ -22,15 +22,15 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 {:external: target="_blank" .external}
 
-# Navigating to the web UI
+# Navigating to the LogDNA web UI
 {: #launch}
 
-After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view, monitor, and manage events through the {{site.data.keyword.at_full_notm}} web UI.
+After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view, monitor, and manage events through the {{site.data.keyword.at_full_notm}} web UI. You can launch the LogDNA web UI from the {{site.data.keyword.cloud_notm}} UI or directly from a browser.
 {:shortdesc}
 
 
 ## Granting IAM policies to a user to view data 
-{: #step1}
+{: #launch_iam}
 
 **Note:** You must be an administrator of the {{site.data.keyword.at_full_notm}} service, an administrator of an {{site.data.keyword.at_full_notm}} instance, or have account IAM permissions to grant other users policies.
 
@@ -45,10 +45,10 @@ The following table lists the minimum policy that a user must have to be able to
 For more information, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
 
-## Launching the web UI through the {{site.data.keyword.cloud_notm}} UI
-{: #launch_step2}
+## Launching the LogDNA web UI through the {{site.data.keyword.cloud_notm}} UI
+{: #launch_cloud_ui}
 
-You can launch the web UI within the context of an {{site.data.keyword.at_full_notm}} instance, from the {{site.data.keyword.cloud_notm}} UI. 
+You can launch the LogDNA web UI within the context of an {{site.data.keyword.at_full_notm}} instance, from the {{site.data.keyword.cloud_notm}} UI. 
 
 Complete the following steps to launch the web UI:
 
@@ -70,63 +70,48 @@ Complete the following steps to launch the web UI:
 The {{site.data.keyword.at_full_notm}} web UI opens and shows the **Everything** view. Through this view, you can see the events in your account for the region that you have selected.
 
 
+## Launching the LogDNA web UI from a browser
+{: #launch_browser}
 
 
-## Getting the web UI URL from the {{site.data.keyword.cloud_notm}}
-{: #launch_get}
+You can launch the LogDNA web UI directly from a browser. 
 
-To get the web UI URL, complete the following steps from a terminal:
 
-1. Set the resource group where the {{site.data.keyword.at_full_notm}} instance is provisioned.
+Looking more at the above, finally. Are you aware that LogDNA has an ibm-oauth (I think) way to login from an url?
+https://app.us-south.logging.cloud.ibm.com/ext/ibm-sso/ed79138c92
+will log me into my LogDNA account:
+https://app.us-south.logging.cloud.ibm.com/ed79138c92/logs/view
+Not asking me to SSO again with w3id, if I already have.
+Furthermore, you can pass in query parameters to initialize the view that comes up. Like:
+https://app.us-south.logging.cloud.ibm.com/ext/ibm-sso/4a7b5dca04?tags=mytag,myothertag
+Which would filter by those two tags.  The parameters include:
+q (search box)
+t (timeframe)
+levels=info,debug,warn,error,n%2Fa
+apps=crn...
+hosts
+tags
 
-    ```
-    export logdna_rg_name=<Resource_Group_Name_Where_LogDNA_Instance_Is_Created>
-    ```
-    {: codeblock}
 
-2. Set the {{site.data.keyword.at_full_notm}} instance name.
 
-    ```
-    export logdna_instance_name=<Your_LogDNA_Instance_Name>
-    ```
-    {: codeblock}
 
-3. Set the endpoint.
+## Getting the LogDNA web UI URL
+{: #launch_get_url}
 
-    ```
-    export rc_endpoint=resource-controller.cloud.ibm.com
-    ```
-    {: codeblock}
+To get the LogDNA web UI URL, complete the following steps from a terminal:
 
-4. Set the IAM token.
+1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-getting-started).
 
-    ```
-    export iam_token=$(ibmcloud iam oauth-tokens | grep IAM | grep -oP  "eyJ.*")
-    ```
-    {: codeblock}
+2. Log in to the location in the {{site.data.keyword.cloud_notm}} where the instance is provisioned. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
-    **Note:** If you are working on a MacOS terminal, the command is as follows: `export iam_token=$(ibmcloud iam oauth-tokens | grep IAM | grep -o  "eyJ.*")`
+3. Set the resource group where the instance is available. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
-5. Set the resource group ID.
+    By default, the `default` resource group is set.
 
-    ```
-    export resource_group_id=$(ibmcloud resource groups | grep "^$logdna_rg_name" | awk '{print $2}')
-    ```
-    {: codeblock}
-
-6. Set the web UI URL in a variable.
+4. Get the dashboard URL. Run the following command:
 
     ```
-    export dashboard_url=$(curl -H "Accept: application/json" -H "Authorization: Bearer $iam_token" "https://$rc_endpoint/v1/resource_instances?resource_group_id=$resource_group_id&type=service_instance" | jq ".resources[] | select(.name==\"$logdna_instance_name\") | .dashboard_url")
+    ic resource service-instance at-london --output JSON | grep dashboard_url
     ```
     {: codeblock}
-
-7. Get the web UI URL.
-
-    ```
-    echo $dashboard_url
-    ```
-    {: codeblock}
-
     
-
