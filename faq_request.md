@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-07-16"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, troubleshooting
+keywords: IBM Cloud, LogDNA, Activity Tracker
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -21,6 +21,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:important: .important}
 {:note: .note}
 {:external: target="_blank" .external}
+{:beta: .beta}
 
 
 
@@ -29,6 +30,9 @@ subcollection: Activity-Tracker-with-LogDNA
 
 When LogDNA operations are affected by a network transmission interruption in {{site.data.keyword.cloud_notm}}, you may experience a delay viewing your data or processing a request. 
 {:shortdesc}
+
+The information on this page pertains to the `Streaming` feature that LogDNA is piloting.
+{: beta}
 
 ## What triggers a network transmission interruption?
 {: #faq_request_1}
