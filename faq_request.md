@@ -31,7 +31,7 @@ subcollection: Activity-Tracker-with-LogDNA
 When LogDNA operations are affected by a network transmission interruption in {{site.data.keyword.cloud_notm}}, you may experience a delay viewing your data or processing a request. 
 {:shortdesc}
 
-The information on this page pertains to the `Streaming` feature that LogDNA is piloting.
+**Private Beta Feature**: The information on this page pertains to the `Streaming` feature that LogDNA is piloting.
 {: beta}
 
 ## What triggers a network transmission interruption?
