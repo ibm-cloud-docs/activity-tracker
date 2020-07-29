@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-08-29"
 subcollection: Activity-Tracker-with-LogDNA
 
 ---
@@ -17,6 +17,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:beta: .beta}
 
 
 # Managing events in your account
@@ -55,21 +56,7 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 
 * Events are automatically archived in a compressed format **(.json.gz)**. Each event preserves its metadata.
 * Events are archived within 24-48 hours after you save the configuration. 
-* Events are archived hourly. 
-
-    The name of the file has the following format:
-
-    ```
-    year=YYYY/month=MM/day=DD/<accountID>.<YYYY>-<MM>-<DD>.<HH>00.json.gz 
-    ```
-    {: codeblock}
-
-    Where `HH` is hours in 24 format and `accountID` corresponds to the LogDNA instance ID. You can get the LogDNA instance ID from the URL that you get when you launch the LogDNA web UI. 
-
-    For example, an archive file can have the following name: `2020/03/18/0f6efbef16.2020-03-18.1800.json.gz`
-
-    The events that are included in a file correspond to the period of time that is indicated as part of the name of the file. 
-
+* Events are archived daily.  
 * The timestamp that is used to determine whether the event is included in an archive is the UTC timestamp.
 
     Notice that depending on your location, there might be events that you see in local time in your views on a specific day. However, you cannot find them on the archive file. You are most likely viewing events in local time and the archive process uses the UTC timestamp.
@@ -101,6 +88,7 @@ The {{site.data.keyword.cos_full_notm}} instance is provisioned within the conte
 
 **Archiving in an EU-managed location:** You must configure a bucket that complies with the EU-managed and GDPR regulations.
 {: important}
+
 
 
 ## Viewing archived events by using the SQL Query service

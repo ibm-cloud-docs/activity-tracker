@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-07-29"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, archive logs, COS, cloud object storage
 
@@ -327,8 +327,6 @@ Complete the following steps to configure archiving of your {{site.data.keyword.
 
 5. Click **Save**.
 
-
-After you save the configuration, events are archived once a day.
 
 Notice that when you save the configuration, you can get a message that informs you that the configuration has been saved successfully. When you get this message, the integration between the LogDNA instance and the bucket is verified. A test to upload and delete an object from the bucket is completed successfully. 
 
