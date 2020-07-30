@@ -58,23 +58,23 @@ The following table lists the services that require additional steps for you to 
 {: caption="Table 2. {{site.data.keyword.cloud_notm}} services that require opt-in actions for data events" caption-side="top"}
 
 
-## Watson services
+## Details per Watson service
 {: #events_opt-in_watson}
 
 The following table lists the Watson services that require additional steps for you to be able to monitor events:
 
-| Service Name | Paid plan required? | Other config required? | 
+| Service Name | Paid plan required | Other configuration required | 
 | -- | -- | -- |
-| Compare and Comply | Y | N |  
-| Watson Assistant | Y </br>Premium Plan only feature | N |  
-| Discovery | Y | N |  
-| Knowledge Studio | Y | N |  
-| Language Translator | Y | N |  
-| Natural Language Classifier | Y | N |  
-| Natural Language Understanding | Y | N |  
-| Speech to Text | Y | N |  
-| Text to Speech | Y | N |  
-| Visual Recognition | Y | N |  
+| {{site.data.keyword.cncfull}} | Yes | No |  
+| {{site.data.keyword.conversationfull}} | Yes </br>Premium Plan only feature | No |  
+| {{site.data.keyword.discoveryfull}} | Yes | No |  
+| {{site.data.keyword.knowledgestudiofull}} | Yes | No |  
+| {{site.data.keyword.languagetranslatorfull}} | Yes | No |  
+| {{site.data.keyword.nlclassifierfull}} | Yes | No |  
+| {{site.data.keyword.nlufull}} | Yes | No |  
+| {{site.data.keyword.speechtotextfull}} | Yes | No |  
+| {{site.data.keyword.texttospeechfull}} | Yes | No |  
+| {{site.data.keyword.visualrecognitionfull}} | Yes | No |  
 {: caption="Table 3. Watson services that require opt-in actions for data events" caption-side="top"}
 
 

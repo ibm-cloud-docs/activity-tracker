@@ -694,6 +694,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.DSX_short}}        | `NO` | `NO` |
 | Watson Knowledge Catalog               | `NO` | `NO` |
 | {{site.data.keyword.knowledgestudioshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.languagetranslatorfull}} |   |   |
 | {{site.data.keyword.pm_full}}          | `NO` | `NO` |
 | {{site.data.keyword.nlclassifiershort}} | `NO` | `NO` |
 | {{site.data.keyword.nlushort}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
@@ -716,6 +717,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.DSX_short}}         | `NO` | `NO` | 
 | Watson Knowledge Catalog                | `NO` | `NO` |
 | {{site.data.keyword.knowledgestudioshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.languagetranslatorfull}} |   |   |
 | {{site.data.keyword.pm_full}}           | `NO` | `NO` | 
 | {{site.data.keyword.nlclassifiershort}} | `NO` | `NO` |
 | {{site.data.keyword.nlushort}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
@@ -738,6 +740,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.DSX_short}}         | `NO` | `NO` | 
 | Watson Knowledge Catalog                | `NO` | `NO` |
 | {{site.data.keyword.knowledgestudioshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.languagetranslatorfull}} |   |   |
 | {{site.data.keyword.pm_full}}           | `NO` | `NO` | 
 | {{site.data.keyword.nlclassifiershort}} | `NO` | `NO` |
 | {{site.data.keyword.nlushort}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
