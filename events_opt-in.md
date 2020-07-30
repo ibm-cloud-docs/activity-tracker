@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-07-30"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, events, global, regional, data, management
 
@@ -52,11 +52,26 @@ The following table lists the services that require additional steps for you to 
 | Service                            | Upgrade plan                       | Configure the service              | More info |
 |------------------------------------|------------------------------------|------------------------------------|-----------|
 | {{site.data.keyword.appid_full}}   | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg)   | [Monitoring runtime activity](/docs/appid?topic=appid-at-events#at-monitor-runtime-activity)   |
-| {{site.data.keyword.cos_full}}     |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Tracking events using Activity Tracker with LogDNA](/docs/cloud-object-storage?topic=cloud-object-storage-at) |
-| {{site.data.keyword.cloudantfull}} |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Types of events](/docs/Cloudant?topic=Cloudant-at_events#at_event_types-at) |
+| {{site.data.keyword.cos_full}}     |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Enable activity tracking](/docs/cloud-object-storage?topic=cloud-object-storage-at#at-console-enable) |
+| {{site.data.keyword.cloudantfull}} |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Configuring data events for an IBM Cloudant instance](/docs/Cloudant?topic=Cloudant-at_events#at_event_configure) |
 | [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai)                    | ![Checkmark icon](../icons/checkmark-icon.svg) |  |   |
 {: caption="Table 2. {{site.data.keyword.cloud_notm}} services that require opt-in actions for data events" caption-side="top"}
 
 
+## Reference: Watson services
 
+Service Name | Paid plan required? | Other config required? | More info
+-- | -- | -- | --
+Compare and Comply | Y | N |  
+Watson Assistant | Y | N |  Premium Plan only feature
+Discovery | Y | N |  
+Knowledge Studio | Y | N |  
+Language Translator | Y | N |  
+Natural Language Classifier | Y | N |  
+Natural Language Understanding | Y | N |  
+Personality Insights | N/A | N/A | Does not send events to AT
+Speech to Text | Y | N |  
+Text to Speech | Y | N |  
+Tone Analyzer | N/A | N/A | Does not send events to AT
+Visual Recognition | Y | N |  
 

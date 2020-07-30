@@ -399,6 +399,9 @@ The following table lists *requestData* fields that you can find in events that 
 
 This section explains events that are generated when a user looks at the information that is provided through the  **Manage** &gt; **Billing and usage** &gt; **Usage** section, or request an export of the data.
 
+You can get events with `reason.reasonCode = 404` that are generated when there is no usage data available for the request. The `severity` is set to normal.
+{: note}
+
 #### requestData fields
 {: #at_events_analyze_4_reqdata}
 
