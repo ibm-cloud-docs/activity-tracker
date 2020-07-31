@@ -40,6 +40,7 @@ IBM Cloud Activity Tracker with LogDNA
         ha-dr.md
         service-connection.md
         architecture-workload-isolation.md
+        at_events.md
 
     {: .topicgroup}
     Tutorials
