@@ -416,7 +416,7 @@ The following tables list the locations where automatic collection of database s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           | `Seoul (kr-seo)` |
+| Service                                        | `Tokyo (jp-tok)` | `Sydney (au-syd)`           | `Seoul (kr-seo)` |
 |------------------------------------------------|------------------|----------------------------|---------------------|
 | {{site.data.keyword.messagehub}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |          
 | MQ on IBM Cloud                                | `NO`                | ![Checkmark icon](images/checkmark-icon.svg)  | |
@@ -690,15 +690,15 @@ The following tables list the locations where automatic collection of security s
 |----------|----------------------|------------------------|
 | {{site.data.keyword.conversationshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.discoveryfull}}    | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.cncfullnotm}}      | `NO` | `NO` |
-| {{site.data.keyword.DSX_short}}        | `NO` | `NO` |
-| Watson Knowledge Catalog               | `NO` | `NO` |
+| {{site.data.keyword.cncfullnotm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.DSX_short}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| Watson Knowledge Catalog               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.knowledgestudioshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.languagetranslatorfull}} |   |   |
-| {{site.data.keyword.pm_full}}          | `NO` | `NO` |
-| {{site.data.keyword.nlclassifiershort}} | `NO` | `NO` |
+| {{site.data.keyword.languagetranslatorfull}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.pm_full}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.nlclassifiershort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.nlushort}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.visualrecognitionshort}} | `NO` | `NO` | 
+| {{site.data.keyword.visualrecognitionshort}} | ![Checkmark icon](images/checkmark-icon.svg) | `NO` | 
 | {{site.data.keyword.texttospeechshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.speechtotextshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.wh-acd_short}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
@@ -709,22 +709,22 @@ The following tables list the locations where automatic collection of security s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service | `Tokyo (jp-tok)` | `Sydney (au-syd)` |
-|---------|------------------|-------------------|
-| {{site.data.keyword.conversationshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.discoveryfull}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |          
-| {{site.data.keyword.cncfullnotm}}       | `NO` | `NO` |
-| {{site.data.keyword.DSX_short}}         | `NO` | `NO` | 
-| Watson Knowledge Catalog                | `NO` | `NO` |
-| {{site.data.keyword.knowledgestudioshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.languagetranslatorfull}} |   |   |
-| {{site.data.keyword.pm_full}}           | `NO` | `NO` | 
-| {{site.data.keyword.nlclassifiershort}} | `NO` | `NO` |
-| {{site.data.keyword.nlushort}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| Service | `Tokyo (jp-tok)` | `Sydney (au-syd)` |  `Seoul (kr-seo)` |
+|---------|------------------|-------------------|---------------------|
+| {{site.data.keyword.conversationshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.discoveryfull}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |         
+| {{site.data.keyword.cncfullnotm}}       | `NO` | `NO` | `NO` |
+| {{site.data.keyword.DSX_short}}         | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| Watson Knowledge Catalog                | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.knowledgestudioshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.languagetranslatorfull}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.pm_full}}           | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.nlclassifiershort}} | ![Checkmark icon](images/checkmark-icon.svg) | `NO` |
+| {{site.data.keyword.nlushort}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.visualrecognitionshort}} | `NO` | `NO` | 
-| {{site.data.keyword.texttospeechshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.speechtotextshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.wh-acd_short}} | `NO` | `NO` |
+| {{site.data.keyword.texttospeechshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.speechtotextshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.wh-acd_short}} | `NO` | `NO` | `NO` |
 {: caption="Watson AI services integration in AP locations" caption-side="top"}
 {: #cs_watsonai-table-2}
 {: tab-title="Asia Pacific"}
@@ -736,15 +736,15 @@ The following tables list the locations where automatic collection of security s
 |---------|--------------------|------------------|
 | {{site.data.keyword.conversationshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.discoveryfull}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.cncfullnotm}}       | `NO`  | `NO` |
-| {{site.data.keyword.DSX_short}}         | `NO` | `NO` | 
-| Watson Knowledge Catalog                | `NO` | `NO` |
+| {{site.data.keyword.cncfullnotm}}       | ![Checkmark icon](images/checkmark-icon.svg)  | `NO` |
+| {{site.data.keyword.DSX_short}}         | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| Watson Knowledge Catalog                | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.knowledgestudioshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.languagetranslatorfull}} |   |   |
-| {{site.data.keyword.pm_full}}           | `NO` | `NO` | 
-| {{site.data.keyword.nlclassifiershort}} | `NO` | `NO` |
+| {{site.data.keyword.languagetranslatorfull}} |![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.pm_full}}           | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.nlclassifiershort}} | ![Checkmark icon](images/checkmark-icon.svg) | `NO` |
 | {{site.data.keyword.nlushort}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.visualrecognitionshort}} | `NO` | `NO` |
+| {{site.data.keyword.visualrecognitionshort}} | ![Checkmark icon](images/checkmark-icon.svg) | `NO` |
 | {{site.data.keyword.texttospeechshort}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.speechtotextshort}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.wh-acd_short}} | `NO` | `NO` |
