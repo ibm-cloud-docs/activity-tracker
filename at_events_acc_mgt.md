@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-08-03"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account events, catalog, tags
 
@@ -60,8 +60,7 @@ The following table lists the actions that generate an event:
 |------------------------------------------------------|-------------|
 | `billing.account-summary.read`                       | An event is generated when a user views the account level summary usage page that is displayed by default. |
 | `billing.account-summary.download`                   | An event is generated when a user requests a **summary** export of the data in csv format from the account level summary usage page. |
-| `billing.account-usage-report.read`                  | An event is generated when a user views the usage data that is displayed after the user configures a time frame, a resource group, or both in the default account level summary usage page. |
-| `billing.account-instances-usage-report.read`        | An event is generated when a user views the instances’ usage data page. |
+| `billing.account-usage-report.read`                  | An event is generated when a user views the usage data that is displayed after the user configures a time frame, a resource group, or both in the default account level summary usage page. This event is also generated when a user views the instances usage data page. |
 | `billing.account-instances-usage-report.download`    | An event is generated when a user requests an **instances** export of the data in csv format from the account level summary usage page. |
 {: caption="Table 2. Actions that generate account management events" caption-side="top"} 
 
@@ -420,7 +419,7 @@ The following table lists the fields that are available through the `requestData
 | `month`             | String    | Indicates the month that the user selects to view usage data. |  Included always in the event |
 | `usage_report_type` | String    | Indicates the type of report. </br>Valid values are `instances` and `rollup`.|  Included always in the event |
 | `sub_account_id`    | String    | Indicates the sub-account ID. | Optional | 
-| `resource_group`    | String    | Indicates the resource groups when a user selects one or more. | Optional </br>Included if the user filters data by selecting 1 or more resource groups. |
+| `resource_group`    | String    | Indicates the resource group. | Optional </br>Included if the user filters data by resource group. |
 | `organization_id`   | String    | Indicates the organization ID. | Optional |
 | `daily`             | Boolean   | Indicates the frequency of the report. | Optional |
 {: caption="Table 16. Account usage requestData fields" caption-side="top"} 
@@ -431,11 +430,11 @@ The following table lists the fields that are available through the `requestData
 | Field               | Type      | Description | Status |
 |---------------------|-----------|-------------|--------|
 | `month`             | String    | Indicates the month that the user selects to view usage data. |  Included always in the event |
-| `children`          | Boolean   | Indicates whether the report includes information about the usage in sub-accounts. | Included always in the event |
-| `enterprise_id`     | String    | Indicates the ID of the entreprise account. |  Included always in the event |
-| `account_id`        | String    | Indicates the the sub-account IDs that are included in the report. | Optional | 
-| `account_group_id`  | String    | Indicates the resource groups when a user selects one or more. | Optional </br>Included if the user filters data by selecting 1 or more resource groups. |
-{: caption="Table 17. Enterprise account usage requestData fields" caption-side="top"} 
+| `children`          | Boolean   | Indicates whether the usage is aggregated at account level. | Included always in the event |
+| `enterprise_id`     | String    | Indicates the ID of the entreprise. |  Included always in the event |
+| `account_id`        | String    | Indicates the sub-account ID that is requested in the report. | Optional | 
+| `account_group_id`  | String    | Indicates the resource group when a user selects one. | Optional </br>Included if the user filters data by selecting 1 resource group. |
+{: caption="Table 17. Enterprise usage requestData fields" caption-side="top"} 
 
 
 The following table lists the fields that are available through the `requestData` field in the events with actions `billing.enterprise-instances-usage-report.download`:
@@ -443,10 +442,10 @@ The following table lists the fields that are available through the `requestData
 | Field               | Type      | Description | Status |
 |---------------------|-----------|-------------|--------|
 | `month`             | String    | Indicates the month that the user selects to view usage data. |  Included always in the event |
-| `enterprise_id`     | String    | Indicates the ID of the entreprise account. |  Included always in the event |
-| `account_id`        | String    | Indicates the the sub-account IDs that are included in the report. | Optional | 
-| `account_group_id`  | String    | Indicates the resource groups when a user selects one or more. | Optional </br>Included if the user filters data by selecting 1 or more resource groups. |
-{: caption="Table 18. Enterprise account usage requestData fields" caption-side="top"} 
+| `enterprise_id`     | String    | Indicates the ID of the entreprise. |  Included always in the event |
+| `account_id`        | String    | Indicates the the sub-account IDs that is requested in the report. | Optional | 
+| `account_group_id`  | String    | Indicates the resource group when a user selects one. | Optional </br>Included if the user filters data by selecting 1 resource group. |
+{: caption="Table 18. Enterprise instances usage requestData fields" caption-side="top"} 
 
 
 
