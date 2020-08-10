@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-08-10"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account events, catalog, tags
 
@@ -44,6 +44,38 @@ The following table lists the actions that generate an event:
 | `billing.account-subscription.create` | An event is generated when you create a [Subscription account](/docs/account?topic=account-accounts#subscription-account) </br><a href="/docs/account?topic=account-accounts#subscription-account">Subscription account</a>. |
 {: caption="Table 1. Actions that generate account management events" caption-side="top"} 
 
+
+## Events for managing account usage reports
+{: #at_events_acc_mgt_account_reporst}
+
+These events are generated when a user looks at usage information in the account. For example, the user can look at usage data through the **Manage** &gt; **Billing and usage** &gt; **Usage** section, or request an export of the data. Also, users can request usage information through the CLI or by making direct [API calls](/apidocs/metering-reporting#introduction). 
+
+
+### Events for managing single account usage reports
+{: #at_events_acc_mgt_account_reporst_std}
+
+The following table lists the actions that generate an event:
+
+| Action                                               | Description |
+|------------------------------------------------------|-------------|
+| `billing.account-summary.read`                       | An event is generated when a user views the account level summary usage page that is displayed by default. |
+| `billing.account-summary.download`                   | An event is generated when a user requests a **summary** export of the data in csv format from the account level summary usage page. |
+| `billing.account-usage-report.read`                  | An event is generated when a user views the usage data that is displayed after the user configures a time frame, a resource group, or both in the default account level summary usage page. This event is also generated when a user views the instances usage data page. |
+| `billing.account-instances-usage-report.download`    | An event is generated when a user requests an **instances** export of the data in csv format from the account level summary usage page. |
+{: caption="Table 2. Actions that generate account management events" caption-side="top"} 
+
+
+### Events for managing enterprise usage reports
+{: #at_events_acc_mgt_reporst_enterprise}
+
+The following table lists the actions that generate an event:
+
+| Action                                               | Description |
+|------------------------------------------------------|-------------|
+| `billing.enterprise-usage-report.read`               | An event is generated when a user views the enterprise account level summary usage page that is displayed by default. |
+| `billing.enterprise-usage-report.download `          | An event is generated when a user requests a **summary** export of the data in csv format from the enterprise account level summary usage page.  |
+| `billing.enterprise-instances-usage-report.download` | An event is generated when a user requests an **instances** export of the data in csv format from the enterprise account level summary usage page. |
+{: caption="Table 3. Actions that generate account management events" caption-side="top"} 
 
 
 ## Events for managing IAM account settings
@@ -358,5 +390,62 @@ The following table lists *requestData* fields that you can find in events that 
 | `security_questions_setup` | Boolean         | Defines when a user requires security questions to log in to the account. </br>This field is set to `true` to indicate that questions are required.  |
 | `self_manage`              | Boolean         | Defines whether a user can configure his log in settings on how to log in to the account.  </br>This field is set to `true` to allow a user to set password expiration, turn on security questions for login, and define allowed IP addresses for log in to {{site.data.keyword.cloud_notm}} and from classic infrastructure API calls.  | 
 {: caption="Table 14. User management requestData fields" caption-side="top"} 
+
+
+
+### Events for managing account usage reports
+{: #at_events_analyze_4}
+
+This section explains events that are generated when a user looks at the information that is provided through the  **Manage** &gt; **Billing and usage** &gt; **Usage** section, or request an export of the data.
+
+You can get events with `reason.reasonCode = 404` that are generated when there is no usage data available for the request. The `severity` is set to normal.
+{: note}
+
+#### requestData fields
+{: #at_events_analyze_4_reqdata}
+
+The following table lists the fields that are available through the `requestData` field in the events with actions `billing.account-summary.read`, `billing.account-summary.download`, and `billing.account-instances-usage-report.download`:
+
+| Field | Type | Description | Status | 
+|-------|------|-------------|--------|
+| `month` | String | Indicates the month that the user selects to view usage data. | Included always in the event |
+{: caption="Table 15. Account usage summary requestData fields" caption-side="top"} 
+
+
+The following table lists the fields that are available through the `requestData` field in the events with actions `billing.account-usage-report.read`:
+
+| Field               | Type      | Description | Status |
+|---------------------|-----------|-------------|--------|
+| `month`             | String    | Indicates the month that the user selects to view usage data. |  Included always in the event |
+| `usage_report_type` | String    | Indicates the type of report. </br>Valid values are `instances` and `rollup`.|  Included always in the event |
+| `sub_account_id`    | String    | Indicates the sub-account ID. | Optional | 
+| `resource_group`    | String    | Indicates the resource group. | Optional </br>Included if the user filters data by resource group. |
+| `organization_id`   | String    | Indicates the organization ID. | Optional |
+| `daily`             | Boolean   | Indicates the frequency of the report. | Optional |
+{: caption="Table 16. Account usage requestData fields" caption-side="top"} 
+
+
+The following table lists the fields that are available through the `requestData` field in the events with actions `billing.enterprise-usage-report.read` and `billing.enterprise-usage-report.download`:
+
+| Field               | Type      | Description | Status |
+|---------------------|-----------|-------------|--------|
+| `month`             | String    | Indicates the month that the user selects to view usage data. |  Included always in the event |
+| `children`          | Boolean   | Indicates whether the usage is aggregated at account level. | Included always in the event |
+| `enterprise_id`     | String    | Indicates the ID of the enterprise. |  Included always in the event |
+| `account_id`        | String    | Indicates the sub-account ID that is requested in the report. | Optional | 
+| `account_group_id`  | String    | Indicates the account group when a user selects one. | Optional </br>Included if the user filters data by selecting 1 account group. |
+{: caption="Table 17. Enterprise usage requestData fields" caption-side="top"} 
+
+
+The following table lists the fields that are available through the `requestData` field in the events with actions `billing.enterprise-instances-usage-report.download`:
+
+| Field               | Type      | Description | Status |
+|---------------------|-----------|-------------|--------|
+| `month`             | String    | Indicates the month that the user selects to view usage data. |  Included always in the event |
+| `enterprise_id`     | String    | Indicates the ID of the enterprise. |  Included always in the event |
+| `account_id`        | String    | Indicates the the sub-account IDs that is requested in the report. | Optional | 
+| `account_group_id`  | String    | Indicates the account group when a user selects one. | Optional </br>Included if the user filters data by selecting 1 account group. |
+{: caption="Table 18. Enterprise instances usage requestData fields" caption-side="top"} 
+
 
 
