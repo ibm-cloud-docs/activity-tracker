@@ -73,7 +73,7 @@ The following table lists the actions that generate an event:
 | Action                                               | Description |
 |------------------------------------------------------|-------------|
 | `billing.enterprise-usage-report.read`               | An event is generated when a user views the enterprise account level summary usage page that is displayed by default. |
-s{: caption="Table 3. Actions that generate account management events" caption-side="top"} 
+{: caption="Table 3. Actions that generate account management events" caption-side="top"} 
 
 
 ## Events for managing IAM account settings
