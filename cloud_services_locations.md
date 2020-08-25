@@ -422,10 +422,10 @@ The following tables list the locations where automatic collection of database s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           | `Seoul (kr-seo)` |
-|------------------------------------------------|------------------|----------------------------|---------------------|
-| {{site.data.keyword.messagehub}}               | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)  |          
-| MQ on IBM Cloud                                | `NO`                | ![Checkmark icon](images/checkmark-icon.svg)   | |
+| Service                                        | `Tokyo (jp-tok)` | `Sydney (au-syd)`           | `Seoul (kr-seo)` | `Chennai (in-che)` |
+|------------------------------------------------|------------------|----------------------------|---------------------|-------------------|
+| {{site.data.keyword.messagehub}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
+| MQ on IBM Cloud                                | `NO`                | ![Checkmark icon](images/checkmark-icon.svg)  | | |
 {: caption="Integration services integration in AP locations" caption-side="top"}
 {: #cs_integration-table-2}
 {: tab-title="Asia Pacific"}
