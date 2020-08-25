@@ -222,10 +222,10 @@ The following table shows the locations where automatic collection of Cloud Foun
 |------------------------------------------------|---------------------|--------------------------------------|
 | {{site.data.keyword.at_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|
 | {{site.data.keyword.la_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|      
-{: caption="Container services integration in America's locations" caption-side="top"}
-{: #cs_container-table-1}
+{: caption="Observability services in America's locations" caption-side="top"}
+{: #cs_observability-table-1}
 {: tab-title="America"}
-{: tab-group="cs_container"}
+{: tab-group="cs_observability"}
 {: class="simple-tab-table"}
 {: row-headers}
 
@@ -233,10 +233,10 @@ The following table shows the locations where automatic collection of Cloud Foun
 |------------------------------------------------|------------------|----------------------------|-------------|
 | {{site.data.keyword.at_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  
 | {{site.data.keyword.la_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
-{: caption="Container services integration in AP locations" caption-side="top"}
-{: #cs_container-table-2}
+{: caption="Observability services in AP locations" caption-side="top"}
+{: #cs_observability-table-2}
 {: tab-title="Asia Pacific"}
-{: tab-group="cs_container"}
+{: tab-group="cs_observability"}
 {: class="simple-tab-table"}
 {: row-headers}
 
@@ -244,10 +244,10 @@ The following table shows the locations where automatic collection of Cloud Foun
 |---------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.at_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.la_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |        
-{: caption="Container services integration in Europe locations" caption-side="top"}
-{: #cs_container-table-3}
+{: caption="Observability services in Europe locations" caption-side="top"}
+{: #cs_observability-table-3}
 {: tab-title="Europe"}
-{: tab-group="cs_container"}
+{: tab-group="cs_observability"}
 {: class="simple-tab-table"}
 {: row-headers}
 
