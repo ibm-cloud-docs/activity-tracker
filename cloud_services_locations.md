@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-18"
+lastupdated: "2020-09-02"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
@@ -355,7 +355,7 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                                         | `Tokyo (jp-tok)`   |`Sydney (au-syd)` | `Seoul 01 (seo01)`       | `Chennai 01 (che01)`     | `Seoul (kr-seo)` | 
 |-----------------------------------------------------------------|--------------------|------------------|--------------------------|--------------------------|------------------|
-| {{site.data.keyword.cloudant_short_notm}}                       | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `NO`                     | `NO`                     | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.cloudant_short_notm}}                       | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `NO` | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.databases-for-mongodb_full_notm}}           | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Tokyo instance` | `Events are available through the Tokyo instance` | `NO`             |
 | {{site.data.keyword.databases-for-enterprisedb_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Tokyo instance` | `Events are available through the Tokyo instance` | `NO`             |
 | {{site.data.keyword.databases-for-cassandra_full_notm}}         | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Tokyo instance` | `Events are available through the Tokyo instance` | `NO`             |
