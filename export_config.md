@@ -54,7 +54,7 @@ Complete the following steps to allow users to export events from an {{site.data
 
 Complete the following steps to disable the export feature in an {{site.data.keyword.at_full_notm}} instance:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_step2).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
 
 2. Select the **Configuration** icon ![Configuration icon](images/admin.png). 
 
