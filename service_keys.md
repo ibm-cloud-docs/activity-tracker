@@ -41,7 +41,7 @@ You can only generate a service Key through the LogDNA web UI.
     
 Complete the following steps to create a service key:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_step2).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
 
 2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
 

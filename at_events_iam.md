@@ -30,7 +30,7 @@ subcollection: Activity-Tracker-with-LogDNA
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.iamlong}} (IAM) service in {{site.data.keyword.cloud_notm}}. 
 {:shortdesc}
 
-IAM enables you to securely authenticate users for both platform services and control access to resources consistently across {{site.data.keyword.cloud_notm}}. [Learn more](/docs/iam?topic=iam-iamoverview).
+IAM enables you to securely authenticate users for both platform services and control access to resources consistently across {{site.data.keyword.cloud_notm}}. [Learn more](/docs/account?topic=account-iamoverview).
 
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. To get started monitoring your user's actions, see [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started#getting-started). An initiator can be a user, a service, or an application.
@@ -122,7 +122,7 @@ The following table lists the actions that generate an event:
 
 Events are available in the **Frankfurt (eu-de)** region. 
 
-To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_step2). 
+To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui). 
 
 
 ## Analyzing events
@@ -131,10 +131,10 @@ To view these events, you must [provision an instance](/docs/services/Activity-T
 ### Login events
 {: #at_events_iam_analyze_login_events} 
 
-In the {{site.data.keyword.cloud_notm}}, an administrator, or a user that has the correct access in your account, has different options to manage a user's login settings. For example, an administrator can order external authentication options, enable a one-time passcode to be used during login, enable the use of security questions at login, or set a password expiration time period. [Learn more](/docs/iam?topic=iam-loginsettings). 
+In the {{site.data.keyword.cloud_notm}}, an administrator, or a user that has the correct access in your account, has different options to manage a user's login settings. For example, an administrator can order external authentication options, enable a one-time passcode to be used during login, enable the use of security questions at login, or set a password expiration time period. [Learn more](/docs/account?topic=account-types). 
 
 * A user can log in by using a user ID and password.
-* A federated user that uses a corporate or enterprise single sign-on ID can log in to {{site.data.keyword.cloud_notm}} from the command-line interface (CLI) by using either a one-time passcode or an API key. [Learn more](/docs/iam?topic=iam-federated_id). 
+* A federated user that uses a corporate or enterprise single sign-on ID can log in to {{site.data.keyword.cloud_notm}} from the command-line interface (CLI) by using either a one-time passcode or an API key. [Learn more](/docs/account?topic=account-federated_id). 
 * A user can log in by using an API key.  
 
 The following fields include extra information:
@@ -154,9 +154,9 @@ The following field includes extra information:
 #### Log in with a federated ID from the {{site.data.keyword.cloud_notm}} CLI by using a one-time passcode or an API key
 {: #at_events_iam_analyze_login_events-2}
 
-When a user [logs in from the {{site.data.keyword.cloud_notm}} CLI by using a one-time passcode](/docs/iam?topic=iam-federated_id#onetime_passcode), you get an event in the account with action `iam-identity.user-refreshtoken.login`.
+When a user [logs in from the {{site.data.keyword.cloud_notm}} CLI by using a one-time passcode](/docs/account?topic=account-federated_id#onetime_passcode), you get an event in the account with action `iam-identity.user-refreshtoken.login`.
 
-When a user [logs in from the {{site.data.keyword.cloud_notm}} CLI by using an API key](/docs/iam?topic=iam-federated_id#api_key), you get an event in the account with action `iam-identity.user-apikey.login`.
+When a user [logs in from the {{site.data.keyword.cloud_notm}} CLI by using an API key](/docs/account?topic=account-federated_id#api_key), you get an event in the account with action `iam-identity.user-apikey.login`.
 
 The following field includes extra information:
 * In requestData, the `client_id` field is set to **bx**. This value indicates a CLI request.
@@ -177,7 +177,7 @@ In Activity Tracker, you can see events that are associated to your account. Fai
 ### Update an account service ID
 {: #at_events_iam_analyze_update_acc_scvid}
 
-A service ID identifies a service or application similar to how a user ID identifies a user. [Learn more](/docs/iam?topic=iam-serviceids).
+A service ID identifies a service or application similar to how a user ID identifies a user. [Learn more](/docs/account?topic=account-serviceids).
 
 When an action to update a service ID is requested, you get an event in the account with action `iam-identity.account-serviceid.update`.
 
