@@ -319,7 +319,7 @@ The following table lists common target fields that are available for each event
 This field indicates the cloud resource on which the action is executed. 
 {: note}
 
-The format of this field is a **CRN**. For more information, see [CRN format](/docs/resources?topic=resources-crn).
+The format of this field is a **CRN**. For more information, see [CRN format](/docs/account?topic=account-crn).
 
 
 

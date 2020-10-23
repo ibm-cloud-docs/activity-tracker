@@ -27,7 +27,7 @@ subcollection: Activity-Tracker-with-LogDNA
 Multifactor authentication (MFA) adds an extra layer of security to your account by requiring all users to authenticate by using an additional authentication method beyond an ID and password. This is also commonly known as two-factor authentication (2FA). When you change MFA settings at the account level or for users in your account, you get {{site.data.keyword.at_full_notm}} events to monitor these actions.
 {:shortdesc}
 
-As an {{site.data.keyword.cloud_notm}} account owner or administrator for the billing service, you can choose to require multifactor authentication (MFA) for every user in the account or just users with non-federated IDs who do not use SSO. All users with an IBMid use a time-based one-time passcode (TOTP) MFA method, and any users with a different type of ID must be enabled to use the time-based one-time passcode authentication (TOTP), security questions, or an external authentication method separately. [Learn more](/docs/iam?topic=iam-enablemfa).
+As an {{site.data.keyword.cloud_notm}} account owner or administrator for the billing service, you can choose to require multifactor authentication (MFA) for every user in the account or just users with non-federated IDs who do not use SSO. All users with an IBMid use a time-based one-time passcode (TOTP) MFA method, and any users with a different type of ID must be enabled to use the time-based one-time passcode authentication (TOTP), security questions, or an external authentication method separately. [Learn more](/docs/account?topic=account-enablemfa).
 
 You can also configure MFA options such as security questions, using a time-based one-time passcode, and using an external authentication method. These types of MFA options are specific per account and are available only with former classic infrastructure accounts.
 
@@ -37,13 +37,13 @@ To monitor changes to MFA settings in your account, you can use the {{site.data.
 ## Events that are generated when you configure ID-based MFA
 {: #mfa_events_id_based}
 
-IBMid MFA for an account requires a time-based one-time passcode in addition to a standard IBMid and password during login. This type of MFA is enabled at the account level by the account owner or an administrator for the billing service. [Learn more](/docs/iam?topic=iam-types#id-based).
+IBMid MFA for an account requires a time-based one-time passcode in addition to a standard IBMid and password during login. This type of MFA is enabled at the account level by the account owner or an administrator for the billing service. [Learn more](/docs/account?topic=account-types#id-based).
 
 This type of MFA applies to all account resources. 
 
 To configure ID-based MFA for users that log in to your account, you must complete the following steps:
-1. As the account owner or an administrator for the billing service, turn it on or off from the **Manage** &gt; **Access (IAM)** &gt; **Settings** page in the {{site.data.keyword.cloud_notm}} console. For more information, see [enable MFA for all users in the account](/docs/iam?topic=iam-enablemfa#enabling).
-2. Each user in the account must [set up TOTP](/docs/iam?topic=iam-enablemfa#enabling) to log in to your account.
+1. As the account owner or an administrator for the billing service, turn it on or off from the **Manage** &gt; **Access (IAM)** &gt; **Settings** page in the {{site.data.keyword.cloud_notm}} console. For more information, see [enable MFA for all users in your account](/docs/account?topic=account-enablemfa#enabling).
+2. Each user in the account must [set up TOTP](/docs/account?topic=account-enablemfa#setupapp) to log in to your account.
 
 You get the following events in your account when you set on MFA in the account:
 
@@ -96,7 +96,7 @@ You get the following events in your account when you set on MFA in the account:
 ## Account-based options
 {: #mfa_events_acc_based}
 
-You can configure MFA options such as security questions, using a time-based one-time passcode, and using an external authentication method. These types of MFA options are specific per account and are available only with former classic infrastructure accounts. For more information, see [Account-based MFA options](/docs/iam?topic=iam-types#account-based).
+You can configure MFA options such as security questions, using a time-based one-time passcode, and using an external authentication method. These types of MFA options are specific per account and are available only with former classic infrastructure accounts. For more information, see [Account-based MFA options](/docs/account?topic=account-types#account-based).
 
 You can modify any of the following settings:
 
@@ -118,9 +118,9 @@ You can add an extra layer of security at login by requiring users to answer a s
 
 You set on this setting per user.
 
-To be able to set on this setting, the user must set up answers to three security questions in their profile. [Leaern more](/docs/account?topic=account-types#security-questions). 
+To be able to set on this setting, the user must set up answers to three security questions in their profile. [Leaern more](/docs/account?topic=account-types). 
 
-After the user has configured the 3 security questions, you can [set on the setting **Require MFA security questions at login**](/docs/iam?topic=iam-questions). This action generates an event with action **user-management.user-setting.update**. 
+After the user has configured the 3 security questions, you can [set on the setting **Require MFA security questions at login**](/docs/account?topic=account-questions). This action generates an event with action **user-management.user-setting.update**. 
 
 See the sample of the `requestData` field when the **Require MFA security questions at login:** property is enabled. Notice that the `requestData.security_questions_setup` field is set to `true`.
 
@@ -147,9 +147,9 @@ You can add an extra layer of security at login by prompting a user for a one-ti
 
 You set on this setting per user.
 
-To be able to set on this setting, the user must set up a password expiration in their profile. [Learn more](/docs/account?topic=account-types#password-expiration).
+To be able to set on this setting, the user must set up a password expiration in their profile. [Learn more](/docs/account?topic=account-types).
 
-After the user has configured a password expiration, you can [set on the setting **User one-time passcode authentication**](/docs/iam?topic=iam-totp). This action generates an event with action **user-management.user-setting.update**. 
+After the user has configured a password expiration, you can [set on the setting **User one-time passcode authentication**](/docs/account?topic=account-totp). This action generates an event with action **user-management.user-setting.update**. 
 
 See the sample of the `requestData` field when the **User one-time passcode authentication:** property is enabled. The `requestData.2FA` field is set to `true`.
 
@@ -172,7 +172,7 @@ See the sample of the `requestData` field when the **User one-time passcode auth
 ### User-managed login
 {: #mfa_events_acc_3}
 
-You can grant users permissions to configure MFA settings when they log in to your account. [Learn more](/docs/iam?topic=iam-loginsettings). You change the setting per user.
+You can grant users permissions to configure MFA settings when they log in to your account. [Learn more](/docs/account?topic=account-types). You change the setting per user.
 
 When you set on or off the **User-managed login** setting, an event is generated with action **user-management.user-setting.update**.
 

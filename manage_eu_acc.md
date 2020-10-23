@@ -113,8 +113,8 @@ You might have users across different geographies. However, to comply with EU la
 {: #manage_eu_acc_step5-1}
 
 To grant administrator permissions to users, complete the following steps:
-1. Create an access group, then add users to it. For example, create an access group named `logdna-at-eu-sec-admins`. [Learn more](/docs/iam?topic=iam-groups#create_ag).
-2. [Assign administrator access to a group](/docs/iam?topic=iam-groups#access_ag) by configuring policies.
+1. Create an access group, then add users to it. For example, create an access group named `logdna-at-eu-sec-admins`. [Learn more](/docs/account?topic=account-groups#create_ag).
+2. [Assign administrator access to a group](/docs/account?topic=account-groups#access_ag) by configuring policies.
 
     For example, add a policy where you select the {{site.data.keyword.at_short}} instance in Frankfurt only. Select the platform role **administrator**, or if you want to remove permissions to manage users, choose the platform role **editor**. Select the service role **manager**. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_manage_events).
 

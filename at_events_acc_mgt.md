@@ -73,6 +73,8 @@ The following table lists the actions that generate an event:
 | Action                                               | Description |
 |------------------------------------------------------|-------------|
 | `billing.enterprise-usage-report.read`               | An event is generated when a user views the enterprise account level summary usage page that is displayed by default. |
+| `billing.enterprise-usage-report.download `          | An event is generated when a user requests a **summary** export of the data in csv format from the enterprise account level summary usage page.  |
+| `billing.enterprise-instances-usage-report.download` | An event is generated when a user requests an **instances** export of the data in csv format from the enterprise account level summary usage page. |
 {: caption="Table 3. Actions that generate account management events" caption-side="top"} 
 
 
@@ -196,7 +198,7 @@ The following table lists the actions that generate an event:
 
 Events are available in the **Frankfurt (eu-de)** region. 
 
-To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_step2). 
+To view these events, you must [provision an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region. Then, you must [open the {{site.data.keyword.at_full_notm}} UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui). 
 
 
 ## Analyzing events
