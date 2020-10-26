@@ -211,7 +211,7 @@ Complete the following steps to run the query to transform content from JSON int
     
     * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
 
-    * Use [cleancols](/docs/sql-query?topic=sql-query-sql-reference#tableTransformer) to avoid transformation problems into PARQUET format when the name of the columns include special characters or blanks.
+    * Use [cleancols](/docs/sql-query?topic=sql-query-sql-reference) to avoid transformation problems into PARQUET format when the name of the columns include special characters or blanks.
 
     For example, the following query is used to transform an archive file:
 
