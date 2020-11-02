@@ -166,7 +166,7 @@ In the web UI, verify that you see the events for each of these actions.
 
 From the {{site.data.keyword.at_short}} web UI, complete the following steps to customize views that you can use to monitor user API key actions in your account:
 
-1. In the web UI, click the **Views** icon ![Configuration icon](images/views.png "Configuration icon").
+1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
 2. Select **Everything**.
 3. Choose a search condition. The following table shows different actions and the corresponding search condition:
 
@@ -230,7 +230,7 @@ In the previous step, you saved a view to monitor deletion of user API keys. Whe
 
 Complete the following steps to configure an email alert:
 
-1. In the web UI, click the **Views** icon ![Configuration icon](images/views.png).
+1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
 2. Select your view. Then, click **Attach an alert**.
 3. Choose **View-specific alert** and select **Email**.
 4. Select the type of notification. Choose **Presence** to trigger an alert when a number of events show in the view, or after a period of time. You can use the *absence* type to trigger an alert when events are not shown in the view after a period of time. 

@@ -51,7 +51,7 @@ For more information on how to configure policies for a user, see [Granting user
 Complete the following steps:
 
 1. [Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
-2. Click the **Views** icon ![Configuration icon](images/views.png).
+2. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 3. Select **Everything** or a view. 
 
 
