@@ -1,5 +1,5 @@
 ---
-
+ 
 copyright:
   years: 2019, 2020
 lastupdated: "2020-09-30"
@@ -136,7 +136,7 @@ The following table lists core platform actions that send events to {{site.data.
 | [Working with service credentials](/docs/resources?topic=resources-service_credentials#service_credentials
 ) | A service credential provides the necessary information to connect an application to a service instance. | [Events for managing service credentials that are associated to a service instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_rc#rc_keys) |
 | [Connecting a service instance to a Cloud Foundry app](/docs/account?topic=account-s2s_binding#s2s_binding) | You can generate a Cloud Foundry instance, or alias, of a service instance with the same name in a space.  | [Events for binding and unbinding a service instance to an app](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_rc#rc_bind) |
-| [Managing tags](/docs/resources?topic=resources-tag) | A tag is a label that you assign to a resource for easy filtering of resources in your resource list. | [Events for managing tags](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_acc_mgt_resources) |
+| [Managing tags](/docs/account?topic=account-tag) | A tag is a label that you assign to a resource for easy filtering of resources in your resource list. | [Events for managing tags](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_acc_mgt_resources) |
 {: caption="List of core platform actions" caption-side="top"}
 
 ## Platform core integrated security services

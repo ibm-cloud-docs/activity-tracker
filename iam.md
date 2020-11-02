@@ -1,5 +1,5 @@
 ---
-
+ 
 copyright:
   years: 2019, 2020
 lastupdated: "2020-05-14"
@@ -36,7 +36,7 @@ Policies enable access to be granted at different levels. Some of the options in
 * Access to an individual service instance in your account
 * Access to a specific resource within an instance
 
-After you define the scope of the access policy, you assign a role, which determines the user's level of access. For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources#iammanidaccser).
+After you define the scope of the access policy, you assign a role, which determines the user's level of access. For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
 *Policies* enable access to be granted at different levels. Some of the options include the following: 
 

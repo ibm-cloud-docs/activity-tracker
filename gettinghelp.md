@@ -1,5 +1,5 @@
 ---
-
+ 
 copyright:
   years: 2019, 2020
 lastupdated: "2020-01-08"
@@ -34,4 +34,4 @@ If you have problems or questions when using the {{site.data.keyword.at_full_not
 <!--Insert the appropriate Stack Overflow tag for your service for <service_keyword> in URL and text below:  -->
   * If you have technical questions about the {{site.data.keyword.at_full_notm}} service, post your question on [Stack Overflow](https://stackoverflow.com/search?q=ibm-cloud+logdna){:new_window} and tag your question with `ibm-cloud`, `activity-tracker`, and `logdna`.
 
-* If you still can't resolve the problem, you can open an IBM support ticket. For information about opening an IBM support ticket, or about support levels and ticket severities, see [Getting support](/docs/get-support?topic=get-support-using-avatar#getting-customer-support).
+* If you still can't resolve the problem, you can open an IBM support ticket. For information about opening an IBM support ticket, or about support levels and ticket severities, see [Getting support](/docs/get-support).

@@ -1,5 +1,5 @@
 ---
-
+ 
 copyright:
   years:  2018, 2020
 lastupdated: "2020-03-25"
@@ -113,7 +113,7 @@ You are responsible for managing archived data.
 
 When you delete a LogDNA instance, user metadata such as views, alerts, dashboards, screens, and templates, is never deleted. 
 
-You must open a case through support to request the data to be deleted. For more information, see [Open a support ticket](/docs/get-support?topic=get-support-using-avatar#getting-customer-support).
+You must open a case through support to request the data to be deleted. For more information, see [Open a support ticket](/docs/get-support).
 
 You are responsible for deleting archived metadata. 
 

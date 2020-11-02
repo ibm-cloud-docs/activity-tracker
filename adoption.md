@@ -1,5 +1,5 @@
 ---
-
+ 
 copyright:
   years: 2019, 2020
 lastupdated: "2020-07-01"
@@ -169,7 +169,7 @@ The service plan that you choose for a LogDNA instance determines the number of 
 **Choose your plan based on the number of days that you need to be able to search data online through the web UI.**
 {: tip}
 
-The HIPAA plan has a maximum of 25 users. If you need to grant permissions to more than 25 users, [open a support ticket](/docs/get-support?topic=get-support-using-avatar#getting-customer-support).
+The HIPAA plan has a maximum of 25 users. If you need to grant permissions to more than 25 users, [open a support ticket](/docs/get-support).
 
 
 ### Tags
