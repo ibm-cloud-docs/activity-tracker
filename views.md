@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-06-24"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, search, filter, events
 
@@ -20,6 +20,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:external: target="_blank" .external}
 
 
 # Creating custom views
@@ -50,7 +51,7 @@ For more information on how to configure policies for a user, see [Granting user
 Complete the following steps:
 
 1. [Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
-2. Click the **Views** icon ![Configuration icon](images/views.png).
+2. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 3. Select **Everything** or a view. 
 
 
@@ -173,7 +174,7 @@ reason.reasonCode:500
 When an action requested fails, the field **outcome** is set to **failure**. You can enter the following query to search for these type of events:
 
 ```
-outcome failure
+outcome:failure
 ```
 {: codeblock}
 
@@ -191,7 +192,7 @@ Valid values are *normal*, *warning*, and *critical*.
 You can enter the following query to search for these type of events:
 
 ```
-severity VALUE
+severity:VALUE
 ```
 {: codeblock}
 
@@ -200,7 +201,7 @@ Where `VALUE` can be set to *normal*, *warning*, or *critical*
 For example, to query for critical events, you can run the following query:
 
 ```
-severity critical
+severity:critical
 ```
 {: codeblock}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-06-22"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, view events
 
@@ -58,7 +58,7 @@ Complete the following steps to view events:
 
 2. [Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
 
-3. Click the **Views** icon ![Configuration icon](images/views.png).
+3. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 
 4. Select **Everything** to see all the events, or a view. 
 
@@ -83,7 +83,7 @@ You can apply a timestamp by specifying an absolute time, a relative time, or a 
 
 Complete the following steps to jump to a specific time:
 1. [Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
-2. Click the **Views** icon ![Configuration icon](images/views.png).
+2. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 3. Select **Everything** or a view.
 4. Enter a time query. Choose any of the following options:
 
@@ -106,7 +106,7 @@ At any time, you can view each event line in context.
 
 Complete the following steps: 
 
-1. In the web UI, click the **Views** icon ![Configuration icon](images/views.png "Configuration icon").
+1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
 2. Select **Everything** or a custom view.
 3. Identify a line that you want to explore.
 4. Expand the event line. 
@@ -125,7 +125,7 @@ When you finish exploring the event, click **Close** to close the line.
 
 Complete the following steps to copy an event to the clipboard: 
 
-1. In the web UI, click the **Views** icon ![Configuration icon](images/views.png "Configuration icon").
+1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
 2. Select **Everything** or a custom view.
 3. Identify a line that you want to explore.
 4. Expand the event line. 
