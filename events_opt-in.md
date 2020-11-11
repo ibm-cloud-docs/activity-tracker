@@ -53,8 +53,8 @@ The following table lists the services that require additional steps for you to 
 |------------------------------------|------------------------------------|------------------------------------|-----------|
 | {{site.data.keyword.appid_full}}   | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg)   | [Monitoring runtime activity](/docs/appid?topic=appid-at-events#at-monitor-runtime-activity)   |
 | {{site.data.keyword.cos_full}}     |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Enable activity tracking](/docs/cloud-object-storage?topic=cloud-object-storage-at#at-console-enable) |
-| {{site.data.keyword.cloudantfull}} |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Configuring data events for an IBM Cloudant instance](/docs/Cloudant?topic=Cloudant-at_events#at_event_configure) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | [How to enable message audit events](/docs/EventStreams?topic=EventStreams-at_events#enable-message-events) |
-| {{site.data.keyword.messagehub_full}} | 
+| {{site.data.keyword.cloudantfull}} |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Configuring data events for an IBM Cloudant instance](/docs/Cloudant?topic=Cloudant-at_events#at_event_configure) |
+| {{site.data.keyword.messagehub_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | [How to enable message audit events](/docs/EventStreams?topic=EventStreams-at_events#enable-message-events) |
 | [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai)    | ![Checkmark icon](../icons/checkmark-icon.svg) |  |   |
 {: caption="Table 2. {{site.data.keyword.cloud_notm}} services that require opt-in actions for data events" caption-side="top"}
 
