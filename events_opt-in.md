@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-11-12"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, events, global, regional, data, management
 
@@ -38,10 +38,10 @@ The following table lists the services that require additional steps for you to 
 
 | Service                            | Upgrade plan                       | Configure the service              | More info |
 |------------------------------------|------------------------------------|------------------------------------|-----------|
-| [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai) `[*]`    | ![Checkmark icon](../icons/checkmark-icon.svg) |  |   |
+| [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai) `[*]`  | ![Checkmark icon](../icons/checkmark-icon.svg) |  |   |
 {: caption="Table 1. {{site.data.keyword.cloud_notm}} services that require opt-in actions for management events" caption-side="top"}
 
-`[*]` You must upgrade to a paid plan to enable collection of Watson Activity Tracker events in your account.
+`[*]` You might need to upgrade to a paid plan to enable collection of Watson Activity Tracker events in your account. See [Details per Watson service](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai) to check requirements by service.
 
 
 ## Data events
@@ -53,15 +53,16 @@ The following table lists the services that require additional steps for you to 
 |------------------------------------|------------------------------------|------------------------------------|-----------|
 | {{site.data.keyword.appid_full}}   | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg)   | [Monitoring runtime activity](/docs/appid?topic=appid-at-events#at-monitor-runtime-activity)   |
 | {{site.data.keyword.cos_full}}     |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Enable activity tracking](/docs/cloud-object-storage?topic=cloud-object-storage-at#at-console-enable) |
-| {{site.data.keyword.cloudantfull}} |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Configuring data events for an IBM Cloudant instance](/docs/Cloudant?topic=Cloudant-at_events#at_event_configure) |
-| [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai)                    | ![Checkmark icon](../icons/checkmark-icon.svg) |  |   |
+| {{site.data.keyword.cloudantfull}} |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Configuring data events for an IBM Cloudant instance](/docs/Cloudant?topic=Cloudant-at_events#at_event_configure) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | [How to enable message audit events](/docs/EventStreams?topic=EventStreams-at_events#enable-message-events) |
+| {{site.data.keyword.messagehub_full}} | 
+| [Watson services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services#watson_ai)    | ![Checkmark icon](../icons/checkmark-icon.svg) |  |   |
 {: caption="Table 2. {{site.data.keyword.cloud_notm}} services that require opt-in actions for data events" caption-side="top"}
 
 
 ## Details per Watson service
 {: #events_opt-in_watson}
 
-The following table lists the Watson services that require additional steps for you to be able to monitor events:
+The following table lists the Watson services and related information about additional steps that you might need to be able to monitor events:
 
 | Service Name | Paid plan required | Other configuration required | 
 | -- | -- | -- |
@@ -75,6 +76,7 @@ The following table lists the Watson services that require additional steps for 
 | {{site.data.keyword.speechtotextfull}} | Yes | No |  
 | {{site.data.keyword.texttospeechfull}} | Yes | No |  
 | {{site.data.keyword.visualrecognitionfull}} | Yes | No |  
+| {{site.data.keyword.iva_full}} | No | No |
 {: caption="Table 3. Watson services that require opt-in actions for data events" caption-side="top"}
 
 
