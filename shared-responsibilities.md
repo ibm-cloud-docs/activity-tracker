@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-11-12"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, auditing, customer responsibilities, IBM responsibilities, terms and conditions
 
@@ -92,6 +92,7 @@ Review the following sections for the specific responsibilities for you and for 
 | `Backup the {{site.data.keyword.at_full_notm}} service`        | Daily backup of the {{site.data.keyword.at_full_notm}} infrastructure and components. | `N/A` |
 | `Backup the metadata of a LogDNA instance`                          | `N/A` | [Backup the metadata such as views, dashboards, screens, parsing templates, and alerts for each LogDNA instance.](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#export_config) |
 | `Restore the metadata of a LogDNA instance`                         | `N/A` | [Restore the metadata such as views, dashboards, screens, parsing templates, and alerts for each LogDNA instance.](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#import_config) |
+| `Backup of the data` | `N/A` | Configure archiving to retain a backup copy of the data. |
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="top"}
 
 `[*]` Recovered and restarted service components will not have customer data reloaded.
