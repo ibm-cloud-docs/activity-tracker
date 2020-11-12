@@ -27,7 +27,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {{site.data.keyword.cloud_notm}} services that are organized in a resource group in your account are managed by using {{site.data.keyword.iamlong}} (IAM). You can monitor IAM actions in your account with the {{site.data.keyword.at_full_notm}} service.
 {:shortdesc}
 
-Account owners are automatically assigned the account administrator role for IAM. As the account administrator, you can assign and manage access for users, create resource groups, create access groups, view billing details and track usage, and create service instances. You provide access for users, service IDs, and access groups by creating policies that set a target for the subject of the policy to access and a role that defines what type of access that is allowed. [Learn more](/docs/iam?topic=iam-userroles).
+Account owners are automatically assigned the account administrator role for IAM. As the account administrator, you can assign and manage access for users, create resource groups, create access groups, view billing details and track usage, and create service instances. You provide access for users, service IDs, and access groups by creating policies that set a target for the subject of the policy to access and a role that defines what type of access that is allowed. [Learn more](/docs/account?topic=account-userroles).
 
 
 ## Events that are generated when you invite a user to your account

@@ -30,7 +30,7 @@ To avoid recreating definitions of views, boards, parsing templates, and exclusi
 
 
 ## Export the configuration of resources in a LogDNA instance
-{: #export_config}
+{: #rrd_export_config}
 
 Complete the following steps to export the configuration of your resources:
 
