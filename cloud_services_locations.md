@@ -804,4 +804,15 @@ The following tables list the locations where automatic collection of security s
 
 
 
+## Code Engine
+{: #cloud_services_locations_codeengine}
 
+| Service                                        | `Dallas (us-south)` |
+|------------------------------------------------|---------------------|
+| {{site.data.keyword.codeengineshort}}          | ![Checkmark icon](images/checkmark-icon.svg) |
+{: caption="Code Engine services integration in America's locations" caption-side="top"}
+{: #cs_codeengine-table-1}
+{: tab-title="America"}
+{: tab-group="cs_codeengine"}
+{: class="simple-tab-table"}
+{: row-headers}
