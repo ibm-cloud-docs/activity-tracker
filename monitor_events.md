@@ -107,7 +107,7 @@ There are scenarios where you might want to be notified if specific events are g
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search queries to define the events that are displayed through a custom view. Then, you can attach an alert to that view to be notified when a condition occurs. A bell icon is displayed with the view to indicate that this view has an alert attached to it.
 
 Consider the following information when you configure alerts:
-* You can [attach one alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#alerts_step4) per custom view. There are 2 types of alerts: presence alert and absence alert.
+* You can [attach one alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts) per custom view. There are 2 types of alerts: presence alert and absence alert.
 
 * You can configure conditions that are based on the number of event lines that meet the search query in the view, on a time frequency, or both. 
 
