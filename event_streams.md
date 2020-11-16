@@ -32,7 +32,7 @@ When you use {{site.data.keyword.at_full}} through the command line or console, 
 
 Review the following list of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) actions and {{site.data.keyword.at_full_notm}} events that correspond to each API method in {{site.data.keyword.at_full_notm}}.
 
-For more information, see the following topic: [{{site.data.keyword.registryshort_notm}} API Docs](https://cloud.ibm.com/apidocs/container-registry){: external}
+For more information, see the following topic: [{{site.data.keyword.messagehub}} API Docs](https://cloud.ibm.com/apidocs/event-streams){: external}
 
 
 
@@ -74,6 +74,6 @@ Review the following producer API methods, their required actions in {{site.data
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
-| Produce a message | `POST /topics/{topic_name}/records` | `messagehub.cluster.read messagehub.topic.write` | 	To be announced|
+| Produce a message | `POST /topics/{topic_name}/records` | `messagehub.cluster.read messagehub.topic.write` | 	None |
 {: caption="Table 2. Producer" caption-side="top"}
 
