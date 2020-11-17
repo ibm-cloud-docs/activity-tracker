@@ -89,7 +89,7 @@ Review the following sections for the specific responsibilities for you and for 
 | Task                                                            | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-----------------------------------------------------------------|-------------------------------------------------|-----------------------|
 | `Restore the service` `[*]`      |Automatically recover and restart service components after any disaster event.  | `N/A` |
-| `Backup the {{site.data.keyword.at_full_notm}} service`        | Daily backup of the {{site.data.keyword.at_full_notm}} infrastructure and components. | `N/A` |
+| `Backup the {{site.data.keyword.at_full_notm}} key resources that are provided by the service`        | Daily backup of the {{site.data.keyword.at_full_notm}} infrastructure and components. | `N/A` |
 | `Backup the metadata of a LogDNA instance`                          | `N/A` | [Backup the metadata such as views, dashboards, screens, parsing templates, and alerts for each LogDNA instance.](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#rrd_export_config) |
 | `Restore the metadata of a LogDNA instance`                         | `N/A` | [Restore the metadata such as views, dashboards, screens, parsing templates, and alerts for each LogDNA instance.](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#import_config) |
 | `Backup of the data` | `N/A` | Configure archiving to retain a backup copy of the data. |

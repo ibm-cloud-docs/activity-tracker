@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-11-16"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
 
@@ -116,6 +116,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.user-refreshtoken.login`   | This is an event that is generated when the initiator logs in to the IBM Cloud , or when an initiator that has already logged in to the IBM Cloud requests a new refresh token to run an action. |
 {: caption="Table 5. User login actions" caption-side="top"} 
  
+
 
 ## Viewing events
 {: #at_events_iam_ui}

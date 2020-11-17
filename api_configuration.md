@@ -138,7 +138,7 @@ If the view ID does not exist
 curl --request PUT \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/3c3de90460 \
   --header 'Content-Type: application/json' \
-  -H 'servicekey: 183f001b42fc49af85bc46e02fd17e06'  \
+  -H 'servicekey: xxxxxxxxxxxxx'  \
 -d '{
   "name": "My RC 200",
   "query": "reason.reasonCode:200",
@@ -150,13 +150,13 @@ curl --request PUT \
   "channels": [
     {
       "integration": "email",
-      "emails": ["your_email@email.test"],
+      "emails": ["lopezdsr@uk.ibm.com"],
       "triggerlimit": 15,
       "triggerinterval": "5m",
       "immediate": true,
       "terminal": true,
       "operator": "presence",
-      "timezone": "America/Los_Angeles"
+      "timezone": "N/A"
     {
       "integration": "webhook",
       "url": "YOUR_WEBHOOK_URL_HERE",
@@ -185,6 +185,39 @@ curl --request PUT \
   ]
 }'
 
+
+
+curl --request PUT \
+  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/3c3de90460 \
+  --header 'Content-Type: application/json' \
+  -H 'servicekey: 183f001b42fc49af85bc46e02fd17e06'  \
+-d '{
+  "name": "My RC 200",
+  "query": "reason.reasonCode:200",
+  "hosts": ["ibm-cloud-databases-prod"],
+  "apps": ["N/A"],
+  "levels": ["normal"],
+  "tags": ["N/A"],
+  "category": ["IBM"],
+  "channels": [
+    {
+      "integration": "email",
+      "emails": ["lopezdsr@uk.ibm.com"],
+      "triggerlimit": 15,
+      "triggerinterval": "5m",
+      "immediate": true,
+      "terminal": true,
+      "operator": "presence",
+      "timezone": "Europe/London"
+ }
+  ]
+}'
+
+Response
+
+```
+{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"channels":[{"integration":"email","emails":"lopezdsr@uk.ibm.com","triggerlimit":15,"triggerinterval":300,"immediate":true,"terminal":true,"operator":"presence","timezone":"Europe/London","alertid":"728a0884c2"}],"viewid":"3c3de90460"}
+```
 
 When the apps is left empty
 ```
