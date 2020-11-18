@@ -99,16 +99,18 @@ response
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":[],"viewid":"35e815837a"}
 ```
 
+```
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"viewid":"3c3de90460"}
-
+```
 
 Delete
 
+```
 curl --request DELETE \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/35e815837a \
   -H 'content-type: application/json' \
   -H 'servicekey: 183f001b42fc49af85bc46e02fd17e06'  \
-  
+```  
 
 
 Response
@@ -119,11 +121,12 @@ Response
 
 Modify a view
 
+```
 curl --request PUT \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/3c3de90460 \
   --header 'Content-Type: application/json' \
   -H 'servicekey: 183f001b42fc49af85bc46e02fd17e06' 
-
+```
 
 If the view ID does not exist
 
@@ -134,7 +137,7 @@ If the view ID does not exist
 
 
 
-
+```
 curl --request PUT \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/3c3de90460 \
   --header 'Content-Type: application/json' \
@@ -184,9 +187,9 @@ curl --request PUT \
     }
   ]
 }'
+```
 
-
-
+```
 curl --request PUT \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/3c3de90460 \
   --header 'Content-Type: application/json' \
@@ -212,6 +215,7 @@ curl --request PUT \
  }
   ]
 }'
+```
 
 Response
 
@@ -220,6 +224,7 @@ Response
 ```
 
 When the apps is left empty
+
 ```
 {"details":[{"message":"\"apps[0]\" is not allowed to be empty","key":"apps[0]"}],"error":"\"apps[0]\" is not allowed to be empty","code":"BadRequest","status":"error"}
 ```
@@ -278,15 +283,15 @@ NOTE: You can pass the service key in the header parameter (-H) of your requests
 view ID  ec2e986718
 
 
-
+```
 {"name":"My View from API","query":"logType:stderr","hosts":["ibm-cloud-databases-prod"],"apps":["crn:v1:bluemix:public:databases-for-redis:us-south:a/81de6380e6232019c6567c9c8de6dece:f3374b92-f10d-46c1-bb7d-9bb8012bf9da::"],"levels":["info"],"tags":["script"],"category":["6a544ff358"],"viewid":"67e76d6cd2"}
+```
 
-
-
+```
 {"details":[{"message":"\"levels[0]\" is not allowed to be empty","key":"levels[0]"},{"message":"\"tags[0]\" is not allowed to be empty","key":"tags[0]"}],"error":"\"levels[0]\" is not allowed to be empty. \"tags[0]\" is not allowed to be empt
+```
 
-
-
+```
 curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
   -H 'content-type: application/json' \
   -H 'servicekey: 45475372efad48c5abf77dbc72b7c8e0' \
@@ -299,10 +304,13 @@ curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
   "tags": ["script"],
   "category": ["New category"]
 }'
+```
 
+```
 {"name":"My View from API","query":"logType:stderr","hosts":["ibm-cloud-databases-prod"],"apps":["crn:v1:bluemix:public:databases-for-redis:us-south:a/81de6380e6232019c6567c9c8de6dece:f3374b92-f10d-46c1-bb7d-9bb8012bf9da::"],"levels":["info"],"tags":["script"],"category":[],"viewid":"f7b46891df"}
+```
 
-
+```
 curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
   -H 'content-type: application/json' \
   -H 'servicekey: 45475372efad48c5abf77dbc72b7c8e0' \
@@ -315,13 +323,14 @@ curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
   "tags": ["N/A"],
   "category": ["New category"]
 }'
+```
 
-
-
+```
 curl --request DELETE \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/867434d7ac \
   -H 'servicekey: 183f001b42fc49af85bc46e02fd17e06' \
   --header 'Content-Type: application/json'
+```
 
 
 
@@ -336,8 +345,7 @@ curl --request DELETE \
 
 
 
-
-
+```
 curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
   -H 'content-type: application/json' \
   -H 'servicekey: 45475372efad48c5abf77dbc72b7c8e0' \
@@ -346,15 +354,19 @@ curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
   "hosts": ["ibm-cloud-databases-prod"],
   "category": ["IBM"]
 }'
+```
 
+```
 {"name":"My View from API","hosts":["ibm-cloud-databases-prod"],"category":[],"viewid":"c05fc3ce22"}
+```
 
-
-
+```
 curl --request PUT \
   --url https://api.logdna.com/v1/config/view/viewid/c05fc3ce22 \
   --header 'Content-Type: application/json'
+```
 
+```
 curl --request POST \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/c05fc3ce22 \
   --header 'Content-Type: application/json'\
@@ -364,7 +376,9 @@ curl --request POST \
   "hosts": ["ibm-cloud-databases-prod"],
   "category": ["IBM"]
 }'
+```
 
+```
 curl -I https://api.us-south.logging.cloud.ibm.com/v1/config/view/c05fc3ce22  \
   -H 'content-type: application/json' \
   -H 'servicekey: 45475372efad48c5abf77dbc72b7c8e0' \
@@ -373,8 +387,9 @@ curl -I https://api.us-south.logging.cloud.ibm.com/v1/config/view/c05fc3ce22  \
   "hosts": ["ibm-cloud-databases-prod"],
   "category": ["IBM"]
 }'
+```
 
-
+```
 curl https://api.logdna.com/v1/config/view \
   -H 'content-type: application/json' \
   -H 'servicekey: YOUR_SERVICE_KEY' \
@@ -423,7 +438,7 @@ curl https://api.logdna.com/v1/config/view \
     }
   ]
 }'
-
+```
 
 
 
