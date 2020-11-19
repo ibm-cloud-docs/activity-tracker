@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-11-19"
 
 keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU-supported
 
@@ -75,7 +75,7 @@ To be able to use the {{site.data.keyword.sqlquery_short}} service to query arch
 
 
 
-## Provisioning an {{site.data.keyword.sqlquery_short}} instance
+## Step 1. Provisioning an {{site.data.keyword.sqlquery_short}} instance
 {: #sqlquery_step1}
 
 To query archive files hosted in a COS bucket, you can use the {{site.data.keyword.sqlquery_short}} service.
@@ -89,7 +89,7 @@ To provision an instance, see [Create your {{site.data.keyword.sqlquery_short}} 
 Once you have {{site.data.keyword.sqlquery_short}} running on {{site.data.keyword.cloud_notm}}, you can immediately start querying your data by using the {{site.data.keyword.sqlquery_short}} UI, or programmatically by using either [the {{site.data.keyword.sqlquery_short}} REST API](https://cloud.ibm.com/apidocs/sql-query){: external}, or the Python `ibmcloudsql` library. 
 
 
-## Granting user permissions to run a query
+## Step 2. Granting user permissions to run a query
 {: #sqlquery_step2}
 
 To run queries with the SQL query service, a user needs a platform role and a service role. The following tables show the roles and actions that you can assign a user to run SQL queries:
@@ -117,14 +117,14 @@ Choose any of the following actions to manage IAM policies in the {{site.data.ke
 * To review a user's permissions, see [Reviewing your assigned access](/docs/account?topic=account-assign-access-resources#review_your_access).
 
 
-## Running a query through the {{site.data.keyword.sqlquery_short}} UI
+## Step 3. Running a query through the {{site.data.keyword.sqlquery_short}} UI
 {: #sqlquery_step3}
 
 In SQL, the term *query* is just another way of saying *SELECT statement*. 
 
 To run a query, complete the following steps:
 
-### Step 1. Launch the {{site.data.keyword.sqlquery_short}} query UI
+### Step 3.1. Launch the {{site.data.keyword.sqlquery_short}} query UI
 {: #sqlquery_step3-1}
 
 1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
@@ -142,7 +142,7 @@ When the {{site.data.keyword.sqlquery_short}} query UI opens, a COS bucket is au
 Wen you run queries, you can specify a custom bucket to store results in. If your query does not specify one, the default one is used.
 {: note}
 
-### Step 2. Get information on the file that you want to query in COS
+### Step 3.2. Get information on the file that you want to query in COS
 {: #sqlquery_step3-2}
 
 Complete the following steps:
@@ -169,7 +169,7 @@ Complete the following steps:
 
 7. Copy the URL.
 
-### Step 3. Get information on the COS bucket that is used to store results from queries
+### Step 3.3. Get information on the COS bucket that is used to store results from queries
 {: #sqlquery_step3-3}
 
 Complete the following steps:
@@ -185,7 +185,7 @@ Complete the following steps:
 4. Copy the URL.
 
 
-### Step 4. Transform an archive file to PARQUET format
+### Step 3.4. Transform an archive file to PARQUET format
 {: #sqlquery_step3-4}
 
 When you query an archive file, the format of the data is JSON. You must transform the format to **PARQUET** to query successfully the data. 
@@ -252,7 +252,7 @@ After you have the file converted to 'PARQUET` format, you can run queries to an
 {: note}
 
 
-### Step 5. Run a query to determine the number of events in the archive file
+### Step 3.5. Run a query to determine the number of events in the archive file
 {: #sqlquery_step3-5}
 
 To report on the total number of events that are included in the archive file, run the following query:
@@ -277,7 +277,7 @@ INTO cos://eu-de/results-marisa STORED AS CSV
 {: screen }
 
 
-### Step 6. Run a query to get a custom view of a subset of the event fields
+### Step 3.6. Run a query to get a custom view of a subset of the event fields
 {: #sqlquery_step3-6}
 
 To see information about each event, run the following query:
@@ -323,7 +323,7 @@ INTO RESULTS_BUCKET STORED AS CSV
 {: screen}
 
 
-### Step 7. Run a query to get a custom view of a subset of the event fields ordered by the event time
+### Step 3.7. Run a query to get a custom view of a subset of the event fields ordered by the event time
 {: #sqlquery_step3-7}
 
 To see information about each event, run the following query:
@@ -350,7 +350,7 @@ INTO RESULTS_BUCKET STORED AS CSV
 {: screen}
 
 
-### Step 8. Run a query to list all events for a specific action
+### Step 3.8. Run a query to list all events for a specific action
 {: #sqlquery_step3-8}
 
 To see all the events for a specific action, run the following query:
