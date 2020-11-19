@@ -83,10 +83,7 @@ Activity Tracker with LogDNA
         views.md
         view_events.md
         alerts.md
-
-    {: .topicgroup}
-    Private beta
-        faq_request.md
+        api_configurationm.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -95,6 +92,7 @@ Activity Tracker with LogDNA
     service_plan.md
     channels.md
     shared-responsibilities.md
+    event_streams.md
 
     {: .topicgroup}
     Events

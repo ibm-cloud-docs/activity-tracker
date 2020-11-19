@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-11-19"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing
 
@@ -149,7 +149,7 @@ After you provision an instance, the *Activity Tracker* dashboard opens.
 To grant a user management permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a resource group, complete the following steps:
 
 
-### Step 1. Create an access group
+### Step 2.1. Create an access group
 {: #gs_step2_1}
 
 Complete the following steps to create an access group:
@@ -157,7 +157,7 @@ Complete the following steps to create an access group:
 2. Click **Create**.
 3. Enter a name and optional description for your group, and click **Create**.
 
-### Step 2. Add permissions to manage events
+### Step 2.2. Add permissions to manage events
 {: #gs_step2_2}
 
 After you set up your group, you must assign a common access policy to the group. Any policy that you set for an access group applies to all entities, users and service IDs, within the group.
@@ -185,7 +185,7 @@ Complete the following steps to assign a policy through the UI:
 10. Click **Add**. Then, select **Assign**.
 
 
-### Step 3. Add the user to the group
+### Step 2.3. Add the user to the group
 {: #gs_step2_3}
 
 Complete the following steps to add the user to the access group:

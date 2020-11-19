@@ -27,7 +27,7 @@ subcollection: Activity-Tracker-with-LogDNA
 You can monitor interactions on access groups in your account by using the {{site.data.keyword.at_full_notm}} service.
 {:shortdesc}
 
-You can use access groups to organize a set of users and service IDs into a single entity that makes it easy for you to assign access to {{site.data.keyword.cloud_notm}} resources. For example, you can assign a single policy to the group instead of assigning the same access multiple times per individual user or service ID. [Learn more](/docs/iam?topic=iam-groups).
+You can use access groups to organize a set of users and service IDs into a single entity that makes it easy for you to assign access to {{site.data.keyword.cloud_notm}} resources. For example, you can assign a single policy to the group instead of assigning the same access multiple times per individual user or service ID. [Learn more](/docs/account?topic=account-groups).
 
 
 | Working with access groups                                             | Actions                                        |

@@ -32,7 +32,7 @@ As a security officer, auditor, or manager, you can use the {{site.data.keyword.
 ## Overview
 {: #tutorial_iam_apikeys_ov}
 
-A federated user or non-federated user can create an API key to use on the CLI or as part of automation to log in as your user identity. You can use the UI or the CLI to manage your API keys by listing your keys, creating keys, locking and unlocking keys, updating keys, or deleting keys. [Learn more](/docs/iam?topic=iam-userapikey).
+A federated user or non-federated user can create an API key to use on the CLI or as part of automation to log in as your user identity. You can use the UI or the CLI to manage your API keys by listing your keys, creating keys, locking and unlocking keys, updating keys, or deleting keys. [Learn more](/docs/account?topic=account-userapikey).
 
 You can manage {{site.data.keyword.cloud_notm}} API keys that are associated with your user identity from the UI or by using CLI commands.
 {: note}
@@ -40,11 +40,11 @@ You can manage {{site.data.keyword.cloud_notm}} API keys that are associated wit
 To manage user API keys from the UI, go to **Manage** &gt; **Access (IAM)** &gt; **IBM Cloud API keys**. Then, you can create, lock, unlock, edit, or delete API keys. 
 
 To manage user API keys from the command-line, you can run any of the following CLI commands:
-* [ibmcloud iam api-key-create](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)
-* [ibmcloud iam api-key-update](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_update)
-* [ibmcloud iam api-key-delete](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_delete)
-* [ibmcloud iam api-key-lock](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_lock)
-* [ibmcloud iam api-key-unlock](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_unlock)
+* [ibmcloud iam api-key-create](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)
+* [ibmcloud iam api-key-update](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_update)
+* [ibmcloud iam api-key-delete](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_delete)
+* [ibmcloud iam api-key-lock](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_lock)
+* [ibmcloud iam api-key-unlock](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_unlock)
 
 When you run any of these actions, an event is generated. You can use these events to monitor user API keys in the account. You monitor these events through the {{site.data.keyword.at_short}} instance that is available in the Frankfurt location.
 
@@ -56,11 +56,11 @@ For example, you might be interested in finding out why an action to delete a us
 
 1. You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
 
-2. To work with the command-line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+2. To work with the command-line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
 3. You need an {{site.data.keyword.at_full_notm}} instance that is provisioned in Frankfurt with a 7-day, 14-day, or 30-day plan. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
 
-4. Your user ID must have assigned an IAM policy to work in the {{site.data.keyword.cloud_notm}} with the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/iam?topic=iam-iammanidaccser#access_to_resources).
+4. Your user ID must have assigned an IAM policy to work in the {{site.data.keyword.cloud_notm}} with the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/account?topic=account-assign-access-resources#access_to_resources).
 
 
 ## Step 1. Launch the web UI in Frankfurt
@@ -87,11 +87,11 @@ For example, you might be interested in finding out why an action to delete a us
 
 Complete the following steps to generate events from the UI:
 
-1. [Create an API key](/docs/iam?topic=iam-userapikey#create_user_key).
-2. [Add or modify the description of the API key](/docs/iam?topic=iam-userapikey#update_user_key).
-3. [Lock the API key](/docs/iam?topic=iam-userapikey#lock_user_key).
-4. [Unlock the API key](/docs/iam?topic=iam-userapikey#lock_user_key).
-5. [Delete the API key](/docs/iam?topic=iam-userapikey#delete_user_key).
+1. [Create an API key](/docs/account?topic=account-userapikey#create_user_key).
+2. [Add or modify the description of the API key](/docs/account?topic=account-userapikey#update_user_key).
+3. [Lock the API key](/docs/account?topic=account-userapikey#lock_user_key).
+4. [Unlock the API key](/docs/account?topic=account-userapikey#lock_user_key).
+5. [Delete the API key](/docs/account?topic=account-userapikey#delete_user_key).
 
 In the web UI, verify that you see the events for each of these actions. 
 
@@ -112,11 +112,11 @@ For example, if you create an API key with name `demo-key`, you can see the foll
 
 Complete the following steps to generate events by using the command-line:
 
-1. [Create an API key](/docs/iam?topic=iam-userapikey#create_user_key).
-2. [Add or modify the description of the API key](/docs/iam?topic=iam-userapikey#update_user_key).
-3. [Lock the API key](/docs/iam?topic=iam-userapikey#lock_user_key).
-4. [Unlock the API key](/docs/iam?topic=iam-userapikey#lock_user_key).
-5. [Delete the API key](/docs/iam?topic=iam-userapikey#delete_user_key).
+1. [Create an API key](/docs/account?topic=account-userapikey#create_user_key).
+2. [Add or modify the description of the API key](/docs/account?topic=account-userapikey#update_user_key).
+3. [Lock the API key](/docs/account?topic=account-userapikey#lock_user_key).
+4. [Unlock the API key](/docs/account?topic=account-userapikey#lock_user_key).
+5. [Delete the API key](/docs/account?topic=account-userapikey#delete_user_key).
 
 In the web UI, verify that you see the events for each of these actions. 
 
@@ -137,13 +137,13 @@ For example, if you create an API key with name `demo-key`, you can see the foll
 
 Complete the following steps to generate events as a result of actions on user API keys in the account :  This step will generate an event that reports an action that fails.
 
-1. [Create an API key](/docs/iam?topic=iam-userapikey#create_user_key).
-2. [Lock the API key](/docs/iam?topic=iam-userapikey#lock_user_key).
-3. [Add or modify the description of the API key](/docs/iam?topic=iam-userapikey#update_user_key).
-4. [Rename the API key](/docs/iam?topic=iam-userapikey#update_user_key).
-5. [Delete the API key](/docs/iam?topic=iam-userapikey#delete_user_key).
-6. [Unlock the API key](/docs/iam?topic=iam-userapikey#lock_user_key).
-7. [Delete the API key](/docs/iam?topic=iam-userapikey#delete_user_key).
+1. [Create an API key](/docs/account?topic=account-userapikey#create_user_key).
+2. [Lock the API key](/docs/account?topic=account-userapikey#lock_user_key).
+3. [Add or modify the description of the API key](/docs/account?topic=account-userapikey#update_user_key).
+4. [Rename the API key](/docs/account?topic=account-userapikey#update_user_key).
+5. [Delete the API key](/docs/account?topic=account-userapikey#delete_user_key).
+6. [Unlock the API key](/docs/account?topic=account-userapikey#lock_user_key).
+7. [Delete the API key](/docs/account?topic=account-userapikey#delete_user_key).
 
 In the web UI, verify that you see the events for each of these actions. 
 
@@ -166,7 +166,7 @@ In the web UI, verify that you see the events for each of these actions.
 
 From the {{site.data.keyword.at_short}} web UI, complete the following steps to customize views that you can use to monitor user API key actions in your account:
 
-1. In the web UI, click the **Views** icon ![Configuration icon](images/views.png "Configuration icon").
+1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
 2. Select **Everything**.
 3. Choose a search condition. The following table shows different actions and the corresponding search condition:
 
@@ -230,7 +230,7 @@ In the previous step, you saved a view to monitor deletion of user API keys. Whe
 
 Complete the following steps to configure an email alert:
 
-1. In the web UI, click the **Views** icon ![Configuration icon](images/views.png).
+1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
 2. Select your view. Then, click **Attach an alert**.
 3. Choose **View-specific alert** and select **Email**.
 4. Select the type of notification. Choose **Presence** to trigger an alert when a number of events show in the view, or after a period of time. You can use the *absence* type to trigger an alert when events are not shown in the view after a period of time. 

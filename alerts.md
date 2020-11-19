@@ -74,7 +74,7 @@ Choose one of the following options to attach an alert to a view:
 
 Complete the following steps to attach a preset to a view:
 
-1. In the web UI, click the **Views** icon ![Views icon](images/views.png).
+1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
 2. Click the view name to which you want to attach an alert. Then, select **Attach an alert**.
 3. Enable or disable the ability of a user to [mute an alert](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-monitor_events#mon_alerts_mute). By default, it is enabled. This step only applies if you are configuring an email notification channel.
 4. Choose a preset to reuse an alert definition. 
@@ -87,7 +87,7 @@ Complete the following steps to attach a preset to a view:
 
 Complete the following steps to attach an alert to a view:
 
-1. In the web UI, click the **Views** icon ![Views icon](images/views.png).
+1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
 2. Click the view name. Then, select **Attach an alert**.
 3. Enable or disable the ability of a user to [mute an alert](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-monitor_events#mon_alerts_mute). By default, it is enabled. This step only applies if you are configuring an email notification channel.
 4. Choose **view-specific alert**.
