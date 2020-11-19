@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-11-19"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, event fields
 
@@ -173,7 +173,7 @@ xxx.xxx.xxx.xxx
 
 For example, a sample `initiator.host.address` is `15.234.123.12`.
 
-When the initiator of an action is an {{site.data.keyword.cloud_notm}} service, this field is left empty.
+When the initiator of an action is an {{site.data.keyword.cloud_notm}} service, this field is set empty.
 {: note}
 
 

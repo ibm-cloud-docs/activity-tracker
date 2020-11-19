@@ -46,7 +46,7 @@ To provision an instance from the Observability dashboard in the {{site.data.key
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. Go to the **Menu** icon ![Menu icon](images/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
+2. Go to the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
 
 3. Select **Activity Tracker**, then click **Create instance**. 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years:  2018, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-11-19"
 
 keywords: LogDNA, IBM Cloud, Activity Tracker, logging, web UI, observability
 
@@ -40,7 +40,7 @@ To change the service plan of an instance from the Observability dashboard in th
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. Go to the menu icon ![Menu icon](images/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
+2. Go to the menu icon ![menu icon](../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
 
 3. Select **Activity Tracker**.
 
@@ -60,7 +60,7 @@ To change the service plan of an instance from the Observability dashboard in th
 
 Complete the following steps to change the service plan:
 
-1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-getting-started).
+1. Install the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-getting-started).
 
 2. Log in to the location in the {{site.data.keyword.cloud_notm}} where the instance is provisioned. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
@@ -70,7 +70,7 @@ Complete the following steps to change the service plan:
 
     By default, the `default` resource group is set.
 
-4. [Optional] Get the current service plan ID.
+4. Get the current service plan ID.
 
     To get the current service plan of an instance, you can run the following command and check the value of the **resource_plan_id** field:
 

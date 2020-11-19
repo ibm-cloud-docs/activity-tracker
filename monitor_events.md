@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-25"
+lastupdated: "2020-11-19"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, monitor events
 
@@ -30,7 +30,7 @@ You can monitor activity in your account through the {{site.data.keyword.at_full
 
 There is 1 instance of the {{site.data.keyword.at_full_notm}} service per location. Therefore, to monitor activity in your account, you might need to view and analyze events through different {{site.data.keyword.at_full_notm}} instances. 
 
-In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](images/icon_hamburger.svg) > **Observability** > **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
+In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability** &gt; **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
 {: tip}
 
 To view events, you must [launch the web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch) in the location where events are available. Then, you can work with views to monitor those events. You view events in your local time.
@@ -102,12 +102,12 @@ You can apply a timestamp by specifying an absolute time, a relative time, or a 
 ## Configuring alerts
 {: #mon_alerts}
 
-There are scenarios where you might want to be notified if specific events are generated in your account. For example, you might want to be notified if the number of actions that fail goes above a threshold that you specify. 
+There are scenarios where you might want to be notified if specific events are generated in your account. For example, you might want to be notified if the number of actions that fail goes over a threshold that you specify. 
 
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search queries to define the events that are displayed through a custom view. Then, you can attach an alert to that view to be notified when a condition occurs. A bell icon is displayed with the view to indicate that this view has an alert attached to it.
 
 Consider the following information when you configure alerts:
-* You can [attach one alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#alerts_step4) per custom view. There are 2 types of alerts: presence alert and absence alert.
+* You can [attach one alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts) per custom view. There are 2 types of alerts: presence alert and absence alert.
 
 * You can configure conditions that are based on the number of event lines that meet the search query in the view, on a time frequency, or both. 
 
@@ -183,7 +183,7 @@ You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} i
 You can export events through a view in the web UI, or programmatically by using a REST API.
 
 Consider the following information when you export log data:
-* You export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
+* You can export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
 * From the Web UI, when you export events, you get an email that is sent to your email address, with a link to a compressed file that includes the data. To get the data, you must click the link and download the compressed file.
 * When you export events programmatically, you can choose to send an email or to write events into your terminal.
 * The compressed log file that contains the data that you want to export is available for a maximum of 12 hours. 

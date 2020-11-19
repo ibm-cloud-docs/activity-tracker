@@ -29,17 +29,20 @@ subcollection: Activity-Tracker-with-LogDNA
 From an {{site.data.keyword.at_full_notm}} instance, you can export events programmatically by using the LogDNA REST API. 
 {:shortdesc}
 
+Consider the following information when you export events:
+* You can export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
+* When you export events programmatically, you can choose to send an email or to write events into your terminal.
+* The compressed events file that contains the data that you want to export is available for a maximum of 12 hours. 
+* When you export events, you have a limit of lines that you can export in a request. You can specify to export older lines or newer lines in case you reach the limit in the time range that you specify for the export. The maximum number of lines that you can export per API request is `500.000` lines.
 
 ## Prerequisites
 {: #export_api_prereqs}
 
-To export events, consider the following information:
+* You must have a paid service plan for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan). 
 
-1. You must have a paid service plan for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan). 
+* You must have a user ID that has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
-2. You must have a user ID that has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
-
-3. You must check that the LogDNA instance has the export feature enabled.
+* You must check that the LogDNA instance has the export feature enabled.
 
 
 ## Export API

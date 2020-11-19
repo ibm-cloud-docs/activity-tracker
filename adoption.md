@@ -1,8 +1,8 @@
 ---
- 
+
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-01"
+lastupdated: "2020-19-11"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -45,7 +45,7 @@ When you create resources in the {{site.data.keyword.cloud_notm}}, you can choos
 In {{site.data.keyword.cloud_notm}}, you can have 1 or more **stand-alone** accounts. You can manage each account individually or within an **enterprise** by configuring a multitiered hierarchy of accounts. 
 
 Within an enterprise account, you create a multitiered hierarchy of accounts, with billing and payments for all accounts managed at the enterprise level. [Learn more](/docs/account?topic=account-what-is-enterprise).  
-* The top enterprise account serves as the parent account to all other accounts in the enterprise. 
+* The enterprise account serves as the parent account to all other accounts in the enterprise. 
 * Users and access management is isolated between the enterprise and its child accounts. No access is automatically inherited between the two types of accounts.
 * Resources and services within an enterprise function the same as in stand-alone accounts. Each account in an enterprise can contain resources in resource groups and services in Cloud Foundry orgs and spaces. 
 
@@ -66,14 +66,14 @@ The following table highlights some of the key features per account management s
 
 In stand-alone accounts, you control access to resources by grouping them in resource groups, and configuring IAM policies that you assign to users and service IDs directly or through access groups. These policies define the level of access to work with services in the account. For example, you might have a stand-alone account where you run your development, pre-production, and production services and applications. 
 
-By using an enterprise management account strategy, you achieve greater isolation of resources. When you configure a multitiered hierarchy of accounts, you get the flexibility to separate your development environments into separate tiers, or isolate by Line of Business (LoB) applications and services, or a combination of both. Each account retains the features of a stand-alone account, and you can still manage billing and payments from the top enterprise account.
+By using an enterprise management account strategy, you achieve greater isolation of resources. When you configure a multitiered hierarchy of accounts, you get the flexibility to separate your development environments into separate tiers, or isolate by Line of Business (LoB) applications and services, or a combination of both. Each account retains the features of a stand-alone account, and you can still manage billing and payments from the enterprise account.
 
 In addition to these benefits, when you look into auditing and how it fits with any of these management strategies, consider the following facts that will be covered later on in the topic in more detail:
 * Auditing events are collected and available per location (region) through 1 single auditing instance. You do not have the ability to split events from different services running in the same region to multiple instances. If you run your development, test, and production services in a stand-alone account, all those events will be available through the same auditing instance, and any user with permissions to view events in that instance will be able to see everything.
 * The auditing instance in Frankfurt collects events from global services like IAM.
 
 
-**Define an enterprise account management strategy to add an additional layer of isolation to resources on top of stand-alone accounts.**
+**Define an enterprise account management strategy to add an additional layer of isolation to resources.**
 {: tip}
 
 
@@ -434,7 +434,7 @@ Use the following table to help you identify the features that you should consid
 
 `[9]`: Cold Vault is used for cold workloads where data is primarily archived (accessed every 90 days or less) - a larger retrieval charge applies for reading data. The service includes a threshold for object size and storage period consistent with the intended use of this service: storing cold, inactive data.
 
-`[10]`:  Flex is used for dynamic workloads where access patterns are more difficult to predict. Depending on usage, if the lower cost of cooler storage that is combined with retrieval charges exceeds a cap value, then the storage charge increases and no any retrieval charges apply. If the data isn't accessed frequently, Flex storage can be more cost effective than Standard storage. If cooler usage patterns become more active, Flex storage is more cost effective than Vault or Cold Vault storage. No threshold object size or storage period applies to Flex buckets.
+`[10]`:  Flex is used for dynamic workloads where access patterns are more difficult to predict.
 
 Objects that are subject to a bucket's `Immutable Object Storage` retention policy will have expiration actions deferred until the retention policy is no longer enforced. 
 {: note}
@@ -549,7 +549,7 @@ For more information, see [Activity Tracker events](/docs/cloud-object-storage?t
 **Enable collection of COS management and data events on the bucket that you use to archive data from a LogDNA instance. Use these events to monitor activity in your COS bucket.**
 {: tip}
 
-In {{site.data.keyword.at_full}}, you can define views, dashboard, and screens to monitor COS management and data events. You can also configure alerts on views to notify you when a specific condition occurs. On a view, you can configure an email alert, a Slack alert, a PagerDuty alert, or any combination of the above. For more information, see [Creating custom views](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views) and [Managing alerts](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
+In {{site.data.keyword.at_full}}, you can define views, dashboard, and screens to monitor COS management and data events. You can also configure alerts on views to notify you when a specific condition occurs. On a view, you can configure an email alert, a Slack alert, a PagerDuty alert, or any combination of these. For more information, see [Creating custom views](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views) and [Managing alerts](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
 
 For example, you can define a view that reports when an object is archived in a bucket. On that view, you can configure an email alert to notify you when an object has been archived. You might have compliance requirements that require you to control who accesses data that is archived. You can define a view that reports access to a bucket, and define an alert to notify you when that happens.
 

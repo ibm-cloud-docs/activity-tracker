@@ -46,6 +46,7 @@ The following table shows the API endpoints:
 {: caption="Table 1. Lists of public API endpoints for interacting with {{site.data.keyword.at_full_notm}} over {{site.data.keyword.cloud_notm}}'s public network" caption-side="top"}
 
 
+
 ## LogDNA web UI endpoints
 {: #endpoints_logdna_ui}
 
@@ -62,7 +63,4 @@ The following table shows the LogDNA web UI endpoints:
 | `Sydney (au-syd)`        | `https://app.au-syd.logging.cloud.ibm.com`         |
 | `Washington (us-east)`   | `https://app.us-east.logging.cloud.ibm.com`         |
 {: caption="Table 2. Lists of LogDNA web UI endpoints" caption-side="top"}
-
-
-
 

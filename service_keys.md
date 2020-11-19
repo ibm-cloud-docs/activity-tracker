@@ -1,5 +1,5 @@
 ---
- 
+
 copyright:
   years: 2019, 2020
 lastupdated: "2020-06-24"
@@ -22,7 +22,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 {:external: target="_blank" .external}
 
-
+ 
 # Managing service keys
 {: #service_keys}
 
@@ -34,22 +34,22 @@ In an {{site.data.keyword.at_full_notm}} instance, you can create, delete, and v
 {: #service_keys_create}
 
 You must have **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
-{: important}
+{: important} 
 
 You can only generate a service Key through the LogDNA web UI.
 {: important}
-
+    
 Complete the following steps to create a service key:
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
 
-2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**.
+2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
 
 3. Select **API keys**.
 
     You can see the service keys that are created.   
 
-4. Click **Generate Service Key**. A new key is added to the list.
+4. Click **Generate Service Key**. A new key is added to the list. 
 
 
 
@@ -57,7 +57,7 @@ Complete the following steps to create a service key:
 {: #service_keys_delete}
 
 You must have **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
-{: important}
+{: important} 
 
 You can only delete a service Key through the LogDNA web UI.
 {: important}
@@ -66,7 +66,7 @@ Complete the following steps to delete a service key:
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
 
-2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**.
+2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
 
 3. Select **API keys**.
 
@@ -79,7 +79,7 @@ Complete the following steps to delete a service key:
 {: #service_keys_view}
 
 Only users that have the **manager** service role or the **standard-member** service role can view service keys.
-{: important}
+{: important} 
 
 For more information, see [service roles](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#service).
 
@@ -87,8 +87,10 @@ Complete the following steps to view a service key:
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
 
-2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**.
+2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
 
 3. Select **API keys**.
 
     If you have permissions, you can see the service keys that are available.   
+
+

@@ -76,7 +76,7 @@ For example, you might have services in the US South location only. To monitor a
 ## Viewing the instances that are available to monitor events in the account
 {: #events_collect_view}
 
-In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](images/icon_hamburger.svg) &gt; **Observability** &gt; **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
+In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability** &gt; **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
 
 If you need to provision an instance, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
 

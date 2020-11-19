@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020{{site.data.keyword.at_full}}
 lastupdated: "2020-05-11"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, workload isolation, architecture
+keywords: IBM Cloud, LogDNA, Activity Tracker, architecture, workload isolation
 
 subcollection: Activity-Tracker-with-LogDNA
 
