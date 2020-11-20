@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="Activity-Tracker-with-LogDNA" audience="service" category="logging_monitoring" href="/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started" path="Activity-Tracker-with-LogDNA"}
-IBM Cloud Activity Tracker with LogDNA
+Activity Tracker with LogDNA
 
     {: .navgroup id="learn"}
     getting-started.md
@@ -30,11 +30,6 @@ IBM Cloud Activity Tracker with LogDNA
     Security and compliance
         adoption.md
         manage_eu_acc.md
-        data-security.md
-        iam.md
-        service-connection.md
-        architecture-workload-isolation.md
-        at_events.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -42,6 +37,7 @@ IBM Cloud Activity Tracker with LogDNA
     remove.md
     upgrade.md
     observe.md
+    iam.md
 
     {: .topicgroup}
     LogDNA web UI
@@ -71,6 +67,16 @@ IBM Cloud Activity Tracker with LogDNA
         views.md
         view_events.md
         alerts.md
+
+    {: .topicgroup}
+    Logging and monitoring
+        at_events.md
+
+    {: .topicgroup}
+    Enhancing security
+        architecture-workload-isolation.md
+        service-connection.md
+        data-security.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
