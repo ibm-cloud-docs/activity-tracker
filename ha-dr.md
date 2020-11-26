@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-11-20"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, auditing, disaster recovery, ha, high availability, redundancy
 

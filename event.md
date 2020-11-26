@@ -113,6 +113,8 @@ The following table lists the common fields that are available for each event:
 | `initiator.typeURI`         | Type of the source of the event. | `service/security/account/user` |
 | `initiator.credential.type` | Type of initiator ID credential. | `apikey` |
 | `initiator.host.address`    | IP address where the request came from | `19.12.134.145` |
+| `initiator.host.addressType` | Indicates the type of IP address. Valid values are `IPv4` and `IPv6`. | `IPv4` | 
+| `initiator.host.agent`      | Reports information about the client | For example. `ibm-cos-resource-config-sdk` |
 {: caption="Table 2. Common initiator fields" caption-side="top"} 
 
 
@@ -234,7 +236,8 @@ Valid values are: `success`, `pending`, or `failure`
 This field returns the HTTP response code of the action requested.
 {: note}
 
-
+The `reason.reasonCode` field is set to `403` to report forbidden access or unauthorized. 
+The `reason.reasonCode` field is set to `409` to report conflict.
 
 ## reason.reasonType (string)
 {: #reason.reasonType}
@@ -242,8 +245,7 @@ This field returns the HTTP response code of the action requested.
 This field provides additional information about the result of the action requested. 
 {: note}
 
-When the outcome is failure, you can find additional information in the field `requestData.reasonForFailure` if the event includes this field.
-
+When the outcome is failure, you can find additional information in the field `reason.reasonForFailure` if the event includes this field.
 
 
 
