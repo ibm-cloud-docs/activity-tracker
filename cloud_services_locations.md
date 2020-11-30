@@ -418,7 +418,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
 | {{site.data.keyword.apigw_full}}               | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.cloud-shell_notm}}        | `NO`   | `NO`                   |        
+| {{site.data.keyword.cloud-shell_notm}}        | ![Checkmark icon](images/checkmark-icon.svg)   | `NO`                   | 
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](images/checkmark-icon.svg)   | `NO`                   | 
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](images/checkmark-icon.svg) | `NO`                                     |    
