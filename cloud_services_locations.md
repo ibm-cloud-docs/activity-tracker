@@ -418,7 +418,7 @@ The following tables list the locations where automatic collection of database s
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
 | {{site.data.keyword.apigw_full}}               | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.cloud-shell_notm}}        | `NO`   | `NO`                   |        
+| {{site.data.keyword.cloud-shell_notm}}        | ![Checkmark icon](images/checkmark-icon.svg)   | `NO`                   | 
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](images/checkmark-icon.svg)   | `NO`                   | 
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](images/checkmark-icon.svg) | `NO`                                     |    
@@ -802,3 +802,17 @@ The following tables list the locations where automatic collection of security s
 {: class="simple-tab-table"}
 {: row-headers}
 
+
+
+## Code Engine
+{: #cloud_services_locations_codeengine}
+
+| Service                                        | `Dallas (us-south)` |
+|------------------------------------------------|---------------------|
+| {{site.data.keyword.codeengineshort}}          | ![Checkmark icon](images/checkmark-icon.svg) |
+{: caption="Code Engine services integration in America's locations" caption-side="top"}
+{: #cs_codeengine-table-1}
+{: tab-title="America"}
+{: tab-group="cs_codeengine"}
+{: class="simple-tab-table"}
+{: row-headers}
