@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-30"
+lastupdated: "2020-12-01"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, CF events
 
@@ -24,23 +24,38 @@ subcollection: Activity-Tracker-with-LogDNA
 # Managing views programmatically
 {: #api_configuration}
 
-You can use the *Configuration REST API* to programmatically manage views and alerts. 
+You can use the *Configuration REST API* to programmatically manage views and alerts. For details on the LogDNA Configuration API and its parameters, see the [LogDNA documentation](https://docs.logdna.com/reference#getting-started-with-the-configuration-api).
 {:shortdesc}
 
 - You can use the **POST** method to create a view, or create a view and attach an alert to it.
 - You can use the **PUT** method to modify an existing view, and alerts that are attached to views.
 - You can use the **DELETE** method to delete a view and associated alerts.
 
+When using the **POST** method, the `name` parameter is always required.  The `name` parameter defines the name of the new view.
+
+When using the **PUT** method, you must specify the `name` and `viewid`.  In these examples, replace `<VIEWID>` with the ID returned when you created your view.
+
+For the **DELETE** method, you must specify the `viewid` of the view to be deleted.
+
+## Authentication
+{: #api_configuration-authentication}
+
+The LogDNA Configuration API uses a service key in the header to provide authentication. HTTP headers are the part of the API request and response that contain the meta-data associated with the API request and response.
+
+You can pass the service key in the header parameter (`-H`) of your requests. Alternatively, you can pass service key in the username element (`-u`) of the request and leave the password value blank or empty.
+{: note}
+
+In these examples `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance. 
 
 ## Configuration API endpoints
 {: #api_configuration-endpoints}
 
-There are two types of configuration API endpoints: public and private.
+There are two types of LogDNA Configuration API endpoints: public and private.
 
 ### Public API endpoints
 {: #api_configuration-endpoints-public}
 
-The following table shows the public API endpoints:
+The following table shows the LogDNA public API endpoints:
 
 | Region                   |  Public Endpoint                                   |
 |--------------------------|----------------------------------------------------|
@@ -52,12 +67,12 @@ The following table shows the public API endpoints:
 | `Seoul (kr-seo)`         | `https://api.kr-seo.logging.cloud.ibm.com/v1/config/view`         |
 | `Sydney (au-syd)`        | `https://api.au-syd.logging.cloud.ibm.com/v1/config/view`         |
 | `Washington (us-east)`   | `https://api.us-east.logging.cloud.ibm.com/v1/config/view`         |
-{: caption="Table 1. Lists of public API endpoints" caption-side="top"}
+{: caption="Table 1. LogDNA public API endpoints" caption-side="top"}
 
 ### Private API endpoints
 {: #api_configuration-endpoints-private}
 
-The following table shows the private API endpoints:
+The following table shows the LogDNA private API endpoints:
 
 | Region                   |  Private Endpoint                                   |
 |--------------------------|----------------------------------------------------|
@@ -69,17 +84,20 @@ The following table shows the private API endpoints:
 | `Seoul (kr-seo)`         | `https://api.private.kr-seo.logging.cloud.ibm.com/v1/config/view`         |
 | `Sydney (au-syd)`        | `https://api.private.au-syd.logging.cloud.ibm.com/v1/config/view`         |
 | `Washington (us-east)`   | `https://api.private.us-east.logging.cloud.ibm.com/v1/config/view`         |
-{: caption="Table 2. Lists of private API endpoints" caption-side="top"}
+{: caption="Table 2. LogDNA private API endpoints" caption-side="top"}
 
+## Examples of using the LogDNA Configuration API
+{: #api_configuration-samples}
 
+The following are examples of how to use the LogDNA Configuration API.
 
-## Creating a view
+A category must exist before you create a view.  In these examples replace `<MY_CATEGORY>` with your category. 
+{: note}
+
+### Creating a view
 {: #api_configuration-create-view}
 
 The following creates a view.
-
-A category must exist before you create a view.  In the example replace `<MY_CATEGORY>` with your category. 
-{: note}
 
 ```
 curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
@@ -97,74 +115,30 @@ curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
 ```
 {: pre}
 
-Where `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance. 
-
 A response similar to the following will be returned:
 
 ```
-{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":[],"viewid":"35e815837a"}
-
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"viewid":"3c3de90460"}
 ```
 {: screen}
 
-## Deleting a view
+### Creating a view and attaching an alert
+{: #api_configuration-create-view-alert}
 
-The following deletes a view.
+The following creates a view and associates an alert with the view.
 
 ```
-curl --request DELETE \
-  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
+curl https://api.logdna.com/v1/config/view \
   -H 'content-type: application/json' \
-  -H 'servicekey: <SERVICE_KEY>'  \
-```  
-{: pre}
-
-Where `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance and `viewid` is the value returned when the view was created.  Specify the `viewid` value for `<VIEWID>`. 
-
-The following response will be returned when the view is successfully deleted:
-
-```
-{"deleted":true}
-```
-{: screen}
-
-## Modifying a view
-
-The following modifies a view.
-
-```
-curl --request PUT \
-  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
-  --header 'Content-Type: application/json' \
-  -H 'servicekey: <SERVICE_KEY>' 
-```
-{: pre}
-
-Where `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance and `viewid` is the value returned when the view was created.  Specify the `viewid` value for `<VIEWID>`. 
-
-If the `viewid` you are trying to modify does not exist, a response similar to the following will be returned: 
-
-```
-{"error":"Nothing to configure","code":"BadRequest","status":"error"}
-```
-{: screen}
-
-The following give more detailed modifying view examples.
-
-```
-curl --request PUT \
-  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
-  --header 'Content-Type: application/json' \
-  -H 'servicekey: <SERVICE_KEY>'  \
--d '{
+  -H 'servicekey: <SERVICE_KEY>' \
+  -d '{
   "name": "My RC 200",
   "query": "reason.reasonCode:200",
-  "hosts": ["ibm-cloud-databases-prod"],
-  "apps": ["N/A"],
-  "levels": ["normal"],
-  "tags": ["N/A"],
-  "category": ["<CATEGORY>"],
+  "hosts": ["host1", "host2"],
+  "apps": ["apps1", "apps2"],
+  "levels": ["error"],
+  "tags": ["prod"],
+  "category": ["<MY_CATEGORY>"],
   "channels": [
     {
       "integration": "email",
@@ -174,10 +148,10 @@ curl --request PUT \
       "immediate": true,
       "terminal": true,
       "operator": "presence",
-      "timezone": "N/A"
+      "timezone": "America/Los_Angeles"
     {
       "integration": "webhook",
-      "url": "<YOUR_WEBHOOK_URL_HERE>",
+      "url": "<YOUR_WEBHOOK_URL>",
       "triggerlimit": 25,
       "triggerinterval": "30",
       "operator": "presence",
@@ -193,7 +167,7 @@ curl --request PUT \
     },
     {
       "integration": "pagerduty",
-      "key": "<YOUR_PD_KEY_HERE>",
+      "key": "<YOUR_PD_KEY>",
       "triggerlimit": 150,
       "triggerinterval": "15m",
       "operator": "absence",
@@ -204,6 +178,37 @@ curl --request PUT \
 }'
 ```
 {: pre}
+
+A response similar to the following will be returned:
+
+```
+{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"viewid":"3c3de90460"}
+```
+{: screen}
+
+### Modifying a view
+
+The following modifies a view.
+
+```
+curl --request PUT \
+  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
+  --header 'Content-Type: application/json' \
+  -H 'servicekey: <SERVICE_KEY>' 
+```
+{: pre}
+
+If the `viewid` you are trying to modify does not exist, a response similar to the following will be returned: 
+
+```
+{"error":"Nothing to configure","code":"BadRequest","status":"error"}
+```
+{: screen}
+
+### Modifying a view by adding an alert
+{: #api_configuration-mod-view-alert}
+
+The following modifies a view by adding an alert.
 
 ```
 curl --request PUT \
@@ -234,238 +239,64 @@ curl --request PUT \
 ```
 {: pre}
 
-Response
+A response similar to the following is returned:
 
 ```
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"channels":[{"integration":"email","emails":"user@mycompany.com","triggerlimit":15,"triggerinterval":300,"immediate":true,"terminal":true,"operator":"presence","timezone":"Europe/London","alertid":"<ALERTID>"}],"viewid":"<VIEWID>"}
 ```
+{: screen}
 
-When the apps is left empty
+If you modify a view so that the app is empty, a response similar to the following will be returned:
 
 ```
 {"details":[{"message":"\"apps[0]\" is not allowed to be empty","key":"apps[0]"}],"error":"\"apps[0]\" is not allowed to be empty","code":"BadRequest","status":"error"}
 ```
+{: screen}
 
+### Modifying a view by changing the search query
+{: #api_configuration-mod-view-query}
 
-
-
-
-Sample:
+The following changes a view's search query.
 
 ```
-curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
+curl https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
   -H 'content-type: application/json' \
-  -H 'servicekey: xxxxxxxxxxxxx' \
+  -H 'servicekey: <SERVICE_KEY>' \
   -d '{
   "name": "My View from API",
   "query": "logType:stderr",
   "hosts": ["ibm-cloud-databases-prod"],
-  "apps": ["crn:v1:bluemix:public:databases-for-redis:us-south:a/xxxxxxxxxxxx:xxxxxxx::"],
+  "apps": ["crn:v1:bluemix:public:databases-for-redis:us-south:a/<xxxxxxxxxxxx>:<xxxxxxx>::"],
   "levels": ["info"],
   "tags": ["script"],
-  "category": ["ICD"]
+  "category": ["<CATEGORY>"]
 }'
+```
+{: pre}
+
+A response similar to the following will be returned:
+
+```
+{"name":"My View from API","query":"logType:stderr","hosts":["ibm-cloud-databases-prod"],"apps":["crn:v1:bluemix:public:databases-for-redis:us-south:a/<xxxxxxxxxxxx>:<xxxxxxx>::"],"levels":["info"],"tags":["script"],"category":[],"viewid":"f7b46891df"}
 ```
 {: screen}
 
-
-## Creating a view and attach an alert
-{: #api_configuration-create-view-alert}
-
-
-## Modifying a view by changing the search query
-{: #api_configuration-mod-view-query}
-
-
-
-## Modifying a view by adding an alert
-{: #api_configuration-mod-view-alert}
-
-
-## Deleting a view
+### Deleting a view
 {: #api_configuration-del-view}
 
-
-When using the POST method, the name parameter is always required, in order to define the name of the new View.
-When using PUT you must specify the name and viewid.
-For DELETE you must specify the viewid parameter, in order to affect the correct View.
-Authentication
-The LogDNA Configuration API uses a service key in the Header to provide authentication. HTTP Headers are the part of the API request and response that contain the meta-data associated with the API request and response.
-
-NOTE: You can pass the service key in the header parameter (-H) of your requests, as shown in the Example below. Alternatively, you can pass service key in the username element (-u) of the request and leave the password value as blank/empty.
-
-
-
-
-view ID  ec2e986718
-
-
-```
-{"name":"My View from API","query":"logType:stderr","hosts":["ibm-cloud-databases-prod"],"apps":["crn:v1:bluemix:public:databases-for-redis:us-south:a/81de6380e6232019c6567c9c8de6dece:f3374b92-f10d-46c1-bb7d-9bb8012bf9da::"],"levels":["info"],"tags":["script"],"category":["6a544ff358"],"viewid":"67e76d6cd2"}
-```
-
-```
-{"details":[{"message":"\"levels[0]\" is not allowed to be empty","key":"levels[0]"},{"message":"\"tags[0]\" is not allowed to be empty","key":"tags[0]"}],"error":"\"levels[0]\" is not allowed to be empty. \"tags[0]\" is not allowed to be empt
-```
-
-```
-curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
-  -H 'content-type: application/json' \
-  -H 'servicekey: 45475372efad48c5abf77dbc72b7c8e0' \
-  -d '{
-  "name": "My View from API",
-  "query": "logType:stderr",
-  "hosts": ["ibm-cloud-databases-prod"],
-  "apps": ["crn:v1:bluemix:public:databases-for-redis:us-south:a/81de6380e6232019c6567c9c8de6dece:f3374b92-f10d-46c1-bb7d-9bb8012bf9da::"],
-  "levels": ["N/A"],
-  "tags": ["script"],
-  "category": ["New category"]
-}'
-```
-
-```
-{"name":"My View from API","query":"logType:stderr","hosts":["ibm-cloud-databases-prod"],"apps":["crn:v1:bluemix:public:databases-for-redis:us-south:a/81de6380e6232019c6567c9c8de6dece:f3374b92-f10d-46c1-bb7d-9bb8012bf9da::"],"levels":["info"],"tags":["script"],"category":[],"viewid":"f7b46891df"}
-```
-
-```
-curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
-  -H 'content-type: application/json' \
-  -H 'servicekey: 45475372efad48c5abf77dbc72b7c8e0' \
-  -d '{
-  "name": "My View from API",
-  "query": "logType:stderr",
-  "hosts": ["ibm-cloud-databases-prod"],
-  "apps": ["crn:v1:bluemix:public:databases-for-redis:us-south:a/81de6380e6232019c6567c9c8de6dece:f3374b92-f10d-46c1-bb7d-9bb8012bf9da::"],
-  "levels": ["N/A"],
-  "tags": ["N/A"],
-  "category": ["New category"]
-}'
-```
+The following deletes a view.
 
 ```
 curl --request DELETE \
-  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/867434d7ac \
-  -H 'servicekey: <SERVICE_KEY>' \
-  --header 'Content-Type: application/json'
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
-curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
+  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
   -H 'content-type: application/json' \
-  -H 'servicekey: 45475372efad48c5abf77dbc72b7c8e0' \
-  -d '{
-  "name": "My View from API",
-  "hosts": ["ibm-cloud-databases-prod"],
-  "category": ["IBM"]
-}'
-```
+  -H 'servicekey: <SERVICE_KEY>'  \
+```  
+{: pre}
+
+The following response will be returned when the view is successfully deleted:
 
 ```
-{"name":"My View from API","hosts":["ibm-cloud-databases-prod"],"category":[],"viewid":"c05fc3ce22"}
+{"deleted":true}
 ```
-
-```
-curl --request PUT \
-  --url https://api.logdna.com/v1/config/view/viewid/c05fc3ce22 \
-  --header 'Content-Type: application/json'
-```
-
-```
-curl --request POST \
-  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/c05fc3ce22 \
-  --header 'Content-Type: application/json'\
-  -H 'servicekey: 45475372efad48c5abf77dbc72b7c8e0' \
-  -d '{
-  "name": "My View from API 1",
-  "hosts": ["ibm-cloud-databases-prod"],
-  "category": ["IBM"]
-}'
-```
-
-```
-curl -I https://api.us-south.logging.cloud.ibm.com/v1/config/view/c05fc3ce22  \
-  -H 'content-type: application/json' \
-  -H 'servicekey: 45475372efad48c5abf77dbc72b7c8e0' \
-  -d '{
-  "name": "My View from API 1",
-  "hosts": ["ibm-cloud-databases-prod"],
-  "category": ["IBM"]
-}'
-```
-
-```
-curl https://api.logdna.com/v1/config/view \
-  -H 'content-type: application/json' \
-  -H 'servicekey: YOUR_SERVICE_KEY' \
-  -d '{
-  "name": "My View With Alerts",
-  "query": "response:500",
-  "hosts": ["host1", "host2"],
-  "apps": ["apps1", "apps2"],
-  "levels": ["error"],
-  "tags": ["prod"],
-  "category": ["My Service"],
-  "channels": [
-    {
-      "integration": "email",
-      "emails": ["your_email@email.test"],
-      "triggerlimit": 15,
-      "triggerinterval": "5m",
-      "immediate": true,
-      "terminal": true,
-      "operator": "presence",
-      "timezone": "America/Los_Angeles"
-    {
-      "integration": "webhook",
-      "url": "YOUR_WEBHOOK_URL_HERE",
-      "triggerlimit": 25,
-      "triggerinterval": "30",
-      "operator": "presence",
-      "immediate": true,
-      "terminal": true,
-      "method": "post",
-      "headers": {
-        "X-MY-HEADER": "My Header Value"
-      },
-      "bodyTemplate": {
-        "my_log_lines": "{{ lines }}"
-      }
-    },
-    {
-      "integration": "pagerduty",
-      "key": "YOUR_PD_KEY_HERE",
-      "triggerlimit": 150,
-      "triggerinterval": "15m",
-      "operator": "absence",
-      "immediate": false,
-      "terminal": true
-    }
-  ]
-}'
-```
-
-
-
-| Task                                                                                        | Description     |
-|---------------------------------------------------------------------------------------------|-----------------|
-| [Copy a group](/docs/services/Monitoring-with-Sysdig/groups.html#copy_group)     | Copy a group to other teams. |
-| [Create a group](/docs/services/Monitoring-with-Sysdig/groups.html#create_group) | Create a new group. |
-| [Delete a group](/docs/services/Monitoring-with-Sysdig/groups.html#delete_group) | Delete a group. |
-| [Rename a group](/docs/services/Monitoring-with-Sysdig/groups.html#rename_group) | Rename a group. |
-| [Share a group](/docs/services/Monitoring-with-Sysdig/groups.html#share_group)   | Share a group with other members in the team. |
-{: caption="Table 3. Tasks grouping labels" caption-side="top"} 
-
-
+{: screen}
