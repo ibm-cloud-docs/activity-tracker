@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-12"
+lastupdated: "2020-11-30"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, CF events
 
@@ -35,10 +35,12 @@ You can use the *Configuration REST API* to programmatically manage views and al
 ## Configuration API endpoints
 {: #api_configuration-endpoints}
 
+There are two types of configuration API endpoints: public and private.
+
 ### Public API endpoints
 {: #api_configuration-endpoints-public}
 
-The following table shows the API endpoints:
+The following table shows the public API endpoints:
 
 | Region                   |  Public Endpoint                                   |
 |--------------------------|----------------------------------------------------|
@@ -55,7 +57,7 @@ The following table shows the API endpoints:
 ### Private API endpoints
 {: #api_configuration-endpoints-private}
 
-The following table shows the API endpoints:
+The following table shows the private API endpoints:
 
 | Region                   |  Private Endpoint                                   |
 |--------------------------|----------------------------------------------------|
@@ -74,13 +76,15 @@ The following table shows the API endpoints:
 ## Creating a view
 {: #api_configuration-create-view}
 
-- A category must exist. 
+The following creates a view.
 
+A category must exist before you create a view.  In the example replace `<MY_CATEGORY>` with your category. 
+{: note}
 
 ```
 curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
   -H 'content-type: application/json' \
-  -H 'servicekey: 183f001b42fc49af85bc46e02fd17e06' \
+  -H 'servicekey: <SERVICE_KEY>' \
   -d '{
   "name": "My RC 200",
   "query": "reason.reasonCode:200",
@@ -88,60 +92,71 @@ curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
   "apps": ["N/A"],
   "levels": ["normal"],
   "tags": ["N/A"],
-  "category": ["IBM"]
+  "category": ["<MY_CATEGORY>"]
 }'
 ```
-{: codeblock}
+{: pre}
 
-response
+Where `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance. 
+
+A response similar to the following will be returned:
 
 ```
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":[],"viewid":"35e815837a"}
-```
 
-```
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"viewid":"3c3de90460"}
 ```
+{: screen}
 
-Delete
+## Deleting a view
+
+The following deletes a view.
 
 ```
 curl --request DELETE \
-  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/35e815837a \
+  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
   -H 'content-type: application/json' \
-  -H 'servicekey: 183f001b42fc49af85bc46e02fd17e06'  \
+  -H 'servicekey: <SERVICE_KEY>'  \
 ```  
+{: pre}
 
+Where `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance and `viewid` is the value returned when the view was created.  Specify the `viewid` value for `<VIEWID>`. 
 
-Response
+The following response will be returned when the view is successfully deleted:
 
 ```
 {"deleted":true}
 ```
+{: screen}
 
-Modify a view
+## Modifying a view
+
+The following modifies a view.
 
 ```
 curl --request PUT \
-  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/3c3de90460 \
+  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
   --header 'Content-Type: application/json' \
-  -H 'servicekey: 183f001b42fc49af85bc46e02fd17e06' 
+  -H 'servicekey: <SERVICE_KEY>' 
 ```
+{: pre}
 
-If the view ID does not exist
+Where `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance and `viewid` is the value returned when the view was created.  Specify the `viewid` value for `<VIEWID>`. 
+
+If the `viewid` you are trying to modify does not exist, a response similar to the following will be returned: 
 
 ```
 {"error":"Nothing to configure","code":"BadRequest","status":"error"}
 ```
+{: screen}
 
-
-
+The following give more detailed modifying view examples.
 
 ```
 curl --request PUT \
-  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/3c3de90460 \
+  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
   --header 'Content-Type: application/json' \
-  -H 'servicekey: xxxxxxxxxxxxx'  \
+  -H 'servicekey: <SERVICE_KEY>'  \
 -d '{
   "name": "My RC 200",
   "query": "reason.reasonCode:200",
@@ -149,11 +164,11 @@ curl --request PUT \
   "apps": ["N/A"],
   "levels": ["normal"],
   "tags": ["N/A"],
-  "category": ["IBM"],
+  "category": ["<CATEGORY>"],
   "channels": [
     {
       "integration": "email",
-      "emails": ["lopezdsr@uk.ibm.com"],
+      "emails": ["user@mycompany.com"],
       "triggerlimit": 15,
       "triggerinterval": "5m",
       "immediate": true,
@@ -162,7 +177,7 @@ curl --request PUT \
       "timezone": "N/A"
     {
       "integration": "webhook",
-      "url": "YOUR_WEBHOOK_URL_HERE",
+      "url": "<YOUR_WEBHOOK_URL_HERE>",
       "triggerlimit": 25,
       "triggerinterval": "30",
       "operator": "presence",
@@ -178,7 +193,7 @@ curl --request PUT \
     },
     {
       "integration": "pagerduty",
-      "key": "YOUR_PD_KEY_HERE",
+      "key": "<YOUR_PD_KEY_HERE>",
       "triggerlimit": 150,
       "triggerinterval": "15m",
       "operator": "absence",
@@ -188,12 +203,13 @@ curl --request PUT \
   ]
 }'
 ```
+{: pre}
 
 ```
 curl --request PUT \
-  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/3c3de90460 \
+  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
   --header 'Content-Type: application/json' \
-  -H 'servicekey: 183f001b42fc49af85bc46e02fd17e06'  \
+  -H 'servicekey: <SERVICE_KEY>'  \
 -d '{
   "name": "My RC 200",
   "query": "reason.reasonCode:200",
@@ -201,11 +217,11 @@ curl --request PUT \
   "apps": ["N/A"],
   "levels": ["normal"],
   "tags": ["N/A"],
-  "category": ["IBM"],
+  "category": ["<CATEGORY"],
   "channels": [
     {
       "integration": "email",
-      "emails": ["lopezdsr@uk.ibm.com"],
+      "emails": ["user@mycompany.com"],
       "triggerlimit": 15,
       "triggerinterval": "5m",
       "immediate": true,
@@ -216,11 +232,12 @@ curl --request PUT \
   ]
 }'
 ```
+{: pre}
 
 Response
 
 ```
-{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"channels":[{"integration":"email","emails":"lopezdsr@uk.ibm.com","triggerlimit":15,"triggerinterval":300,"immediate":true,"terminal":true,"operator":"presence","timezone":"Europe/London","alertid":"728a0884c2"}],"viewid":"3c3de90460"}
+{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"channels":[{"integration":"email","emails":"user@mycompany.com","triggerlimit":15,"triggerinterval":300,"immediate":true,"terminal":true,"operator":"presence","timezone":"Europe/London","alertid":"<ALERTID>"}],"viewid":"<VIEWID>"}
 ```
 
 When the apps is left empty
@@ -328,7 +345,7 @@ curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
 ```
 curl --request DELETE \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/867434d7ac \
-  -H 'servicekey: 183f001b42fc49af85bc46e02fd17e06' \
+  -H 'servicekey: <SERVICE_KEY>' \
   --header 'Content-Type: application/json'
 ```
 
