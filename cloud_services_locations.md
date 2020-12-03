@@ -564,10 +564,10 @@ The following tables list the locations where automatic collection of security s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.cos_full_notm}}  `[*]`        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.mdms_short}}            |   |       |  
+| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           | `Seoul (kr-seo)` |
+|------------------------------------------------|------------------|----------------------------|-------------------|
+| {{site.data.keyword.cos_full_notm}}  `[*]`        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |
+| {{site.data.keyword.mdms_short}}            |   |       |   |
 {: caption="Storage services integration in AP locations" caption-side="top"}
 {: #cs_storage-table-2}
 {: tab-title="Asia Pacific"}
@@ -639,6 +639,8 @@ The following tables list the locations where automatic collection of security s
 | Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |            
 | Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
+| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
+| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 {: caption="VPC events in America's locations" caption-side="top"}
 {: #cs-vpc-table-1}
 {: tab-title="America"}
@@ -650,7 +652,9 @@ The following tables list the locations where automatic collection of security s
 |-----------------------------------------------------------------|------------------|----------------------------|
 | Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker US-South instance` |            
 | Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker US-South instance` |            
-| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker US-South instance` |            
+| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker US-South instance` |      
+| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
+| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |      
 {: caption="VPC events in AP locations" caption-side="top"}
 {: #cs-vpc-table-2}
 {: tab-title="Asia Pacific"}
@@ -662,7 +666,9 @@ The following tables list the locations where automatic collection of security s
 |---------------------------------------------------------------|---------------------|------------------|
 | Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | `Events are available through the Activity Tracker EU-DE instance` |            
 | Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker EU-DE instance` |            
-| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker EU-DE instance` |            
+| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker EU-DE instance` |       
+| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
+| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |     
 {: caption="VPC events in Europe locations" caption-side="top"}
 {: #cs-vpc-table-3}
 {: tab-title="Europe"}
@@ -678,6 +684,8 @@ The following tables list the locations where automatic collection of security s
 | Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |            
 | Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
+| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
+| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 {: caption="VPC events in America's locations" caption-side="top"}
 {: #cs-vpc-gen2-table-1}
 {: tab-title="America"}
@@ -689,7 +697,9 @@ The following tables list the locations where automatic collection of security s
 |-----------------------------------------------------------------|------------------|----------------------------|
 | Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |            
 | Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |            
-| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |                   
+| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |
+| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
+| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 {: caption="VPC events in AP locations" caption-side="top"}
 {: #cs-vpc-gen2-table-2}
 {: tab-title="Asia Pacific"}
@@ -701,7 +711,9 @@ The following tables list the locations where automatic collection of security s
 |---------------------------------------------------------------|---------------------|------------------|
 | Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |            
 | Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |            
-| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |                   
+| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |       
+| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
+| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |            
 {: caption="VPC events in Europe locations" caption-side="top"}
 {: #cs-vpc-gen2-table-3}
 {: tab-title="Europe"}
