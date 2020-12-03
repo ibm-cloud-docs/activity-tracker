@@ -215,41 +215,6 @@ The following table shows the locations where automatic collection of Cloud Foun
 {: row-headers}
 
 
-## Observability services
-{: #cloud_services_locations_observability}
-
-| Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
-|------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.at_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|
-| {{site.data.keyword.la_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|      
-{: caption="Observability services in America's locations" caption-side="top"}
-{: #cs_observability-table-1}
-{: tab-title="America"}
-{: tab-group="cs_observability"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                        | `Tokyo (jp-tok)` | `Sydney (au-syd)`         | `Chennai (in-che)` |
-|------------------------------------------------|------------------|----------------------------|-------------|
-| {{site.data.keyword.at_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  
-| {{site.data.keyword.la_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
-{: caption="Observability services in AP locations" caption-side="top"}
-{: #cs_observability-table-2}
-{: tab-title="Asia Pacific"}
-{: tab-group="cs_observability"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|---------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.at_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.la_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |        
-{: caption="Observability services in Europe locations" caption-side="top"}
-{: #cs_observability-table-3}
-{: tab-title="Europe"}
-{: tab-group="cs_observability"}
-{: class="simple-tab-table"}
-{: row-headers}
 
 ## Container services
 {: #cloud_services_locations_container}
@@ -293,6 +258,41 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 
 
 
+## Logging and monitoring services
+{: #cloud_services_locations_observability}
+
+| Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
+|------------------------------------------------|---------------------|--------------------------------------|
+| {{site.data.keyword.at_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|
+| {{site.data.keyword.la_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|      
+{: caption="Observability services in America's locations" caption-side="top"}
+{: #cs_observability-table-1}
+{: tab-title="America"}
+{: tab-group="cs_observability"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Service                                        | `Tokyo (jp-tok)` | `Sydney (au-syd)`         | `Chennai (in-che)` |
+|------------------------------------------------|------------------|----------------------------|-------------|
+| {{site.data.keyword.at_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  
+| {{site.data.keyword.la_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
+{: caption="Observability services in AP locations" caption-side="top"}
+{: #cs_observability-table-2}
+{: tab-title="Asia Pacific"}
+{: tab-group="cs_observability"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
+|---------------------------------------------|---------------------|------------------|
+| {{site.data.keyword.at_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.la_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |        
+{: caption="Observability services in Europe locations" caption-side="top"}
+{: #cs_observability-table-3}
+{: tab-title="Europe"}
+{: tab-group="cs_observability"}
+{: class="simple-tab-table"}
+{: row-headers}
 
 ## Platform core integrated services
 {: #cloud_services_locations_core_integrated}
@@ -639,9 +639,6 @@ The following tables list the locations where automatic collection of security s
 | Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |            
 | Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| Images                                 | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)    |
 {: caption="VPC events in America's locations" caption-side="top"}
 {: #cs-vpc-table-1}
 {: tab-title="America"}
@@ -654,9 +651,6 @@ The following tables list the locations where automatic collection of security s
 | Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker US-South instance` |            
 | Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker US-South instance` |            
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker US-South instance` |            
-| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg)  |
-| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg)   | 
-| Images                                 | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg)   |           
 {: caption="VPC events in AP locations" caption-side="top"}
 {: #cs-vpc-table-2}
 {: tab-title="Asia Pacific"}
@@ -669,9 +663,6 @@ The following tables list the locations where automatic collection of security s
 | Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | `Events are available through the Activity Tracker EU-DE instance` |            
 | Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker EU-DE instance` |            
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | `Events are available through the Activity Tracker EU-DE instance` |            
-| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg)  |
-| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg)   |   
-| Images                                 | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)       |
 {: caption="VPC events in Europe locations" caption-side="top"}
 {: #cs-vpc-table-3}
 {: tab-title="Europe"}
