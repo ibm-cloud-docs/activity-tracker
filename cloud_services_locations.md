@@ -264,7 +264,8 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
 | {{site.data.keyword.at_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|
-| {{site.data.keyword.la_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|      
+| {{site.data.keyword.la_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|  
+| {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|     
 {: caption="Observability services in America's locations" caption-side="top"}
 {: #cs_observability-table-1}
 {: tab-title="America"}
@@ -272,10 +273,11 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` | `Sydney (au-syd)`         | `Chennai (in-che)` |
-|------------------------------------------------|------------------|----------------------------|-------------|
-| {{site.data.keyword.at_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  
-| {{site.data.keyword.la_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
+| Service                                        | `Tokyo (jp-tok)` | `Sydney (au-syd)`         | `Chennai (in-che)` | 
+|------------------------------------------------|------------------|----------------------------|-------------------|
+| {{site.data.keyword.at_full_notm}}  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  
+| {{site.data.keyword.la_full_notm}}  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
+| {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|  | 
 {: caption="Observability services in AP locations" caption-side="top"}
 {: #cs_observability-table-2}
 {: tab-title="Asia Pacific"}
@@ -286,7 +288,8 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.at_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.la_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |        
+| {{site.data.keyword.la_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |     
+| {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|        
 {: caption="Observability services in Europe locations" caption-side="top"}
 {: #cs_observability-table-3}
 {: tab-title="Europe"}
