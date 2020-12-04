@@ -31,7 +31,7 @@ Across every industry, organizations require tighter controls and visibility int
 * [You must enable your account to be EU-supported](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-manage_eu_acc#manage_eu_acc_step1), so support is handled by team members in the European Union. 
 * To monitor activity from {{site.data.keyword.cloud_notm}} services and Cloud Foundry (CF) resources, you must provision these resources in the Frankfurt location.
     
-    Notice that the {{site.data.keyword.cos_full_notm}} (COS) service is a global service. When you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location bound. As soon as you provision a COS instance, you get [global events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_global) automatically through the Frankfurt {{site.data.keyword.at_full_notm}} instance. You can also enable management and data events on a bucket to go to the Frankfurt {{site.data.keyword.at_full_notm}} instance. **When you enable all events to go to the Frankfurt instance, notice that global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt.**
+    The {{site.data.keyword.cos_full_notm}} (COS) service is a global service. When you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location-bound. As soon as you provision a COS instance, you get [global events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_global) automatically through the Frankfurt {{site.data.keyword.at_full_notm}} instance. You can also enable management and data events on a bucket to go to the Frankfurt {{site.data.keyword.at_full_notm}} instance. **When you enable all events to go to the Frankfurt instance, the global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt.**
 
 * You must **restrict access to users** to see and manage events in the {{site.data.keyword.at_short}} instance provisioned in Frankfurt.  
 * You must ensure that you **archive to an EU-Supported {{site.data.keyword.cos_full_notm}} (COS) bucket**. 
@@ -41,18 +41,18 @@ Across every industry, organizations require tighter controls and visibility int
 ## Step 1. Set on the EU-Supported flag in your account
 {: #manage_eu_acc_step1}
 
-You must enable your account to be `EU-Supported` so that logging instances in Frankfurt are supported by EU members. 
+You must enable your account to be `EU-supported` so that logging instances in Frankfurt are supported by EU members. 
 
 Consider the following information when you turn on the `EU-supported` flag in your account:
 * Support is handled by team members in the European Union (EU). 
 * In the event that your issue requires non-EU expert assistance, it will be reviewed and approval given prior to any non-EU intervention.
-* You can filter and identify the {{site.data.keyword.cloud_notm}} Catalog services that are EU-Supported. 
+* You can filter and identify the {{site.data.keyword.cloud_notm}} Catalog services that are EU-supported. 
 
 
 ## Step 2. Provision the {{site.data.keyword.at_full_notm}} instance in Frankfurt 
 {: #manage_eu_acc_step2}
 
-You can provision 1 {{site.data.keyword.at_full_notm}} instance per [location](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions). However, only the instance that is provisioned in the `EU-DE (Frankfurt)` location is EU-Supported when you set on the EU-Supported flag in your account.
+You can provision 1 {{site.data.keyword.at_full_notm}} instance per [location](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions). However, only the instance that is provisioned in the `EU-DE (Frankfurt)` location is EU-Supported when you set on the EU-supported flag in your account.
 {: important}
 
 For more information on how to provision an instance, see [Provisioning an instance](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
@@ -81,7 +81,7 @@ COS can also generate management and data events. These events are optional. To 
 
 To monitor activity from {{site.data.keyword.cloud_notm}} services and Cloud Foundry (CF) resources, you must provision these resources in the **Frankfurt** EU-supported location in the {{site.data.keyword.cloud_notm}}.
 
-Check out the list of {{site.data.keyword.cloud_notm}} resources that automatically collect events and forward them to the {{site.data.keyword.at_full_notm}} service. See [Cloud services](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services).
+Check the list of {{site.data.keyword.cloud_notm}} resources that automatically collect events and forward them to the {{site.data.keyword.at_full_notm}} service. See [Cloud services](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services).
 
 
 
@@ -136,7 +136,7 @@ In an {{site.data.keyword.at_full_notm}} instance, you can configure and control
 
 Users can export data through the LogDNA web UI or by using the *Export* LogDNA API:
 
-* Users can export data to a local file or to a terminal by using the LogDNA export API and a service key. 
+* Users can export data to a local file or to a terminal by using the LogDNA export API and a service key. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
 
     * Users with **manager** permissions to administer the Frankfurt {{site.data.keyword.at_short}} instance can create and view service keys. 
 
@@ -145,20 +145,17 @@ Users can export data through the LogDNA web UI or by using the *Export* LogDNA 
     * Users with **user** permissions to work with the Frankfurt {{site.data.keyword.at_short}} instance cannot see service keys. Therefore, these users cannot use the export API to download data.
 
     * Service keys are only used to export data from a LogDNA instance by using the Export API. 
-    
-    [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
+        
 
-* Users can request the export of data through the LogDNA web UI. 
-
-    [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export).
+* Users can request the export of data through the LogDNA web UI. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export).
 
 
 ## Step 7. Archiving logs
 {: #manage_eu_acc_step7}
 
 When you archive logs from the Frankfurt LogDNA instance to a {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
-* When you provision an instance of the COS service, this instance is a global one in your account. It is not region bound.
-* You must configure a bucket that complies with the EU-Supported and GDPR regulations. For the list of COS EU-supported endpoints, see [EU-supported endpoints](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
+* When you provision an instance of the COS service, this instance is a global one in your account. It is not region-bound.
+* You must configure a bucket that complies with the EU-supported and GDPR regulations. For the list of COS EU-supported endpoints, see [EU-supported endpoints](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
 
     For example, consider the following scenarios:
 
@@ -188,7 +185,7 @@ Once you have SQL Query running on IBM Cloud, you can immediately start querying
 When you query events, consider the following information:
 * You must provision an instance of the {{site.data.keyword.sqlquery_short}} service in Frankfurt.
 * You must restrict user access to work with that instance. Users need the platform **viewer** role to launch the UI, and the service **writer** role to run queries.
-* When you open the UI, the {{site.data.keyword.sqlquery_short}} service automatically generates a unique COS bucket that will store all of the results as CSV files from your SQL queries. To make sure that you are using an EU-Supported bucket, create one. You can specify your custom bucket to store results in. 
+* When you open the UI, the {{site.data.keyword.sqlquery_short}} service automatically generates a unique COS bucket that will store all of the results as CSV files from your SQL queries. To make sure that you are using an EU-supported bucket, create one. You can specify your custom bucket to store results. 
 
 
 

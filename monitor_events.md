@@ -33,7 +33,7 @@ There is 1 instance of the {{site.data.keyword.at_full_notm}} service per locati
 In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability** &gt; **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
 {: tip}
 
-To view events, you must [launch the web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch) in the location where events are available. Then, you can work with views to monitor those events. You view events in your local time.
+To view events, [launch the web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch) in the location where events are available. Then, you can work with views to monitor those events. You view events in your local time.
 
 You can select the events that are displayed through a view by applying a timestamp, a search query, or both.
 
@@ -42,13 +42,13 @@ You can select the events that are displayed through a view by applying a timest
 
 When you apply a search query, you can save that view for reuse later. However, timestamps are not saved.
 
-Notice that instances might have different service plans, and consequently different data retention periods that determine the number of days that you have data available for search though the web UI. You can only monitor events within your retention period. Different [service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan) have different retention periods.
+Instances might have different service plans, and consequently different data retention periods that determine the number of days that you have data available for search though the web UI. You can only monitor events within your retention period. Different [service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan) have different retention periods.
 
 
 ## Monitoring global and location-based events
 {: #mon_def_event_type}
 
-Events can be classified as global or location-based. The type of event determines where you must monitor events. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types).
+Events can be classified as global or location-based. The type of event determines where you monitor events. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types).
 
 Global events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt.
 
@@ -58,7 +58,7 @@ Location-based events are captured and made available through the {{site.data.ke
 ## Monitoring events through the default view
 {: #mon_def_view}
 
-The default view is named **Everything**. 
+The default view is named **EVERYTHING**. 
 
 As soon as you open the web UI in a location, this is the view that you see. 
 
@@ -73,13 +73,13 @@ You might want to monitor a set of events in your account. To anayze a subset of
 
 You create a custom view by applying a search query that defines what events to display through the view. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-view_events#view_events_step2).
 
-You can also run any of the following tasks:
+You can also do any of the following tasks:
 
-* [Attach an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts) to a custom view
-* [Export data](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export) from a custom view 
-* [Rename, and add or modify the description of a view](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step5)
-* [Apply a line template](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step4) to a view to customize how the data is displayed
-* Organize views by grouping them into **categories**
+* [Attach an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts) to a custom view.
+* [Export data](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export) from a custom view.
+* [Rename, and add or modify the description of a view.](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step5)
+* [Apply a line template](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step4) to a view to customize how the data is displayed.
+* Organize views by grouping them into **categories**.
 
 
 ## Monitoring events by applying a timeframe
@@ -102,26 +102,25 @@ You can apply a timestamp by specifying an absolute time, a relative time, or a 
 ## Configuring alerts
 {: #mon_alerts}
 
-There are scenarios where you might want to be notified if specific events are generated in your account. For example, you might want to be notified if the number of actions that fail goes over a threshold that you specify. 
+There are scenarios where you might want to be notified if specific events are generated in your account. For example, you might want to be notified if the number of actions that fail goes over a specified threshold. 
 
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search queries to define the events that are displayed through a custom view. Then, you can attach an alert to that view to be notified when a condition occurs. A bell icon is displayed with the view to indicate that this view has an alert attached to it.
 
-Consider the following information when you configure alerts:
+When you configure alerts:
+
 * You can [attach one alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts) per custom view. There are 2 types of alerts: presence alert and absence alert.
 
-* You can configure conditions that are based on the number of event lines that meet the search query in the view, on a time frequency, or both. 
-
-* The time frequency that is specified as part of the condition defines the reset time of an alert after it is triggered.
+* You can configure conditions that are based on the number of event lines that meet the search query in the view, on a time frequency, or both. The time frequency that is specified as part of the condition defines the reset time of an alert after it is triggered.
 
 * You can define multiple notification channels for an alert. For information about the supported channels, see [Alert notification channels](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-channels).
 
 * You can [define **presets**](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#alerts_step3). A preset is an alert template that users can attach to any number of views. Service administrators define presets. Notice that when you delete a preset, any alerts that are defined by using this preset are automatically deleted.
 
-* You can enable or disable the feature on alerts that allow a user to mute an alert for a period of time. This feature only applies to email notification channels.
+* You can enable or disable the feature on alerts that allows a user to mute an alert for a period of time. This feature only applies to email notification channels.
 
 * You can [detach an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#alerts_delete_view) from a view. 
 
-* The timestamp that you see in a notification is set to UTC. For email notifications, you can set the **Timezone** to define a different timestamp value such as local time, for example. 
+* The timestamp that you see in a notification is set to UTC. For email notifications, you can set the **Timezone** to define a different timestamp value such as local time. 
 
 
 
@@ -131,7 +130,7 @@ Consider the following information when you configure alerts:
 
 Configure a presence alert to notify when the number of events that show in a view is more than what you expect. 
 
-For example, you might have a view that shows events that report the deletion of service instances in your account. You are not expecting the deletion of service instances. You can configure a *presence alert** that triggers an alert when 1 or more events show in the view.
+For example, you might have a view that shows events that report the deletion of service instances in your account. You are not expecting the deletion of service instances. You can configure a *presence alert* that triggers an alert when 1 or more events show in the view.
 
 
 ### Absence alert
@@ -155,7 +154,7 @@ You can configure any of the following conditions for an alert:
 
 You can decide whether both conditions are checked or only one. If both conditions are set, an alert is triggered when any of the thresholds is reached. 
 
-If you set the *Event lines counter* to be the only condition that triggers an alert, notice that the time frequency that is set when you configure the condition determines the time that it takes for the alert condition to be reset after the alert is triggered.
+If you set the *Event lines counter* to be the only condition that triggers an alert, the time frequency that is set when you configure the condition determines the time that it takes for the alert condition to be reset after the alert is triggered.
 {: note}
 
 For example, you can configure an alert that is triggered after 30 seconds, or when a 100 event lines that match the view's filtering and search criteria are collected.
@@ -195,10 +194,10 @@ Consider the following information when you export log data:
 
 You can export events programmatically by using the LogDNA REST API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
 
-When you export events programmatically, consider the following information:
+When you export events programmatically:
 
 * You can choose to send an email or to stream events into your terminal.
-* You must use a service key that is used to pass the credentials that must be used when you make an export REST API call. 
+* You must use a service key to pass the credentials that must be used when you make an export REST API call. 
 
     You must have **manager** role for the {{site.data.keyword.at_full_notm}} instance or service to view and generate service keys in the web UI.
 

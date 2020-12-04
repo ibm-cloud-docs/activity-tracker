@@ -47,3 +47,4 @@ subcollection: Activity-Tracker-with-LogDNA
 | `Change the description of an API key`  | `IAM`       | `iam-identity.user-apikey.update`  |
 | `Rename an API key`                     | `IAM`       |`iam-identity.user-apikey.update` |
 | `Delete an API key`                     | `IAM`       |`iam-identity.user-apikey.delete` |
+{: caption="Table 1. API key events" caption-side="top"} 

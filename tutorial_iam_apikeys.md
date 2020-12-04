@@ -51,10 +51,10 @@ When you run any of these actions, an event is generated. You can use these even
 For example, you might be interested in finding out why an action to delete a user API key fails. Has it failed because the initiator of the action does not have the correct permissions in the account? Has it failed because the API key is locked, and any update and delete actions are blocked and consequently fail? 
 
 
-## Prereqs
+## Prerequisites
 {: #tutorial_iam_apikeys_prereqs}
 
-1. You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration](https://cloud.ibm.com/login){: external}.
 
 2. To work with the command-line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
@@ -135,7 +135,7 @@ For example, if you create an API key with name `demo-key`, you can see the foll
 ### Generate events by using the CLI for actions that fail
 {: #tutorial_iam_apikeys_step1_3}
 
-Complete the following steps to generate events as a result of actions on user API keys in the account :  This step will generate an event that reports an action that fails.
+Complete the following steps to generate events as a result of actions on user API keys in the account. This step will generate an event that reports an action that fails.
 
 1. [Create an API key](/docs/account?topic=account-userapikey#create_user_key).
 2. [Lock the API key](/docs/account?topic=account-userapikey#lock_user_key).
@@ -167,7 +167,7 @@ In the web UI, verify that you see the events for each of these actions.
 From the {{site.data.keyword.at_short}} web UI, complete the following steps to customize views that you can use to monitor user API key actions in your account:
 
 1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
-2. Select **Everything**.
+2. Select **EVERYTHING**.
 3. Choose a search condition. The following table shows different actions and the corresponding search condition:
 
     <table>
@@ -206,7 +206,7 @@ From the {{site.data.keyword.at_short}} web UI, complete the following steps to 
 
     For example, create a view to show events that report deletion of user API keys. The condition is `(action user-apikey.delete) -login`.
 
-    As you apply the search criteria, notice that the name of the view changes from **Everything** to **Unsaved View**.
+    As you apply the search criteria, notice that the name of the view changes from **EVERYTHING** to **Unsaved View**.
 
 5. Click **Unsaved View** and select, **Save as new view / alert**. A *Create View* page opens.
 
@@ -268,7 +268,7 @@ Complete the following steps to configure a dashboard:
 2. Select **NEW BOARD**.
 3. Click **Add Graph**.
 4. Choose a field to graph. Select **action**. Then, click **Add Graph**.
-5. Click the **Search** icon ![Search icon](images/search.png). Enter **iam-identity.user-apikey.*** to filter out all actions that are related to user API keys.
+5. Click the **Search** icon ![Search icon](images/search.png). Enter **iam-identity.user-apikey.** to filter out all actions that are related to user API keys.
 6. Select the time interval that you want to see through this dashboard. Choose **Live** to see the past 60 minutes.
 7. Click the **expand** icon ![Expand icon](images/expand.png). Choose the breakdown type *histogram*.
 8. Select the field to distribute the data in the histogram. Choose **action**. Then, click **Add breakdown**. You see entries for each action of type *iam-identity.user-apikey* that has data in the time interval that you selected.
