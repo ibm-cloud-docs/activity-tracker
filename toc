@@ -97,6 +97,7 @@ Activity Tracker with LogDNA
     service_plan.md
     channels.md
     shared-responsibilities.md
+    releasenotes.md
 
     {: .topicgroup}
     High availability and disaster recovery
