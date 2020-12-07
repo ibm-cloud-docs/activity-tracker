@@ -50,7 +50,7 @@ Notice that instances might have different service plans, and consequently diffe
 
 Events can be classified as global or location-based. The type of event determines where you must monitor events. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types).
 
-Global events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt.
+Global events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt (eu-de).
 
 Location-based events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in the same location where the service is available. 
 
