@@ -68,8 +68,8 @@ The following table lists the actions that generate an event:
 | Action                 | Description |
 |------------------------|---------|
 | `iam-am.policy.create` | An event is generated when an initiator adds a policy to a user or access group. |
-| `iam-am.policy.delete` | An event is generated when an initiator modifies permissions to a policy of a user or access group.|
-| `iam-am.policy.update` | An event is generated when an initiator deletes a policy that is assigned to a user or access group. |
+| `iam-am.policy.update` | An event is generated when an initiator modifies permissions to a policy of a user or access group.|
+| `iam-am.policy.delete` | An event is generated when an initiator deletes a policy that is assigned to a user or access group. |
 {: caption="Table 2. Managing policy actions" caption-side="top"} 
 
 

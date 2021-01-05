@@ -22,7 +22,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 
 # Managing views programmatically
-{: #api_configuration}
+{: #config_api}
 
 You can use the *Configuration REST API* to programmatically manage views and alerts. For details on the LogDNA Configuration API and its parameters, see the [LogDNA documentation](https://docs.logdna.com/reference#getting-started-with-the-configuration-api).
 {:shortdesc}

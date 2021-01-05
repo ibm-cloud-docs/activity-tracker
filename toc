@@ -78,7 +78,7 @@ Activity Tracker with LogDNA
         views.md
         view_events.md
         alerts.md
-        api_configurationm.md
+        config_api.md
 
     {: .topicgroup}
     Logging and monitoring
@@ -97,6 +97,7 @@ Activity Tracker with LogDNA
     service_plan.md
     channels.md
     shared-responsibilities.md
+    releasenotes.md
 
     {: .topicgroup}
     High availability and disaster recovery
