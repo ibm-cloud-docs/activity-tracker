@@ -25,7 +25,7 @@ subcollection: logdnaat
 # Enhancing your data by defining custom indexed fields
 {: #logdna_parsing}
 
-In {{site.data.keyword.at_full_notm}}, you can create custom fields that you can use in advanced searches, and filtering queries. You define parsing templates through the LogDNA web UI to add custom fields to your records.
+In {{site.data.keyword.at_full_notm}}, you can create custom fields that you can use in advanced searches, and filtering queries by using parsing rules. You define parsing templates through the LogDNA web UI to add custom fields to your records.
 {:shortdesc}
 
 
