@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020
+  years: 2019, 2021
 lastupdated: "2020-12-07"
 
 keywords: Activity Tracker with LogDNA release notes, Activity Tracker with LogDNA updates

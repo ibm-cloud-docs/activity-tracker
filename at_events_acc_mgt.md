@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2020
+  years: 2019, 2021
 lastupdated: "2020-08-10"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account events, catalog, tags

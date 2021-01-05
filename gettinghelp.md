@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2020
+  years: 2019, 2021
 lastupdated: "2020-01-08"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, help, support

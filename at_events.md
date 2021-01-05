@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2020
+  years: 2019, 2021
 lastupdated: "2020-07-01"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, events, security, auditlog

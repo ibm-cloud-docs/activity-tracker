@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years:  2018, 2020
+  years:  2019, 2021
 lastupdated: "2020-03-25"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, auditing, overview, personal data, data deletion, PHI, data, data security, _service-name_

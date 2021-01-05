@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years:  2018, 2020
+  years:  2019, 2021
 lastupdated: "2020-11-19"
 
 keywords: LogDNA, IBM Cloud, Activity Tracker, logging, web UI, observability
