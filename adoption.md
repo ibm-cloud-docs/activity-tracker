@@ -35,8 +35,8 @@ For regulated and highly available workloads, consider the following adoption gu
 
 When you create resources in the {{site.data.keyword.cloud_notm}}, you can choose how to name them, what information to include in their description fields, which tags to use to group them, associate metadata, and more. 
 
-**Define naming standards that do not include PII and other sensitive information across all resources that are created in the {{site.data.keyword.cloud_notm}}.**
-{: tip}
+Define naming standards that do not include PII and other sensitive information for all resources that are created in the {{site.data.keyword.cloud_notm}}.
+{: important}
 
 
 ## Define the account management strategy
@@ -49,13 +49,13 @@ Within an enterprise account, you create a multitiered hierarchy of accounts, wi
 * Users and access management is isolated between the enterprise and its child accounts. No access is automatically inherited between the two types of accounts.
 * Resources and services within an enterprise function the same as in stand-alone accounts. Each account in an enterprise can contain resources in resource groups and services in Cloud Foundry orgs and spaces. 
 
-Notice that an enterprise can contain up to 5 tiers of accounts and account groups. In its most basic form, an enterprise has two tiers: the enterprise account, and a single child account.
+An enterprise can contain up to 5 tiers of accounts and account groups. In its most basic form, an enterprise has two tiers: the enterprise account, and a single child account.
 
 The following table highlights some of the key features per account management strategy:
 
 | Feature                                               | Stand-alone account management                    | Enterprise account management                     |
 |-------------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
-| `Multitiered hierarchy of accounts`                   | NO                                                | ![Checkmark icon](images/checkmark-icon.svg) |
+| `Multitiered hierarchy of accounts`                   |                                                 | ![Checkmark icon](images/checkmark-icon.svg) |
 | `Billing and payments managed from 1 account`         | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | `Isolation of users and access management per account`| ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | `Isolation of resources and services per account`     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
@@ -68,12 +68,12 @@ In stand-alone accounts, you control access to resources by grouping them in res
 
 By using an enterprise management account strategy, you achieve greater isolation of resources. When you configure a multitiered hierarchy of accounts, you get the flexibility to separate your development environments into separate tiers, or isolate by Line of Business (LoB) applications and services, or a combination of both. Each account retains the features of a stand-alone account, and you can still manage billing and payments from the enterprise account.
 
-In addition to these benefits, when you look into auditing and how it fits with any of these management strategies, consider the following facts that will be covered later on in the topic in more detail:
+In addition to these benefits, when you look into auditing and how it fits with any of these management strategies, consider the following that will be covered later in more detail:
 * Auditing events are collected and available per location (region) through 1 single auditing instance. You do not have the ability to split events from different services running in the same region to multiple instances. If you run your development, test, and production services in a stand-alone account, all those events will be available through the same auditing instance, and any user with permissions to view events in that instance will be able to see everything.
-* The auditing instance in Frankfurt collects events from global services like IAM.
+* The auditing instance in Frankfurt collects events from global services such as IAM.
 
 
-**Define an enterprise account management strategy to add an additional layer of isolation to resources.**
+Define an enterprise account management strategy to add an additional layer of isolation to resources.
 {: tip}
 
 
@@ -82,14 +82,14 @@ In addition to these benefits, when you look into auditing and how it fits with 
 
 Across every industry, organizations require tight controls and visibility into where their data is stored and processed. 
 
-**Indicate to {{site.data.keyword.IBM_notm}} your compliance requirements by enabling your {{site.data.keyword.cloud_notm}} account or {{site.data.keyword.cloud_notm}} Entreprise account as HIPAA or EU supported.**
+Indicate to {{site.data.keyword.IBM_notm}} your compliance requirements by enabling your {{site.data.keyword.cloud_notm}} account or {{site.data.keyword.cloud_notm}} Entreprise account as HIPAA or EU supported.
 {: tip}
 
 In the {{site.data.keyword.cloud_notm}}, you can configure your account for EU support and for HIPAA support:
-* You might choose to enable the **EU Supported** setting, for example, if you use resources to process personal data for European citizens. For more information, see [Set on the EU-Supported flag in your account](/docs/account?topic=account-eu-hipaa-supported#bill_eusupported).
-* You might choose to enable the **HIPAA Supported** setting if you plan to include Protected Health Information (PHI) in HIPAA-enabled services. For more information, see [Set on the HIPAA flag in your account](/docs/account?topic=account-eu-hipaa-supported#enabling-hipaa).
+* You might choose to enable the **EU Supported** setting, for example, if you use resources to process personal data for European citizens. For more information, see [Set the EU-Supported flag on in your account](/docs/account?topic=account-eu-hipaa-supported#bill_eusupported).
+* You might choose to enable the **HIPAA Supported** setting if you plan to include Protected Health Information (PHI) in HIPAA-enabled services. For more information, see [Set the HIPAA flag on in your account](/docs/account?topic=account-eu-hipaa-supported#enabling-hipaa).
 
-Notice that only the account owner can enable the account to be EU supported and HIPAA supported. 
+Only the account owner can enable the account to be EU supported and HIPAA supported. 
 
 ### HIPAA
 {: #adoption_acc_settings_hipaa}
@@ -99,7 +99,7 @@ If you're the account owner, you can enable your {{site.data.keyword.cloud}} acc
 The US Health Insurance Portability and Accountability Act (HIPAA) and the Health Information Technology for Economic and Clinical Health (HITECH) Act define standards for handling electronic healthcare transactions and information. If you or your company is a covered entity as defined by HIPAA, you must enable the HIPAA supported setting if you run sensitive workloads that are regulated under HIPAA and the HITECH Act. Learn more about {{site.data.keyword.cloud_notm}} compliance in [Compliance on the {{site.data.keyword.cloud_notm}}](https://www.ibm.com/cloud/compliance){: external}.
 {: tip}
 
-When you configure your account to be HIPAA enabled, consider the following information:
+When you configure your account to be HIPAA enabled:
 * You can filter on *HIPAA Enabled* services in the catalog. Accounts that enable the **HIPAA Supported** setting still have access to the full catalog of services. 
 * You indicate to {{site.data.keyword.IBM_notm}} that your account stores protected health information (PHI).
 * You digitally accept the IBM Business Associate Addendum (BAA) for covered entities.
@@ -125,10 +125,10 @@ You can provision instances of the {{site.data.keyword.at_full_notm}} service in
 Per location (region), you can provision 1 auditing instance. 
 * Events from enabled-AT services in the {{site.data.keyword.cloud_notm}} are collected automatically.
 * Each location represents the geographic area where your {{site.data.keyword.at_full_notm}} requests are handled and processed for that instance, and where data is resident. 
-* Each MZR location has three different data centres for redundancy. The data for each location is kept in the three data centres near that location. If all three data centres in a location fail, the {{site.data.keyword.at_full_notm}} service for that location becomes unavailable.
-* Each MZR configuration can accept a single data centre failure.
+* Each MZR location has three different data centers for redundancy. The data for each location is kept in the three data centers near that location. If all three data centers in a location fail, the {{site.data.keyword.at_full_notm}} service for that location becomes unavailable.
+* Each MZR configuration can accept a single data center failure.
 
-**When you choose the locations where you plan to provision {{site.data.keyword.at_full_notm}} instances, check the regulatory and high availability (HA) specifications of each location.**
+When you choose the locations where you plan to provision {{site.data.keyword.at_full_notm}} instances, check the regulatory and high availability (HA) specifications of each location.
 {: tip}
 
 For example, in Europe, only the Frankfurt region is EU-supported.
@@ -142,31 +142,31 @@ You can also check [ensure zero downtime](/docs/overview?topic=overview-zero-dow
 Resource groups are a logical container for organizing your IAM-enabled resources.
 * IAM-enabled services belong to a resource group. The {{site.data.keyword.at_full_notm}} service is an IAM-enabled service.
 * You assign a resource to its resource group when you create it from the catalog. 
-* You can't change the resource group assignment after you set it, which is why it's important to plan and set up your resource groups.
+* You can't change the resource group assignment after you set it, which is why it's important to plan your resource groups.
 * If you add PII information in the resource group name, you might be disclosing sensitive data to others in the same account.
 
-**Use a resource group, that only includes Activity Tracker instances, to organize your {{site.data.keyword.at_full_notm}} instances for access control and billing purposes.**
+Use a resource group, that only includes Activity Tracker instances, to organize your {{site.data.keyword.at_full_notm}} instances for access control and billing purposes.
 {: tip}
 
 Account owners can add resources to any resource group. Other users must be granted access by using an IAM access policy to add resources to resource groups. For more information, see [Best practices for organizing resources and assigning access](/docs/account?topic=account-account_setup).
 
-**When you define your resource groups, do not add sensitive information in the name.**
-{: tip}
+When you define your resource groups, do not add sensitive information in the name.
+{: important}
 
 ### Naming
 {: #adoption_resource_svc_name}
 
 If you add PII or other sensitive information in the name or the description of a service instance, you might be disclosing sensitive data to others in the same account.
 
-**When you define your auditing instances names, do not add sensitive information in the name or in the description.**
-{: tip}
+When you define your auditing instances names, do not add sensitive information in the name or in the description.
+{: important}
 
 ### Service plan
 {: #adoption_resource_svc_plan}
 
 The service plan that you choose for a LogDNA instance determines the number of days that data is available for search. For more information, see [Service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
 
-**Choose your plan based on the number of days that you need to be able to search data online through the web UI.**
+Choose your plan based on the number of days that you need to be able to search data online through the web UI.
 {: tip}
 
 The HIPAA plan has a maximum of 25 users. If you need to grant permissions to more than 25 users, [open a support ticket](/docs/get-support).
@@ -179,7 +179,7 @@ A tag is a label that you assign to a resource for easy filtering of resources i
 * You can use tags to organize your resources and easily find them later. 
 * You can also use tags to help you with identifying specific team usage or cost allocation when you view your [exported usage report](/docs/billing-usage?topic=billing-usage-viewingusage#export-csv).
 
-**Use tags to organize your resources and track usage costs.**
+Use tags to organize your resources and track usage costs.
 {: tip}
 
 Tags are case-sensitive, and the maximum length of a tag is 128 characters. 
@@ -189,25 +189,25 @@ Tags are case-sensitive, and the maximum length of a tag is 128 characters.
 
 If you add PII information in the name, you might be disclosing sensitive data to others in the same account.
 
-**When you define your tags, do not add sensitive information in the tag name.**
-{: tip}
+When you define your tags, do not add sensitive information in the tag name.
+{: important}
 
 Tags are visible to all members of an account. 
 
-**To control tag visibility, circulate tagging guidelines, and let users know that tags are visible account-wide.**
+To control tag visibility, circulate tagging guidelines, and let users know that tags are visible account-wide.
 {: tip}
 
 
 ## Define the IAM strategy
 {: #adoption_iam}
 
-**Use {{site.data.keyword.iamlong}} (IAM) to securely authenticate users and service IDs, and to control access to all cloud resources and data consistently in the {{site.data.keyword.cloud_notm}}.**
+Use {{site.data.keyword.iamlong}} (IAM) to securely authenticate users and service IDs, and to control access to all cloud resources and data consistently in the {{site.data.keyword.cloud_notm}}.
 {: tip}
 
 If you add PII information in the name or description of IAM resources, you might be disclosing sensitive data to others in the same account.
 
-**When you define your IAM resources, do not add sensitive information in their names and descriptions.**
-{: tip}
+When you define your IAM resources, do not add sensitive information in their names and descriptions.
+{: important}
 
 
 ### Access groups
@@ -215,7 +215,7 @@ If you add PII information in the name or description of IAM resources, you migh
 
 You can assign permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of the service, a resource group, or an access group. 
 
-**Use access groups to organize a set of users and service IDs into a single entity that makes it easy for you to manage IAM permissions.**
+Use access groups to organize a set of users and service IDs into a single entity that makes it easy for you to manage IAM permissions.
 {: tip}
 
 You can create multiple access groups.
@@ -235,12 +235,12 @@ Define a minimum of 4 access groups:
 
 A policy determines the full set of actions that a user or service ID can perform. 
 
-**For each access group, define a policy for each resource group that defines the level of access to that resource group.** 
+For each access group, define a policy for each resource group that defines the level of access to that resource group. 
 {: tip}
 
 By default, the account owner is the only user in the account that can grant permissions to other users to manage and work with the {{site.data.keyword.at_full_notm}} service. 
 
-**To allow other users or service IDs in the account to manage the service and be able to grant permissions to work with the {{site.data.keyword.at_full_notm}} service, define a policy for the {{site.data.keyword.at_full_notm}} service with the platform role *administrator*. Grant this policy to the administrators access group.** 
+To allow other users or service IDs in the account to manage the service and be able to grant permissions to work with the {{site.data.keyword.at_full_notm}} service, define a policy for the {{site.data.keyword.at_full_notm}} service with the platform role *administrator*. Grant this policy to the administrators access group. 
 {: tip}
 
 Access to resources within a resource group can be granted to all resources in a group, or only selected services within a group. 
@@ -251,7 +251,7 @@ Roles define the actions that a user or serviceID can run. There are different t
 * *Platform management roles* define permissions to work with the service at the platform level, for example, some actions are assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, and bind instances to applications. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#platform).
 * *Service access roles* define permissions for calling the service's API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#service).
 
-**For each access group, define a policy for each resource group that specifies the permissions granted to work with the resource group, the permissions to manage instances of the {{site.data.keyword.at_full_notm}} service in that resource group, and the permissions to run {{site.data.keyword.at_full_notm}} tasks.**
+For each access group, define a policy for each resource group that specifies the permissions granted to work with the resource group, the permissions to manage instances of the {{site.data.keyword.at_full_notm}} service in that resource group, and the permissions to run {{site.data.keyword.at_full_notm}} tasks.
 {: tip}
 
 | Access group             | Policy         |
@@ -262,12 +262,12 @@ Roles define the actions that a user or serviceID can run. There are different t
 | `Users`                  | Grant a policy for the resource group with platform role **viewer**. Select the {{site.data.keyword.at_full_notm}} service, and select the platform role **viewer**, and the service role **reader**. |
 {: caption="Table 3. Roles per access group policy" caption-side="top"} 
 
-**Every user that requires permissions to work with the {{site.data.keyword.at_full_notm}} service in your account must be assigned a resource group policy that includes the permissions for the {{site.data.keyword.at_full_notm}} service.**
-{: tip}
+Every user that requires permissions to work with the {{site.data.keyword.at_full_notm}} service in your account must be assigned a resource group policy that includes the permissions for the {{site.data.keyword.at_full_notm}} service.
+{: important}
 
 You can assign a single policy to the access group instead of assigning the same access multiple times per individual user or service ID. 
 
-**Add users and service IDs to an access group. Grant permissions to these users and service IDs through the access group.**
+Add users and service IDs to an access group. Grant permissions to these users and service IDs through the access group.
 {: tip}
 
 For more information, see [Granting administration permissions to a user or service ID](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_manage_events).
@@ -282,7 +282,7 @@ The {{site.data.keyword.cloud_notm}} account owner or administrator for the bill
 
 You can also configure MFA options such as security questions, using a time-based one-time passcode, and using an external authentication method. These types of MFA options are specific per account and are available only with former classic infrastructure accounts.
 
-**Enable multi-factor authentication (MFA) in your {{site.data.keyword.cloud_notm}} account for all users.**
+Enable multi-factor authentication (MFA) in your {{site.data.keyword.cloud_notm}} account for all users.
 {: tip}
 
 
@@ -294,12 +294,12 @@ In a LogDNA instance, you define views to analyze the data. Then, you can config
 
 You can choose to be notified by using an absence alert that is triggered when no data is available.
 
-**Define an absence alert to be notified when inactivity in an application or service is identified. Notice that absence alerts require data in the view within the past 24 hours for the alert to be active.**
+Define an absence alert to be notified when inactivity in an application or service is identified. Notice that absence alerts require data in the view within the past 24 hours for the alert to be active.
 {: tip}
 
 You can choose to be notified by using a presence alert that is triggered when more log lines than expected are present.  
 
-**Define a presence alert to be notified of exceptional situations in your applications and services that require immediate attention.**    
+Define a presence alert to be notified of exceptional situations in your applications and services that require immediate attention.    
 {: tip}
 
 You can configure multiple notification channels. Valid channels are: `email`, `Slack`, `PagerDuty`, `Webhook`
@@ -309,20 +309,20 @@ You can configure multiple notification channels. Valid channels are: `email`, `
 | `email`      | Email is a traditional communication method that you can use to notify 1 or more users. This notification channel requires users to be monitoring proactively their emails to detect an alert. **Define an email alert to verify that the alert on a view is working, and to inform users of situations they may have requested information.** |
 | `Slack`      | Slack is a collaborative tool that you can use to communicate and share information across 1 or more teams. **Define a Slack alert to inform about routine scenarios that you might want to monitor.** |
 | `PagerDuty`  | PagerDuty is an incident management tool that you can use to automate incident resolution and escalation, define on-call schedules and more. **Define a PagerDuty alert to be notified immediately so that you can take action promptly.**  |
-| `Webhook`    | A webhook is another method that you can configure to provide other applications information. **Define a webhook alert if you have a third party tool that you can configure with a LogDNA instance via a webhook, and where you plan to manage notifications.** |
+| `Webhook`    | A webhook is another method that you can configure to provide other applications information. **Define a webhook alert if you have a third party tool that you can configure with a LogDNA instance using a webhook, and where you plan to manage notifications.** |
 {: caption="Table 4. Guidance for notification channel" caption-side="top"}
 
-**Configure PagerDuty alerts to be notified immediately so that you can take action promptly on problems and automate their resolution. In addition, configure Slack alerts to share alerts and information.**
+Configure PagerDuty alerts to be notified immediately so that you can take action promptly on problems and automate their resolution. In addition, configure Slack alerts to share alerts and information.
 {: tip}
 
 In LogDNA, you can also define a **preset**. A preset is an alert template that you can attach to any number of views.
 
-**To reuse an alert configuration with different views and enforce notification channels across users that analyze data through that instance, configure alert presets**.
+To reuse an alert configuration with different views and enforce notification channels across users that analyze data through that instance, configure alert presets.
 {: tip}
 
 When you send a notification, you can include log data as part of the notification. 
 
-**Customize the data that is included in a notification for situations where the receiver of the notification does not have access to the log data.**
+Customize the data that is included in a notification for situations where the receiver of the notification does not have access to the log data.
 {: tip}
 
 ## Define the archive strategy
@@ -341,12 +341,12 @@ There are 2 types of data that you should consider archiving:
 
     By default, archiving of log data is not enabled for any LogDNA instance. 
 
-    When you enable archiving of your log data, notice that you are responsible for checking that your archived files are not corrupted, and for the maintenance of your archived files.
+    When you enable archiving of your log data, you are responsible for checking that your archived files are not corrupted, and for the maintenance of your archived files.
     {: note}
 
 * Web UI resource definitions such as parsing templates, exclusion rules, views, screens, and dashboards.
 
-**Archive your LogDNA resource definitions and your log data.**
+Archive your LogDNA resource definitions and your log data.
 {: tip}
 
 ### Backup the resource configurations of your LogDNA instance
@@ -354,15 +354,15 @@ There are 2 types of data that you should consider archiving:
 
 In the LogDNA web UI, you can define custom views, dashboards, parsing templates, screens, and exclusion rules that you can use to view and analyze data.
 
-To reuse resource definitions that you define in your LogDNA instance, you can export these resources from {an {{site.data.keyword.at_full_notm}} instance as a JSON file. Then, you can import the definitions into other LogDNA instances. For example, you can reuse your LogDNA resources across different environments for your stage, pre-production, and production instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions).
+To reuse resource definitions that you define in your LogDNA instance, you can export these resources from an {{site.data.keyword.at_full_notm}} instance as a JSON file. Then, you can import the definitions into other LogDNA instances. For example, you can reuse your LogDNA resources across different environments for your stage, pre-production, and production instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions).
 
-**Backup LogDNA resource definitions into a version control system such as a git repository where you can control access to the archived files and manage versions.**
+Backup LogDNA resource definitions into a version control system such as a git repository where you can control access to the archived files and manage versions.
 {: tip}
 
 ### Archive log data to a COS bucket
 {: #adoption_archive_data}
 
-**Enable archiving of your data from a LogDNA instance to an {{site.data.keyword.cos_full_notm}} (COS) bucket.**
+Enable archiving of your data from a LogDNA instance to an {{site.data.keyword.cos_full_notm}} (COS) bucket.
 {: tip}
 
 After you provision a LogDNA instance, you can configure archiving to an {{site.data.keyword.cos_full_notm}} (COS) bucket. You can create different types of buckets based on your requirements. 
@@ -389,14 +389,14 @@ When you plan the bucket for a LogDNA instance, consider the following informati
 
 `[5]`: COS provides several options to encrypt your data. By default, all objects that are stored in COS are encrypted by using randomly generated keys and an all-or-nothing-transform (AONT). With COS, you can also manage your keys manually by providing your own encryption keys - referred to as Server-Side Encryption with Customer-Provided Keys (SSE-C). Alternatively, you can choose to use the integration capabilities with {{site.data.keyword.cloud}} Key Management Services like {{site.data.keyword.keymanagementservicelong}} and {{site.data.keyword.hscrypto}}. 
 
-`[6]`: Resiliency refers to the scope and scale of the geographic area across which your data is distributed. For example, you can choose cross region resiliency to spread your data across several geographical areas, or regional resiliency to spread data across a single region. Notice that a single data centre distributes data across devices within a single site only.
+`[6]`: Resiliency refers to the scope and scale of the geographic area across which your data is distributed. For example, you can choose cross region resiliency to spread your data across several geographical areas, or regional resiliency to spread data across a single region. Notice that a single data center distributes data across devices within a single site only.
 
 
-**Create a custom COS bucket with the storage features and the policies that you identify.** [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
+Create a custom COS bucket with the storage features and the policies that you identify. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
 {: tip}
 
-**Do not configure a long-term retention policy on a COS bucket if you need access to the data and query it with the {{site.data.keyword.sqlquery_short}} service.**
-{: tip}
+Do not configure a long-term retention policy on a COS bucket if you need access to the data and need to query it with the {{site.data.keyword.sqlquery_short}} service.
+{: important}
 
 Use the following table to help you identify the features that you should consider when you create a bucket:
 
@@ -470,13 +470,13 @@ If you need to use your own key to encrypt the data at-rest in a bucket, use the
 `[15]`: Currently, you cannot use your own key with a bucket that has a retention policy configured. 
 
  
-**Use the customer-managed encryption model to manage and control the key that is used to encrypt data at-rest.**
+Use the customer-managed encryption model to manage and control the key that is used to encrypt data at-rest.
 {: tip}
 
 
 [After you designate a root key in {{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-create-root-keys) and [grant access between your services](/docs/key-protect?topic=key-protect-integrate-services#grant-access), you can enable envelope encryption for a specified storage bucket by using the {{site.data.keyword.cos_full_notm}} GUI.
 
-**To enable encryption with your custom key by using the {{site.data.keyword.keymanagementserviceshort}} service, [create a root key](/docs/key-protect?topic=key-protect-create-root-keys)  and create an [authorization](/docs/key-protect?topic=key-protect-integrate-services#grant-access) between your COS instance and the {{site.data.keyword.keymanagementserviceshort}} instance. Notice that the COS bucket and the {{site.data.keyword.keymanagementserviceshort}} instance need to be available in the same region.**
+To enable encryption with your custom key by using the {{site.data.keyword.keymanagementserviceshort}} service, [create a root key](/docs/key-protect?topic=key-protect-create-root-keys)  and create an [authorization](/docs/key-protect?topic=key-protect-integrate-services#grant-access) between your COS instance and the {{site.data.keyword.keymanagementserviceshort}} instance. Notice that the COS bucket and the {{site.data.keyword.keymanagementserviceshort}} instance need to be available in the same region.
 {: tip}
 
 ### Naming
@@ -484,8 +484,8 @@ If you need to use your own key to encrypt the data at-rest in a bucket, use the
 
 If you add PII information in the name of a bucket, you might be disclosing sensitive data to others in the same account.
 
-**When you define your bucket name, do not add sensitive information in the name or in the description.**
-{: tip}
+When you define your bucket name, do not add sensitive information in the name or in the description.
+{: important}
 
 
 ### IAM resources to configure archiving
@@ -497,17 +497,17 @@ To configure archiving, you need the following IAM policies:
 
 You also need a service ID. A service ID identifies a service similar to how a user ID identifies a user. Service IDs are not tied to a specific user. If the user that creates the service ID leaves your organization and is deleted from the account, the service ID remains. The {{site.data.keyword.at_full_notm}} service uses an API key that is associated to a service ID that you define on your COS instance to authenticate and write files to the COS bucket.
 
-**Create a service ID for for the COS instance with writer permissions. Restrict access to the service ID so that the API key that is associated to it can only write to the bucket that you configure in LogDNA for archiving.**
+Create a service ID for for the COS instance with **writer** permissions. Restrict access to the service ID so that the API key that is associated to it can only write to the bucket that you configure in LogDNA for archiving.
 {: tip} 
 
 If you add PII information in the name or the description of the service ID, you might be disclosing sensitive data to others in the same account.
 
-**When you define your service ID name, do not add sensitive information in the name or in the description.**
-{: tip}
+When you define your service ID name, do not add sensitive information in the name or in the description.
+{: important}
 
 You might have a requirement to rotate API keys regularly or your API key might be compromised. 
 
-**Rotate the API key that is associated with your service ID regularly to prevent any security breaches caused by leaked keys or to comply with security guidelines.**
+Rotate the API key that is associated with your service ID regularly to prevent any security breaches caused by leaked keys or to comply with security guidelines.
 {: tip}
 
 ### IAM policies to control access to the archived files
@@ -515,15 +515,15 @@ You might have a requirement to rotate API keys regularly or your API key might 
 
 In COS, you can define policies to control the permissions that are granted to service IDs and users to read, write, update object properties, and delete objects. [Learn more](/docs/cloud-object-storage?topic=cloud-object-storage-iam).
 
-**Restrict user access to archived files in the bucket.**
+Restrict user access to archived files in the bucket.
 {: tip} 
 
 ### EU supported account
 {: #adoption_archive_5}
 
-When you archive logs from the Frankfurt LogDNA instance to {an {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
+When you archive logs from the Frankfurt LogDNA instance to an {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
 * When you provision an instance of the COS service, this instance is a global one in your account. It is not region bound.
-* You must configure a bucket that complies with the EU-Supported and GDPR regulations. For the list of COS EU-supported endpoints, see [EU-supported endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
+* You must configure a bucket that complies with the EU-supported and GDPR regulations. For the list of COS EU-supported endpoints, see [EU-supported endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
 
     For example, consider the following scenarios:
 
@@ -546,14 +546,14 @@ In COS, you can track management and data events.
 * You must configure each bucket to enable management events, or management and data events. Notice that you cannot enable data events only for a bucket. 
 For more information, see [Activity Tracker events](/docs/cloud-object-storage?topic=cloud-object-storage-at-events).
 
-**Enable collection of COS management and data events on the bucket that you use to archive data from a LogDNA instance. Use these events to monitor activity in your COS bucket.**
+Enable collection of COS management and data events on the bucket that you use to archive data from a LogDNA instance. Use these events to monitor activity in your COS bucket.
 {: tip}
 
 In {{site.data.keyword.at_full}}, you can define views, dashboard, and screens to monitor COS management and data events. You can also configure alerts on views to notify you when a specific condition occurs. On a view, you can configure an email alert, a Slack alert, a PagerDuty alert, or any combination of these. For more information, see [Creating custom views](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views) and [Managing alerts](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
 
 For example, you can define a view that reports when an object is archived in a bucket. On that view, you can configure an email alert to notify you when an object has been archived. You might have compliance requirements that require you to control who accesses data that is archived. You can define a view that reports access to a bucket, and define an alert to notify you when that happens.
 
-**Define views, dashboard, screens, and alerts in {{site.data.keyword.at_full}} to investigate for abnormal activity and critical actions in your COS bucket, and to comply with regulatory audit requirements.**
+Define views, dashboard, screens, and alerts in {{site.data.keyword.at_full}} to investigate for abnormal activity and critical actions in your COS bucket, and to comply with regulatory audit requirements.
 {: tip}
 
 ### Archived file
@@ -564,7 +564,7 @@ Although you define policies to manage your COS objects (LogDNA archived files) 
 * You can define a **legal hold** flag to an archive file. Legal holds can be applied to objects during initial uploads or after an object is written. [Learn more](/docs/cloud-object-storage?topic=cloud-object-storage-immutable#immutable-terminology-hold).
 * You can define an **indefinite retention** flag to store the object indefinitely until a new retention period is applied. [Learn more](/docs/cloud-object-storage?topic=cloud-object-storage-immutable#immutable-terminology-indefinite).
 
-**Add a *legal hold* flag or an *indefinite retention* flag to individual archived files if you need to keep a file longer than the default retention period specified at the bucket level.**
+Add a *legal hold* flag or an *indefinite retention* flag to individual archived files if you need to keep a file longer than the default retention period specified at the bucket level.
 {: tip}
 
 
@@ -576,21 +576,21 @@ You can download data locally, and then use your own tools to query the data. Wh
 
 You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} archived files that are stored in a COS bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically. 
 
-**Avoid downloading data locally. Use the {{site.data.keyword.sqlquery_short}} service to query archived data.**
+Avoid downloading data locally. Use the {{site.data.keyword.sqlquery_short}} service to query archived data.
 {: tip}
 
 
-The {{site.data.keyword.sqlquery_short}} service provides a server-less, no-ETL solution to easily query data stored in {{site.data.keyword.cos_short}}. Underneath, SQL Query uses Apache Spark SQL as its underlying query engine. You can use the {{site.data.keyword.sqlquery_short}} to run SQL queries (that is, `SELECT` statements) to analyze, transform structured and semi-structured data, or clean up rectangular data. You cannot run actions such as `CREATE`, `DELETE`, `INSERT`, and `UPDATE`.
+The {{site.data.keyword.sqlquery_short}} service provides a server-less, no-ETL solution to easily query data stored in {{site.data.keyword.cos_short}}. SQL Query uses Apache Spark SQL as its underlying query engine. You can use the {{site.data.keyword.sqlquery_short}} to run SQL queries (that is, `SELECT` statements) to analyze, transform structured and semi-structured data, or clean up rectangular data. You cannot run actions such as `CREATE`, `DELETE`, `INSERT`, and `UPDATE`.
 
-The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. Archived files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format. When you use the {{site.data.keyword.sqlquery_short}} service, each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in an {{site.data.keyword.cos_short}}instance of your choice. 
+The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. Archived files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format. When you use the {{site.data.keyword.sqlquery_short}} service, each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in an {{site.data.keyword.cos_short}} instance of your choice. 
 
-**When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-sqlquery#sqlquery_step3-4) to be able to query the contents successfully.**
+When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-sqlquery#sqlquery_step3-4) to be able to query the contents successfully.
 {: tip}
 
-**Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and test your queries, and the [SQL Query REST API](#restapi) to automate them.**
+Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and test your queries, and the [SQL Query REST API](#restapi) to automate them.
 {: tip}
 
-**If you plan to use the {{site.data.keyword.sqlquery_short}} service, and you require HIPAA compliance, create a bucket for your archives that uses a custom key to encrypt the data.**
+If you plan to use the {{site.data.keyword.sqlquery_short}} service, and you require HIPAA compliance, create a bucket for your archives that uses a custom key to encrypt the data.
 {: tip}
 
 

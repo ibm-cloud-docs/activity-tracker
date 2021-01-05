@@ -23,7 +23,7 @@ subcollection: Activity-Tracker-with-LogDNA
 # Managing events in your account
 {: #manage_events}
 
-Collect, archive, view and analyze events. 
+{{site.data.keyword.at_full_notm}} is used to collect, archive, view and analyze events. 
 {:shortdesc}
 
 
@@ -38,15 +38,12 @@ In {{site.data.keyword.at_full_notm}}, events are collected automatically for mo
 
 You can define [views](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views), dashboards, and screens to analyze events and monitor activity in your account. 
 
-You can use categories to group resources of the same type so that users can easily find them. 
+Categories are used to group resources of the same type so that users can easily find them.  You can use categories to group views, dashboards, and screens.
 
-You can define categories through the **Categories** section in the web UI. 
-* You can define categories to group views. 
-* You can define a different set of categories to group dashboards.
-* You can define categories to group screens.
+Categories are defined in the **Categories** section in the web UI. 
 
 The service plan determines the number of days that you have data available for search through the LogDNA web UI.
-{: note}
+{: important}
 
 
 ## Archiving events for long-term storage
@@ -59,10 +56,10 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 * Events are archived daily.  
 * The timestamp that is used to determine whether the event is included in an archive is the UTC timestamp.
 
-    Notice that depending on your location, there might be events that you see in local time in your views on a specific day. However, you cannot find them on the archive file. You are most likely viewing events in local time and the archive process uses the UTC timestamp.
+    Depending on your location, there might be events that you see in local time in your views on a specific day. However, you cannot find them in the archive file. You are most likely viewing events in local time and the archive process uses the UTC timestamp.
 
 * After you configure archiving, the first archive file is created when the archiving process runs and there is data.
-* The first time the archive process runs, consider the following information:
+* The first time the archive process runs the number of days archived is dependent on the plan:
 
     * The maximum number of days that data is archived includes events for the past 30 days when the instance has a `30 day search` plan.
 
@@ -82,7 +79,7 @@ The following figure shows a high-level view of the different components that ar
 The {{site.data.keyword.cos_full_notm}} instance is provisioned within the context of a resource group. The {{site.data.keyword.at_full_notm}} instance is also provisioned within the context of a resource group. Both instances can be grouped under the same resource group or in different ones. 
 
 {{site.data.keyword.at_full_notm}} uses a service ID to communicate with the {{site.data.keyword.cos_full_notm}} service.
-* The service ID that you create for an {{site.data.keyword.cos_full_notm}} instance is used by the {{site.data.keyword.at_full_notm}} to authenticate and access the {{site.data.keyword.cos_full_notm}} instance. 
+* The service ID that you create for an {{site.data.keyword.cos_full_notm}} instance is used by {{site.data.keyword.at_full_notm}} to authenticate and access the {{site.data.keyword.cos_full_notm}} instance. 
 * You can assign specific access policies to the service ID that restrict permissions on the {{site.data.keyword.cos_full_notm}} instance. Restrict the service ID to only have writing permissions on the bucket where you plan to archive the events.
 * You can also restrict the IP addresses that are allowed to manage the bucket.
 
@@ -101,10 +98,10 @@ You can use this service to analyze data from archived files in COS.
 
 Once you have SQL Query running on IBM Cloud, you can immediately start querying your data using the SQL Query user interface, programmatically by using either the REST API or the Python `ibmcloudsql` library, or write a serverless function by using {{site.data.keyword.openwhisk_short}}.
 
-When you query events, consider the following information:
+When you query events:
 * You must provision an instance of the {{site.data.keyword.sqlquery_short}} service.
 * You must restrict user access to work with that instance. Users need the platform **viewer** role to launch the UI, and the service **writer** role to run queries.
-* When you open the UI, the {{site.data.keyword.sqlquery_short}} service automatically generates a unique COS bucket that will store all of the results as CSV files from your SQL queries. To make sure that you are using a custom bucket, create one. You can specify your custom bucket to store results in. 
+* When you open the UI, the {{site.data.keyword.sqlquery_short}} service automatically generates a unique COS bucket that will store all of the results as CSV files from your SQL queries. To make sure that you are using a custom bucket, create one. You can specify your custom bucket as the place to to store results. 
 
 
 

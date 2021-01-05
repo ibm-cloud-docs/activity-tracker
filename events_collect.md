@@ -55,7 +55,7 @@ Consider the following scenarios that are exceptions to this behavior for locati
 
     Check the [Cloud services by location](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations) documentation to find out if the service generates AT events in that region, and if it does, where are the events available for analysis.
 
-* The service might not generate Activity Tracker events in the region where you have provisioned.
+* The service might not generate Activity Tracker events in the region where you have provisioned your instance.
 
     Check the [Cloud services by location](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations) documentation to confirm if events are available in that region.
 

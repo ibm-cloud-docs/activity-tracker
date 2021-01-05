@@ -37,8 +37,8 @@ subcollection: Activity-Tracker-with-LogDNA
 | `Unlock a service ID`               |  `IAM`       |`iam-identity.account-serviceid.update` |
 | `Rename a service ID`               |  `IAM`       |`iam-identity.account-serviceid.update` |
 | `Change the service ID description` |  `IAM`       |`iam-identity.account-serviceid.update` |
-| `Create an API key for a servie ID` |  `IAM`       |`iam-identity.serviceid-apikey.create` </br>`iam-am.policy.create`|
-
+| `Create an API key for a service ID` |  `IAM`       |`iam-identity.serviceid-apikey.create` </br>`iam-am.policy.create`|
+{: caption="Table 1. Actions generated when working with service IDs" caption-side="top"} 
 
 
 
@@ -53,7 +53,7 @@ subcollection: Activity-Tracker-with-LogDNA
 | `Add a policy by assigning access within a resource group to a resource group and to a service in the resource group` | `iam-am.policy.create` for the resource group permissions </br></br>`iam-am.policy.create` for the service permissions within the resource group |
 | `Modify a policy`                                                               | `iam-am.policy.update` |
 | `Delete a policy`                                                               | `iam-am.policy.update` |
-{: caption="Actions generated when you assign a policy to a service ID" caption-side="top"} 
+{: caption="Table 2. Actions generated when you assign a policy to a service ID" caption-side="top"} 
 
 
 ### Add a policy by assigning access to resources

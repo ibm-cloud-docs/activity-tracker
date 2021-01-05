@@ -43,17 +43,17 @@ If you are a new user of the {{site.data.keyword.cloud_notm}}, [you must request
 
 Once you have registered to {{site.data.keyword.cloud_notm}}, you can be invited to be a member in other accounts in {{site.data.keyword.cloud_notm}}. When you are invited to work in an account that is different from the default account that is associated with your IBMid, an event with action **user-management.user.create** is generated and available in the  account where you are invited to work. Users in the account with permissions to monitor Activity Tracker events can monitor these events through the {{site.data.keyword.at_full_notm}} instance in Frankfurt (eu-de).
 
-For a user to log in successfully to your account, consider the following information:
+For a user to log in successfully to your account:
 1. First, the credentials of the user or service are validated in {{site.data.keyword.cloud_notm}}.
 2. If the credentials are validated and the user or service is authorized to work in the {{site.data.keyword.cloud_notm}}, a token is issued by the IAM Identity service.
 
     Depending on the way that the user logs in, an account might be pre-selected, the account might be embedded in the API key, or the user might have to select one account after the credentials are validated. Therefore, the token might include account details or not. 
 
-3. [User log in request only] If account information is not included, the user must select or switch account. 
+3. [User log in request only] If account information is not included, the user must select or switch to the desired account. 
 
 An Activity Tracker event is generated and available in your account after the credentials are validated in the {{site.data.keyword.cloud_notm}}, and account details are available.
 
-As owner or person responsible of the account access management, you can expect an event in your account in any of the following scenarios:
+As the owner or person responsible of the account access management, you can expect an event in your account in any of the following scenarios:
 * User logs in from the UI: You get a log in event after the user's log in credentials (IBMid) are validated in {{site.data.keyword.cloud_notm}} and the user switches to work with your account.
 * User logs in from the CLI by using a user ID and password, or a one-time passcode: You get a log in event after the user's log in credentials (IBMid) are validated in {{site.data.keyword.cloud_notm}} and the user selects your account.
 * User logs in from the CLI by using an API key: You get a log in event after the user's log in credentials (IBMid) are validated in {{site.data.keyword.cloud_notm}}. The account details are included in the key.
@@ -68,21 +68,21 @@ As owner or person responsible of the account access management, you can expect 
 ## User logs in through the {{site.data.keyword.cloud_notm}} UI
 {: #iam_manage_login_ui}
 
-For a user to log in successfully to your account through the {{site.data.keyword.cloud_notm}} UI, consider the following information:
+When a user successfully logs in to your account through the {{site.data.keyword.cloud_notm}} UI, the following steps are taken: 
 
-1. To initiate the log in requets, the user must launch the [{{site.data.keyword.cloud_notm}} UI](https://cloud.ibm.com/login){: external}.
+1. To initiate the log in requests, the user must launch the [{{site.data.keyword.cloud_notm}} UI](https://cloud.ibm.com/login){: external}.
 
 2. After the user enters the IBMid credentials into the browser, the data is forwarded to the IAM Identity Service.
 
 3. If the credentials are validated and the user is authenticated to work in the pre-selected account, the IAM Identity Service returns an access token and a refresh token. These tokens are bounded to the default account and include information to allow the user to choose other accounts where the user is a member. 
 
-    By default, an account is pre-selected. This account is the one that is associated to the IBMid of the user. 
+    By default, an account is pre-selected. This account is the one that is associated to the user's IBMid. 
 
 4. At this point in the process, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-refreshtoken.login**. This event is available in the user's default account, that is the account where the user is account owner.
 
 5. Next, the user switches account and selects a different account.
 
-    An account is preselected by the UI during login. When the dashboard shows up you are logged in to an account, you have a dropdown to switch accounts. Selecting a different account generates additional access and refresh token events.
+    An account is preselected by the UI during login. After a user is logged in, the dashboard has an option to switch accounts. Selecting a different account generates additional access and refresh token events.
 
 6. The IAM Identity Service checks the current tokens. If the user is authorized to work in the new account, the IAM Identity Service returns a new access token and a new refresh token that are bound to the new account.
 
@@ -105,13 +105,13 @@ In this scenario, a user is already logged in successfully to your account and r
 ## User logs in from the CLI by using an API key
 {: #iam_manage_login_cli_key}
 
-For a user to log in successfully to your account from the CLI by using an API key, consider the following information:
+When a user successfully logs in to your account through the {{site.data.keyword.cloud_notm}} CLI by using an API key, the following steps are taken: 
 
-1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
+1. To initiate log in request using the CLI, the {{site.data.keyword.cloud_notm}} CLI must be installed. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
 
 2. Log in to the {{site.data.keyword.cloud_notm}} by using an API key. Run the following command: [`ibmcloud login --apikey`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login). The API key is forwarded to the IAM Identity Service.
 
-    Notice that the API key includes information about the account.
+    The API key includes information about the account.
 
 3. After the credentials are validated and the API key is authenticated to work in the account, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-apikey.login**. This event is available in the account that is associated with the API key.
 
@@ -120,10 +120,9 @@ For a user to log in successfully to your account from the CLI by using an API k
 ## User logs in from the CLI by using a one-time passcode.
 {: #iam_manage_login_cli_passcode}
 
-For a user to log in successfully to your account from the CLI by using a one-time passcode, consider the following information:
+When a user successfully logs in to your account through the {{site.data.keyword.cloud_notm}} CLI by using a one-time passcode, the following steps are taken: 
 
-
-1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
+1. To initiate log in request using the CLI, the {{site.data.keyword.cloud_notm}} CLI must be installed. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
 
 2. Log in to the {{site.data.keyword.cloud_notm}} by using a one-time passcode. Run the following command: [`ibmcloud login --sso`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
@@ -131,7 +130,7 @@ For a user to log in successfully to your account from the CLI by using a one-ti
 
     The token has the information to allow the user to choose an account where he is a member or owner.
 
-    Notice that the token does not include information about the account.
+    The token does not include information about the account.
 
 4. Next, the user selects an account. An access token and a refresh token are generated and returned to the user. These tokens are bound to the selected account. The tokens contain an identity, an account, and some rights.
 
@@ -144,19 +143,19 @@ For a user to log in successfully to your account from the CLI by using a one-ti
 ## User logs in from the CLI by using a user ID and password
 {: #iam_manage_login_cli_pwd}
 
-For a user to log in successfully to your account from the CLI by using a user ID and password, consider the following information:
+When a user successfully logs in to your account through the {{site.data.keyword.cloud_notm}} CLI by using a user ID and password, the following steps are taken: 
 
-1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
+1. To initiate log in request using the CLI, the {{site.data.keyword.cloud_notm}} CLI must be installed. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
 
 2. Log in to the {{site.data.keyword.cloud_notm}} by using an API key. Run the following command: [`ibmcloud login –u USER –p password`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login). The API key is forwarded to the IAM Identity Service.
 
-    Notice that the API key includes information about the account.
+    The API key includes information about the account.
 
 3. After the credentials are validated and the user is authenticated, a token is returned.
     
     The token has the information to allow the user to choose an account where he is a member or owner.
 
-    Notice that the token does not include information about the account.
+    The token does not include information about the account.
 
 4. Next, the user selects an account. An access token and a refresh token are generated and returned to the user. These tokens are bound to the selected account. The tokens contain an identity, an account, and some rights.
 
@@ -169,11 +168,11 @@ For a user to log in successfully to your account from the CLI by using a user I
 
 A service ID identifies a service or application similar to how a user ID identifies a user. These are IDs that can be used by applications to authenticate with an {{site.data.keyword.cloud_notm}} service. Policies can be assigned to each service ID to control the level of access that is allowed by an application that uses the service ID, and an API key can be created to enable the authentication.
 
-For a service or application to log in successfully to your account by using an API key that is associated with a service ID, consider the following information:
+When a service or application successfully logs in to your account by using an API key that is associated with a service ID, the following steps are taken: 
 
 1. Your service or application uses the API key that is associated with the service ID to authenticate in the {{site.data.keyword.cloud_notm}}.
 
-    Notice that the API key includes information about the account.
+    The API key includes information about the account.
 
 2. After the credentials are validated and the API key is authenticated to work in the account, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.serviceid-apikey.login**. This event is available in the account that is associated with the API key.
 
@@ -188,8 +187,8 @@ The following table shows the IAM event that is generated in each of the log in 
 |----------|------------------------------------------|-----------------------------|
 | Service  | `iam-identity.serviceid-apikey.login`    | An event is generated when a service logs in to the {{site.data.keyword.cloud_notm}} by using an API key that is associated with a service ID. |  
 | User     | `iam-identity.user-apikey.login`         | An event is generated when a user logs in to the {{site.data.keyword.cloud_notm}} by using an API key. |  
-| User     | `iam-identity.user-identitycookie.login` | This is an event that is generated when a user requests an identity cookie to run an action. |
-| User     | `iam-identity.user-refreshtoken.login`   | This is an event that is generated when a user logs in to the IBM Cloud , or when an initiator that has already logged in to the {{site.data.keyword.cloud_notm}} requests a new refresh token to run an action. |
+| User     | `iam-identity.user-identitycookie.login` | An event is generated when a user requests an identity cookie to run an action. |
+| User     | `iam-identity.user-refreshtoken.login`   | An event is generated when a user logs in to the {{site.data.keyword.cloud_notm}}, or when an initiator that has already logged in to the {{site.data.keyword.cloud_notm}} requests a new refresh token to run an action. |
 {: caption="Table 1. User login actions" caption-side="top"} 
 
 
