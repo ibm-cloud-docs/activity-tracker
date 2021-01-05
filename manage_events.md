@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2020-08-29"
+lastupdated: "2021-01-05"
 subcollection: Activity-Tracker-with-LogDNA
 
 ---

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2020-12-10"
+lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, account settings, config, custom fields
 
