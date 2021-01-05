@@ -46,17 +46,13 @@ Activity Tracker with LogDNA
     provision_hipaa.md
     remove.md
     observe.md
+    view_events.md
     upgrade.md
     iam.md
 
     {: .topicgroup}
-    LogDNA web UI
-        launch.md
-        config.md
-        get_logdna_web_url.md
-
-    {: .topicgroup}
     DevOps admin tasks
+        service_keys.md
         archive.md
         control_usage.md
         logdna_parsing.md
@@ -67,28 +63,32 @@ Activity Tracker with LogDNA
         sqlquery.md
 
     {: .topicgroup}
-    Export events
+    Enhancing security
+        architecture-workload-isolation.md
+        service-connection.md
+        data-security.md
+
+    {: .topicgroup}
+    Exporting events
         export_config.md
-        service_keys.md
         export.md
         export_api.md
 
     {: .topicgroup}
-    View events
-        views.md
-        view_events.md
-        alerts.md
-        config_api.md
+    LogDNA web UI
+        launch.md
+        config.md
+        get_logdna_web_url.md
 
     {: .topicgroup}
     Logging and monitoring
         at_events.md
 
     {: .topicgroup}
-    Enhancing security
-        architecture-workload-isolation.md
-        service-connection.md
-        data-security.md
+    Working with views and alerts
+        views.md   
+        alerts.md
+        config_api.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

@@ -22,7 +22,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 
 
-# Managing alerts
+# Managing alerts through the LogDNA web UI
 {: #alerts}
 
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search queries to define the events that are displayed through a custom view. Then, you can attach an alert to that view to be notified when a condition occurs. You can attach one or more alerts to a view. You can define multiple notification channels for an alert. You can mute alerts. You can detach alerts from a view.

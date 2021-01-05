@@ -23,7 +23,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:external: target="_blank" .external}
 
 
-# Creating custom views
+# Creating custom views through the LogDNA web UI
 {: #views}
 
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search and filtering criteria to define the events that are displayed through a custom view.
