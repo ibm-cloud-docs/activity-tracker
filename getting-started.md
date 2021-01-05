@@ -203,7 +203,7 @@ If you have a pay-as-you-go account, you can use {{site.data.keyword.cloudcerts_
 
 2. Select the {{site.data.keyword.cloudcerts_short}} service.
 
-3. [Provision an instance of the {{site.data.keyword.cloudcerts_short}} service](/docs/certificate-manager?topic=certificate-manager-getting-started).
+3. (Optional) [Provision an instance of the {{site.data.keyword.cloudcerts_short}} service](/docs/certificate-manager?topic=certificate-manager-getting-started).
 
 ## Step 4. Launch the web UI 
 {: #gs_step4}

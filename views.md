@@ -243,7 +243,7 @@ Complete the following steps to modify the format of an event line in a single v
 
     For more information about the line template guidelines, see [Guidelines](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_line).
 
-3. Click **Save properties*.
+3. Click **Save properties**.
 
 
 
