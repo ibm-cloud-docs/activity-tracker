@@ -44,10 +44,10 @@ Activity Tracker with LogDNA
     {: .navgroup id="howto"}
     provision.md
     provision_hipaa.md
+    upgrade.md
     remove.md
     observe.md
     view_events.md
-    upgrade.md
     iam.md
 
     {: .topicgroup}
@@ -89,12 +89,17 @@ Activity Tracker with LogDNA
         views.md   
         alerts.md
         config_api.md
+        [Email Alert Integration](https://docs.logdna.com/docs/email-alert-integration)
+        [PagerDuty Alert Integration](https://docs.logdna.com/docs/pagerduty-alert-integration)
+        [Slack Alert Integration](https://docs.logdna.com/docs/slack-alert-integration)
+        [Webhook Alert Integration](https://docs.logdna.com/docs/webhook-alert-integration)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     regions.md
     endpoints.md
     service_plan.md
+    cloud_services_ref.md
     channels.md
     shared-responsibilities.md
     releasenotes.md
@@ -112,6 +117,7 @@ Activity Tracker with LogDNA
     [LogDNA Product Page](https://logdna.com/)
     [LogDNA Documentation](https://docs.logdna.com/docs)
     [LogDNA Blog](https://blog.logdna.com/)
+    [LogDNA Configuration REST API](https://docs.logdna.com/reference#getting-started-with-the-configuration-api)
     {: .navgroup-end}
 
     {: .navgroup id="help"}

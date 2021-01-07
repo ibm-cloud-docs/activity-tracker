@@ -31,7 +31,12 @@ The following table lists the endpoints per region for the {{site.data.keyword.a
 ## API endpoints
 {: #endpoints_api}
 
-The following table shows the API endpoints:
+There are two types of LogDNA Configuration API endpoints: public and private.
+
+### Public API endpoints
+{: #config_api_endpoints_public}
+
+The following table shows the LogDNA public API endpoints:
 
 | Region                   |  Public Endpoint                                   |
 |--------------------------|----------------------------------------------------|
@@ -43,8 +48,24 @@ The following table shows the API endpoints:
 | `Seoul (kr-seo)`         | `https://api.kr-seo.logging.cloud.ibm.com`         |
 | `Sydney (au-syd)`        | `https://api.au-syd.logging.cloud.ibm.com`         |
 | `Washington (us-east)`   | `https://api.us-east.logging.cloud.ibm.com`         |
-{: caption="Table 1. Lists of public API endpoints for interacting with {{site.data.keyword.at_full_notm}} over {{site.data.keyword.cloud_notm}}'s public network" caption-side="top"}
+{: caption="Table 1. LogDNA public API endpoints" caption-side="top"}
 
+### Private API endpoints
+{: #config_api_endpoints_private}
+
+The following table shows the LogDNA private API endpoints:
+
+| Region                   |  Private Endpoint                                   |
+|--------------------------|----------------------------------------------------|
+| `Chennai (in-che)`       | `https://api.private.in-che.logging.cloud.ibm.com`       |
+| `Dallas (us-south)`      | `https://api.private.us-south.logging.cloud.ibm.com`       |
+| `Frankfurt (eu-de)`      | `https://api.private.eu-de.logging.cloud.ibm.com`          |
+| `London (eu-gb)`         | `https://api.private.eu-gb.logging.cloud.ibm.com`          |
+| `Tokyo (jp-tok)`         | `https://api.private.jp-tok.logging.cloud.ibm.com`         |
+| `Seoul (kr-seo)`         | `https://api.private.kr-seo.logging.cloud.ibm.com`         |
+| `Sydney (au-syd)`        | `https://api.private.au-syd.logging.cloud.ibm.com`         |
+| `Washington (us-east)`   | `https://api.private.us-east.logging.cloud.ibm.com`         |
+{: caption="Table 2. LogDNA private API endpoints" caption-side="top"}
 
 
 ## LogDNA web UI endpoints
@@ -62,5 +83,5 @@ The following table shows the LogDNA web UI endpoints:
 | `Seoul (kr-seo)`         | `https://app.kr-seo.logging.cloud.ibm.com`         |
 | `Sydney (au-syd)`        | `https://app.au-syd.logging.cloud.ibm.com`         |
 | `Washington (us-east)`   | `https://app.us-east.logging.cloud.ibm.com`         |
-{: caption="Table 2. Lists of LogDNA web UI endpoints" caption-side="top"}
+{: caption="Table 3. Lists of LogDNA web UI endpoints" caption-side="top"}
 

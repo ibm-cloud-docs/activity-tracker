@@ -21,137 +21,227 @@ subcollection: Activity-Tracker-with-LogDNA
 {:important: .important}
 {:note: .note}
 
-# Managing views programmatically
+# Managing views and alerts programmatically
 {: #config_api}
 
-You can use the *Configuration REST API* to programmatically manage views and alerts. For details on the LogDNA Configuration API and its parameters, see the [LogDNA documentation](https://docs.logdna.com/reference#getting-started-with-the-configuration-api).
+You can use the *Configuration REST API* to manage programmatically views and alerts.
 {:shortdesc}
 
 - You can use the **POST** method to create a view, or create a view and attach an alert to it.
 - You can use the **PUT** method to modify an existing view, and alerts that are attached to views.
 - You can use the **DELETE** method to delete a view and associated alerts.
 
-When using the **POST** method, the `name` parameter is always required.  The `name` parameter defines the name of the new view.
+Before you run any automated tasks, consider doing a back up of your account configuration resources. The back up includes definitions of the resources in the state before any change is applied. You can use the back up to restore the resources if you encounter problems. See [Export the configuration of resources in a LogDNA instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#rrd_export_config).
+{: tip}
 
-When using the **PUT** method, you must specify the `name` and `viewid`.  In these examples, replace `<VIEWID>` with the ID returned when you created your view.
 
-For the **DELETE** method, you must specify the `viewid` of the view to be deleted.
+## Before you begin
+{: #config_api_work}
 
-## Authentication
-{: #api_configuration-authentication}
+### Creating views
+{: #config_api_work_create_views}
 
-The LogDNA Configuration API uses a service key in the header to provide authentication. HTTP headers are the part of the API request and response that contain the meta-data associated with the API request and response.
+When you create a view, consider the following information:
+- You can create a view with no alerts. 
+- You can create a view with 1 or more notification channels. Valid alert notification channels that are supported by the *Configuration* API are: email, webhook, or PagerDuty.
+- The response to an API request to create a view includes the ID of the view.
+- The `name` body parameter, that defines the name of the view, is always required.
+- A category must exist before you create a view. The request fails if a category is not specified.
+- You can define body parameters to refine the data that is displayed through the view. You must specify 1 or more of the following body parameters: query, apps, levels, hosts, or tags.
 
-You can pass the service key in the header parameter (`-H`) of your requests. Alternatively, you can pass service key in the username element (`-u`) of the request and leave the password value blank or empty.
-{: note}
+When you create a PagerDuty notification channel, consider the following information:
+- You must manually configure the integration of LogDNA with PagerDuty. See [Integrating with PagerDuty](https://docs.logdna.com/docs/pagerduty-alert-integration){: external}.
+- You must provide LogDNA with the PagerDuty API key. 
 
-In these examples `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance. 
+After you create a view, check the view in the LogDNA web UI. 
+1. Refresh the browser to see the view listed in the *Views* section. 
+2. Select the view to display it.
+3. Check the data that is available through the view is the one that you expect.
 
-## Configuration API endpoints
-{: #api_configuration-endpoints}
+    - If you do not see any data, check that data is being generated for the auditing events that you are planning to monitor through this view. For example, you can check the **Everything** view and look for events. 
 
-There are two types of LogDNA Configuration API endpoints: public and private.
+    - If data is being generated, and you still cannot see any data, check the body parameter values that you have defined for the view. One of them might be set to the wrong value and the search criteria does not find any matching events. 
 
-### Public API endpoints
-{: #api_configuration-endpoints-public}
+If you try to create a view without defining a category, you get the following error message:
 
-The following table shows the LogDNA public API endpoints:
-
-| Region                   |  Public Endpoint                                   |
-|--------------------------|----------------------------------------------------|
-| `Chennai (in-che)`       | `https://api.in-che.logging.cloud.ibm.com/v1/config/view`       |
-| `Dallas (us-south)`      | `https://api.us-south.logging.cloud.ibm.com/v1/config/view`       |
-| `Frankfurt (eu-de)`      | `https://api.eu-de.logging.cloud.ibm.com/v1/config/view`          |
-| `London (eu-gb)`         | `https://api.eu-gb.logging.cloud.ibm.com/v1/config/view`          |
-| `Tokyo (jp-tok)`         | `https://api.jp-tok.logging.cloud.ibm.com/v1/config/view`         |
-| `Seoul (kr-seo)`         | `https://api.kr-seo.logging.cloud.ibm.com/v1/config/view`         |
-| `Sydney (au-syd)`        | `https://api.au-syd.logging.cloud.ibm.com/v1/config/view`         |
-| `Washington (us-east)`   | `https://api.us-east.logging.cloud.ibm.com/v1/config/view`         |
-{: caption="Table 1. LogDNA public API endpoints" caption-side="top"}
-
-### Private API endpoints
-{: #api_configuration-endpoints-private}
-
-The following table shows the LogDNA private API endpoints:
-
-| Region                   |  Private Endpoint                                   |
-|--------------------------|----------------------------------------------------|
-| `Chennai (in-che)`       | `https://api.private.in-che.logging.cloud.ibm.com/v1/config/view`       |
-| `Dallas (us-south)`      | `https://api.private.us-south.logging.cloud.ibm.com/v1/config/view`       |
-| `Frankfurt (eu-de)`      | `https://api.private.eu-de.logging.cloud.ibm.com/v1/config/view`          |
-| `London (eu-gb)`         | `https://api.private.eu-gb.logging.cloud.ibm.com/v1/config/view`          |
-| `Tokyo (jp-tok)`         | `https://api.private.jp-tok.logging.cloud.ibm.com/v1/config/view`         |
-| `Seoul (kr-seo)`         | `https://api.private.kr-seo.logging.cloud.ibm.com/v1/config/view`         |
-| `Sydney (au-syd)`        | `https://api.private.au-syd.logging.cloud.ibm.com/v1/config/view`         |
-| `Washington (us-east)`   | `https://api.private.us-east.logging.cloud.ibm.com/v1/config/view`         |
-{: caption="Table 2. LogDNA private API endpoints" caption-side="top"}
-
-## Examples of using the LogDNA Configuration API
-{: #api_configuration-samples}
-
-The following are examples of how to use the LogDNA Configuration API.
-
-A category must exist before you create a view.  In these examples replace `<MY_CATEGORY>` with your category. 
-{: note}
-
-### Creating a view
-{: #api_configuration-create-view}
-
-The following creates a view.
-
-```
-curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
-  -H 'content-type: application/json' \
-  -H 'servicekey: <SERVICE_KEY>' \
-  -d '{
-  "name": "My RC 200",
-  "query": "reason.reasonCode:200",
-  "hosts": ["ibm-cloud-databases-prod"],
-  "apps": ["N/A"],
-  "levels": ["normal"],
-  "tags": ["N/A"],
-  "category": ["<MY_CATEGORY>"]
-}'
-```
-{: pre}
-
-A response similar to the following will be returned:
-
-```
-{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"viewid":"3c3de90460"}
+```json
+{"details":[{"message":"\"category[0]\" is not allowed to be empty","key":"category[0]"}],"error":"\"category[0]\" is not allowed to be empty","code":"BadRequest","status":"error"}
 ```
 {: screen}
 
-### Creating a view and attaching an alert
-{: #api_configuration-create-view-alert}
+If you try to define a view and you do not define any of the following body parameters, query, hosts, apps, levels, tags, you can get the following error:
 
-The following creates a view and associates an alert with the view.
+```json
+{"details":[{"message":"\"value\" must contain at least one of [query, hosts, apps, levels, tags]","key":"value"}],"error":"\"value\" must contain at least one of [query, hosts, apps, levels, tags]","code":"BadRequest","status":"error"}
+```
+{: screen}
+
+### Modifying views
+{: #config_api_work_modify_views}
+
+When you modify a view, consider the following information:
+- You must specify the name and the view ID of the view. 
+- If you are viewing a view in the LogDNA web UI, the view is not refreshed automatically after you run an API request to modify the view. To refresh the view in the UI, you must navigate to the `Everything` view and back to the view.
+
+The API request replaces the existing view definition with your request body data. Any properties that are not specified in your PUT request will be removed.
+{: important}
+
+If the `viewid` that you are trying to modify does not exist, a response similar to the following will be returned: 
+
+```json
+{"error":"Nothing to configure","code":"BadRequest","status":"error"}
+```
+{: screen}
+
+### Deleting views
+{: #config_api_work_delete_views}
+
+When you delete a view, consider the following information:
+- You must specify the ID of the view that you plan to delete.
+- You delete the view and all the alerts that are configured for the view.
+
+
+## API methods
+{: #config_api_methods}
+
+The following table outlines the actions that you can run to manage views and alerts programmatically:
+
+| Action                                                                  | Request  | URL                                  |
+| ------------------------------------------------------------------------|----------|--------------------------------------|
+| Create a view and attach an alert to a view.                            | `POST`   | `<ENDPOINT>/v1/config/view`          |
+| Modify an existing view and the alerts that are attached to the view.   | `PUT`    | `<ENDPOINT>/v1/config/view/<VIEWID>` |
+| Delete a view and its associated alerts.                                | `DELETE` | `<ENDPOINT>/v1/config/view/<VIEWID>` |
+{: caption="Table 1. LogDNA Configuration API endpoints" caption-side="top"}
+
+Where `<VIEWID>` represents the ID of a view.
+
+## Endpoint URL
+{: #config_api_endpoint}
+
+Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage views and alerts programmatically. For information about endpoints per region, see [API endpoints](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints_api).
+
+
+## Authentication
+{: #config_api_authentication}
+
+When you manage views and alerts programmatically, you must use a service key. Authorization to the LogDNA Configuration API is enforced by using a service key.
+{: note} 
+
+A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to an auditing instance. For more information on how to generate a service key, see [Managing service keys](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys).
+
+Use of the LogDNA Configuration REST API is done by adding a valid service key to the HTTP Authorization request header. You must pass the service key as a header parameter (`-H`) of your requests.
+
+For example, in a cURL request, you must set the `content-type` header as follows:
 
 ```
-curl https://api.logdna.com/v1/config/view \
-  -H 'content-type: application/json' \
-  -H 'servicekey: <SERVICE_KEY>' \
-  -d '{
-  "name": "My RC 200",
-  "query": "reason.reasonCode:200",
-  "hosts": ["host1", "host2"],
-  "apps": ["apps1", "apps2"],
-  "levels": ["error"],
-  "tags": ["prod"],
-  "category": ["<MY_CATEGORY>"],
-  "channels": [
+-H 'servicekey: <SERVICE_KEY>'
+```
+{: codeblock}
+
+
+## Additional headers 
+{: #config_api_headers}
+
+Some additional headers might be required to make successful requests to the API. Those additional headers are:
+
+### content-type
+{: #config_api_headers-content-type}
+
+Define the `Content-Type` header to make successful requests to the API. The `content-type` header specifies that the request body is in JSON format.
+{: note}
+
+You must pass the `content-type` in the header parameter (`-H`) of your requests.
+
+For example, in a cURL request, you must set the `content-type` header as follows:
+
+```
+-H 'content-type: application/json'
+```
+{: codeblock}
+
+
+
+## Body parameters
+{: #config_api_parm}
+
+The following fields are body parameters that you can set in API request:
+
+### name (string)
+{: #config_api_parm-name}
+
+Specifies the name of the view.
+
+The following table indicates when the `name` parameter is required:
+
+| Action                                                                | Request  | Field required                       |
+| ----------------------------------------------------------------------|----------|--------------------------------------|
+| Create a view and attach an alert to a view.                          | `POST`   | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating required")|
+| Modify an existing view and the alerts that are attached to the view. | `PUT`    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating required")|
+| Delete a view and its associated alerts.                              | `DELETE` |  |
+{: caption="Table 2. Required status per method" caption-side="top"}
+
+
+### query (string)
+{: #config_api_parm-query}
+
+Specifies the search query that is applied to the view.
+
+Check the query in the LogDNA web UI to validate that the data that is displayed through the view matches the data entry that you can to monitor through that view.
+{: tip}
+
+### hosts (array of strings)
+{: #config_api_parm-hosts}
+
+Specifies the list of services from which you want to view data.
+
+In the LogDNA web UI, the value that is set for **Source** in the **Line identifiers** section, corresponds to the hosts value of the service that generates that auditing event.
+
+For example, to enter multiple hosts, you must separate the hosts with a comma:
+
+```
+"hosts": ["is", "event-streams"]
+```
+{: codeblock}
+
+
+
+### apps (array of strings)
+{: #config_api_parm-hosts}
+
+Specifies the service instance ID that generates the auditing event.
+
+For example, to enter multiple apps, you must separate the apps with a comma:
+
+```
+"apps": ["apps1", "apps2"]
+```
+{: codeblock}
+
+Notice that the apps value for global auditing events is the CRN of the account where the event is generated.
+
+
+### channels (array of objects)
+{: #config_api_parm-channels}
+
+Specifies the notification channels and trigger conditions that are associated with a view.
+- You can configure 1 or more channels per view.
+- You can configure any of the following channels through the *Configuration* API: email, webhook, PagerDuty.
+
+```json
+"channels": [
     {
       "integration": "email",
-      "emails": ["user@mycompany.com"],
+      "emails": ["LIST OF EMAILS"],    // array of strings (emails) that are comma-separated
       "triggerlimit": 15,
       "triggerinterval": "5m",
       "immediate": true,
       "terminal": true,
       "operator": "presence",
-      "timezone": "America/Los_Angeles"
+      "timezone": "TIMEZONE"
+    },
     {
       "integration": "webhook",
-      "url": "<YOUR_WEBHOOK_URL>",
+      "url": "WEBHOOK_URLE",
       "triggerlimit": 25,
       "triggerinterval": "30",
       "operator": "presence",
@@ -167,7 +257,7 @@ curl https://api.logdna.com/v1/config/view \
     },
     {
       "integration": "pagerduty",
-      "key": "<YOUR_PD_KEY>",
+      "key": "PAGERDUTY_KEY",
       "triggerlimit": 150,
       "triggerinterval": "15m",
       "operator": "absence",
@@ -175,24 +265,106 @@ curl https://api.logdna.com/v1/config/view \
       "terminal": true
     }
   ]
+  ```
+  {: codeblock}
+
+### category (array of strings)
+{: #config_api_parm-category}
+
+Specifies the classification of views. 
+- You can include a view in 1 or more categories.
+
+For example, to associate a view to a category named `My category`, you can set it as follows:
+
+```
+"category": ["My category"],
+```
+{: codeblock}
+
+
+
+## Examples of using the LogDNA Configuration API
+{: #config_api-samples}
+
+The following are examples of how to use the LogDNA Configuration API.
+
+A category must exist before you create a view. In these examples replace `<MY_CATEGORY>` with your category. 
+{: note}
+
+In these examples, `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance. 
+
+### Creating a view
+{: #config_api-create-view}
+
+The following sample creates a view.
+
+```
+curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
+  -H 'content-type: application/json' \
+  -H 'servicekey: <SERVICE_KEY>' \
+  -d '{
+  "name": "My RC 200",
+  "query": "reason.reasonCode:200",
+  "hosts": ["ibm-cloud-databases-prod"],
+  "category": ["<MY_CATEGORY>"]
 }'
 ```
 {: pre}
 
 A response similar to the following will be returned:
 
+```json
+{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"category":["89610d13a7"],"viewid":"VIEWID"}
 ```
-{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"viewid":"3c3de90460"}
+{: screen}
+
+
+
+
+### Creating a view and attaching an alert
+{: #config_api-create-view-alert}
+
+The following sample creates a view and associates an email alert with the view.
+
+```
+curl https://api.eu-de.logging.cloud.ibm.com/v1/config/view \
+        -H 'content-type: application/json' \
+        -H 'servicekey: <SERVICE_KEY>' \
+        -d '{
+        "name": "My RC 200",
+        "query": "reason.reasonCode:200",
+        "hosts": ["ibm-cloud-databases-prod"],
+        "category": ["TEST"],
+      "channels": [
+        {
+          "integration": "email",
+          "emails": ["myemail@ibm.com"],   
+          "triggerlimit": 15,
+          "triggerinterval": "5m",
+          "immediate": true,
+          "terminal": true,
+          "operator": "presence",
+          "timezone": "Europe/London"
+        }
+      ]
+    }'
+```
+{: pre}
+
+A response similar to the following will be returned:
+
+```
+{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"category":["89610d13a7"],"channels":[{"integration":"email","emails":"myemail@ibm.com","triggerlimit":15,"triggerinterval":300,"immediate":true,"terminal":true,"operator":"presence","timezone":"Europe/London","alertid":"<ALERTID>"}],"viewid":"VIEWID"}
 ```
 {: screen}
 
 ### Modifying a view
 
-The following modifies a view.
+The following sample modifies a view.
 
 ```
 curl --request PUT \
-  --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
+  --url https://api.eu-de.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
   --header 'Content-Type: application/json' \
   -H 'servicekey: <SERVICE_KEY>' 
 ```
@@ -200,7 +372,7 @@ curl --request PUT \
 
 If the `viewid` you are trying to modify does not exist, a response similar to the following will be returned: 
 
-```
+```json
 {"error":"Nothing to configure","code":"BadRequest","status":"error"}
 ```
 {: screen}
@@ -219,14 +391,11 @@ curl --request PUT \
   "name": "My RC 200",
   "query": "reason.reasonCode:200",
   "hosts": ["ibm-cloud-databases-prod"],
-  "apps": ["N/A"],
-  "levels": ["normal"],
-  "tags": ["N/A"],
   "category": ["<CATEGORY"],
   "channels": [
     {
       "integration": "email",
-      "emails": ["user@mycompany.com"],
+      "emails": ["myemail@ibm.com"],
       "triggerlimit": 15,
       "triggerinterval": "5m",
       "immediate": true,
@@ -241,50 +410,17 @@ curl --request PUT \
 
 A response similar to the following is returned:
 
-```
-{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"apps":["N/A"],"levels":["normal"],"tags":["N/A"],"category":["89610d13a7"],"channels":[{"integration":"email","emails":"user@mycompany.com","triggerlimit":15,"triggerinterval":300,"immediate":true,"terminal":true,"operator":"presence","timezone":"Europe/London","alertid":"<ALERTID>"}],"viewid":"<VIEWID>"}
-```
-{: screen}
-
-If you modify a view so that the app is empty, a response similar to the following will be returned:
-
-```
-{"details":[{"message":"\"apps[0]\" is not allowed to be empty","key":"apps[0]"}],"error":"\"apps[0]\" is not allowed to be empty","code":"BadRequest","status":"error"}
+```json
+{"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"category":["89610d13a7"],"channels":[{"integration":"email","emails":"myemail@ibm.com","triggerlimit":15,"triggerinterval":300,"immediate":true,"terminal":true,"operator":"presence","timezone":"Europe/London","alertid":"<ALERTID>"}],"viewid":"<VIEWID>"}
 ```
 {: screen}
 
-### Modifying a view by changing the search query
-{: #api_configuration-mod-view-query}
 
-The following changes a view's search query.
-
-```
-curl https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
-  -H 'content-type: application/json' \
-  -H 'servicekey: <SERVICE_KEY>' \
-  -d '{
-  "name": "My View from API",
-  "query": "logType:stderr",
-  "hosts": ["ibm-cloud-databases-prod"],
-  "apps": ["crn:v1:bluemix:public:databases-for-redis:us-south:a/<xxxxxxxxxxxx>:<xxxxxxx>::"],
-  "levels": ["info"],
-  "tags": ["script"],
-  "category": ["<CATEGORY>"]
-}'
-```
-{: pre}
-
-A response similar to the following will be returned:
-
-```
-{"name":"My View from API","query":"logType:stderr","hosts":["ibm-cloud-databases-prod"],"apps":["crn:v1:bluemix:public:databases-for-redis:us-south:a/<xxxxxxxxxxxx>:<xxxxxxx>::"],"levels":["info"],"tags":["script"],"category":[],"viewid":"f7b46891df"}
-```
-{: screen}
 
 ### Deleting a view
 {: #api_configuration-del-view}
 
-The following deletes a view.
+The following sample deletes a view.
 
 ```
 curl --request DELETE \
@@ -296,7 +432,9 @@ curl --request DELETE \
 
 The following response will be returned when the view is successfully deleted:
 
-```
+```json
 {"deleted":true}
 ```
 {: screen}
+
+

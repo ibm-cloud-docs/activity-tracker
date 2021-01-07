@@ -22,7 +22,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 {:external: target="_blank" .external}
 
-# Managing Activity Tracker instances in the Observability UI
+# Managing instances through the Observability UI
 {: #observe}
 
 You can manage your Activity Tracker instances through the `Observability` dashboard in {{site.data.keyword.cloud_notm}}.

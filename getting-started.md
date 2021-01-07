@@ -106,7 +106,6 @@ Complete this tutorial to learn how to provision a service in the {{site.data.ke
 * To complete the steps to manage access to the service, your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. Contact the account owner. The account owner can grant another user access to the account for the purposes of managing user access, and managing account resources. [Learn more](/docs/account?topic=account-userroles).
 
 
-
 ## Step 1. Provision an instance of the {{site.data.keyword.at_full_notm}} service
 {: #gs_step1}
 
@@ -138,7 +137,7 @@ Complete the following steps to provision an instance:
 
 8. Click **Create**.
 
-After you provision an instance, the *Activity Tracker* dashboard opens. 
+After you provision an instance, the *Activity Tracker* dashboard, that is located in the *Observability* section of the {{site.data.keyword.cloud_notm}} UI, opens. 
 
 
 ## Step 2. Manage access to the service
