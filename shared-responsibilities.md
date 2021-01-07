@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-11-12"
+  years: 2019, 2021
+lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, auditing, customer responsibilities, IBM responsibilities, terms and conditions
 
@@ -38,7 +38,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task              | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |-------------------|-------------------------------------------------|-----------------------|
-| `Incident and operations management` | Maintain {{site.data.keyword.la_full_notm}} service instances and infrastructure workloads. | Maintain incident and operations management of your data. |
+| `Incident and operations management` | Maintain {{site.data.keyword.at_full_notm}} service instances and infrastructure workloads. | Maintain incident and operations management of your data. |
 | `Monitor incidents`  | Provide notifications for planned maintenance, security bulletins, or unplanned outages. | Set preferences to [receive emails about platform notifications](/docs/overview?topic=overview-ui#email-prefsl). </br>Monitor the [IBM Cloud status page](https://{DomainName}/status?selected=announcement) for general announcements. |
 | `Maintain {{site.data.keyword.cloud_notm}} high availability SLA`   | Provide Cloud Service across availability zones in a Multi-Zone Region (MZR). </br> Provide Cloud Service across hosts in a Single-Zone Region (SZR). </br>Provides replication, fail-over features, and infrastructure maintenance and updates. | Use the list of available regions to plan for and create new instances of the service. |
 | `Archive events`  | Provide the ablity to archive to a client configured Cloud Object Storage (COS) location and archive data hourly or daily. | Configure Cloud Object Storage per your requirements. </br>[Enable archiving of the Activity Tracker instance.](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving) |
@@ -64,7 +64,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task                           | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |--------------------------------|-------------------------------------------------|-----------------------|
-| `Manage permissions`           |Provide the ability to restrict access to resouces. </br>{{site.data.keyword.IBM_notm}} is responsible for the security and compliance of {{site.data.keyword.la_full_notm}}. | Restrict access to resources by using Cloud IAM access policies by defining IAM policies to control which users within your account have access to the data.  </br>[Learn more about controlling access through IAM](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).| 
+| `Manage permissions`           |Provide the ability to restrict access to resouces. </br>{{site.data.keyword.IBM_notm}} is responsible for the security and compliance of {{site.data.keyword.at_full_notm}}. | Restrict access to resources by using Cloud IAM access policies by defining IAM policies to control which users within your account have access to the data.  </br>[Learn more about controlling access through IAM](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).| 
 {: caption="Table 3. Responsibilities for identity and access management" caption-side="top"}
 
 
