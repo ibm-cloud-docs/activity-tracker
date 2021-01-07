@@ -32,7 +32,7 @@ Use the {{site.data.keyword.at_full}} service to monitor user-initiated activiti
 {:shortdesc}
 
 ## Analytics services
-{: #analytics}
+{: #ref_analytics}
 
 The following table lists analytics services that send events to {{site.data.keyword.at_short}}:
 
@@ -44,7 +44,7 @@ The following table lists analytics services that send events to {{site.data.key
 
 
 ## VMware solution services
-{: #vmware_solutions}
+{: #ref_vmware_solutions}
 
 The following table lists VMware solution services that send events to {{site.data.keyword.at_full_notm}}:
 
@@ -59,7 +59,7 @@ The following table lists VMware solution services that send events to {{site.da
 
 
 ## Infrastructure services
-{: #infrastructure}
+{: #ref_infrastructure}
 
 The following table lists infrastructure services that send events to {{site.data.keyword.cloudaccesstrailshort}}:
 
@@ -71,7 +71,7 @@ The following table lists infrastructure services that send events to {{site.dat
 
 
 ## Compute serverless services
-{: #serverless}
+{: #ref_serverless}
 
 The following table lists serverless compute services that send events to {{site.data.keyword.at_short}}:
 
@@ -83,7 +83,7 @@ The following table lists serverless compute services that send events to {{site
 
 
 ## Cloud Foundry applications
-{: #platform_cfapps}
+{: #ref_platform_cfapps}
 
 The events that are sent by Cloud Foundry applications to {{site.data.keyword.cloudaccesstrailshort}} are listed in the response area of the `GET /v2/events`, under the body section. The *Type* field lists all actions that generate an event. For more information, see the [Events API](https://apidocs.cloudfoundry.org/270/events/list_all_events.html){: external}.
 
@@ -93,7 +93,7 @@ The events that are sent by Cloud Foundry applications to {{site.data.keyword.cl
 {: caption="Table 5. Cloud Foundry" caption-side="top"}
 
 ## Container services
-{: #container}
+{: #ref_container}
 
 The following table lists container platform services that send events to {{site.data.keyword.at_full_notm}}:
 
@@ -107,7 +107,7 @@ The following table lists container platform services that send events to {{site
 
 
 ## Logging and monitoring services
-{: observability}
+{: #ref_observability}
 
 The following table lists observability services that send events to {{site.data.keyword.at_short}}:
 
@@ -120,7 +120,7 @@ The following table lists observability services that send events to {{site.data
 
 
 ## Platform core integrated services
-{: #platform_core_integrated}
+{: #ref_platform_core_integrated}
 
 
 
@@ -140,7 +140,7 @@ The following table lists core platform actions that send events to {{site.data.
 {: caption="Table 7. List of core platform actions" caption-side="top"}
 
 ## Platform core integrated security services
-{: #platform_integrated_security}
+{: #ref_platform_integrated_security}
 
 
 The following table lists core security platform actions that send events to {{site.data.keyword.at_full_notm}}:
@@ -156,7 +156,7 @@ The following table lists core security platform actions that send events to {{s
 
 
 ## Database services
-{: #database}
+{: #ref_database}
 
 The following table lists database services that send events to {{site.data.keyword.at_short}}:
 
@@ -178,7 +178,7 @@ The following table lists database services that send events to {{site.data.keyw
 
 
 ## Developer tools
-{: #devops}
+{: #ref_devops}
 
 The following table lists developer tools and DevOps services that send events to {{site.data.keyword.at_short}}:
 
@@ -196,7 +196,7 @@ The following table lists developer tools and DevOps services that send events t
 
 
 ## Integration services
-{: #integration}
+{: #ref_integration}
 
 The following table lists integration services that send events to {{site.data.keyword.at_short}}:
 
@@ -209,7 +209,7 @@ The following table lists integration services that send events to {{site.data.k
 
 
 ## Network services
-{: #network}
+{: #ref_network}
 
 The following table lists network services that send events to {{site.data.keyword.at_short}}:
 
@@ -225,7 +225,7 @@ The following table lists network services that send events to {{site.data.keywo
 
 
 ## Security services
-{: #security}
+{: #ref_security}
 
 The following table lists security Cloud services that send events to {{site.data.keyword.at_short}}:
 
@@ -243,7 +243,7 @@ The following table lists security Cloud services that send events to {{site.dat
 
 
 ## Storage services
-{: #storage}
+{: #ref_storage}
 
 
 The following table lists storage services that send events to {{site.data.keyword.at_short}}:
@@ -257,7 +257,7 @@ The following table lists storage services that send events to {{site.data.keywo
 
 
 ## Web and mobile services
-{: #web}
+{: #ref_web}
 
 The following table lists web and mobile services that send events to {{site.data.keyword.at_short}}:
 
@@ -267,7 +267,7 @@ The following table lists web and mobile services that send events to {{site.dat
 {: caption="Table 15. List of web and mobile events" caption-side="top"}
 
 ## VPC infrastructure
-{: #vpc_infrastructure}
+{: #ref_vpc_infrastructure}
 
 There are 2 types of VPC infrastructure that you can provision in your account:
 * [Virtual Private Cloud classic Gen 1](/docs/vpc-on-classic?topic=vpc-on-classic-getting-started)
@@ -275,7 +275,7 @@ There are 2 types of VPC infrastructure that you can provision in your account:
 
 
 ### {{site.data.keyword.vpc_short}} Gen 2
-{: #vpc_infrastructure_gen2}
+{: #ref_vpc_infrastructure_gen2}
 
 The following table lists VPC infrastructure services that send events to {{site.data.keyword.at_full_notm}}:
 
@@ -291,7 +291,7 @@ The following table lists VPC infrastructure services that send events to {{site
 
 
 ### Virtual Private Cloud Gen 1 (Classic)
-{: #vpc_infrastructure_classic}
+{: #ref_vpc_infrastructure_classic}
 
 The following table lists VPC infrastructure services that send events to {{site.data.keyword.at_full_notm}}:
 
@@ -308,7 +308,7 @@ The following table lists VPC infrastructure services that send events to {{site
 
 
 ## Watson AI
-{: #watson_ai}
+{: #ref_watson_ai}
 
 The following table lists Watson AI services that send events to {{site.data.keyword.at_full_notm}}:
 
@@ -326,14 +326,14 @@ The following table lists Watson AI services that send events to {{site.data.key
 | [{{site.data.keyword.nlufull}}](/docs/natural-language-understanding) | | | [YES](/docs/natural-language-understanding?topic=natural-language-understanding-at_events) | |
 | [{{site.data.keyword.speechtotextfull}}](/docs/speech-to-text?topic=speech-to-text-gettingStarted) | | | [YES](/docs/speech-to-text?topic=speech-to-text-atEvents) | |
 | [{{site.data.keyword.texttospeechfull}}](/docs/text-to-speech?topic=text-to-speech-gettingStarted) | | | [YES](/docs/text-to-speech?topic=text-to-speech-atEvents) | |
-| [{{site.data.keyword.visualrecognitionfull}}](/docs/visual-recognition?topic=visual-recognition-getting-started-tutorial) | | | [YES](/docs/visual-recognition?topic=visual-recognition-at_events) | |
+| [{{site.data.keyword.visualrecognitionfull}}](/docs/visual-recognition?topic=visual-recognition-index) | | | [YES](/docs/visual-recognition?topic=visual-recognition-at_events) | |
 | [{{site.data.keyword.wh-acd_full}}](/docs/wh-acd?topic=wh-acd-getting-started) | | | [YES](/docs/wh-acd?topic=wh-acd-at_events) | |
 {: caption="Table 18. List of Watson AI services" caption-side="top"}
 
 
 
 ## Code Engine
-{: #codeengine}
+{: #ref_codeengine}
 
 
 The following table lists Code Engine services that send events to {{site.data.keyword.at_short}}:
