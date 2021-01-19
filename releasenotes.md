@@ -44,5 +44,5 @@ This release includes the following functional enhancements:
 
 This release includes the following functional enhancements:
 
-* Configuration support using an API, in addition to configuration using the web UI.
-* Support for Terraform to programmatically manage {{site.data.keyword.la_full}} views and alerts and automate their deployment. 
+* Configuration support using an API, in addition to configuration using the web UI. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-config_api).
+* Support for Terraform to programmatically manage {{site.data.keyword.at_full_notm}} views and alerts and automate their deployment. 
