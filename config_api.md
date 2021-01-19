@@ -31,7 +31,7 @@ You can use the *Configuration REST API* to manage programmatically views and al
 - You can use the **PUT** method to modify an existing view, and alerts that are attached to views.
 - You can use the **DELETE** method to delete a view and associated alerts.
 
-Before you run any automated tasks, consider doing a back up of your account configuration resources. The back up includes definitions of the resources in the state before any change is applied. You can use the back up to restore the resources if you encounter problems. See [Export the configuration of resources in a LogDNA instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#rrd_export_config).
+Before you run any automated tasks, consider doing a back up of your account configuration resources. You can use the back up to restore the resources, to the state before any change is applied, if you encounter problems. See [Export the configuration of resources in a LogDNA instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#rrd_export_config).
 {: tip}
 
 
@@ -46,7 +46,7 @@ When you create a view, consider the following information:
 - You can create a view with 1 or more notification channels. Valid alert notification channels that are supported by the *Configuration* API are: email, webhook, or PagerDuty.
 - The response to an API request to create a view includes the ID of the view.
 - The `name` body parameter, that defines the name of the view, is always required.
-- A category must exist before you create a view. The request fails if a category is not specified.
+- A category must exist before you create a view. The request fails if a category is not valid or is not specified.
 - You can define body parameters to refine the data that is displayed through the view. You must specify 1 or more of the following body parameters: query, apps, levels, hosts, or tags.
 
 When you create a PagerDuty notification channel, consider the following information:
@@ -69,6 +69,13 @@ If you try to create a view without defining a category, you get the following e
 ```
 {: screen}
 
+If you try to create a view without a valid category, you get the following error message:
+
+```json
+{"error":"Invalid category name(s): CATEGORYNAME","code":"BadRequest","status":"error"}
+```
+{: screen}
+
 If you try to define a view and you do not define any of the following body parameters, query, hosts, apps, levels, tags, you can get the following error:
 
 ```json
@@ -83,7 +90,7 @@ When you modify a view, consider the following information:
 - You must specify the name and the view ID of the view. 
 - If you are viewing a view in the LogDNA web UI, the view is not refreshed automatically after you run an API request to modify the view. To refresh the view in the UI, you must navigate to the `Everything` view and back to the view.
 
-The API request replaces the existing view definition with your request body data. Any properties that are not specified in your PUT request will be removed.
+An API request to modify a view replaces the existing view definition and associated alerts with your request body data. Any properties that are not specified in your PUT request will be removed.
 {: important}
 
 If the `viewid` that you are trying to modify does not exist, a response similar to the following will be returned: 
@@ -186,7 +193,7 @@ The following table indicates when the `name` parameter is required:
 
 Specifies the search query that is applied to the view.
 
-Check the query in the LogDNA web UI to validate that the data that is displayed through the view matches the data entry that you can to monitor through that view.
+Check the query in the LogDNA web UI to validate that the data that is displayed through the view matches the data entry that you plan to monitor through that view.
 {: tip}
 
 ### hosts (array of strings)
@@ -194,7 +201,7 @@ Check the query in the LogDNA web UI to validate that the data that is displayed
 
 Specifies the list of services from which you want to view data.
 
-In the LogDNA web UI, the value that is set for **Source** in the **Line identifiers** section, corresponds to the hosts value of the service that generates that auditing event.
+In the LogDNA web UI, the value that is set for **Source** in the **Line identifiers** section corresponds to the hosts value of the service that generates that auditing event.
 
 For example, to enter multiple hosts, you must separate the hosts with a comma:
 
@@ -241,7 +248,7 @@ Specifies the notification channels and trigger conditions that are associated w
     },
     {
       "integration": "webhook",
-      "url": "WEBHOOK_URLE",
+      "url": "WEBHOOK_URL",
       "triggerlimit": 25,
       "triggerinterval": "30",
       "operator": "presence",
@@ -288,7 +295,7 @@ For example, to associate a view to a category named `My category`, you can set 
 
 The following are examples of how to use the LogDNA Configuration API.
 
-A category must exist before you create a view. In these examples replace `<MY_CATEGORY>` with your category. 
+A category must exist before you create a view. In these examples, replace `<MY_CATEGORY>` with your category. 
 {: note}
 
 In these examples, `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance. 
@@ -358,24 +365,6 @@ A response similar to the following will be returned:
 ```
 {: screen}
 
-### Modifying a view
-
-The following sample modifies a view.
-
-```
-curl --request PUT \
-  --url https://api.eu-de.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
-  --header 'Content-Type: application/json' \
-  -H 'servicekey: <SERVICE_KEY>' 
-```
-{: pre}
-
-If the `viewid` you are trying to modify does not exist, a response similar to the following will be returned: 
-
-```json
-{"error":"Nothing to configure","code":"BadRequest","status":"error"}
-```
-{: screen}
 
 ### Modifying a view by adding an alert
 {: #api_configuration-mod-view-alert}
