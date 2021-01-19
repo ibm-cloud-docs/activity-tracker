@@ -6,6 +6,7 @@ Activity Tracker with LogDNA
 
     {: .navgroup id="learn"}
     getting-started.md
+    releasenotes.md
 
     {: .topicgroup}
     Cloud services

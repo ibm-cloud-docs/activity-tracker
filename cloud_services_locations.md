@@ -407,7 +407,7 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |         
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.bplong}}                   |  ![Checkmark icon](images/checkmark-icon.svg)  |   |
+| {{site.data.keyword.bplong}}                   |  ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Dallas instance`  |
 {: caption="Developer tools services integration in America's locations" caption-side="top"}
 {: #cs_dev-tools-table-1}
 {: tab-title="America"}
@@ -437,7 +437,7 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)                    |   
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |  
-| {{site.data.keyword.bplong}}                   | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
+| {{site.data.keyword.bplong}}                   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Frankfurt instance` |    
 {: caption="Developer tools services integration in Europe locations" caption-side="top"}
 {: #cs_dev-tools-table-3}
 {: tab-title="Europe"}
