@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-01-18"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, release notes, whats new
 
@@ -35,7 +35,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 This release includes the following functional enhancements:
 
-* Hourly archiving in Chennai, Tokyo, Sydney, Seoul, London, Washington instead of daily archiving.
+* Hourly archiving in Chennai, Tokyo, Sydney, Seoul, London, Washington instead of daily archiving. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-manage_events#manage_events_archive).
 
 
 

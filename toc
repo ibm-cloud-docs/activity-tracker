@@ -35,19 +35,16 @@ Activity Tracker with LogDNA
 
     {: .navgroup id="howto"}
     provision.md
+    provision_hipaa.md
     remove.md
     upgrade.md
     observe.md
+    view_events.md
     iam.md
 
     {: .topicgroup}
-    LogDNA web UI
-        launch.md
-        config.md
-        get_logdna_web_url.md
-
-    {: .topicgroup}
     DevOps tasks
+        service_keys.md
         archive.md
         control_usage.md
         exclusion_rules.md
@@ -57,27 +54,32 @@ Activity Tracker with LogDNA
         sqlquery.md
 
     {: .topicgroup}
+    Enhancing security
+        architecture-workload-isolation.md
+        service-connection.md
+        data-security.md
+    
+    {: .topicgroup}
     Export events
         export_config.md
-        service_keys.md
         export.md
         export_api.md
 
     {: .topicgroup}
-    View events
-        views.md
-        view_events.md
-        alerts.md
+    LogDNA web UI
+        launch.md
+        config.md
+        get_logdna_web_url.md
 
     {: .topicgroup}
     Logging and monitoring
         at_events.md
 
     {: .topicgroup}
-    Enhancing security
-        architecture-workload-isolation.md
-        service-connection.md
-        data-security.md
+    Working with views and alerts
+        views.md   
+        alerts.md
+        config_api.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -92,10 +94,6 @@ Activity Tracker with LogDNA
         at_events_iam.md
         at_events_acc_mgt.md
         at_events_rc.md
-
-    [LogDNA Product Page](https://logdna.com/)
-    [LogDNA Documentation](https://docs.logdna.com/docs)
-    [LogDNA Blog](https://blog.logdna.com/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
