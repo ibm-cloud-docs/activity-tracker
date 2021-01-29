@@ -50,6 +50,7 @@ Activity Tracker with LogDNA
     observe.md
     view_events.md
     iam.md
+    teams_data_access.md
 
     {: .topicgroup}
     DevOps admin tasks
