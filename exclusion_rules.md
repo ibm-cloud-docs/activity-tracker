@@ -28,7 +28,10 @@ In an {{site.data.keyword.at_full_notm}} instance, you can configure exclusion r
 {:shortdesc}
 
 
-Complete the following steps to define an exclusion rule:
+Complete the following steps to define an exclusion rule.
+
+You must have manager access to define exclusion rules.
+{: note}
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch).
 
