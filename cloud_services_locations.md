@@ -534,7 +534,9 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.dns_full}}                 | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
 | {{site.data.keyword.BluDirectLink}}            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
 | {{site.data.keyword.cis_full}}  (CIS)          | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
-| {{site.data.keyword.tg_full}}                  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |              
+| {{site.data.keyword.tg_full}}                  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |
+| Content Delivery Network (CDN)                 | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
+| {{site.data.keyword.vpc_full}}                 | `Events are available through the Activity Tracker Dallas (us-south) instance` |
 {: caption="Table 13. Network services that are global" caption-side="top"}
 
 
