@@ -124,17 +124,10 @@ Complete the following steps to provision an {{site.data.keyword.cos_full_notm}}
 
 Buckets are a way to organize your data in an {{site.data.keyword.cos_full_notm}} instance. 
 
-To manage buckets, your user must be granted permissions to work with buckets on the {{site.data.keyword.cos_full_notm}} instance. The following table outlines the different actions and roles that a user can have to work with buckets:
+To manage buckets, your user must be granted permissions to work with buckets on the {{site.data.keyword.cos_full_notm}} instance. For more information about roles, see [Identity and Access Management roles](/docs/cloud-object-storage?topic=cloud-object-storage-iam).
 
-| Service                    | Roles                   | Action                             | 
-|----------------------------|-------------------------|------------------------------------|       
-| `Cloud Object Storage`     | Platform role: Viewer   | Allows the user to view all buckets and list the objects within them. |
-| `Cloud Object Storage`     | Service role: Manager   | Allows the user to make objects public.                                                       |
-| `Cloud Object Storage`     | Service roles: Manager </br>Writer | Allows the user to create and destroy buckets and objects.                         | 
-| `Cloud Object Storage`     | Service role: reader    | Allows the user to list and download objects.                                                 |
-{: caption="Table 1. Roles and actions to work with buckets" caption-side="top"} 
-
-**Note:** To create a bucket, your user must have manager or writer permissions for the {{site.data.keyword.cos_full_notm}} instance.
+To create a bucket, your user must have manager or writer permissions for the {{site.data.keyword.cos_full_notm}} instance.
+{: note}
 
 Complete the following steps to create a bucket:
 

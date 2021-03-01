@@ -48,7 +48,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.iae_full}}               | ![Checkmark icon](images/checkmark-icon.svg) |                           |        
 | {{site.data.keyword.sqlquery_full}}          |              |                             |  
-{: caption="Analytics services integration in AP locations" caption-side="top"}
+{: caption="Table 1. Analytics services integration in AP locations" caption-side="top"}
 {: #analytics-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="analytics"}
@@ -59,7 +59,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.iae_full}}               | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |        
 | {{site.data.keyword.sqlquery_full}}          | ![Checkmark icon](images/checkmark-icon.svg) |                                 |  
-{: caption="Analytics services integration in Europe locations" caption-side="top"}
+{: caption="Table 1. Analytics services integration in Europe locations" caption-side="top"}
 {: #analytics-table-3}
 {: tab-title="Europe"}
 {: tab-group="analytics"}
@@ -114,7 +114,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |------------------------------------------------|-------------------|-----------------------------------|
 | {{site.data.keyword.BluVirtServers_full}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |        
 | {{site.data.keyword.baremetal_long}}           | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |   
-{: caption="Compute infrastructure services integration in America's locations" caption-side="top"}
+{: caption="Table 3. Compute infrastructure services integration in America's locations" caption-side="top"}
 {: #cs_infra-table-1}
 {: tab-title="America"}
 {: tab-group="cs_infra"}
@@ -125,7 +125,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |------------------------------------------------|----------------|----------------------------|
 | {{site.data.keyword.BluVirtServers_full}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |        
 | {{site.data.keyword.baremetal_long}}           | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |   
-{: caption="Compute infrastructure services integration in AP locations" caption-side="top"}
+{: caption="Table 3. Compute infrastructure services integration in AP locations" caption-side="top"}
 {: #cs_infra-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs_infra"}
@@ -136,7 +136,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |---------------------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.BluVirtServers_full}}     |  ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |       
 | {{site.data.keyword.baremetal_long}}           |  ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |   
-{: caption="Compute infrastructure services integration in Europe locations" caption-side="top"}
+{: caption="Table 3. Compute infrastructure services integration in Europe locations" caption-side="top"}
 {: #cs_infra-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs_infra"}
@@ -148,7 +148,8 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.openwhisk_short}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |          
+| {{site.data.keyword.openwhisk_short}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |   
+| {{site.data.keyword.codeengineshort}}          | ![Checkmark icon](images/checkmark-icon.svg) | |       
 {: caption="Table 4. Compute serverless services integration in America locations" caption-side="top"}
 {: #cs_comp-table-1}
 {: tab-title="America"}
@@ -158,8 +159,9 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.openwhisk_short}}          | ![Checkmark icon](images/checkmark-icon.svg) |                                       |
-{: caption="Compute serverless services integration in AP locations" caption-side="top"}
+| {{site.data.keyword.openwhisk_short}}          | ![Checkmark icon](images/checkmark-icon.svg) |   |
+| {{site.data.keyword.codeengineshort}}          | ![Checkmark icon](images/checkmark-icon.svg) |   |
+{: caption="Table 4. Compute serverless services integration in AP locations" caption-side="top"}
 {: #cs_comp-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs_comp"}
@@ -169,6 +171,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.openwhisk_short}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.codeengineshort}}          | ![Checkmark icon](images/checkmark-icon.svg) | |
 {: caption="Table 4. Compute serverless services integration in Europe locations" caption-side="top"}
 {: #cs_comp-table-3}
 {: tab-title="Europe"}
@@ -214,42 +217,6 @@ The following table shows the locations where automatic collection of Cloud Foun
 {: class="simple-tab-table"}
 {: row-headers}
 
-
-## Observability services
-{: #cloud_services_locations_observability}
-
-| Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
-|------------------------------------------------|---------------------|--------------------------------------|
-| {{site.data.keyword.at_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|
-| {{site.data.keyword.la_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|      
-{: caption="Table 6. Observability services in America locations" caption-side="top"}
-{: #cs_observability-table-1}
-{: tab-title="America"}
-{: tab-group="cs_observability"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                        | `Tokyo (jp-tok)` | `Sydney (au-syd)`         | `Chennai (in-che)` |
-|------------------------------------------------|------------------|----------------------------|-------------|
-| {{site.data.keyword.at_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  
-| {{site.data.keyword.la_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
-{: caption="Table 6. Observability services in Asia Pacific locations" caption-side="top"}
-{: #cs_observability-table-2}
-{: tab-title="Asia Pacific"}
-{: tab-group="cs_observability"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|---------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.at_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.la_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |        
-{: caption="Table 6. Observability services in Europe locations" caption-side="top"}
-{: #cs_observability-table-3}
-{: tab-title="Europe"}
-{: tab-group="cs_observability"}
-{: class="simple-tab-table"}
-{: row-headers}
 
 ## Container services
 {: #cloud_services_locations_container}
@@ -781,7 +748,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.texttospeechshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.speechtotextshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.wh-acd_short}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 19. Watson AI services integration in America locations" caption-side="top"}
+{: caption="Watson AI services integration in America locations" caption-side="top"}
 {: #cs_watsonai-table-1}
 {: tab-title="America"}
 {: tab-group="cs_watsonai"}
@@ -833,20 +800,4 @@ The following tables list the locations where automatic collection of security s
 {: tab-group="cs_watsonai"}
 {: class="simple-tab-table"}
 {: row-headers}
-
-
-
-## Code Engine
-{: #cloud_services_locations_codeengine}
-
-| Service                                        | `Dallas (us-south)` |
-|------------------------------------------------|---------------------|
-| {{site.data.keyword.codeengineshort}}          | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 20. Code Engine services integration in America locations" caption-side="top"}
-{: #cs_codeengine-table-1}
-{: tab-title="America"}
-{: tab-group="cs_codeengine"}
-{: class="simple-tab-table"}
-{: row-headers}
-
 
