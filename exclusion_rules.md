@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-03-01"
 
 keywords: LogDNA, IBM, Log Analysis, logging, config agent
 
@@ -28,7 +28,7 @@ In an {{site.data.keyword.at_full_notm}} instance, you can configure exclusion r
 {:shortdesc}
 
 
-Complete the following steps to define an exclusion rule.
+Complete the following steps to define an exclusion rule:
 
 You must have manager access to define exclusion rules.
 {: note}
