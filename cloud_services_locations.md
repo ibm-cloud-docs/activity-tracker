@@ -347,8 +347,8 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.databases-for-etcd_full_notm}}              | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.databases-for-mongodb_full_notm}}           | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.databases-for-postgresql_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg)`               | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}        | ![Checkmark icon](images/checkmark-icon.svg)               |   |
-| {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}        | ![Checkmark icon](images/checkmark-icon.svg)               |   |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}        | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}        | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.messages-for-rabbitmq_full_notm}}           | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.databases-for-redis_full_notm}}             | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 {: caption="Table 10. Database services integration in America locations" caption-side="top"}
@@ -501,7 +501,9 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.dns_full}}                 | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
 | {{site.data.keyword.BluDirectLink}}            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
 | {{site.data.keyword.cis_full}}  (CIS)          | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
-| {{site.data.keyword.tg_full}}                  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |              
+| {{site.data.keyword.tg_full}}                  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |
+| Content Delivery Network (CDN)                 | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
+| {{site.data.keyword.vpc_full}}                 | `Events are available through the Activity Tracker Dallas (us-south) instance` |
 {: caption="Table 13. Network services that are global" caption-side="top"}
 
 
