@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-06-24"
+  years: 2019, 2021
+lastupdated: "2021-03-01"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, usage
 
@@ -51,7 +51,10 @@ When you exclude events through an exclusion rule, you can choose to **Preserve 
 
 In a {{site.data.keyword.at_full_notm}} instance, you can define an alert to notify when the data usage in the instance reaches the data usage threshold that you set for the instance.
 
-Complete the following steps to configure an alert that informs you when you reach a specific data volume in the instance:
+Complete the following steps to configure an alert that informs you when you reach a specific data volume in the instance.
+
+You must have manager access to configure data threshold alerts.
+{: note}
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch).
 
@@ -59,7 +62,7 @@ Complete the following steps to configure an alert that informs you when you rea
 
     In the **Dashboard** section, you can see your data usage.
 
-3. Define a **Usage Alert** to set the threshold for data usage in the instance. When the threshold is reached, you are notified. Enter a value to set the data usage threshold.
+3. Define a **Usage Alert** to set the **Usage Limit** threshold for data usage in the instance. When the usage reaches the percentage of the threshold you selected, the email recipient will be notified. 
 
 4. In the **Add recipient** section, enter one or more emails where the notification will be sent.
 
