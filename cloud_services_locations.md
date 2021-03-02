@@ -225,7 +225,7 @@ For {{site.data.keyword.containerlong_notm}}, see [Locations](/docs/containers?t
 
 For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?topic=openshift-at_events#at-ui).
 
-For {{site.data.keyword.satellitelong_notm}}, see [Viewing events](/docs/satellite?topic=satellite-at_events#at-ui).
+For {{site.data.keyword.satellitelong_notm}}, see [Locations](/docs/satellite?topic=satellite-at_events#at-ui).
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
