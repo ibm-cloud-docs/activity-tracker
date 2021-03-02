@@ -33,7 +33,7 @@ Consider the following information when you export events:
 * You can export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
 * When you export events programmatically, you can choose to send an email or to write events into your terminal.
 * The compressed events file that contains the data that you want to export is available for a maximum of 12 hours. 
-* When you export events, you have a limit of lines that you can export in a request. You can specify to export older lines or newer lines in case you reach the limit in the time range that you specify for the export. The maximum number of lines that you can export per API request is `500.000` lines.
+* When you export events, you have a limit of lines that you can export in a request. You can specify to export older lines or newer lines in case you reach the limit in the time range that you specify for the export. The maximum number of lines that you can export per API request is `5.000` lines.
 
 ## Prerequisites
 {: #export_api_prereqs}
