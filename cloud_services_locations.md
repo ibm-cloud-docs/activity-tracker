@@ -260,7 +260,7 @@ The following tables list the locations where automatic collection of registry s
 {: row-headers}
 
 
-`[*]` {{site.data.keyword.registrylong_notm}} global registry events are available through the Activity Tracker Dallas (us-south) instance.  
+`[*]` {{site.data.keyword.registrylong_notm}} global registry events are available through the Activity Tracker `Dallas (us-south)` instance.  
 
 
 
