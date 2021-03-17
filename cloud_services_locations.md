@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-03-17"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
@@ -227,6 +227,8 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 
 For {{site.data.keyword.satellitelong_notm}}, see [Locations](/docs/satellite?topic=satellite-at_events#at-ui).
 
+The following tables list the locations where automatic collection of registry service events is enabled. For more information, see [Auditing the events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-at_events).
+
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
 |------------------------------------------------|---------------------|--------------------------------------|
 | {{site.data.keyword.registrylong_notm}} `[*]`       | ![Checkmark icon](images/checkmark-icon.svg) |   |          
@@ -237,9 +239,9 @@ For {{site.data.keyword.satellitelong_notm}}, see [Locations](/docs/satellite?to
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.registrylong_notm}}  `[*]`   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |          
+| Service                                        | `Tokyo (jp-tok)` | `Osaka (jp-osa)`  | `Sydney (au-syd)`           |
+|------------------------------------------------|------------------|----------------------------|----------------------------|
+| {{site.data.keyword.registrylong_notm}}  `[*]`   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |         
 {: caption="Table 7. Container services integration in Asia Pacific locations" caption-side="top"}
 {: #cs_container-table-2}
 {: tab-title="Asia Pacific"}
