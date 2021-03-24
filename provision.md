@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-03-26"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, provision instance
 
