@@ -23,7 +23,7 @@ subcollection: Activity-Tracker-with-LogDNA
 
  
 
-# Release notes for {{site.data.keyword.at_full_notm}}
+# Release notes
 {: #AT-release-notes}
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} that are grouped by date.
