@@ -109,7 +109,7 @@ Activity Tracker
 
     {: .topicgroup}
     Logging API
-        [Log Analysis API](https://test.cloud.ibm.com/apidocs/logdna)
+        /apidocs/logdna#endpoint-url
 
     {: .topicgroup}
     High availability and disaster recovery
