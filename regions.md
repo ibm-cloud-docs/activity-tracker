@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-03-24"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, regions
 subcollection: Activity-Tracker-with-LogDNA
@@ -36,6 +36,7 @@ subcollection: Activity-Tracker-with-LogDNA
 | `Asia Pacific`        | `Tokyo (jp-tok)`         | `N/A`        | `MZR`     |
 | `Asia Pacific`        | `Seoul (kr-seo)`         | `N/A`        | `SZR`     |
 | `Asia Pacific`        | `Sydney (au-syd)`        | `N/A`        | `MZR`     |
+| `Asia Pacific`        | `Osaka (jp-osa)`         | `N/A`        | `MZR`     |
 | `Europe`              | `Frankfurt (eu-de) (*) (**)`  | `YES`        | `MZR`     |
 | `Europe`              | `London (eu-gb)`         | `NO`         | `MZR`     |
 | `North America`       | `Dallas (us-south)`      | `N/A`        | `MZR`     |
