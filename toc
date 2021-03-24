@@ -80,6 +80,8 @@ Activity Tracker
         views.md   
         alerts.md
         config_api.md
+        pagerduty.md
+        sysdig.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
