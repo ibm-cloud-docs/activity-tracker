@@ -29,6 +29,12 @@ subcollection: Activity-Tracker-with-LogDNA
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} that are grouped by date.
 {:shortdesc}
 
+## March 2021
+{: #AT-jan2021-for-update}
+
+The service name has changed from **IBM Cloud Activity Tracker with LogDNA** to **IBM Cloud Activity Tracker**.
+
+
 
 ## January 2021
 {: #AT-jan2021-for-update}
