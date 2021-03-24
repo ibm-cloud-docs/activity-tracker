@@ -102,7 +102,6 @@ Activity Tracker
     cloud_services_ref.md
     channels.md
     shared-responsibilities.md
-    releasenotes.md
 
     {: .topicgroup}
     Logging CLI
