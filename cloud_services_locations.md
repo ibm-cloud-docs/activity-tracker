@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-24"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
@@ -407,6 +407,8 @@ The following tables list the locations where automatic collection of database s
 
 ## Developer tools
 {: #cloud_services_locations_devops}
+
+The Apps service sends global events. These events are available through the Franfurt instance.
 
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`               |
