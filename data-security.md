@@ -57,9 +57,9 @@ Events can be classified as global or location-based. [Learn more](/docs/service
 ### Data encryption
 {: #data-storage_encryption}
 
-All the data that is hosted in a LogDNA instance is encrypted at rest using **AES 256**.
+All the data that is hosted in a logging instance is encrypted at rest using **AES 256**.
 
-When an {{site.data.keyword.cloud_notm}} service sends data to a LogDNA instance, data is encrypted in transit over HTTPS.
+When an {{site.data.keyword.cloud_notm}} service sends data to a logging instance, data is encrypted in transit over HTTPS.
 
 When a user requests an export, the data is encrypted during transit, and is also encrypted at rest in {{site.data.keyword.cos_full_notm}} (COS).
 
@@ -69,7 +69,7 @@ When a user requests an export, the data is encrypted during transit, and is als
 
 The service plan that you choose for an {{site.data.keyword.at_full_notm}} instance defines the number of days that data is stored and retained in LogDNA. 
 
-For example, if you choose the *Lite* plan, data is not stored at all. However, if you choose the 7-day plan, data is stored for 7 days and you have access to it through the LogDNA Web UI.
+For example, if you choose the *Lite* plan, data is not stored at all. However, if you choose the 7-day plan, data is stored for 7 days and you have access to it through the logging UI.
 
 
 
@@ -102,7 +102,7 @@ Consider the following information when you export log data:
 ### Deleting events when an instance is deleted
 {: #service-delete-logs}
 
-When you delete a LogDNA instance, the instance is automatically deactivated, and ingestion of events is stopped. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-remove).
+When you delete a logging instance, the instance is automatically deactivated, and ingestion of events is stopped. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-remove).
 
 LogDNA deletes all events that are already ingested. Deletion is completed within 24 hours after receiving your request.
 
@@ -111,7 +111,7 @@ You are responsible for managing archived data.
 ### Deleting user metadata when an instance is deleted
 {: #service-delete-metadata}
 
-When you delete a LogDNA instance, user metadata such as views, alerts, dashboards, screens, and templates, is never deleted. 
+When you delete a logging instance, user metadata such as views, alerts, dashboards, screens, and templates, is never deleted. 
 
 You must open a case through support to request the data to be deleted. For more information, see [Open a support ticket](/docs/get-support).
 

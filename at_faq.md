@@ -97,11 +97,11 @@ To access data, you can download the archived file locally.
 To query the data, you can also use a service like SQL Query to query your COS archives and get information based on queries that you define. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-sqlquery).
 
 
-## Can I import archived data back into the LogDNA web UI?
+## Can I import archived data back into the logging UI?
 {: #faq_5}
 {: faq}
 
-You cannot import archived data into the LogDNA web UI. 
+You cannot import archived data into the logging UI. 
 
 ## How do I configure archiving for my instance?
 {: #faq_6}

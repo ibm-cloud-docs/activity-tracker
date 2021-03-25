@@ -134,7 +134,7 @@ To grant viewer permissions to users, complete the following steps:
 
 In an {{site.data.keyword.at_full_notm}} instance, you can configure and control whether users can export data. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_config).
 
-Users can export data through the LogDNA web UI or by using the *Export* LogDNA API:
+Users can export data through the logging UI or by using the *Export* LogDNA API:
 
 * Users can export data to a local file or to a terminal by using the LogDNA export API and a service key. 
 
@@ -144,11 +144,11 @@ Users can export data through the LogDNA web UI or by using the *Export* LogDNA 
 
     * Users with **user** permissions to work with the Frankfurt {{site.data.keyword.at_short}} instance cannot see service keys. Therefore, these users cannot use the export API to download data.
 
-    * Service keys are only used to export data from a LogDNA instance by using the Export API. 
+    * Service keys are only used to export data from a logging instance by using the Export API. 
     
     [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
 
-* Users can request the export of data through the LogDNA web UI. 
+* Users can request the export of data through the logging UI. 
 
     [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export).
 
@@ -156,7 +156,7 @@ Users can export data through the LogDNA web UI or by using the *Export* LogDNA 
 ## Step 7. Archiving logs
 {: #manage_eu_acc_step7}
 
-When you archive logs from the Frankfurt LogDNA instance to a {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
+When you archive logs from the Frankfurt logging instance to a {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
 * When you provision an instance of the COS service, this instance is a global one in your account. It is not region bound.
 * You must configure a bucket that complies with the EU-Supported and GDPR regulations. For the list of COS EU-supported endpoints, see [EU-supported endpoints](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
 
@@ -171,7 +171,7 @@ When you archive logs from the Frankfurt LogDNA instance to a {{site.data.keywor
 * You must restrict user access to manage archived log files in these buckets.  
 * Users are responsible for downloading files to EU-supported locations.
 
-To learn how to configure archiving for your LogDNA instance, see [Archiving logs](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
+To learn how to configure archiving for your logging instance, see [Archiving logs](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
 
 
 
