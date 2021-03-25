@@ -90,6 +90,10 @@ Activity Tracker
     service_plan.md
     channels.md
     shared-responsibilities.md
+    
+    {: .topicgroup}
+    Logging CLI
+        /logdna-cli-plugin/logdna-cli-plugin-logdna-cli
 
     {: .topicgroup}
     Events
