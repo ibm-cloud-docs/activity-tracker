@@ -44,7 +44,7 @@ The collector component collects events from {{site.data.keyword.cloud_notm}} se
 
 The datastore component stores data, alerts, and user metadata.
 
-The LogDNA web UI is the front-end component where users can monitor and manage logs from hosts through dashboards, views, screens, and alerts.
+The logging UI is the front-end component where users can monitor and manage logs from hosts through dashboards, views, screens, and alerts.
 
 
 
@@ -55,7 +55,7 @@ Each regional deployment of the {{site.data.keyword.at_full_notm}} service serve
 
 * There is 1 {{site.data.keyword.at_full_notm}} service per region that is responsible for running user workloads in the region.
 * The data that is collected and processed by the {{site.data.keyword.at_full_notm}} service is associated with that location and not visible to the other regions by virtue of this association.
-* Within a service instance, data is isolated per LogDNA instance within a region. 
+* Within a service instance, data is isolated per logging instance within a region. 
 * The {{site.data.keyword.at_full_notm}} service offers soft isolation for data storage. Data is mixed together in the same data stores and segmented by tags that are associated with each of the records to enforce access control policies.
 
 You can use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to control which users see, create, use, and manage resources in your service instance. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).

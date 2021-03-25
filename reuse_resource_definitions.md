@@ -24,12 +24,12 @@ subcollection: Activity-Tracker-with-LogDNA
 # Reusing definitions of LogDNA resources
 {: #reuse_resource_definitions}
 
-To avoid recreating definitions of views, boards, parsing templates, and exclusion rules, you can export these resources from a {{site.data.keyword.at_full}} instance as a JSON file. Then, you can import the definitions into other LogDNA instances.
+To avoid recreating definitions of views, boards, parsing templates, and exclusion rules, you can export these resources from a {{site.data.keyword.at_full}} instance as a JSON file. Then, you can import the definitions into other logging instances.
 {:shortdesc}
 
 
 
-## Export the configuration of resources in a LogDNA instance
+## Export the configuration of resources in a logging instance
 {: #rrd_export_config}
 
 Complete the following steps to export the configuration of your resources:
@@ -42,14 +42,14 @@ Complete the following steps to export the configuration of your resources:
 
 4. In the *Export configuration* section, select the types of resources that you want to export.
 
-    Notice that options are disabled if you do not have definitions of this type of resource in your LogDNA instance. 
+    Notice that options are disabled if you do not have definitions of this type of resource in your logging instance. 
 
     You can export views and alerts, boards, parsing templates, and exclusion rules. 
 
 5. Select **Export configuration** and save the file.
 
 
-## Import the configuration of resources into a LogDNA instance
+## Import the configuration of resources into a logging instance
 {: #import_config}
 
 

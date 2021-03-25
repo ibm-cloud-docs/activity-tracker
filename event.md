@@ -80,7 +80,7 @@ For example, a sample action is `iam-am.policy.create`.
 
 This field indicates the timestamp when the event was created. 
 
-The timestamp that you see for an event in the LogDNA web UI is set from eventTime and indicates the time when the event was created.
+The timestamp that you see for an event in the logging UI is set from eventTime and indicates the time when the event was created.
 {: note}
   
 The date is represented as Universal Time Coordinated (UTC). 

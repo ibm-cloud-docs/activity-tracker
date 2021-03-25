@@ -22,10 +22,10 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 {:external: target="_blank" .external}
 
-# Navigating to the LogDNA web UI
+# Navigating to the logging UI
 {: #launch}
 
-After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view, monitor, and manage events through the {{site.data.keyword.at_full_notm}} web UI. You can launch the LogDNA web UI from the {{site.data.keyword.cloud_notm}} UI or directly from a browser.
+After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view, monitor, and manage events through the {{site.data.keyword.at_full_notm}} web UI. You can launch the logging UI from the {{site.data.keyword.cloud_notm}} UI or directly from a browser.
 {:shortdesc}
 
 
@@ -46,10 +46,10 @@ The following table lists the minimum policy that a user must have to be able to
 For more information, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
 
-## Launching the LogDNA web UI through the {{site.data.keyword.cloud_notm}} UI
+## Launching the logging UI through the {{site.data.keyword.cloud_notm}} UI
 {: #launch_cloud_ui}
 
-You can launch the LogDNA web UI within the context of an {{site.data.keyword.at_full_notm}} instance, from the {{site.data.keyword.cloud_notm}} UI. 
+You can launch the logging UI within the context of an {{site.data.keyword.at_full_notm}} instance, from the {{site.data.keyword.cloud_notm}} UI. 
 
 Complete the following steps to launch the web UI:
 
@@ -71,18 +71,18 @@ Complete the following steps to launch the web UI:
 The {{site.data.keyword.at_full_notm}} web UI opens and shows the **Everything** view. Through this view, you can see the events in your account for the region that you have selected.
 
 
-## Launching the LogDNA web UI from a browser
+## Launching the logging UI from a browser
 {: #launch_browser}
 
-You can launch the LogDNA web UI directly from a browser. 
+You can launch the logging UI directly from a browser. 
 
 Complete the following steps:
 
-1. [Get the LogDNA web UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_logdna_web_url).
+1. [Get the logging UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_logdna_web_url).
 
-    For example, a LogDNA web UI looks like `https://app.eu-gb.logging.cloud.ibm.com/ext/ibm-sso/xxxxxxxxxx`.
+    For example, a logging UI looks like `https://app.eu-gb.logging.cloud.ibm.com/ext/ibm-sso/xxxxxxxxxx`.
 
-    You can also copy the LogDNA web UI URL that you get when you launch the LogDNA web UI through the {{site.data.keyword.cloud_notm}} UI. For example, a LogDNA web UI looks like `https://app.eu-gb.logging.cloud.ibm.com/xxxxxxxxxx/logs/view`.
+    You can also copy the logging UI URL that you get when you launch the logging UI through the {{site.data.keyword.cloud_notm}} UI. For example, a logging UI looks like `https://app.eu-gb.logging.cloud.ibm.com/xxxxxxxxxx/logs/view`.
 
 2. Enter the dashboard URL in a browser and log in to {{site.data.keyword.cloud_notm}}.
 
@@ -99,7 +99,7 @@ Complete the following steps:
 
     Where
 
-    * `<ENDPOINT>` represents the dashboard URL in the region where the instance is available. See [LogDNA web UI endpoints](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints_logdna_ui).
+    * `<ENDPOINT>` represents the dashboard URL in the region where the instance is available. See [logging UI endpoints](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints_logdna_ui).
 
     * `<QUERY>` represents the search query that is applied for the view, for example, `q=table%3Amangle%20reason%3A%27refresh%20timer%27`. 
 
@@ -109,7 +109,7 @@ Complete the following steps:
 
         Use `%27` to represent a quote (`'`).
 
-    * `<HOSTS>` represents the list of services for which data is included in the view. Notice that these are values that you select in the *Sources* section of the LogDNA web UI. Multiple hosts are separated by commas, for example,  `hosts=logdna-agent-trkq9,logdna-agent-trkq7`.
+    * `<HOSTS>` represents the list of services for which data is included in the view. Notice that these are values that you select in the *Sources* section of the logging UI. Multiple hosts are separated by commas, for example,  `hosts=logdna-agent-trkq9,logdna-agent-trkq7`.
 
     * `<APPS>` represents the list of apps for which data is included in the view. Multiple apps are separated by commas.
 

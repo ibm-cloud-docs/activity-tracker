@@ -44,7 +44,7 @@ As a security officer, auditor, or manager, you can use the Activity Tracker ser
 
 | Action                                            | Description                |
 |---------------------------------------------------|----------------------------|
-| `logdnaat.account.update  `       | This event is generated when an administrator turns on or off a feature for a LogDNA instance. |
+| `logdnaat.account.update  `       | This event is generated when an administrator turns on or off a feature for a logging instance. |
 {: caption="Table 1. Events for account settings actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:
@@ -65,7 +65,7 @@ The following table lists custom fields that are included in these events:
 
 | Action                                            | Description                |
 |---------------------------------------------------|----------------------------|
-| `logdnaat.archive-configuration.update`  | This event is generated when an administrator enables, diables, or updates the archiving configuration for a LogDNA instance. |
+| `logdnaat.archive-configuration.update`  | This event is generated when an administrator enables, diables, or updates the archiving configuration for a logging instance. |
 {: caption="Table 3. Events for archiving actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:
@@ -73,7 +73,7 @@ The following table lists custom fields that are included in these events:
 | Custom fields                      | Valid values         | Description                |
 |------------------------------------|----------------------|----------------------------|
 | `requestData.feature`              | `archive`            | Defines a LogDNA administrative feature. |
-| `requestData.isEnabled`            | `false` </br>`true`  | Defines if archiving of the LogDNA instance to a COS bucket is configured. </br>When is set to `true`, archiving is enabled.  |
+| `requestData.isEnabled`            | `false` </br>`true`  | Defines if archiving of the logging instance to a COS bucket is configured. </br>When is set to `true`, archiving is enabled.  |
 | `requestData.provider`             | `ibm`                | Defines the Cloud provider where data is archived. |
 | `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 4. Custom fields for archiving actions" caption-side="top"} 
@@ -84,9 +84,9 @@ The following table lists custom fields that are included in these events:
 
 | Action                              | Description                |
 |-------------------------------------|----------------------------|
-| `logdnaat.exclusion-rule.create`      | This event is generated when an administrator creates an exclusion rule through the LogDNA web UI. |
-| `logdnaat.exclusion-rule.update`      | This event is generated when an administrator updates an exclusion rule through the LogDNA web UI. |
-| `logdnaat.exclusion-rule.delete`      | This event is generated when an administrator deletes an exclusion rule through the LogDNA web UI. |
+| `logdnaat.exclusion-rule.create`      | This event is generated when an administrator creates an exclusion rule through the logging UI. |
+| `logdnaat.exclusion-rule.update`      | This event is generated when an administrator updates an exclusion rule through the logging UI. |
+| `logdnaat.exclusion-rule.delete`      | This event is generated when an administrator deletes an exclusion rule through the logging UI. |
 {: caption="Table 5. Events for exclusion rules actions" caption-side="top"} 
 
 The following table lists custom fields that are included in exclusion rule events:
@@ -110,8 +110,8 @@ The following table lists custom fields that are included in exclusion rule even
 
 | Action                               | Description                |
 |--------------------------------------|----------------------------|
-| `logdnaat.ingestion-key.create`        | This event is generated when an administrator creates an ingestion key through the LogDNA web UI. |
-| `logdnaat.ingestion-key.delete`        | This event is generated when an administrator deletes an ingestion key through the LogDNA web UI. |
+| `logdnaat.ingestion-key.create`        | This event is generated when an administrator creates an ingestion key through the logging UI. |
+| `logdnaat.ingestion-key.delete`        | This event is generated when an administrator deletes an ingestion key through the logging UI. |
 {: caption="Table 7. Events for ingestion keys actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:
@@ -131,8 +131,8 @@ The following table lists custom fields that are included in these events:
 
 | Action                               | Description                |
 |--------------------------------------|----------------------------|
-| `logdnaat.service-key.create`          | This event is generated when an administrator creates a service key through the LogDNA web UI. |
-| `logdnaat.service-key.delete`          | This event is generated when an administrator deletes a service key through the LogDNA web UI. |
+| `logdnaat.service-key.create`          | This event is generated when an administrator creates a service key through the logging UI. |
+| `logdnaat.service-key.delete`          | This event is generated when an administrator deletes a service key through the logging UI. |
 {: caption="Table 8. Events for service keys actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:
@@ -149,9 +149,9 @@ The following table lists custom fields that are included in these events:
 
 | Action                                | Description                |
 |---------------------------------------|----------------------------|
-| `logdnaat.parsing-template.create`      | This event is generated when an administrator creates a parsing template through the LogDNA web UI. |
-| `logdnaat.parsing-template.update`      | This event is generated when an administrator updates a parsing template through the LogDNA web UI. |
-| `logdnaat.parsing-template.delete`      | This event is generated when an administrator deletes a parsing template through the LogDNA web UI. |
+| `logdnaat.parsing-template.create`      | This event is generated when an administrator creates a parsing template through the logging UI. |
+| `logdnaat.parsing-template.update`      | This event is generated when an administrator updates a parsing template through the logging UI. |
+| `logdnaat.parsing-template.delete`      | This event is generated when an administrator deletes a parsing template through the logging UI. |
 {: caption="Table 10. Events for parsing templates actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:
@@ -172,8 +172,8 @@ The following table lists custom fields that are included in these events:
 
 | Action                              | Description                |
 |-------------------------------------|----------------------------|
-| `logdnaat.configuration.import`      | This event is generated when an administrator imports user-metadata such as views, and alerts through the LogDNA web UI. |
-| `logdnaat.configuration.export`      | This event is generated when an administrator exports user-metadata such as views, and alerts through the LogDNA web UI. |
+| `logdnaat.configuration.import`      | This event is generated when an administrator imports user-metadata such as views, and alerts through the logging UI. |
+| `logdnaat.configuration.export`      | This event is generated when an administrator exports user-metadata such as views, and alerts through the logging UI. |
 {: caption="Table 12. Events for user-metadata related actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:

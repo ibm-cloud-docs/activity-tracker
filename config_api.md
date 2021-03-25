@@ -31,7 +31,7 @@ You can use the *Configuration REST API* to manage programmatically views and al
 - You can use the **PUT** method to modify an existing view, and alerts that are attached to views.
 - You can use the **DELETE** method to delete a view and associated alerts.
 
-Before you run any automated tasks, consider doing a back up of your account configuration resources. You can use the back up to restore the resources, to the state before any change is applied, if you encounter problems. See [Export the configuration of resources in a LogDNA instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#rrd_export_config).
+Before you run any automated tasks, consider doing a back up of your account configuration resources. You can use the back up to restore the resources, to the state before any change is applied, if you encounter problems. See [Export the configuration of resources in a logging instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#rrd_export_config).
 {: tip}
 
 
@@ -53,7 +53,7 @@ When you create a PagerDuty notification channel, consider the following informa
 - You must manually configure the integration of LogDNA with PagerDuty. See [Integrating with PagerDuty](https://docs.logdna.com/docs/pagerduty-alert-integration){: external}.
 - You must provide LogDNA with the PagerDuty API key. 
 
-After you create a view, check the view in the LogDNA web UI. 
+After you create a view, check the view in the logging UI. 
 1. Refresh the browser to see the view listed in the *Views* section. 
 2. Select the view to display it.
 3. Check the data that is available through the view is the one that you expect.
@@ -88,7 +88,7 @@ If you try to define a view and you do not define any of the following body para
 
 When you modify a view, consider the following information:
 - You must specify the name and the view ID of the view. 
-- If you are viewing a view in the LogDNA web UI, the view is not refreshed automatically after you run an API request to modify the view. To refresh the view in the UI, you must navigate to the `Everything` view and back to the view.
+- If you are viewing a view in the logging UI, the view is not refreshed automatically after you run an API request to modify the view. To refresh the view in the UI, you must navigate to the `Everything` view and back to the view.
 
 An API request to modify a view replaces the existing view definition and associated alerts with your request body data. Any properties that are not specified in your PUT request will be removed.
 {: important}
@@ -193,7 +193,7 @@ The following table indicates when the `name` parameter is required:
 
 Specifies the search query that is applied to the view.
 
-Check the query in the LogDNA web UI to validate that the data that is displayed through the view matches the data entry that you plan to monitor through that view.
+Check the query in the logging UI to validate that the data that is displayed through the view matches the data entry that you plan to monitor through that view.
 {: tip}
 
 ### hosts (array of strings)
@@ -201,7 +201,7 @@ Check the query in the LogDNA web UI to validate that the data that is displayed
 
 Specifies the list of services from which you want to view data.
 
-In the LogDNA web UI, the value that is set for **Source** in the **Line identifiers** section corresponds to the hosts value of the service that generates that auditing event.
+In the logging UI, the value that is set for **Source** in the **Line identifiers** section corresponds to the hosts value of the service that generates that auditing event.
 
 For example, to enter multiple hosts, you must separate the hosts with a comma:
 

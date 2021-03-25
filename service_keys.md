@@ -26,7 +26,7 @@ subcollection: Activity-Tracker-with-LogDNA
 # Managing service keys
 {: #service_keys}
 
-In an {{site.data.keyword.at_full_notm}} instance, you can create, delete, and view service keys through the LogDNA web UI.
+In an {{site.data.keyword.at_full_notm}} instance, you can create, delete, and view service keys through the logging UI.
 {:shortdesc}
 
 A service key is a unique code that is passed in an API request to identify the calling application or user. 
@@ -47,7 +47,7 @@ You can only enable 20 service keys per auditing instance.
 You must have **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
 {: important} 
 
-You can only generate a service key through the LogDNA web UI.
+You can only generate a service key through the logging UI.
 {: important}
     
 Complete the following steps to create a service key:
@@ -70,7 +70,7 @@ Complete the following steps to create a service key:
 You must have **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
 {: important} 
 
-You can only delete a service Key through the LogDNA web UI.
+You can only delete a service Key through the logging UI.
 {: important}
 
 Complete the following steps to delete a service key:

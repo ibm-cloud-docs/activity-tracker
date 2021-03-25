@@ -26,7 +26,7 @@ subcollection: Activity-Tracker-with-LogDNA
 # Controlling data usage
 {: #control_usage}
 
-In {{site.data.keyword.at_full}}, you can control the data that is collected and available for analysis through a LogDNA instance. You can define exclusion rules in the UI that apply to data collected in that instance. You can define an alert that is triggered when the data usage threshold that you define for that LogDNA instance is reached.
+In {{site.data.keyword.at_full}}, you can control the data that is collected and available for analysis through a logging instance. You can define exclusion rules in the UI that apply to data collected in that instance. You can define an alert that is triggered when the data usage threshold that you define for that logging instance is reached.
 {:shortdesc}
 
 
@@ -34,7 +34,7 @@ In {{site.data.keyword.at_full}}, you can control the data that is collected and
 ## Controlling data by using exclusion rules
 {: #control_usage_rule}
 
-You can configure exclusion rules through the LogDNA web UI to stop events from counting against your data usage quota and from being stored for search.
+You can configure exclusion rules through the logging UI to stop events from counting against your data usage quota and from being stored for search.
 
 Events that are excluded do not count towards your data usage quota. Also, events that match the exclusion rule are not archived.
 {: note}

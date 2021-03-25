@@ -42,7 +42,7 @@ Categories are used to group resources of the same type so that users can easily
 
 Categories are defined in the **Categories** section in the web UI. 
 
-The service plan determines the number of days that you have data available for search through the LogDNA web UI.
+The service plan determines the number of days that you have data available for search through the logging UI.
 {: important}
 
 
@@ -69,7 +69,7 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 
     `YYYY` represents the year; `MM` represents the month; and `DD` represents the day.
 
-    `<accountID>` represents the LogDNA account ID, that is, the ID that showd in the [LogDNA web UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_logdna_web_url).
+    `<accountID>` represents the LogDNA account ID, that is, the ID that showd in the [logging UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_logdna_web_url).
     
     `HH` represents hours in 24 format. 
 

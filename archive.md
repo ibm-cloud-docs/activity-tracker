@@ -321,7 +321,7 @@ Complete the following steps to configure archiving of your {{site.data.keyword.
 5. Click **Save**.
 
 
-Notice that when you save the configuration, you can get a message that informs you that the configuration has been saved successfully. When you get this message, the integration between the LogDNA instance and the bucket is verified. A test to upload and delete an object from the bucket is completed successfully. 
+Notice that when you save the configuration, you can get a message that informs you that the configuration has been saved successfully. When you get this message, the integration between the logging instance and the bucket is verified. A test to upload and delete an object from the bucket is completed successfully. 
 
 If you get an error when you save the configuration, the verification process fails. Check your configuration and retry again. 
 

@@ -33,6 +33,6 @@ subcollection: Activity-Tracker-with-LogDNA
 ## Limitations using private endpoints
 {: #network_endpoints_limitations}
 
-The LogDNA web UI is not currently supported on the CSE network.
+The logging UI is not currently supported on the CSE network.
 
 

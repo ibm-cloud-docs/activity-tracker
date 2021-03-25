@@ -77,7 +77,7 @@ Activity Tracker
         export_api.md
 
     {: .topicgroup}
-    LogDNA web UI
+    logging UI
         launch.md
         config.md
         get_logdna_web_url.md

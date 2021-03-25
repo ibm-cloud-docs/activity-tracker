@@ -23,7 +23,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:external: target="_blank" .external}
 
  
-# Exporting events through the LogDNA web UI
+# Exporting events through the logging UI
 {: #export}
 
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance graphically through the web UI. 
@@ -43,16 +43,16 @@ Consider the following information when you export events:
 
 * Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
 
-* Check that the LogDNA instance has the export feature enabled. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_config).
+* Check that the logging instance has the export feature enabled. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_config).
 
 ## Exporting events from a custom view
 {: #export_ui_view}
 
 You can create a custom view and then export data for a period of time.
 
-Complete the following steps to export data through the LogDNA web UI:
+Complete the following steps to export data through the logging UI:
 
-1. [Launch the LogDNA web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
+1. [Launch the logging UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
 2. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 3. Select a view.
 4. Select the view name. 
@@ -67,9 +67,9 @@ Complete the following steps to export data through the LogDNA web UI:
 
 You can export data from a custom search.
 
-Complete the following steps to export data through the LogDNA web UI:
+Complete the following steps to export data through the logging UI:
 
-1. [Launch the LogDNA web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
+1. [Launch the logging UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
 2. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 3. Select **Everything**.
 4. Apply filters and search criteria until you see the entries that you want to export.

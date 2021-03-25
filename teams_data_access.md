@@ -25,7 +25,7 @@ subcollection: Activity-Tracker-with-LogDNA
 # Using LogDNA groups to control LogDNA data access
 {: #group_data_access}
 
-You can configure, control, and manage the LogDNA data that is available to users in your {{site.data.keyword.cloud}} account by configuring **groups** in the LogDNA instance. 
+You can configure, control, and manage the LogDNA data that is available to users in your {{site.data.keyword.cloud}} account by configuring **groups** in the logging instance. 
 {:shortdesc}
 
 A **group** is comprised of **users** with authorization to specific data.
@@ -43,19 +43,19 @@ Users require specific {{site.data.keyword.iamlong}} permissions to work with gr
 Role                                                               | Permissions
 -------------------------------------------------------------------|------------------------------------------------
 Administrator platform role                                        | Required to define group members and their roles
-Manager service role                                               | Required to manage LogDNA instance groups
-Platform role viewer, service role reader, or standard member      | Required to launch the LogDNA instance
+Manager service role                                               | Required to manage logging instance groups
+Platform role viewer, service role reader, or standard member      | Required to launch the logging instance
 {: caption="Table 1. Roles required for groups" caption-side="top"} 
 
-User roles defining permissions and access to manage LogDNA instance data are defined in {{site.data.keyword.iamlong}}.  However, there is no mapping of {{site.data.keyword.iamshort}} access groups to LogDNA groups. Each must be managed separately.  To ease management of the groups, consider defining similar access groups in LogDNA as you have defined in {{site.data.keyword.iamshort}}.
+User roles defining permissions and access to manage logging instance data are defined in {{site.data.keyword.iamlong}}.  However, there is no mapping of {{site.data.keyword.iamshort}} access groups to LogDNA groups. Each must be managed separately.  To ease management of the groups, consider defining similar access groups in LogDNA as you have defined in {{site.data.keyword.iamshort}}.
 
 Users are assigned to a group by their email address.  If a user changes their email address, you must remove the old email address from the LogDNA group and add the new one.  
 
-All users must have logged in to the LogDNA instance at least once before the user can be assigned to a LogDNA group.  If a user changes their email address, the new email must be logged in to the LogDNA instance before it can be added to the LogDNA group.
+All users must have logged in to the logging instance at least once before the user can be assigned to a LogDNA group.  If a user changes their email address, the new email must be logged in to the logging instance before it can be added to the LogDNA group.
 
-Users defined in the LogDNA group can see all resources defined in the LogDNA instance.  For example: views, boards, and screens.  Using the data access feature a user can open multiple LogDNA instances in different browser tabs.
+Users defined in the LogDNA group can see all resources defined in the logging instance.  For example: views, boards, and screens.  Using the data access feature a user can open multiple logging instances in different browser tabs.
 
-## Configuring default LogDNA instance settings
+## Configuring default logging instance settings
 {: #groups_data_access_settings}
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account.
@@ -70,16 +70,16 @@ Users defined in the LogDNA group can see all resources defined in the LogDNA in
 
 4. Select **Activity Tracker**.
 
-5. For your instance, click **View LogDNA**. The LogDNA web UI will be displayed.
+5. For your instance, click **View LogDNA**. The logging UI will be displayed.
 
 6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **Organization** &gt; **TEAM** &gt; **Settings**.
 
 7. Set **Access Control** to your desired default setting:
 
-   * **ON** allows all users to see the LogDNA instance data even if they are not part of a group.
-   * **OFF** requires users to be a member of a LogDNA group associated with the LogDNA instance to see data.
+   * **ON** allows all users to see the logging instance data even if they are not part of a group.
+   * **OFF** requires users to be a member of a LogDNA group associated with the logging instance to see data.
 
-   Setting **Access Control** to **OFF** prevents users who are not defined to a LogDNA group from seeing the LogDNA instance data.
+   Setting **Access Control** to **OFF** prevents users who are not defined to a LogDNA group from seeing the logging instance data.
    {: tip}
 
 ## Defining LogDNA groups
@@ -101,7 +101,7 @@ You can edit a group to add users or change the access scope as needed.
 
 4. Select **Activity Tracker**.
 
-5. For your instance, click **View LogDNA**. The LogDNA web UI will be displayed.
+5. For your instance, click **View LogDNA**. The logging UI will be displayed.
 
 6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **Organization** &gt; **TEAM** &gt; **Groups**.
 
@@ -151,7 +151,7 @@ If you want to create a group of administrators with access to all data, specify
 
 4. Select **Activity Tracker**.
 
-5. For your instance, click **View LogDNA**. The LogDNA web UI will be displayed.
+5. For your instance, click **View LogDNA**. The logging UI will be displayed.
 
 6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **Organization** &gt; **TEAM** &gt; **Groups**.
 
