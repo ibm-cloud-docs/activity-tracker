@@ -33,6 +33,6 @@ subcollection: Activity-Tracker-with-LogDNA
 ## Limitations using private endpoints
 {: #network_endpoints_limitations}
 
-The logging UI is not currently supported on the CSE network.
+The UI is not currently supported on the CSE network.
 
 

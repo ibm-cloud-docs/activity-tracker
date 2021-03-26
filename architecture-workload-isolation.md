@@ -44,7 +44,7 @@ The collector component collects events from {{site.data.keyword.cloud_notm}} se
 
 The datastore component stores data, alerts, and user metadata.
 
-The logging UI is the front-end component where users can monitor and manage logs from hosts through dashboards, views, screens, and alerts.
+The UI is the front-end component where users can monitor and manage logs from hosts through dashboards, views, screens, and alerts.
 
 
 
