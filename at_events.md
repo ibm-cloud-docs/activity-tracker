@@ -84,9 +84,9 @@ The following table lists custom fields that are included in these events:
 
 | Action                              | Description                |
 |-------------------------------------|----------------------------|
-| `logdnaat.exclusion-rule.create`      | This event is generated when an administrator creates an exclusion rule through the logging UI. |
-| `logdnaat.exclusion-rule.update`      | This event is generated when an administrator updates an exclusion rule through the logging UI. |
-| `logdnaat.exclusion-rule.delete`      | This event is generated when an administrator deletes an exclusion rule through the logging UI. |
+| `logdnaat.exclusion-rule.create`      | This event is generated when an administrator creates an exclusion rule through the UI. |
+| `logdnaat.exclusion-rule.update`      | This event is generated when an administrator updates an exclusion rule through the UI. |
+| `logdnaat.exclusion-rule.delete`      | This event is generated when an administrator deletes an exclusion rule through the UI. |
 {: caption="Table 5. Events for exclusion rules actions" caption-side="top"} 
 
 The following table lists custom fields that are included in exclusion rule events:
@@ -110,8 +110,8 @@ The following table lists custom fields that are included in exclusion rule even
 
 | Action                               | Description                |
 |--------------------------------------|----------------------------|
-| `logdnaat.ingestion-key.create`        | This event is generated when an administrator creates an ingestion key through the logging UI. |
-| `logdnaat.ingestion-key.delete`        | This event is generated when an administrator deletes an ingestion key through the logging UI. |
+| `logdnaat.ingestion-key.create`        | This event is generated when an administrator creates an ingestion key through the UI. |
+| `logdnaat.ingestion-key.delete`        | This event is generated when an administrator deletes an ingestion key through the UI. |
 {: caption="Table 7. Events for ingestion keys actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:
@@ -131,8 +131,8 @@ The following table lists custom fields that are included in these events:
 
 | Action                               | Description                |
 |--------------------------------------|----------------------------|
-| `logdnaat.service-key.create`          | This event is generated when an administrator creates a service key through the logging UI. |
-| `logdnaat.service-key.delete`          | This event is generated when an administrator deletes a service key through the logging UI. |
+| `logdnaat.service-key.create`          | This event is generated when an administrator creates a service key through the UI. |
+| `logdnaat.service-key.delete`          | This event is generated when an administrator deletes a service key through the UI. |
 {: caption="Table 8. Events for service keys actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:
@@ -149,9 +149,9 @@ The following table lists custom fields that are included in these events:
 
 | Action                                | Description                |
 |---------------------------------------|----------------------------|
-| `logdnaat.parsing-template.create`      | This event is generated when an administrator creates a parsing template through the logging UI. |
-| `logdnaat.parsing-template.update`      | This event is generated when an administrator updates a parsing template through the logging UI. |
-| `logdnaat.parsing-template.delete`      | This event is generated when an administrator deletes a parsing template through the logging UI. |
+| `logdnaat.parsing-template.create`      | This event is generated when an administrator creates a parsing template through the UI. |
+| `logdnaat.parsing-template.update`      | This event is generated when an administrator updates a parsing template through the UI. |
+| `logdnaat.parsing-template.delete`      | This event is generated when an administrator deletes a parsing template through the UI. |
 {: caption="Table 10. Events for parsing templates actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:
@@ -172,8 +172,8 @@ The following table lists custom fields that are included in these events:
 
 | Action                              | Description                |
 |-------------------------------------|----------------------------|
-| `logdnaat.configuration.import`      | This event is generated when an administrator imports user-metadata such as views, and alerts through the logging UI. |
-| `logdnaat.configuration.export`      | This event is generated when an administrator exports user-metadata such as views, and alerts through the logging UI. |
+| `logdnaat.configuration.import`      | This event is generated when an administrator imports user-metadata such as views, and alerts through the UI. |
+| `logdnaat.configuration.export`      | This event is generated when an administrator exports user-metadata such as views, and alerts through the UI. |
 {: caption="Table 12. Events for user-metadata related actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:

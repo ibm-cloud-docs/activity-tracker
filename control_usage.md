@@ -34,7 +34,7 @@ In {{site.data.keyword.at_full}}, you can control the data that is collected and
 ## Controlling data by using exclusion rules
 {: #control_usage_rule}
 
-You can configure exclusion rules through the logging UI to stop events from counting against your data usage quota and from being stored for search.
+You can configure exclusion rules through the UI to stop events from counting against your data usage quota and from being stored for search.
 
 Events that are excluded do not count towards your data usage quota. Also, events that match the exclusion rule are not archived.
 {: note}

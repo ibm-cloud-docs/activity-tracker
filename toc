@@ -60,13 +60,13 @@ Activity Tracker
         data-security.md
     
     {: .topicgroup}
-    Export events
+    Exporting events
         export_config.md
         export.md
         export_api.md
 
     {: .topicgroup}
-    logging UI
+    UI
         launch.md
         config.md
         get_logdna_web_url.md
@@ -92,8 +92,14 @@ Activity Tracker
     shared-responsibilities.md
     
     {: .topicgroup}
-    Logging CLI
+    CLI
         /logdna-cli-plugin/logdna-cli-plugin-logdna-cli
+        
+    {: .topicgroup}
+    API
+        [Ingestion API](https://cloud.ibm.com/apidocs/logdna?code=python#ingest)
+        [Export API](https://cloud.ibm.com/apidocs/logdna?code=python#export)
+        [Configuration API](https://cloud.ibm.com/apidocs/logdna?code=python#create-view)
 
     {: .topicgroup}
     Events

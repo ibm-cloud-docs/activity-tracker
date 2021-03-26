@@ -134,7 +134,7 @@ To grant viewer permissions to users, complete the following steps:
 
 In an {{site.data.keyword.at_full_notm}} instance, you can configure and control whether users can export data. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_config).
 
-Users can export data through the logging UI or by using the *Export* LogDNA API:
+Users can export data through the UI or by using the *Export* LogDNA API:
 
 * Users can export data to a local file or to a terminal by using the LogDNA export API and a service key. 
 
@@ -148,7 +148,7 @@ Users can export data through the logging UI or by using the *Export* LogDNA API
     
     [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
 
-* Users can request the export of data through the logging UI. 
+* Users can request the export of data through the UI. 
 
     [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export).
 

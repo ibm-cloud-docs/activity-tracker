@@ -70,10 +70,10 @@ The following table shows the LogDNA private API endpoints:
 {: caption="Table 2. LogDNA private API endpoints" caption-side="top"}
 
 
-## logging UI endpoints
+## UI endpoints
 {: #endpoints_logdna_ui}
 
-The following table shows the logging UI endpoints:
+The following table shows the UI endpoints:
 
 | Location                 | Region                   |  Public Endpoint                                   |
 |--------------------------|--------------------------|----------------------------------------------------|
@@ -86,5 +86,5 @@ The following table shows the logging UI endpoints:
 | `North America`          | `Washington DC (us-east)`   | `https://app.us-east.logging.cloud.ibm.com`        |
 | `Europe`                 | `Frankfurt (eu-de)`      | `https://app.eu-de.logging.cloud.ibm.com`         |
 | `Europe`                 | `London (eu-gb)`         | `https://app.eu-gb.logging.cloud.ibm.com`         |
-{: caption="Table 3. Lists of logging UI endpoints" caption-side="top"}
+{: caption="Table 3. Lists of UI endpoints" caption-side="top"}
 

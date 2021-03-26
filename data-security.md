@@ -69,7 +69,7 @@ When a user requests an export, the data is encrypted during transit, and is als
 
 The service plan that you choose for an {{site.data.keyword.at_full_notm}} instance defines the number of days that data is stored and retained in LogDNA. 
 
-For example, if you choose the *Lite* plan, data is not stored at all. However, if you choose the 7-day plan, data is stored for 7 days and you have access to it through the logging UI.
+For example, if you choose the *Lite* plan, data is not stored at all. However, if you choose the 7-day plan, data is stored for 7 days and you have access to it through the UI.
 
 
 
