@@ -187,9 +187,9 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 The following table shows the locations where automatic collection of Cloud Foundry (CF) logs is enabled. You can monitor these logs through the {{site.data.keyword.at_full_notm}} instance that is configured with the **service platform logs** in the same location where the CF resource is available.
 
-| Service                                                       | `Dallas (us-south)` |
-|---------------------------------------------------------------|----------------------|
-| Cloud Foundry (CF)                                            | ![Checkmark icon](images/checkmark-icon.svg)              |
+| Service                                                       | `Dallas (us-south)` | `Washington (us-east)` |
+|---------------------------------------------------------------|----------------------|----------------------|
+| Cloud Foundry (CF)                                            | ![Checkmark icon](images/checkmark-icon.svg)              | ![Checkmark icon](images/checkmark-icon.svg)              |
 {: caption="Table 5. Cloud Foundry in America" caption-side="top"}
 {: #cs-cfapps-table-1}
 {: tab-title="America"}
@@ -197,7 +197,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                                       | `Tokyo (jp-tok)` |
+| Service                                                       | `Sydney (au-syd)` |
 |---------------------------------------------------------------|------------------|
 | Cloud Foundry (CF)                                            | ![Checkmark icon](images/checkmark-icon.svg)            |
 {: caption="Table 5. Cloud Foundry in Asia Pacific" caption-side="top"}
