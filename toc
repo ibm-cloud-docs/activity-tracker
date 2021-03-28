@@ -109,7 +109,9 @@ Activity Tracker
 
     {: .topicgroup}
     API
-        /apidocs/logdna#endpoint-url
+        [Ingestion API](/apidocs/logdna?code=python#ingest)
+        [Export API](/apidocs/logdna?code=python#export)
+        [Configuration API](/apidocs/logdna?code=python#create-view)
 
     {: .topicgroup}
     High availability and disaster recovery

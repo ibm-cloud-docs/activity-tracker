@@ -68,8 +68,5 @@ The following tables outline the different features that are included in each se
 {: #svcplan_exc_features}
 
 The following LogDNA features are not available:
-* Embedding views and registering domains
 * Sharing a line 
-* Role Based Access Control (RBAC)
-* LogDNA Command Line Interface (CLI)
 

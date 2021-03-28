@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-28"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services, locations
 
@@ -303,7 +303,7 @@ The following tables list the locations where automatic collection of registry s
 {: class="simple-tab-table"}
 {: row-headers}
 
-## Platform core integrated services
+## Platform  services
 {: #cloud_services_locations_core_integrated}
 
 | Gobal service                                        | Location               |
@@ -321,16 +321,15 @@ The following tables list the locations where automatic collection of registry s
 
 
 
-## Platform core integrated security services
+## Platform security services
 {: #cloud_services_locations_integrated_security}
 
 | Global service                                  | Location | 
 |-------------------------------------------------|---------------------|
-| Managing access groups                          | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |        
-| Managing policies                               | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Log in to the {{site.data.keyword.cloud_notm}}  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Managing platform API keys                      | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Managing service IDs                            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| {{site.data.keyword.iamlong}}    | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |        
+| {{site.data.keyword.compliance_full_notm}}   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| {{site.data.keyword.security-advisor_long}}  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| {{site.data.keyword.at_full_notm}}  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
 {: caption="Table 9. Integrated security services integration in America locations" caption-side="top"}
 
 
