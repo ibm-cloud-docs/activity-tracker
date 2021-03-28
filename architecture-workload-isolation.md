@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020{{site.data.keyword.at_full}}
-lastupdated: "2020-05-11"
+  years: 2019, 2021
+lastupdated: "2021-03-28"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, architecture, workload isolation
 
@@ -38,7 +38,7 @@ Review the following sample architecture for {{site.data.keyword.at_full_notm}},
 
 ![{{site.data.keyword.at_full_notm}}](images/at-arch.png "{{site.data.keyword.at_full_notm}} high level architecture")
 
-The API server component provides a web and an API interface to the LogDNA service.
+The API server component provides a web and an API interface to the loggingservice.
 
 The collector component collects events from {{site.data.keyword.cloud_notm}} services that run in the account.
 
@@ -55,7 +55,7 @@ Each regional deployment of the {{site.data.keyword.at_full_notm}} service serve
 
 * There is 1 {{site.data.keyword.at_full_notm}} service per region that is responsible for running user workloads in the region.
 * The data that is collected and processed by the {{site.data.keyword.at_full_notm}} service is associated with that location and not visible to the other regions by virtue of this association.
-* Within a service instance, data is isolated per logging instance within a region. 
+* Within a service instance, data is isolated per auditing instance within a region. 
 * The {{site.data.keyword.at_full_notm}} service offers soft isolation for data storage. Data is mixed together in the same data stores and segmented by tags that are associated with each of the records to enforce access control policies.
 
 You can use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to control which users see, create, use, and manage resources in your service instance. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).

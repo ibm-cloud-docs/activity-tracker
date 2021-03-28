@@ -306,30 +306,17 @@ The following tables list the locations where automatic collection of registry s
 ## Platform  services
 {: #cloud_services_locations_core_integrated}
 
-| Gobal service                                        | Location               |
-|------------------------------------------------|---------------------|
-| Managing an account                            | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |        
-| Managing users                                 | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Managing organizations                         | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |   
-| Managing catalogs                              | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
-| Managing {{site.data.keyword.iamshort}} (IAM) enabled services  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Working with service aliases                    | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Working with service credentials                | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Connecting a service instance to an app         | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| Managing tags                                   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-{: caption="Table 8. Core integrated services integration in America locations" caption-side="top"}
-
-
-
-## Platform security services
-{: #cloud_services_locations_integrated_security}
 
 | Global service                                  | Location | 
 |-------------------------------------------------|---------------------|
+| BSS - Account and billing | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
+| BSS - User management | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
+| BSS - Provisioning | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
 | {{site.data.keyword.iamlong}}    | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |        
-| {{site.data.keyword.compliance_full_notm}}   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| {{site.data.keyword.compliance_short}}   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
 | {{site.data.keyword.security-advisor_long}}  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
-| {{site.data.keyword.at_full_notm}}  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
+| Global Search Service | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
+| Catalog | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
 {: caption="Table 9. Integrated security services integration in America locations" caption-side="top"}
 
 
