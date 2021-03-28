@@ -121,6 +121,7 @@ Activity Tracker
         at_events_iam.md
         at_events_acc_mgt.md
         at_events_rc.md
+        at_event_dashdb.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
