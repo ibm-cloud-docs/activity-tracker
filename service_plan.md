@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-07-02"
+  years: 2019, 2021
+lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, service plan, price
 subcollection: Activity-Tracker-with-LogDNA
@@ -68,8 +68,5 @@ The following tables outline the different features that are included in each se
 {: #svcplan_exc_features}
 
 The following LogDNA features are not available:
-* Embedding views and registering domains
 * Sharing a line 
-* Role Based Access Control (RBAC)
-* LogDNA Command Line Interface (CLI)
 

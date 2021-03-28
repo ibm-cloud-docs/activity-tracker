@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-01-08"
+  years: 2019, 2021
+lastupdated: "2021-03-028"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, regions
 subcollection: Activity-Tracker-with-LogDNA
@@ -33,6 +33,7 @@ The following table lists the notification channels that you can configure when 
 | `Slack`             | You can configure a slack channel. |
 | `Webhook`           | You can configure a web hook URL. |
 | `PagerDuty`         | You can configure connection details to your PagerDuty system, and select a service.|
+| `Sysdig`            | You can configure a {{site.data.keyword.mon_full_notm}} instance to collect notifications. |
 {: caption="Notification channels" caption-side="top"} 
 
 

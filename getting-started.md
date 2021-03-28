@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-28"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing, log analysis
+keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -23,10 +23,10 @@ subcollection: Activity-Tracker-with-LogDNA
 {:external: target="_blank" .external}
 
 
-# Getting started tutorial
+# Getting started with {{site.data.keyword.at_full_notm}}
 {: #getting-started}
 
-Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate for abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
+Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 {:shortdesc}
 
 
@@ -46,8 +46,8 @@ Compliance with internal policies and industry regulations is a key requirement 
 When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm}}, you must plan the cloud strategy for auditing and monitoring workloads and data in accordance with your internal policies and with industry and country-based compliance requirements. You can use the information that is registered through the {{site.data.keyword.at_full_notm}} service to identify security incidents, detect unauthorized access, and comply with regulatory and internal auditing requirements.
 
 * {{site.data.keyword.at_full_notm}} supports high-level security governance for your IT resources in the cloud.
-* {{site.data.keyword.at_full_notm}} provides a solution for administrators to capture, store, view, search, and monitor API activity in a single place. It also offers a notifications feature to alert you by using any of the supported notification channels.
-* {{site.data.keyword.at_full_notm}} provides capabilities to export events that you can then use to generate an audit trail report. You might require these reports so that your organization complies with internal regulations and external industry and country regulations.
+* {{site.data.keyword.at_full_notm}} provides a solution for administrators to capture, store, view, search, and monitor API activity in a single place. It also offers a notification feature to alert you by using any of the supported notification channels.
+* {{site.data.keyword.at_full_notm}} provides capabilities to export events that you can then use to generate an audit trail report. These reports might be required so that your organization complies with internal regulations and external industry and country regulations.
 
 
 ### Features
@@ -55,7 +55,7 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 
 * Simplify compliance sign-off tasks
 
-    Boost audit tasks on your {{site.data.keyword.cloud_notm}} by automatically collecting events that report on actions to resources in your {{site.data.keyword.cloud_notm}} account. Analyze and get notified on the events that report out of compliance actions. 
+    Boost audit tasks on your {{site.data.keyword.cloud_notm}} account by automatically collecting events that report on actions to resources in your account. Analyze and get notified on the events that report out of compliance actions. 
 
 * Accelerate detection of security incidents
 
@@ -67,7 +67,7 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 
 * Adhere to standards
 
-   Events comply with the Cloud Auditing Data Federation (CADF) standard. Use simple to use keyword based search to search across your events instead of fiddling with custom query languages. Apply the same keyword search to build time series graphs instantly.
+   Events comply with the Cloud Auditing Data Federation (CADF) standard. Use simple to use keyword-based search to search across your events instead of using custom query languages. Apply the same keyword search to instantly build time series graphs.
 
 
 
@@ -85,7 +85,7 @@ For example, you can use the {{site.data.keyword.at_full_notm}} events to identi
 Consider the following information about security when you work with the {{site.data.keyword.at_full_notm}} service:
 
 * IBM services that generate {{site.data.keyword.at_full_notm}} events follow the {{site.data.keyword.IBM_notm}} Cloud security policy. For more information, see [Trust the security and privacy of IBM Cloud](https://www.ibm.com/cloud/security){: external}.
-* The {{site.data.keyword.at_full_notm}} service captures user-initiated actions that change the state of Cloud services. The information does not provide direct access to databases or applications.
+* The {{site.data.keyword.at_full_notm}} service captures user-initiated actions that change the state of {{site.data.keyword.IBM_notm}} Cloud services. The information does not provide direct access to databases or applications.
 * Only authorized users can view and monitor {{site.data.keyword.at_full_notm}} event logs. Each user is identified by their unique ID in the {{site.data.keyword.cloud_notm}}.
 * You can only provision 1 instance of the service per {{site.data.keyword.cloud_notm}} location (region).
 
@@ -93,18 +93,17 @@ Consider the following information about security when you work with the {{site.
 ## Objectives
 {: #gs_objectives}
 
-Complete this tutorial to learn how to provision a service in the {{site.data.keyword.cloud_notm}}. Find out what common data is available in each event and how it can help you monitor your cloud environment. Learn to navigate in the web UI. 
+Complete this tutorial to learn how to provision a service in the {{site.data.keyword.cloud_notm}}. Find out what common data is available in each event and how it can help you monitor your {{site.data.keyword.cloud_notm}} environment. Learn to navigate in the web UI. 
 
 
 ## Prerequisites
 {: #gs_prereq}
 
-* You need a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration](https://cloud.ibm.com/login){: external}.
+* You need a user ID that is a member, or an owner of, an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Create an account](https://cloud.ibm.com/login){: external}.
 
 * If you prefer to work with the command line, you must install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-* To complete the steps to manage access to the service, your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. Contact the account administrator. The account owner can grant another user access to the account for the purposes of managing user access, and managing account resources. [Learn more](/docs/account?topic=account-userroles).
-
+* To complete the steps to manage access to the service, your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. Contact the account owner. The account owner can grant another user access to the account for the purposes of managing user access, and managing account resources. [Learn more](/docs/account?topic=account-userroles).
 
 
 ## Step 1. Provision an instance of the {{site.data.keyword.at_full_notm}} service
@@ -138,13 +137,14 @@ Complete the following steps to provision an instance:
 
 8. Click **Create**.
 
-After you provision an instance, the *Activity Tracker* dashboard opens. 
+After you provision an instance, the *Activity Tracker* dashboard, that is located in the *Observability* section of the {{site.data.keyword.cloud_notm}} UI, opens. 
 
 
 ## Step 2. Manage access to the service
 {: #gs_step2}
 
 **Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).
+{: important}
 
 To grant a user management permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a resource group, complete the following steps:
 
@@ -203,7 +203,7 @@ If you have a pay-as-you-go account, you can use {{site.data.keyword.cloudcerts_
 
 2. Select the {{site.data.keyword.cloudcerts_short}} service.
 
-3. [Provision an instance of the {{site.data.keyword.cloudcerts_short}} service](/docs/certificate-manager?topic=certificate-manager-getting-started).
+3. (Optional) [Provision an instance of the {{site.data.keyword.cloudcerts_short}} service](/docs/certificate-manager?topic=certificate-manager-getting-started).
 
 ## Step 4. Launch the web UI 
 {: #gs_step4}
@@ -222,7 +222,7 @@ Complete the following steps to launch the web UI:
 
 4. Select the instance that is located in **Frankfurt**. Then, click **View LogDNA**.
 
-    Global events, like provisioning a service, are available through the global domain instance that is located in Frankfurt.
+    Global events, such as provisioning a service, are available through the global domain instance that is located in Frankfurt.
 
 The web UI opens. 
 
@@ -239,7 +239,7 @@ The {{site.data.keyword.at_full_notm}} service captures activity data that is re
 * Events that report on global {{site.data.keyword.cloud_notm}} account actions, are collected and stored in **Frankfurt (EU-DE)**.
 * The service plan that you select for your {{site.data.keyword.at_full_notm}} instance sets the number of days that events are available for search through the web UI. 
 
-When the web UI opens, the **Everything** view is displayed. You can see events through this view.
+When the web UI opens, the **EVERYTHING** view is displayed. You can see events through this view.
 
 You can also define custom views to view a set of events by applying a timestamp, a search query, or both. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views).
 
@@ -258,7 +258,7 @@ The CADF event model includes the following components:
 | `Observer` | The observer is the resource that creates and stores a CADF record from information available in a CADF event. |
 | `Outcome`  | The outcome is the status of the action against the target. |
 | `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
-{: caption="Table 2. Components that are available in a CADF event model" caption-side="top"} 
+{: caption="Table 1. Components that are available in a CADF event model" caption-side="top"} 
 
 [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event#event).
 
@@ -267,9 +267,9 @@ The CADF event model includes the following components:
 ## Next steps
 {: #gs_next_steps}
 
-[Define custom views](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views). 
+1. [Define custom views](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views). 
 
-Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [search events by applying a query](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step2), and [configure alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts). 
+2. Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [search events by applying a query](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step2) and [configure alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts). 
 
-For more information about {{site.data.keyword.at_full_notm}} service plans, see [Service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan).
+   For more information about {{site.data.keyword.at_full_notm}} service plans, see [Service plans](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan).
 

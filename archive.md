@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-07-29"
+  years: 2019, 2021
+lastupdated: "2021-03-28"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, archive logs, COS, cloud object storage
 
@@ -28,14 +28,16 @@ subcollection: Activity-Tracker-with-LogDNA
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. 
 {:shortdesc}
 
-
-
 Complete the following steps to archive an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} instance:
 
 ## Prerequisites
 {: #archiving_prereqs}
 
-* [Learn more about archiving events](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-manage_events#manage_events_archive).
+* The following figure shows a high-level view of the different components that are integrated when archiving events:
+
+    ![High-level view archiving events](images/archive.png "High-level view archiving events")
+
+    [Learn more about archiving events](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-manage_events#manage_events_archive).
 
 * **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan). 
 
@@ -124,17 +126,10 @@ Complete the following steps to provision an {{site.data.keyword.cos_full_notm}}
 
 Buckets are a way to organize your data in an {{site.data.keyword.cos_full_notm}} instance. 
 
-To manage buckets, your user must be granted permissions to work with buckets on the {{site.data.keyword.cos_full_notm}} instance. The following table outlines the different actions and roles that a user can have to work with buckets:
+To manage buckets, your user must be granted permissions to work with buckets on the {{site.data.keyword.cos_full_notm}} instance. For more information about roles, see [Identity and Access Management roles](/docs/cloud-object-storage?topic=cloud-object-storage-iam).
 
-| Service                    | Roles                   | Action                             | 
-|----------------------------|-------------------------|------------------------------------|       
-| `Cloud Object Storage`     | Platform role: Viewer   | Allows the user to view all buckets and list the objects within them. |
-| `Cloud Object Storage`     | Service role: Manager   | Allows the user to make objects public.                                                       |
-| `Cloud Object Storage`     | Service roles: Manager </br>Writer | Allows the user to create and destroy buckets and objects.                         | 
-| `Cloud Object Storage`     | Service role: reader    | Allows the user to list and download objects.                                                 |
-{: caption="Table 1. Roles and actions to work with buckets" caption-side="top"} 
-
-**Note:** To create a bucket, your user must have manager or writer permissions for the {{site.data.keyword.cos_full_notm}} instance.
+To create a bucket, your user must have manager or writer permissions for the {{site.data.keyword.cos_full_notm}} instance.
+{: note}
 
 Complete the following steps to create a bucket:
 
