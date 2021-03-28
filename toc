@@ -109,9 +109,9 @@ Activity Tracker
 
     {: .topicgroup}
     API
-        [Ingestion API](/apidocs/logdna?code=python#ingest)
-        [Export API](/apidocs/logdna?code=python#export)
-        [Configuration API](/apidocs/logdna?code=python#create-view)
+        [Ingestion API](https://test.cloud.ibm.com/apidocs/logdna?code=python#ingest)
+        [Export API](https://test.cloud.ibm.com/apidocs/logdna?code=python#export)
+        [Configuration API](https://test.cloud.ibm.com/apidocs/logdna?code=python#create-view)
 
     {: .topicgroup}
     High availability and disaster recovery
