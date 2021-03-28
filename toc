@@ -97,7 +97,6 @@ Activity Tracker
         
     {: .topicgroup}
     API
-        [Ingestion API](https://cloud.ibm.com/apidocs/logdna?code=python#ingest)
         [Export API](https://cloud.ibm.com/apidocs/logdna?code=python#export)
         [Configuration API](https://cloud.ibm.com/apidocs/logdna?code=python#create-view)
 
