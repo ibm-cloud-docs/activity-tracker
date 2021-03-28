@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-03-28"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, services
 
@@ -164,7 +164,7 @@ When you define your auditing instances names, do not add sensitive information 
 ### Service plan
 {: #adoption_resource_svc_plan}
 
-The service plan that you choose for a logging instance determines the number of days that data is available for search. For more information, see [Service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
+The service plan that you choose determines the number of days that data is available for search. For more information, see [Service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
 
 Choose your plan based on the number of days that you need to be able to search data online through the web UI.
 {: tip}
@@ -290,7 +290,7 @@ Enable multi-factor authentication (MFA) in your {{site.data.keyword.cloud_notm}
 ## Define the notification strategy 
 {: #adoption_alerts}
 
-In a logging instance, you define views to analyze the data. Then, you can configure 1 or more alerts per view to notify of an abnormal situation. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
+In an auditing instance, you define views to analyze the data. Then, you can configure 1 or more alerts per view to notify of an abnormal situation. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
 
 You can choose to be notified by using an absence alert that is triggered when no data is available.
 
@@ -309,7 +309,7 @@ You can configure multiple notification channels. Valid channels are: `email`, `
 | `email`      | Email is a traditional communication method that you can use to notify 1 or more users. This notification channel requires users to be monitoring proactively their emails to detect an alert. **Define an email alert to verify that the alert on a view is working, and to inform users of situations they may have requested information.** |
 | `Slack`      | Slack is a collaborative tool that you can use to communicate and share information across 1 or more teams. **Define a Slack alert to inform about routine scenarios that you might want to monitor.** |
 | `PagerDuty`  | PagerDuty is an incident management tool that you can use to automate incident resolution and escalation, define on-call schedules and more. **Define a PagerDuty alert to be notified immediately so that you can take action promptly.**  |
-| `Webhook`    | A webhook is another method that you can configure to provide other applications information. **Define a webhook alert if you have a third party tool that you can configure with a logging instance using a webhook, and where you plan to manage notifications.** |
+| `Webhook`    | A webhook is another method that you can configure to provide other applications information. **Define a webhook alert if you have a third party tool that you can configure with an auditing instance using a webhook, and where you plan to manage notifications.** |
 {: caption="Table 4. Guidance for notification channel" caption-side="top"}
 
 Configure PagerDuty alerts to be notified immediately so that you can take action promptly on problems and automate their resolution. In addition, configure Slack alerts to share alerts and information.
@@ -339,7 +339,7 @@ LogDNA as a service does not backup your data. 
 There are 2 types of data that you should consider archiving:
 * Log data
 
-    By default, archiving of log data is not enabled for any logging instance. 
+    By default, archiving of log data is not enabled for any auditing instance. 
 
     When you enable archiving of your log data, you are responsible for checking that your archived files are not corrupted, and for the maintenance of your archived files.
     {: note}
@@ -349,12 +349,12 @@ There are 2 types of data that you should consider archiving:
 Archive your LogDNA resource definitions and your log data.
 {: tip}
 
-### Backup the resource configurations of your logging instance
+### Backup the resource configurations of your auditing instance
 {: #adoption_archive_ui}
 
 In the UI, you can define custom views, dashboards, parsing templates, screens, and exclusion rules that you can use to view and analyze data.
 
-To reuse resource definitions that you define in your logging instance, you can export these resources from an {{site.data.keyword.at_full_notm}} instance as a JSON file. Then, you can import the definitions into other logging instances. For example, you can reuse your LogDNA resources across different environments for your stage, pre-production, and production instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions).
+To reuse resource definitions that you define in your auditing instance, you can export these resources from an {{site.data.keyword.at_full_notm}} instance as a JSON file. Then, you can import the definitions into other auditing instances. For example, you can reuse your LogDNA resources across different environments for your stage, pre-production, and production instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions).
 
 Backup LogDNA resource definitions into a version control system such as a git repository where you can control access to the archived files and manage versions.
 {: tip}
@@ -362,12 +362,12 @@ Backup LogDNA resource definitions into a version control system such as a git r
 ### Archive log data to a COS bucket
 {: #adoption_archive_data}
 
-Enable archiving of your data from a logging instance to an {{site.data.keyword.cos_full_notm}} (COS) bucket.
+Enable archiving of your data from an auditing instance to an {{site.data.keyword.cos_full_notm}} (COS) bucket.
 {: tip}
 
-After you provision a logging instance, you can configure archiving to an {{site.data.keyword.cos_full_notm}} (COS) bucket. You can create different types of buckets based on your requirements. 
+After you provision an auditing instance, you can configure archiving to an {{site.data.keyword.cos_full_notm}} (COS) bucket. You can create different types of buckets based on your requirements. 
 
-When you plan the bucket for a logging instance, consider the following information:
+When you plan the bucket for an auditing instance, consider the following information:
 
 | Requirement          | Question to answer     | Information                 |
 |----------------------|------------------------|-----------------------------|
@@ -492,7 +492,7 @@ When you define your bucket name, do not add sensitive information in the name o
 {: #adoption_archive_3}
 
 To configure archiving, you need the following IAM policies:
-* An IAM policy with minimum platform role **Viewer** and service role **Manager** for the {{site.data.keyword.at_full_notm}} service: This policy is required to access the UI, and configure archiving of the logging instance.
+* An IAM policy with minimum platform role **Viewer** and service role **Manager** for the {{site.data.keyword.at_full_notm}} service: This policy is required to access the UI, and configure archiving of the auditing instance.
 * An IAM policy with minimum platform role **Administrator** and service role **Manager**  for the COS service: The administrator role is required to define the service ID, with its associated API key, that is used by the {{site.data.keyword.at_full_notm}} instance to authenticate and access the {{site.data.keyword.cos_full_notm}} instance. The manager role is required to create and configure a bucket.
 
 You also need a service ID. A service ID identifies a service similar to how a user ID identifies a user. Service IDs are not tied to a specific user. If the user that creates the service ID leaves your organization and is deleted from the account, the service ID remains. The {{site.data.keyword.at_full_notm}} service uses an API key that is associated to a service ID that you define on your COS instance to authenticate and write files to the COS bucket.
@@ -521,7 +521,7 @@ Restrict user access to archived files in the bucket.
 ### EU supported account
 {: #adoption_archive_5}
 
-When you archive logs from the Frankfurt logging instance to an {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
+When you archive logs from the Frankfurt auditing instance to an {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
 * When you provision an instance of the COS service, this instance is a global one in your account. It is not region bound.
 * You must configure a bucket that complies with the EU-supported and GDPR regulations. For the list of COS EU-supported endpoints, see [EU-supported endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
 
@@ -546,7 +546,7 @@ In COS, you can track management and data events.
 * You must configure each bucket to enable management events, or management and data events. Notice that you cannot enable data events only for a bucket. 
 For more information, see [Activity Tracker events](/docs/cloud-object-storage?topic=cloud-object-storage-at-events).
 
-Enable collection of COS management and data events on the bucket that you use to archive data from a logging instance. Use these events to monitor activity in your COS bucket.
+Enable collection of COS management and data events on the bucket that you use to archive data from an auditing instance. Use these events to monitor activity in your COS bucket.
 {: tip}
 
 In {{site.data.keyword.at_full}}, you can define views, dashboard, and screens to monitor COS management and data events. You can also configure alerts on views to notify you when a specific condition occurs. On a view, you can configure an email alert, a Slack alert, a PagerDuty alert, or any combination of these. For more information, see [Creating custom views](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views) and [Managing alerts](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
