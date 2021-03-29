@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years:  2021
-lastupdated: "2021-01-28"
+  years: 2019, 2021
+lastupdated: "2021-03-29"
 
-keywords: LogDNA, groups, access
+keywords: LogDNA, groups, access, log analysis
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -22,16 +22,14 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 {:external: target="_blank" .external}
 
-# Using LogDNA groups to control LogDNA data access
+# Using groups to control data access
 {: #group_data_access}
 
-You can configure, control, and manage the LogDNA data that is available to users in your {{site.data.keyword.cloud}} account by configuring **groups** in the logging instance. 
+You can configure, control, and manage data that is available to users in your {{site.data.keyword.cloud}} account by configuring **groups** in the logging instance. 
 {:shortdesc}
 
 A **group** is comprised of **users** with authorization to specific data.
 
-Configuration of groups is only available in the *Paris* data center.
-{: important}
 
 ## Before you begin
 {: #groups_data_access_before_beginning}

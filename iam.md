@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-03-29"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, iam, manage user access
 
@@ -110,16 +110,17 @@ Use the following table to identify the platform role that you can grant a user 
 
 Use the following table to identify the service roles that you can grant a user to run any of the following service actions:
 
-| Actions                                                                 | Manager                                           | Standard-Member                     | Reader |
-|-------------------------------------------------------------------------|:-------------------------------------------------:|:-----------------------------------:|:------:|
-| `Create and delete service keys through the UI`              | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |                                     |        |
-| `Configure account settings`                                            | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |                                     |        |
-| `Configure archiving`                                                   | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |                                     |        |
-| `Define exclusion rules`                                                | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |                                     |        |
-| `Create and delete categories`                                          | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |                                     |        |
-| `Manage how views and dashboards are grouped in categories`             | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |                                     |        |
-| `Export data`                                                           | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
-| `View service keys through the UI`                           | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
+| Actions   | Manager  | Standard-Member  | Reader |
+|-----------|----------|------------------|------|
+| `Create and delete service keys through the UI` | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  | |
+| `Configure account settings` | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  |  |
+| `Manage groups`   | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  |  |
+| `Configure archiving`   | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |  |
+| `Define exclusion rules` | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |    |        |
+| `Create and delete categories`    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  |        |
+| `Manage how views and dashboards are grouped in categories`    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |   |   |
+| `Export data`  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
+| `View service keys through the UI`  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
 | `Configure alerts`                                                      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
 | `View usage`                                                            | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
 | `Create views`                                                          | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
@@ -135,6 +136,36 @@ Use the following table to identify the service roles that you can grant a user 
 
 The **manager** service role maps directly to the LogDNA admin role.
 {: note}
+
+
+
+## IAM actions
+{: #iam_actions}
+
+The following table identifies the IAM actions that are assigned to the platform and service roles for the {{site.data.keyword.at_full_notm}} service:
+
+| Role type         | Role              | IAM actions |
+|-------------------|-------------------|--------------|
+| Platform          | `administrator`   | `logdnaat.dashboard.view` </br>`logdnaat.dashboard.manage` | 
+| Service           | `manager`         | `logdnaat.dashboard.view` </br>`logdnaat.dashboard.manage` |
+| Service           | `writer`          | `logdnaat.dashboard.view` </br>`logdnaat.dashboard.member` |
+| Service           | `reader`          | `logdnaat.dashboard.view` </br>`logdnaat.dashboard.read` |
+{: caption="Table 3. IAM actions assigned to platform and service roles" caption-side="top"}
+
+
+
+## How do I know which access policies are set for me?
+{: #iam_accesspolicy}
+
+You can see which access policies are set for you in the [{{site.data.keyword.cloud_notm}} UI](https://cloud.ibm.com/){: external} console.
+
+1. Go to [Access IAM users](https://cloud.ibm.com/iam/users){: external}.
+2. Click your name in the user table.
+3. Click the **Access policies** tab to see your access policies.
+4. Click the **Access groups** tab to see the access groups where you are a member. Check the policies for each group.
+
+
+
 
 
 

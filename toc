@@ -49,8 +49,6 @@ Activity Tracker
     remove.md
     observe.md
     view_events.md
-    iam.md
-    teams_data_access.md
 
     {: .topicgroup}
     DevOps admin tasks
@@ -59,8 +57,6 @@ Activity Tracker
         control_usage.md
         logdna_parsing.md
         exclusion_rules.md
-        iam_manage_events.md
-        iam_view_events.md
         reuse_resource_definitions.md
         sqlquery.md
 
@@ -75,6 +71,14 @@ Activity Tracker
         export_config.md
         export.md
         export_api.md
+
+    {: .topicgroup}
+    IAM integration
+        iam.md
+        teams_data_access.md
+        iam_grant_team
+        iam_manage_events.md
+        iam_view_events.md
 
     {: .topicgroup}
     UI
