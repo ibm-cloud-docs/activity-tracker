@@ -80,7 +80,7 @@ The following table lists the Watson services and related information about addi
 | {{site.data.keyword.texttospeechfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | {{site.data.keyword.visualrecognitionfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | {{site.data.keyword.iva_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
-| {{site.data.keyword.wh-acd_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
+| {{site.data.keyword.wh-acd_full}} |   |   |  
 {: caption="Table 3. Watson services that require actions for data events" caption-side="top"}
 
 
