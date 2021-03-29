@@ -34,27 +34,31 @@ A **group** is comprised of **users** with authorization to specific data.
 ## Before you begin
 {: #groups_data_access_before_beginning}
 
-Before configuring and using groups you need to understand the following requirements and limitations.
+Before configuring and using groups, you need to understand the following requirements and limitations.
 
 Users require specific {{site.data.keyword.iamlong}} permissions to work with groups and group members.
 
 Role                                                               | Permissions
 -------------------------------------------------------------------|------------------------------------------------
-Administrator platform role                                        | Required to define group members and their roles
-Manager service role                                               | Required to manage logging instance groups
-Platform role viewer, service role reader, or standard member      | Required to launch the logging instance
+Account management role                                            | Required to invite users, access groups, and define policies
+Administrator platform role                                        | Required to manage the service
+Manager service role                                               | Required to manage groups
+Platform role viewer, service role reader, or standard member      | Required to launch the auditing instance
 {: caption="Table 1. Roles required for groups" caption-side="top"} 
 
-User roles defining permissions and access to manage logging instance data are defined in {{site.data.keyword.iamlong}}.  However, there is no mapping of {{site.data.keyword.iamshort}} access groups to LogDNA groups. Each must be managed separately.  To ease management of the groups, consider defining similar access groups in LogDNA as you have defined in {{site.data.keyword.iamshort}}.
+User roles defining permissions and access to manage auditing events are defined in {{site.data.keyword.iamlong}}.  
 
-Users are assigned to a group by their email address.  If a user changes their email address, you must remove the old email address from the LogDNA group and add the new one.  
+You can map {{site.data.keyword.iamshort}} access groups to service groups. Consider the following information:
+- You must name your service groups with the same name as your access groups. Users that belong to an access group are granted access to manage data in the service group.
+- You must define a policy per service group, where the group that you specify matches the access group name. 
+- You must define the scope of the data that each service group can manage when you define the service group through the web UI.
 
-All users must have logged in to the logging instance at least once before the user can be assigned to a LogDNA group.  If a user changes their email address, the new email must be logged in to the logging instance before it can be added to the LogDNA group.
 
-Users defined in the LogDNA group can see all resources defined in the logging instance.  For example: views, boards, and screens.  Using the data access feature a user can open multiple logging instances in different browser tabs.
 
-## Configuring default logging instance settings
+## Configuring default access settings
 {: #groups_data_access_settings}
+
+Complete the following steps to define the default settings for viewing data:
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account.
 
@@ -74,18 +78,18 @@ Users defined in the LogDNA group can see all resources defined in the logging i
 
 7. Set **Access Control** to your desired default setting:
 
-   * **ON** allows all users to see the logging instance data even if they are not part of a group.
-   * **OFF** requires users to be a member of a LogDNA group associated with the logging instance to see data.
+   * **ON** allows all users to see the auditing data even if they are not part of a group.
+   * **OFF** requires users to be a member of a service group that is associated with the auditing instance to see events.
 
-   Setting **Access Control** to **OFF** prevents users who are not defined to a LogDNA group from seeing the logging instance data.
+   Setting **Access Control** to **OFF** prevents users who are not defined to a service group from seeing auditing events.
    {: tip}
 
-## Defining LogDNA groups
+## Defining service groups
 {: #groups_data_access_groups}
 
-In LogDNA you can define 1 or more groups, also known as teams, limiting the set of data the users in that group can view and analyze.  You configure the scope of data visible to users in the LogDNA group using an access scope.  Remember, user permissions to access LogDNA and LogDNA features are defined in {{site.data.keyword.iamlong}}.
+You can define 1 or more groups, also known as teams, limiting the set of data the users in that group can view and analyze. You configure the scope of data visible to users in a service group by using an access scope.  Remember, user permissions to manage data are defined in {{site.data.keyword.iamlong}}.
 
-You can edit a group to add users or change the access scope as needed.
+You can edit a group to change the access scope as needed.
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account.
 
@@ -109,10 +113,8 @@ You can edit a group to add users or change the access scope as needed.
 
    ![Add Group](/images/addgroup.png)
 
-   Consider a naming convention similar to your {{site.data.keyword.iamshort}} for ease of management.
+   Consider a naming convention similar to your {{site.data.keyword.iamshort}} access groups for ease of management.
    {: tip}
-
-9. Select the **Members** to be included in the group.
 
 9. Specify the **Access Scope**.
 
@@ -129,13 +131,15 @@ Example Query              | Behavior                          | Example Matches
 `level:*`                  | Matches if the field exists       | All lines containing the field `level`
 {: caption="Table 2. Example access scope search queries" caption-side="top"} 
 
-For example, if you have two apps (`myapp` and `myapp1`), then a LogDNA group with an access scope of  `app:myapp` will allow access to data from both apps. If the access scope is `app:===myapp`, then users in the group will only be able to access data from the `myapp` app. 
+For example, if you have two apps (`myapp` and `myapp1`), then a service group with an access scope of  `app:myapp` will allow access to data from both apps. If the access scope is `app:===myapp`, then users in the group will only be able to access data from the `myapp` app. 
 
-If you want to create a group of administrators with access to all data, specify `host:*` for the    **Access Scope**.
+If you want to create a group of administrators with access to all data, specify `host:*` for the  **Access Scope**.
 {: note}
 
-## Editing or deleting LogDNA groups
+## Editing or deleting service groups
 {: #groups_data_access_editing}
+
+Complete the following steps to edit or delete a service group:
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account.
 
@@ -154,3 +158,6 @@ If you want to create a group of administrators with access to all data, specify
 6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **Organization** &gt; **TEAM** &gt; **Groups**.
 
 7. Click **Edit** or **Delete** to change or remove the group.
+
+
+

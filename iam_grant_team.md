@@ -22,58 +22,74 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 {:external: target="_blank" .external}
 
-# Groups and IAM integration
-{: #iam_grant_team}
+# RBAC, groups and IAM integration
+{: #iam_grant_group}
 
-{{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and consistently control access to all cloud resources in the {{site.data.keyword.cloud_notm}}. Teams provide an isolated workspace in a {{site.data.keyword.at_short}} instance for a user or group of users to have access to metrics in a defined scope. 
+{{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and consistently control access to all cloud resources in the {{site.data.keyword.cloud_notm}}. Groups provide an isolated workspace in an {{site.data.keyword.at_full_notm}} instance for a user or group of users to have access to auditing events in a defined scope. 
 {:shortdesc}
 
-IAM can map a combination of teams and roles so that a user only has access to a specific set of metrics and can take a defined set of actions within the product.
+IAM can map a combination of groups and roles so that a user only has access to a specific set of auditing events and can take a defined set of actions within the product.
 {: note}
 
-Teams provide additional security by only allowing users to see metrics that are related to the infrastructure where their apps are deployed, as opposed to the entire infrastructure of the account. For example, in a Kubernetes cluster, you could grant a group of developers access to only see metrics from 1 `kubernestes.namespace` where their application is deployed.
+Groups provide additional security by only allowing users to see a subset of auditing events, as opposed to all auditing events that are generated in the account. For example, you could grant a group of users access to only see auditing events that are related to development services in the account.
 
-In a {{site.data.keyword.at_short}} instance, you can define 1 or more teams. A team provides an isolated workspace for a user or group of users to have access to metrics with a defined scope.
+In an {{site.data.keyword.at_short}} instance, you can define 1 or more groups. 
+- A group provides an isolated workspace for a user or group of users to have access to auditing events with a defined scope. 
+- An administrator of the service can configure multiple groups.
 
-A {{site.data.keyword.at_short}} instance includes the following teams:
-- Monitor operations 
-- Secure operations
-
-By default, users are granted access to the `monitor operations` team or to the team that is configured as the default team by the instance administrator. 
-- An admin of the service can configure multiple teams, and change the default team. 
-- Each team has their own set of custom dashboards and alerts that they can use to monitor the data in scope for the team.
-- Users in a team have access to the data that is included in the scope defined by the team administrator.
-[Learn more about teams](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-teams).
-
-For a user to monitor data within the context of a team, you must grant the user a policy for the {{site.data.keyword.mon_full_notm}} service. The policy specifies the team and the service permissions for the user so the user can work with the data in scope for that team. 
-
-You can grant any of the following service roles:
-- Writer: A writer role allows a user to monitor data through dashboards, alerts, and notifications, and to manage resources such as dashboards, alerts, and notifications that are in scope for the team.
-- Reader: A reader role allows a user to monitor data through dashboards, alerts, and notifications that are in scope for the team.
-
-The manager role is an instance level role that grants administrative permissions. If you grant this role in a policy for a team, you are granting admin permissions over the instance to the users that belong to that team.
-{: important}
-
-To grant a user access to 1 or more teams, an administrator must grant the user a policy for each team that the user needs access to. By using individual policies for each team, administrators can define different service access and permissions levels to work with data in the auditinginstance.
-
-For example, a user that needs to work in a team requires the following policies:
-* A policy with a platform role **viewer** to allow the user to see auditinginstances in the {{site.data.keyword.cloud_notm}}. 
-* A policy to grant the user access to 1 team. The service role determines the permissions of the user to work with data that is in scope for the team.
-
-To configure a policy for a user or service ID, see [Granting permissions to work in a team](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-iam_grant_team).
+By default, when you grant a user access to work with the {{site.data.keyword.at_short}} service, the user can see all auditing events. 
+- A user can be a member of 1 or more groups. 
+- Users in a group have access to the data that is in scope of the group.
 
 
-Complete the following steps to grant a user or service ID permissions to work with the {{site.data.keyword.mon_full_notm}} service within the context of a team.
+For a user to monitor data within the context of a group, you must grant the user a policy for the {{site.data.keyword.at_full_notm}} service. The policy specifies the group and the service permissions for the user so the user can work with the data in scope for that group. 
+
+
+You can grant any of the following IAM service roles:
+- Standard-member: A standard-member role allows a user to monitor data through views, dashboards, screens, and alerts, and to manage resources such as dashboards, and alerts that are in scope for the group.
+- Reader: A reader role allows a user to monitor data through views, dashboards, screens, and alerts that are in scope for the group.
+- Manager: The manager role is an instance level role that grants administrative permissions. If you grant this role in a policy for a group, you are granting admin permissions over the instance to the users that belong to that group.
+
+
+The following table shows the user roles that you can grant a user to work with the {{site.data.keyword.at_short}} service:
+
+| User role            | IAM service role |
+|----------------------|------------------|
+| `ROLE_USER`          | `reader`         |
+| `ROLE_ADVANCED_USER` | `standard-member` |
+| `ROLE_ADMIN`         | `manager`        | 
+{: caption="Table 1. List of user roles" caption-side="top"} 
+
+
+The following table shows the group roles that you can grant users to work within the context of a group in an {{site.data.keyword.at_short}} instance:
+
+| Team role            | IAM service role | logGroup   |
+|----------------------|------------------|--------|
+| `ROLE_GROUP_READ`     | `reader`         | Custom group |
+| `ROLE_GROUP_EDIT`     | `standard-member` | Custom group |
+| `ROLE_GROUP_ADMIN`    | `manager`        | Custom group |
+{: caption="Table 2. List of group roles" caption-side="top"} 
+
+You can define in the {{site.data.keyword.at_short}} UI more groups to define different levels of access to data per group and set of users.
+
+To grant a user access to 1 or more groups, an administrator must grant the user a policy for each group that the user needs access to. By using individual policies for each group, administrators can define different service access and permissions levels to work with data in the auditing instance.
+
+For example, a user that needs to work in a group requires the following policies:
+* A policy with a platform role **viewer** to allow the user to see auditing instances in the {{site.data.keyword.cloud_notm}}. 
+* A policy to grant the user access to 1 group. The service role determines the permissions of the user to work with data that is in scope for the group.
+
+
+Complete the following steps to grant a user or service ID permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a group.
 
 
 ## Prerequisites
-{: #iam_grant_team_prereq}
+{: #iam_grant_group_prereq}
 
-Your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.mon_full_notm}} service. The account owner can grant user access to the account for the purposes of managing user access and managing account resources. [Learn more](/docs/account?topic=account-userroles).
+Your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. The account owner can grant user access to the account for the purposes of managing user access and managing account resources. [Learn more](/docs/account?topic=account-userroles).
 
 
-## Step 1. Create an access group
-{: #iam_grant_team_step1}
+## Step 1. Create an IAM access group
+{: #iam_grant_group_step1}
 
 Do the following to create an access group:
 
@@ -95,9 +111,9 @@ ibmcloud iam access-group-create GROUP_NAME [-d, --description DESCRIPTION]
 
 
 ## Step 2. Add permissions to view {{site.data.keyword.at_short}} instances in the Observability UI
-{: #iam_grant_team_step2}
+{: #iam_grant_group_step2}
 
-After you set up your group, you can assign a common access policy to the group. You must add permissions to view {{site.data.keyword.at_short}} instances in the Observability UI. 
+After you set up your access group, you can assign a common access policy to the group. You must add permissions to view {{site.data.keyword.at_short}} instances in the Observability UI. 
 
 Any policy that you set for an access group applies to all entities, users, and service IDs within the group. 
 {: note}
@@ -108,7 +124,7 @@ When you define the policy, you need to select a platform role. Platform managem
 
 
 ### Add permissions through the CLI
-{: #iam_grant_team_step2_1}
+{: #iam_grant_group_step2_1}
 
 To create an access group policy by using the CLI, you can use the [ibmcloud iam access-group-policy-create](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_access_group_policy_create) command with the **viewer** role.
 
@@ -120,13 +136,13 @@ ibmcloud iam access-group-policy-create GROUP_NAME {-f, --file @JSON_FILE | --ro
 For example, you can run the following command to grant a user viewer permissions:
 
 ```
-ibmcloud iam access-group-policy-create my-access-group --roles Viewer --service-name my-monitoring-instance --service-instance 99999999-9999-9999-999999
+ibmcloud iam access-group-policy-create my-access-group --roles Viewer --service-name my-auditing-instance --service-instance 99999999-9999-9999-999999
 ```
 {: pre}
 
 
 ### Add permissions through the UI
-{: #iam_grant_team_step2_2}
+{: #iam_grant_group_step2_2}
 
 Complete the following steps to assign a policy to an access group through the UI:
 
@@ -134,7 +150,7 @@ Complete the following steps to assign a policy to an access group through the U
 2. Select the name of the group that you want to assign access to. 
 3. Click **Access policies**  &gt; **Assign access**  &gt; **Assign access to resources**.
 4. Select **IAM services**.
-5. In the section *What type of access do you want to assign?*, select **{{site.data.keyword.mon_full_notm}}**.
+5. In the section *What type of access do you want to assign?*, select **{{site.data.keyword.at_full_notm}}**.
 6. In the section *Which services do you want to assign access to?*, choose one of the following options:
 
     Select **All services** to define the scope of the policy to include all instances.
@@ -147,7 +163,7 @@ Complete the following steps to assign a policy to an access group through the U
     
     Option 3: The scope is set to 1 instance. Select **Service Instance** to choose the instance.
 
-    Do not specify a value in the *Sysdig Team* section.
+    Do not specify a value in the **logGroup** section.
     {: important}
 
 7. Select the **viewer** platform role.
@@ -156,16 +172,16 @@ Complete the following steps to assign a policy to an access group through the U
 
 
 
-## Step 3. Add permissions to work in a team
-{: #iam_grant_team_step3}
+## Step 3. Add permissions to work in an IAM access group
+{: #iam_grant_group_step3}
 
-Next, you must add a policy that grants the user permissions to work with data in the {{site.data.keyword.at_short}} service within the context of a team.
+Next, you must add a policy that grants the user permissions to work with data in the {{site.data.keyword.at_short}} service within the context of a group.
 
-When you define the policy, you need to select a service role. Service access roles define a user's or service’s ability to perform actions on a service instance. The service access roles are manager, writer, and reader.
+When you define the policy, you need to select a service role. Service access roles define a user's or service’s ability to perform actions on a service instance. The service access roles are manager, standard-member, and reader.
 
 
 ### Add permissions through the CLI
-{: #iam_grant_team_step3_1}
+{: #iam_grant_group_step3_1}
 
 To create an access group policy by using the CLI, you can use the [ibmcloud iam access-group-policy-create](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_access_group_policy_create) command.
 
@@ -174,9 +190,9 @@ ibmcloud iam access-group-policy-create GROUP_NAME {-f, --file @JSON_FILE | --ro
 ```
 {: codeblock}
 
-Where valid roles are `Reader`, `Writer`, and `Manager`.
+Where valid roles are `Reader`, `Standard-member`, and `Manager`.
 
-You must use a JSON file to create the team policy.
+You must use a JSON file to create the group policy.
 {: important}
 
 For example, you can run the following command:
@@ -223,15 +239,15 @@ And use the following JSON file.
                 },
                 {
                     "name": "serviceName",
-                    "value": "sysdig-monitor"
+                    "value": "logdnaat"
                 },
                 {
                     "name": "serviceInstance",
                     "value": "instanceGuid"
                 },
                 {
-                    "name": "sysdigTeam",
-                    "value": "sysdigTeamID"
+                    "name": "logGroup",
+                    "value": "group1"
                 }
             ]
         }
@@ -242,7 +258,7 @@ And use the following JSON file.
 
 
 ### Add permissions through the UI
-{: #iam_grant_team_step3_2}
+{: #iam_grant_group_step3_2}
 
 Complete the following steps to assign a policy to an access group through the UI:
 
@@ -250,7 +266,7 @@ Complete the following steps to assign a policy to an access group through the U
 2. Select the name of the group that you want to assign access to. 
 3. Click **Access policies**  &gt; **Assign access**  &gt; **Assign access to resources**.
 4. Select **IAM services**.
-5. In the section *What type of access do you want to assign?*, select **{{site.data.keyword.mon_full_notm}}**.
+5. In the section *What type of access do you want to assign?*, select **{{site.data.keyword.at_full_notm}}**.
 6. In the section *Which services do you want to assign access to?*, complete the following steps:
 
     1. Select **Services based on attributes** to refine the scope of the policy. Choose 1 of the following options:
@@ -259,15 +275,15 @@ Complete the following steps to assign a policy to an access group through the U
     
         Option 2: Set the scope to 1 instance. Select **Service Instance** to choose the instance.
 
-    2. Select a **Sysdig team**.
+    2. Select a **logGroup**.
 
-7. Select a service role. The service role defines the permissions a user has to view and manage resources in that team.
+7. Select a service role. The service role defines the permissions a user has to view and manage resources in that group.
 
     * Select **manager** to grant admin permissions for the service.
 
     * Select **reader** to grant permissions to view data only.
 
-    [Learn more about the roles that you need](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-iam).
+    [Learn more about the roles that you need](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).
 
 8. Click **Assign**.
 
@@ -275,12 +291,12 @@ Complete the following steps to assign a policy to an access group through the U
 
 
 ## Step 4. Add a user or service ID to the access group
-{: #iam_grant_team_step4}
+{: #iam_grant_group_step4}
 
 You can add users or service IDs to an existing access group.
 
 ### Add a user to the access group
-{: #iam_grant_team_step4_user}
+{: #iam_grant_group_step4_user}
 
 Complete the following steps to add a user:
 
@@ -291,7 +307,7 @@ Complete the following steps to add a user:
 
 
 ### Add a service ID to the access group
-{: #iam_grant_team_step4_svcid}
+{: #iam_grant_group_step4_svcid}
 
 Complete the following steps to add a service ID:
 
