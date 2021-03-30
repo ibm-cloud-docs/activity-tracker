@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-06-24"
+  years: 2019, 2021
+lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, search, filter, events
+keywords: IBM Cloud,Activity Tracker, search, filter, events
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -23,7 +23,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:external: target="_blank" .external}
 
 
-# Creating custom views
+# Creating custom views through the UI
 {: #views}
 
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search and filtering criteria to define the events that are displayed through a custom view.
@@ -60,7 +60,7 @@ Complete the following steps:
 
 To search for specific events, you can apply a search query. 
 
-* You can do simple searches (single term string search), compound search (multiple search terms and operators), field searches if the log line can be parsed, and others. For more information, see [How to Search Logs in LogDNA docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.logdna.com/docs/search){:new_window}.
+* You can do simple searches (single term string search), compound search (multiple search terms and operators), field searches if the log line can be parsed, and others.
 * AND and OR operators are case-sensitive and must be capitalized.
 * Use `FieldName:==FieldValue` to search for a specific field value.
 * Use `FieldName:Value` to search for field values that start with that value. 
@@ -243,7 +243,7 @@ Complete the following steps to modify the format of an event line in a single v
 
     For more information about the line template guidelines, see [Guidelines](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_line).
 
-3. Click **Save properties*.
+3. Click **Save properties**.
 
 
 

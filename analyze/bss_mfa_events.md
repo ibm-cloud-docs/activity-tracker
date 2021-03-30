@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-07-12"
+  years: 2019, 2021
+lastupdated: "2021-03-28"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, account events
+keywords: IBM Cloud, Activity Tracker, account events
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -42,7 +42,7 @@ IBMid MFA for an account requires a time-based one-time passcode in addition to 
 This type of MFA applies to all account resources. 
 
 To configure ID-based MFA for users that log in to your account, you must complete the following steps:
-1. As the account owner or an administrator for the billing service, turn it on or off from the **Manage** &gt; **Access (IAM)** &gt; **Settings** page in the {{site.data.keyword.cloud_notm}} console. For more information, see [enable MFA for all users in your account](/docs/account?topic=account-enablemfa#enabling).
+1. As the account owner or an administrator for the billing service, turn MFA on or off from the **Manage** &gt; **Access (IAM)** &gt; **Settings** page in the {{site.data.keyword.cloud_notm}} console. For more information, see [enable MFA for all users in your account](/docs/account?topic=account-enablemfa#enabling).
 2. Each user in the account must [set up TOTP](/docs/account?topic=account-enablemfa#setupapp) to log in to your account.
 
 You get the following events in your account when you set on MFA in the account:
@@ -106,23 +106,23 @@ You can modify any of the following settings:
 * **This user has no external authentication set up**: Sets an external authentication provider.
 
 In the events that are generated, `requestData` includes information that you can use to monitor these actions in your account:
-* Field **iam_id**: Informs about the user in your account that has a login setting updated.
+* Field **iam_id**: The user in your account whose login setting is updated.
 * Field **2FA**: Defines whether MFA is set on or off for the user. When it is set to false, MFA is not set for that user. Valid values are *true* and *false*.
 * Field **security_questions_setup**: Defines whether the user has defined the security questions in his profile. Valid values are *true* and *false*.
-* Field **self_manage**: Defines whether a user can configure his log in settings on how to log in to the account. This field is set to `true` to allow a user to set password expiration, turn on security questions for login, and define allowed IP addresses for log in to {{site.data.keyword.cloud_notm}} and from classic infrastructure API calls.  
+* Field **self_manage**: Defines whether a user can configure his log in settings. This field is set to `true` to allow a user to set password expiration, turn on security questions for login, and define allowed IP addresses for log in to {{site.data.keyword.cloud_notm}} and from classic infrastructure API calls.  
 
 ### Requiring security questions at login
 {: #mfa_events_acc_1}
 
 You can add an extra layer of security at login by requiring users to answer a security question. 
 
-You set on this setting per user.
+You set this setting per user.
 
 To be able to set on this setting, the user must set up answers to three security questions in their profile. [Leaern more](/docs/account?topic=account-types). 
 
 After the user has configured the 3 security questions, you can [set on the setting **Require MFA security questions at login**](/docs/account?topic=account-questions). This action generates an event with action **user-management.user-setting.update**. 
 
-See the sample of the `requestData` field when the **Require MFA security questions at login:** property is enabled. Notice that the `requestData.security_questions_setup` field is set to `true`.
+The following is an example of the `requestData` field when the **Require MFA security questions at login:** property is enabled. Notice that the `requestData.security_questions_setup` field is set to `true`.
 
 ```json
 "action": "user-management.user-setting.update",
@@ -145,13 +145,13 @@ See the sample of the `requestData` field when the **Require MFA security questi
 
 You can add an extra layer of security at login by prompting a user for a one-time passcode. 
 
-You set on this setting per user.
+You set this setting per user.
 
-To be able to set on this setting, the user must set up a password expiration in their profile. [Learn more](/docs/account?topic=account-types).
+To be able to set this setting, the user must set up a password expiration in their profile. [Learn more](/docs/account?topic=account-types).
 
-After the user has configured a password expiration, you can [set on the setting **User one-time passcode authentication**](/docs/account?topic=account-totp). This action generates an event with action **user-management.user-setting.update**. 
+After the user has configured a password expiration, you can [set the **User one-time passcode authentication** setting](/docs/account?topic=account-totp). This action generates an event with action **user-management.user-setting.update**. 
 
-See the sample of the `requestData` field when the **User one-time passcode authentication:** property is enabled. The `requestData.2FA` field is set to `true`.
+The following is an example of the `requestData` field when the **User one-time passcode authentication:** property is enabled. The `requestData.2FA` field is set to `true`.
 
 ```json
 "action": "user-management.user-setting.update",
@@ -174,9 +174,9 @@ See the sample of the `requestData` field when the **User one-time passcode auth
 
 You can grant users permissions to configure MFA settings when they log in to your account. [Learn more](/docs/account?topic=account-types). You change the setting per user.
 
-When you set on or off the **User-managed login** setting, an event is generated with action **user-management.user-setting.update**.
+When you set the **User-managed login** setting on or off, an event is generated with action **user-management.user-setting.update**.
 
-See the sample of the `requestData` field when the **User-managed login:** property is disabled:
+The following is an example of the `requestData` field when the **User-managed login:** property is disabled:
 
 ```json
 "action": "user-management.user-setting.update",
@@ -192,7 +192,7 @@ See the sample of the `requestData` field when the **User-managed login:** prope
 
 
 
-A user that has the **User-managed login** setting enabled, can also set on the **Require MFA security questions at login** through the *Access IAM* dashboard or through their profile. This request generates an event with action **user-management.user-setting.update**. 
+A user that has the **User-managed login** setting enabled, can also set the **Require MFA security questions at login** on through the *Access IAM* dashboard or through their profile. This request generates an event with action **user-management.user-setting.update**. 
 {: note}
 
 

@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2019-01-08"
+  years: 2019, 2021
+lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, reuse
+keywords: IBM Cloud, Activity Tracker, reuse
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -21,7 +21,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:important: .important}
 {:note: .note}
 
-# Reusing definitions of LogDNA resources
+# Reusing definitions of resources
 {: #reuse_resource_definitions}
 
 To avoid recreating definitions of views, boards, parsing templates, and exclusion rules, you can export these resources from a {{site.data.keyword.at_full}} instance as a JSON file. Then, you can import the definitions into other logging instances.
@@ -29,7 +29,7 @@ To avoid recreating definitions of views, boards, parsing templates, and exclusi
 
 
 
-## Export the configuration of resources in a logging instance
+## Export the configuration of resources
 {: #rrd_export_config}
 
 Complete the following steps to export the configuration of your resources:

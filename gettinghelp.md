@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-01-08"
+  years: 2019, 2021
+lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, help, support
+keywords: IBM Cloud, Activity Tracker, help, support
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -32,6 +32,6 @@ If you have problems or questions when using the {{site.data.keyword.at_full_not
 
 * You can review the forums to see whether other users ran into the same problem. When using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
 
-  * If you have technical questions about the {{site.data.keyword.at_full_notm}} service, post your question on [Stack Overflow](https://stackoverflow.com/search?q=ibm-cloud+logdna){:new_window} and tag your question with `ibm-cloud`, and `activity-tracker``.
+  * If you have technical questions about the {{site.data.keyword.at_full_notm}} service, post your question on [Stack Overflow](https://stackoverflow.com/search?q=ibm-cloud+logdna){:new_window} and tag your question with `ibm-cloud`, and `activity-tracker`.
 
 * If you still can't resolve the problem, you can open an IBM support ticket. For information about opening an IBM support ticket, or about support levels and ticket severities, see [Getting support](/docs/get-support).

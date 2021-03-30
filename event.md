@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-11-19"
+  years: 2019, 2021
+lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, event fields
+keywords: IBM Cloud, Activity Tracker, event fields
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -50,7 +50,6 @@ The following fields are included in each Activity Tracker event:
 {: #action_field}
 
 This field indicates the action that triggers an event. 
-{: note}
 
 The format of this field is the following:
 
@@ -63,7 +62,7 @@ Where
 
 * `servicename` is the name of the service.
 
-    There is an exception on the `servicename` that is set for actions reported by the VPC infrastructure. The format of the `servicename` is composed of 2 parts that are separated by a dot `.`.
+    There is an exception on the `servicename` that is set for actions reported by the VPC infrastructure. The format of the `servicename` is composed of 2 parts that are separated by a dot (`.`).
 
 * `objectType` describes the resource or resource attribute on which the action is requested. 
 
@@ -80,10 +79,9 @@ For example, a sample action is `iam-am.policy.create`.
 {: #eventTime_field}
 
 This field indicates the timestamp when the event was created. 
-{: note}
 
 The timestamp that you see for an event in the UI is set from eventTime and indicates the time when the event was created.
-{: important}
+{: note}
   
 The date is represented as Universal Time Coordinated (UTC). 
 
@@ -102,7 +100,6 @@ For example, a sample eventTime is `2017-10-19T19:07:50.32+0000`.
 {: #initiator}
 
 Initiator fields provide information about the user, service, or application that request to run an action in your account. 
-{: note}
 
 The following table lists the common fields that are available for each event:
 
@@ -113,6 +110,8 @@ The following table lists the common fields that are available for each event:
 | `initiator.typeURI`         | Type of the source of the event. | `service/security/account/user` |
 | `initiator.credential.type` | Type of initiator ID credential. | `apikey` |
 | `initiator.host.address`    | IP address where the request came from | `19.12.134.145` |
+| `initiator.host.addressType` | Indicates the type of IP address. Valid values are `IPv4` and `IPv6`. | `IPv4` | 
+| `initiator.host.agent`      | Reports information about the client | For example. `ibm-cos-resource-config-sdk` |
 {: caption="Table 2. Common initiator fields" caption-side="top"} 
 
 
@@ -122,7 +121,6 @@ The following table lists the common fields that are available for each event:
 {: #initiator.id}
 
 This field provides information about the ID of the initiator of the action. 
-{: note}
 
 You can find any of the following initiators:
 * `IBM ID` for users that use an IAM token to trigger an action in your account.
@@ -134,7 +132,6 @@ You can find any of the following initiators:
 {: #initiator.name}
  
 This field provides information about the username of the initiator of the action.
-{: note}
 
 This is the human readable name that corresponds to the `initiator.id` value. 
 
@@ -142,7 +139,6 @@ This is the human readable name that corresponds to the `initiator.id` value.
 {: #initiator.typeURI}
 
 This field defines the type of the source of the event.
-{: note}
 
 Valid values are: `service/security/account/user`, `service/security/account/serviceid`, `service/security/client/certificateid`, `service/security/clientid`
 
@@ -152,7 +148,6 @@ Valid values are: `service/security/account/user`, `service/security/account/ser
 {: #initiator.credential.type}
 
 This field defines the type of credential that is used by the initiator to run the action.
-{: note}
 
 Valid values are: `token`, `user`, `apikey`, `certificate`
 
@@ -162,7 +157,6 @@ Valid values are: `token`, `user`, `apikey`, `certificate`
 {: #initiator.host.address}
 
 This field provides information about the address where the request came from. 
-{: note}
 
 The format of this field is:
 
@@ -184,7 +178,6 @@ When the initiator of an action is an {{site.data.keyword.cloud_notm}} service, 
 {: #logSourceCRN}
 
 This field defines the resource where the event is generated. 
-{: note}
 
 
 
@@ -193,7 +186,6 @@ This field defines the resource where the event is generated.
 {: #message}
 
 This field is set to the human-readable description of the event. 
-{: note}
 
 The format of this field is: 
 
@@ -204,9 +196,9 @@ serviceName: {event description} [outcome]
 
 Where 
 
-* `servicename` indicates the name of the service
-* `{event description}` provides a human-readable version of the what the event is reporting
-* `outcome` is optional and is only included when the outcome of the request is `failure`
+* `servicename` indicates the name of the service.
+* `{event description}` provides a human-readable version of the what the event is reporting.
+* `outcome` is optional and is only included when the outcome of the request is `failure`.
 
 
 
@@ -215,35 +207,30 @@ Where
 {: #observer_name_field}
 
 This field is set to the fixed value **ActivityTracker**.
-{: note}
-
 
 
 ## outcome (string)
 {: #outcome}
 
 This field indicates the result of the action. 
-{: note}
 
-Valid values are: `success`, `pending`, or `failure`
+Valid values are: `success`, `pending`, or `failure`.
 
 
 ## reason.reasonCode (numeric)
 {: #reason.reasonCode}
 
 This field returns the HTTP response code of the action requested.
-{: note}
 
-
+The `reason.reasonCode` field is set to `403` to report forbidden access or unauthorized. 
+The `reason.reasonCode` field is set to `409` to report conflict.
 
 ## reason.reasonType (string)
 {: #reason.reasonType}
 
 This field provides additional information about the result of the action requested. 
-{: note}
 
-When the outcome is failure, you can find additional information in the field `requestData.reasonForFailure` if the event includes this field.
-
+When the outcome is failure, you can find additional information in the field `reason.reasonForFailure` if the event includes this field.
 
 
 
@@ -252,7 +239,6 @@ When the outcome is failure, you can find additional information in the field `r
 {: #requestData}
 
 When the field is available, it includes additional information about the request.  
-{: note}
 
 This field is optional.
 
@@ -261,7 +247,6 @@ This field is optional.
 {: #responseData}
  
 When the field is available, it includes additional information about the request. 
-{: note}
 
 This field is optional.
 
@@ -270,7 +255,6 @@ This field is optional.
 {: #saveServiceCopy}
 
 This field determines whether the IBM service that generates the event saves a copy of the event for {{site.data.keyword.cloud_notm}} auditing.
-{: note} 
 
 When it is set to `true`, the service that generates the event saves a copy.
 
@@ -279,17 +263,16 @@ When it is set to `true`, the service that generates the event saves a copy.
 {: #severity}
 
 This field defines the level of threat an action may have on the {{site.data.keyword.cloud_notm}}.
-{: note}
 
-Valid values are: `normal`, `warning`, and `critical`
+Valid values are: `normal`, `warning`, and `critical`.
 
-The following table captures how this field is set based on the type of action:
+The following table describes how this field is set based on the type of action:
 
 | Value      | Type of action | Sample of action |
 |------------|----------------|------------------|
-| `normal`   | Routine actions in the Cloud | Start an instance | 
+| `normal`   | Routine actions in the {{site.data.keyword.cloud_notm}} | Start an instance | 
 | `warning`  | Actions that fail </br>Actions where a resource is updated or its metadata is modified | Rename a service instance | 
-| `critical` | Actions that affect security in the Cloud such as changing credentials of a user or deleting data </br>Actions where the initiator is not authorized to work with a Cloud resource | Delete a security key |
+| `critical` | Actions that affect security in the {{site.data.keyword.cloud_notm}} such as changing credentials of a user or deleting data </br>Actions where the initiator is not authorized to work with an {{site.data.keyword.cloud_notm}} resource | Delete a security key |
 {: caption="Table 3. Severity values by type of action" caption-side="top"}
 
 
@@ -298,7 +281,6 @@ The following table captures how this field is set based on the type of action:
 {: #target}
 
 Target fields provide information about the resource that is accessed, created, updated, or deleted by the initiator's action in your account. 
-{: note}
 
 
 The following table lists common target fields that are available for each event:
@@ -306,7 +288,7 @@ The following table lists common target fields that are available for each event
 | Field Name | Description | Value |
 |------------|-------------|-------|
 | `target.id` `[1]` | Cloud Resource Name (CRN) of the resource on which the action is executed. | For example, `crn:v1:bluemix:public:cloud-object-storage:global:a/12345678e6232019c6567c9123456789:fr56et47-befb-440a-a223c-12345678dae1:bucket:bucket1` |
-| `target.name` | Human-readable name of the cloud resource on which the action is executed. |  |
+| `target.name` | Human-readable name of the resource on which the action is executed. |  |
 | `target.typeURI` | Type of the cloud resource on which the action is executed. | For example, `iam-am/policy` or `cloud-object-storage/bucket/acl` |
 | `target.host.address` | IP Address or URL of the target service |  | 
 {: caption="Table 4. Common target fields" caption-side="top"} 
@@ -316,8 +298,7 @@ The following table lists common target fields that are available for each event
 ### target.id (string)
 {: #target.id}
 
-This field indicates the cloud resource on which the action is executed. 
-{: note}
+This field indicates the {{site.data.keyword.cloud_notm}} resource on which the action is executed. 
 
 The format of this field is a **CRN**. For more information, see [CRN format](/docs/account?topic=account-crn).
 
@@ -326,8 +307,7 @@ The format of this field is a **CRN**. For more information, see [CRN format](/d
 ### target.name (string)
 {: #target.name}
 
-This field indicates the human readable name of the cloud resource on which the action is executed.
-{: note}
+This field indicates the human readable name of the {{site.data.keyword.cloud_notm}} resource on which the action is executed.
 
 Make sure that the name of resources does not include sensitive or PII data. 
 
@@ -337,7 +317,6 @@ Make sure that the name of resources does not include sensitive or PII data.
 {: #target.typeURI}
 
 This field indicates the type of the target of the event. 
-{: note}
 
 The format of this field is: 
 
@@ -351,7 +330,7 @@ Where
 * `servicename` is the name of the service.
 * `objectType` is the resource on which the action is run.
  
-For example, check out the following samples:
+For example:
 
 | action                                            | target.typeURI                                  |
 |---------------------------------------------------|-------------------------------------------------|
@@ -368,7 +347,6 @@ For example, check out the following samples:
 {: #target.host.address}
 
 This field defines the IP Address or URL of the target service.
-{: note}
 
 This field is optional.
 
@@ -377,7 +355,6 @@ This field is optional.
 {: #labels}
 
 Labels and line identifiers provide information about the service that is generating the event.
-{: note}
 
 The following table outlines common labels and line identifiers that you can find in events:
 

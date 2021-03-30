@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, service plan, price
+keywords: IBM Cloud, Activity Tracker, service plan, price
 subcollection: Activity-Tracker-with-LogDNA
 
 ---
@@ -23,7 +23,7 @@ subcollection: Activity-Tracker-with-LogDNA
 # Service plans
 {: #service_plan}
 
-Different pricing plans are available that you can choose for an {{site.data.keyword.at_full_notm}} instance. Each plan defines the number of days that data is retained for search, the number of users allowed to manage the data, and the LogDNA features that are enabled.
+Different pricing plans are available that you can choose for an {{site.data.keyword.at_full_notm}} instance. Each plan defines the number of days that data is retained for search, the number of users allowed to manage the data, and the features that are enabled.
 {:shortdesc}
 
 
@@ -63,10 +63,4 @@ The following tables outline the different features that are included in each se
 | `Analyzing logs in different contexts`       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | |
 {: caption="Table 2. List of features available that are available for each service plan" caption-side="top"} 
 
-
-## LogDNA features that are not available with {{site.data.keyword.at_full_notm}} service plans
-{: #svcplan_exc_features}
-
-The following LogDNA features are not available:
-* Sharing a line 
 

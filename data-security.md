@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years:  2018, 2020
-lastupdated: "2020-03-25"
+  years:  2019, 2021
+lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, auditing, overview, personal data, data deletion, PHI, data, data security, _service-name_
+keywords: IBM Cloud, Activity Tracker, auditing, overview, personal data, data deletion, PHI, data, data security, _service-name_
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -47,7 +47,7 @@ Data from [{{site.data.keyword.cloud_notm}} services and resources](/docs/servic
 ### Data location
 {: #data-storage_location}
 
-Data is hosted on the {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.at_full_notm}} service is operated by LogDNA.
+Data is hosted on the {{site.data.keyword.cloud_notm}}. 
 
 Events can be classified as global or location-based. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types).
 * **Location-based events** maintain data locality to the services that run in that Cloud location.
@@ -67,7 +67,7 @@ When a user requests an export, the data is encrypted during transit, and is als
 ## Data retention for search
 {: #data_retention}
 
-The service plan that you choose for an {{site.data.keyword.at_full_notm}} instance defines the number of days that data is stored and retained in LogDNA. 
+The service plan that you choose for an {{site.data.keyword.at_full_notm}} instance defines the number of days that data is stored and retained. 
 
 For example, if you choose the *Lite* plan, data is not stored at all. However, if you choose the 7-day plan, data is stored for 7 days and you have access to it through the UI.
 
@@ -78,7 +78,7 @@ For example, if you choose the *Lite* plan, data is not stored at all. However, 
 
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
 
-When data is archived, data going from LogDNA to {{site.data.keyword.cos_full_notm}} (COS) is encrypted in transit over HTTPS.
+When data is archived, data going to {{site.data.keyword.cos_full_notm}} (COS) is encrypted in transit over HTTPS.
 
 You must configure archiving to a COS instance if you want to backup your events for long term storage.
 
@@ -102,9 +102,9 @@ Consider the following information when you export log data:
 ### Deleting events when an instance is deleted
 {: #service-delete-logs}
 
-When you delete a logging instance, the instance is automatically deactivated, and ingestion of events is stopped. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-remove).
+When you delete an instance, the instance is automatically deactivated, and ingestion of events is stopped. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-remove).
 
-LogDNA deletes all events that are already ingested. Deletion is completed within 24 hours after receiving your request.
+{{site.data.keyword.at_short}} deletes all events that are already ingested. Deletion is completed within 24 hours after receiving your request.
 
 You are responsible for managing archived data. 
 

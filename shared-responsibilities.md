@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, auditing, customer responsibilities, IBM responsibilities, terms and conditions
+keywords: IBM Cloud, Activity Tracker, auditing, customer responsibilities, IBM responsibilities, terms and conditions
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -53,7 +53,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task                                                    | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |---------------------------------------------------------|-----------------------|--------|
-| `Update the {{site.data.keyword.at_full_notm}} service` | Provide major, minor, and patch version updates for {{site.data.keyword.at_full_notm}} interfaces. </br>Document changes in the [LogDNA release notes](https://logdna.zendesk.com/hc/en-us/categories/360001626492-Release-Notes) | `N/A` | 
+| `Update the {{site.data.keyword.at_full_notm}} service` | Provide major, minor, and patch version updates for {{site.data.keyword.at_full_notm}} interfaces. </br>Document changes in the [Release notes](https://logdna.zendesk.com/hc/en-us/categories/360001626492-Release-Notes) | `N/A` | 
 | `Track versions of custom views, dashboards, screens, parsing templates, and alerts`    | `N/A` | Use your own change management process to control versions of metadata resources such as views, dashboards, screens, parsing templates, and alerts`. </br>To learn how to export metadata, see [Export the configuration of resources in a logging instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#rrd_export_config). | 
 {: caption="Table 2. Responsibilities for change management" caption-side="top"}
 

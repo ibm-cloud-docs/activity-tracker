@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-06-24"
+  years: 2019, 2021
+lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, export, api
+keywords: IBM Cloud, Activity Tracker, export, api
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -26,7 +26,7 @@ subcollection: Activity-Tracker-with-LogDNA
 # Exporting events programmatically
 {: #export_api}
 
-From an {{site.data.keyword.at_full_notm}} instance, you can export events programmatically by using the LogDNA REST API. 
+From an {{site.data.keyword.at_full_notm}} instance, you can export events programmatically by using the REST API. 
 {:shortdesc}
 
 Consider the following information when you export events:
@@ -144,7 +144,7 @@ Consider the following information when you define the search query through the 
 
 3. Define the search query. 
 
-    To get more informatiomn on how to search, see [Searching Your Logs](https://docs.logdna.com/docs/search){: external}.
+    To get more information on how to search, see [Searching Your Logs](https://docs.logdna.com/docs/search){: external}.
 
     Refine the query until you can only see the events that you want to export.
     {: tip}

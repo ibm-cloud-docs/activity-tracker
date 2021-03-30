@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-05-11"
+  years: 2019, 2021
+lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, faq
+keywords: IBM Cloud, Activity Tracker, faq
 
 subcollection: Activity-Tracker-with-LogDNA
 

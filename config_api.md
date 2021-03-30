@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, api
+keywords: IBM Cloud, Activity Tracker, api
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -50,8 +50,8 @@ When you create a view, consider the following information:
 - You can define body parameters to refine the data that is displayed through the view. You must specify 1 or more of the following body parameters: query, apps, levels, hosts, or tags.
 
 When you create a PagerDuty notification channel, consider the following information:
-- You must manually configure the integration of LogDNA with PagerDuty. See [Integrating with PagerDuty](https://docs.logdna.com/docs/pagerduty-alert-integration){: external}.
-- You must provide LogDNA with the PagerDuty API key. 
+- You must manually configure the integration with PagerDuty. 
+- You must provide the PagerDuty API key. 
 
 After you create a view, check the view in the UI. 
 1. Refresh the browser to see the view listed in the *Views* section. 
@@ -118,7 +118,7 @@ The following table outlines the actions that you can run to manage views and al
 | Create a view and attach an alert to a view.                            | `POST`   | `<ENDPOINT>/v1/config/view`          |
 | Modify an existing view and the alerts that are attached to the view.   | `PUT`    | `<ENDPOINT>/v1/config/view/<VIEWID>` |
 | Delete a view and its associated alerts.                                | `DELETE` | `<ENDPOINT>/v1/config/view/<VIEWID>` |
-{: caption="Table 1. LogDNA Configuration API endpoints" caption-side="top"}
+{: caption="Table 1. Configuration API endpoints" caption-side="top"}
 
 Where `<VIEWID>` represents the ID of a view.
 
@@ -131,12 +131,12 @@ Depending on [your account settings](/docs/account?topic=account-service-endpoin
 ## Authentication
 {: #config_api_authentication}
 
-When you manage views and alerts programmatically, you must use a service key. Authorization to the LogDNA Configuration API is enforced by using a service key.
+When you manage views and alerts programmatically, you must use a service key. Authorization to the Configuration API is enforced by using a service key.
 {: note} 
 
 A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to an auditing instance. For more information on how to generate a service key, see [Managing service keys](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys).
 
-Use of the LogDNA Configuration REST API is done by adding a valid service key to the HTTP Authorization request header. You must pass the service key as a header parameter (`-H`) of your requests.
+Use of the Configuration REST API is done by adding a valid service key to the HTTP Authorization request header. You must pass the service key as a header parameter (`-H`) of your requests.
 
 For example, in a cURL request, you must set the `content-type` header as follows:
 

@@ -4,9 +4,9 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-03-01"
 
-keywords: LogDNA, IBM, Log Analysis, logging, config agent
+keywords:  IBM, activity tracker
 
-subcollection: LogDNA
+subcollection: Activity-Tracker-with-LogDNA
 
 ---
 

@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-08-10"
+  years: 2019, 2021
+lastupdated: "2021-03-10"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, account events, catalog, tags
+keywords: IBM Cloud, Activity Tracker, account events, catalog, tags
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -205,9 +205,10 @@ The following table lists the actions that generate an event:
 |-------------------------------------------------|-------------|
 | `global-search-tagging.tag.attach`              | An event is generated when you associate a tag to a resource. |
 | `global-search-tagging.tag.detach`              | An event is generated when you remove a tag from a resource.  |
-| `global-search-tagging.tag.update`              | An event is generated when you update a tag that is attached to a resource.  |
+| `global-search-tagging.tag.update`              | An event is generated when you update a tag that is attached to a resource.  For internal use.|
 | `global-search-tagging.tag.delete`              | An event is generated when you delete a tag in your account.  |
 | `global-search-tagging.tags.delete`             | An event is generated when you delete all the tags that are not attached to resources in your account.  |
+| `global-search-tagging.tag.create`              | An event is generated when you create a tag. The tag type is included in the requestData object. |
 {: caption="Table 13. Actions that generate events" caption-side="top"} 
 
 
