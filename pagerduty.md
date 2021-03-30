@@ -30,7 +30,7 @@ You can send alerts to PagerDuty.
 ## Configuring PagerDuty
 {: #pagerduty-config}
 
-When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#configure-an-alert) you can have that alert sent to PagerDuty.
+When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#configure-an-alert), you can have that alert sent to PagerDuty.
 
 1. When configuring your alert, click ![PagerDuty icon](../images/pagerduty.png "PagerDuty icon").
 
@@ -47,7 +47,9 @@ When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-
   3. Select the days of the week when alerts should be generated.
   4. Optionally specify a time range for the selected days. A graph will help you determine the number of log entries for the timezone and time range.
 
-6. Specify the **Service**.  If required, you will be prompted to connect to PagerDuty.  If no services are listed, click **Add PagerDuty** to connect and add a service.  You will be directed to PagerDuty to authorize the integration.  After authorization, your alerts will display in the PagerDuty incidents dashboard.
+6. Specify the **Service**. If required, you will be prompted to connect to PagerDuty.  
+
+    If no services are listed, click **Add PagerDuty** to connect and add a service. Create a PagerDuty service and associate it with an escalation policy. You will be directed to PagerDuty to authorize the integration. After authorization, your alerts will display in the PagerDuty incidents dashboard.
 
 7. Optional: You can click **Test** to test that your alert configuration is correct.
 
@@ -57,6 +59,12 @@ When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-
 
    The alert definition must be saved for alerts to be sent to PagerDuty.
    {: important}
+
+## Integrating with multiple PagerDuty services
+
+Each view can be linked to one or more PagerDuty services.  To alert multiple PagerDuty accounts, configure multiple alerts for the same view with each alert notifying a different PagerDuty account.
+
+You can also configure differnt views to notify a single PagerDuty account.
 
 ## Limitations
 {: #pagerduty-limitations}
