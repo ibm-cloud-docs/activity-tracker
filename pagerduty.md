@@ -58,6 +58,12 @@ When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-
    The alert definition must be saved for alerts to be sent to PagerDuty.
    {: important}
 
+## Integrating with multiple PagerDuty services
+
+Each view can be linked to one or more PagerDuty services.  To alert multiple PagerDuty accounts, configure multiple alerts for the same view with each alert notifying a different PagerDuty account.
+
+You can also configure differnt views to notify a single PagerDuty account.
+
 ## Limitations
 {: #pagerduty-limitations}
 
