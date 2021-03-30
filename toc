@@ -40,7 +40,12 @@ Activity Tracker
     upgrade.md
     observe.md
     view_events.md
-    iam.md
+
+    {: .topicgroup}
+    IAM integration
+        iam.md
+        iam_manage_events.md
+        iam_view_events.md
 
     {: .topicgroup}
     DevOps tasks
@@ -48,8 +53,6 @@ Activity Tracker
         archive.md
         control_usage.md
         exclusion_rules.md
-        iam_manage_events.md
-        iam_view_events.md
         reuse_resource_definitions.md
         sqlquery.md
 
