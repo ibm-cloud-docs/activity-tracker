@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, export, api
+keywords: IBM Cloud, Activity Tracker, export, api
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -26,7 +26,7 @@ subcollection: Activity-Tracker-with-LogDNA
 # Exporting events programmatically
 {: #export_api}
 
-From an {{site.data.keyword.at_full_notm}} instance, you can export events programmatically by using the LogDNA REST API. 
+From an {{site.data.keyword.at_full_notm}} instance, you can export events programmatically by using the REST API. 
 {:shortdesc}
 
 Consider the following information when you export events:

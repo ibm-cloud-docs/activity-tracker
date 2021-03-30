@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, IAM events
+keywords: IBM Cloud, Activity Tracker, IAM events
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -254,7 +254,7 @@ Complete the following steps to configure an email alert:
 
 To verify the alert, you can generate more events. Check that you run delete actions. 
 
-After you delete 2 user API keys, you get an email from LogDNA with information about the user API keys that are deleted.
+After you delete 2 user API keys, you get an email with information about the user API keys that are deleted.
 
 
 

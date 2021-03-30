@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, iam, manage user access, viewer
+keywords: IBM Cloud, Activity Tracker, iam, manage user access, viewer
 
 subcollection: Activity-Tracker-with-LogDNA
 

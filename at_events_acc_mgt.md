@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-03-10"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, account events, catalog, tags
+keywords: IBM Cloud, Activity Tracker, account events, catalog, tags
 
 subcollection: Activity-Tracker-with-LogDNA
 

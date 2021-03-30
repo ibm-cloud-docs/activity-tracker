@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, web UI, browser
+keywords: IBM Cloud, Activity Tracker, web UI, browser
 
 subcollection: Activity-Tracker-with-LogDNA
 

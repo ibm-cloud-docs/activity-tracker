@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-03-29"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, iam, manage user access
+keywords: IBM Cloud, Activity Tracker, iam, manage user access
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -134,7 +134,7 @@ Use the following table to identify the service roles that you can grant a user 
 {: caption="Table 2. IAM service roles and actions" caption-side="top"}
 
 
-The **manager** service role maps directly to the LogDNA admin role.
+The **manager** service role maps directly to the service admin role.
 {: note}
 
 

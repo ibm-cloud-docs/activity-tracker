@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, monitor events
+keywords: IBM Cloud, Activity Tracker, monitor events
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -192,7 +192,7 @@ Consider the following information when you export log data:
 ### Exporting events by using the REST API
 {: #mon_export_api}
 
-You can export events programmatically by using the LogDNA REST API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
+You can export events programmatically by using the Export REST API. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
 
 When you export events programmatically:
 

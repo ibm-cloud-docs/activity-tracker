@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-03-24"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing, Sysdig
+keywords: IBM Cloud, Activity Tracker, getting started, auditing, Sysdig
 
 subcollection: Activity-Tracker-with-LogDNA
 

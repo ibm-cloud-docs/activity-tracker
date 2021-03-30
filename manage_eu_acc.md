@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, {{site.data.keyword.at_short}}, EU-supported
+keywords: IBM Cloud, {{site.data.keyword.at_short}}, EU-supported
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -134,9 +134,9 @@ To grant viewer permissions to users, complete the following steps:
 
 In an {{site.data.keyword.at_full_notm}} instance, you can configure and control whether users can export data. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_config).
 
-Users can export data through the UI or by using the *Export* LogDNA API:
+Users can export data through the UI or by using the *Export* API:
 
-* Users can export data to a local file or to a terminal by using the LogDNA export API and a service key. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
+* Users can export data to a local file or to a terminal by using the export API and a service key. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_api).
 
     * Users with **manager** permissions to administer the Frankfurt {{site.data.keyword.at_short}} instance can create and view service keys. 
 

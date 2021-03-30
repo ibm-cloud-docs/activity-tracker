@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-03-28"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, services
+keywords: IBM Cloud, Activity Tracker, services
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -113,7 +113,7 @@ Enable this setting only if you or your company is a covered entity as defined b
 {: #adoption_resource_svc}
 
 {{site.data.keyword.at_full_notm}} collects and aggregates events in one centralized system.
-* Data is hosted on the {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.at_full_notm}} service is operated by LogDNA.
+* Data is hosted on the {{site.data.keyword.cloud_notm}}.
 * Data is collocated in the location where an {{site.data.keyword.at_full_notm}} instance is provisioned, except for events that report on global actions. 
 
 
@@ -315,7 +315,7 @@ You can configure multiple notification channels. Valid channels are: `email`, `
 Configure PagerDuty alerts to be notified immediately so that you can take action promptly on problems and automate their resolution. In addition, configure Slack alerts to share alerts and information.
 {: tip}
 
-In LogDNA, you can also define a **preset**. A preset is an alert template that you can attach to any number of views.
+You can also define a **preset**. A preset is an alert template that you can attach to any number of views.
 
 To reuse an alert configuration with different views and enforce notification channels across users that analyze data through that instance, configure alert presets.
 {: tip}

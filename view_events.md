@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-01-05"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, view events
+keywords: IBM Cloud, Activity Tracker, view events
 
 subcollection: Activity-Tracker-with-LogDNA
 

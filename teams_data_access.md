@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-03-29"
 
-keywords: LogDNA, groups, access, log analysis
+keywords: groups, access, activity tracker
 
 subcollection: Activity-Tracker-with-LogDNA
 

@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-03-01"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, usage
+keywords: IBM Cloud, Activity Tracker, usage
 
 subcollection: Activity-Tracker-with-LogDNA
 
