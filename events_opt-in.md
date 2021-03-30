@@ -66,9 +66,8 @@ The following table lists the Watson services and related information about addi
 
 | Service Name | Paid plan required | Other configuration required | 
 | -- | -- | -- |
-| {{site.data.keyword.conversationfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) </br>Premium Plan only feature |   |  
-| {{site.data.keyword.discoveryfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
-| {{site.data.keyword.cncfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
+| {{site.data.keyword.conversationfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) </br>Premium & Enterprise Plans only feature ||  
+| {{site.data.keyword.discoveryfull}} |   |   |  
 | {{site.data.keyword.DSX_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | IBM Watson&trade; Knowledge Catalog | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | {{site.data.keyword.pm_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
@@ -78,9 +77,14 @@ The following table lists the Watson services and related information about addi
 | {{site.data.keyword.nlufull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | {{site.data.keyword.speechtotextfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | {{site.data.keyword.texttospeechfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
-| {{site.data.keyword.visualrecognitionfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
-| {{site.data.keyword.iva_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | {{site.data.keyword.wh-acd_full}} |   |   |  
 {: caption="Table 3. Watson services that require actions for data events" caption-side="top"}
 
+The following table lists Watson services that are deprecated:
 
+| Service Name | Paid plan required | Other configuration required | 
+| -- | -- | -- |
+| {{site.data.keyword.cncfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
+| {{site.data.keyword.visualrecognitionfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   | 
+| {{site.data.keyword.iva_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
+{: caption="Table 3. Watson services that require actions for data events and are deprecated" caption-side="top"}
