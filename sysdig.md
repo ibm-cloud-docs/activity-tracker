@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-03-24"
 
-keywords: IBM Cloud, Activity Tracker, getting started, auditing, Sysdig
+keywords: IBM Cloud, Activity Tracker, getting started, auditing, monitoring
 
 subcollection: Activity-Tracker-with-LogDNA
 
@@ -21,18 +21,18 @@ subcollection: Activity-Tracker-with-LogDNA
 {:note: .note}
 {:external: target="_blank" .external}
 
-# Integrating with Sysdig
+# Integrating with the {{site.data.keyword.mon_short}} service
 {: #sysdig}
 
-You can send alerts to Sysdig and manage them through the Sysdig *Events* view section.
+You can send alerts to the {{site.data.keyword.mon_short}} service and manage them through the *Events* view section.
 {:shortdesc}
 
-## Configuring a Sysdig alert
+## Configuring a {{site.data.keyword.mon_short}} alert
 {: #sysdig-config}
 
 When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#configure-an-alert) you can have that alert sent to Sysdig.
 
-1. When configuring your alert, click ![PagerDuty icon](../images/sysdig.png "PagerDuty icon").
+1. When configuring your alert, click ![icon](../images/sysdig.png "icon").
 
 2. Select if you want the alert to be sent when the condition exists (**Presence**) or does not exist (**Absence**).
 
@@ -49,9 +49,9 @@ When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-
 
 6. Configure the Monitoring instance details.
 
-    Specify the **API key**. Set this field to the Sysdig API token. For more information on how to get the Sysdig token, see [Working with Sysdig tokens](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-api_sysdig_token).
+    Specify the **API key**. Set this field to the API token. For more information on how to get the token, see [Working with tokens](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-api_sysdig_token).
 
-    Specify the **Sysdig instance URL**. Set this field to the endpoint where the instance is available. For more information, see [Sysdig endpoints](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-endpoints#endpoints_sysdig).
+    Specify the **{{site.data.keyword.mon_short}} instance URL**. Set this field to the endpoint where the instance is available. For more information, see [{{site.data.keyword.mon_short}} endpoints](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-endpoints#endpoints_sysdig).
 
     Specify the **Severity**. Valid values are `Info`, `Low`, `Medium`, or `High`. 
 
@@ -64,12 +64,12 @@ When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-
 
 
 
-## Managing Sysdig alerts
+## Managing alerts
 {: #sysdig-manage}
 
 In Sysdig, you get a **custom** event when an alert is triggered. 
 
-You can view the events by filtering by name or level in the *Events* section of the Monitoring instance.
+You can view the events by filtering by name or level in the *Events* section of the {{site.data.keyword.mon_short}} instance.
 
 ![Sysdig sample](../images/sysdig-sample.png "Sysdig sample")
 
