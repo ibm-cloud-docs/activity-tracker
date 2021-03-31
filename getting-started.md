@@ -26,7 +26,7 @@ subcollection: Activity-Tracker-with-LogDNA
 # Getting started with {{site.data.keyword.at_full_notm}}
 {: #getting-started}
 
-Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. {{site.data.keyword.at_full_notm}} is a service hosted on the {{site.data.keyword.cloud_notm}} that is based on technology from LogDNA.
+Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 {:shortdesc}
 
 

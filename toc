@@ -73,7 +73,7 @@ Activity Tracker
         export_api.md
 
     {: .topicgroup}
-    IAM integration
+    Controlling access
         iam.md
         teams_data_access.md
         iam_grant_team.md
