@@ -114,7 +114,6 @@ Use the following table to identify the service roles that you can grant a user 
 |-----------|----------|------------------|------|
 | `Create and delete service keys through the UI` | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  | |
 | `Configure account settings` | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  |  |
-| `Manage groups`   | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  |  |
 | `Configure archiving`   | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |  |
 | `Define exclusion rules` | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |    |        |
 | `Create and delete categories`    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  |        |
