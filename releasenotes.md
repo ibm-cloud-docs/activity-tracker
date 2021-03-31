@@ -32,7 +32,6 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 ## March 2021
 {: #AT-march2021-for-update}
 
-- The service name has changed from **IBM Cloud Activity Tracker with LogDNA** to **IBM Cloud Activity Tracker**.
 - New CLI added that can be used to list instances and export data from an instance. [Learn more about the CLI](/docs/Activity-Tracker-with-LogDNA?topic=logdna-cli-plugin-logdna-cli).
 - New API added that can be used to export data from an instance, and manage views and alerts. [Learn more about the API](https://cloud.ibm.com/apidocs/logdna?code=python#introduction){: external}.
 
