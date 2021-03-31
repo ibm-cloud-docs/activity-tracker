@@ -113,8 +113,8 @@ Activity Tracker
 
     {: .topicgroup}
     API
-        [Export API](/apidocs/activity-tracker?code=python#export)
-        [Configuration API](/apidocs/activity-tracker?code=python#create-view)
+        [Export API](https://cloud.ibm.com/apidocs/activity-tracker#export)
+        [Configuration API](https://cloud.ibm.com/apidocs/activity-tracker#create-view)
 
     {: .topicgroup}
     High availability and disaster recovery
