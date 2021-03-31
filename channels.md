@@ -33,7 +33,7 @@ The following table lists the notification channels that you can configure when 
 | `Slack`             | You can configure a slack channel. |
 | `Webhook`           | You can configure a web hook URL. |
 | `PagerDuty`         | You can configure connection details to your PagerDuty system, and select a service.|
-| `Sysdig`            | You can configure a {{site.data.keyword.mon_full_notm}} instance to collect notifications. |
+| `Monitoring`            | You can configure a {{site.data.keyword.mon_full_notm}} instance to collect notifications. |
 {: caption="Notification channels" caption-side="top"} 
 
 
