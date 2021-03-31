@@ -109,12 +109,12 @@ Activity Tracker
 
     {: .topicgroup}
     CLI
-        /logdna-cli-plugin/logdna-cli-plugin-logdna-cli
+        /activity-tracker-cli-plugin/activity-tracker-cli-plugin-activity-tracker-cli
 
     {: .topicgroup}
     API
-        [Export API](https://test.cloud.ibm.com/apidocs/logdna?code=python#export)
-        [Configuration API](https://test.cloud.ibm.com/apidocs/logdna?code=python#create-view)
+        [Export API](/apidocs/activity-tracker?code=python#export)
+        [Configuration API](/apidocs/activity-tracker?code=python#create-view)
 
     {: .topicgroup}
     High availability and disaster recovery
