@@ -42,7 +42,7 @@ Activity Tracker
     view_events.md
 
     {: .topicgroup}
-    IAM integration
+    Controlling accesss
         iam.md
         iam_manage_events.md
         iam_view_events.md
