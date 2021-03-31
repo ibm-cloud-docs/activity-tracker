@@ -334,7 +334,7 @@ You might have different requirements that require archiving your data:
 * Disaster recovery requirements 
 * Compliance requirements
 
-LogDNA as a service does not backup your data. 
+{{site.data.keyword.at_full_notm}} does not backup your data. 
 
 There are 2 types of data that you should consider archiving:
 * Log data
@@ -346,7 +346,7 @@ There are 2 types of data that you should consider archiving:
 
 * Web UI resource definitions such as parsing templates, exclusion rules, views, screens, and dashboards.
 
-Archive your LogDNA resource definitions and your log data.
+Archive your resource definitions and your log data.
 {: tip}
 
 ### Backup the resource configurations of your auditing instance
@@ -354,9 +354,9 @@ Archive your LogDNA resource definitions and your log data.
 
 In the UI, you can define custom views, dashboards, parsing templates, screens, and exclusion rules that you can use to view and analyze data.
 
-To reuse resource definitions that you define in your auditing instance, you can export these resources from an {{site.data.keyword.at_full_notm}} instance as a JSON file. Then, you can import the definitions into other auditing instances. For example, you can reuse your LogDNA resources across different environments for your stage, pre-production, and production instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions).
+To reuse resource definitions that you define in your auditing instance, you can export these resources from an {{site.data.keyword.at_full_notm}} instance as a JSON file. Then, you can import the definitions into other auditing instances. For example, you can reuse your resources across different environments for your stage, pre-production, and production instances. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions).
 
-Backup LogDNA resource definitions into a version control system such as a git repository where you can control access to the archived files and manage versions.
+Backup resource definitions into a version control system such as a git repository where you can control access to the archived files and manage versions.
 {: tip}
 
 ### Archive log data to a COS bucket
@@ -497,7 +497,7 @@ To configure archiving, you need the following IAM policies:
 
 You also need a service ID. A service ID identifies a service similar to how a user ID identifies a user. Service IDs are not tied to a specific user. If the user that creates the service ID leaves your organization and is deleted from the account, the service ID remains. The {{site.data.keyword.at_full_notm}} service uses an API key that is associated to a service ID that you define on your COS instance to authenticate and write files to the COS bucket.
 
-Create a service ID for for the COS instance with **writer** permissions. Restrict access to the service ID so that the API key that is associated to it can only write to the bucket that you configure in LogDNA for archiving.
+Create a service ID for for the COS instance with **writer** permissions. Restrict access to the service ID so that the API key that is associated to it can only write to the bucket that you configure for archiving.
 {: tip} 
 
 If you add PII information in the name or the description of the service ID, you might be disclosing sensitive data to others in the same account.
@@ -559,7 +559,7 @@ Define views, dashboard, screens, and alerts in {{site.data.keyword.at_full}} to
 ### Archived file
 {: #adoption_archive_7}
 
-Although you define policies to manage your COS objects (LogDNA archived files) at the bucket level, there might be situations where you need to hold on to specific files for longer for compliance and auditing purposes. In COS, you can set different attributes per object that allow you to meet this requirements.
+Although you define policies to manage your COS objects ({{site.data.keyword.at_full_notm}} archived files) at the bucket level, there might be situations where you need to hold on to specific files for longer for compliance and auditing purposes. In COS, you can set different attributes per object that allow you to meet this requirements.
 
 * You can define a **legal hold** flag to an archive file. Legal holds can be applied to objects during initial uploads or after an object is written. [Learn more](/docs/cloud-object-storage?topic=cloud-object-storage-immutable#immutable-terminology-hold).
 * You can define an **indefinite retention** flag to store the object indefinitely until a new retention period is applied. [Learn more](/docs/cloud-object-storage?topic=cloud-object-storage-immutable#immutable-terminology-indefinite).

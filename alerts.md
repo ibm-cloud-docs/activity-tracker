@@ -198,13 +198,13 @@ Complete the following steps to detach an alert from the **ALERTS** dashboard:
 This section only applies to email alerts.
 {: note}
 
-After you configure an alert on a view and receive a notification email from `LogDNA Alerts`, complete the following steps to mute the alert a period of time:
+After you configure an alert on a view and receive a notification email, complete the following steps to mute the alert a period of time:
 
 1. Go to the email account where you receive email notifications.
 
 2. Open a notification email for a view that you want to mute. 
 
-    Look for emails that are sent by `LogDNA Alerts`. The subject includes the name of the view.
+    Look for emails that are sent by {{site.data.keyword.at_full_notm}}. The subject includes the name of the view.
 
     In the email, there is a section that includes the following text: 
 

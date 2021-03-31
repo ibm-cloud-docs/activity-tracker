@@ -51,10 +51,10 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                      | Valid values         | Description                |
 |------------------------------------|----------------------|----------------------------|
-| `requestData.owneremail`        | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx@logdna.ibm.com`  | Defines a LogDNA account. |
-| `requestData.type`              | `meta.addrawline` | Defines a LogDNA administrative feature. |
+| `requestData.owneremail`        | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx@logdna.ibm.com`  | Defines an {{site.data.keyword.at_full_notm}} account. |
+| `requestData.type`              | `meta.addrawline` | Defines an {{site.data.keyword.at_full_notm}} administrative feature. |
 | `requestData.value `            | `false` </br>`true`  | When is set to `true`, the feature specified in the field `requestData.type` is enabled.  |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_full_notm}} ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 2. Custom fields for account settings actions" caption-side="top"} 
 
 
@@ -72,10 +72,10 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                      | Valid values         | Description                |
 |------------------------------------|----------------------|----------------------------|
-| `requestData.feature`              | `archive`            | Defines a LogDNA administrative feature. |
+| `requestData.feature`              | `archive`            | Defines a {{site.data.keyword.at_full_notm}} administrative feature. |
 | `requestData.isEnabled`            | `false` </br>`true`  | Defines if archiving of the logging instance to a COS bucket is configured. </br>When is set to `true`, archiving is enabled.  |
 | `requestData.provider`             | `ibm`                | Defines the Cloud provider where data is archived. |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_full_notm}} ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 4. Custom fields for archiving actions" caption-side="top"} 
 
 
@@ -93,7 +93,7 @@ The following table lists custom fields that are included in exclusion rule even
 
 | Custom fields                | Description          |
 |------------------------------|----------------------|
-| `feature`                    | Defines a LogDNA administrative feature. </br>Valid value is `exclusion-rule`. |
+| `feature`                    | Defines an {{site.data.keyword.at_full_notm}} administrative feature. </br>Valid value is `exclusion-rule`. |
 | `ruleId`                     | Defines the ID of the rule. |
 | `isEnabled`                  | Defines when the exclusion rule is enabled. </br>Set to `true` when the rule is enabled. |
 | `requestData.hosts`          | Defines 1 or more hosts whose data is excluded from search. |
@@ -101,7 +101,7 @@ The following table lists custom fields that are included in exclusion rule even
 | `requestData.query`          | Defines an advanced query to refine the data that is excluded from search. |
 | `requestData.description`    | Description of the exclusion rule. |
 | `requestData.indexonly`      | Defines whether the data is available to see through the UI. </br>Set to `true` when data is visible but not available for search. |
-| `responseData.logdnaId`      | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_full_notm}} ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 6. Custom fields for exclusion rules actions" caption-side="top"} 
 
 
@@ -120,7 +120,7 @@ The following table lists custom fields that are included in these events:
 |------------------------------------|----------------------|----------------------------|
 | `requestData.key`                  | Masked field         | Use this field to identify the ingestion key that is created. |
 | `requestData.keyType`              | `ingestion`          | Defines the type of key that is configured. |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_full_notm}} ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 7. Custom fields for ingestion keys actions" caption-side="top"} 
 
 
@@ -139,9 +139,9 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                      | Valid values         | Description                |
 |------------------------------------|----------------------|----------------------------|
-| `requestData.key`                  | Masked field         | Use this field to identify the service key that is created to export data by using the LogDNA export API. |
+| `requestData.key`                  | Masked field         | Use this field to identify the service key that is created to export data by using the {{site.data.keyword.at_full_notm}}  export API. |
 | `requestData.keyType`              | `service`            | Defines the type of key that is configured. |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_full_notm}} ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 9. Custom fields for service keys actions" caption-side="top"} 
 
 ### Parsing templates
@@ -158,12 +158,12 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                | Description          | 
 |------------------------------|----------------------|
-| `requestData.feature`        | Defines a LogDNA administrative feature. </br>Valid value is `custom-parsing`. |
+| `requestData.feature`        | Defines an {{site.data.keyword.at_full_notm}} administrative feature. </br>Valid value is `custom-parsing`. |
 | `requestData.isEnabled`      | Defines when the template is enabled. </br>Set to `true` when the template is enabled. |
 | `requestData.name`           | Defines the name of the template. </br>This field is available for create actions.|
 | `requestData.query`          | Defines the query that is configured to identify log lines where the custome parsing is applied. |
 | `requestData.templateId`     | Defines the ID of the template. </br>This field is available for update actions. |
-| `responseData.logdnaId`      | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_full_notm}} ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 11. Custom fields for parsing templates actions" caption-side="top"} 
 
 
@@ -180,9 +180,9 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                | Description          | 
 |------------------------------|----------------------|
-| `feature`                    | Defines a LogDNA administrative feature. </br>Valid value is `export-configuration`. |
+| `feature`                    | Defines an {{site.data.keyword.at_full_notm}} administrative feature. </br>Valid value is `export-configuration`. |
 | `requestData.configResources` | Defines the list of resources that a user chooses to export or import. |
-| `responseData.logdnaId`      | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_full_notm}} ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 13. Custom fields for user-metadata related actions" caption-side="top"} 
 
 
@@ -215,7 +215,7 @@ The following table lists custom fields that are included in these events:
 | `requestData.viewId`   | Defines the view ID. |
 | `requestData.description` | Describes the view. | 
 | `requestData.customLine` | Describes how the information is displayed in the view. |
-| `responseData.logdnaId`      | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_full_notm}} ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 15. Custom fields for view actions" caption-side="top"} 
 
 
@@ -238,7 +238,7 @@ The following table lists custom fields that are included in these events:
 | `requestData.name`    | Defines the name of the preset. |
 | `requestData.preset`  | Defines whether the alert is defined as a preset. |
 | `requestData.channels` | List of channels that are configured in a preset. Each channel includes information about the notification method and the trigger conditions per method. |
-| `responseData.logdnaId`      | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_full_notm}} ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 17. Custom fields for view actions" caption-side="top"} 
 
 
@@ -261,7 +261,7 @@ The following table lists custom fields that are included in these events:
 | `requestData.category`       | Defines the category where the board is included. |
 | `requestData.title`          | Defines the name of the dashboard. |
 | `requestData.graphId`        | Defines the ID of a graph that is added to a board. | 
-| `responseData.logdnaId`      | Defines the LogDNA ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_full_notm}} ID that is associated with the {{site.data.keyword.at_full_notm}} instance. | 
 {: caption="Table 19. Custom fields for boards" caption-side="top"} 
 
 

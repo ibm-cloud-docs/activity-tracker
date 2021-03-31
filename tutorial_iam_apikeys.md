@@ -76,7 +76,7 @@ For example, you might be interested in finding out why an action to delete a us
 
     The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
 
-4. Select the instance whose region is set to **Frankfurt**. Then, click **View LogDNA**. The Web UI opens.
+4. Select the instance whose region is set to **Frankfurt**. Then, click **Open DashboardA**. The Web UI opens.
 
 
 ## Step 2. Generate events
