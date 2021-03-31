@@ -55,7 +55,7 @@ Activity Tracker
         service_keys.md
         archive.md
         control_usage.md
-        logdna_parsing.md
+        parsing.md
         exclusion_rules.md
         reuse_resource_definitions.md
         sqlquery.md
@@ -84,7 +84,7 @@ Activity Tracker
     UI
         launch.md
         config.md
-        get_logdna_web_url.md
+        get_web_url.md
 
     {: .topicgroup}
     Logging and monitoring
@@ -96,7 +96,7 @@ Activity Tracker
         alerts.md
         config_api.md
         pagerduty.md
-        sysdig.md
+        monitoring.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

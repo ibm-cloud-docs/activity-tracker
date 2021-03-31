@@ -23,7 +23,7 @@ subcollection: Activity-Tracker-with-LogDNA
 
  
 # Enhancing your data by defining custom indexed fields
-{: #logdna_parsing}
+{: #parsing}
 
 In {{site.data.keyword.at_full_notm}}, you can create custom fields that you can use in advanced searches and in filtering queries by using parsing rules. You define parsing templates through the UI to add custom fields to your records.
 {:shortdesc}
