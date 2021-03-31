@@ -30,7 +30,7 @@ You can send alerts to the {{site.data.keyword.mon_short}} service and manage th
 ## Configuring a {{site.data.keyword.mon_short}} alert
 {: #monitoring-config}
 
-When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#configure-an-alert) you can have that alert sent to Sysdig.
+When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#configure-an-alert) you can have that alert sent to {{site.data.keyword.mon_short}}.
 
 1. When configuring your alert, click ![icon](../images/sysdig.png "icon").
 
@@ -59,7 +59,7 @@ When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-
 
 8. Click **Save Alert**.
 
-   The alert definition must be saved for alerts to be sent to Sysdig.
+   The alert definition must be saved for alerts to be sent to {{site.data.keyword.mon_short}}.
    {: important}
 
 
@@ -67,11 +67,11 @@ When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-
 ## Managing alerts
 {: #monitoring-manage}
 
-In Sysdig, you get a **custom** event when an alert is triggered. 
+In {{site.data.keyword.mon_short}}, you get a **custom** event when an alert is triggered. 
 
 You can view the events by filtering by name or level in the *Events* section of the {{site.data.keyword.mon_short}} instance.
 
-![Sysdig sample](../images/sysdig-sample.png "Sysdig sample")
+![{{site.data.keyword.mon_short}} sample](../images/sysdig-sample.png "Monitoring sample")
 
 To view alerts, a user must have permissions to navigate to the web UI. [Learn more](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-launch).
 

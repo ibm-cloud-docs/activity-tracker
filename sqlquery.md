@@ -216,7 +216,7 @@ Complete the following steps to run the query to transform content from JSON int
     For example, the following query is used to transform an archive file:
 
     ```
-    SELECT * FROM cleancols(cos://ams03/at-logdna-eu-de/999999d8f1f.2019-06-03.62.json.gz STORED AS JSON)
+    SELECT * FROM cleancols(cos://ams03/at-eu-de/999999d8f1f.2019-06-03.62.json.gz STORED AS JSON)
     INTO cos://eu-de/results-at STORED AS PARQUET
     ```
     {: screen}

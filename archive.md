@@ -145,7 +145,7 @@ Complete the following steps to create a bucket:
 
     **Note:** All buckets in all regions across the globe share a single namespace. 
 
-    You can use as part of the bucket name your {{site.data.keyword.at_full_notm}} instance name. For example, for an instance with name *logdna-1*, you can use *accountN-logdna-1* as your bucket name.
+    You can use as part of the bucket name your {{site.data.keyword.at_full_notm}} instance name. For example, for an instance with name *logging-1*, you can use *accountN-logging-1* as your bucket name.
 
     You will need this name to configure archiving through the {{site.data.keyword.at_full_notm}} web UI.
 

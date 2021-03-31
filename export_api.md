@@ -144,7 +144,7 @@ Consider the following information when you define the search query through the 
 
 3. Define the search query. 
 
-    To get more information on how to search, see [Searching Your Logs](https://docs.logdna.com/docs/search){: external}.
+    To get more information on how to search, see [Select the set of events to display through a view by applying a search query](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views#views_step2).
 
     Refine the query until you can only see the events that you want to export.
     {: tip}

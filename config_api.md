@@ -290,10 +290,10 @@ For example, to associate a view to a category named `My category`, you can set 
 
 
 
-## Examples of using the LogDNA Configuration API
+## Examples of using the Configuration API
 {: #config_api-samples}
 
-The following are examples of how to use the LogDNA Configuration API.
+The following are examples of how to use the Configuration API.
 
 A category must exist before you create a view. In these examples, replace `<MY_CATEGORY>` with your category. 
 {: note}

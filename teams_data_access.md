@@ -72,7 +72,7 @@ Complete the following steps to define the default settings for viewing data:
 
 4. Select **Activity Tracker**.
 
-5. For your instance, click **View LogDNA**. The UI will be displayed.
+5. For your instance, click **Open Dashboard**. The UI will be displayed.
 
 6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **Organization** &gt; **TEAM** &gt; **Settings**.
 
@@ -103,7 +103,7 @@ You can edit a group to change the access scope as needed.
 
 4. Select **Activity Tracker**.
 
-5. For your instance, click **View LogDNA**. The UI will be displayed.
+5. For your instance, click **Open Dashboard**. The UI will be displayed.
 
 6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **Organization** &gt; **TEAM** &gt; **Groups**.
 
@@ -153,7 +153,7 @@ Complete the following steps to edit or delete a service group:
 
 4. Select **Activity Tracker**.
 
-5. For your instance, click **View LogDNA**. The UI will be displayed.
+5. For your instance, click **Open Dashboard**. The UI will be displayed.
 
 6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **Organization** &gt; **TEAM** &gt; **Groups**.
 

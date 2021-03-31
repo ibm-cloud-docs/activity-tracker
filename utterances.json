@@ -42,8 +42,8 @@
         "error when I try to provision an Activity Tracker instance",
         "how many instances of the IBM Cloud Activity Tracker",
         "have more than one instance of Activity Tracker",
-        "Service Broker returned error status code 400 when creating LogDNA-AT",
-        "error with status code 400 when creating LogDNA-AT",
+        "Service Broker returned error status code 400 when creating Logging-AT",
+        "error with status code 400 when creating Logging-AT",
         "error creating an Activity Tracker instance",
         "trying to create Activity Tracker and getting an error",
         "error status code 400 when provisioning Activity Tracker"

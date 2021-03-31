@@ -93,7 +93,7 @@ Complete the following steps:
 3. [Optional] You can also pass query parameters to refine the view that is displayed.
 
     ```
-    https://<ENDPOINT>/ext/ibm-sso/LOGDNA_ID?q=<QUERY>&hosts=<HOSTS>&apps=<APPS>&levels=<LEVELS>&t=<TIMEFRAME>
+    https://<ENDPOINT>/ext/ibm-sso/WEB_UI_ID?q=<QUERY>&hosts=<HOSTS>&apps=<APPS>&levels=<LEVELS>&t=<TIMEFRAME>
     ```
     {: codeblock}
 
@@ -109,7 +109,7 @@ Complete the following steps:
 
         Use `%27` to represent a quote (`'`).
 
-    * `<HOSTS>` represents the list of services for which data is included in the view. Notice that these are values that you select in the *Sources* section of the UI. Multiple hosts are separated by commas, for example,  `hosts=logdna-agent-trkq9,logdna-agent-trkq7`.
+    * `<HOSTS>` represents the list of services for which data is included in the view. Notice that these are values that you select in the *Sources* section of the UI. Multiple hosts are separated by commas, for example,  `hosts=logging-agent-trkq9,logging-agent-trkq7`.
 
     * `<APPS>` represents the list of apps for which data is included in the view. Multiple apps are separated by commas.
 

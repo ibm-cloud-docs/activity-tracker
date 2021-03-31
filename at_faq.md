@@ -115,14 +115,7 @@ To configure archiving see [Archiving events to IBM Cloud Object Storage](/docs/
 
 You can only have 1 instance of the {{site.data.keyword.at_full_notm}} service per region. 
 
-
-When an auditing instance already exists in a region, you get the following message when you try to provision it a second one: 
-
-```
-Service Broker returned error status code 400 when creating LogDNA-AT 
-```
-{: screen}
-
+When an auditing instance already exists in a region, you get a message when you try to provision an auditing instance a second time. 
 
 Most likely, your account administrator has already provisioned the auditing instances and has not given you permisisons to see work with them. 
 

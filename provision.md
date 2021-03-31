@@ -128,7 +128,7 @@ Complete the following steps:
 4. Create the instance. Run the [ibmcloud resource service-instance-create](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command:
 
     ```
-    ibmcloud resource service-instance-create NAME logdnaat SERVICE_PLAN_NAME LOCATION
+    ibmcloud resource service-instance-create NAME at_service SERVICE_PLAN_NAME LOCATION
     ```
     {: codeblock}
 
@@ -136,7 +136,7 @@ Complete the following steps:
 
     * NAME is the name of the instance
 
-    * The value *logdnaat* is the name of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}
+    * The value *at_service* is the name of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}
 
     * SERVICE_PLAN_NAME is the type of plan. Valid values are *lite*, *7-day*, *14-day*, *30-day*
     
@@ -146,7 +146,7 @@ Complete the following steps:
 For example, to provision an instance with the 7 days retention plan, run the following command:
 
 ```
-ibmcloud resource service-instance-create logdna-instance-01 logdnaat 7-day us-south
+ibmcloud resource service-instance-create logging-instance-01 at_service 7-day us-south
 ```
 {: codeblock}
 
