@@ -31,12 +31,12 @@ The following table lists the endpoints per region for the {{site.data.keyword.a
 ## API endpoints
 {: #endpoints_api}
 
-There are two types of LogDNA Configuration API endpoints: public and private.
+There are two types of Configuration API endpoints: public and private.
 
 ### Public API endpoints
 {: #config_api_endpoints_public}
 
-The following table shows the LogDNA public API endpoints:
+The following table shows the public API endpoints:
 
 | Location                 | Region                   |  Public Endpoint                                   |
 |--------------------------|--------------------------|----------------------------------------------------|
@@ -49,12 +49,12 @@ The following table shows the LogDNA public API endpoints:
 | `North America`          | `Washington DC (us-east)` | `https://api.us-east.logging.cloud.ibm.com`       |
 | `Europe`                 | `Frankfurt (eu-de)`      | `https://api.eu-de.logging.cloud.ibm.com`          |
 | `Europe`                 | `London (eu-gb)`         | `https://api.eu-gb.logging.cloud.ibm.com`          |
-{: caption="Table 1. LogDNA public API endpoints" caption-side="top"}
+{: caption="Table 1. Public API endpoints" caption-side="top"}
 
 ### Private API endpoints
 {: #config_api_endpoints_private}
 
-The following table shows the LogDNA private API endpoints:
+The following table shows the private API endpoints:
 
 | Location                 | Region                   |  Public Endpoint                                   |
 |--------------------------|--------------------------|----------------------------------------------------|
@@ -67,11 +67,11 @@ The following table shows the LogDNA private API endpoints:
 | `North America`          | `Washington DC (us-east)`   | `https://api.private.us-east.logging.cloud.ibm.com`         |
 | `Europe`                 | `Frankfurt (eu-de)`      | `https://api.private.eu-de.logging.cloud.ibm.com`          |
 | `Europe`                 | `London (eu-gb)`         | `https://api.private.eu-gb.logging.cloud.ibm.com`          |
-{: caption="Table 2. LogDNA private API endpoints" caption-side="top"}
+{: caption="Table 2. Private API endpoints" caption-side="top"}
 
 
 ## UI endpoints
-{: #endpoints_logdna_ui}
+{: #endpoints_ui}
 
 The following table shows the UI endpoints:
 
