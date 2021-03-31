@@ -23,7 +23,7 @@ subcollection: Activity-Tracker-with-LogDNA
 {:external: target="_blank" .external}
 
 # Getting the UI URL
-{: #get_logdna_web_url}
+{: #get_web_url}
 
 After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view, monitor, and manage events through the {{site.data.keyword.at_full_notm}} web UI. You can launch the UI from the {{site.data.keyword.cloud_notm}} UI or directly from a browser.
 {:shortdesc}

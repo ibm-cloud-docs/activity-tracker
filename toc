@@ -72,7 +72,7 @@ Activity Tracker
     UI
         launch.md
         config.md
-        get_logdna_web_url.md
+        get_web_url.md
 
     {: .topicgroup}
     Logging and monitoring
@@ -84,7 +84,7 @@ Activity Tracker
         alerts.md
         config_api.md
         pagerduty.md
-        sysdig.md
+        monitoring.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

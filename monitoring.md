@@ -22,13 +22,13 @@ subcollection: Activity-Tracker-with-LogDNA
 {:external: target="_blank" .external}
 
 # Integrating with the {{site.data.keyword.mon_short}} service
-{: #sysdig}
+{: #monitoring}
 
 You can send alerts to the {{site.data.keyword.mon_short}} service and manage them through the *Events* view section.
 {:shortdesc}
 
 ## Configuring a {{site.data.keyword.mon_short}} alert
-{: #sysdig-config}
+{: #monitoring-config}
 
 When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#configure-an-alert) you can have that alert sent to Sysdig.
 
@@ -65,7 +65,7 @@ When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-
 
 
 ## Managing alerts
-{: #sysdig-manage}
+{: #monitoring-manage}
 
 In Sysdig, you get a **custom** event when an alert is triggered. 
 
