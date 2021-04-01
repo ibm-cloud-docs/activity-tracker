@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-03-31"
 
 keywords: IBM Cloud, Activity Tracker, api
 
@@ -213,7 +213,7 @@ For example, to enter multiple hosts, you must separate the hosts with a comma:
 
 
 ### apps (array of strings)
-{: #config_api_parm-hosts}
+{: #config_api_parm-apps}
 
 Specifies the service instance ID that generates the auditing event.
 

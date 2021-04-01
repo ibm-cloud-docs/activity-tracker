@@ -66,7 +66,7 @@ Complete the following steps to launch the web UI:
     There is 1 instance per region.
     {: important}
 
-4. Select the instance in the region where you want to view events. Then, click **Open Dashboard**.
+4. Select the instance in the region where you want to view events. Then, click **View {{site.data.keyword.at_full_notm}}**.
 
 The {{site.data.keyword.at_full_notm}} web UI opens and shows the **Everything** view. Through this view, you can see the events in your account for the region that you have selected.
 
@@ -78,7 +78,7 @@ You can launch the UI directly from a browser.
 
 Complete the following steps:
 
-1. [Get the UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_logdna_web_url).
+1. [Get the UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_web_url).
 
     For example, a UI looks like `https://app.eu-gb.logging.cloud.ibm.com/ext/ibm-sso/xxxxxxxxxx`.
 

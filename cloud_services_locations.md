@@ -225,7 +225,7 @@ For {{site.data.keyword.containerlong_notm}}, see [Locations](/docs/containers?t
 
 For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?topic=openshift-at_events#at-ui).
 
-For {{site.data.keyword.satellitelong_notm}}, see [Locations](/docs/satellite?topic=satellite-at_events#at-ui).
+For {{site.data.keyword.satellitelong_notm}}, see [Locations](/docs/satellite?topic=satellite-at_events#at_ui).
 
 The following tables list the locations where automatic collection of registry service events is enabled. For more information, see [Auditing the events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-at_events).
 

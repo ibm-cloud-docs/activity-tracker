@@ -60,7 +60,7 @@ The following table lists the actions that generate an event for managing servic
 
 
 ## Viewing events
-{: #at_events_iam_ui}
+{: #at_events_dashdb_ui}
 
 Events are available in the **Frankfurt (eu-de)** region. 
 
