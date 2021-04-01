@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-28"
+lastupdated: "2021-03-31"
 
 keywords: IBM Cloud, Activity Tracker, getting started, auditing
 
@@ -220,7 +220,7 @@ Complete the following steps to launch the web UI:
 
     The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
 
-4. Select the instance that is located in **Frankfurt**. Then, click **Open Dashboard**.
+4. Select the instance that is located in **Frankfurt**. Then, click **View {{site.data.keyword.at_full_notm}}**.
 
     Global events, such as provisioning a service, are available through the global domain instance that is located in Frankfurt.
 
