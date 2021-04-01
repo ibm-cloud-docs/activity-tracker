@@ -56,7 +56,7 @@ Complete the following steps to configure an alert that informs you when you rea
 You must have manager access to configure data threshold alerts.
 {: note}
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/activity-tracker?topic=activity-tracker-launch).
+1. [Launch the {{site.data.keyword.at_full_notm}} UI](/docs/services/activity-tracker?topic=activity-tracker-launch).
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Usage**.
 

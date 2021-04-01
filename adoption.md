@@ -120,7 +120,11 @@ Enable this setting only if you or your company is a covered entity as defined b
 ### Locations
 {: #adoption_resource_svc_location}
 
+<<<<<<< HEAD
 You can provision instances of the {{site.data.keyword.at_full_notm}} service in any of the supported locations in the {{site.data.keyword.cloud_notm}}. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
+=======
+You can provision instances of the {{site.data.keyword.at_full_notm}} service in any of the supported locations in the {{site.data.keyword.cloud_notm}}. For more information, see [Locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
+>>>>>>> 8877183a5fd1d8ab39919cdd2f0b1433b890f28c
 
 Per location (region), you can provision 1 auditing instance. 
 * Events from enabled-AT services in the {{site.data.keyword.cloud_notm}} are collected automatically.
@@ -549,7 +553,7 @@ For more information, see [Activity Tracker events](/docs/cloud-object-storage?t
 Enable collection of COS management and data events on the bucket that you use to archive data from an auditing instance. Use these events to monitor activity in your COS bucket.
 {: tip}
 
-In {{site.data.keyword.at_full}}, you can define views, dashboard, and screens to monitor COS management and data events. You can also configure alerts on views to notify you when a specific condition occurs. On a view, you can configure an email alert, a Slack alert, a PagerDuty alert, or any combination of these. For more information, see [Creating custom views](/docs/activity-tracker?topic=activity-tracker-views) and [Managing alerts](/docs/activity-tracker?topic=activity-tracker-alerts).
+In {{site.data.keyword.at_full_notm}}, you can define views, dashboard, and screens to monitor COS management and data events. You can also configure alerts on views to notify you when a specific condition occurs. On a view, you can configure an email alert, a Slack alert, a PagerDuty alert, or any combination of these. For more information, see [Creating custom views](/docs/activity-tracker?topic=activity-tracker-views) and [Managing alerts](/docs/activity-tracker?topic=activity-tracker-alerts).
 
 For example, you can define a view that reports when an object is archived in a bucket. On that view, you can configure an email alert to notify you when an object has been archived. You might have compliance requirements that require you to control who accesses data that is archived. You can define a view that reports access to a bucket, and define an alert to notify you when that happens.
 
