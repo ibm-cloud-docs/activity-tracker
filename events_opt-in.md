@@ -71,7 +71,7 @@ The following table lists the Watson services and related information about addi
 | {{site.data.keyword.DSX_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | IBM Watson&trade; Knowledge Catalog | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | {{site.data.keyword.pm_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
-| {{site.data.keyword.knowledgestudiofull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
+| {{site.data.keyword.knowledgestudiofull}} |  |   |  
 | {{site.data.keyword.languagetranslatorfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | {{site.data.keyword.nlclassifierfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | {{site.data.keyword.nlufull}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
