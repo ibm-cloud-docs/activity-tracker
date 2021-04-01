@@ -66,7 +66,7 @@ Complete the following steps to launch the web UI:
     There is 1 instance per region.
     {: important}
 
-4. Select the instance in the region where you want to view events. Then, click **View {{site.data.keyword.at_full_notm}}**.
+4. Select the instance in the region where you want to view events. Then, click **Open Dashboard**.
 
 The {{site.data.keyword.at_full_notm}} web UI opens and shows the **Everything** view. Through this view, you can see the events in your account for the region that you have selected.
 

@@ -54,8 +54,8 @@ The following table lists the actions that generate an event for managing servic
 
 | Action                         | Description |
 |--------------------------------|---------|
-| `service_name.key.create` | An event is generated when an API key is created for a service instance through the *Service credentials* section of the service instance UI. |
-| `service_name.key.delete` | An event is generated when an API key that is associated with a service instance is deleted from the *Service credentials* section of the service instance UI. |
+| `dashdb.key.create` | An event is generated when an API key is created for a service instance through the *Service credentials* section of the service instance UI. |
+| `dashdb.key.delete` | An event is generated when an API key that is associated with a service instance is deleted from the *Service credentials* section of the service instance UI. |
 {: caption="Table 2. Actions that generate service credentials events" caption-side="top"} 
 
 

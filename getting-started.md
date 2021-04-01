@@ -220,7 +220,7 @@ Complete the following steps to launch the web UI:
 
     The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
 
-4. Select the instance that is located in **Frankfurt**. Then, click **View {{site.data.keyword.at_full_notm}}**.
+4. Select the instance that is located in **Frankfurt**. Then, click **Open Dashboard**.
 
     Global events, such as provisioning a service, are available through the global domain instance that is located in Frankfurt.
 
