@@ -83,7 +83,7 @@ To query archive files hosted in a COS bucket, you can use the {{site.data.keywo
 You must provision the {{site.data.keyword.sqlquery_short}} service in the same account where the COS instance that manages the bucket with the archive files is available.
 {: important}
 
-To provision an instance, see [Create your {{site.data.keyword.sqlquery_short}} service instance](/docs/services/sql-query?topic=sql-query-gettingstarted#sql_query).
+To provision an instance, see [Create your {{site.data.keyword.sqlquery_short}} service instance](/docs/sql-query?topic=sql-query-getting-started).
 
 
 Once you have {{site.data.keyword.sqlquery_short}} running on {{site.data.keyword.cloud_notm}}, you can immediately start querying your data by using the {{site.data.keyword.sqlquery_short}} UI, or programmatically by using either [the {{site.data.keyword.sqlquery_short}} REST API](https://cloud.ibm.com/apidocs/sql-query){: external}, or the Python `ibmcloudsql` library. 

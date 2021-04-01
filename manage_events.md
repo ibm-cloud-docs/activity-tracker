@@ -70,7 +70,7 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 
     `YYYY` represents the year; `MM` represents the month; and `DD` represents the day.
 
-    `<accountID>` represents the auditing account ID, that is, the ID that showd in the [web UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_logdna_web_url).
+    `<accountID>` represents the auditing account ID, that is, the ID that showd in the [web UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_web_url).
     
     `HH` represents hours in 24 format. 
 
