@@ -6,7 +6,7 @@ lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, Activity Tracker, provision instance
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -60,9 +60,9 @@ The HIPAA plan allows a maximum of 25 team members per instance. If you need to 
 
 
 Choose any of the following methods to provision an instance of the {{site.data.keyword.at_full_notm}} service:
-[Provisioning an instance through the Observability dashboard](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision#provision_ui)
-[Provisioning an instance through the catalog](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision#provision_catalog)
-[Provisioning an instance through the CLI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision#provision_cli)
+[Provisioning an instance through the Observability dashboard](/docs/activity-tracker?topic=activity-tracker-provision#provision_ui)
+[Provisioning an instance through the catalog](/docs/activity-tracker?topic=activity-tracker-provision#provision_catalog)
+[Provisioning an instance through the CLI](/docs/activity-tracker?topic=activity-tracker-provision#provision_cli)
 
 Make sure that your naming convention for {{site.data.keyword.at_full_notm}} instances does not include PII information. Choose the **HIPAA service plan** for your Activity Tracker instances.
 {: important}
@@ -85,7 +85,7 @@ Complete the following steps:
 ## Next steps
 {: #compliance_hipaa_iam}
 
-Restrict access to manage and view the data. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).
+Restrict access to manage and view the data. [Learn more](/docs/activity-tracker?topic=activity-tracker-iam).
 
 
 

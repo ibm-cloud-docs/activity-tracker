@@ -6,7 +6,7 @@ lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, Activity Tracker, export
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -39,7 +39,7 @@ You can have 1 Activity Tracker instance per region in your account. Therefore, 
 
 Complete the following steps to allow users to export events from an {{site.data.keyword.at_full_notm}} instance:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch#launch_cloud_ui).
 
 2. Select the **Configuration** icon ![Configuration icon](images/admin.png). 
 
@@ -54,7 +54,7 @@ Complete the following steps to allow users to export events from an {{site.data
 
 Complete the following steps to disable the export feature in an {{site.data.keyword.at_full_notm}} instance:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch#launch_cloud_ui).
 
 2. Select the **Configuration** icon ![Configuration icon](images/admin.png). 
 

@@ -6,7 +6,7 @@ lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, Activity Tracker, web UI, browser
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 

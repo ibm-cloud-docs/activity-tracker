@@ -1,1 +1,1 @@
-# Activity-Tracker-with-LogDNA
+# activity-tracker

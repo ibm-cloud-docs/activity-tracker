@@ -6,7 +6,7 @@ lastupdated: "2021-03-24"
 
 keywords: IBM Cloud, Activity Tracker, endpoints
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 

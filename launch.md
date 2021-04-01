@@ -6,7 +6,7 @@ lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, Activity Tracker, web UI, browser
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -43,7 +43,7 @@ The following table lists the minimum policy that a user must have to be able to
 | Service role: `Reader`    | Allows the user to view events through the web UI. | 
 {: caption="Table 1. IAM policies" caption-side="top"} 
 
-For more information, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
+For more information, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
 
 ## Launching the UI through the {{site.data.keyword.cloud_notm}} UI
@@ -78,7 +78,7 @@ You can launch the UI directly from a browser.
 
 Complete the following steps:
 
-1. [Get the UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_web_url).
+1. [Get the UI URL](/docs/activity-tracker?topic=activity-tracker-get_web_url).
 
     For example, a UI looks like `https://app.eu-gb.logging.cloud.ibm.com/ext/ibm-sso/xxxxxxxxxx`.
 
@@ -99,7 +99,7 @@ Complete the following steps:
 
     Where
 
-    * `<ENDPOINT>` represents the dashboard URL in the region where the instance is available. See [UI endpoints](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints_logdna_ui).
+    * `<ENDPOINT>` represents the dashboard URL in the region where the instance is available. See [UI endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_logdna_ui).
 
     * `<QUERY>` represents the search query that is applied for the view, for example, `q=table%3Amangle%20reason%3A%27refresh%20timer%27`. 
 

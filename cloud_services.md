@@ -6,7 +6,7 @@ lastupdated: "2021-03-31"
 
 keywords: IBM Cloud, Activity Tracker, services
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 
 ---
@@ -114,7 +114,7 @@ The following table lists observability services that send events to {{site.data
 
 | Service     | Service name | Description | Events |
 |-------------|-------------|-------------|-------------------|
-| [{{site.data.keyword.at_full}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) | `logdnaat` | {{site.data.keyword.at_full_notm}} monitors the activity of your {{site.data.keyword.cloud_notm}} account. | [Events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events) |
+| [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started) | `logdnaat` | {{site.data.keyword.at_full_notm}} monitors the activity of your {{site.data.keyword.cloud_notm}} account. | [Events](/docs/activity-tracker?topic=activity-tracker-at_events) |
 | [{{site.data.keyword.la_full}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started#getting-started) | `logdna` | {{site.data.keyword.la_full_notm}} adds log management capabilities to your {{site.data.keyword.cloud_notm}} architecture. | [Events](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started#getting-started) |
 | [{{site.data.keyword.mon_full}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started) | `sysdig-monitor` | You can use the {{site.data.keyword.mon_full_notm}} service to gain operational visibility into the performance and health of your applications, services, and platforms. | [Events](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-at_events) |
 {: caption="List of observability services" caption-side="top"} 
@@ -196,20 +196,20 @@ The following table lists network services that send events to {{site.data.keywo
 {: #platform_core_integrated}
 
 
-Core platform services generate events that you can view through the **Frankfurt (eu-de)** {{site.data.keyword.at_full_notm}} web UI. To view these events, you must [provision an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region.
+Core platform services generate events that you can view through the **Frankfurt (eu-de)** {{site.data.keyword.at_full_notm}} web UI. To view these events, you must [provision an instance](/docs/activity-tracker?topic=activity-tracker-provision#provision) of the {{site.data.keyword.at_full_notm}} service in the **Frankfurt (eu-de)** region.
 {: note}
 
 
 | Service                          | Service name  | Description | Events |
 |----------------------------------|--------------|-------------|-------------------| 
-| [BSS - Account and billing](/docs/account?topic=account-accounts#accounts) | `billing` | You can sign up for an {{site.data.keyword.IBM_notm}} account by using an existing IBMid, creating a new IBMid, or by using a federated ID. | [Events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_acc_mgt_account) |
-| [BSS - User management](/docs/account?topic=account-assign-access-resources) | `user-management` |  You can view and manage users across the account or organizations that you own or manage.  | [Events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_acc_mgt_users) |
-| [BSS - Provisioning](/docs/overview?topic=overview-ui#catalogcreate) | `provisioning` | You can create a service instance, rename a service instance, change the plan of a service instance, reclaim a service instance, restore a service instance and remove a service instance. | [Events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_rc#at_events_rc) |
-| [{{site.data.keyword.iamlong}}](/docs/account?topic=account-iamoverview)   | `iam-identity` </br>`iam-groups` </br>`iam-am` | IAM enables you to securely authenticate users for platform services and control access to resources consistently across {{site.data.keyword.cloud_notm}}. | [Events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam) |
+| [BSS - Account and billing](/docs/account?topic=account-accounts#accounts) | `billing` | You can sign up for an {{site.data.keyword.IBM_notm}} account by using an existing IBMid, creating a new IBMid, or by using a federated ID. | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_account) |
+| [BSS - User management](/docs/account?topic=account-assign-access-resources) | `user-management` |  You can view and manage users across the account or organizations that you own or manage.  | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_users) |
+| [BSS - Provisioning](/docs/overview?topic=overview-ui#catalogcreate) | `provisioning` | You can create a service instance, rename a service instance, change the plan of a service instance, reclaim a service instance, restore a service instance and remove a service instance. | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_rc#at_events_rc) |
+| [{{site.data.keyword.iamlong}}](/docs/account?topic=account-iamoverview)   | `iam-identity` </br>`iam-groups` </br>`iam-am` | IAM enables you to securely authenticate users for platform services and control access to resources consistently across {{site.data.keyword.cloud_notm}}. | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_iam) |
 | [{{site.data.keyword.compliance_full}}](/docs/security-compliance?topic=security-compliance-getting-started) | `compliance` | You can use {{site.data.keyword.compliance_short}} to embed security checks into your every day workflows to help monitor for security and compliance. | [Events](/docs/security-compliance?topic=security-compliance-at_events) |
 | [{{site.data.keyword.security-advisor_long}}](/docs/security-advisor?topic=security-advisor-getting-started) | `security-advisor` | You can use {{site.data.keyword.security-advisor_short}} to instantly view the security posture of your {site.data.keyword.cloud_notm}} services through a single, centralized dashboard. | [Events](/docs/security-compliance?topic=security-compliance-at_events#at_actions_insights) |
-| [Global Search Service](/docs/account?topic=account-tag) | `global-search-tagging` | You can use this service to manage tags. A tag is a label that you assign to a resource for easy filtering of resources in your resource list. | [Events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_acc_mgt_resources) |
-| [Catalog](/docs/account?topic=account-filter-account) | `globalcatalog-collection` | You can create, organize, and manage catalogs | [Events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_catalog_management) |
+| [Global Search Service](/docs/account?topic=account-tag) | `global-search-tagging` | You can use this service to manage tags. A tag is a label that you assign to a resource for easy filtering of resources in your resource list. | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_resources) |
+| [Catalog](/docs/account?topic=account-filter-account) | `globalcatalog-collection` | You can create, organize, and manage catalogs | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_catalog_management) |
 {: caption="Table 7. List of platform services" caption-side="top"}
 
 
@@ -217,11 +217,11 @@ For example, the following table lists core security actions that send events to
 
 | Actions     | Description | Events |
 |-------------|-------------|-------------------|
-| [Managing access groups](/docs/account?topic=account-groups#groups) | You can define access groups to organize a set of users and service IDs into a single entity that makes it easy for you to assign permissions. | [Events that are generated when you manage access groups](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_access) |
-| [Managing policies](/docs/account?topic=account-userroles#userroles) | You can use IAM to manage users and roles across the {{site.data.keyword.cloud_notm}} Platform and Infrastructure services. | [Events that are generated when you manage IAM policies](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_policies) |
-| [Log in to the {{site.data.keyword.cloud_notm}}](/docs/account?topic=account-iamoverview#iamoverview)| You can log into the {{site.data.keyword.cloud_notm}} by using a password, an API key, an authorization code, or a passcode. As a federated user, you can log in from the command-line interface (CLI) by using either a one-time passcode or an API key. | [Events that are generated when a user or app logs in to the {{site.data.keyword.cloud_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_login) |
-| [Managing platform API keys](/docs/account?topic=account-manapikey#manapikey) | You can define platform API keys in the {{site.data.keyword.IBM_notm}} Cloud that are associated with a user or a service ID. | [Events that are generated when you manage Platform API keys](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_apikeys) |
-| [Managing service IDs](/docs/account?topic=account-serviceids#serviceids) | You can define service IDs at the account level in the {{site.data.keyword.IBM_notm}} Cloud. | [Events that are generated when you manage service IDs](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_serviceids) |
+| [Managing access groups](/docs/account?topic=account-groups#groups) | You can define access groups to organize a set of users and service IDs into a single entity that makes it easy for you to assign permissions. | [Events that are generated when you manage access groups](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_access) |
+| [Managing policies](/docs/account?topic=account-userroles#userroles) | You can use IAM to manage users and roles across the {{site.data.keyword.cloud_notm}} Platform and Infrastructure services. | [Events that are generated when you manage IAM policies](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_policies) |
+| [Log in to the {{site.data.keyword.cloud_notm}}](/docs/account?topic=account-iamoverview#iamoverview)| You can log into the {{site.data.keyword.cloud_notm}} by using a password, an API key, an authorization code, or a passcode. As a federated user, you can log in from the command-line interface (CLI) by using either a one-time passcode or an API key. | [Events that are generated when a user or app logs in to the {{site.data.keyword.cloud_notm}}](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_login) |
+| [Managing platform API keys](/docs/account?topic=account-manapikey#manapikey) | You can define platform API keys in the {{site.data.keyword.IBM_notm}} Cloud that are associated with a user or a service ID. | [Events that are generated when you manage Platform API keys](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_apikeys) |
+| [Managing service IDs](/docs/account?topic=account-serviceids#serviceids) | You can define service IDs at the account level in the {{site.data.keyword.IBM_notm}} Cloud. | [Events that are generated when you manage service IDs](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_serviceids) |
 {: caption="Table 8. List of core security platform services" caption-side="top"}
 
 

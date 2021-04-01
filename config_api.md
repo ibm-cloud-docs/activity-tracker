@@ -6,7 +6,7 @@ lastupdated: "2021-03-31"
 
 keywords: IBM Cloud, Activity Tracker, api
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -31,7 +31,7 @@ You can use the *Configuration REST API* to manage programmatically views and al
 - You can use the **PUT** method to modify an existing view, and alerts that are attached to views.
 - You can use the **DELETE** method to delete a view and associated alerts.
 
-Before you run any automated tasks, consider doing a back up of your account configuration resources. You can use the back up to restore the resources, to the state before any change is applied, if you encounter problems. See [Export the configuration of resources in a logging instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-reuse_resource_definitions#rrd_export_config).
+Before you run any automated tasks, consider doing a back up of your account configuration resources. You can use the back up to restore the resources, to the state before any change is applied, if you encounter problems. See [Export the configuration of resources in a logging instance](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config).
 {: tip}
 
 
@@ -125,7 +125,7 @@ Where `<VIEWID>` represents the ID of a view.
 ## Endpoint URL
 {: #config_api_endpoint}
 
-Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage views and alerts programmatically. For information about endpoints per region, see [API endpoints](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-endpoints#endpoints_api).
+Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage views and alerts programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
 
 
 ## Authentication
@@ -134,7 +134,7 @@ Depending on [your account settings](/docs/account?topic=account-service-endpoin
 When you manage views and alerts programmatically, you must use a service key. Authorization to the Configuration API is enforced by using a service key.
 {: note} 
 
-A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to an auditing instance. For more information on how to generate a service key, see [Managing service keys](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys).
+A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to an auditing instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
 
 Use of the Configuration REST API is done by adding a valid service key to the HTTP Authorization request header. You must pass the service key as a header parameter (`-H`) of your requests.
 
@@ -298,7 +298,7 @@ The following are examples of how to use the Configuration API.
 A category must exist before you create a view. In these examples, replace `<MY_CATEGORY>` with your category. 
 {: note}
 
-In these examples, `<SERVICE_KEY>` is the [service key](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_keys) for your {{site.data.keyword.at_full_notm}} instance. 
+In these examples, `<SERVICE_KEY>` is the [service key](/docs/activity-tracker?topic=activity-tracker-service_keys) for your {{site.data.keyword.at_full_notm}} instance. 
 
 ### Creating a view
 {: #config_api-create-view}

@@ -6,7 +6,7 @@ lastupdated: "2021-03-29"
 
 keywords: IBM Cloud, Activity Tracker, iam, manage user access
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -56,8 +56,8 @@ After you define the scope of the access policy, you assign a role, which determ
 {: tip}
 
 Learn more through the following tutorials:
-* [Granting administration permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_manage_events#iam_manage_events)
-* [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events)
+* [Granting administration permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_manage_events#iam_manage_events)
+* [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events)
 
 ## Managing access by using access groups
 {: #groups}

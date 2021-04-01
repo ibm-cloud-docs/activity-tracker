@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-03-28"
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -31,13 +31,13 @@ subcollection: Activity-Tracker-with-LogDNA
 ## Collecting events to monitor activity in the account
 {: #manage_events_provision}
 
-In {{site.data.keyword.at_full_notm}}, events are collected automatically for most enabled-AT services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-events_collect).
+In {{site.data.keyword.at_full_notm}}, events are collected automatically for most enabled-AT services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them. [Learn more](/docs/activity-tracker?topic=activity-tracker-events_collect).
 
 
 ## Defining views, dashboards, and screens to analyze events
 {: #manage_events_category}
 
-You can define [views](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views), dashboards, and screens to analyze events and monitor activity in your account. 
+You can define [views](/docs/activity-tracker?topic=activity-tracker-views), dashboards, and screens to analyze events and monitor activity in your account. 
 
 Categories are used to group resources of the same type so that users can easily find them.  You can use categories to group views, dashboards, and screens.
 
@@ -50,7 +50,7 @@ The service plan determines the number of days that you have data available for 
 ## Archiving events for long-term storage
 {: #manage_events_archive}
 
-You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
+You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. [Learn more](/docs/activity-tracker?topic=activity-tracker-archiving).
 
 * Events are automatically archived in a compressed format **(.json.gz)**. Each event preserves its metadata.
 * Events are archived within 24-48 hours after you save the configuration. 
@@ -70,7 +70,7 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 
     `YYYY` represents the year; `MM` represents the month; and `DD` represents the day.
 
-    `<accountID>` represents the auditing account ID, that is, the ID that showd in the [web UI URL](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-get_web_url).
+    `<accountID>` represents the auditing account ID, that is, the ID that showd in the [web UI URL](/docs/activity-tracker?topic=activity-tracker-get_web_url).
     
     `HH` represents hours in 24 format. 
 

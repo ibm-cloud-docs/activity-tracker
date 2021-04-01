@@ -5,7 +5,7 @@ copyright:
 lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, Activity Tracker, service plan, price
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
