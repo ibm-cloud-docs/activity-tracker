@@ -32,7 +32,7 @@ You can send alerts to PagerDuty.
 
 When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#configure-an-alert), you can have that alert sent to PagerDuty.
 
-1. When configuring your alert, click ![PagerDuty icon](../images/pagerduty.png "PagerDuty icon").
+1. When configuring your alert, click ![PagerDuty icon](images/pagerduty.png "PagerDuty icon").
 
 2. Select if you want the alert to be sent when the condition exists (**Presence**) or does not exist (**Absence**).
 
@@ -53,7 +53,7 @@ When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-
 
 7. Optional: You can click **Test** to test that your alert configuration is correct.
 
-   ![PagerDuty Test button](../images/pagerduty-test.png "PagerDuty Test button")
+   ![PagerDuty Test button](images/pagerduty-test.png "PagerDuty Test button")
 
 8. Click **Save Alert**.
 

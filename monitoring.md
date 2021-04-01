@@ -32,7 +32,7 @@ You can send alerts to the {{site.data.keyword.mon_short}} service and manage th
 
 When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#configure-an-alert) you can have that alert sent to {{site.data.keyword.mon_short}}.
 
-1. When configuring your alert, click ![icon](../images/sysdig.png "icon").
+1. When configuring your alert, click ![icon](images/sysdig.png "icon").
 
 2. Select if you want the alert to be sent when the condition exists (**Presence**) or does not exist (**Absence**).
 
@@ -71,7 +71,7 @@ In {{site.data.keyword.mon_short}}, you get a **custom** event when an alert is 
 
 You can view the events by filtering by name or level in the *Events* section of the {{site.data.keyword.mon_short}} instance.
 
-![{{site.data.keyword.mon_short}} sample](../images/sysdig-sample.png "Monitoring sample")
+![{{site.data.keyword.mon_short}} sample](images/sysdig-sample.png "Monitoring sample")
 
 To view alerts, a user must have permissions to navigate to the web UI. [Learn more](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-launch).
 
