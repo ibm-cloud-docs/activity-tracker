@@ -6,7 +6,7 @@ lastupdated: "2021-03-24"
 
 keywords: IBM Cloud, Activity Tracker, getting started, auditing, monitoring
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -30,7 +30,7 @@ You can send alerts to the {{site.data.keyword.mon_short}} service and manage th
 ## Configuring a {{site.data.keyword.mon_short}} alert
 {: #monitoring-config}
 
-When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#configure-an-alert) you can have that alert sent to {{site.data.keyword.mon_short}}.
+When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-alerts#configure-an-alert) you can have that alert sent to {{site.data.keyword.mon_short}}.
 
 1. When configuring your alert, click ![icon](images/sysdig.png "icon").
 

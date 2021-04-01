@@ -6,7 +6,7 @@ lastupdated: "2021-03-26"
 
 keywords: IBM Cloud, Activity Tracker, provision instance
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -31,7 +31,7 @@ Before you can monitor and manage event data with {{site.data.keyword.at_full_no
 
 To provision an {{site.data.keyword.at_full_notm}} instance in a Public Cloud region, consider the following information:
 * You must select the service plan that is associated with the instance, the region where your events are collected, and the plan that determines the retention period for your events. You can choose from 7, 14, or 30-day retention periods. Alternatively, {{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your events as they pass through the system. You can view events by using event tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
-* Your user ID must have permisisons to provision a service in a resource group. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#groups).
+* Your user ID must have permisisons to provision a service in a resource group. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam#groups).
 
 
 You can only provision 1 instance of the service per {{site.data.keyword.cloud_notm}} region.
@@ -52,7 +52,7 @@ To provision an instance from the Observability dashboard in the {{site.data.key
 
 4. Enter a name for the service instance.
 
-5. Select the [location](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions) where you plan to provision the instance. 
+5. Select the [location](/docs/services/activity-tracker?topic=activity-tracker-regions) where you plan to provision the instance. 
 
 6. Select a resource group. 
 
@@ -68,7 +68,7 @@ To provision an instance from the Observability dashboard in the {{site.data.key
 
 After you provision an instance, the *Activity Tracker* dashboard opens. 
 
-Next, go to the web UI to view the events in your account. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-view_events).
+Next, go to the web UI to view the events in your account. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-view_events).
 
 
 
@@ -91,7 +91,7 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the {{sit
 
 6. Select the location where you plan to provision the instance. 
 
-    To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
+    To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/activity-tracker?topic=activity-tracker-regions).
 
 7. Select a resource group. 
 
@@ -107,7 +107,7 @@ To provision an instance of {{site.data.keyword.at_full_notm}} through the {{sit
 
 After you provision an instance, the *Activity Tracker* dashboard opens. 
 
-Next, go to the web UI to manage events in your account. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
+Next, go to the web UI to manage events in your account. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-launch#launch).
 
 
 ## Provisioning an instance through the CLI
@@ -119,7 +119,7 @@ Complete the following steps:
 
 2. Log in to the location in the {{site.data.keyword.cloud_notm}} where you want to provision the instance. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
-    To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
+    To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/activity-tracker?topic=activity-tracker-regions).
 
 3. Set the resource group where you want to provision the instance. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
@@ -140,7 +140,7 @@ Complete the following steps:
 
     * SERVICE_PLAN_NAME is the type of plan. Valid values are *lite*, *7-day*, *14-day*, *30-day*
     
-    * LOCATION is the region where the logging instance is created. To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
+    * LOCATION is the region where the logging instance is created. To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/activity-tracker?topic=activity-tracker-regions).
 
     
 For example, to provision an instance with the 7 days retention plan, run the following command:

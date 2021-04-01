@@ -6,7 +6,7 @@ lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, Activity Tracker, export
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -39,11 +39,11 @@ Consider the following information when you export events:
 ## Prerequisites
 {: #export_prereqs}
 
-* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan). 
+* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-service_plan#service_plan). 
 
-* Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
+* Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
-* Check that the logging instance has the export feature enabled. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export_config).
+* Check that the logging instance has the export feature enabled. [Learn more](/docs/activity-tracker?topic=activity-tracker-export_config).
 
 ## Exporting events from a custom view
 {: #export_ui_view}
@@ -52,7 +52,7 @@ You can create a custom view and then export data for a period of time.
 
 Complete the following steps to export data through the UI:
 
-1. [Launch the UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
+1. [Launch the UI](/docs/services/activity-tracker?topic=activity-tracker-launch#launch).
 2. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 3. Select a view.
 4. Select the view name. 
@@ -69,7 +69,7 @@ You can export data from a custom search.
 
 Complete the following steps to export data through the UI:
 
-1. [Launch the UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
+1. [Launch the UI](/docs/services/activity-tracker?topic=activity-tracker-launch#launch).
 2. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 3. Select **Everything**.
 4. Apply filters and search criteria until you see the entries that you want to export.

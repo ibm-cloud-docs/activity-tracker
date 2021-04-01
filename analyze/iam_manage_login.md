@@ -6,7 +6,7 @@ lastupdated: "2021-03-28"
 
 keywords: IBM Cloud, Activity Tracker, IAM events
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -192,5 +192,5 @@ The following table shows the IAM event that is generated in each of the log in 
 {: caption="Table 1. User login actions" caption-side="top"} 
 
 
-[Learn more about analyzing IAM events](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_analyze).
+[Learn more about analyzing IAM events](/docs/services/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_analyze).
 

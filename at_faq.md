@@ -6,7 +6,7 @@ lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, Activity Tracker, faq
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -35,19 +35,19 @@ Frequently asked questions about {{site.data.keyword.at_full}}.
 {: #faq_1}
 {: faq}
 
-You can find information about the services that generate audit events and send those to Activity Tracker in the following documentation topic: [Cloud services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services).
+You can find information about the services that generate audit events and send those to Activity Tracker in the following documentation topic: [Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services).
 
 ## Where can I find the actions that a service generates?
 {: #faq_2}
 {: faq}
 
-You can link to the list of events that each service generates from the following documentation topic: [Cloud services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services).
+You can link to the list of events that each service generates from the following documentation topic: [Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services).
 
 ## Where can I find the events that a service generates?
 {: #faq_3}
 {: faq}
 
-In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as [global events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_global) or [location-based events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_location), and by operational impact as management or data events. 
+In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) or [location-based events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_location), and by operational impact as management or data events. 
 
 First, you need to check if you need to configure your service, upgrade your plan, or both to be able to collect Activity Tracker events.
 
@@ -73,7 +73,7 @@ For location-based events, you need to check the following scenarios to determin
 
     1. Identify the location where your service is provisioned. 
     
-    2. Check whether the {{site.data.keyword.at_full_notm}} service is available in that region. See [Locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
+    2. Check whether the {{site.data.keyword.at_full_notm}} service is available in that region. See [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
 
     3. Check that you have an Activity Tracker instance provisioned in the same location where your service is provisioned.
 
@@ -83,7 +83,7 @@ For location-based events, you need to check the following scenarios to determin
 
     1. Identify the location where your service is provisioned. 
         
-    2. Check the [Cloud services locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions) to identify the Activity Tracker instance where events are available.
+    2. Check the [Cloud services locations](/docs/activity-tracker?topic=activity-tracker-regions) to identify the Activity Tracker instance where events are available.
 
 
 
@@ -94,7 +94,7 @@ For location-based events, you need to check the following scenarios to determin
 
 To access data, you can download the archived file locally.
 
-To query the data, you can also use a service like SQL Query to query your COS archives and get information based on queries that you define. [Learn more](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-sqlquery).
+To query the data, you can also use a service like SQL Query to query your COS archives and get information based on queries that you define. [Learn more](/docs/activity-tracker?topic=activity-tracker-sqlquery).
 
 
 ## Can I import archived data back into the UI?
@@ -107,7 +107,7 @@ You cannot import archived data into the UI.
 {: #faq_6}
 {: faq}
 
-To configure archiving see [Archiving events to IBM Cloud Object Storage](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-archiving).
+To configure archiving see [Archiving events to IBM Cloud Object Storage](/docs/activity-tracker?topic=activity-tracker-archiving).
 
 ## I get an error when I try to provision an Activity Tracker instance
 {: #faq_7}
@@ -121,7 +121,7 @@ Most likely, your account administrator has already provisioned the auditing ins
 
 To see auditing instances, you must have IAM platform permissions for the {{site.data.keyword.at_full_notm}} service. 
 
-Therefore, if you cannot see any Auditing instances when you [launch the Activity Tracker observability dashboard](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch), check that you have permissions to at least view them. You need at least the **viewer** platform role to see the auditing instances. To learn more about IAM permissions, see [Managing access with IAM](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam). 
+Therefore, if you cannot see any Auditing instances when you [launch the Activity Tracker observability dashboard](/docs/activity-tracker?topic=activity-tracker-launch), check that you have permissions to at least view them. You need at least the **viewer** platform role to see the auditing instances. To learn more about IAM permissions, see [Managing access with IAM](/docs/activity-tracker?topic=activity-tracker-iam). 
 
 
 

@@ -6,7 +6,7 @@ lastupdated: "2021-03-24"
 
 keywords: IBM Cloud,Activity Tracker, services
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 
 ---
@@ -113,7 +113,7 @@ The following table lists observability services that send events to {{site.data
 
 | Service Name     | `host` field  | `client_id` field | Location-based events | Global events |
 |------------------|---------------|-------------------|-----------------------|---------------|
-| [{{site.data.keyword.at_full}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) |  | logdnaat | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events) | |
+| [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started) |  | logdnaat | [YES](/docs/activity-tracker?topic=activity-tracker-at_events) | |
 | [{{site.data.keyword.la_full}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started#getting-started) |  | logdna | [YES](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started#getting-started) | |
 | [{{site.data.keyword.mon_full}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started) |  | sysdig | [YES](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-at_events) | |
 {: caption="List of observability services" caption-side="top"} 
@@ -128,15 +128,15 @@ The following table lists core platform actions that send events to {{site.data.
 
 | Service Name     | `host` field  | `client_id` field | Global events |
 |------------------|---------------|-------------------|---------------|
-| [Managing an account](/docs/account?topic=account-accounts#accounts) |  |  | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_acc_mgt_account). |
-| [Managing users](/docs/account?topic=account-assign-access-resources) | |  | [YES ](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_acc_mgt_users) |
-| [Managing organizations](/docs/account?topic=account-orgsspacesusers#orgsspacesusers) | | | [YES](/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_acc_mgt_org) |
-| [Managing catalogs](/docs/account?topic=account-filter-account) | | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_catalog_management) |
-| [Provisioning and managing IAM enabled services](/docs/overview?topic=overview-ui#catalogcreate) | | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_rc#at_events_rc) |
-| [Working with service aliases](/docs/account?topic=account-connect_app#what_is_alias) | | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_rc#rc_alias) |
-| [Working with service credentials](/docs/account?topic=account-service_credentials#service_credentials) | | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_rc#rc_keys) |
-| [Connecting a service instance to a Cloud Foundry app](/docs/account?topic=account-s2s_binding#s2s_binding) | | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_rc#rc_bind) |
-| [Managing tags](/docs/account?topic=account-tag) | | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_acc_mgt#at_events_acc_mgt_resources) |
+| [Managing an account](/docs/account?topic=account-accounts#accounts) |  |  | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_account). |
+| [Managing users](/docs/account?topic=account-assign-access-resources) | |  | [YES ](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_users) |
+| [Managing organizations](/docs/account?topic=account-orgsspacesusers#orgsspacesusers) | | | [YES](/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_org) |
+| [Managing catalogs](/docs/account?topic=account-filter-account) | | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_catalog_management) |
+| [Provisioning and managing IAM enabled services](/docs/overview?topic=overview-ui#catalogcreate) | | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_rc#at_events_rc) |
+| [Working with service aliases](/docs/account?topic=account-connect_app#what_is_alias) | | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_rc#rc_alias) |
+| [Working with service credentials](/docs/account?topic=account-service_credentials#service_credentials) | | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_rc#rc_keys) |
+| [Connecting a service instance to a Cloud Foundry app](/docs/account?topic=account-s2s_binding#s2s_binding) | | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_rc#rc_bind) |
+| [Managing tags](/docs/account?topic=account-tag) | | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_resources) |
 {: caption="Table 7. List of core platform actions" caption-side="top"}
 
 ## Platform core integrated security services
@@ -147,11 +147,11 @@ The following table lists core security platform actions that send events to {{s
 
 | Service Name     | `host` field  | `client_id` field | Global events |
 |------------------|---------------|-------------------|---------------|
-| [Managing access groups](/docs/account?topic=account-groups#groups) | | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_access) |
-| [Managing policies](/docs/account?topic=account-userroles#userroles) | | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_policies) |
-| [Log in to the {{site.data.keyword.cloud_notm}}](/docs/account?topic=account-iamoverview#iamoverview)| | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_login) |
-| [Managing platform API keys](/docs/account?topic=account-manapikey#manapikey) | | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_apikeys) |
-| [Managing service IDs](/docs/account?topic=account-serviceids#serviceids) | | | [YES](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-at_events_iam#at_events_iam_serviceids) |
+| [Managing access groups](/docs/account?topic=account-groups#groups) | | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_access) |
+| [Managing policies](/docs/account?topic=account-userroles#userroles) | | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_policies) |
+| [Log in to the {{site.data.keyword.cloud_notm}}](/docs/account?topic=account-iamoverview#iamoverview)| | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_login) |
+| [Managing platform API keys](/docs/account?topic=account-manapikey#manapikey) | | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_apikeys) |
+| [Managing service IDs](/docs/account?topic=account-serviceids#serviceids) | | | [YES](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_serviceids) |
 {: caption="Table 8. List of core security platform services" caption-side="top"}
 
 

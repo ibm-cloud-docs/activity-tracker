@@ -6,7 +6,7 @@ lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, Activity Tracker, logging, web UI, observability
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -29,7 +29,7 @@ subcollection: Activity-Tracker-with-LogDNA
 When you provision an instance of the {{site.data.keyword.at_full_notm}} service, you must choose a service plan. Different plans offer different features. You can change the service plan at any time.
 {:shortdesc}
 
-[Learn more about service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
+[Learn more about service plans](/docs/activity-tracker?topic=activity-tracker-service_plan).
 
 ## Changing the service plan through the Observability dashboard
 {: #upgrade_ui}
@@ -64,7 +64,7 @@ Complete the following steps to change the service plan:
 
 2. Log in to the location in the {{site.data.keyword.cloud_notm}} where the instance is provisioned. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
-    To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
+    To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/activity-tracker?topic=activity-tracker-regions).
 
 3. Set the resource group where the instance is available. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
@@ -92,7 +92,7 @@ Complete the following steps to change the service plan:
 
     * `service-plan-id` indicates the type of plan.
 
-    * `RESOURCE_PLAN_ID` is the ID of the plan that you want to set. To get the service plan IDs, see [Service plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
+    * `RESOURCE_PLAN_ID` is the ID of the plan that you want to set. To get the service plan IDs, see [Service plans](/docs/activity-tracker?topic=activity-tracker-service_plan).
     
 
 For example, to change the service plan of an instance to the 7 days retention plan, run the following command:

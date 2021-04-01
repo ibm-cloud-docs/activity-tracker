@@ -6,7 +6,7 @@ lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, Activity Tracker, events, global, regional, data, management
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -42,28 +42,28 @@ You can differentiate events by scope as global or location-based events. The sc
 ## Collecting Global events
 {: #events_collect_global}
 
-[Global events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_global) are available through the Activity Tracker instance in Frankfurt. Therefore, to collect and view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
+[Global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) are available through the Activity Tracker instance in Frankfurt. Therefore, to collect and view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
 
 
 ## Collecting Location-based events
 {: #events_collect_location}
 
-[Location-based events](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event_types#event_types_location) are available through the Activity Tracker instance that is available in the same region as the service. 
+[Location-based events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_location) are available through the Activity Tracker instance that is available in the same region as the service. 
 
 Consider the following scenarios that are exceptions to this behavior for location-based events:
-* The {{site.data.keyword.at_full_notm}} service might not be available in a region where a service is provisioned. [Learn more about supported locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
+* The {{site.data.keyword.at_full_notm}} service might not be available in a region where a service is provisioned. [Learn more about supported locations](/docs/activity-tracker?topic=activity-tracker-regions).
 
-    Check the [Cloud services by location](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations) documentation to find out if the service generates AT events in that region, and if it does, where are the events available for analysis.
+    Check the [Cloud services by location](/docs/activity-tracker?topic=activity-tracker-cloud_services_locations) documentation to find out if the service generates AT events in that region, and if it does, where are the events available for analysis.
 
 * The service might not generate Activity Tracker events in the region where you have provisioned your instance.
 
-    Check the [Cloud services by location](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations) documentation to confirm if events are available in that region.
+    Check the [Cloud services by location](/docs/activity-tracker?topic=activity-tracker-cloud_services_locations) documentation to confirm if events are available in that region.
 
 
 ## Defining the instances that I need to collect and monitor events in the account
 {: #events_collect_define}
 
-You can provison only 1 instance of the {{site.data.keyword.at_full_notm}} service per location. To get the list of locations where the service is available in the {{site.data.keyword.cloud_notm}}, see [Locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
+You can provison only 1 instance of the {{site.data.keyword.at_full_notm}} service per location. To get the list of locations where the service is available in the {{site.data.keyword.cloud_notm}}, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
 
 
 To monitor activity in your account, you need the following {{site.data.keyword.at_full_notm}} instances:
@@ -78,7 +78,7 @@ For example, you might have services in the US South location only. To monitor a
 
 In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability** &gt; **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
 
-If you need to provision an instance, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
+If you need to provision an instance, see [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision).
 
 
 

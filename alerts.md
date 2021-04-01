@@ -6,7 +6,7 @@ lastupdated: "2021-03-28"
 
 keywords: IBM Cloud, Activity Tracker, alerts, events
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -35,9 +35,9 @@ Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search quer
 ### Prerequisites
 {: #alerts_prereqs}
 
-* [Learn more about alerts](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-monitor_events#mon_alerts).
+* [Learn more about alerts](/docs/services/activity-tracker?topic=activity-tracker-monitor_events#mon_alerts).
 
-* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan#service_plan).
+* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-service_plan#service_plan).
 
 * Check that your user ID has permissions to launch the web UI and view events. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
 
@@ -47,7 +47,7 @@ Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search quer
 | Service role: `Reader`      | Allows the user to launch the web UI and view events in the web UI.  |
 {: caption="Table 1. IAM roles" caption-side="top"} 
 
-For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam_view_events#iam_view_events).
+For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
  
 
@@ -55,13 +55,13 @@ For more information on how to configure policies for a user, see [Granting user
 ### Step 1. Go to the web UI
 {: #alerts_step1}
 
-[Go to the web UI](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch).
+[Go to the web UI](/docs/services/activity-tracker?topic=activity-tracker-launch#launch).
 
 
 ### Step 2. Create a view
 {: #alerts_step2}
 
-[Create a view](/docs/services/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views).
+[Create a view](/docs/services/activity-tracker?topic=activity-tracker-views).
 
 
 ### Step 3. Configure an alert

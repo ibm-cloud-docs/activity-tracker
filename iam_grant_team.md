@@ -6,7 +6,7 @@ lastupdated: "2021-03-29"
 
 keywords: groups, access, log analysis
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -283,7 +283,7 @@ Complete the following steps to assign a policy to an access group through the U
 
     * Select **reader** to grant permissions to view data only.
 
-    [Learn more about the roles that you need](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam).
+    [Learn more about the roles that you need](/docs/activity-tracker?topic=activity-tracker-iam).
 
 8. Click **Assign**.
 

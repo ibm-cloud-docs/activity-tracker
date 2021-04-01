@@ -5,7 +5,7 @@ copyright:
 lastupdated: "2021-03-028"
 
 keywords: IBM Cloud, Activity Tracker, regions
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 

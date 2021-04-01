@@ -6,7 +6,7 @@ lastupdated: "2021-03-24"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing, PagerDuty
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -30,7 +30,7 @@ You can send alerts to PagerDuty.
 ## Configuring PagerDuty
 {: #pagerduty-config}
 
-When you [configure an alert](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts#configure-an-alert), you can have that alert sent to PagerDuty.
+When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-alerts#configure-an-alert), you can have that alert sent to PagerDuty.
 
 1. When configuring your alert, click ![PagerDuty icon](images/pagerduty.png "PagerDuty icon").
 

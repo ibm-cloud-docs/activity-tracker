@@ -6,7 +6,7 @@ lastupdated: "2021-03-29"
 
 keywords: groups, access, activity tracker
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 

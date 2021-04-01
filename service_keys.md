@@ -6,7 +6,7 @@ lastupdated: "2021-01-05"
 
 keywords: IBM Cloud, Activity Tracker, export, api
 
-subcollection: Activity-Tracker-with-LogDNA
+subcollection: activity-tracker
 
 ---
 
@@ -52,7 +52,7 @@ You can only generate a service key through the UI.
     
 Complete the following steps to create a service key:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch#launch_cloud_ui).
 
 2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
 
@@ -75,7 +75,7 @@ You can only delete a service Key through the UI.
 
 Complete the following steps to delete a service key:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch#launch_cloud_ui).
 
 2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
 
@@ -92,11 +92,11 @@ Complete the following steps to delete a service key:
 Only users that have the **manager** service role or the **standard-member** service role can view service keys.
 {: important} 
 
-For more information, see [service roles](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-iam#service).
+For more information, see [service roles](/docs/activity-tracker?topic=activity-tracker-iam#service).
 
 Complete the following steps to view a service key:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch#launch_cloud_ui).
 
 2. Select the **Configuration** icon ![Configuration icon](images/admin.png). Then, select **Organization**. 
 

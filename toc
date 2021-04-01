@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="Activity-Tracker-with-LogDNA" audience="service" category="logging_monitoring" href="/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started" path="Activity-Tracker-with-LogDNA"}
+{: .toc subcollection="activity-tracker" audience="service" category="logging_monitoring" href="/docs/activity-tracker?topic=activity-tracker-getting-started" path="activity-tracker"}
 Activity Tracker
 
     {: .navgroup id="learn"}
