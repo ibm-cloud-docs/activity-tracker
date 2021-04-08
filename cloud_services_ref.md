@@ -77,7 +77,7 @@ The following table lists serverless compute services that send events to {{site
 
 | Service Name     | `host` field  | `client_id` field | Location-based events | Global events |
 |------------------|---------------|-------------------|-----------------------|---------------|
-| [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=openwhisk-getting-started) |  | | [YES](/docs/openwhisk?topic=openwhisk-activity_tracker) | |
+| [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=openwhisk-getting-started) |  | | [YES](/docs/openwhisk?topic=openwhisk-at_events) | |
 {: caption="Table 4. List of serverless compute services" caption-side="top"}
 
 
@@ -114,8 +114,8 @@ The following table lists observability services that send events to {{site.data
 | Service Name     | `host` field  | `client_id` field | Location-based events | Global events |
 |------------------|---------------|-------------------|-----------------------|---------------|
 | [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started) |  | logdnaat | [YES](/docs/activity-tracker?topic=activity-tracker-at_events) | |
-| [{{site.data.keyword.la_full}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started#getting-started) |  | logdna | [YES](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started#getting-started) | |
-| [{{site.data.keyword.mon_full}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started) |  | sysdig | [YES](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-at_events) | |
+| [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) |  | logdna | [YES](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | |
+| [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) |  | sysdig | [YES](/docs/monitoring?topic=monitoring-at_events) | |
 {: caption="List of observability services" caption-side="top"} 
 
 
@@ -316,7 +316,7 @@ The following table lists Watson AI services that send events to {{site.data.key
 |------------------|---------------|-------------------|-----------------------|---------------|
 | [{{site.data.keyword.conversationfull}}](/docs/assistant?topic=assistant-getting-started) | | | [YES](/docs/assistant?topic=assistant-at-events) | |
 | [{{site.data.keyword.discoveryfull}}](/docs/discovery?topic=discovery-getting-started) | | | [YES](/docs/discovery?topic=discovery-at_events)  | |
-| [{{site.data.keyword.cncfull}}](/docs/compare-comply?topic=compare-comply-getting-started) | | | [YES](/docs/compare-comply?topic=compare-comply-at_events) | |
+| [{{site.data.keyword.cncfull}}](/docs/compare-comply?topic=compare-comply-about) | | | [YES](/docs/compare-comply?topic=compare-comply-at_events) | |
 | [{{site.data.keyword.DSX_full}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/overview-ws.html) | | | [YES](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html#ws) | |
 | [IBM Watson&trade; Knowledge Catalog](https://dataplatform.cloud.ibm.com/docs/content/wsj/catalog/overview-wkc.html) | | | [YES](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html#wkc) | |
 | [{{site.data.keyword.knowledgestudiofull}}](/docs/watson-knowledge-studio) | | | [YES](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-activity-tracker-events) | |
@@ -340,5 +340,5 @@ The following table lists Code Engine services that send events to {{site.data.k
 
 | Service Name     | `host` field  | `client_id` field | Location-based events | Global events |
 |------------------|---------------|-------------------|-----------------------|---------------|
-| [{{site.data.keyword.codeenginefull}}](/docs/codeengine?topic=codeengine-getting-started)|  |  | [YES](/docs/codeengine?topic=codeengine-activity_tracker) | |
+| [{{site.data.keyword.codeenginefull}}](/docs/codeengine?topic=codeengine-getting-started)|  |  | [YES](/docs/codeengine?topic=codeengine-at_events) | |
 {: caption="Table 19. List of storage events" caption-side="top"}

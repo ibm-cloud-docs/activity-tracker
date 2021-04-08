@@ -99,7 +99,7 @@ Complete the following steps:
 
     Where
 
-    * `<ENDPOINT>` represents the dashboard URL in the region where the instance is available. See [UI endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_logdna_ui).
+    * `<ENDPOINT>` represents the dashboard URL in the region where the instance is available. See [UI endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_ui).
 
     * `<QUERY>` represents the search query that is applied for the view, for example, `q=table%3Amangle%20reason%3A%27refresh%20timer%27`. 
 

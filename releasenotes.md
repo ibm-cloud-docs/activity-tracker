@@ -32,7 +32,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 ## March 2021
 {: #AT-march2021-for-update}
 
-- New CLI added that can be used to list instances and export data from an instance. [Learn more about the CLI](/docs/activity-tracker?topic=logdna-cli-plugin-logdna-cli).
+- New CLI added that can be used to list instances and export data from an instance. [Learn more about the CLI](/docs/cli?topic=log-analysis-cli-plugin-log-analysis-cli).
 - New API added that can be used to export data from an instance, and manage views and alerts. [Learn more about the API](https://cloud.ibm.com/apidocs/logdna?code=python#introduction){: external}.
 
 

@@ -120,11 +120,7 @@ Enable this setting only if you or your company is a covered entity as defined b
 ### Locations
 {: #adoption_resource_svc_location}
 
-<<<<<<< HEAD
 You can provision instances of the {{site.data.keyword.at_full_notm}} service in any of the supported locations in the {{site.data.keyword.cloud_notm}}. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
-=======
-You can provision instances of the {{site.data.keyword.at_full_notm}} service in any of the supported locations in the {{site.data.keyword.cloud_notm}}. For more information, see [Locations](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-regions).
->>>>>>> 8877183a5fd1d8ab39919cdd2f0b1433b890f28c
 
 Per location (region), you can provision 1 auditing instance. 
 * Events from enabled-AT services in the {{site.data.keyword.cloud_notm}} are collected automatically.
