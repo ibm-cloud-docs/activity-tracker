@@ -60,7 +60,7 @@ For example, you might be interested in finding out why an action to delete a us
 
 3. You need an {{site.data.keyword.at_full_notm}} instance that is provisioned in Frankfurt with a 7-day, 14-day, or 30-day plan. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-provision).
 
-4. Your user ID must have assigned an IAM policy to work in the {{site.data.keyword.cloud_notm}} with the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/account?topic=account-assign-access-resources#access_to_resources).
+4. Your user ID must have assigned an IAM policy to work in the {{site.data.keyword.cloud_notm}} with the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/account?topic=account-assign-access-resources#assign-new-access).
 
 
 ## Step 1. Launch the web UI in Frankfurt
