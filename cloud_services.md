@@ -279,14 +279,10 @@ The following table lists web and mobile services that send events to {{site.dat
 ## VPC infrastructure
 {: #vpc_infrastructure}
 
-You can provision a Virtual Private Cloud (VPC) in the {{site.data.keyword.cloud_notm}} to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. For more information, see [About Virtual Private Cloud](/docs/vpc-on-classic?topic=vpc-on-classic-about)
-
-There are 2 types of VPC infrastructure that you can provision in your account:
-* [Virtual Private Cloud classic Gen 1](/docs/vpc-on-classic?topic=vpc-on-classic-getting-started)
-* [{{site.data.keyword.vpc_full}} Gen 2](/docs/vpc?topic=vpc-getting-started)
+You can provision a Virtual Private Cloud (VPC) in the {{site.data.keyword.cloud_notm}} to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. For more information, see [{{site.data.keyword.vpc_full}}](/docs/vpc?topic=vpc-getting-started)
 
 
-### {{site.data.keyword.vpc_short}} Gen 2
+### {{site.data.keyword.vpc_short}}
 {: #vpc_infrastructure_gen2}
 
 The following table lists VPC infrastructure services that send events to {{site.data.keyword.at_full_notm}}:
@@ -299,23 +295,7 @@ The following table lists VPC infrastructure services that send events to {{site
 | [Load Balancer](/docs/vpc?topic=vpc-load-balancers)| Use this service to distribute traffic among multiple server instances within the same region of your VPC.  | [Events](/docs/vpc?topic=vpc-at-events#events-load-balancers) |
 | [VPN](/docs/vpc?topic=vpc-using-vpn)| Use this service to connect private networks in a secure fashion. You can use VPN to set up an IPsec site-to-site tunnel between your VPC and your on-premise private network or another VPC. | [Events](/docs/vpc?topic=vpc-at-events#at-events) |
 | [Images](/docs/vpc?topic=vpc-about-images) | When you provision {{site.data.keyword.vsi_is_short}}, you can select from the supported stock images or a custom image that you import from {{site.data.keyword.cos_full_notm}}. | [Events](/docs/vpc?topic=vpc-at-events#events-images) |
-{: caption="Table 16. List of VPC infrastructure services (generation 2)" caption-side="top"}
-
-
-### Virtual Private Cloud Gen 1 (Classic)
-{: #vpc_infrastructure_classic}
-
-The following table lists VPC infrastructure services that send events to {{site.data.keyword.at_full_notm}}:
-
-| Service     | Description |Events             |
-|-------------|-------------|-------------------|
-| [Storage resources](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-getting-started-gen1)| Use this service to provide hypervisor-mounted, high-performance data storage for virtual server instances (instances) in your VPC. | [Events](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#events-storage) |
-| [Compute resources](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-getting-started)| Use this service to provision scalable compute resources in the IBM Cloud. | [Events](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#events-computes) |
-| [Network resources](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-getting-started)| Use this service to add network resources to your VPC infrastructure. | [Events](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#events-volumes) |
-| [Load Balancer](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)| Use this service to distribute traffic among multiple server instances within the same region of your VPC.  | [Events](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#events-load-balancers) |
-| [VPN](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-vpn-with-your-vpc)| Use this service to connect private networks in a secure fashion. You can use VPN to set up an IPsec site-to-site tunnel between your VPC and your on-premise private network or another VPC. | [Events](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#events-vpn) |
-| [Images](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-images) | When you provision {{site.data.keyword.vsi_is_short}}, you can select from the supported stock images or a custom image that you import from {{site.data.keyword.cos_full_notm}}. | [Events](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#events-images) |
-{: caption="Table 17. List of VPC infrastructure services (generation 1)" caption-side="top"}
+{: caption="Table 16. List of VPC infrastructure services" caption-side="top"}
 
 
 
@@ -342,6 +322,6 @@ The following table lists Watson AI services that send events to {{site.data.key
 | [{{site.data.keyword.texttospeechfull}}](/docs/text-to-speech?topic=text-to-speech-gettingStarted) | Converts written text to natural-sounding speech to provide speech-synthesis capabilities for applications. | [Events](/docs/text-to-speech?topic=text-to-speech-atEvents) |
 | [{{site.data.keyword.visualrecognitionfull}}](/docs/visual-recognition?topic=visual-recognition-index) | Uses deep learning algorithms to analyze images for scenes, objects, and other content. The response includes keywords that provide information about the content. | [Events](/docs/visual-recognition?topic=visual-recognition-at_events) |
 | [{{site.data.keyword.wh-acd_full}}](/docs/wh-acd?topic=wh-acd-getting-started) | Finds medical concepts, medical codes, and contextual information in unstructured text. | [Events](/docs/wh-acd?topic=wh-acd-at_events) |
-{: caption="Table 18. List of Watson AI services" caption-side="top"}
+{: caption="Table 17. List of Watson AI services" caption-side="top"}
 
 
