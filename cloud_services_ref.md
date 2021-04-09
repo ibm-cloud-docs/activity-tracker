@@ -237,7 +237,7 @@ The following table lists security Cloud services that send events to {{site.dat
 | [{{site.data.keyword.keymanagementservicelong}}](/docs/key-protect?topic=key-protect-getting-started-tutorial#getting-started-tutorial) | | | [YES](/docs/key-protect?topic=key-protect-at-events) | |
 | [{{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started) | | | [YES](/docs/hs-crypto?topic=hs-crypto-at-events) | |
 | [{{site.data.keyword.secrets-manager_full}}](/docs/secrets-manager?topic=secrets-manager-getting-started) | | | [YES](/docs/secrets-manager?topic=secrets-manager-at-events) | |
-| [{{site.data.keyword.security-advisor_long}}](/docs/security-advisor?topic=security-advisor-getting-started) | | | [YES](/docs/security-advisor?topic=security-advisor-at_events#events) | |
+| [{{site.data.keyword.security-advisor_long}}](/docs/security-advisor?topic=security-advisor-getting-started) | | | [YES](/docs/security-advisor?topic=security-advisor-at_events) | |
 {: caption="Table 13. List of security services" caption-side="top"}
 
 
