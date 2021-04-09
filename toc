@@ -87,6 +87,8 @@ Activity Tracker
         config_api.md
         pagerduty.md
         monitoring.md
+
+    alerts_configuration.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
