@@ -81,6 +81,8 @@ Activity Tracker
     {: .topicgroup}
     Logging and monitoring
         at_events.md
+    
+    views.md
 
     {: .topicgroup}
     Working with alerts
