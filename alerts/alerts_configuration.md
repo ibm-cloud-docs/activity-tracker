@@ -104,7 +104,7 @@ You will create a view as well as an alert, even when using the API.
 ## Sample queries to notify on account configuration changes
 {: #alerts_configuration_queries}
 
-### Services are created, modified, and deleted
+### Notify when services are created, modified, and deleted
 {: #alerts_configuration_queries_1}
 
 The following table outlines queries that you can use to alert on configuraton changes that report when services are created, modified, and deleted:
@@ -120,7 +120,7 @@ The following table outlines queries that you can use to alert on configuraton c
 | Create, delete or modify any service instance | `instance.create OR instance.delete OR instance.update` | N/A | N/A | 
 {: caption="Table 1. Query samples when services are created, modified, and deleted" caption-side="top"} 
 
-### Account settings are modified
+### Notify when account settings are modified
 {: #alerts_configuration_queries_2}
 
 The following table outlines queries that you can use to alert on configuraton changes that report when account settings are modified:
@@ -141,7 +141,7 @@ The following table outlines queries that you can use to alert on configuraton c
 | An administrator allows users to see the list of users in the account | `action:iam-identity.accountsettings.update AND requestData.team_directory_enabled:false`  |
 | An administrator restricts access to resources in the account | `action:iam-identity.accountsettings.update AND requestData.public_access_enabled:true`  |
 | An administrator allows public access to resources in the account | `action:iam-identity.accountsettings.update AND requestData.public_access_enabled:false`  |
-| An administrator changes the MFA setting in the account. </br></br>Valid MFA setting values are: NONE, TOTP, TOTP4ALL, LEVEL1, LEVEL2, LEVEL3 | `action:iam-identity.accountsettings.update AND new_mfa_traits:<MFA_SETTING>` |
+| An administrator changes the MFA setting in the account. Valid MFA setting values are: NONE, TOTP, TOTP4ALL, LEVEL1, LEVEL2, LEVEL3 | `action:iam-identity.accountsettings.update AND new_mfa_traits:<MFA_SETTING>` |
 {: caption="Table 2. Query samples when account settings are modified" caption-side="top"} 
 
 
