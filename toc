@@ -42,6 +42,7 @@ Activity Tracker
     upgrade.md
     observe.md
     view_events.md
+    views.md
 
     {: .topicgroup}
     Controlling access
@@ -81,8 +82,6 @@ Activity Tracker
     {: .topicgroup}
     Logging and monitoring
         at_events.md
-    
-    views.md
 
     {: .topicgroup}
     Working with alerts

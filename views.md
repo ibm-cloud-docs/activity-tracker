@@ -23,10 +23,10 @@ subcollection: activity-tracker
 {:external: target="_blank" .external}
 
 
-# Creating custom views through the UI
+# Searching events by using queries
 {: #views}
 
-Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search and filtering criteria to define the events that are displayed through a custom view.
+Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search and filtering criteria to define the set of events that are displayed through a custom view.
 {:shortdesc}
 
 
