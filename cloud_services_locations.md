@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-28"
+lastupdated: "2021-04-30"
 
-keywords: IBM Cloud,Activity Tracker, services, locations
+keywords: IBM Cloud, Activity Tracker, services, locations
 
 subcollection: activity-tracker
 
@@ -241,7 +241,7 @@ The following tables list the locations where automatic collection of registry s
 
 | Service                                        | `Tokyo (jp-tok)` | `Osaka (jp-osa)`  | `Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|----------------------------|
-| {{site.data.keyword.registrylong_notm}}  `[*]`   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |         
+| {{site.data.keyword.registrylong_notm}}  `[*]`   | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |         
 {: caption="Table 7. Container services integration in Asia Pacific locations" caption-side="top"}
 {: #cs_container-table-2}
 {: tab-title="Asia Pacific"}
