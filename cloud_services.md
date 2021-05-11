@@ -115,7 +115,7 @@ The following table lists observability services that send events to {{site.data
 | Service     | Service name | Description | Events |
 |-------------|-------------|-------------|-------------------|
 | [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started) | `logdnaat` | {{site.data.keyword.at_full_notm}} monitors the activity of your {{site.data.keyword.cloud_notm}} account. | [Events](/docs/activity-tracker?topic=activity-tracker-at_events) |
-| [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | `logdna` | {{site.data.keyword.la_full_notm}} adds log management capabilities to your {{site.data.keyword.cloud_notm}} architecture. | [Events](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) |
+| [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | `logdna` | {{site.data.keyword.la_full_notm}} adds log management capabilities to your {{site.data.keyword.cloud_notm}} architecture. | [Events](/docs/log-analysis?topic=log-analysis-at_events) |
 | [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) | `sysdig-monitor` | You can use the {{site.data.keyword.mon_full_notm}} service to gain operational visibility into the performance and health of your applications, services, and platforms. | [Events](/docs/monitoring?topic=monitoring-at_events) |
 {: caption="List of observability services" caption-side="top"} 
 

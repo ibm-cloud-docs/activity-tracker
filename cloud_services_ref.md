@@ -114,7 +114,7 @@ The following table lists observability services that send events to {{site.data
 | Service Name     | `host` field  | `client_id` field | Location-based events | Global events |
 |------------------|---------------|-------------------|-----------------------|---------------|
 | [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started) |  | logdnaat | [YES](/docs/activity-tracker?topic=activity-tracker-at_events) | |
-| [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) |  | logdna | [YES](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | |
+| [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) |  | logdna | [YES](/docs/log-analysis?topic=log-analysis-at_events) | |
 | [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) |  | sysdig | [YES](/docs/monitoring?topic=monitoring-at_events) | |
 {: caption="List of observability services" caption-side="top"} 
 
