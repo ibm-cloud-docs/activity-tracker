@@ -81,10 +81,11 @@ The following table lists the notification channels that you can configure when 
 
 | Channel           | Configuration details | 
 |-------------------|-----------------------|
-| `email`             | You can configure one or more email addresses.  | 
+| `email`             | You can configure one or more email addresses. For more information, see [Integrating with email](/docs/activity-tracker?topic=activity-tracker-email). |
+| `SMS`               | You can send an SMS to notify of an alert either through the PagerDuty channel or through the {{site.data.keyword.mon_full_notm}} channel. For more information, see [Integrating with SMS](/docs/activity-tracker?topic=activity-tracker-sms). |
 | `Slack`             | You can configure a slack channel. |
 | `Webhook`           | You can configure a web hook URL. |
-| `PagerDuty`         | You can configure connection details to your PagerDuty system, and select a service.|
+| `PagerDuty`         | You can configure connection details to your PagerDuty system, and select a service. Use this channel when you require call times and escalation management processes. For more information, see [Integrating with PagerDuty](/docs/activity-tracker?topic=activity-tracker-pagerduty). |
 | `{{site.data.keyword.mon_full_notm}}`         | You can configure the API key to connect to an {{site.data.keyword.mon_full_notm}} instance. |
 {: caption="Notification channels" caption-side="top"} 
 
