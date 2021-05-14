@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-14"
 
 keywords: IBM Cloud, Activity Tracker, services, locations
 
@@ -231,7 +231,7 @@ The following tables list the locations where automatic collection of registry s
 
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`  | `Toronto (ca-tor)` |
 |------------------------------------------------|---------------------|-------------------------|--------------------|
-| {{site.data.keyword.registrylong_notm}} `[*]`       | ![Checkmark icon](images/checkmark-icon.svg) |   | `Events are available through the Activity Tracker Washington (us-east) instance` |         
+| {{site.data.keyword.registrylong_notm}} `[*]`  | ![Checkmark icon](images/checkmark-icon.svg) |   | ![Checkmark icon](images/checkmark-icon.svg) |         
 {: caption="Container services integration in America's locations" caption-side="top"}
 {: #cs_container-table-1}
 {: tab-title="America"}
