@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-05-12"
 
 keywords: IBM Cloud, Activity Tracker, regions
 subcollection: activity-tracker
@@ -41,6 +41,7 @@ subcollection: activity-tracker
 | `Europe`              | `London (eu-gb)`         | `NO`         | `MZR`     |
 | `North America`       | `Dallas (us-south)`      | `N/A`        | `MZR`     |
 | `North America`       | `Washington (us-east)`   | `N/A`        | `MZR`     |
+| `North America`       | `Toronto (ca-tor)    `   | `N/A`        | `MZR`     |
 {: caption="Table 1. List of locations where the service is available" caption-side="top"}
 
 {: #end-api-table-1}

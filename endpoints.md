@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-05-12"
 
 keywords: IBM Cloud, Activity Tracker, endpoints
 
@@ -47,6 +47,7 @@ The following table shows the public API endpoints:
 | `Asia Pacific`           | `Tokyo (jp-tok)`         | `https://api.jp-tok.logging.cloud.ibm.com`         |
 | `North America`          | `Dallas (us-south)`      | `https://api.us-south.logging.cloud.ibm.com`       |
 | `North America`          | `Washington DC (us-east)` | `https://api.us-east.logging.cloud.ibm.com`       |
+| `North America`          | `Toronto (ca-tor)`       | `https://api.ca-tor.logging.cloud.ibm.com`       |
 | `Europe`                 | `Frankfurt (eu-de)`      | `https://api.eu-de.logging.cloud.ibm.com`          |
 | `Europe`                 | `London (eu-gb)`         | `https://api.eu-gb.logging.cloud.ibm.com`          |
 {: caption="Table 1. Public API endpoints" caption-side="top"}
@@ -65,6 +66,7 @@ The following table shows the private API endpoints:
 | `Asia Pacific`           | `Tokyo (jp-tok)`         | `https://api.private.jp-tok.logging.cloud.ibm.com`         |
 | `North America`          | `Dallas (us-south)`      | `https://api.private.us-south.logging.cloud.ibm.com`       |
 | `North America`          | `Washington DC (us-east)`   | `https://api.private.us-east.logging.cloud.ibm.com`         |
+| `North America`          | `Toronto (ca-tor)`       | `https://api.private.ca-tor.logging.cloud.ibm.com`         |
 | `Europe`                 | `Frankfurt (eu-de)`      | `https://api.private.eu-de.logging.cloud.ibm.com`          |
 | `Europe`                 | `London (eu-gb)`         | `https://api.private.eu-gb.logging.cloud.ibm.com`          |
 {: caption="Table 2. Private API endpoints" caption-side="top"}
@@ -84,6 +86,7 @@ The following table shows the UI endpoints:
 | `Asia Pacific`           | `Tokyo (jp-tok)`         | `https://app.jp-tok.logging.cloud.ibm.com`         |
 | `North America`          | `Dallas (us-south)`      | `https://app.us-south.logging.cloud.ibm.com`       |
 | `North America`          | `Washington DC (us-east)`   | `https://app.us-east.logging.cloud.ibm.com`        |
+| `North America`          | `Toronto (ca-tor)`       | `https://app.ca-tor.logging.cloud.ibm.com`        |
 | `Europe`                 | `Frankfurt (eu-de)`      | `https://app.eu-de.logging.cloud.ibm.com`         |
 | `Europe`                 | `London (eu-gb)`         | `https://app.eu-gb.logging.cloud.ibm.com`         |
 {: caption="Table 3. Lists of UI endpoints" caption-side="top"}

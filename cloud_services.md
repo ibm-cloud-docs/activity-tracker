@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-06"
 
 keywords: IBM Cloud, Activity Tracker, services
 
@@ -103,7 +103,7 @@ The following table lists container platform services that send events to {{site
 | [{{site.data.keyword.containerlong}}](/docs/containers?topic=containers-getting-started) | You can use the {{site.data.keyword.containerlong_notm}} service to deploy highly available apps in Docker containers that run in Kubernetes clusters. | [Events](/docs/containers?topic=containers-at_events) |
 | [{{site.data.keyword.openshiftlong}}](/docs/openshift?topic=openshift-getting-started) | With {{site.data.keyword.openshiftlong}}, you can deploy apps on highly available clusters that come installed with the [Red Hat OpenShift on IBM Cloud Container Platform](https://docs.openshift.com/container-platform/4.2/welcome/index.html){: external} software installed on Red Hat Enterprise Linux. | [Events](/docs/openshift?topic=openshift-at_events) |
 | [{{site.data.keyword.satellitelong}}](/docs/satellite?topic=satellite-getting-started) | With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute infrastructure to run {{site.data.keyword.cloud_notm}} services and consistently deploy, manage, and control your app workloads. | [Events](/docs/satellite?topic=satellite-at_events) |
-{: caption="Table 6. Container events" caption-side="top"}
+{: caption="Table 5. Container events" caption-side="top"}
 
 
 
@@ -117,7 +117,7 @@ The following table lists observability services that send events to {{site.data
 | [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started) | `logdnaat` | {{site.data.keyword.at_full_notm}} monitors the activity of your {{site.data.keyword.cloud_notm}} account. | [Events](/docs/activity-tracker?topic=activity-tracker-at_events) |
 | [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | `logdna` | {{site.data.keyword.la_full_notm}} adds log management capabilities to your {{site.data.keyword.cloud_notm}} architecture. | [Events](/docs/log-analysis?topic=log-analysis-at_events) |
 | [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) | `sysdig-monitor` | You can use the {{site.data.keyword.mon_full_notm}} service to gain operational visibility into the performance and health of your applications, services, and platforms. | [Events](/docs/monitoring?topic=monitoring-at_events) |
-{: caption="List of observability services" caption-side="top"} 
+{: caption="Table 6. List of observability services" caption-side="top"} 
 
 
 
@@ -140,7 +140,7 @@ The following table lists database services that send events to {{site.data.keyw
 | [{{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}](/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-gettingstarted) | {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}} is a managed highly secure MongoDB service that is hosted in the {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services. | [Events](/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-activity-tracker-events) |
 | [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started)  | {{site.data.keyword.messages-for-rabbitmq_full_notm}} is a managed RabbitMQ service that is hosted in the {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services.   | [Events](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker) |
 | [{{site.data.keyword.Db2_on_Cloud_long}}](/docs/Db2onCloud?topic=Db2onCloud-about) | {{site.data.keyword.Db2_on_Cloud_long}} is a relational database that delivers fast query processing with enterprise-level performance and capabilities for online transactional processing (OLTP) | [Events](/docs/Db2onCloud?topic=Db2onCloud-activity-tracker) |
-{: caption="Table 9. List of database services" caption-side="top"}
+{: caption="Table 7. List of database services" caption-side="top"}
 
 
 
@@ -158,7 +158,7 @@ The following table lists developer tools and DevOps services that send events t
 | [{{site.data.keyword.DRA_full}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started) | You can use {{site.data.keyword.DRA_short}} to provide comprehensive insights from popular continuous integration and continuous delivery tools to increase the speed, quality and control of your applications.  | [Events](/docs/ContinuousDelivery?topic=ContinuousDelivery-cd-at-events)|
 | [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started)  | With {{site.data.keyword.bplong_notm}}, you can enable Infrastructure as Code (IaC), and start automating the provisioning and management of your {{site.data.keyword.cloud_notm}} resources across environments. | [Events](/docs/schematics?topic=schematics-at_events) |
 | [Apps](/docs/apps?topic=apps-getting-started) | Use this service to build enterprise-ready mobile and web applications in {{site.data.keyword.cloud_notm}} and take advantage of cloud extensions that are hosted by {{site.data.keyword.cloud_notm}}. | [Events](/docs/apps?topic=apps-at_events) |
-{: caption="Table 10. List of developer tools services" caption-side="top"}
+{: caption="Table 8. List of developer tools services" caption-side="top"}
 
 
 
@@ -172,7 +172,7 @@ The following table lists integration services that send events to {{site.data.k
 |-------------|-------------|-------------------|
 | [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting_started)| {{site.data.keyword.messagehub}} is a high-throughput message bus that is built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.IBM_notm}} and event stream distribution between your services and applications. | [Events](/docs/EventStreams?topic=EventStreams-at_events) |
 | [MQ on IBM Cloud](/docs/mqcloud?topic=mqcloud-mqoc_getting_started) | MQ on IBM Cloud enables you to quickly and easily deploy queue managers in the cloud and connect your applications to them, for reliable data transfer between different parts of your enterprise application landscape. | [Events](/docs/mqcloud?topic=mqcloud-at_events) |
-{: caption="Table 11. List of integration Cloud services" caption-side="top"}
+{: caption="Table 9. List of integration Cloud services" caption-side="top"}
 
 
 
@@ -188,7 +188,7 @@ The following table lists network services that send events to {{site.data.keywo
 | [{{site.data.keyword.dns_full}}](/docs/dns-svcs?topic=dns-svcs-getting-started) | {{site.data.keyword.dns_short}} provides private DNS to Virtual Private Cloud (VPC) users.  | [Events](/docs/dns-svcs?topic=dns-svcs-at_events) |
 | [{{site.data.keyword.cis_full}} (CIS)](/docs/cis?topic=cis-getting-started)| IBM Cloud Internet Services (CIS) provides a fast, highly performant, reliable, and secure internet service. | [Events](/docs/cis?topic=cis-at_events) |
 | [Content Delivery Network](/docs/CDN#getting-started) | You can use IBM Cloud® Content Delivery Network (CDN) for various industry solutions, including media, entertainment, software, gaming, banking, and e-commerce, to meet the needs of your businesses.  | [Events](/docs/CDN?topic=CDN-at_events)|
-{: caption="Table 12. List of network services" caption-side="top"}
+{: caption="Table 10. List of network services" caption-side="top"}
 
 
 
@@ -210,7 +210,7 @@ Core platform services generate events that you can view through the **Frankfurt
 | [{{site.data.keyword.security-advisor_long}}](/docs/security-advisor?topic=security-advisor-getting-started) | `security-advisor` | You can use {{site.data.keyword.security-advisor_short}} to instantly view the security posture of your {site.data.keyword.cloud_notm}} services through a single, centralized dashboard. | [Events](/docs/security-compliance?topic=security-compliance-at_events#at_actions_insights) |
 | [Global Search Service](/docs/account?topic=account-tag) | `global-search-tagging` | You can use this service to manage tags. A tag is a label that you assign to a resource for easy filtering of resources in your resource list. | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_resources) |
 | [Catalog](/docs/account?topic=account-filter-account) | `globalcatalog-collection` | You can create, organize, and manage catalogs | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_catalog_management) |
-{: caption="Table 7. List of platform services" caption-side="top"}
+{: caption="Table 11. List of platform services" caption-side="top"}
 
 
 For example, the following table lists core security actions that send events to {{site.data.keyword.at_full_notm}}:
@@ -222,7 +222,7 @@ For example, the following table lists core security actions that send events to
 | [Log in to the {{site.data.keyword.cloud_notm}}](/docs/account?topic=account-iamoverview#iamoverview)| You can log into the {{site.data.keyword.cloud_notm}} by using a password, an API key, an authorization code, or a passcode. As a federated user, you can log in from the command-line interface (CLI) by using either a one-time passcode or an API key. | [Events that are generated when a user or app logs in to the {{site.data.keyword.cloud_notm}}](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_login) |
 | [Managing platform API keys](/docs/account?topic=account-manapikey#manapikey) | You can define platform API keys in the {{site.data.keyword.IBM_notm}} Cloud that are associated with a user or a service ID. | [Events that are generated when you manage Platform API keys](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_apikeys) |
 | [Managing service IDs](/docs/account?topic=account-serviceids#serviceids) | You can define service IDs at the account level in the {{site.data.keyword.IBM_notm}} Cloud. | [Events that are generated when you manage service IDs](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_serviceids) |
-{: caption="Table 8. List of core security platform services" caption-side="top"}
+{: caption="Table 12. List of core security platform services" caption-side="top"}
 
 
 ## Security services
@@ -279,11 +279,7 @@ The following table lists web and mobile services that send events to {{site.dat
 ## VPC infrastructure
 {: #vpc_infrastructure}
 
-You can provision a Virtual Private Cloud (VPC) in the {{site.data.keyword.cloud_notm}} to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. For more information, see [{{site.data.keyword.vpc_full}}](/docs/vpc?topic=vpc-getting-started)
-
-
-### {{site.data.keyword.vpc_short}}
-{: #vpc_infrastructure_gen2}
+You can provision a Virtual Private Cloud (VPC) in the {{site.data.keyword.cloud_notm}} to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. For more information, see [{{site.data.keyword.vpc_full}}](/docs/vpc?topic=vpc-getting-started).
 
 The following table lists VPC infrastructure services that send events to {{site.data.keyword.at_full_notm}}:
 
@@ -296,10 +292,6 @@ The following table lists VPC infrastructure services that send events to {{site
 | [VPN](/docs/vpc?topic=vpc-using-vpn)| Use this service to connect private networks in a secure fashion. You can use VPN to set up an IPsec site-to-site tunnel between your VPC and your on-premise private network or another VPC. | [Events](/docs/vpc?topic=vpc-at-events#at-events) |
 | [Images](/docs/vpc?topic=vpc-about-images) | When you provision {{site.data.keyword.vsi_is_short}}, you can select from the supported stock images or a custom image that you import from {{site.data.keyword.cos_full_notm}}. | [Events](/docs/vpc?topic=vpc-at-events#events-images) |
 {: caption="Table 16. List of VPC infrastructure services" caption-side="top"}
-
-
-
-
 
 ## Watson AI
 {: #watson_ai}
