@@ -103,6 +103,7 @@ Activity Tracker
     channels.md
     shared-responsibilities.md
     ha-dr.md
+    service-ip-changes.md
     
     {: .topicgroup}
     CLI
