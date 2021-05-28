@@ -35,7 +35,7 @@ HIPAA compliance is a shared responsibility. {{site.data.keyword.IBM_notm}} only
 ## Step 1. Enable the HIPAA supported settings in your account
 {: #compliance_hipaa_supported}
 
-If you're the account owner, you can enable your {{site.data.keyword.cloud}} account to be HIPAA supported. You might choose to enable the **HIPAA Supported setting** if you plan to include Protected Health Information (PHI) in HIPAA-enabled services.
+If you're the account owner, you can [enable your {{site.data.keyword.cloud}} account to be HIPAA supported.](/docs/account?topic=account-enabling-hipaa) You might choose to enable the **HIPAA Supported setting** if you plan to include Protected Health Information (PHI) in HIPAA-enabled services.
 
 The US Health Insurance Portability and Accountability Act (HIPAA) and the Health Information Technology for Economic and Clinical Health (HITECH) Act define standards for handling electronic healthcare transactions and information. If you or your company is a covered entity as defined by HIPAA, you must enable the HIPAA Supported setting if you run sensitive workloads that are regulated under HIPAA and the HITECH Act. Learn more about {{site.data.keyword.cloud_notm}} compliance in [Compliance on the {{site.data.keyword.cloud_notm}}](https://www.ibm.com/cloud/compliance){: external}.
 
