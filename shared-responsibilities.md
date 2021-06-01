@@ -54,7 +54,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task                                                    | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |---------------------------------------------------------|-----------------------|--------|
-| `Update the {{site.data.keyword.at_full_notm}} service` | Provide major, minor, and patch version updates for {{site.data.keyword.at_full_notm}} interfaces. </br>Document changes in the [Release notes](https://logdna.zendesk.com/hc/en-us/categories/360001626492-Release-Notes){: external} | `N/A` | 
+| `Update the {{site.data.keyword.at_full_notm}} service` | Provide major, minor, and patch version updates for {{site.data.keyword.at_full_notm}} interfaces. </br>Document changes in the [Release notes](https://logdna.zendesk.com/hc/en-us/categories/360001626492-Release-Notes.htm){: external} | `N/A` | 
 | `Track versions of custom views, dashboards, screens, parsing templates, and alerts`    | `N/A` | Use your own change management process to control versions of metadata resources such as views, dashboards, screens, parsing templates, and alerts`. </br>To learn how to export metadata, see [Export the configuration of resources in a logging instance](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config). | 
 {: caption="Table 2. Responsibilities for change management" caption-side="top"}
 
