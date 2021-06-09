@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-09"
 
 keywords: IBM Cloud,Activity Tracker, services, locations
 
@@ -216,7 +216,6 @@ The following table shows the locations where automatic collection of Cloud Foun
 {: class="simple-tab-table"}
 {: row-headers}
 
-
 ## Container services
 {: #cloud_services_locations_container}
 
@@ -226,11 +225,11 @@ For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?to
 
 For {{site.data.keyword.satellitelong_notm}}, see [Locations](/docs/satellite?topic=satellite-at_events#at_ui).
 
-The following tables list the locations where automatic collection of registry service events is enabled. For more information, see [Auditing the events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-at_events).
+You can track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service. The following table lists the locations where the automatic collection of {{site.data.keyword.registryshort_notm}} service events is enabled. For more information, see [Auditing the events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-at_events).
 
-| Service                                        | `Dallas (us-south)` | `Washington (us-east)`  | `Toronto (ca-tor)` |
-|------------------------------------------------|---------------------|-------------------------|--------------------|
-| {{site.data.keyword.registrylong_notm}} `[*]`  | ![Checkmark icon](images/checkmark-icon.svg) |   | ![Checkmark icon](images/checkmark-icon.svg) |         
+| Service                                        | `Dallas (us-south)` | `Toronto (ca-tor)` | `Washington (us-east)` |
+|------------------------------------------------|--------------|-------------------|----------------|
+| {{site.data.keyword.registrylong_notm}} `[*]`  | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg) |  |         
 {: caption="Table 6. Container services integration in America's locations" caption-side="top"}
 {: #cs_container-table-1}
 {: tab-title="America"}
@@ -238,9 +237,9 @@ The following tables list the locations where automatic collection of registry s
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` | `Osaka (jp-osa)`  | `Sydney (au-syd)`           |
-|------------------------------------------------|------------------|----------------------------|----------------------------|
-| {{site.data.keyword.registrylong_notm}}  `[*]`   | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |         
+| Service                                        |  `Osaka (jp-osa)`  | `Sydney (au-syd)`    | `Tokyo (jp-tok)`|
+|------------------------------------------------|------------------|------------------------|-----------------|
+| {{site.data.keyword.registrylong_notm}}  `[*]`   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance.` |  ![Checkmark icon](images/checkmark-icon.svg) |       
 {: caption="Table 6. Container services integration in Asia Pacific locations" caption-side="top"}
 {: #cs_container-table-2}
 {: tab-title="Asia Pacific"}
@@ -258,10 +257,7 @@ The following tables list the locations where automatic collection of registry s
 {: class="simple-tab-table"}
 {: row-headers}
 
-
-`[*]` {{site.data.keyword.registrylong_notm}} global registry events are available through the Activity Tracker `Dallas (us-south)` instance.  
-
-
+`[*]` {{site.data.keyword.registrylong_notm}} global registry events are available through the Activity Tracker `Dallas (us-south)` instance. 
 
 ## Logging and monitoring services
 {: #cloud_services_locations_observability}
