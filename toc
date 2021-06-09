@@ -91,7 +91,7 @@ Activity Tracker
         alerts/preset_ui.md
         config_api.md
         alerts/email.md
-        alerts/pagerduty.md
+        pagerduty.md
         alerts/monitoring.md
         alerts/sms.md
     {: .navgroup-end}

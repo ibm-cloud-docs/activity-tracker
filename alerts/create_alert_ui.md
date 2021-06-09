@@ -165,7 +165,7 @@ Complete the following steps to attach an alert to a view:
 
 7. You can click **Test** to test that your alert configuration is correct.
 
-    ![Test option](images/alert_test.png "Example diaevent showing Test option")
+    ![Test option](images/alert_test.png "Example event showing Test option")
 
 8. Click **Save Alert**.
 

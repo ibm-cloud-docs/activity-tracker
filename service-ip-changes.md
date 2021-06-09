@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-05-28"
 
 keywords: IBM Cloud, Activity Tracker, auditing
 
@@ -61,6 +61,15 @@ The following tables show changes per region:
 
 
 
+
+### Frankfurt (eu-de)
+{: #service-ip-changes-frankfurt}
+
+| Frankfurt endpoint                                 | Current IP addresses                                      | New IP addresses  |
+|----------------------------------------------------|-----------------------------------------------------------|-------------------------------------------|
+| `api.eu-de.logging.cloud.ibm.com`                  | 149.81.86.66 </br>161.156.89.12 </br>158.177.129.34       | 158.177.157.69 </br>161.156.6.180 </br>149.81.108.27 |
+| `api.private.eu-de.logging.cloud.ibm.com`          | 166.9.32.7 </br>166.9.28.2                                | No change |
+{: caption="Table 3. Lists of IPs in EU-DE" caption-side="top"}
 
 
 
