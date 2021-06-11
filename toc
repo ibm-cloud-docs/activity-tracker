@@ -99,7 +99,6 @@ Activity Tracker
     {: .navgroup id="reference"}
     regions.md
     endpoints.md
-    cidr.md
     service_plan.md
     channels.md
     shared-responsibilities.md
