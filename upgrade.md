@@ -36,11 +36,11 @@ When you provision an instance of the {{site.data.keyword.at_full_notm}} service
 
 To change the service plan of an instance from the Observability dashboard in the {{site.data.keyword.cloud_notm}}, complete the following steps:
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
+1. Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. Go to the menu icon ![menu icon](../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
+2. Go to the menu icon ![menu icon](../icons/icon_hamburger.svg) and select **Observability** to access the *Observability* dashboard.
 
 3. Select **Activity Tracker**.
 
