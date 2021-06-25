@@ -111,11 +111,11 @@ Complete this tutorial to learn how to provision a service in the {{site.data.ke
 
 Complete the following steps to provision an instance:
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
+1. Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. Go to the menu icon ![Menu icon](../icons/icon_hamburger.svg). Then, select **Observability** to access the *Observability* dashboard.
+2. Go to the menu icon ![Menu icon](../icons/icon_hamburger.svg) and select **Observability** to access the *Observability* dashboard.
 
 3. Select **Activity Tracker**, then click **Create instance**. 
 
