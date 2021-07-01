@@ -28,6 +28,7 @@ Activity Tracker
         analyze/bss_mfa_events.md
 
     alerts/alerts_configuration.md
+    streaming.md
 
     {: .topicgroup}
     Security and compliance
@@ -82,6 +83,12 @@ Activity Tracker
     {: .topicgroup}
     Logging and monitoring
         at_events.md
+
+    {: .topicgroup}
+    Streaming data
+        streaming-configure.md
+        streaming-monitor.md
+        streaming-conditional.md
 
     {: .topicgroup}
     Working with alerts
