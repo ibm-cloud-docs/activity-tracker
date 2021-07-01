@@ -63,7 +63,7 @@ Complete the following steps to monitor the {{site.data.keyword.messagehub}} ins
 ## Monitoring streaming by using {{site.data.keyword.at_full_notm}}
 {: #streaming-monitor-2}
 
-Streaming generates {{site.data.keyword.at_short}} events with the action **logdna.streaming-logs.send** to notify about failures by sending data to {{site.data.keyword.messagehub}}. 
+Streaming generates {{site.data.keyword.at_short}} events with the action **logdnaat.streaming-logs.send** to notify about failures by sending data to {{site.data.keyword.messagehub}}. 
 
 There are different reasons for failure, for example:
 
@@ -125,7 +125,7 @@ The following sections include samples of some fields in the notification event 
 In {{site.data.keyword.at_short}}, you can create a view with the following query to filter for event stream failure notifications:
 
 ```
-reason.reasonCode:500 severity:critical target.typeURI:"logdna/account/streaming-notification"
+action:logdnaat.streaming-logs.send reason.reasonCode:500 severity:critical target.typeURI:"logdna/account/streaming-notification"
 ```
 {: codeblock}
 
@@ -134,6 +134,6 @@ You can define a presence alert on this view to notify you as soon as 1 event re
 In addition, you can create views for each type of notification. For example, to monitor for a failure to authenticate with {{site.data.keyword.messagehub}}, you can use the following query:
 
 ```
-reason.reasonCode:500 severity:critical target.typeURI:"logdna/account/streaming-notification" requestData.notificationType:"authentication_failure"
+action:logdnaat.streaming-logs.send reason.reasonCode:500 severity:critical target.typeURI:"logdna/account/streaming-notification" requestData.notificationType:"authentication_failure"
 ```
 {: codeblock}

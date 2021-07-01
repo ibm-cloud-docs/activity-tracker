@@ -77,7 +77,7 @@ To monitor streaming, you can use the following services:
 
 - {{site.data.keyword.at_full_notm}}:
 
-    Streaming generates {{site.data.keyword.at_short}} events with the action **logdna.streaming-logs.send** to notify of failures sending data to {{site.data.keyword.messagehub}}. There are different reasons for failure: invalid credentials, topic deleted, 
+    Streaming generates {{site.data.keyword.at_short}} events with the action **logdnaat.streaming-logs.send** to notify of failures sending data to {{site.data.keyword.messagehub}}. There are different reasons for failure such as invalid credentials and topic deleted.
 
     For more information, see [Monitoring streaming by using {{site.data.keyword.at_short}}](/docs/activity-tracker?topic=activity-tracker-streaming-monitor#streaming-monitor-2).
 
