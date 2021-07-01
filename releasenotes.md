@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-28"
+lastupdated: "2021-07-01"
 
 keywords: IBM Cloud, Activity Tracker, release notes, whats new
 
@@ -28,6 +28,11 @@ subcollection: activity-tracker
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} that are grouped by date.
 {:shortdesc}
+
+## July 2021
+{: #AT-july2021-for-update}
+
+- New beta feature released in US-South and Frankfurt to stream data from an {{site.data.keyword.at_full_notm}} instance to other corporate tools such as Security Information and Event Management (SIEM) tools. [Learn more about streaming](/docs/activity-tracker?topic=activity-tracker-streaming).
 
 ## March 2021
 {: #AT-march2021-for-update}
