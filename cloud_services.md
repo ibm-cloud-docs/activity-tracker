@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-07-08"
 
 keywords: IBM Cloud, Activity Tracker, services
 
@@ -210,6 +210,7 @@ Core platform services generate events that you can view through the **Frankfurt
 | [{{site.data.keyword.security-advisor_long}}](/docs/security-advisor?topic=security-advisor-getting-started) | `security-advisor` | You can use {{site.data.keyword.security-advisor_short}} to instantly view the security posture of your {{site.data.keyword.cloud_notm}} services through a single, centralized dashboard. | [Events](/docs/security-compliance?topic=security-compliance-at_events#at_actions_insights) |
 | [Global Search Service](/docs/account?topic=account-tag) | `global-search-tagging` | You can use this service to manage tags. A tag is a label that you assign to a resource for easy filtering of resources in your resource list. | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_resources) |
 | [Catalog](/docs/account?topic=account-filter-account) | `globalcatalog-collection` | You can create, organize, and manage catalogs | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_catalog_management) |
+| Software instances | `globalcatalog-instance` | You can create and manage software instances. | [Events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_sw_instance) |
 {: caption="Table 11. List of platform services" caption-side="top"}
 
 
