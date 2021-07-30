@@ -95,7 +95,6 @@ Use the following table to identify the platform role that you can grant a user 
 | Platform actions                                                          | Administrator                                     | Editor | Operator | Viewer  |
 |---------------------------------------------------------------------------|:-------------------------------------------------:|:-------:|:--------:|:------:|
 | `Grant other account members access to work with the service`             | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |         |          |        |
-| `View the ingestion key in the {{site.data.keyword.cloud_notm}} console`  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |         |          |        |
 | `Provision a service instance`                                            | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |      |      |
 | `Delete a service instance`                                               | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |        |      |
 | `Update a service instance`                                               | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |        |      |
@@ -112,14 +111,14 @@ Use the following table to identify the service roles that you can grant a user 
 
 | Actions   | Manager  | Standard-Member  | Reader |
 |-----------|----------|------------------|------|
-| `Create and delete service keys through the UI` | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  | |
+| `Create and delete service keys` | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  | |
 | `Configure account settings` | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  |  |
 | `Configure archiving`   | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |  |
 | `Define exclusion rules` | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |    |        |
 | `Create and delete categories`    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |  |        |
 | `Manage how views and dashboards are grouped in categories`    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") |   |   |
 | `Export data`  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
-| `View service keys through the UI`  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
+| `View service keys`  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
 | `Configure alerts`                                                      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
 | `View usage`                                                            | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
 | `Create views`                                                          | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage") | |
