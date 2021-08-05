@@ -64,21 +64,21 @@ After you create a view, check the view in the UI.
 
 If you try to create a view without defining a category, you get the following error message:
 
-```json
+```
 {"details":[{"message":"\"category[0]\" is not allowed to be empty","key":"category[0]"}],"error":"\"category[0]\" is not allowed to be empty","code":"BadRequest","status":"error"}
 ```
 {: screen}
 
 If you try to create a view without a valid category, you get the following error message:
 
-```json
+```
 {"error":"Invalid category name(s): CATEGORYNAME","code":"BadRequest","status":"error"}
 ```
 {: screen}
 
 If you try to define a view and you do not define any of the following body parameters, query, hosts, apps, levels, tags, you can get the following error:
 
-```json
+```
 {"details":[{"message":"\"value\" must contain at least one of [query, hosts, apps, levels, tags]","key":"value"}],"error":"\"value\" must contain at least one of [query, hosts, apps, levels, tags]","code":"BadRequest","status":"error"}
 ```
 {: screen}
@@ -95,7 +95,7 @@ An API request to modify a view replaces the existing view definition and associ
 
 If the `viewid` that you are trying to modify does not exist, a response similar to the following will be returned: 
 
-```json
+```
 {"error":"Nothing to configure","code":"BadRequest","status":"error"}
 ```
 {: screen}
@@ -234,7 +234,7 @@ Specifies the notification channels and trigger conditions that are associated w
 - You can configure 1 or more channels per view.
 - You can configure any of the following channels through the *Configuration* API: email, webhook, PagerDuty.
 
-```json
+```
 "channels": [
     {
       "integration": "email",
@@ -320,7 +320,7 @@ curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
 
 A response similar to the following will be returned:
 
-```json
+```
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"category":["89610d13a7"],"viewid":"VIEWID"}
 ```
 {: screen}
@@ -399,7 +399,7 @@ curl --request PUT \
 
 A response similar to the following is returned:
 
-```json
+```
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"category":["89610d13a7"],"channels":[{"integration":"email","emails":"myemail@ibm.com","triggerlimit":15,"triggerinterval":300,"immediate":true,"terminal":true,"operator":"presence","timezone":"Europe/London","alertid":"<ALERTID>"}],"viewid":"<VIEWID>"}
 ```
 {: screen}
@@ -421,7 +421,7 @@ curl --request DELETE \
 
 The following response will be returned when the view is successfully deleted:
 
-```json
+```
 {"deleted":true}
 ```
 {: screen}
