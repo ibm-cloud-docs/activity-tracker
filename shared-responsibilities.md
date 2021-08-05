@@ -92,7 +92,7 @@ Review the following sections for the specific responsibilities for you and for 
 | `Restore the service` `[*]`      |Automatically recover and restart service components after any disaster event.  | `N/A` |
 | `Backup the {{site.data.keyword.at_full_notm}} key resources that are provided by the service`        | Daily backup of the {{site.data.keyword.at_full_notm}} infrastructure and components. | `N/A` |
 | `Backup the metadata of a auditing instance`                          | Backup metadata that is used by the service.  | [Backup the metadata such as views, dashboards, screens, parsing templates, and alerts for each auditing instance.](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config) |
-| `Restore the metadata of a auditing instance`                         | `N/A` | [Restore the metadata such as views, dashboards, screens, parsing templates, and alerts for each auditing instance.](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#import_config) |
+| `Restore the metadata of a auditing instance`                         | Restore metadata that is used by the service. | [Restore the metadata such as views, dashboards, screens, parsing templates, and alerts for each auditing instance.](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#import_config) |
 | `Backup of the data` | `N/A` | [Configure archiving to retain a backup copy of the data.](/docs/activity-tracker?topic=activity-tracker-archiving) |
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="top"}
 
