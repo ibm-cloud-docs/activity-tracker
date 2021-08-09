@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, IAM events
 
@@ -27,10 +27,11 @@ subcollection: activity-tracker
 # Auditing events for DB2 Warehouse
 {: #at_events_dashdb}
 
+
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.dashdblong}} service in {{site.data.keyword.cloud_notm}}. 
 {:shortdesc}
 
-You can provision an instance of {{site.data.keyword.dashdblong}} through the [{{site.data.keyword.Bluemix_notm}} catalog](https://cloud.ibm.com/catalog/db2-warehouse){: external}. [Learn more](/docs/account?topic=account-iamoverview).
+You can provision an instance of {{site.data.keyword.dashdblong}} through the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/db2-warehouse){: external}. [Learn more](/docs/account?topic=account-iamoverview).
 
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. To get started monitoring your user's actions, see [{{site.data.keyword.at_full_notm}}](/docs/services/activity-tracker?topic=activity-tracker-getting-started#getting-started). An initiator can be a user, a service, or an application.
@@ -54,8 +55,8 @@ The following table lists the actions that generate an event for managing servic
 
 | Action                         | Description |
 |--------------------------------|---------|
-| `dashdb.key.create` | An event is generated when an API key is created for a service instance through the *Service credentials* section of the service instance UI. |
-| `dashdb.key.delete` | An event is generated when an API key that is associated with a service instance is deleted from the *Service credentials* section of the service instance UI. |
+| `service_name.key.create` | An event is generated when an API key is created for a service instance through the *Service credentials* section of the service instance UI. |
+| `service_name.key.delete` | An event is generated when an API key that is associated with a service instance is deleted from the *Service credentials* section of the service instance UI. |
 {: caption="Table 2. Actions that generate service credentials events" caption-side="top"} 
 
 

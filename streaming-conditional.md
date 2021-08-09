@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, streaming
 
@@ -28,6 +28,9 @@ subcollection: activity-tracker
 
 In an {{site.data.keyword.at_full_notm}} instance, you can configure streaming exclusion rules through the UI to filter what data is streamed.
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 You must have manager access to define exclusion rules.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, release notes, whats new
 
@@ -26,15 +26,24 @@ subcollection: activity-tracker
 # Release notes
 {: #AT-release-notes}
 
-Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} that are grouped by date.
+Use these release notes to learn about the latest updates to {{site.data.keyword.atracker_full}} that are grouped by date.
 {:shortdesc}
 
-## July 2021
+
+### August 2021
+{: #Atracker-aug2021-for-update}
+
+This release includes the following functional enhancements:
+
+- [{{site.data.keyword.atracker_short}} event routing](/docs/activity-tracker?topic=activity-tracker-getting-started-routing).
+
+
+### July 2021
 {: #AT-july2021-for-update}
 
 - New beta feature released in US-South and Frankfurt to stream data from an {{site.data.keyword.at_full_notm}} instance to other corporate tools such as Security Information and Event Management (SIEM) tools. [Learn more about streaming](/docs/activity-tracker?topic=activity-tracker-streaming).
 
-## March 2021
+### March 2021
 {: #AT-march2021-for-update}
 
 - New CLI added that can be used to list instances and export data from an instance. [Learn more about the CLI](/docs/cli?topic=log-analysis-cli-plugin-log-analysis-cli).
@@ -42,7 +51,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 
 
-## January 2021
+### January 2021
 {: #AT-jan2021-for-update}
 
 This release includes the following functional enhancements:
@@ -51,7 +60,7 @@ This release includes the following functional enhancements:
 
 
 
-## December 2020
+### December 2020
 {: #AT-dec2020-for-update}
 
 This release includes the following functional enhancements:

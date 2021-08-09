@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-08-09"
 
 keywords: groups, access, activity tracker
 
@@ -27,6 +27,9 @@ subcollection: activity-tracker
 
 You can configure, control, and manage data that is available to users in your {{site.data.keyword.cloud}} account by configuring **groups** in the logging instance. 
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 A **group** is comprised of **users** with authorization to specific data.
 

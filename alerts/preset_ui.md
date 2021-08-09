@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing, alerts, presets
 
@@ -26,8 +26,13 @@ subcollection: activity-tracker
 # Managing presets through the UI
 {: #preset_ui}
 
+
 To reuse an alert configuration, a service administrator can configure an **alert preset** (alert template).
 {:shortdesc}
+
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Creating a preset
 {: #preset_ui_create}

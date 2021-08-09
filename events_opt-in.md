@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-28"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud,Activity Tracker, events, global, regional, data, management
 
@@ -52,7 +52,7 @@ The following table lists the services that require additional steps for you to 
 | Service                            | Upgrade plan                       | Configure the service              | More info |
 |------------------------------------|------------------------------------|------------------------------------|-----------|
 | {{site.data.keyword.appid_full}}   | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg)   | [Monitoring runtime activity](/docs/appid?topic=appid-at-events#at-monitor-runtime-activity)   |
-| {{site.data.keyword.cos_full}}     |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Enabling activity tracking](/docs/cloud-object-storage?topic=cloud-object-storage-at#at-console-enable) |
+| {{site.data.keyword.cos_full}}     |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Enabling {{site.data.keyword.atracker_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-at#at-console-enable) |
 | {{site.data.keyword.cloudantfull}} |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Configuring data events for an IBM Cloudant instance](/docs/Cloudant?topic=Cloudant-at_events#at_event_configure) |
 | {{site.data.keyword.messagehub_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | [Enabling message audit events](/docs/EventStreams?topic=EventStreams-at_events#enable-message-events) |
 | [Watson services](/docs/activity-tracker?topic=activity-tracker-cloud_services#watson_ai)    | ![Checkmark icon](../icons/checkmark-icon.svg) |  |   |

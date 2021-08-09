@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, api
 
@@ -26,6 +26,10 @@ subcollection: activity-tracker
 
 You can use the *Configuration REST API* to manage programmatically views and alerts.
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
+
 
 - You can use the **POST** method to create a view, or create a view and attach an alert to it.
 - You can use the **PUT** method to modify an existing view, and alerts that are attached to views.

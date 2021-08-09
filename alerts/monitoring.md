@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, getting started, auditing, monitoring
 
@@ -26,6 +26,10 @@ subcollection: activity-tracker
 
 You can send alerts to the {{site.data.keyword.mon_short}} service and manage them through the *Events* view section.
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
+
 
 ## Configuring a {{site.data.keyword.mon_short}} alert
 {: #monitoring-config}

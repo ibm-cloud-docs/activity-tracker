@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, config, ui
 
@@ -27,6 +27,9 @@ subcollection: activity-tracker
 
 You can configure your web UI to work with UTC timestamps, change the log line format, change the background color and more.
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 
 ## Configure UTC timestamps 

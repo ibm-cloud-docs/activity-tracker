@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud,Activity Tracker, services, locations
 
@@ -36,6 +36,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |------------------------------------------------|---------------------|-------------------------|
 | {{site.data.keyword.iae_full}}               | ![Checkmark icon](images/checkmark-icon.svg) |                                      |        
 | {{site.data.keyword.sqlquery_full}}          | ![Checkmark icon](images/checkmark-icon.svg) |                                      |  
+| {{site.data.keyword.dv_short}}               | ![Checkmark icon](images/checkmark-icon.svg) |                                      |  
 {: caption="Table 1. Analytics services integration in America locations" caption-side="top"}
 {: #analytics-table-1}
 {: tab-title="America"}
@@ -47,6 +48,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.iae_full}}               | ![Checkmark icon](images/checkmark-icon.svg) |                           |        
 | {{site.data.keyword.sqlquery_full}}          |              |                             |  
+| {{site.data.keyword.dv_short}}               | ![Checkmark icon](images/checkmark-icon.svg)             |                             |  
 {: caption="Table 1. Analytics services integration in AP locations" caption-side="top"}
 {: #analytics-table-2}
 {: tab-title="Asia Pacific"}
@@ -58,6 +60,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.iae_full}}               | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |        
 | {{site.data.keyword.sqlquery_full}}          | ![Checkmark icon](images/checkmark-icon.svg) |                                 |  
+| {{site.data.keyword.dv_short}}               | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |        
 {: caption="Table 1. Analytics services integration in Europe locations" caption-side="top"}
 {: #analytics-table-3}
 {: tab-title="Europe"}
@@ -69,10 +72,11 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 ## VMware solution services
 {: #cloud_services_locations_vmware}
 
+{{site.data.keyword.vmwaresolutions_short}} events are available through the Activity Tracker Frankfurt (eu-de) instance.
+
 | Service                                        | `Dallas (us-south)` | `Washington (us-east)`         |
 |------------------------------------------------|-------------------|------------------------------------|
-| VMware Solutions                               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
-| vCenter Server                                 | ![Checkmark icon](images/checkmark-icon.svg) |   |
+| VMware Solutions Shared                        | ![Checkmark icon](images/checkmark-icon.svg) |  |    
 | KMIP for VMware                                | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  
 {: caption="Table 2. Compute VMware services integration in America locations" caption-side="top"}
 {: #cs_vm-table-1}
@@ -83,8 +87,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                        | `Tokyo (jp-tok)`    |`Sydney (au-syd)`           |
 |------------------------------------------------|---------------------|-------------------------|
-| VMware Solutions                               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |   
-| vCenter Server                                 |                      |                           |
+| VMware Solutions Shared                            |  |  |   
 | KMIP for VMware                                | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  
 {: caption="Table 2. Compute VMware services integration in Asia Pacific locations" caption-side="top"}
 {: #cs_vm-table-2}
@@ -95,8 +98,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|-------------------|----------------|
-| VMware Solutions                               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |   
-| vCenter Server                                 |                      |                           |
+| VMware Solutions Shared                             | ![Checkmark icon](images/checkmark-icon.svg) |  |   
 | KMIP for VMware                                | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  |  
 {: caption="Table 2. Compute VMware services integration in Europe locations" caption-side="top"}
 {: #cs_vm-table-3}
@@ -216,6 +218,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 {: class="simple-tab-table"}
 {: row-headers}
 
+
 ## Container services
 {: #cloud_services_locations_container}
 
@@ -257,7 +260,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 {: class="simple-tab-table"}
 {: row-headers}
 
-`[*]` {{site.data.keyword.registrylong_notm}} global registry events are available through the Activity Tracker `Dallas (us-south)` instance. 
+`[*]` {{site.data.keyword.registrylong_notm}} global registry events are available through the Activity Tracker `Dallas (us-south)` instance.  
 
 ## Logging and monitoring services
 {: #cloud_services_locations_observability}
@@ -401,7 +404,6 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.cloud-shell_notm}}         | ![Checkmark icon](images/checkmark-icon.svg)   |                     |   
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |         
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.bplong}}                   |  ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Dallas instance`  |
 {: caption="Table 10. Developer tools services integration in America's locations" caption-side="top"}
 {: #cs_dev-tools-table-1}
@@ -410,15 +412,14 @@ The Apps service sends global events. These events are available through the Fra
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.apigw_full}}               | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.cloud-shell_notm}}        | ![Checkmark icon](images/checkmark-icon.svg)   |                     | 
-| {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](images/checkmark-icon.svg)   |                     | 
-| {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](images/checkmark-icon.svg) |                                       |    
-| {{site.data.keyword.bplong}}                   |     |   |                  
-{: caption="Table 10. Developer tools services integration in AP locations" caption-side="top"}
+| Service                                        | `Tokyo (jp-tok)` | `Osaka (jp-osa)` | `Sydney (au-syd)` |
+|------------------------------------------------|------------------|------------------|-------------------|
+| {{site.data.keyword.apigw_full}}               | ![Checkmark icon](images/checkmark-icon.svg) |  | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.cloud-shell_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) |  |  | 
+| {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) |  | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.bplong}}                   |   |   |   |
+{: caption="Developer tools services integration in AP locations" caption-side="top"}
 {: #cs_dev-tools-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs_dev_tools"}
@@ -431,7 +432,6 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.cloud-shell_notm}}        | ![Checkmark icon](images/checkmark-icon.svg)   |                     |  
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)                    |   
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.DRA_full}}                 | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |  
 | {{site.data.keyword.bplong}}                   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Frankfurt instance` |    
 {: caption="Table 10. Developer tools services integration in Europe locations" caption-side="top"}
 {: #cs_dev-tools-table-3}

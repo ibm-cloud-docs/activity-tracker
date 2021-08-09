@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing, PagerDuty
 
@@ -25,8 +25,13 @@ subcollection: activity-tracker
 # Sending an SMS notification
 {: #sms}
 
+
 You can send SMS alerts to notify on log data hosted in a {{site.data.keyword.at_short}} instance.
 {:shortdesc}
+
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 To send an SMS alert, you can choose 1 of the following options:
 - Integrate with the {{site.data.keyword.mon_full_notm}} service to send SMS alerts.

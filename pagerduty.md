@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing, PagerDuty
 
@@ -24,8 +24,12 @@ subcollection: activity-tracker
 # Integrating with PagerDuty
 {: #pagerduty}
 
+
 You can send alerts to PagerDuty. 
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Configuring PagerDuty
 {: #pagerduty-config}

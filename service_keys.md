@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2018, 2021
-lastupdated: "2021-08-03"
+  years: 2019, 2021
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, service keys
 
@@ -26,6 +26,10 @@ subcollection: activity-tracker
 {: #service_keys}
 
 In an {{site.data.keyword.at_full_notm}} instance you can create, delete, and view service keys using the UI.  You can also create and view service keys using the CLI and API.
+{: shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 A service key is a unique code that is passed in an API request to identify the calling application or user. 
 
@@ -56,9 +60,9 @@ To restrict access to a service key, you need the following role on the `IAM Ide
 ## Managing service keys by using the UI
 {: #service_keys_ui}
 
-You can create, delete, and view service keys using the logging UI.
+You can create, delete, and view service keys by using the UI.
 
-### Creating a service key by using the logging UI
+### Creating a service key by using the UI
 {: #service_keys_create}
 
 You must have the **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
@@ -90,7 +94,7 @@ You must have the **manager** role for the {{site.data.keyword.at_full_notm}} se
 
 For more information, see [service roles](/docs/activity-tracker?topic=activity-tracker-iam#service).
 
-You can only delete a service Key through the logging web UI.
+You can only delete a service Key through the auditing web UI.
 {: important}
 
 Complete the following steps to delete a service key:
@@ -140,13 +144,13 @@ You can create and view service keys by using the {{site.data.keyword.cloud_notm
 Only a single service key can be created using the CLI.  Using these commands to create a service key where one already exists will not create a new key.  If you need to create more than one service key, use the [UI](#service_keys_ui).
 {: important}
 
-To create a service key for a logging instance through the command line, complete the following steps:
+To create a service key for a auditing instance through the command line, complete the following steps:
 
 1. [Pre-requisite] [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-2. Log in to the region in the {{site.data.keyword.cloud_notm}} where the logging instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
+2. Log in to the region in the {{site.data.keyword.cloud_notm}} where the auditing instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
-3. Set the resource group where the logging instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
+3. Set the resource group where the auditing instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
     By default, the `default` resource group is set.
 
@@ -180,17 +184,17 @@ To create a service key for a logging instance through the command line, complet
 
     The **ID** column indicates the `SERVICE_ID` that is associated with the service key that you created in the previous step.
 
-    Identify the logging instance ID. Run the following command:
+    Identify the auditing instance ID. Run the following command:
 
     ```
-    ibmcloud resource service-instance <LOGGING_INSTANCE_NAME>
+    ibmcloud resource service-instance <AUDITING_INSTANCE_NAME>
     ```
     {: pre}
 
     Then, create a policy to restrict access to the service key:
 
     ```
-    ibmcloud iam service-policy-create <SERVICE_ID> --roles Administrator,Manager --service-name logdna --service-instance <LOGGING_INSTANCE_ID]
+    ibmcloud iam service-policy-create <SERVICE_ID> --roles Administrator,Manager --service-name logdnaat --service-instance <AUDITING_INSTANCE_ID]
     ```
     {: pre}
 
@@ -215,7 +219,7 @@ To get the service key through the command line, complete the following steps:
 
 1. [Pre-requisite] [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-2. Log in to the region in the {{site.data.keyword.cloud_notm}} where the logging instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
+2. Log in to the region in the {{site.data.keyword.cloud_notm}} where the auditing instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
 3. Set the resource group where the auditing instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
@@ -259,7 +263,7 @@ You can create and view service keys using the {{site.data.keyword.cloud_notm}} 
 ### Creating a service key by using the API
 {: #service_keys_api_create}
 
-Only a single logging service key can be created using the API.  Using the API to create a service key where one already exists will not create a new key.  If you need to create more than one service key, use the [UI](#service_keys_ui).
+Only a single auditing service key can be created using the API.  Using the API to create a service key where one already exists will not create a new key.  If you need to create more than one service key, use the [UI](#service_keys_ui).
 {: important}
 
 To create the service key through the API, complete the following steps:
@@ -299,11 +303,11 @@ To create the service key through the API, complete the following steps:
 4. [Create the IAM service key](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#post-resource-key). Run the following cURL command:
 
     ```shell
-    curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_keys -H "Authorization: $ACCESS_TOKEN" -H "content-type: application/json" -d '{"name":"<NAME>", "source":"<LOGGING_INSTANCE_GUID>"}'
+    curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_keys -H "Authorization: $ACCESS_TOKEN" -H "content-type: application/json" -d '{"name":"<NAME>", "source":"<AUDITING_INSTANCE_GUID>"}'
     ```
     {: codeblock}
 
-    Where NAME is the name to be given to the IAM service key and GUID is the logging instance GUID obtained in the previous step.  
+    Where NAME is the name to be given to the IAM service key and GUID is the auditing instance GUID obtained in the previous step.  
 
 5. Add a policy on the service ID that is associated with the service key. For more information, see [Create a policy](/apidocs/iam-policy-management#create-policy).
 

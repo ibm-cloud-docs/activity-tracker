@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, streaming
 
@@ -27,8 +27,12 @@ subcollection: activity-tracker
 # Streaming data
 {: #streaming}
 
+
 Stream data from an {{site.data.keyword.at_full_notm}} instance to other corporate tools such as Security Information and Event Management (SIEM) tools. 
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 This feature is available as a public beta in the US-South and Frankfurt regions.
 {: beta}

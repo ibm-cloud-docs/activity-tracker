@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, monitor events
 
@@ -22,11 +22,16 @@ subcollection: activity-tracker
 {:note: .note}
 
 
-# Monitoring activity
+# Monitoring activity through the UI
 {: #monitor_events}
+
 
 You can monitor activity in your account through the {{site.data.keyword.at_full_notm}} web UI by using views, dashboards, and screens. You can also export sets of events to analyze them in a different context. You can be notified if specific events are generated in your account.
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
+
 
 There is 1 instance of the {{site.data.keyword.at_full_notm}} service per location. Therefore, to monitor activity in your account, you might need to view and analyze events through different {{site.data.keyword.at_full_notm}} instances. 
 

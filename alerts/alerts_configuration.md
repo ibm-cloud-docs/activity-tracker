@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-04-09"
+  years: 2019, 2021
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, alerts, events
 
@@ -27,6 +27,8 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full}}, you can create alerts to notify on configuration changes on the {{site.data.keyword.cloud_notm}} account. For example, you can generate notifications that report when services are created, modified, and deleted. These alerts can be limited to specific resources, or can apply to any services offered within the {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Configuring alerts using the console
 {: #alerts_configuration_ui}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud,  {{site.data.keyword.at_short}}, EU-supported
 
@@ -27,6 +27,9 @@ subcollection: activity-tracker
 
 You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} (AT) archive files that are stored in an {{site.data.keyword.cos_short}} (COS) bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically.
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ![{{site.data.keyword.cloud_notm}} services integration scenario](images/sqlquery.png "{{site.data.keyword.cloud_notm}} services integration scenario")
 
@@ -113,7 +116,7 @@ To manage access or assign new access for users by using IAM policies, you must 
 Choose any of the following actions to manage IAM policies in the {{site.data.keyword.cloud_notm}}:
 
 * To grant permissions to a user, see [Assigning access](/docs/account?topic=account-assign-access-resources#assign-new-access).
-* To revoke permissions, see [Removing access](/docs/account?topic=account-assign-access-resources#removing-access-console).
+* To revoke permissions, see [Removing access](/docs/account?topic=account-assign-access-resources#removing-access-console)).
 * To review a user's permissions, see [Reviewing your assigned access](/docs/account?topic=account-assign-access-resources#review-your-access-console).
 
 

@@ -2,10 +2,9 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, service plan, price
-
 subcollection: activity-tracker
 
 ---
@@ -27,6 +26,8 @@ subcollection: activity-tracker
 Different pricing plans are available that you can choose for an {{site.data.keyword.at_full_notm}} instance. Each plan defines the number of days that data is retained for search, the number of users allowed to manage the data, and the features that are enabled.
 {:shortdesc}
 
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 
 | Plan                          | Number of days that data is available for seach | Number of users per plan | Plan ID |

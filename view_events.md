@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, view events
 
@@ -22,12 +22,14 @@ subcollection: activity-tracker
 {:note: .note}
 
 
-# Viewing events
+# Viewing events through the Views section
 {: #view_events}
 
 After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view events through the {{site.data.keyword.at_full_notm}} web UI. You view events in your local time.
 {:shortdesc}
 
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## View events
 {: #view_events_step1}

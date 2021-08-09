@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, IAM events
 
@@ -58,7 +58,16 @@ The following table lists the actions that generate an event:
 | `iam-groups.rule.delete`    | An event is generated when an initiator deletes a rule from an access group. |
 {: caption="Table 1. Manage access groups actions" caption-side="top"} 
 
+## Trusted profiles events
+{: #at_events_iam_profiles}
 
+The following table lists the actions that generate an event:
+
+| Action                      | Description |
+|-----------------------------|-------------|
+| `iam-identity.account-profile.create`.  | An event is generated when an initiator creates a trusted profile. |
+| `iam-identity.account-profile.update`   | An event is generated when an initiator updates a trusted profile. |
+| `iam-identity.account-profile.delete`   | An event is generated when an initiator deletes a trusted profile. |
 
 ## Policy events
 {: #at_events_iam_policies}
@@ -113,7 +122,8 @@ The following table lists the actions that generate an event:
 | `iam-identity.user-apikey.login`         | An event is generated when a user logs in to the {{site.data.keyword.cloud_notm}} by using an API key. |  
 | `iam-identity.serviceid-apikey.login`    | An event is generated when an initiator logs in to the {{site.data.keyword.cloud_notm}} by using an API key that is associated with a service ID. |  
 | `iam-identity.user-identitycookie.login` | This is an event that is generated when an initiator requests an identity cookie to run an action. |
-| `iam-identity.user-refreshtoken.login`   | This is an event that is generated when the initiator logs in to the IBM Cloud , or when an initiator that has already logged in to the IBM Cloud requests a new refresh token to run an action. |
+| `iam-identity.user-refreshtoken.login`   | This is an event that is generated when the initiator logs in to {{site.data.keyword.cloud_notm}}, or when an initiator that is already logged in requests a new refresh token to run an action. |
+| `iam-identity.trustedprofile-apikey.login` | This is an event that is generated when the initiator logs in to {{site.data.keyword.cloud_notm}} by applying a trusted profile, or when an initiator that is already logged in by applying a trusted profile requests a new refresh token to run an action. |
 {: caption="Table 5. User login actions" caption-side="top"} 
  
 
@@ -132,11 +142,12 @@ To view these events, you must [provision an instance](/docs/services/activity-t
 ### Login events
 {: #at_events_iam_analyze_login_events} 
 
-In the {{site.data.keyword.cloud_notm}}, an administrator, or a user that has the correct access in your account, has different options to manage a user's login settings. For example, an administrator can order external authentication options, enable a one-time passcode to be used during login, enable the use of security questions at login, or set a password expiration time period. [Learn more](/docs/account?topic=account-types). 
+In the {{site.data.keyword.cloud_notm}}, an administrator, or a user that has the correct access in your account, has different options to manage a user's login settings. For example, an administrator can order external authentication options, enable a one-time passcode to be used during login, enable the use of security questions at login, or set a password expiration time period. For more information, see [Types of multifactor authentication](/docs/account?topic=account-types). 
 
 * A user can log in by using a user ID and password.
-* A federated user that uses a corporate or enterprise single sign-on ID can log in to {{site.data.keyword.cloud_notm}} from the command-line interface (CLI) by using either a one-time passcode or an API key. [Learn more](/docs/account?topic=account-federated_id). 
+* A federated user that uses a corporate or enterprise single sign-on ID can log in to {{site.data.keyword.cloud_notm}} from the command-line interface (CLI) by using either a one-time passcode or an API key. For more information, see [Logging in with a federated ID](/docs/account?topic=account-federated_id). 
 * A user can log in by using an API key.  
+* A federated user that uses a corporate or enterprise single sign-on ID can log in to {{site.data.keyword.cloud_notm}} by applying a trusted profile.
 
 The following fields include extra information:
 * The `initiator.name` includes information about the user that logs in to the account.
@@ -162,6 +173,9 @@ When a user [logs in from the {{site.data.keyword.cloud_notm}} CLI by using an A
 The following field includes extra information:
 * In requestData, the `client_id` field is set to **bx**. This value indicates a CLI request.
 
+#### Log in with a federated ID by using trusted profiles
+
+When a user [logs in with a federated ID by using trusted profiles](/docs/account?topic=account-federated_id), you get an event in the account with action `iam-identity.trustedprofile-apikey.login`.
 
 #### Failed log in actions
 {: #at_events_iam_analyze_login_events-3}
@@ -185,7 +199,7 @@ When an action to update a service ID is requested, you get an event in the acco
 The following fields include extra information:
 * The `initiator.name` field includes information about who has requested to update the service ID.
 * The `target.name` field includes information about the service ID that is changed.
-* The `initiator.host.agent` field indicates if the request comes from the UI or the CLI. When the field is set to **NotSet**, the request originates in the UI. When the field is set to **IBM Cloud CLI...**, the request originates in the command-line. 
+* The `initiator.host.agent` field indicates if the request comes from the UI or the CLI. When the field is set to **Not Set**, the request originates in the UI. When the field is set to **{{site.data.keyword.cloud_notm}} CLI**, the request originates at the command line. 
 
 #### Lock and unlock a service ID
 {: #at_events_iam_analyze_update_acc_scvid-1}
@@ -220,7 +234,7 @@ When an action to update an API key is requested, you get an event in the accoun
 The following fields include extra information:
 * The `initiator.name` field includes information about who has requested to update the API key. 
 * The `target.name` field includes information about the API key that is changed.
-* The `initiator.host.agent` field indicates if the request comes from the UI or the CLI. When the field is set to **NotSet**, the request originates in the UI. When the field is set to **IBM Cloud CLI...**, the request originates in the command-line. 
+* The `initiator.host.agent` field indicates if the request comes from the UI or the CLI. When the field is set to **Not Set**, the request originates in the UI. When the field is set to **{{site.data.keyword.cloud_notm}} CLI**, the request originates at the command line. 
 
 #### Lock and unlock a service ID
 {: #at_events_iam_update_apikey-1}

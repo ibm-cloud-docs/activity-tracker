@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, events, global, regional, data, management
 
@@ -42,7 +42,9 @@ You can differentiate events by scope as global or location-based events. The sc
 ## Collecting Global events
 {: #events_collect_global}
 
-[Global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) are available through the Activity Tracker instance in Frankfurt. Therefore, to collect and view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
+For {{site.data.keyword.atracker_short}} event routing, you can choose the region where events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-routing#getting-started-routing-setp5).
+
+For {{site.data.keyword.at_short}} hosted event search offerings, [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) are available through the {{site.data.keyword.atracker_short}} instance in Frankfurt. Therefore, to collect and view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
 
 
 ## Collecting Location-based events
@@ -63,6 +65,9 @@ Consider the following scenarios that are exceptions to this behavior for locati
 ## Defining the instances that I need to collect and monitor events in the account
 {: #events_collect_define}
 
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
+
 You can provison only 1 instance of the {{site.data.keyword.at_full_notm}} service per location. To get the list of locations where the service is available in the {{site.data.keyword.cloud_notm}}, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
 
 
@@ -75,6 +80,9 @@ For example, you might have services in the US South location only. To monitor a
 
 ## Viewing the instances that are available to monitor events in the account
 {: #events_collect_view}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability** &gt; **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
 

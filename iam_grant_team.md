@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-08-09"
 
 keywords: groups, access, log analysis
 
@@ -27,6 +27,9 @@ subcollection: activity-tracker
 
 {{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and consistently control access to all cloud resources in the {{site.data.keyword.cloud_notm}}. Groups provide an isolated workspace in an {{site.data.keyword.at_full_notm}} instance for a user or group of users to have access to auditing events in a defined scope. 
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 IAM can map a combination of groups and roles so that a user only has access to a specific set of auditing events and can take a defined set of actions within the product.
 {: note}

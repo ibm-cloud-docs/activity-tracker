@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, streaming
 
@@ -26,8 +26,12 @@ subcollection: activity-tracker
 # Configuring streaming
 {: #streaming-configure}
 
+
 Complete the following steps to configure streaming for an {{site.data.keyword.at_full}} instance:
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Prereqs
 {: #streaming-configure-prereqs}

@@ -1,13 +1,19 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="activity-tracker" audience="service" category="logging_monitoring" href="/docs/services/activity-tracker?topic=activity-tracker-getting-started" path="activity-tracker"}
+{: .toc subcollection="activity-tracker" audience="service" category="logging_monitoring" href="/docs/activity-tracker?topic=activity-tracker-getting-started" path="activity-tracker"}
 Activity Tracker
 
     {: .navgroup id="learn"}
     getting-started.md
+    
+    {: .topicgroup}
+    Get started
+        atracker/getting-started-routing.md
+        getting-started-search.md
+    
     releasenotes.md
-
+    
     {: .topicgroup}
     Cloud services
         cloud_services.md
@@ -19,16 +25,6 @@ Activity Tracker
         event_types.md
         events_opt-in.md
         events_collect.md
-        manage_events.md
-
-    {: .topicgroup}
-    Monitoring activity
-        monitor_events.md
-        analyze/iam_manage_login.md
-        analyze/bss_mfa_events.md
-
-    alerts/alerts_configuration.md
-    streaming.md
 
     {: .topicgroup}
     Security and compliance
@@ -39,11 +35,11 @@ Activity Tracker
     {: .navgroup id="howto"}
     provision.md
     provision_hipaa.md
-    remove.md
     upgrade.md
+    remove.md
     observe.md
     view_events.md
-    views.md
+    views.md   
 
     {: .topicgroup}
     Controlling access
@@ -54,20 +50,21 @@ Activity Tracker
         iam_view_events.md
 
     {: .topicgroup}
-    DevOps tasks
-        service_keys.md
+    DevOps admin tasks
         archive.md
         control_usage.md
+        parsing.md
         exclusion_rules.md
+        service_keys.md
         reuse_resource_definitions.md
         sqlquery.md
 
     {: .topicgroup}
     Enhancing security
         architecture-workload-isolation.md
-        service-connection.md
+        service-endpoints.md
         data-security.md
-    
+
     {: .topicgroup}
     Exporting events
         export_config.md
@@ -75,20 +72,37 @@ Activity Tracker
         export_api.md
 
     {: .topicgroup}
+    Logging and monitoring
+        at_events.md
+        atracker/platform_metrics.md
+
+    manage_events.md
+    atracker/endpoints_manage.md
+    atracker/target.md
+    atracker/route.md
+    atracker/cos.md
+    atracker/config_report.md
+
+    {: .topicgroup}
+    Monitoring activity
+        analyze/iam_manage_login.md
+    
+    alerts/alerts_configuration.md
+    atracker/retrieve-iam-token.md
+
+    {: .topicgroup}
+    Streaming data
+        streaming.md
+        streaming-configure.md
+        streaming-monitor.md
+        streaming-conditional.md
+
+    {: .topicgroup}
     UI
         launch.md
         config.md
         get_web_url.md
-
-    {: .topicgroup}
-    Logging and monitoring
-        at_events.md
-
-    {: .topicgroup}
-    Streaming data
-        streaming-configure.md
-        streaming-monitor.md
-        streaming-conditional.md
+        monitor_events.md
 
     {: .topicgroup}
     Working with alerts
@@ -107,20 +121,22 @@ Activity Tracker
     regions.md
     endpoints.md
     cidr.md
-    service_plan.md
     channels.md
+    service_plan.md
     shared-responsibilities.md
     ha-dr.md
     service-ip-changes.md
-    
-    {: .topicgroup}
-    CLI
-        /activity-tracker-cli-plugin/activity-tracker-cli-plugin-activity-tracker-cli
 
     {: .topicgroup}
+    CLI
+        atracker/atracker-cli.md
+        /activity-tracker-cli-plugin/activity-tracker-cli-plugin-activity-tracker-cli
+        
+    {: .topicgroup}
     API
-        [Export API](https://cloud.ibm.com/apidocs/activity-tracker#export)
-        [Configuration API](https://cloud.ibm.com/apidocs/activity-tracker#create-view)
+        [Activity Tracker event routing API](https://cloud.ibm.com/apidocs/atracker)
+        [Activity Tracker Export API](https://cloud.ibm.com/apidocs/activity-tracker#export)
+        [Activity Tracker Configuration API](https://cloud.ibm.com/apidocs/activity-tracker#create-view)
 
     {: .topicgroup}
     Events
@@ -133,4 +149,9 @@ Activity Tracker
     {: .navgroup id="help"}
     gettinghelp.md
     at_faq.md
+
+    {: .topicgroup}
+    Troubleshooting
+        atracker/troubleshoot-01.md
+        atracker/troubleshoot-02.md
     {: .navgroup-end}

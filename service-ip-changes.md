@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, auditing
 
@@ -28,6 +28,10 @@ subcollection: activity-tracker
 
 Due to maintenance, {{site.data.keyword.at_full}} is making changes to service IPs in some regions. You may need to take action to continue using the service.
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
+
 
 If you are using private endpoints, there are no user-required tasks. Private endpoints are not changing.
 {: important}

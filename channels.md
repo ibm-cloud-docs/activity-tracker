@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-028"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, regions
 subcollection: activity-tracker
@@ -25,6 +25,9 @@ subcollection: activity-tracker
 
 The following table lists the notification channels that you can configure when an alert is triggered:
 {:shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 
 | Channel           | Configuration details | 

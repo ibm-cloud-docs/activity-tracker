@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-28"
+lastupdated: "2021-08-09"
 
 subcollection: activity-tracker
 
@@ -27,11 +27,14 @@ subcollection: activity-tracker
 {{site.data.keyword.at_full_notm}} is used to collect, archive, view and analyze events. 
 {:shortdesc}
 
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Collecting events to monitor activity in the account
 {: #manage_events_provision}
 
 In {{site.data.keyword.at_full_notm}}, events are collected automatically for most enabled-AT services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them. [Learn more](/docs/activity-tracker?topic=activity-tracker-events_collect).
+
 
 
 ## Defining views, dashboards, and screens to analyze events
