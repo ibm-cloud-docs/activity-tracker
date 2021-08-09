@@ -199,7 +199,7 @@ To restrict access to a single bucket, ensure that the user or Service ID doesn'
 ## Monitoring the health of a bucket
 {: #cos_bucket_health}
 
-You can use the {{site.data.keyword.mon_full}} service to monitor {{site.data.keyword.cos_short}} (COS) in the {{site.data.keyword.cloud_notm}}. [Learn more](Using {{site.data.keyword.mon_full_notm}} with {{site.data.keyword.cos_full_notm}}).
+You can use the {{site.data.keyword.mon_full}} service to monitor {{site.data.keyword.cos_short}} (COS) in the {{site.data.keyword.cloud_notm}}. [Learn more](/docs/cloud-object-storage?topic=cloud-object-storage-mm-cos-integration).
 
 ## CLI commands to manage buckets
 {: #cos_bucket_tips}
