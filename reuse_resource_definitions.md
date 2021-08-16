@@ -39,15 +39,15 @@ Complete the following steps to export the configuration of your resources:
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Organization**. 
 
-3. Select **Account config**.
+3. Select **Export Config**.
 
 4. In the *Export configuration* section, select the types of resources that you want to export.
 
     Notice that options are disabled if you do not have definitions of this type of resource in your logging instance. 
 
-    You can export views and alerts, boards, parsing templates, and exclusion rules. 
+    You can export views and alerts, boards, screens, parsing templates, and exclusion rules. 
 
-5. Select **Export configuration** and save the file.
+5. Click **Export** to save the file.
 
 
 ## Import the configuration of resources into a logging instance
@@ -60,16 +60,16 @@ Complete the following steps to import the configuration of your resources:
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Organization**. 
 
-3. Select **Account config**.
+3. Select **Import Config**.
 
 4. In the *Import configuration* section, drop the JSON config file that inclides the resource definitions, or click to upload a file.
 
-5. Choose **Add to existing views, alerts, and boards** or **Replace existing views, alerts, and boards**.
+5. Choose **Add to existing configuration** or **Replace existing configuration**.
 
     When you choose the **add** option, you add assets to the exisiting ones.
 
     When you choose the **replace** option, you remove all assets, and new ones are created.
 
-6. Select  **Import configuration**.
+6. Click **Import**.
 
 

@@ -45,9 +45,7 @@ To remove an instance of {{site.data.keyword.at_full_notm}} by using the {{site.
 
 3. Select **Activity Tracker**. The list of instances is displayed.
 
-4. Select the instance that you want to delete.
-
-5. From the *Action* menu, select **Remove**.
+4. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg) for the instance you want to delete and select **Delete**.
 
 Next, remove permissions that are granted to users to work with the instance that you deleted.
 

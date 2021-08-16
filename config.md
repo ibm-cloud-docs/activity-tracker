@@ -58,6 +58,9 @@ Complete the following steps:
     
     Choose *Dark mode** to have a black background.
 
+4. Select the desired theme, text size, and line height.
+
+5. Click **Done** to save your changes.
 
 
 
@@ -76,7 +79,7 @@ Complete the following steps to display a log line that includes the timestamp a
     ```
     {: screen}
 
-3. Remove source, app, and level by dragging them out.
+3. To remove items from the format, drag and drop the items.  For example, to remove source, app, and level drag them out.
 
     The log line changes to the following format:
 

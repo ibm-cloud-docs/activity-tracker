@@ -81,7 +81,7 @@ Complete the following steps:
 1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 2. Go to the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Resource List** to view your list of resources. 
 3. In the *Services* section, identify the instance that you want to tag.
-4. Go to the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg). Select **Add tags** or **Edit tags**.
+4. Go to the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg). Select **Add tags** or **Edit tags**.
 5. Enter the tag **HIPAA**.
 6. Click **Save**.
  

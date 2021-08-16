@@ -95,7 +95,7 @@ Complete the following steps to jump to a specific time:
 
     * Enter a time range such as `yesterday 10am to yesterday 11am`, `last fri 4:30pm to 11/12 1 AM`, `last wed 4:30pm to 23/05 1 AM`, or `May 20 10am to May 22 10am`. Make sure to include `to` to separate the initial timestamp from the end timestamp.
 
-5. Click **ENTER**.
+5. Press **ENTER**.
 
     You might get the error message: `Your request is taking longer than expected, try refreshing your browser in a bit as we try to catch up. Retry.` You might get this error when the timeframe that you have specified does not have any events available to show. Change the time query, and retry.
 
@@ -119,8 +119,6 @@ Complete the following steps:
 
 When you finish exploring the event, click **Close** to close the line.
 
-
-
 ## Copy an event to the clipboard
 {: #view_events_step5}
 
@@ -134,10 +132,24 @@ Complete the following steps to copy an event to the clipboard:
 
     Information about line identifiers, tags, and labels is displayed.
 
-5. Click **Copy to clipboard** to copy the event to the clipboard.
+5. Click **Copy to clipboard** to copy the event to the clipboard.  You can select to copy the event as a formatted line, a raw line of key/value pairs, or in JSON format.
 
 When you finish exploring the event, click **Close** to close the line.
 
+## Copy an event URL to the clipboard
+{: #view_events_step6}
 
 
+Complete the following steps to copy an event to the clipboard that can then be used to directly access the event: 
+
+1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
+2. Select **Everything** or a custom view.
+3. Identify a line that you want to explore.
+4. Expand the event line. 
+
+    Information about line identifiers, tags, and labels is displayed.
+
+5. Click **Share this line**.  A link URL is generated that can be copied to the clipboard.
+
+When you finish exploring the event, click **Close** to close the line.
 

@@ -55,6 +55,7 @@ In the *Activity Tracker UI*, you can manage your audit instances.
 * You can create instances. [Learn more](/docs/activity-tracker?topic=activity-tracker-provision).
 * You can remove instances. [Learn more](/docs/activity-tracker?topic=activity-tracker-remove).
 * You can change the service plan of an instance. [Learn more](/docs/activity-tracker?topic=activity-tracker-upgrade).
+* You can manage access to the instance.
 
 For each instance, you can view the following information:
 * The status of an instance

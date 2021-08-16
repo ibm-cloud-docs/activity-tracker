@@ -73,7 +73,7 @@ You can only search events for the number of days that is specified through the 
 
 Complete the following steps:
 1. Enter a search query. 
-2. Click **Enter**. 
+2. Press **Enter**. 
 
 As you apply a query, notice that the name of the view changes to **Unsaved View**.
 
