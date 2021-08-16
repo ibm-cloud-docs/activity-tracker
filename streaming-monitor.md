@@ -43,8 +43,8 @@ Complete the following steps to monitor the {{site.data.keyword.messagehub}} ins
 
 1. Check that you have an instance of the {{site.data.keyword.mon_short}} in the same region as your {{site.data.keyword.messagehub}} instance. This instance must be configured to collect platform metrics. For more information, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling).
 2. [Launch the {{site.data.keyword.mon_short}} UI](/docs/monitoring?topic=monitoring-launch).
-3. In the **Dashboards** section, go to **Dashboard templates** and select the template **IBM Event Streams (Enterprise)**.
-4. Create a copy of the temnplate by clicking **Create custom dashboard**.
+3. In the **Dashboards** section, go to **Dashboard templates** and select the template **IBM** > **IBM Event Streams (Enterprise)**.
+4. Create a copy of the template by clicking **Create custom dashboard**.
 
     You can use the metric *Topic bytes in per second* to see how data is sent by {{site.data.keyword.at_short}} to {{site.data.keyword.messagehub}}.
 

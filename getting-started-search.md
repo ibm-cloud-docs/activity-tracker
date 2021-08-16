@@ -121,7 +121,7 @@ Complete the following steps to provision an instance:
 
 2. Go to the menu icon ![Menu icon](../icons/icon_hamburger.svg) and select **Observability** to access the *Observability* dashboard.
 
-3. Select **Activity Tracker**, then click **Create instance**. 
+3. Select **Activity Tracker**, then click **Create**. 
 
 4. Enter a name for the service instance.
 

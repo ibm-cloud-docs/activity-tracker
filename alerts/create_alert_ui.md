@@ -69,15 +69,13 @@ Complete the following steps to create a rule:
 
     Complete the following steps to filter events:
 
-    Click the **Views** icon ![Views icon](images/views.png "Views icon").
+    1. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 
-    Select **Everything** or a view.
+    2. Select **Everything** or a view.
 
-    Expand **All Sources** to see the list of event sources that are identified in the events. Then, choose the ones that you want.
+    3. Expand **Sources** to see the list of event sources that are identified in the events. Then, choose the ones that you want.
 
-    Expand **All Levels** to see the list of event levels that are identified in the events. Then, choose the ones that you want. Valid values are `critical`, `warning`, and `normal`.
-
-    In each section, you can group multiple options into a group. Group tags, event sources, apps, and event levels to reuse these groupings when you filter event data in other custom views. To create a group, select multiple values. Then, click **Save as group**. Enter a name for the group, and save it.
+    4. Expand **Levels** to see the list of event levels that are identified in the events. Then, choose the ones that you want. Example values are `critical`, `warning`, and `normal`.
 
 3. Filter event data by adding a search query.
 
@@ -93,7 +91,7 @@ Complete the following steps to create a rule:
 
     Select **Everything** or a view.
 
-    Filter event data then click **Save as new view / alert**. The *Create new view* page opens.
+    Filter event data then click **Save as new view**. The *Create new view* page opens.
 
     Enter a name for the view in the *Name* field.
 

@@ -43,7 +43,7 @@ Complete the following steps to detach all the alerts that are configured for a 
 1. [Navigate to the web UI through the {{site.data.keyword.cloud_notm}} UI](/docs/activity-tracker?topic=activity-tracker-launch).
 2. Identify the view with the alert.
 3. Select **Detach alert**.
-4. Confirm that you want to remove all the alerts. Click **Detach**.
+4. Confirm that you want to remove all the alerts. Click **Yes, detach**.
 
 
 
@@ -55,8 +55,8 @@ Complete the following steps to detach 1 alert that is configured for a view:
 1. [Navigate to the web UI through the {{site.data.keyword.cloud_notm}} UI](/docs/activity-tracker?topic=activity-tracker-launch).
 2. Identify the view with the alert.
 3. Select **Edit alert**.
-4. Select the alerdefinition that you want to delete.
-4. Click **Delete Alert Channel**.
+4. Select the alert definition that you want to delete.
+4. Click **Delete alert channel**.
 
 
 
