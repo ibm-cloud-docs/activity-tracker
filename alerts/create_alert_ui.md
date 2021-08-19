@@ -116,7 +116,7 @@ You can attach multiple notification channels to a view. You can define differen
 
 Complete the following steps to attach a preset to a view:
 
-1. [Configure a preset (alert template)](/docs/activity-tracker?topic=activity-tracker-create_preset_ui).
+1. [Configure a preset (alert template)](/docs/activity-tracker?topic=activity-tracker-preset_ui#preset_ui_create).  
 
 2. Click the **Views** icon ![Views icon](images/views.png "Views icon"). Select the view name. Then, select **Attach an alert**.
 
