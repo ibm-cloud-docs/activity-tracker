@@ -148,7 +148,7 @@ The following table lists observability services that send auditing events:
 
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
-| [{{site.data.keyword.at_short}} hosted event search offering](/docs/activity-tracker?topic=activity-tracker-getting-started) | `atracker` |  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events](/activity-tracker?topic=activity-tracker). |
+| [{{site.data.keyword.atracker_short}} event routing](/docs/activity-tracker?topic=activity-tracker-getting-started) | `atracker` |  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events](/activity-tracker?topic=activity-tracker). |
 | [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started) | `logdnaat` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/activity-tracker?topic=activity-tracker-at_events) |
 | [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | `logdna` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/log-analysis?topic=log-analysis-at_events) |
 | [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) | `sysdig-monitor` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/monitoring?topic=monitoring-at_events) |
