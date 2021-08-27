@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-27"
 
 keywords: IBM Cloud,Activity Tracker, services, locations
 
@@ -230,9 +230,9 @@ For {{site.data.keyword.satellitelong_notm}}, see [Locations](/docs/satellite?to
 
 You can track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service. The following table lists the locations where the automatic collection of {{site.data.keyword.registryshort_notm}} service events is enabled. For more information, see [Auditing the events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-at_events).
 
-| Service                                        | `Dallas (us-south)` | `Toronto (ca-tor)` | `Washington (us-east)` |
-|------------------------------------------------|--------------|-------------------|----------------|
-| {{site.data.keyword.registrylong_notm}} `[*]`  | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg) |  |         
+| Service                                       | `Dallas (us-south)` | `Sao Paulo (br-sao)` | `Toronto (ca-tor)` | `Washington (us-east)` |
+|-----------------------------------------------|---------------------|----------------------|--------------------|------------------------|
+| {{site.data.keyword.registrylong_notm}} `[*]` | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  |         
 {: caption="Table 6. Container services integration in America's locations" caption-side="top"}
 {: #cs_container-table-1}
 {: tab-title="America"}
@@ -241,8 +241,8 @@ You can track how users and applications interact with the {{site.data.keyword.r
 {: row-headers}
 
 | Service                                        |  `Osaka (jp-osa)`  | `Sydney (au-syd)`    | `Tokyo (jp-tok)`|
-|------------------------------------------------|------------------|------------------------|-----------------|
-| {{site.data.keyword.registrylong_notm}}  `[*]`   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance.` |  ![Checkmark icon](images/checkmark-icon.svg) |       
+|------------------------------------------------|--------------------|----------------------|-----------------|
+| {{site.data.keyword.registrylong_notm}}  `[*]` | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance.` | ![Checkmark icon](images/checkmark-icon.svg) |       
 {: caption="Table 6. Container services integration in Asia Pacific locations" caption-side="top"}
 {: #cs_container-table-2}
 {: tab-title="Asia Pacific"}
@@ -250,9 +250,9 @@ You can track how users and applications interact with the {{site.data.keyword.r
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|---------------------------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.registrylong_notm}} `[*]`    | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |          
+| Service                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
+|-----------------------------------------------|---------------------|------------------|
+| {{site.data.keyword.registrylong_notm}} `[*]` | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |          
 {: caption="Table 6. Container services integration in Europe locations" caption-side="top"}
 {: #cs_container-table-3}
 {: tab-title="Europe"}
