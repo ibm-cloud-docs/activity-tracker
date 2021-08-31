@@ -38,6 +38,11 @@ This release includes the following functional enhancements:
 - [{{site.data.keyword.atracker_short}} event routing](/docs/activity-tracker?topic=activity-tracker-getting-started-routing).
 
 
+### August 2021
+{: #AT-august2021-for-update}
+
+- Feature to stream data from an {{site.data.keyword.at_full_notm}} instance to other corporate tools such as Security Information and Event Management (SIEM) tools is generally available. [Learn more about streaming](/docs/activity-tracker?topic=activity-tracker-streaming).
+
 ### July 2021
 {: #AT-july2021-for-update}
 

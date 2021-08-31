@@ -34,9 +34,6 @@ Stream data from an {{site.data.keyword.at_full_notm}} instance to other corpora
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
-This feature is available as a public beta in the US-South and Frankfurt regions.
-{: beta}
-
 When you stream data to data lakes, other analysis tools, or other SIEM tools, you can add additional capabilities to the ones provided by the {{site.data.keyword.at_full_notm}} service:
 - You can gain visibility into enterprise data across on-premises and cloud-based environments. 
 - You can identify and prioritize security threats that might affect your organization.
