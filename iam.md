@@ -96,7 +96,7 @@ Review the available platform roles that are available, and the actions that are
 | `Create a target`    | `atracker.target.create` | `atracker.target.create` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
 | `Update a target`    | `atracker.target.update` | `atracker.target.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
 | `Delete a target`    | `atracker.target.delete` | `atracker.target.delete` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
-| `UpValidate a target`    | `atracker.target.update` | `atracker.target.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
+| `Update a target`    | `atracker.target.update` | `atracker.target.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
 | `List all targets`   | `atracker.target.list` | `atracker.target.list` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
 | `View a route` | `atracker.route.read` | `atracker.route.read` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
 | `Create a route` | `atracker.route.create` | `atracker.route.create` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
