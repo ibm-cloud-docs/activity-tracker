@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-09-13"
 
 keywords: IBM Cloud, Activity Tracker, cidr
 
@@ -65,6 +65,9 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | US-East  | 52.117.100.16/28 |
 | US-East  | 169.62.40.192/27 |
 | US-East  | 169.47.188.0/27 |
+| US-East  | 150.239.98.0/26 |
+| US-East  | 52.117.81.128/26 |
+| US-East  | 169.59.154.128/26 |
 {: caption="Table 2. US-East public CIDR blocks" caption-side="top"}
 
 ### Frankfurt
