@@ -9,22 +9,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Alert notification channels
 {: #channels}
 
 The following table lists the notification channels that you can configure when an alert is triggered:
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}

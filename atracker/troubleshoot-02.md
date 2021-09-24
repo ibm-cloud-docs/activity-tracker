@@ -12,17 +12,7 @@ content-type: troubleshoot
 
 ---
 
-{:tsSymptoms: .tsSymptoms}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:support: data-reuse='support'}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note:.deprecated}
-{:important: .important}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Are you getting an error due to an invalid token when you make an API request?
 {: #troubleshoot-02}
@@ -30,7 +20,7 @@ content-type: troubleshoot
 {: support} 
 
 The API request fails if the token that you use does not have permissions to work with the Activity Tracking service.
-{:shortdesc}
+{: shortdesc}
 
 
 This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
@@ -43,7 +33,7 @@ Your request fails with an error message that indicates that you are not authori
 When you are not authorize to complete a task, you get an error in your response:
 {: tsCauses}
 
-```
+```text
 {"trace":"53b41915-749c-4af2-b61f-22194d3b56ea","errors":[{"code":"invalid_token","message":"You are not authorize to complete this task. Check you have IAM permissions to work with Activity Tracking in the account.","recovery":"After you check you have permissions, run 'ibmcloud login' to log in to IBM Cloud. Then, run ibmcloud iam oauth-tokens to retrieve your access tokens. Use the IAM token for the Authorization header in your request."} 
 ```
 {: screen}

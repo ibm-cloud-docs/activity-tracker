@@ -12,25 +12,16 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:external: target="_blank" .external}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # High availability and disaster recovery
-{: #ha-dr}
+{: #ha_dr}
 
 {{site.data.keyword.atracker_full_notm}} is a highly available, multi-tenant, regional service. In this topic, you can learn more about {{site.data.keyword.atracker_short}}'s availability and disaster recovery strategies.
 {: shortdesc}
 
 ## Service high availability (HA)
-{: #ha-dr_svc_availability}
+{: #ha_dr_svc_availability}
 
 An availability zone is a logically and physically isolated location within an {{site.data.keyword.cloud_notm}} region where your data is processed and hosted. 
 * An availability zone has independent power, cooling, and network infrastructures that are isolated from other zones to strengthen fault tolerance by avoiding single points of failure between zones.
@@ -42,7 +33,7 @@ A region (location) is a geographically and physically separate group of one or 
 
 
 ### Availability zones for {{site.data.keyword.atracker_short}} event routing
-{: #ha-dr_locations-atracker}
+{: #ha_dr_locations-atracker}
 
 {{site.data.keyword.atracker_short}} is a highly available, regional, service. 
 - {{site.data.keyword.atracker_short}} is available in multiple regions. For more information on the regions where {{site.data.keyword.atracker_short}} is available, see [Regions](/docs/activity-tracker?topic=activity-tracker-regions).
@@ -73,7 +64,7 @@ Where
 * `MZR` means multi-zone region. [Learn more](/docs/overview?topic=overview-locations#mzr-table).
 
 ### Availability zones for {{site.data.keyword.at_short}} hosted event search offerings
-{: #ha-dr_locations-at}
+{: #ha_dr_locations-at}
 
 The following table lists the high-availability (HA) status for the regions (locations) where the {{site.data.keyword.at_full_notm}} service is available:
 
@@ -106,7 +97,7 @@ Where
 
 
 ## Data availability 
-{: #ha-dr_data_availability}
+{: #ha_dr_data_availability}
 
 The data that is managed by {{site.data.keyword.atracker_short}} in a region is kept in the data centers near that region. 
 
@@ -122,7 +113,7 @@ The MZR architecture offers automatic failover between zones within the region, 
 The SZR architecture offers failover across 3 distinct systems within the single datacenter so that you get high availability from a system failure, but not from a datacenter failure.
 
 ### Data availability for {{site.data.keyword.atracker_short}} event routing
-{: #ha-dr_data_availability-atracker}
+{: #ha_dr_data_availability_atracker}
 
 {{site.data.keyword.atracker_short}} data includes information on where and how to collect and store auditing events in your account for regional services and for global services like IAM.
 - A target is a resource where you can collect auditing events. 
@@ -139,13 +130,13 @@ The following table shows the regions where the copy of a regular backup is repl
 
 | Geography             | Region                   | Other regions that keep a copy of the backup   |
 |-----------------------|--------------------------|-------------------------|
-| `North America`       | `Dallas (us-south)`      | `Sydney (au-syd)`  </br>`Washington (us-east)`     |
-| `North America`       | `Washington (us-east)`   | `Sydney (au-syd)`  </br>`Dallas (us-south)`     |
+| `North America`       | `Dallas (us-south)`      | `Sydney (au-syd)`    \n `Washington (us-east)`     |
+| `North America`       | `Washington (us-east)`   | `Sydney (au-syd)`    \n `Dallas (us-south)`     |
 {: caption="Table 2. List of locations where a copy of the backup is available" caption-side="top"}
 
 
 ### Data availability for {{site.data.keyword.at_short}} hosted event search offerings
-{: #ha-dr_data_availability-at}
+{: #ha_dr_data_availability-at}
 
 When you provision an auditing instance, you select the MZR (location) where the instance is created. The region determines where the auditing data is processed and the data is hosted. 
 
@@ -164,7 +155,7 @@ Disaster recovery is about surviving a catastrophic failure or loss of availabil
 
 In the event of a regional disaster, you must complete the following steps to establish cross-region high availability:
 
-1. [Check the DR recovery region](/docs/activity-tracker?topic=activity-tracker-ha-dr#ha-dr_recovery_region).
+1. [Check the DR recovery region](/docs/activity-tracker?topic=activity-tracker-ha_dr#ha_dr_recovery_region).
 
 2. If you have a target and a route configured in the recovery region, your auditing events will be routed to the target that is specified for that region. 
 
@@ -177,7 +168,7 @@ When {{site.data.keyword.atracker_short}} recovers in the region that is down, y
 
 
 #### DR recovery region
-{: #ha-dr-atracker_recovery_region}
+{: #ha_dr-atracker_recovery_region}
 
 The following table indicates the recovery region in the event of a DR situation:
 
@@ -190,7 +181,7 @@ The following table indicates the recovery region in the event of a DR situation
 
 
 #### DR recovery time
-{: #ha-d-atracker_recovery_time}
+{: #ha_dr_atracker_recovery_time}
 
 The following table indicates the estimated recovery times in the event of a DR situation:
 

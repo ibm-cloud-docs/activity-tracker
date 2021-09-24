@@ -10,32 +10,17 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:beta: .beta}
+{{site.data.keyword.attribute-definition-list}}
 
 # Streaming data
 {: #streaming}
 
 
 Stream data from an {{site.data.keyword.at_full_notm}} instance to other corporate tools such as Security Information and Event Management (SIEM) tools. 
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
-
-This feature is available as a public beta in the US-South and Frankfurt regions.
-{: beta}
 
 When you stream data to data lakes, other analysis tools, or other SIEM tools, you can add additional capabilities to the ones provided by the {{site.data.keyword.at_full_notm}} service:
 - You can gain visibility into enterprise data across on-premises and cloud-based environments. 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-09-23"
 
 keywords: IBM Cloud, {{site.data.keyword.atracker_short}} event routing, security, auditing, services, {{site.data.keyword.at_short}} hosted event search offering
 
@@ -11,17 +11,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -29,7 +19,7 @@ subcollection: activity-tracker
 {: #cloud_services}
 
 Use {{site.data.keyword.atracker_short}} to monitor user-initiated activities that change the state of any of the following services in the {{site.data.keyword.cloud_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 ## Analytics services
 {: #analytics}
@@ -40,20 +30,19 @@ The following table lists analytics services that send auditing events:
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.iae_full}}](/docs/AnalyticsEngine?topic=AnalyticsEngine-getting-started) | `ibmanalyticsengine` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/AnalyticsEngine?topic=AnalyticsEngine-at_events) |
 | [{{site.data.keyword.sqlquery_full}}](/docs/sql-query?topic=sql-query-overview#overview) | `sql-query` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/sql-query?topic=sql-query-activitytracker#activitytracker) |
-| [{{site.data.keyword.dv_short}}](/docs/data-virtualization?topic=data-virtualization-about) | `data-virtualization	` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/data-virtualization?topic=data-virtualization-activity-tracker) |
+| [{{site.data.keyword.dv_short}}](/docs/data-virtualization?topic=data-virtualization-about) | `data-virtualization` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/data-virtualization?topic=data-virtualization-activity-tracker) |
 {: caption="Table 1. List of analytics services" caption-side="top"}
 
-## Infrastructure services
-{: #infrastructure}
+## Classic services
+{: #classic}
 
-The following table lists infrastructure services that send auditing events:
+The following table lists services that send auditing events:
 
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.BluVirtServers_full}} (Classic)](/docs/vsi?topic=virtual-servers-about-virtual-servers#about-virtual-servers)| `audit-log` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  [Location-based events](/docs/vsi?topic=virtual-servers-at_events#at_events) |
-| [{{site.data.keyword.baremetal_long}} (Classic) ](/docs/bare-metal?topic=bare-metal-about-bm#about-bm) | `audit-log` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/bare-metal?topic=bare-metal-bm-at-events#bm-at-events) |
-| [{{site.data.keyword.powerSysFull}}](/docs/power-iaas?topic=power-iaas-getting-started) | `pcloud` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events) |
-{: caption="Table 2. List of infrastructure services" caption-side="top"}
+| [{{site.data.keyword.baremetal_long}} (Classic)](/docs/bare-metal?topic=bare-metal-about-bm#about-bm) | `audit-log` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/bare-metal?topic=bare-metal-bm-at-events#bm-at-events) |
+
 
 
 
@@ -79,7 +68,7 @@ The following table lists database services that send auditing events:
 
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
-| [{{site.data.keyword.cloudantfull}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) | `cloudantnosqldb`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events ](/docs/Cloudant?topic=Cloudant-at_events) |
+| [{{site.data.keyword.cloudantfull}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) | `cloudantnosqldb`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/Cloudant?topic=Cloudant-at_events) |
 | [{{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}](/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-gettingstarted) | `hyperp-dbaas-mongodb` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-activity-tracker-events) |
 | [{{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}](/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-gettingstarted) | `hyperp-dbaas-postgresql`| ![Checkmark](/images/checkmark-icon.svg "Checkmark")| ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-activity-tracker-events) |
 | [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-getting-started) | `databases-for-enterprisedb-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|  | [Events](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker) |
@@ -148,7 +137,7 @@ The following table lists observability services that send auditing events:
 
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
-| [{{site.data.keyword.at_short}} hosted event search offering](/docs/activity-tracker?topic=activity-tracker-getting-started) | `atracker` |  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events](/activity-tracker?topic=activity-tracker). |
+| [{{site.data.keyword.atracker_full}} event routing](/docs/activity-tracker?topic=activity-tracker-getting-started) | `atracker` |  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events](/activity-tracker?topic=activity-tracker). |
 | [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started) | `logdnaat` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/activity-tracker?topic=activity-tracker-at_events) |
 | [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | `logdna` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/log-analysis?topic=log-analysis-at_events) |
 | [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) | `sysdig-monitor` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/monitoring?topic=monitoring-at_events) |
@@ -165,7 +154,7 @@ The following table lists platform services that send auditing events:
 | [BSS - Account and billing](/docs/account?topic=account-accounts#accounts) | `billing` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_account) |
 | [BSS - User management](/docs/account?topic=account-assign-access-resources) | `user-management` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_users) |
 | [BSS - Provisioning](/docs/overview?topic=overview-ui#catalogcreate) | `provisioning` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_rc#at_events_rc) |
-| [{{site.data.keyword.iamlong}}](/docs/account?topic=account-iamoverview)   | `iam-identity` </br>`iam-groups` </br>`iam-am` </br>`iam-trustedprofiles` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_iam) |
+| [{{site.data.keyword.iamlong}}](/docs/account?topic=account-iamoverview)   | `iam-identity`   \n `iam-groups`   \n `iam-am`   \n `iam-trustedprofiles` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_iam) |
 | [{{site.data.keyword.compliance_full}}](/docs/security-compliance?topic=security-compliance-getting-started) | `compliance` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/security-compliance?topic=security-compliance-at_events) |
 | [{{site.data.keyword.security-advisor_long}}](/docs/security-advisor?topic=security-advisor-getting-started) | `security-advisor` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/security-compliance?topic=security-compliance-at_events#at_actions_insights) |
 | [Global Search Service](/docs/account?topic=account-tag) | `global-search-tagging` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_resources) |
@@ -234,8 +223,11 @@ The following table lists VMware solution services that send auditing events:
 | [KMIP for VMware](/docs/vmwaresolutions?topic=vmwaresolutions-kmip_standalone_considerations) | `vmware-solutions` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vmwaresolutions?topic=vmwaresolutions-at-events#at-events-kmip) |
 {: caption="Table 13. List of VMware solution services" caption-side="top"}
 
-## VPC infrastructure
-{: #vpc_infrastructure}
+
+
+
+### VPC services
+{: #vpc_services}
 
 You can provision a Virtual Private Cloud (VPC) in the {{site.data.keyword.cloud_notm}} to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. See [{{site.data.keyword.vpc_full}} Gen 2](/docs/vpc?topic=vpc-getting-started).
 
@@ -301,4 +293,30 @@ The following table lists web and mobile services that send auditing events:
 | [{{site.data.keyword.mobilefoundation_long}}](/docs/mobilefoundation?topic=mobilefoundation-getting-started)| `mobile-foundation` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/mobilefoundation?topic=mobilefoundation-mfp_activity_tracker) |
 {: caption="Table 16. List of web and mobile events" caption-side="top"}
 
+
+
+## Power IaaS services
+{: #power_iaas_services}
+
+Power Systems Virtual Server (PowerVS) projects deliver flexible compute capacity for Power Systems workloads. Integrated with the {{site.data.keyword.cloud_notm}} platform for on-demand provisioning, this offering provides a secure and scalable server virtualization environment that is built upon the advanced RAS features and leading performance of the Power Systems™ platform. See [{{site.data.keyword.power-iaas_full}} Power-IaaS](/docs/power-iaas?topic=power-iaas).
+
+
+The following table lists Power IaaS infrastructure services that send auditing events:
+
+| Service     | Service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+|-------------|--------------|------------------|-------------------|--------|
+| [Images](/docs/power-iaas?topic=power-iaas-deploy-custom-image) | `pcloud.images` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](docs/power-iaas?topic=power-iaas-at-events#at-actions-images) |
+| [Networks](/docs/power-iaas?topic=power-iaas-connecting-networks) | `pcloud.networks` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-networks) |
+| [PVM-Instance](/docs/power-iaas?topic=power-iaas-creating-power-virtual-server) | `pcloud.pvm-instance` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-servers) |
+| [Volumes](/docs/power-iaas?topic=power-iaas-modifying-server#modifying-volume-network) | `pcloud.volumes` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-volumes) |
+| [VPN](/docs/power-iaas?topic=power-iaas-vpn-connectivity) | `pcloud.vpn-connection` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-vpn-connection) |
+| [PlacementGroups](/docs/power-iaas?topic=power-iaas-placement-groups) | `pcloud.placement-groups` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-placement-groups) |
+| [CloudConnections](/docs/power-iaas?topic=power-iaas-cloud-connections) | `pcloud.cloud-connection` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-cloud-connection) |
+| [SAP](/docs/power-iaas?topic=power-iaas-about-virtual-server#support-SAPNetWeaver-or-SAPHANA) | `pcloud.sap` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-sap) |
+| [NetworkPorts](/docs/power-iaas?topic=power-iaas-configuring-subnet) | `pcloud.port` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-network-ports) |
+| [Tenant](/docs/power-iaas?topic=power-iaas-managing-resources-and-users) | `pcloud.tenant` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-tenants) |
+| [SSHKeys](https://test.cloud.ibm.com/docs/power-iaas?topic=power-iaas-create-vm) | `pcloud.ssh-key` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-ssh) |
+| [IKE](https://test.cloud.ibm.com/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `pcloud.ike-policy` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-ssh) |
+| [IPSec](https://test.cloud.ibm.com/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `pcloud.ipsec-policy` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-ssh) |
+{: caption="Table 17. List of Power Iaas infrastructure services" caption-side="top"}
 

@@ -10,16 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -27,7 +18,7 @@ subcollection: activity-tracker
 {: #event}
 
 {{site.data.keyword.at_full_notm}} events are based on the Cloud Auditing Data Federation (CADF) standard. 
-{:shortdesc}
+{: shortdesc}
 
 The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
 
@@ -53,7 +44,7 @@ This field indicates the action that triggers an event.
 
 The format of this field is the following:
 
-```
+```text
 serviceName.objectType.action
 ```
 {: codeblock}
@@ -87,7 +78,7 @@ The date is represented as Universal Time Coordinated (UTC).
 
 The format of this field is: 
 
-```
+```text
 YYYY-MM-DDTHH:mm:ss.SS+0000
 ```
 {: codeblock}
@@ -105,7 +96,7 @@ The following table lists the common fields that are available for each event:
 
 | Field Name                  | Description | Example |
 |-----------------------------|-------------|-------|
-| `initiator.id`              | ID of the initiator of the action. | Example of an IBMID is `IBMid-000000XXX2` </br>Example of a service ID is `iam-ServiceId-12345678-0165-4c89-847d-9660b1632e14` </br>Example of a CF user ID is `7666666b-23ae-4a34-8569-cu75tgdr4da3` |
+| `initiator.id`              | ID of the initiator of the action. | Example of an IBMID is `IBMid-000000XXX2`   \n Example of a service ID is `iam-ServiceId-12345678-0165-4c89-847d-9660b1632e14`   \n Example of a CF user ID is `7666666b-23ae-4a34-8569-cu75tgdr4da3` |
 | `initiator.name`            | Username of the initiator that initiated the action. | For example, an email address. |
 | `initiator.typeURI`         | Type of the source of the event. | `service/security/account/user` |
 | `initiator.credential.type` | Type of initiator ID credential. | `apikey` |
@@ -160,7 +151,7 @@ This field provides information about the address where the request came from.
 
 The format of this field is:
 
-```
+```text
 xxx.xxx.xxx.xxx
 ```
 {: codeblock}
@@ -189,7 +180,7 @@ This field is set to the human-readable description of the event.
 
 The format of this field is: 
 
-```
+```text
 serviceName: {event description} [outcome]
 ```
 {: codeblock}
@@ -271,8 +262,8 @@ The following table describes how this field is set based on the type of action:
 | Value      | Type of action | Sample of action |
 |------------|----------------|------------------|
 | `normal`   | Routine actions in the {{site.data.keyword.cloud_notm}} | Start an instance | 
-| `warning`  | Actions that fail </br>Actions where a resource is updated or its metadata is modified | Rename a service instance | 
-| `critical` | Actions that affect security in the {{site.data.keyword.cloud_notm}} such as changing credentials of a user or deleting data </br>Actions where the initiator is not authorized to work with an {{site.data.keyword.cloud_notm}} resource | Delete a security key |
+| `warning`  | Actions that fail   \n Actions where a resource is updated or its metadata is modified | Rename a service instance | 
+| `critical` | Actions that affect security in the {{site.data.keyword.cloud_notm}} such as changing credentials of a user or deleting data   \n Actions where the initiator is not authorized to work with an {{site.data.keyword.cloud_notm}} resource | Delete a security key |
 {: caption="Table 3. Severity values by type of action" caption-side="top"}
 
 
@@ -320,7 +311,7 @@ This field indicates the type of the target of the event.
 
 The format of this field is: 
 
-```
+```text
 serviceName/objectType/attribute
 ```
 {: codeblock}

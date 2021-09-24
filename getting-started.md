@@ -10,93 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:new_window: target="_blank"}
-{:note .note}
-{:note: .note}
-{:objectc data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
  
 
 # Getting started with {{site.data.keyword.atracker_full_notm}}
 {: #getting-started}
 
 Use the {{site.data.keyword.atracker_short}} service to capture a record of your {{site.data.keyword.cloud_notm}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
-{:shortdesc}
+{: shortdesc}
 
 Compliance with internal policies and industry regulations is a key requirement in any organization's strategy, regardless of where applications run: on-premises, in a hybrid cloud, or in a public cloud. The {{site.data.keyword.at_full_notm}} service provides the framework and functionality to monitor API calls to services on the {{site.data.keyword.cloud_notm}} and produces the evidence to comply with corporate policies and market industry-specific regulations.
 
@@ -106,7 +27,7 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 * {{site.data.keyword.at_full_notm}} provides a solution for administrators to capture, store, view, search, and monitor API activity in a single place. It also offers a notification feature to alert you by using any of the supported notification channels.
 * {{site.data.keyword.at_full_notm}} provides capabilities to export events that you can then use to generate an audit trail report. These reports might be required so that your organization complies with internal regulations and external industry and country regulations.
 
-The IBM cloud platform combines platform as a service (PaaS) with infrastructure as a service (IaaS) to provide an integrated experience. In addition, it offers a common and unified solution to monitor these services in any IBM cloud account. Services generate auditing events automatically in the IBM Cloud platform. These events comply with the Cloud Auditing Data Federation (CADF) standard. You can monitor the activity of your IBM Cloud account through these events. Furthermore, you can analyze the information provided in each event through continuous security audits; you can investigate abnormal activity and critical actions; and you can use them to comply with regulatory audit requirements in your organization and in the industry. IBM Cloud administrators can configure an IBM Cloud account to collect auditing events automatically for most enabled-services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them due to the high volumes of data that they generate. [Learn more about enabling Activity Tracker events](/docs/activity-tracker?topic=activity-tracker-events_opt-in).
+The IBM cloud platform combines platform as a service (PaaS) with infrastructure as a service (IaaS) to provide an integrated experience. In addition, it offers a common and unified solution to monitor these services in any IBM cloud account. Services generate auditing events automatically in the IBM Cloud platform. These events comply with the Cloud Auditing Data Federation (CADF) standard. You can monitor the activity of your IBM Cloud account through these events. Furthermore, you can analyze the information provided in each event through continuous security audits; you can investigate abnormal activity and critical actions; and you can use them to comply with regulatory audit requirements in your organization and in the industry. IBM Cloud administrators can configure an IBM Cloud account to collect auditing events automatically for most enabled-services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them due to the high volumes of data that they generate. [Learn more about enabling Activity Tracker events](/docs/activity-tracker?topic=activity-tracker-events-opt-in).
 
 The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications and services in cloud environments. The CADF event model includes the following components:
 -	Action: The action is the operation or activity that an initiator performs, attempts to perform, or is waiting to complete.
@@ -116,7 +37,7 @@ The CADF standard defines a full event model that includes the information that 
 -	Target: The target is the resource against which the action is performed, attempted to perform, or is pending to complete.
 
 Depending on your compliance and organizational requirements, you can choose {{site.data.keyword.atracker_full_notm}} event routing or an {{site.data.keyword.at_full_notm}} hosted event search offering.
-- Application environments seeking to maintain Financial Services (FS) validation status on IBM Cloud should use {{site.data.keyword.atracker_full_notm}} event routing. For more information, see []().
+- Application environments seeking to maintain Financial Services (FS) validation status on IBM Cloud should use {{site.data.keyword.atracker_full_notm}} event routing. 
 - Application environments seeking compliance with PCI, SOC2, Privacy Shield and HIPAA should use an {{site.data.keyword.at_full_notm}} hosted event search offering.
 
 [![Getting started with event routing](/images/getting_started_routing.svg)](/docs/activity-tracker?topic=activity-tracker-getting-started-routing) [![Getting started with hosted event and search offerings](/images/getting_started_event.svg)](/docs/activity-tracker?topic=activity-tracker-getting-started-search)

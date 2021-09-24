@@ -10,23 +10,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 # RBAC, groups and IAM integration
 {: #iam_grant_group}
 
 {{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and consistently control access to all cloud resources in the {{site.data.keyword.cloud_notm}}. Groups provide an isolated workspace in an {{site.data.keyword.at_full_notm}} instance for a user or group of users to have access to auditing events in a defined scope. 
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -105,7 +95,7 @@ You can delete a group by selecting the **Remove group** option. When you remove
 
 To create an access group by using the CLI, you can use the [ibmcloud iam access-group-create](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_access_group_create) command.
 
-```
+```text
 ibmcloud iam access-group-create GROUP_NAME [-d, --description DESCRIPTION]
 ```
 {: codeblock}
@@ -131,14 +121,14 @@ When you define the policy, you need to select a platform role. Platform managem
 
 To create an access group policy by using the CLI, you can use the [ibmcloud iam access-group-policy-create](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_access_group_policy_create) command with the **viewer** role.
 
-```
+```text
 ibmcloud iam access-group-policy-create GROUP_NAME {-f, --file @JSON_FILE | --roles ROLE_NAME1,ROLE_NAME2... [--service-name SERVICE_NAME] [--service-instance SERVICE_INSTANCE] [--region REGION] [--resource-type RESOURCE_TYPE] [--resource RESOURCE] [--resource-group-name RESOURCE_GROUP_NAME] [--resource-group-id RESOURCE_GROUP_ID]}
 ```
 {: codeblock}
 
 For example, you can run the following command to grant a user viewer permissions:
 
-```
+```text
 ibmcloud iam access-group-policy-create my-access-group --roles Viewer --service-name my-auditing-instance --service-instance 99999999-9999-9999-999999
 ```
 {: pre}
@@ -188,7 +178,7 @@ When you define the policy, you need to select a service role. Service access ro
 
 To create an access group policy by using the CLI, you can use the [ibmcloud iam access-group-policy-create](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_access_group_policy_create) command.
 
-```
+```text
 ibmcloud iam access-group-policy-create GROUP_NAME {-f, --file @JSON_FILE | --roles ROLE_NAME1,ROLE_NAME2... [--service-name SERVICE_NAME] [--service-instance SERVICE_INSTANCE] [--region REGION] [--resource-type RESOURCE_TYPE] [--resource RESOURCE] [--resource-group-name RESOURCE_GROUP_NAME] [--resource-group-id RESOURCE_GROUP_ID]}
 ```
 {: codeblock}
@@ -200,7 +190,7 @@ You must use a JSON file to create the group policy.
 
 For example, you can run the following command:
 
-```
+```text
 ibmcloud iam access-group-policy-create accessGroupName accessGroupGUID --file policy.json
 ```
 {: codeblock}

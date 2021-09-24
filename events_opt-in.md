@@ -10,29 +10,20 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Enabling Activity Tracker events
-{: #events_opt-in}
+{: #events-opt-in}
 
 In {{site.data.keyword.at_full_notm}}, events are collected automatically for most enabled-services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them.
-{:shortdesc}
+{: shortdesc}
 
 
 
 
 ## Management events
-{: #events_opt-in_mgt}
+{: #events-opt-in_mgt}
 
 The following table lists the services that require additional steps for you to be able to monitor [management events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_management) that they generate:
 
@@ -45,7 +36,7 @@ The following table lists the services that require additional steps for you to 
 
 
 ## Data events
-{: #events_opt-in_data}
+{: #events-opt-in_data}
 
 The following table lists the services that require additional steps for you to be able to monitor [data events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_data) that they generate:
 
@@ -60,13 +51,13 @@ The following table lists the services that require additional steps for you to 
 
 
 ## Details per Watson service
-{: #events_opt-in_watson}
+{: #events-opt-in_watson}
 
 The following table lists the Watson services and related information about additional steps that you might need to be able to monitor events:
 
 | Service Name | Paid plan required | Other configuration required | 
 | -- | -- | -- |
-| {{site.data.keyword.conversationfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) </br>Premium & Enterprise Plans only feature ||  
+| {{site.data.keyword.conversationfull}} | ![Checkmark icon](../icons/checkmark-icon.svg)   \n Premium & Enterprise Plans only feature ||  
 | {{site.data.keyword.discoveryfull}} |   |   |  
 | {{site.data.keyword.DSX_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | IBM Watson&trade; Knowledge Catalog | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  

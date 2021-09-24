@@ -10,17 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:download: .download}
-{:preview: .preview}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Learning about {{site.data.keyword.atracker_full_notm}} architecture and workload isolation
@@ -53,7 +43,7 @@ You can use the {{site.data.keyword.atracker_full_notm}} CLI, the {{site.data.ke
 
 In your account, auditing events are automatically collected from {{site.data.keyword.cloud_notm}} services that run in the account, with the exception of some services that require additional configuration to enable auditing events. 
 - For more information about services that generate events, see [Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services).
-- For more information about services that require additional configuration to generate events, see [Enabling Activity Tracker events](/docs/activity-tracker?topic=activity-tracker-events_opt-in).
+- For more information about services that require additional configuration to generate events, see [Enabling Activity Tracker events](/docs/activity-tracker?topic=activity-tracker-events-opt-in).
 
 After you configure a route in a region, auditing events that are collected are uploaded in the Cloud Object Storage bucket of your choice. You create and manage buckets.
 
@@ -81,20 +71,20 @@ The UI is the front-end component where users can monitor and manage logs from h
 You can use private and public endpoints to configure {{site.data.keyword.atracker_short}} resources in your account. 
 
 ### Private connections
-{: #compute-isolation-private_connections}
+{: #compute-isolation-private-connections}
 
 You cannot disable private endpoints.
 {: note}
 
 
 ### Public connections
-{: #compute-isolation-public_connections}
+{: #compute-isolation-public-connections}
 
 You can choose to disable public endpoints for {{site.data.keyword.atracker_short}} event routing. For more information, see [Disabling public endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints_manage).
 
 
 ## Dependencies to other {{site.data.keyword.cloud_notm}} services
-{: #compute-isolation-dependencies_cloud}
+{: #compute-isolation-dependencies-cloud}
 
 Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.atracker_short}} connects to over public or private connections.
 

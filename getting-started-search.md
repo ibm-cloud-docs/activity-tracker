@@ -10,17 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Getting started with {{site.data.keyword.at_short}} hosted event search offerings
@@ -28,7 +18,7 @@ subcollection: activity-tracker
 
 
 Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
-{:shortdesc}
+{: shortdesc}
 
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offerings](/docs/activity-tracker?topic=activity-tracker-service_plan).
@@ -121,7 +111,7 @@ Complete the following steps to provision an instance:
 
 2. Go to the menu icon ![Menu icon](../icons/icon_hamburger.svg) and select **Observability** to access the *Observability* dashboard.
 
-3. Select **Activity Tracker**, then click **Create instance**. 
+3. Select **Activity Tracker**, then click **Create**. 
 
 4. Enter a name for the service instance.
 

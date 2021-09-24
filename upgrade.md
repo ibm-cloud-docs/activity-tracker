@@ -10,24 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Changing the service plan of an instance
 {: #upgrade}
 
 When you provision an instance of the {{site.data.keyword.at_full_notm}} service, you must choose a service plan. Different plans offer different features. You can change the service plan at any time.
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -47,7 +37,7 @@ To change the service plan of an instance from the Observability dashboard in th
 
 3. Select **Activity Tracker**.
 
-4. Select the instance. Then, select **Edit plan**. 
+4. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg) for the instance you want to change and select **Edit plan**. 
 
 5. Select a service plan. 
 
@@ -72,14 +62,14 @@ Complete the following steps to change the service plan:
 
    To get the current service plan of an instance, you can run the following command and check the value of the **resource_plan_id** field:
 
-   ```
+   ```text
    ibmcloud resource service-instance INSTANCE_NAME --output JSON
    ```
    {: codeblock}
 
-4. Change the service plan. Run the [ibmcloud resource service-instance-update](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command:
+5. Change the service plan. Run the [ibmcloud resource service-instance-update](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command:
 
-   ```
+   ```text
    ibmcloud resource service-instance-update NAME --service-plan-id RESOURCE_PLAN_ID
    ```
    {: codeblock}
@@ -95,7 +85,7 @@ Complete the following steps to change the service plan:
 
 For example, to change the service plan of an instance to the 7 days retention plan, run the following command:
 
-```
+```text
 ibmcloud resource service-instance-update logdna-instance-01 9aae7491-5cb6-43eb-9b7a-3e0456c781f0
 ```
 {: codeblock}

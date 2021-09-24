@@ -10,22 +10,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Auditing events for account management  
 {: #at_events_acc_mgt}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with an {{site.data.keyword.cloud}} account. 
-{:shortdesc}
+{: shortdesc}
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. To get started, see [{{site.data.keyword.at_full_notm}}](/docs/services/activity-tracker?topic=activity-tracker-getting-started#getting-started). 
 
@@ -41,7 +32,7 @@ The following table lists the actions that generate an event:
 | `billing.account.create`             | An event is generated when you create an account after the account ID is assigned to the account. |
 | `billing.account.update`             | An event is generated when you update information about the account.  |
 | `billing.account.active`             | An event is generated when you verify the account, that is, an event is generated when the account becomes active. |
-| `billing.account-subscription.create` | An event is generated when you create a [Subscription account](/docs/account?topic=account-accounts#subscription-account) </br><a href="/docs/account?topic=account-accounts#subscription-account">Subscription account</a>. |
+| `billing.account-subscription.create` | An event is generated when you create a [Subscription account](/docs/account?topic=account-accounts#subscription-account). |
 {: caption="Table 1. Actions that generate account management events" caption-side="top"} 
 
 
@@ -73,7 +64,7 @@ The following table lists the actions that generate an event:
 | Action                                               | Description |
 |------------------------------------------------------|-------------|
 | `billing.enterprise-usage-report.read`               | An event is generated when a user views the enterprise account level summary usage page that is displayed by default. |
-| `billing.enterprise-usage-report.download `          | An event is generated when a user requests a **summary** export of the data in csv format from the enterprise account level summary usage page.  |
+| `billing.enterprise-usage-report.download`          | An event is generated when a user requests a **summary** export of the data in csv format from the enterprise account level summary usage page.  |
 | `billing.enterprise-instances-usage-report.download` | An event is generated when a user requests an **instances** export of the data in csv format from the enterprise account level summary usage page. |
 {: caption="Table 3. Actions that generate account management events" caption-side="top"} 
 
@@ -160,14 +151,14 @@ The following table lists the `requestData` fields that report the configuration
 | Action                                                         | Description | 
 |----------------------------------------------------------------|-------------|
 | `requestData.public_access_enabled`                            | Reports the boolean value that is set when the `Public access group` setting is modified. |
-| `requestData.request_body.old_mfa_traits`                      | Reports the original value for the `Multifactor authentication (MFA)` setting. </br>Valid values are `NONE`, `TOTP`, `TOTP4ALL`, `LEVEL1`, `LEVEL2`, `LEVEL3` </br>This field is set to `NONE` when MFA is not enabled in the account, and all users log in by using a standard ID and password. </br>This field is set to `TOTP` when the account requires MFA for non-federated users only users with an IBMid. Users are required an ID, password, and a time-based one-time passcode to log in. </br>This field is set to `TOTP4ALL` when the account requires MFA for all users with an IBMid. </br>This field is set to `LEVEL1` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `email-based MFA`. Users must authenticate by using a security passcode that is sent via email. </br>This field is set to `LEVEL2` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `TOTP MFA`. Users authenticate by using a time-based one-time passcode (TOTP) that uses the current time of day as an authentication factor. </br>This field is set to `LEVEL3` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `U2F MFA`. Users authenticate by using a hardware security key that generates a six-digit numerical code. |
+| `requestData.request_body.old_mfa_traits`                      | Reports the original value for the `Multifactor authentication (MFA)` setting. Valid values are `NONE`, `TOTP`, `TOTP4ALL`, `LEVEL1`, `LEVEL2`, `LEVEL3`   \n  \n This field is set to `NONE` when MFA is not enabled in the account, and all users log in by using a standard ID and password.   \n  \n This field is set to `TOTP` when the account requires MFA for non-federated users only users with an IBMid. Users are required an ID, password, and a time-based one-time passcode to log in.   \n  \n This field is set to `TOTP4ALL` when the account requires MFA for all users with an IBMid.   \n  \n This field is set to `LEVEL1` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `email-based MFA`. Users must authenticate by using a security passcode that is sent via email.     \n  \n This field is set to `LEVEL2` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `TOTP MFA`. Users authenticate by using a time-based one-time passcode (TOTP) that uses the current time of day as an authentication factor.   \n  \n This field is set to `LEVEL3` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `U2F MFA`. Users authenticate by using a hardware security key that generates a six-digit numerical code. |
 | `requestData.request_body.new_mfa_traits`                      | Reports the new value for the `Multifactor authentication (MFA)` setting. |
-| `requestData.request_body.old_restrict_create_platform_apikey` | Reports the original value for the `Restrict API key creation` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
-| `requestData.request_body.new_restrict_create_platform_apikey` | Reports the new value for the `Restrict API key creation` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
-| `requestData.request_body.old_restrict_create_service_id`      | Reports the original value for the `Restrict service ID creation` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
-| `requestData.request_body.new_restrict_create_service_id`      | Reports the new value for the `Restrict service ID creation` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
-| `requestData.request_body.old_allowed_ip_addresses`            | Reports the original value for the `Restrict IP address access` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
-| `requestData.request_body.new_allowed_ip_addresses`            | Reports the new value for the `Restrict IP address access` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.old_restrict_create_platform_apikey` | Reports the original value for the `Restrict API key creation` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.new_restrict_create_platform_apikey` | Reports the new value for the `Restrict API key creation` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.old_restrict_create_service_id`      | Reports the original value for the `Restrict service ID creation` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.new_restrict_create_service_id`      | Reports the new value for the `Restrict service ID creation` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.old_allowed_ip_addresses`            | Reports the original value for the `Restrict IP address access` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.new_allowed_ip_addresses`            | Reports the new value for the `Restrict IP address access` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
 | `requestData.team_directory_enabled`                           | Reports the boolean value that is set when the `Restrict user list visibility` setting is modified. |
 {: caption="Table 10. Actions that generate events when the account settings are changed" caption-side="top"} 
 
@@ -192,7 +183,7 @@ The following table lists the actions that generate an event:
 {: caption="Table 12. Actions that generate events" caption-side="top"} 
 
 ## Events for managing software instances
-{: #at_events_sw-instance}
+{: #at_events_sw_instance}
 
 The following table lists the actions that generate an event for software instances:
 
@@ -214,13 +205,16 @@ The following table lists the actions that generate an event:
 
 | Action                                          | Description |
 |-------------------------------------------------|-------------|
-| `global-search-tagging.tag.attach`              | An event is generated when you associate a tag to a resource. |
-| `global-search-tagging.tag.detach`              | An event is generated when you remove a tag from a resource.  |
-| `global-search-tagging.tag.update`              | An event is generated when you update a tag that is attached to a resource.  For internal use.|
+| `global-search-tagging.tag.create`              | An event is generated when you create a tag. The tag type is included in the requestData object. |
 | `global-search-tagging.tag.delete`              | An event is generated when you delete a tag in your account.  |
 | `global-search-tagging.tags.delete`             | An event is generated when you delete all the tags that are not attached to resources in your account.  |
-| `global-search-tagging.tag.create`              | An event is generated when you create a tag. The tag type is included in the requestData object. |
+| `<service-name>.tag.attach`                     | An event is generated when you associate a tag to a resource. |
+| `<service-name>.tag.detach`                     | An event is generated when you remove a tag from a resource.  |
 {: caption="Table 14. Actions that generate events" caption-side="top"} 
+
+When an access tag is created, you get an event with `global-search-tagging.tag.create`.
+
+When an access tag is attached to a resource you get the event `<service-name>.tag.attach`.
 
 
 ## Events for managing users
@@ -372,11 +366,11 @@ The following table lists *requestData* fields that you can find in events that 
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `2FA`                      | Boolean         | Defines the MFA requirements for users in the account. </br>This field is set to `true` when MFA is enabled for users.  | 
+| `2FA`                      | Boolean         | Defines the MFA requirements for users in the account.   \n This field is set to `true` when MFA is enabled for users.  | 
 | `allowed_ip_addresses`     | String          | List of IP addresses from where a user is allowed to access account resources. |
 | `iam_id`                   | String          | Defines the IBM ID of the user whose settings are being modified. |
-| `security_questions_setup` | Boolean         | Defines when a user requires security questions to log in to the account. </br>This field is set to `true` to indicate that questions are required.  |
-| `self_manage`              | Boolean         | Defines whether a user can configure his log in settings on how to log in to the account.  </br>This field is set to `true` to allow a user to set password expiration, turn on security questions for login, and define allowed IP addresses for log in to {{site.data.keyword.cloud_notm}} and from classic infrastructure API calls.  | 
+| `security_questions_setup` | Boolean         | Defines when a user requires security questions to log in to the account.   \n This field is set to `true` to indicate that questions are required.  |
+| `self_manage`              | Boolean         | Defines whether a user can configure his log in settings on how to log in to the account.    \n This field is set to `true` to allow a user to set password expiration, turn on security questions for login, and define allowed IP addresses for log in to {{site.data.keyword.cloud_notm}} and from classic infrastructure API calls.  | 
 {: caption="Table 15. User management requestData fields" caption-side="top"} 
 
 
@@ -405,9 +399,9 @@ The following table lists the fields that are available through the `requestData
 | Field               | Type      | Description | Status |
 |---------------------|-----------|-------------|--------|
 | `month`             | String    | Indicates the month that the user selects to view usage data. |  Included always in the event |
-| `usage_report_type` | String    | Indicates the type of report. </br>Valid values are `instances` and `rollup`.|  Included always in the event |
+| `usage_report_type` | String    | Indicates the type of report.   \n Valid values are `instances` and `rollup`.|  Included always in the event |
 | `sub_account_id`    | String    | Indicates the sub-account ID. | Optional | 
-| `resource_group`    | String    | Indicates the resource group. | Optional </br>Included if the user filters data by resource group. |
+| `resource_group`    | String    | Indicates the resource group. | Optional   \n Included if the user filters data by resource group. |
 | `organization_id`   | String    | Indicates the organization ID. | Optional |
 | `daily`             | Boolean   | Indicates the frequency of the report. | Optional |
 {: caption="Table 17. Account usage requestData fields" caption-side="top"} 
@@ -421,7 +415,7 @@ The following table lists the fields that are available through the `requestData
 | `children`          | Boolean   | Indicates whether the usage is aggregated at account level. | Included always in the event |
 | `enterprise_id`     | String    | Indicates the ID of the enterprise. |  Included always in the event |
 | `account_id`        | String    | Indicates the sub-account ID that is requested in the report. | Optional | 
-| `account_group_id`  | String    | Indicates the account group when a user selects one. | Optional </br>Included if the user filters data by selecting 1 account group. |
+| `account_group_id`  | String    | Indicates the account group when a user selects one. | Optional   \n Included if the user filters data by selecting 1 account group. |
 {: caption="Table 18. Enterprise usage requestData fields" caption-side="top"} 
 
 
@@ -432,7 +426,7 @@ The following table lists the fields that are available through the `requestData
 | `month`             | String    | Indicates the month that the user selects to view usage data. |  Included always in the event |
 | `enterprise_id`     | String    | Indicates the ID of the enterprise. |  Included always in the event |
 | `account_id`        | String    | Indicates the the sub-account IDs that is requested in the report. | Optional | 
-| `account_group_id`  | String    | Indicates the account group when a user selects one. | Optional </br>Included if the user filters data by selecting 1 account group. |
+| `account_group_id`  | String    | Indicates the account group when a user selects one. | Optional   \n Included if the user filters data by selecting 1 account group. |
 {: caption="Table 19. Enterprise instances usage requestData fields" caption-side="top"} 
 
 
@@ -491,6 +485,6 @@ The following table lists *requestData* fields that you can find in events that 
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `team_directory_enabled`   | Boolean         | Defines the status of the *User list visibility restriction* IAM account setting. </br>When it is set to `true`, users in your account can view other users from the Users page. |
-| `mfa`                      | String          | Defines the MFA method that is required for users to log in to the account. </br>Valid values are *TOTP*, and *TOTP4ALL* </br>This field is set to `TOTP` when the account requires MFA for non-federated users only. Users are required an ID, password, and a time-based one-time passcode to log in. </br>This field is set to `TOTP4ALL` when the account requires MFA for all users.</br>All users by requiring an ID, password, and a time-based one-time passcode. </br>When this field is empty, MFA is not enabled in the account, and all users log in by using a standard ID and password. |
+| `team_directory_enabled`   | Boolean         | Defines the status of the *User list visibility restriction* IAM account setting.   \n When it is set to `true`, users in your account can view other users from the Users page. |
+| `mfa`                      | String          | Defines the MFA method that is required for users to log in to the account.   \n Valid values are *TOTP*, and *TOTP4ALL*   \n This field is set to `TOTP` when the account requires MFA for non-federated users only. Users are required an ID, password, and a time-based one-time passcode to log in.   \n This field is set to `TOTP4ALL` when the account requires MFA for all users.  \n All users by requiring an ID, password, and a time-based one-time passcode.   \n When this field is empty, MFA is not enabled in the account, and all users log in by using a standard ID and password. |
 {: caption="Table 20. Account IAM settings requestData fields" caption-side="top"} 

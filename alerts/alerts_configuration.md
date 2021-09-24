@@ -10,16 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Generating alerts on {{site.data.keyword.cloud_notm}} configuration changes
 {: #alerts_configuration}
@@ -74,11 +65,11 @@ You can configure alerts in {{site.data.keyword.at_short}} by using the Configur
 - You can use the `PUT` method to modify an existing alert. You can use the DELETE method to delete a view and associated alerts.
 - You can use the `DELETE` method to delete an alert.
 
-For more information, see [Managing views and alerts programmatically](/docs/activity-tracker?topic=activity-tracker-config_api).
+For more information, see [Managing views and alerts programmatically](/docs/activity-tracker?topic=activity-tracker-config-api).
 
 For example, the following sample will create an email alert of type presence that sends a notification when 1 event reporting thr creation, deletion, or change of a service instance occurs in the account:
 
-```
+```text
 curl https://api.eu-de.logging.cloud.ibm.com/v1/config/view \
         -H 'content-type: application/json' \
         -H 'servicekey: <SERVICE_KEY>' \
@@ -114,11 +105,11 @@ The following table outlines queries that you can use to alert on configuraton c
 | Notify on | Query | UI Source | API hosts |
 |-----------|-------|-----------|-----------|
 | Create a service instance | `instance.create` | N/A | N/A | 
-| Create a service instance for service type | `instance.create` | You can choose a specific service in the source filter section of the UI. </br></br>For example, to notify when a Key Protect service instance is created, choose `kms` as the source. | You can specify the service in the hosts patameter. </br></br>For example, to notify when a Key Protect service instance is created, add `\"hosts\": \"kms\"` | 
+| Create a service instance for service type | `instance.create` | You can choose a specific service in the source filter section of the UI.   \n   \n For example, to notify when a Key Protect service instance is created, choose `kms` as the source. | You can specify the service in the hosts patameter.   \n   \n For example, to notify when a Key Protect service instance is created, add `\"hosts\": \"kms\"` | 
 | Delete a service instance | `instance.delete` | N/A | N/A | 
-| Delete a service instance for service type | `instance.delete` | You can choose a specific service in the source filter section of the UI. </br></br>For example, to notify when a Key Protect service instance is deleted, choose `kms` as the source. | You can specify the service in the hosts patameter. </br></br>For example, to notify when a Key Protect service instance is deleted, add `\"hosts\": \"kms\"` | 
+| Delete a service instance for service type | `instance.delete` | You can choose a specific service in the source filter section of the UI.   \n   \n For example, to notify when a Key Protect service instance is deleted, choose `kms` as the source. | You can specify the service in the hosts patameter.   \n   \n For example, to notify when a Key Protect service instance is deleted, add `\"hosts\": \"kms\"` | 
 | Modify a service instance | `instance.update` | N/A | N/A | 
-| Modify a service instance for service type | `instance.update` | You can choose a specific service in the source filter section of the UI. </br></br>For example, to notify when a Key Protect service instance is changed, choose `kms` as the source. | You can specify the service in the hosts patameter. </br></br>For example, to notify when a Key Protect service instance is changed, add `\"hosts\": \"kms\"` | 
+| Modify a service instance for service type | `instance.update` | You can choose a specific service in the source filter section of the UI.   \n   \n For example, to notify when a Key Protect service instance is changed, choose `kms` as the source. | You can specify the service in the hosts patameter.   \n   \n For example, to notify when a Key Protect service instance is changed, add `\"hosts\": \"kms\"` | 
 | Create, delete or modify any service instance | `instance.create OR instance.delete OR instance.update` | N/A | N/A | 
 {: caption="Table 1. Query samples when services are created, modified, and deleted" caption-side="top"} 
 

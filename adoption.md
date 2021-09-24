@@ -10,24 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Adoption guidelines for regulated and highly available workloads
 {: #adoption}
 
 For regulated and highly available workloads, consider the following adoption guidelines when using the {{site.data.keyword.at_full}} (AT) service:
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -586,7 +576,7 @@ The {{site.data.keyword.sqlquery_short}} service provides a server-less, no-ETL 
 
 The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. Archived files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format. When you use the {{site.data.keyword.sqlquery_short}} service, each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in an {{site.data.keyword.cos_short}} instance of your choice. 
 
-When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/activity-tracker?topic=activity-tracker-sqlquery#sqlquery_step3-4) to be able to query the contents successfully.
+When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/activity-tracker?topic=activity-tracker-sqlquery#sqlquery_step3_4) to be able to query the contents successfully.
 {: tip}
 
 Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and test your queries, and the [SQL Query REST API](#restapi) to automate them.

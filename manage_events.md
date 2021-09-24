@@ -8,24 +8,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:beta: .beta}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing events in your account
 {: #manage_events}
 
 {{site.data.keyword.at_full_notm}} is used to collect, archive, view and analyze events. 
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -64,7 +53,7 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 
 * The hourly archive directory format looks like this:
 
-    ```
+    ```text
     YYYY/MM/DD/<accountID>.<YYYY>-<MM>-<DD>.<HH>00.json.gz
     ```
     {: codeblock}
@@ -79,7 +68,7 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 
     The daily archive directory format looks like this:
     
-    ```
+    ```text
     <accountID>.<YYYY>-<MM>-<DD>.<clusterId>.json.gz
     ```
     {: codeblock}

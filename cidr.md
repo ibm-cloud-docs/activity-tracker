@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-09-13"
 
 keywords: IBM Cloud, Activity Tracker, cidr
 
@@ -10,24 +10,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
+{{site.data.keyword.attribute-definition-list}}
 
 # CIDR blocks
 {: #cidr}
 
 The following Classless Inter-Domain Routing (CIDR) blocks are available:
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -36,7 +25,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: #cidr_public_gen2}
 
 ### US South
-{: #cidr_public_gen2-1}
+{: #cidr_public_gen2_1}
 
 | Region | CIDR block |
 |--------|------------|
@@ -55,7 +44,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 1. US-South public CIDR blocks" caption-side="top"}
 
 ### US East
-{: #cidr_public_gen2-2}
+{: #cidr_public_gen2_2}
 
 | Region   | CIDR block |
 |----------|------------|
@@ -65,10 +54,13 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | US-East  | 52.117.100.16/28 |
 | US-East  | 169.62.40.192/27 |
 | US-East  | 169.47.188.0/27 |
+| US-East  | 150.239.98.0/26 |
+| US-East  | 52.117.81.128/26 |
+| US-East  | 169.59.154.128/26 |
 {: caption="Table 2. US-East public CIDR blocks" caption-side="top"}
 
 ### Frankfurt
-{: #cidr_public_gen2-3}
+{: #cidr_public_gen2_3}
 
 | Region   | CIDR block |
 |----------|------------|
@@ -88,7 +80,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 
 
 ### Tokyo
-{: #cidr_public_gen2-4}
+{: #cidr_public_gen2_4}
 
 | Region   | CIDR block |
 |----------|------------|
@@ -101,7 +93,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 4. Tokyo public CIDR blocks" caption-side="top"}
 
 ### London
-{: #cidr_public_gen2-5}
+{: #cidr_public_gen2_5}
 
 | Region   | CIDR block |
 |----------|------------|
@@ -114,7 +106,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 5. London public CIDR blocks" caption-side="top"}
 
 ### Sydney
-{: #cidr_public_gen2-6}
+{: #cidr_public_gen2_6}
 
 | Region   | CIDR block |
 |----------|------------|
@@ -124,7 +116,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 6. Sydney public CIDR blocks" caption-side="top"}
 
 ### Seoul
-{: #cidr_public_gen2-7}
+{: #cidr_public_gen2_7}
 
 | Region   | CIDR block |
 |----------|------------|
@@ -133,7 +125,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 7. Seoul public CIDR blocks" caption-side="top"}
 
 ### Chennai
-{: #cidr_public_gen2-8}
+{: #cidr_public_gen2_8}
 
 | Region   | CIDR block |
 |----------|------------|
@@ -141,7 +133,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 8. Chennai public CIDR blocks" caption-side="top"}
 
 ### Osaka
-{: #cidr_public_gen2-9}
+{: #cidr_public_gen2_9}
 
 | Region   | CIDR block |
 |----------|------------|
@@ -151,7 +143,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 9. Osaka public CIDR blocks" caption-side="top"}
 
 ### Toronto
-{: #cidr_public_gen2-10}
+{: #cidr_public_gen2_10}
 
 | Region   | CIDR block |
 |----------|------------|
@@ -162,7 +154,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 
 
 ### Sao Paulo
-{: #cidr_public_gen2-11}
+{: #cidr_public_gen2_11}
 
 | Region   | CIDR block |
 |----------|------------|
@@ -176,7 +168,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: #cidr_private_gen2}
 
 ### US South
-{: #cidr_private_gen2-12}
+{: #cidr_private_gen2_12}
 
 | Region | CIDR block |
 |--------|------------|
@@ -192,7 +184,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 12. US-South private CIDR blocks" caption-side="top"}
 
 ### US East
-{: #cidr_private_gen2-13}
+{: #cidr_private_gen2_13}
 
 | Region | CIDR block |
 |--------|------------|
@@ -205,7 +197,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 13. US-East private CIDR blocks" caption-side="top"}
 
 ### Frankfurt
-{: #cidr_private_gen2-14}
+{: #cidr_private_gen2_14}
 
 | Region | CIDR block |
 |--------|------------|
@@ -221,7 +213,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 14. Frankfurt private CIDR blocks" caption-side="top"}
 
 ### Tokyo
-{: #cidr_private_gen2-15}
+{: #cidr_private_gen2_15}
 
 | Region | CIDR block |
 |--------|------------|
@@ -231,7 +223,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 15. Tokyo private CIDR blocks" caption-side="top"}
 
 ### London
-{: #cidr_private_gen2-16}
+{: #cidr_private_gen2_16}
 
 | Region | CIDR block |
 |--------|------------|
@@ -241,7 +233,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 16. London private CIDR blocks" caption-side="top"}
 
 ### Sydney
-{: #cidr_private_gen2-17}
+{: #cidr_private_gen2_17}
 
 | Region | CIDR block |
 |--------|------------|
@@ -251,7 +243,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 17. Sydney private CIDR blocks" caption-side="top"}
 
 ### Seoul
-{: #cidr_private_gen2-18}
+{: #cidr_private_gen2_18}
 
 | Region | CIDR block |
 |--------|------------|
@@ -259,7 +251,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 18. Seoul private CIDR blocks" caption-side="top"}
 
 ### Chennai
-{: #cidr_private_gen2-19}
+{: #cidr_private_gen2_19}
 
 | Region | CIDR block |
 |--------|------------|
@@ -267,7 +259,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 19. Chennai private CIDR blocks" caption-side="top"}
 
 ### Osaka
-{: #cidr_private_gen2-20}
+{: #cidr_private_gen2_20}
 
 | Region | CIDR block |
 |--------|------------|
@@ -277,7 +269,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 20. Osaka private CIDR blocks" caption-side="top"}
 
 ### Toronto
-{: #cidr_private_gen2-21}
+{: #cidr_private_gen2_21}
 
 | Region | CIDR block |
 |--------|------------|
@@ -287,7 +279,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 21. Toronto private CIDR blocks" caption-side="top"}
 
 ### Sao Paulo
-{: #cidr_private_gen2-22}
+{: #cidr_private_gen2_22}
 
 | Region   | CIDR block |
 |----------|------------|

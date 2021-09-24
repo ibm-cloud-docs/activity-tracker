@@ -10,17 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Controlling data usage
@@ -28,7 +18,7 @@ subcollection: activity-tracker
 
 
 In {{site.data.keyword.at_full}}, you can control the data that is collected and available for analysis through a logging instance. You can define exclusion rules in the UI that apply to data collected in that instance. You can define an alert that is triggered when the data usage threshold that you define for that logging instance is reached.
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}

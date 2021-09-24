@@ -10,23 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
  
 # Managing access with IAM
 {: #iam}
 
 {{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Access to {{site.data.keyword.at_full_notm}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). 
-{:shortdesc}
+{: shortdesc}
 
 The access policy that you assign users in your account determines what actions a user can perform within the context of the service or specific instance that you select. The allowable actions are customized and defined by {{site.data.keyword.atracker_short}} as operations that are allowed to be performed on the service. An action is mapped to an IAM platform or service role that you can assign to a user.
 
@@ -81,7 +72,6 @@ The following table describes the tasks that can be completed with each platform
 | Operator                 | As an operator, you can view {{site.data.keyword.atracker_short}} configuration resources such as routes and targets. |
 | Editor                   | As an editor, you can view, create, update, and delete {{site.data.keyword.atracker_short}} resources. | 
 | Administrator            | As an administrator, you can view, create, update, and delete {{site.data.keyword.atracker_short}} resources. You can also assign access policies to manage {{site.data.keyword.atracker_short}} resources to other users in the account. |
-{: row-headers}
 {: caption="Table 1. IAM platform roles for {{site.data.keyword.atracker_short}} event routing" caption-side="top"}
 {: summary="Descriptions of the actions in the service that are permitted for the listed platform management role."}
 
@@ -96,7 +86,7 @@ Review the available platform roles that are available, and the actions that are
 | `Create a target`    | `atracker.target.create` | `atracker.target.create` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
 | `Update a target`    | `atracker.target.update` | `atracker.target.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
 | `Delete a target`    | `atracker.target.delete` | `atracker.target.delete` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
-| `UpValidate a target`    | `atracker.target.update` | `atracker.target.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
+| `Update a target`    | `atracker.target.update` | `atracker.target.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
 | `List all targets`   | `atracker.target.list` | `atracker.target.list` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
 | `View a route` | `atracker.route.read` | `atracker.route.read` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
 | `Create a route` | `atracker.route.create` | `atracker.route.create` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |

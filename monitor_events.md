@@ -10,16 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Monitoring activity through the UI
@@ -27,7 +18,7 @@ subcollection: activity-tracker
 
 
 You can monitor activity in your account through the {{site.data.keyword.at_full_notm}} web UI by using views, dashboards, and screens. You can also export sets of events to analyze them in a different context. You can be notified if specific events are generated in your account.
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}

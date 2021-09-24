@@ -10,17 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Managing events from log in actions in an account
@@ -29,7 +19,7 @@ subcollection: activity-tracker
 
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users, applications, and services interact with your account. The {{site.data.keyword.iamlong}} (IAM) service in {{site.data.keyword.cloud_notm}} generates events that you can use to monitor log in activity to your account. This tutorial explains the different log in options to {{site.data.keyword.cloud_notm}} and what happens from an IAM and an {{site.data.keyword.at_full_notm}} perspective. You can also find out how to define views and dashboards to monitor these actions in your account.
-{:shortdesc}
+{: shortdesc}
 
 To work in the {{site.data.keyword.cloud_notm}}, a user, an application, or a service must log in to {{site.data.keyword.cloud_notm}}. The user, application, or service needs valid credentials to access an account and run actions on services in that account.
 

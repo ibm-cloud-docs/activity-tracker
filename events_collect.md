@@ -10,23 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Collecting events
 {: #events_collect}
 
 In {{site.data.keyword.at_full_notm}} (AT), events are collected automatically for most enabled-AT services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them. 
-{:shortdesc}
+{: shortdesc}
 
 To collect and monitor activity in your account, you must provision the {{site.data.keyword.at_full_notm}} (AT) service in your account. Then, 
 as soon as an instance of an AT-enabled service is provisioned, events are collected and available for monitoring.

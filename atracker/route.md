@@ -10,28 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
-{:terraform: .ph data-hd-interface='terraform'}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Managing routes
 {: #route}
 
 You can manage routes in your account by using the {{site.data.keyword.atracker_full}} CLI or {{site.data.keyword.atracker_full_notm}} REST API. A route defines the rules that indicate what auditing events are collected in a region and where to store them. 
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
 {: important}
@@ -55,7 +41,7 @@ The target defines where auditing events are collected. The route defines what a
 
 A route definition is similar to the follows:
 
-```
+```json
 {
     "id": "959ceeaf-9999-9999-9999-b7ad27a3e109",
     "name": "my-route",
@@ -111,11 +97,11 @@ Before you use the the CLI to manage routes, complete the following steps:
 
 2. [Pre-requisite] [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-2. [Pre-requisite] [Install the {{site.data.keyword.atracker_notm}} CLI](/docs/activity-tracker?topic=activity-tracker-activity-tracking-cli#activity-tracking-cli-prereq).
+3. [Pre-requisite] [Install the {{site.data.keyword.atracker_notm}} CLI](/docs/activity-tracker?topic=activity-tracker-activity-tracking-cli#activity-tracking-cli-prereq).
 
-3. Log in to the region in the {{site.data.keyword.cloud_notm}} where the instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
+4. Log in to the region in the {{site.data.keyword.cloud_notm}} where the instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
-4. Set the resource group where the instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
+5. Set the resource group where the instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
     By default, the `default` resource group is set.
 
@@ -128,32 +114,35 @@ Use this command to create a new route for an {{site.data.keyword.atracker_full_
 ```sh
 ibmcloud atracker route create --name <ROUTE_NAME> --target <TARGET> [--receive-global-events] [--region <REGION>] [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #route-create-options}
 
-<dl>
-<dt>--target &lt;TARGET_ID&gt;</dt>
-<dd>The ID or name of the target.</dd>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--name &lt;ROUTE_NAME&gt;</dt>
-<dd>The name to be given to the route.</dd>
-<dt>--receive-global-events</dt>
-<dd>Specifies that the route will receive [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global).  If not specified, global events will not be sent on the route</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd>
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--target <TARGET_ID>`
+:   The ID or name of the target.
+
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--name <ROUTE_NAME>`
+:   The name to be given to the route.
+
+`--receive-global-events`
+:   Specifies that the route will receive [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global).  If not specified, global events will not be sent on the route
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #route-create-example}
 
 The following is an example using the **`ibmcloud atracker route create --name my_route --target xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --receive-global-events`** command.
 
-```
+```text
 Route
 Name:                    my_route
 ID:                      xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -175,34 +164,38 @@ Use this command to update a route for an {{site.data.keyword.atracker_full_notm
 ```sh
 ibmcloud atracker route update --route <ROUTE> [--name <ROUTE_NAME>] [--receive-global-events ( TRUE | FALSE )] [--target <TARGET>] [--region <REGION>] [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #route-update-options}
 
-<dl>
-<dt>--route &lt;ROUTE&gt;</dt>
-<dd>The name or ID of the route to be updated.</dd>
-<dt>--target &lt;TARGET&gt;</dt>
-<dd>The ID or name of the target.</dd>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--name &lt;ROUTE_NAME&gt;</dt>
-<dd>The name to be given to the route.</dd>
-<dt>--receive-global-events (TRUE | FALSE)</dt>
-<dd>Specifies that the route will receive [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global).  If not specified, global events will not be sent on the route</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd>
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--route <ROUTE>`
+:   The name or ID of the route to be updated.
+
+`--target <TARGET>`
+:   The ID or name of the target.
+
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--name <ROUTE_NAME>`
+:   The name to be given to the route.
+
+`--receive-global-events (TRUE | FALSE)`
+:   Specifies that the route will receive [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global).  If not specified, global events will not be sent on the route
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #route-update-example}
 
 The following is an example using the **`ibmcloud atracker route update --route my_route --receive-global-events false`** command.
 
-```
+```text
 Route
 Name:                    my_route
 ID:                      xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -218,33 +211,36 @@ Updated:                 2021-07-21T18:33:48.898Z
 ## Deleting a route using the CLI
 {: #route-delete-cli}
 {: cli}
+
 Use this command to delete a route for an {{site.data.keyword.atracker_full_notm}} region. 
 
 ```sh
 ibmcloud atracker route rm --route <ROUTE> [--region <REGION>] [--force]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #route-rm-options}
 
-<dl>
-<dt>--route &lt;ROUTE&gt;</dt>
-<dd>The name or ID of the route to be deleted.</dd>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--force</dt>
-<dd>Will delete the route without providing the user with any additional prompt.</dd>
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--route <ROUTE>`
+:   The name or ID of the route to be deleted.
+
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--force`
+:   Will delete the route without providing the user with any additional prompt.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
+
   
 ### Example
 {: #route-rm-example}
 
 The following is an example using the **`ibmcloud atracker route rm --route my_route`** command.
 
-```
+```text
 Are you sure you want to remove the route with the route ID xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx [y/N]> y
 OK
 Route with route ID xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx was successfully removed.
@@ -256,7 +252,7 @@ The following is an example using the **`ibmcloud atracker route rm --route my_r
 This example shows a failed command where the specified route could not be found.
 {: note}
 
-```
+```text
 FAILED
 Something went wrong. Error: No route found with route name - my_route.
 ```
@@ -271,28 +267,29 @@ Use this command to get information about a route for an {{site.data.keyword.atr
 ```sh
 ibmcloud atracker route get --route [ <ROUTE_ID> | <ROUTE_NAME> ] [--region <REGION>] [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #route-get-options}
 
-<dl>
-<dt>--route &lt;ROUTE_ID&gt; | &lt;ROUTE_NAME&gt;</dt>
-<dd>The route ID or name of the route.</dd>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd> 
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--route <ROUTE_ID>` | `<ROUTE_NAME>`
+:   The route ID or name of the route.
+
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #route-get-example}
 
 The following is an example using the **`ibmcloud atracker route get --route my_route --output json`** command.
 
-```
+```json
 {
   "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "name": "my_route",
@@ -321,28 +318,30 @@ Use this command to list all the configured routes for a specific {{site.data.ke
 ```sh
 ibmcloud atracker route ls [--region <REGION> | --all-regions ] [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #route-ls-options}
 
-<dl>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--all-regions</dt>
-<dd>Specifies the routes for all regions should be listed.  This option cannot be specified if `--region` is specified.</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd> 
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--all-regions`
+:   Specifies the routes for all regions should be listed.  This option cannot be specified if `--region` is specified.
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
+
   
 ### Example
 {: #route-ls-example}
 
 The following is an example using the **`ibmcloud atracker route ls --region us-south`** command which returns the routes for all regions.
 
-```
+```text
 Name       ID                                     Region     Receive Global Events   Version   Created                    Updated
 my_route   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   us-south   true                    0         2021-07-21T18:10:44.456Z   2021-07-21T18:10:44.456Z
 ```
@@ -362,19 +361,19 @@ The following table lists the actions that you can run to manage routes:
 | Update a route            | `PUT`            | `<ENDPOINT>/api/v1/routes/<ROUTE_ID>`  |
 | Delete a route            | `DELETE`         | `<ENDPOINT>/api/v1/routes/<ROUTE_ID>`  |
 | Read a route             | `GET`            | `<ENDPOINT>/api/v1/routes/<ROUTE_ID>`  |
-| List all route           | `GET`            | `<ENDPOINT>/api/v1/routes `             |
+| List all route           | `GET`            | `<ENDPOINT>/api/v1/routes`             |
 {: caption="Table 2. Target actions by using the {{site.data.keyword.atracker_full_notm}} REST API" caption-side="top"}
 
 You can use private and public endpoints to manage routes. For more information about the list of `ENDPOINTS` that are available, see [Endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints).
 
-    * By default, you can manage routes from the private network. You must use an API endpoint with the following format: `https://private.<region>.atracker.cloud.ibm.com`
+* By default, you can manage routes from the private network. You must use an API endpoint with the following format: `https://private.<region>.atracker.cloud.ibm.com`
 
-    * You can also enable public endpoints in a region to manage routes. For more information, see [Managing endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints_manage).
+* You can also enable public endpoints in a region to manage routes. For more information, see [Managing endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints_manage).
 
 For more information about the REST API, see [Routes](/apidocs/atracker#create-route).
 
 ## Prereqs
-{: #route_target-prereqs-api}
+{: #route-target-prereqs-api}
 {: api}
 
 To make API calls to manage routes, complete the following steps:
@@ -464,7 +463,7 @@ Where
 
 You can use the following cURL command to delete a route:
 
-```
+```text
 curl -X DELETE   <ENDPOINT>/api/v1/routes/<ROUTE_ID>   -H "Authorization:  $ACCESS_TOKEN"   -H "content-type: application/json"
 ```
 {: codeblock}
@@ -476,14 +475,14 @@ curl -X DELETE   <ENDPOINT>/api/v1/routes/<ROUTE_ID>   -H "Authorization:  $ACCE
 
 You can use the following cURL command to view 1 route:
 
-```
+```text
 curl -X GET   <ENDPOINT>/api/v1/routes/<ROUTE_ID>   -H "Authorization:  $ACCESS_TOKEN"   -H "content-type: application/json"
 ```
 {: codeblock}
 
 For example, you can run the following cURL request to get informatiomn about a route with ID `7faa6ea6-e564-4fef-93b0-4317a0d27c34`:
 
-```
+```text
 curl -X GET   https://private.us-south.atracker.cloud.ibm.com/api/v1/targets/7faa6ea6-e564-4fef-93b0-4317a0d27c34    -H "Authorization:  $ACCESS_TOKEN"   -H "content-type: application/json"
 ```
 {: screen}
@@ -495,21 +494,21 @@ curl -X GET   https://private.us-south.atracker.cloud.ibm.com/api/v1/targets/7fa
 
 You can use the following cURL command to view all routes:
 
-```
+```text
 curl -X GET   <ENDPOINT>/api/v1/routes   -H "Authorization:  $ACCESS_TOKEN"   -H "content-type: application/json"
 ```
 {: codeblock}
 
 For example, you can run the following cURL request to get informatiomn about the routes that are defined in US South:
 
-```
+```text
 curl -X GET   https://private.us-south.atracker.cloud.ibm.com/api/v1/routes    -H "Authorization:  $ACCESS_TOKEN"   -H "content-type: application/json"
 ```
 {: screen}
 
 
 ## HTTP response codes
-{: #route_target-rc}
+{: #route-target-rc}
 {: api}
 
 When you use the {{site.data.keyword.atracker_full_notm}} REST API, you can get standard HTTP response codes to indicate whether a method completed successfully. 

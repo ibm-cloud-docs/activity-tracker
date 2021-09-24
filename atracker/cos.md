@@ -10,17 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Managing {{site.data.keyword.cos_full_notm}} (COS) buckets
@@ -28,7 +18,7 @@ subcollection: activity-tracker
 
 
 Buckets are a way to organize your data in an {{site.data.keyword.cos_full_notm}} instance. 
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
 {: important}
@@ -199,7 +189,7 @@ To restrict access to a single bucket, ensure that the user or Service ID doesn'
 ## Monitoring the health of a bucket
 {: #cos_bucket_health}
 
-You can use the {{site.data.keyword.mon_full}} service to monitor {{site.data.keyword.cos_short}} (COS) in the {{site.data.keyword.cloud_notm}}. [Learn more](Using {{site.data.keyword.mon_full_notm}} with {{site.data.keyword.cos_full_notm}}).
+You can use the {{site.data.keyword.mon_full}} service to monitor {{site.data.keyword.cos_short}} (COS) in the {{site.data.keyword.cloud_notm}}. [Learn more](/docs/cloud-object-storage?topic=cloud-object-storage-mm-cos-integration).
 
 ## CLI commands to manage buckets
 {: #cos_bucket_tips}
@@ -211,7 +201,7 @@ The following commands might be useful when you work with buckets:
 
 Run the following command to determine if a bucket exists in an {{site.data.keyword.cos_full_notm}} instance in your account:
 
-```
+```text
 ibmcloud cos bucket-head --bucket BUCKET_NAME
 ```
 {: codeblock}

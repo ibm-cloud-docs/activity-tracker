@@ -10,24 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Provisioning an instance
 {: #provision}
 
 Before you can monitor and manage event data with {{site.data.keyword.at_full_notm}}, you must provision an instance of the service in {{site.data.keyword.cloud_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -130,7 +120,7 @@ Complete the following steps:
 
 4. Create the instance. Run the [ibmcloud resource service-instance-create](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command:
 
-    ```
+    ```text
     ibmcloud resource service-instance-create NAME at_service SERVICE_PLAN_NAME LOCATION
     ```
     {: codeblock}
@@ -148,7 +138,7 @@ Complete the following steps:
     
 For example, to provision an instance with the 7 days retention plan, run the following command:
 
-```
+```text
 ibmcloud resource service-instance-create logging-instance-01 at_service 7-day us-south
 ```
 {: codeblock}

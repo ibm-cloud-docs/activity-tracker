@@ -10,19 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:download: .download}
-{:term: .term}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 # Setting up Terraform for {{site.data.keyword.at_full_notm}}
 {: #terraform-setup}
@@ -43,22 +31,30 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
 
 1. To install the Terraform CLI and configure the {{site.data.keyword.cloud}} Provider plug-in for Terraform, follow the [Terraform on {{site.data.keyword.cloud}} getting started tutorial](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started). The plug-in abstracts the {{site.data.keyword.cloud_notm}} APIs that are used to provision, update, or delete {{site.data.keyword.registryshort}} resources.
 
-Create a terraform folder on your local machine, and navigate to your terraform folder.
+    1. Create a terraform folder on your local machine, and navigate to your terraform folder.
+   
+        ```text
+        mkdir terraform && cd terraform
+        ```
+        {: pre}
 
-mkdir terraform && cd terraform
+    2. Download the Terraform version that you want. The IBM Cloud Provider plug-in for Terraform currently supports Terraform version 0.12.x, 0.13.x, and 0.14.x only. Make sure to select a supported Terraform version.
 
-Download the Terraform version that you want. The IBM Cloud Provider plug-in for Terraform currently supports Terraform version 0.12.x, 0.13.x, and 0.14.x only. Make sure to select a supported Terraform version.
-Extract the Terraform zip file and copy the files to your terraform directory.
+    3. Extract the Terraform zip file and copy the files to your terraform directory.
 
-Set the environment PATH variable to your Terraform files.
+    4. Set the environment PATH variable to your Terraform files.
 
-export PATH=$PATH:<terraform-directory>/terraform
+        ```text
+        export PATH=$PATH:<terraform-directory>/terraform
+        ```
+        {: codeblock}
 
-Verify that the installation is successful by using a terraform command.
+    5. Verify that the installation is successful by using a terraform command.
 
-terraform
-
-
+        ```text
+        terraform
+        ```
+        {: pre}
 
 2. Create a Terraform configuration file that is named `main.tf`. In this file, you add the configuration to create a {{site.data.keyword.registryshort}} namespace and to assign a user an access policy in Identity and Access Management (IAM) for that namespace by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform documentation](https://www.terraform.io/docs/language/index.html){: external}.
 
@@ -98,21 +94,21 @@ terraform
 
 3. Initialize the Terraform CLI.
 
-   ```
+   ```text
    terraform init
    ```
    {: pre}
 
 4. Create a Terraform execution plan. The Terraform execution plan summarizes all the actions that need to be run to create the {{site.data.keyword.registryshort}} namespace and IAM access policy in your account.
 
-   ```
+   ```text
    terraform plan
    ```
    {: pre}
 
 5. Create the {{site.data.keyword.registryshort}} namespace and IAM access policy in {{site.data.keyword.cloud_notm}}.
 
-   ```
+   ```text
    terraform apply
    ```
    {: pre}
@@ -122,7 +118,7 @@ terraform
 7. Verify that the access policy is successfully assigned. For more information, see [Reviewing assigned access in the console](/docs/account?topic=account-assign-access-resources#review-your-access-console).
 
 ## What's next?
-{: #registry_terraform-setup-next}
+{: #registry_terraform_setup_next}
 
 Now that you successfully created your first {{site.data.keyword.registryshort}} namespace with Terraform on {{site.data.keyword.cloud_notm}}, you can choose between the following tasks:
 
@@ -139,7 +135,7 @@ Valid location(s) are: ["ca-tor" "eu-de" "eu-gb" "in-che" "us-south" "au-syd" "j
 Use 'ibm_service_instance' if the service is a Cloud Foundry service.
 
 
-```
+```text
 Do you want to perform these actions?
   Terraform will perform the actions described above.
   Only 'yes' will be accepted to approve.

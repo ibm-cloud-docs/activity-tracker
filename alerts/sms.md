@@ -10,16 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Sending an SMS notification
@@ -27,7 +18,7 @@ subcollection: activity-tracker
 
 
 You can send SMS alerts to notify on log data hosted in a {{site.data.keyword.at_short}} instance.
-{:shortdesc}
+{: shortdesc}
 
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).

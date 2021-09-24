@@ -10,23 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Event types
 {: #event_types}
 
 In {{site.data.keyword.atracker_full_notm}}, you can differentiate events by scope as global or location-based events, and by operational impact as management or data events.
-{:shortdesc}
+{: shortdesc}
 
 Events can be classified as `management` or `data` events. 
 

@@ -10,28 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
-{:terraform: .ph data-hd-interface='terraform'}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Generating a report of {{site.data.keyword.atracker_short}} resources
 {: #config_report}
 
 You can validate your account configuration for {{site.data.keyword.atracker_full}} by generating a report of the {{site.data.keyword.atracker_full_notm}} resources using the {{site.data.keyword.atracker_full_notm}} CLI. 
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
 {: important}
@@ -43,12 +29,12 @@ Before you use the CLI to generate your {{site.data.keyword.atracker_full_notm}}
 
 1. Identify the endpoint in the region where you need the report. For more information, see [Endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
 
-Change the link to be direct to the Atracker endpoints (event routing ones)
-{: note}
+    Change the link to be direct to the Atracker endpoints (event routing ones)
+    {: note}
 
 2. [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-2. [Install the {{site.data.keyword.atracker_notm}} CLI](/docs/activity-tracker?topic=activity-tracker-activity-tracking-cli#activity-tracking-cli-prereq).
+3. [Install the {{site.data.keyword.atracker_full_notm}} CLI](/docs/activity-tracker?topic=activity-tracker-activity-tracking-cli#activity-tracking-cli-prereq).
 
 
 ## Running the report
@@ -56,14 +42,14 @@ Change the link to be direct to the Atracker endpoints (event routing ones)
 
 Use the following command to return a report about the {{site.data.keyword.atracker_full_notm}} service configuration.  This report will include any issues in the configuration. 
 
-```
+```text
 ibmcloud atracker config report --output YAML 
 ```
-{:pre}
+{: pre}
 
 Output similar to the following will be returned:
 
-```
+```text
 OK
 summary: The IBM Cloud Activity Tracker service configuration has detected some warnings. Review the warnings section for details. All global IBM Cloud Activity Tracker service events are being forwarded to a target [au-syd-default-cse-target-0] in the region [au-syd].
 warnings:

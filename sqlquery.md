@@ -10,23 +10,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 # Searching archive data by using the {{site.data.keyword.sqlquery_short}} service
 {: #sqlquery}
 
 You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} (AT) archive files that are stored in an {{site.data.keyword.cos_short}} (COS) bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically.
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -128,7 +118,7 @@ In SQL, the term *query* is just another way of saying *SELECT statement*.
 To run a query, complete the following steps:
 
 ### Step 3.1. Launch the {{site.data.keyword.sqlquery_short}} query UI
-{: #sqlquery_step3-1}
+{: #sqlquery_step3_1}
 
 1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
@@ -146,7 +136,7 @@ Wen you run queries, you can specify a custom bucket to store results in. If you
 {: note}
 
 ### Step 3.2. Get information on the file that you want to query in COS
-{: #sqlquery_step3-2}
+{: #sqlquery_step3_2}
 
 Complete the following steps:
 
@@ -173,7 +163,7 @@ Complete the following steps:
 7. Copy the URL.
 
 ### Step 3.3. Get information on the COS bucket that is used to store results from queries
-{: #sqlquery_step3-3}
+{: #sqlquery_step3_3}
 
 Complete the following steps:
 
@@ -189,7 +179,7 @@ Complete the following steps:
 
 
 ### Step 3.4. Transform an archive file to PARQUET format
-{: #sqlquery_step3-4}
+{: #sqlquery_step3_4}
 
 When you query an archive file, the format of the data is JSON. You must transform the format to **PARQUET** to query successfully the data. 
 {: important}
@@ -202,7 +192,7 @@ The {{site.data.keyword.sqlquery_short}} UI is an editor that lets you immediate
 Complete the following steps to run the query to transform content from JSON into PARQUET:
 1. In the SQL editor field of the {{site.data.keyword.sqlquery_short}} UI, enter the following SELECT statement:
 
-    ```
+    ```text
     SELECT * FROM cleancols(SQL_URL STORED AS JSON) 
     INTO RESULTS_BUCKET STORED AS PARQUET
     ```
@@ -218,7 +208,7 @@ Complete the following steps to run the query to transform content from JSON int
 
     For example, the following query is used to transform an archive file:
 
-    ```
+    ```text
     SELECT * FROM cleancols(cos://ams03/at-eu-de/999999d8f1f.2019-06-03.62.json.gz STORED AS JSON)
     INTO cos://eu-de/results-at STORED AS PARQUET
     ```
@@ -256,11 +246,11 @@ After you have the file converted to 'PARQUET` format, you can run queries to an
 
 
 ### Step 3.5. Run a query to determine the number of events in the archive file
-{: #sqlquery_step3-5}
+{: #sqlquery_step3_5}
 
 To report on the total number of events that are included in the archive file, run the following query:
 
-```
+```text
 SELECT COUNT(*) AS NUMBER_EVENTS FROM <PARQUET_FILE> STORED AS PARQUET
 INTO <RESULTS_BUCKET> STORED AS CSV
 ```
@@ -273,7 +263,8 @@ Where
 * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
 
 For example, to get the total number of events in a file, you can run the following query:
-```
+
+```text
 SELECT COUNT(*) AS logLines FROM cos://eu-de/results-at/jobid=f178778e-7707-46a9-982d-1e89261b63a5 STORED AS PARQUET
 INTO cos://eu-de/results-marisa STORED AS CSV
 ```
@@ -281,11 +272,11 @@ INTO cos://eu-de/results-marisa STORED AS CSV
 
 
 ### Step 3.6. Run a query to get a custom view of a subset of the event fields
-{: #sqlquery_step3-6}
+{: #sqlquery_step3_6}
 
 To see information about each event, run the following query:
 
-```
+```text
 SELECT <FIELDS> FROM <PARQUET_FILE> STORED AS PARQUET
 INTO <RESULTS_BUCKET> STORED AS CSV
 ```
@@ -299,7 +290,7 @@ Where
 
 For example, to get the list of actions, you can run the following query:
 
-```
+```text
 SELECT DISTINCT  _source.action
 FROM cos://eu-gb/sql-results/jobid=17cee056-4da1-4429-8aca-3a7eb320ee27 STORED AS PARQUET 
 INTO cos://eu-gb/sql-results STORED AS CSV
@@ -308,7 +299,7 @@ INTO cos://eu-gb/sql-results STORED AS CSV
 
 For example, to get the list of actions for a user, you can run the following query:
 
-```
+```text
 SELECT  _source.eventTime, _source.action, _source.o_target.name
 FROM cos://eu-gb/sql-results/jobid=3aa9e732-ba88-4ffe-b9fc-b8a265876467 STORED AS PARQUET 
 WHERE _source.o_initiator.name = "xxx@ibm.com"
@@ -319,7 +310,7 @@ INTO cos://eu-gb/sql-results STORED AS CSV
 
 For example, to get the event time, the action, the criticality of the action, and the outcome, you can run the following query:
 
-```
+```text
 SELECT _source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME FROM PARQUET_FILE STORED AS PARQUET
 INTO RESULTS_BUCKET STORED AS CSV
 ```
@@ -327,11 +318,11 @@ INTO RESULTS_BUCKET STORED AS CSV
 
 
 ### Step 3.7. Run a query to get a subset of the event fields ordered by the event time
-{: #sqlquery_step3-7}
+{: #sqlquery_step3_7}
 
 To see information about each event, run the following query:
 
-```
+```text
 SELECT FIELDS FROM PARQUET_FILE STORED AS PARQUET 
 ORDER BY _source.eventTime
 INTO RESULTS_BUCKET STORED AS CSV
@@ -346,7 +337,7 @@ Where
 
 For example, to get the event time, the action, the criticality of the action, and the outcome, you can run the following query:
 
-```
+```text
 SELECT _source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS SEVERITY, _source.outcome AS OUTCOME FROM PARQUET_FILE STORED AS PARQUET ORDER BY _source.eventTime
 INTO RESULTS_BUCKET STORED AS CSV
 ```
@@ -354,11 +345,11 @@ INTO RESULTS_BUCKET STORED AS CSV
 
 
 ### Step 3.8. Run a query to list all events for a specific action
-{: #sqlquery_step3-8}
+{: #sqlquery_step3_8}
 
 To see all the events for a specific action, run the following query:
 
-```
+```text
 SELECT FIELDS 
 FROM PARQUET_FILE STORED AS PARQUET 
 WHERE _source.action = ACTION
@@ -376,7 +367,7 @@ Where
 
 For example, to get all the events for the action **iam-identity.serviceid-apikey.login**, you can run the following query:
 
-```
+```text
 SELECT _source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS severity, _source.outcome AS OUTCOME 
 FROM cos://eu-de/results-marisa/jobid=f178778e-7707-46a9-982d-1e89261b63a5 STORED AS PARQUET 
 WHERE _source.action = "iam-identity.serviceid-apikey.login"

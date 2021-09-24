@@ -10,22 +10,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Endpoints
 {: #endpoints}
 
 The following table lists the endpoints per region for the {{site.data.keyword.atracker_full}} service:
-{:shortdesc}
+{: shortdesc}
 
 
 ## API endpoints for {{site.data.keyword.atracker_short}} event routing
@@ -41,8 +32,8 @@ The following table shows the private API endpoints:
 
 | Region                   | ATracker Private endpoint                         | Port         | IPs |
 |--------------------------|---------------------------------------------------|--------------|-----|
-| `Dallas (us-south)`      | `https://private.us-south.atracker.cloud.ibm.com` | `https/443`  | `166.9.58.136` </br>`166.9.51.140` </br>`166.9.48.211` |
-| `Washington (us-east)`   | `https://private.us-east.atracker.cloud.ibm.com`  | `https/443`  | `166.9.24.96` </br>`166.9.22.84` </br>`166.9.20.212` |
+| `Dallas (us-south)`      | `https://private.us-south.atracker.cloud.ibm.com` | `https/443`  | `166.9.58.136`   \n `166.9.51.140`   \n `166.9.48.211` |
+| `Washington (us-east)`   | `https://private.us-east.atracker.cloud.ibm.com`  | `https/443`  | `166.9.24.96`   \n `166.9.22.84`   \n `166.9.20.212` |
 {: caption="Table 1. Lists of private API endpoints for interacting with Activity Tracking" caption-side="top"}
 
 ### Public API endpoints

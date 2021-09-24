@@ -10,17 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 ---
 
@@ -37,10 +27,10 @@ As a security officer, auditor, or manager, you can use the {{site.data.keyword.
 
 
 ## Management events for {{site.data.keyword.atracker_short}} event routing
-{: #at_events_mgt-atracker}
+{: #at_events_mgt_atracker}
 
 ### Targets
-{: #at_events_mgt-target}
+{: #at_events_mgt_target}
 
 The following table lists the auditing events that are generated when you manage targets:
 
@@ -55,7 +45,7 @@ The following table lists the auditing events that are generated when you manage
 
 
 ### Routes
-{: #at_events_mgt-route}
+{: #at_events_mgt_route}
 
 The following table lists the auditing events that are generated when you manage routes:
 
@@ -70,7 +60,7 @@ The following table lists the auditing events that are generated when you manage
 
 
 ### Endpoints
-{: #at_events_mgt-endpoint}
+{: #at_events_mgt_endpoint}
 
 The following table lists the auditing events that are generated when you manage endpoints:
 
@@ -83,14 +73,14 @@ The following table lists the auditing events that are generated when you manage
 
 
 ## Management events for {{site.data.keyword.at_short}} hosted event search offerings
-{: #at_events_mgt-at}
+{: #at_events_mgt_at}
 
 ### Account settings
 {: #at_events_acc_settings}
 
 | Action                                            | Description                |
 |---------------------------------------------------|----------------------------|
-| `logdnaat.account.update  `       | This event is generated when an administrator turns on or off a feature for a logging instance. |
+| `logdnaat.account.update`       | This event is generated when an administrator turns on or off a feature for a logging instance. |
 {: caption="Table 1. Events for account settings actions" caption-side="top"} 
 
 The following table lists custom fields that are included in these events:
@@ -99,7 +89,7 @@ The following table lists custom fields that are included in these events:
 |------------------------------------|----------------------|----------------------------|
 | `requestData.owneremail`        | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx@logdna.ibm.com`  | Defines an {{site.data.keyword.atracker_short}} account. |
 | `requestData.type`              | `meta.addrawline` | Defines an {{site.data.keyword.atracker_short}} administrative feature. |
-| `requestData.value `            | `false` </br>`true`  | When is set to `true`, the feature specified in the field `requestData.type` is enabled.  |
+| `requestData.value`            | `false`   \n `true`  | When is set to `true`, the feature specified in the field `requestData.type` is enabled.  |
 | `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
 {: caption="Table 2. Custom fields for account settings actions" caption-side="top"} 
 
@@ -119,7 +109,7 @@ The following table lists custom fields that are included in these events:
 | Custom fields                      | Valid values         | Description                |
 |------------------------------------|----------------------|----------------------------|
 | `requestData.feature`              | `archive`            | Defines a {{site.data.keyword.atracker_short}} administrative feature. |
-| `requestData.isEnabled`            | `false` </br>`true`  | Defines if archiving of the logging instance to a COS bucket is configured. </br>When is set to `true`, archiving is enabled.  |
+| `requestData.isEnabled`            | `false`   \n `true`  | Defines if archiving of the logging instance to a COS bucket is configured.   \n When is set to `true`, archiving is enabled.  |
 | `requestData.provider`             | `ibm`                | Defines the Cloud provider where data is archived. |
 | `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
 {: caption="Table 4. Custom fields for archiving actions" caption-side="top"} 
@@ -139,14 +129,14 @@ The following table lists custom fields that are included in exclusion rule even
 
 | Custom fields                | Description          |
 |------------------------------|----------------------|
-| `feature`                    | Defines an {{site.data.keyword.atracker_short}} administrative feature. </br>Valid value is `exclusion-rule`. |
+| `feature`                    | Defines an {{site.data.keyword.atracker_short}} administrative feature.   \n Valid value is `exclusion-rule`. |
 | `ruleId`                     | Defines the ID of the rule. |
-| `isEnabled`                  | Defines when the exclusion rule is enabled. </br>Set to `true` when the rule is enabled. |
+| `isEnabled`                  | Defines when the exclusion rule is enabled.   \n Set to `true` when the rule is enabled. |
 | `requestData.hosts`          | Defines 1 or more hosts whose data is excluded from search. |
 | `requestData.apps`           | Defines 1 or more apps whose data is excluded from search.  |
 | `requestData.query`          | Defines an advanced query to refine the data that is excluded from search. |
 | `requestData.description`    | Description of the exclusion rule. |
-| `requestData.indexonly`      | Defines whether the data is available to see through the UI. </br>Set to `true` when data is visible but not available for search. |
+| `requestData.indexonly`      | Defines whether the data is available to see through the UI.   \n Set to `true` when data is visible but not available for search. |
 | `responseData.logdnaId`      | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
 {: caption="Table 6. Custom fields for exclusion rules actions" caption-side="top"} 
 
@@ -222,11 +212,11 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                | Description          | 
 |------------------------------|----------------------|
-| `requestData.feature`        | Defines an {{site.data.keyword.atracker_short}} administrative feature. </br>Valid value is `custom-parsing`. |
-| `requestData.isEnabled`      | Defines when the template is enabled. </br>Set to `true` when the template is enabled. |
-| `requestData.name`           | Defines the name of the template. </br>This field is available for create actions.|
+| `requestData.feature`        | Defines an {{site.data.keyword.atracker_short}} administrative feature.   \n Valid value is `custom-parsing`. |
+| `requestData.isEnabled`      | Defines when the template is enabled.   \n Set to `true` when the template is enabled. |
+| `requestData.name`           | Defines the name of the template.   \n This field is available for create actions.|
 | `requestData.query`          | Defines the query that is configured to identify log lines where the custome parsing is applied. |
-| `requestData.templateId`     | Defines the ID of the template. </br>This field is available for update actions. |
+| `requestData.templateId`     | Defines the ID of the template.   \n This field is available for update actions. |
 | `responseData.logdnaId`      | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
 {: caption="Table 11. Custom fields for parsing templates actions" caption-side="top"} 
 
@@ -244,7 +234,7 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                | Description          | 
 |------------------------------|----------------------|
-| `feature`                    | Defines an {{site.data.keyword.atracker_short}} administrative feature. </br>Valid value is `export-configuration`. |
+| `feature`                    | Defines an {{site.data.keyword.atracker_short}} administrative feature.   \n Valid value is `export-configuration`. |
 | `requestData.configResources` | Defines the list of resources that a user chooses to export or import. |
 | `responseData.logdnaId`      | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
 {: caption="Table 13. Custom fields for user-metadata related actions" caption-side="top"} 
@@ -336,7 +326,7 @@ The following table lists custom fields that are included in these events:
 
 
 ### Viewing events for {{site.data.keyword.atracker_short}} event routing
-{: #at_events_ui-atracker}
+{: #at_events_ui_atracker}
 
 Location based events are automatically forwarded to the {{site.data.keyword.atracker_short}} target that is available in the same location (region).
 

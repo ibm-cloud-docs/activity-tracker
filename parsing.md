@@ -10,23 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
  
 # Enhancing your data by defining custom indexed fields
 {: #parsing}
 
 In {{site.data.keyword.at_full_notm}}, you can create custom fields that you can use in advanced searches and in filtering queries by using parsing rules. You define parsing templates through the UI to add custom fields to your records.
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -61,7 +52,7 @@ There are occasions when you might want to reference information that is availab
 
       The log fields that can be used are displayed in the **Reference line** along with the specific values from the selected log entry.  For example:
 
-      ```
+      ```text
       {"logSourceCRN":"crn:v1:bluemix:public:containers-kubernetes:us-south:a/xxxxx:yyyyy::","saveServiceCopy":true,"message":"Cluster yyyyy health status set to All Workers Normal"}
       ```
       {: codeblock}
@@ -83,8 +74,8 @@ There are occasions when you might want to reference information that is availab
 
 11. Click the the **Pencil** icon ![Pencil icon](/images/pencil.png "Pencil icon") and enter a name for your parsing rule.
 
-   If you name a template before you click **Build Parsing Template**, the name is not changed.
-   {: note}
+    If you name a template before you click **Build Parsing Template**, the name is not changed.
+    {: note}
 
 12. Choose the **Extract values by delimiter** extractor.
 

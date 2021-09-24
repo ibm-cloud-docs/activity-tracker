@@ -9,26 +9,16 @@ keywords: IBM Cloud, Activity Tracker, security, auditing, endpoints
 subcollection: activity-tracker
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
-{:terraform: .ph data-hd-interface='terraform'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing endpoints
 {: #endpoints_manage}
 
 You can use the the {{site.data.keyword.atracker_full}} CLI or {{site.data.keyword.atracker_full_notm}} REST API to manage private and public endpoints in your account.
-{:shortdesc}
+{: shortdesc}
+
+This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
+{: important}
 
 By default, private endpoints are enabled. 
 
@@ -36,7 +26,7 @@ By default, private endpoints are enabled.
 
 * The private endpoint format is as follows:
 
-    ```
+    ```text
     https://private.<region>.atracker.cloud.ibm.com/api/v1
     ```
     {: codeblock}
@@ -49,7 +39,7 @@ By default, public endpoints are enabled.
 
 * The public endpoint format is as follows:
 
-    ```
+    ```text
     https://<region>.atracker.cloud.ibm.com/api/v1
     ```
     {: codeblock}
@@ -84,16 +74,16 @@ Before you use the the CLI to manage endpoints,complete the following steps:
 
 2. [Pre-requisite] [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-2. [Pre-requisite] [Install the {{site.data.keyword.atracker_notm}} CLI](/docs/activity-tracker?topic=activity-tracker-activity-tracking-cli#activity-tracking-cli-prereq).
+3. [Pre-requisite] [Install the {{site.data.keyword.atracker_notm}} CLI](/docs/activity-tracker?topic=activity-tracker-activity-tracking-cli#activity-tracking-cli-prereq).
 
-3. Log in to the region in the {{site.data.keyword.cloud_notm}} where the instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
+4. Log in to the region in the {{site.data.keyword.cloud_notm}} where the instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
-4. Set the resource group where the instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
+5. Set the resource group where the instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
     By default, the `default` resource group is set.
 
 ## Listing the available endpoints using the CLI
-{: #endpoints_manage_list-cli}
+{: #endpoints-manage-list-cli}
 {: cli}
 
 Use the following command to list the {{site.data.keyword.atracker_full_notm}} service API endpoints.
@@ -101,24 +91,23 @@ Use the following command to list the {{site.data.keyword.atracker_full_notm}} s
 ```sh
 ibmcloud atracker endpoint api ls [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #endpoint-ls-options}
 
-<dl>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd> 
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #endpoint-ls-example}
 
 The following is an example using the **`ibmcloud atracker endpoint api ls`** command.
 
-```
+```text
 Listing the IBM Cloud Activity Tracking service API endpoints....
 OK
 Region     Public Endpoint                           Private Endpoint
@@ -130,7 +119,7 @@ us-south   https://us-south.atracker.cloud.ibm.com   https://private.us-south.at
 
 
 ## Getting the status of endpoints using the CLI
-{: #endpoints_manage_get-cli}
+{: #endpoints-manage-get-cli}
 {: cli}
 
 You can use the following command to get information about the public and private endpoints that are enabled in a region when you use the {{site.data.keyword.atracker_full_notm}}:
@@ -138,26 +127,26 @@ You can use the following command to get information about the public and privat
 ```sh
 ibmcloud atracker endpoint api get [--region <REGION>] [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #endpoint-get-options}
 
-<dl>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd> 
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #endpoint-get-example}
 
 The following is an example using the **`ibmcloud atracker endpoint api get --region us-south`** command.
 
-```
+```text
 API endpoints for region us-south
 Public URL:                         https://us-south.atracker.cloud.ibm.com
 Public Enabled:                     true
@@ -168,7 +157,7 @@ Private Enabled:                    true
 {: screen}
 
 ## Disabling public endpoints using the CLI
-{: #endpoints_manage_disable-cli}
+{: #endpoints-manage-disable-cli}
 {: cli}
 
 You can disable public endpoints per region in your account.
@@ -178,7 +167,7 @@ You can use the following command to disable a public endpoint in a region:
 ```sh
 ibmcloud atracker endpoint api update --public-enabled FALSE [--region <REGION>] [--output JSON] [--force]
 ```
-{:pre}
+{: pre}
 
 Before disabling a public endpoint (`--public-enabled FALSE`), make sure your account has access to the private endpoint.  You can do this by running the command `bx account show`.  If `VRF Enabled` is `true` and `Service Endpoint Enabled` is `true` then you have access to the private endpoint.  If you do not have access to the private endpoint, you will be unable to re-enable the public endpoint since private endpoint access is required to re-enable the public endpoint.
 {: important}
@@ -186,23 +175,24 @@ Before disabling a public endpoint (`--public-enabled FALSE`), make sure your ac
 ### Command options 
 {: #endpoint-update}
 
-<dl>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd>
-<dt>--force</dt>
-<dd>The command will be run without prompting the user whether or not to continue with the command.</dd> 
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`--force`
+:   The command will be run without prompting the user whether or not to continue with the command.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #endpoint-update-example}
 
 The following is an example using the **`ibmcloud atracker endpoint api update --public-enabled false`** command.
 
-```
+```text
 Are you sure you want to update the IBM Cloud Activity Tracking service endpoint settings for your account? [y/N]> y
 OK
 API endpoints for region us-south
@@ -214,7 +204,7 @@ Private Enabled:                    true
 {: screen}
 
 ## Enabling public endpoints using the CLI
-{: #endpoints_manage_enable-cli}
+{: #endpoints-manage-enable-cli}
 {: cli}
 
 You can configure for each region the availability of public endpoints so that you can configure {{site.data.keyword.atracker_full_notm}} resources in your account.
@@ -224,7 +214,7 @@ You can use the following command to enable a public endpoint in a region:
 ```sh
 ibmcloud atracker endpoint api update --public-enabled TRUE [--region <REGION>] [--output JSON] [--force]
 ```
-{:pre}
+{: pre}
 
 You must have access to a private endpoint to enable a public endpoint. 
 {: important}
@@ -232,23 +222,24 @@ You must have access to a private endpoint to enable a public endpoint.
 ### Command options 
 {: #endpoint-update}
 
-<dl>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd>
-<dt>--force</dt>
-<dd>The command will be run without prompting the user whether or not to continue with the command.</dd> 
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`--force`
+:   The command will be run without prompting the user whether or not to continue with the command.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #endpoint-update-example}
 
 The following is an example using the **`ibmcloud atracker endpoint api update --public-enabled true`** command.
 
-```
+```text
 Are you sure you want to update the IBM Cloud Activity Tracking service endpoint settings for your account? [y/N]> y
 OK
 API endpoints for region us-south
@@ -260,7 +251,7 @@ Private Enabled:                    true
 {: screen}
 
 ## Getting the status of endpoints using the API
-{: #endpoints_manage_get-api}
+{: #endpoints-manage-get-api}
 {: api}
 
 You can use the following cURL command to get information about the public and private endpoints that are enabled in a region when you use the {{site.data.keyword.atracker_full_notm}}:
@@ -276,7 +267,7 @@ Where `ENDPOINT` is the API endpoint in the region where you plan to manage {{si
 
 In the response, you get information about all the endpoints in the region:
 
-```
+```json
 {
   "api_endpoint": {
     "public_url": "https://us-south.atracker.cloud.ibm.com",
@@ -292,14 +283,14 @@ In the response, you get information about all the endpoints in the region:
 
 
 ## Disabling public endpoints using the API
-{: #endpoints_manage_disable-api}
+{: #endpoints-manage-disable-api}
 {: api}
 
 You can disable public endpoints per region in your account.
 
 You can use the following cURL command to disable a public endpoint in a region:
 
-```
+```text
 curl -X PATCH <ENDPOINT>/api/v1/endpoints -H "Authorization:  $ACCESS_TOKEN"   -H "content-type: application/json"  -d '{
     "api_endpoint": 
     {
@@ -333,7 +324,7 @@ In the response, you get information about all the endpoints in the region:
 
 
 ## Enabling public endpoints using the API
-{: #endpoints_manage_enable-api}
+{: #endpoints-manage-enable-api}
 {: api}
 
 You can configure for each region the availability of public endpoints so that you can configure {{site.data.keyword.atracker_full_notm}} resources in your account.
@@ -358,7 +349,7 @@ Where
 
 In the response, you get information about all the endpoints in the region:
 
-```
+```json
 {
   "api_endpoint": {
     "public_url": "https://us-south.atracker.cloud.ibm.com",

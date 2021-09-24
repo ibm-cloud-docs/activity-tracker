@@ -11,23 +11,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-
+{{site.data.keyword.attribute-definition-list}}
  
 # Creating alerts through the UI
 {: #create_alert_ui}
 
 You can create alerts graphically through the UI.
-{:shortdesc}
+{: shortdesc}
 
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
@@ -48,8 +38,8 @@ The following table lists the minimum policies that a user must have to be able 
 
 | Service                               | Role                      | Permission granted            |
 |---------------------------------------|---------------------------|-------------------------------|  
-| `{{site.data.keyword.at_full_notm}} ` | Platform role: Viewer     | Allows the user to view the list of service instances in the Observability Logging dashboard. |
-| `{{site.data.keyword.at_full_notm}} ` | Service role: Manager or Standard-member      | Allows the user to launch the Web UI and create alerts.  |
+| `{{site.data.keyword.at_full_notm}}` | Platform role: Viewer     | Allows the user to view the list of service instances in the Observability Logging dashboard. |
+| `{{site.data.keyword.at_full_notm}}` | Service role: Manager or Standard-member      | Allows the user to launch the Web UI and create alerts.  |
 {: caption="Table 1. IAM policies" caption-side="top"} 
 
 For more information on how to configure these policies for a user, see [Granting permissions to a user to view events](/docs/activity-tracker?topic=activity-tracker-iam_view_events).
@@ -69,15 +59,13 @@ Complete the following steps to create a rule:
 
     Complete the following steps to filter events:
 
-    Click the **Views** icon ![Views icon](images/views.png "Views icon").
+    1. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 
-    Select **Everything** or a view.
+    2. Select **Everything** or a view.
 
-    Expand **All Sources** to see the list of event sources that are identified in the events. Then, choose the ones that you want.
+    3. Expand **Sources** to see the list of event sources that are identified in the events. Then, choose the ones that you want.
 
-    Expand **All Levels** to see the list of event levels that are identified in the events. Then, choose the ones that you want. Valid values are `critical`, `warning`, and `normal`.
-
-    In each section, you can group multiple options into a group. Group tags, event sources, apps, and event levels to reuse these groupings when you filter event data in other custom views. To create a group, select multiple values. Then, click **Save as group**. Enter a name for the group, and save it.
+    4. Expand **Levels** to see the list of event levels that are identified in the events. Then, choose the ones that you want. Example values are `critical`, `warning`, and `normal`.
 
 3. Filter event data by adding a search query.
 
@@ -93,7 +81,7 @@ Complete the following steps to create a rule:
 
     Select **Everything** or a view.
 
-    Filter event data then click **Save as new view / alert**. The *Create new view* page opens.
+    Filter event data then click **Save as new view**. The *Create new view* page opens.
 
     Enter a name for the view in the *Name* field.
 
@@ -118,7 +106,7 @@ You can attach multiple notification channels to a view. You can define differen
 
 Complete the following steps to attach a preset to a view:
 
-1. [Configure a preset (alert template)](/docs/activity-tracker?topic=activity-tracker-create_preset_ui).
+1. [Configure a preset (alert template)](/docs/activity-tracker?topic=activity-tracker-preset_ui#preset_ui_create). 
 
 2. Click the **Views** icon ![Views icon](images/views.png "Views icon"). Select the view name. Then, select **Attach an alert**.
 

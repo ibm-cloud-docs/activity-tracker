@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-09-24"
 
 keywords: IBM Cloud, Activity Tracker, IAM events
 
@@ -10,17 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -28,7 +18,7 @@ subcollection: activity-tracker
 {: #at_events_iam}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.iamlong}} (IAM) service in {{site.data.keyword.cloud_notm}}. 
-{:shortdesc}
+{: shortdesc}
 
 IAM enables you to securely authenticate users for both platform services and control access to resources consistently across {{site.data.keyword.cloud_notm}}. [Learn more](/docs/account?topic=account-iamoverview).
 
@@ -39,24 +29,60 @@ The {{site.data.keyword.at_full_notm}} service records user-initiated activities
 ## Access groups events
 {: #at_events_iam_access}
 
+### Account events
+{: #at_events_iam_access_account}
+
 The following table lists the actions that generate an event:
 
 | Action                      | Description |
 |-----------------------------|-------------|
+| `iam-groups.account-settings.read` | An event is generated when an initiator views the account settings for the access groups service. |
 | `iam-groups.account-settings.update` | An event is generated when an initiator updates their account settings for the access groups service. |
-| `iam-groups.federated-member.add` | An event is generated when an initiator logs in to the account and gains federated membership to an access group. |
+{: caption="Table 1. Events that are generated for access groups" caption-side="top"} 
+
+
+
+### Access groups events
+{: #at_events_iam_access_groups}
+
+The following table lists the actions that generate an event:
+
+| Action                      | Description |
+|-----------------------------|-------------|
 | `iam-groups.group.create`   | An event is generated when an initiator creates an access group. | 
-| `iam-groups.group.read`     | An event is generated when an initiator looks at information that is related with access groups. |
+| `iam-groups.group.read`     | An event is generated when an initiator views an access group. |
 | `iam-groups.group.update`   | An event is generated when an initiator updates a group name or a description. |
 | `iam-groups.group.delete`   | An event is generated when an initiator deletes an access group. |
+| `iam-groups.groups.list`    | An event is generated when an initiator views the access groups. |
+{: caption="Table 2. Events that are generated for access groups" caption-side="top"} 
+
+### Members events
+{: #at_events_iam_access_members}
+
+The following table lists the actions that generate an event:
+
+| Action                      | Description |
+|-----------------------------|-------------|
+| `iam-groups.federated-member.add` | An event is generated when an initiator logs in to the account and gains federated membership to an access group. |
 | `iam-groups.member.add`     | An event is generated when an initiator adds a member to an access group. |
 | `iam-groups.member.delete`  | An event is generated when an initiator removes a member from an access group. |
-| `iam-groups.member.read`    | An event is generated when an initiator checks a member's membership. |
+| `iam-groups.member.read`    | An event is generated when an initiator views a member's membership. |
+|`iam-groups.members.list`    | An event is generated when an initiator views the members for an access group. |
+{: caption="Table 3. Events that are generated for access groups" caption-side="top"} 
+
+### Rules events
+{: #at_events_iam_access_rules}
+
+The following table lists the actions that generate an event:
+
+| Action                      | Description |
+|-----------------------------|-------------|
 | `iam-groups.rule.read`      | An event is generated when an initiator views a rule in an access group. |
 | `iam-groups.rule.create`    | An event is generated when an initiator adds a rule to an access group. |
 | `iam-groups.rule.update`    | An event is generated when an initiator modifies the rule name. |
 | `iam-groups.rule.delete`    | An event is generated when an initiator deletes a rule from an access group. |
-{: caption="Table 1. Manage access groups actions" caption-side="top"} 
+| `iam-groups.rules.list`     | An event is generated when an initiator views the rules for an access group. |
+{: caption="Table 4. Events that are generated for access groups" caption-side="top"} 
 
 ## Trusted profiles events
 {: #at_events_iam_profiles}
@@ -68,6 +94,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.account-profile.create`.  | An event is generated when an initiator creates a trusted profile. |
 | `iam-identity.account-profile.update`   | An event is generated when an initiator updates a trusted profile. |
 | `iam-identity.account-profile.delete`   | An event is generated when an initiator deletes a trusted profile. |
+{: caption="Table 5. Events that are generated for access groups" caption-side="top"} 
 
 ## Policy events
 {: #at_events_iam_policies}
@@ -79,7 +106,7 @@ The following table lists the actions that generate an event:
 | `iam-am.policy.create` | An event is generated when an initiator adds a policy to a user or access group. |
 | `iam-am.policy.update` | An event is generated when an initiator modifies permissions to a policy of a user or access group.|
 | `iam-am.policy.delete` | An event is generated when an initiator deletes a policy that is assigned to a user or access group. |
-{: caption="Table 2. Managing policy actions" caption-side="top"} 
+{: caption="Table 6. Events that are generated for policy actions" caption-side="top"} 
 
 
 
@@ -93,7 +120,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.account-serviceid.create` | An event is generated when an initiator creates a service ID.  | 
 | `iam-identity.account-serviceid.update` | An event is generated when an initiator renames a service ID or modifies its description. | 
 | `iam-identity.account-serviceid.delete` | An event is generated when an initiator deletes a service ID. | 
-{: caption="Table 3. Working with service IDs actions" caption-side="top"} 
+{: caption="Table 7. Events that are generated for service IDs actions" caption-side="top"} 
 
 
 ## API key events
@@ -109,7 +136,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.serviceid-apikey.create` | An event is generated when an initiator creates an API key for a service ID. |  
 | `iam-identity.serviceid-apikey.delete` | An event is generated when an initiator deletes an API key for a service ID. |  
 | `iam-identity.serviceid-apikey.update` | An event is generated when an initiator renames an API key for a service ID or modifies its description. |
-{: caption="Table 4. Working with API keys actions" caption-side="top"} 
+{: caption="Table 8. Events that are generated for API keys actions" caption-side="top"} 
 
 
 ## Login events
@@ -124,7 +151,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.user-identitycookie.login` | This is an event that is generated when an initiator requests an identity cookie to run an action. |
 | `iam-identity.user-refreshtoken.login`   | This is an event that is generated when the initiator logs in to {{site.data.keyword.cloud_notm}}, or when an initiator that is already logged in requests a new refresh token to run an action. |
 | `iam-identity.trustedprofile-apikey.login` | This is an event that is generated when the initiator logs in to {{site.data.keyword.cloud_notm}} by applying a trusted profile, or when an initiator that is already logged in by applying a trusted profile requests a new refresh token to run an action. |
-{: caption="Table 5. User login actions" caption-side="top"} 
+{: caption="Table 9. Events that are generated for user login actions" caption-side="top"} 
  
 
 
@@ -202,20 +229,20 @@ The following fields include extra information:
 * The `initiator.host.agent` field indicates if the request comes from the UI or the CLI. When the field is set to **Not Set**, the request originates in the UI. When the field is set to **{{site.data.keyword.cloud_notm}} CLI**, the request originates at the command line. 
 
 #### Lock and unlock a service ID
-{: #at_events_iam_analyze_update_acc_scvid-1}
+{: #at_events_iam_analyze_update_acc_scvid_1}
 
 The following field includes extra information:
 * In requestData, the `lock` field is set to **true** when the service ID is locked, and to **false** when it is unlocked.
 
 #### Add or modify a description
-{: #at_events_iam_analyze_update_acc_scvid-2}
+{: #at_events_iam_analyze_update_acc_scvid_2}
 
 When a request to change a description generates an event, the following fields include information that can help you determine this action:
 * In requestData, the `lock` field is set to **false**.
 * In requestData, the `prev_instance_name` field and the `instance_name` field are set to the same value.
 
 #### Change the name of a service ID
-{: #at_events_iam_analyze_update_acc_scvid-3}
+{: #at_events_iam_analyze_update_acc_scvid_3}
 
 The following fields include extra information:
 * In requestData, the `lock` field is set to **false**.
@@ -237,20 +264,20 @@ The following fields include extra information:
 * The `initiator.host.agent` field indicates if the request comes from the UI or the CLI. When the field is set to **Not Set**, the request originates in the UI. When the field is set to **{{site.data.keyword.cloud_notm}} CLI**, the request originates at the command line. 
 
 #### Lock and unlock a service ID
-{: #at_events_iam_update_apikey-1}
+{: #at_events_iam_update_apikey_1}
 
 The following field includes extra information:
 * In requestData, the `lock` field is set to **true** when the API key is locked, and to **false** when it is unlocked.
 
 #### Add or modify a description
-{: #at_events_iam_update_apikey-2}
+{: #at_events_iam_update_apikey_2}
 
 When a request to change a description generates an event, the following fields include information that can help you determine this action:
 * In requestData, the `lock` field is set to **false**.
 * In requestData, the `prev_instance_name` field and the `instance_name` field are set to the same value.
 
 #### Change the name of a service ID
-{: #at_events_iam_update_apikey-3}
+{: #at_events_iam_update_apikey_3}
 
 The following fields include extra information:
 * In requestData, the `lock` field is set to **false**.
@@ -279,7 +306,7 @@ To find out the user who has tried to modify an API key or a service ID, complet
 1. Copy the value of the `initiator.id`. This field includes the ID of the user that is trying to run this action in your account. 
 2. Get the email address that is associated with the user. To complete this step, you must have administrator permissions in the account. Run the following command:
 
-    ```
+    ```text
     ibmcloud iam users --output json | grep -A 1 InitiatorID 
     ```
     {: codeblock}

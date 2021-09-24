@@ -10,30 +10,18 @@ subcollection: activity-tracker
 
 ---
 
-{:note: .note}
-{:table: .aria-labeledby="caption"}
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Platform metrics for {{site.data.keyword.atracker_short}}
 {: #monitoring_metrics}
 
 You can use the {{site.data.keyword.mon_full}} service to monitor platform metrics that are exposed by {{site.data.keyword.atracker_short}}. For example, you can use it to monitor how {{site.data.keyword.atracker_short}} is routing events in each region where you are collection auditing events.
-{:shortdesc}
+{: shortdesc}
+
 
 This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
 {: important}
-
 
 {{site.data.keyword.mon_full_notm}} is a cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. You can use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards. 
 

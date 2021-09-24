@@ -10,22 +10,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing views and alerts programmatically
-{: #config_api}
+{: #config-api}
 
 You can use the *Configuration REST API* to manage programmatically views and alerts.
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -40,10 +31,10 @@ Before you run any automated tasks, consider doing a back up of your account con
 
 
 ## Before you begin
-{: #config_api_work}
+{: #config-api-work}
 
 ### Creating views
-{: #config_api_work_create_views}
+{: #config-api-work-create-views}
 
 When you create a view, consider the following information:
 - You can create a view with no alerts. 
@@ -68,27 +59,27 @@ After you create a view, check the view in the UI.
 
 If you try to create a view without defining a category, you get the following error message:
 
-```
+```text
 {"details":[{"message":"\"category[0]\" is not allowed to be empty","key":"category[0]"}],"error":"\"category[0]\" is not allowed to be empty","code":"BadRequest","status":"error"}
 ```
 {: screen}
 
 If you try to create a view without a valid category, you get the following error message:
 
-```
+```text
 {"error":"Invalid category name(s): CATEGORYNAME","code":"BadRequest","status":"error"}
 ```
 {: screen}
 
 If you try to define a view and you do not define any of the following body parameters, query, hosts, apps, levels, tags, you can get the following error:
 
-```
+```text
 {"details":[{"message":"\"value\" must contain at least one of [query, hosts, apps, levels, tags]","key":"value"}],"error":"\"value\" must contain at least one of [query, hosts, apps, levels, tags]","code":"BadRequest","status":"error"}
 ```
 {: screen}
 
 ### Modifying views
-{: #config_api_work_modify_views}
+{: #config-api-work-modify-views}
 
 When you modify a view, consider the following information:
 - You must specify the name and the view ID of the view. 
@@ -99,13 +90,13 @@ An API request to modify a view replaces the existing view definition and associ
 
 If the `viewid` that you are trying to modify does not exist, a response similar to the following will be returned: 
 
-```
+```text
 {"error":"Nothing to configure","code":"BadRequest","status":"error"}
 ```
 {: screen}
 
 ### Deleting views
-{: #config_api_work_delete_views}
+{: #config-api-work-delete-views}
 
 When you delete a view, consider the following information:
 - You must specify the ID of the view that you plan to delete.
@@ -113,7 +104,7 @@ When you delete a view, consider the following information:
 
 
 ## API methods
-{: #config_api_methods}
+{: #config-api-methods}
 
 The following table outlines the actions that you can run to manage views and alerts programmatically:
 
@@ -127,13 +118,13 @@ The following table outlines the actions that you can run to manage views and al
 Where `<VIEWID>` represents the ID of a view.
 
 ## Endpoint URL
-{: #config_api_endpoint}
+{: #config-api-endpoint}
 
 Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage views and alerts programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
 
 
 ## Authentication
-{: #config_api_authentication}
+{: #config-api-authentication}
 
 When you manage views and alerts programmatically, you must use a service key. Authorization to the Configuration API is enforced by using a service key.
 {: note} 
@@ -144,19 +135,19 @@ Use of the Configuration REST API is done by adding a valid service key to the H
 
 For example, in a cURL request, you must set the `content-type` header as follows:
 
-```
+```text
 -H 'servicekey: <SERVICE_KEY>'
 ```
 {: codeblock}
 
 
 ## Additional headers 
-{: #config_api_headers}
+{: #config-api-headers}
 
 Some additional headers might be required to make successful requests to the API. Those additional headers are:
 
 ### content-type
-{: #config_api_headers-content-type}
+{: #config-api-headers-content-type}
 
 Define the `Content-Type` header to make successful requests to the API. The `content-type` header specifies that the request body is in JSON format.
 {: note}
@@ -165,7 +156,7 @@ You must pass the `content-type` in the header parameter (`-H`) of your requests
 
 For example, in a cURL request, you must set the `content-type` header as follows:
 
-```
+```text
 -H 'content-type: application/json'
 ```
 {: codeblock}
@@ -173,12 +164,12 @@ For example, in a cURL request, you must set the `content-type` header as follow
 
 
 ## Body parameters
-{: #config_api_parm}
+{: #config-api-parm}
 
 The following fields are body parameters that you can set in API request:
 
 ### name (string)
-{: #config_api_parm-name}
+{: #config-api-parm-name}
 
 Specifies the name of the view.
 
@@ -193,7 +184,7 @@ The following table indicates when the `name` parameter is required:
 
 
 ### query (string)
-{: #config_api_parm-query}
+{: #config-api-parm-query}
 
 Specifies the search query that is applied to the view.
 
@@ -201,7 +192,7 @@ Check the query in the UI to validate that the data that is displayed through th
 {: tip}
 
 ### hosts (array of strings)
-{: #config_api_parm-hosts}
+{: #config-api-parm-hosts}
 
 Specifies the list of services from which you want to view data.
 
@@ -209,7 +200,7 @@ In the UI, the value that is set for **Source** in the **Line identifiers** sect
 
 For example, to enter multiple hosts, you must separate the hosts with a comma:
 
-```
+```text
 "hosts": ["is", "event-streams"]
 ```
 {: codeblock}
@@ -217,13 +208,13 @@ For example, to enter multiple hosts, you must separate the hosts with a comma:
 
 
 ### apps (array of strings)
-{: #config_api_parm-apps}
+{: #config-api-parm-apps}
 
 Specifies the service instance ID that generates the auditing event.
 
 For example, to enter multiple apps, you must separate the apps with a comma:
 
-```
+```text
 "apps": ["apps1", "apps2"]
 ```
 {: codeblock}
@@ -232,13 +223,13 @@ Notice that the apps value for global auditing events is the CRN of the account 
 
 
 ### channels (array of objects)
-{: #config_api_parm-channels}
+{: #config-api-parm-channels}
 
 Specifies the notification channels and trigger conditions that are associated with a view.
 - You can configure 1 or more channels per view.
 - You can configure any of the following channels through the *Configuration* API: email, webhook, PagerDuty.
 
-```
+```json
 "channels": [
     {
       "integration": "email",
@@ -276,18 +267,18 @@ Specifies the notification channels and trigger conditions that are associated w
       "terminal": true
     }
   ]
-  ```
-  {: codeblock}
+```
+{: codeblock}
 
 ### category (array of strings)
-{: #config_api_parm-category}
+{: #config-api-parm-category}
 
 Specifies the classification of views. 
 - You can include a view in 1 or more categories.
 
 For example, to associate a view to a category named `My category`, you can set it as follows:
 
-```
+```json
 "category": ["My category"],
 ```
 {: codeblock}
@@ -295,7 +286,7 @@ For example, to associate a view to a category named `My category`, you can set 
 
 
 ## Examples of using the Configuration API
-{: #config_api-samples}
+{: #config-api-samples}
 
 The following are examples of how to use the Configuration API.
 
@@ -305,11 +296,11 @@ A category must exist before you create a view. In these examples, replace `<MY_
 In these examples, `<SERVICE_KEY>` is the [service key](/docs/activity-tracker?topic=activity-tracker-service_keys) for your {{site.data.keyword.at_full_notm}} instance. 
 
 ### Creating a view
-{: #config_api-create-view}
+{: #config-api-create-view}
 
 The following sample creates a view.
 
-```
+```text
 curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
   -H 'content-type: application/json' \
   -H 'servicekey: <SERVICE_KEY>' \
@@ -324,7 +315,7 @@ curl https://api.us-south.logging.cloud.ibm.com/v1/config/view \
 
 A response similar to the following will be returned:
 
-```
+```text
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"category":["89610d13a7"],"viewid":"VIEWID"}
 ```
 {: screen}
@@ -333,11 +324,11 @@ A response similar to the following will be returned:
 
 
 ### Creating a view and attaching an alert
-{: #config_api-create-view-alert}
+{: #config-api-create-view-alert}
 
 The following sample creates a view and associates an email alert with the view.
 
-```
+```text
 curl https://api.eu-de.logging.cloud.ibm.com/v1/config/view \
         -H 'content-type: application/json' \
         -H 'servicekey: <SERVICE_KEY>' \
@@ -364,18 +355,18 @@ curl https://api.eu-de.logging.cloud.ibm.com/v1/config/view \
 
 A response similar to the following will be returned:
 
-```
+```text
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"category":["89610d13a7"],"channels":[{"integration":"email","emails":"myemail@ibm.com","triggerlimit":15,"triggerinterval":300,"immediate":true,"terminal":true,"operator":"presence","timezone":"Europe/London","alertid":"<ALERTID>"}],"viewid":"VIEWID"}
 ```
 {: screen}
 
 
 ### Modifying a view by adding an alert
-{: #api_configuration-mod-view-alert}
+{: #api-configuration-mod-view-alert}
 
 The following modifies a view by adding an alert.
 
-```
+```text
 curl --request PUT \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
   --header 'Content-Type: application/json' \
@@ -403,7 +394,7 @@ curl --request PUT \
 
 A response similar to the following is returned:
 
-```
+```text
 {"name":"My RC 200","query":"reason.reasonCode:200","hosts":["ibm-cloud-databases-prod"],"category":["89610d13a7"],"channels":[{"integration":"email","emails":"myemail@ibm.com","triggerlimit":15,"triggerinterval":300,"immediate":true,"terminal":true,"operator":"presence","timezone":"Europe/London","alertid":"<ALERTID>"}],"viewid":"<VIEWID>"}
 ```
 {: screen}
@@ -411,11 +402,11 @@ A response similar to the following is returned:
 
 
 ### Deleting a view
-{: #api_configuration-del-view}
+{: #api-configuration-del-view}
 
 The following sample deletes a view.
 
-```
+```text
 curl --request DELETE \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
   -H 'content-type: application/json' \
@@ -425,7 +416,7 @@ curl --request DELETE \
 
 The following response will be returned when the view is successfully deleted:
 
-```
+```text
 {"deleted":true}
 ```
 {: screen}

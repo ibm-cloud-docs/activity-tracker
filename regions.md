@@ -9,22 +9,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Locations
 {: #regions}
 
 {{site.data.keyword.atracker_full}} is available in the following locations:
-{:shortdesc}
+{: shortdesc}
 
 
 ## Locations for {{site.data.keyword.atracker_short}} event routing
@@ -73,7 +64,7 @@ This information applies only to {{site.data.keyword.at_full_notm}} hosted event
 | `Europe`              | `London (eu-gb)`         | `NO`         | `MZR`     |
 | `North America`       | `Dallas (us-south)`      | `N/A`        | `MZR`     |
 | `North America`       | `Washington (us-east)`   | `N/A`        | `MZR`     |
-| `North America`       | `Toronto (ca-tor)    `   | `N/A`        | `MZR`     |
+| `North America`       | `Toronto (ca-tor)`   | `N/A`        | `MZR`     |
 | `South America`       | `Sao Paulo (br-sao)`     | `N/A`        | `MZR`     |
 {: caption="Table 1. List of locations where the service is available" caption-side="top"}
 

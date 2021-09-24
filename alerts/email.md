@@ -10,16 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
  
 # Integrating with email
@@ -27,7 +18,7 @@ subcollection: activity-tracker
 
 
 You can send alerts to 1 or more email addresses.
-{:shortdesc}
+{: shortdesc}
 
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
@@ -48,10 +39,10 @@ When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-aler
 
 5. Optionally you can specify a **Custom schedule** with alerting limited to a specified timezone, days of the week, or timeframe. To configure a **Custom schedule**:
 
-  1. Select **on** for **Custom schedule**.
-  2. Select the Timezone for the log entries. 
-  3. Select the days of the week when alerts should be generated.
-  4. Optionally specify a time range for the selected days. A graph will help you determine the number of log entries for the timezone and time range.
+    1. Select **on** for **Custom schedule**.
+    2. Select the Timezone for the log entries. 
+    3. Select the days of the week when alerts should be generated.
+    4. Optionally specify a time range for the selected days. A graph will help you determine the number of log entries for the timezone and time range.
 
 6. Specify 1 or more email addresses.
 
@@ -76,7 +67,7 @@ After you configure an alert on a view and receive a notification email, complet
 
     In the email, there is a section that includes the following text: 
 
-    ```
+    ```text
      Mute these alerts for   [1 Hour] [6 Hours] [12 Hours] [1 Day]
     ```
     {: screen}
@@ -87,7 +78,7 @@ After you configure an alert on a view and receive a notification email, complet
 
     For example, you can get a message that indicates the following:
 
-    ```
+    ```text
     Email alerting for MyView has been muted for an hour.
 
     Unmute

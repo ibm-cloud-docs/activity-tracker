@@ -10,23 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Monitoring user API keys
 {: #tutorial_iam_apikeys}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.iamlong}} (IAM) service in {{site.data.keyword.cloud_notm}}. This tutorial shows how to monitor actions on user API keys in your account.
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -68,7 +59,7 @@ For example, you might be interested in finding out why an action to delete a us
 ## Step 1. Launch the web UI in Frankfurt
 {: #tutorial_iam_apikeys_step1}
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
@@ -99,14 +90,14 @@ In the web UI, verify that you see the events for each of these actions.
 
 For example, if you create an API key with name `demo-key`, you can see the following events:
 
-```
+```text
 7/May/2019:11:44:09 IAM Identity Service: create user-apikey demo-key
 17/May/2019:11:44:35 IAM Identity Service: update user-apikey demo-key
 17/May/2019:11:44:38 IAM Identity Service: update user-apikey demo-key
 17/May/2019:11:44:44 IAM Identity Service: update user-apikey demo-key
 17/May/2019:11:44:51 IAM Identity Service: delete user-apikey demo-key
 ```
-{:screen}
+{: screen}
 
 
 ### Generate events by using the CLI
@@ -124,14 +115,14 @@ In the web UI, verify that you see the events for each of these actions.
 
 For example, if you create an API key with name `demo-key`, you can see the following events:
 
-```
+```text
 17/May/2019:11:50:52 IAM Identity Service: create user-apikey demo-key-cli
 17/May/2019:11:51:17 IAM Identity Service: update user-apikey demo-key-cli
 17/May/2019:11:51:50 IAM Identity Service: update user-apikey demo-key-cli
 17/May/2019:11:52:01 IAM Identity Service: update user-apikey demo-key-cli
 17/May/2019:11:52:09 IAM Identity Service: delete user-apikey demo-key-cli
 ```
-{:screen}
+{: screen}
 
 
 ### Generate events by using the CLI for actions that fail
@@ -149,7 +140,7 @@ Complete the following steps to generate events as a result of actions on user A
 
 In the web UI, verify that you see the events for each of these actions. 
 
-```
+```text
     17/May/2019:16:34:44 IAM Identity Service: create user-apikey demo-key-for-fail-scenario
     17/May/2019:16:34:59 IAM Identity Service: update user-apikey demo-key-for-fail-scenario
     17/May/2019:16:36:29 IAM Identity Service: update user-apikey demo-key-for-fail-scenario -failure
@@ -158,7 +149,7 @@ In the web UI, verify that you see the events for each of these actions.
     17/May/2019:16:37:30 IAM Identity Service: update user-apikey demo-key-for-fail-scenario
     17/May/2019:16:37:40 IAM Identity Service: delete user-apikey demo-key-for-fail-scenario
 ```
-{:screen}
+{: screen}
 
 
 
@@ -172,37 +163,15 @@ From the {{site.data.keyword.at_short}} web UI, complete the following steps to 
 2. Select **EVERYTHING**.
 3. Choose a search condition. The following table shows different actions and the corresponding search condition:
 
-    <table>
-      <caption>Table 1. Condition to filter user API key events for create, delete, lock, unlock, and update actions.</caption>
-      <tr>
-        <th>Action</th>
-        <th>Search condition</th>
-      </tr>
-      <tr>
-        <td>View user API key events</td>
-        <td>`(action user-apikey) -login`</td>
-      </tr>
-      <tr>
-        <td>View failed user API key events</td>
-        <td>`(action user-apikey) -login failure`</td>
-      </tr>
-      <tr>
-        <td>View events related to deletion of a user API key</td>
-        <td>`(action user-apikey.delete) -login`</td>
-      </tr>
-      <tr>
-        <td>View events related to locking a user API key, renaming a key, or changing the description field.</td>
-        <td>`(action user-apikey.update) -login`</td>
-      </tr>
-      <tr>
-        <td>View events that originate from actions in the UI</td>
-        <td>`initiator.host.agent:"NotSet" (action user-apikey) -login`</td>
-      </tr>
-      <tr>
-        <td>View events that originate from actions in the CLI</td>
-        <td>`initiator.host.agent:"IBM Cloud CLI" (action user-apikey) -login`</td>
-      </tr>
-    </table>
+    | Action                                                                                            | Search condition                                                             |
+    |---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
+    | View user API key events                                                                          | `(action user-apikey) -login`                                      |
+    | View failed user API key events                                                                   | `(action user-apikey) -login failure`                              |
+    | View events related to deletion of a user API key                                                 | `(action user-apikey.delete) -login`                               |
+    | View events related to locking a user API key, renaming a key, or changing the description field. | `(action user-apikey.update) -login`                               |
+    | View events that originate from actions in the UI                                                 | `initiator.host.agent:"NotSet" (action user-apikey) -login`        |
+    | View events that originate from actions in the CLI                                                | `initiator.host.agent:"IBM Cloud CLI" (action user-apikey) -login` |
+    {: caption="Table 1. Condition to filter user API key events for create, delete, lock, unlock, and update actions." caption-side="top"}
 
 4. Enter the condition in the **Search bar**, then click `Enter`. 
 

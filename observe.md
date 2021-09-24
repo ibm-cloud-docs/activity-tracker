@@ -10,24 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing instances through the Observability UI
 {: #observe}
 
 
 You can manage your Activity Tracker instances through the `Observability` dashboard in {{site.data.keyword.cloud_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -55,6 +45,7 @@ In the *Activity Tracker UI*, you can manage your audit instances.
 * You can create instances. [Learn more](/docs/activity-tracker?topic=activity-tracker-provision).
 * You can remove instances. [Learn more](/docs/activity-tracker?topic=activity-tracker-remove).
 * You can change the service plan of an instance. [Learn more](/docs/activity-tracker?topic=activity-tracker-upgrade).
+* You can manage access to the instance.
 
 For each instance, you can view the following information:
 * The status of an instance

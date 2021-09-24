@@ -10,28 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
-{:terraform: .ph data-hd-interface='terraform'}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Managing targets 
 {: #target}
 
 You can manage targets in your account by using the {{site.data.keyword.atracker_full}} CLI or the {{site.data.keyword.atracker_full_notm}} REST API. A target is a resource where you can collect auditing events. 
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
 {: important}
@@ -51,7 +37,7 @@ The following table outlines valid target types:
 {: caption="Table 1. List of targets" caption-side="top"}
 
 When you define a target in {{site.data.keyword.cos_full_notm}} (COS), consider the following information:
-- You can create the bucket in any location. For more information, see [Managing {{site.data.keyword.cos_full_notm}} (COS) buckets]().
+- You can create the bucket in any location. For more information, see [Managing {{site.data.keyword.cos_full_notm}} (COS) buckets](/docs/activity-tracker?topic=activity-tracker-cos).
 - You configure 1 bucket for each target.
 
 If you have regulatory and compliance requirements, check the locations where you can create a bucket. Then, if performance is critical, consider creating the COS bucket in the same region where the auditing events are generated.
@@ -69,11 +55,11 @@ Before you use the CLI to manage targets, complete the following steps:
 
 2. [Pre-requisite] [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-2. [Pre-requisite] [Install the {{site.data.keyword.atracker_notm}} CLI](/docs/activity-tracker?topic=activity-tracker-activity-tracking-cli#activity-tracking-cli-prereq).
+3. [Pre-requisite] [Install the {{site.data.keyword.atracker_notm}} CLI](/docs/activity-tracker?topic=activity-tracker-activity-tracking-cli#activity-tracking-cli-prereq).
 
-3. Log in to the region in the {{site.data.keyword.cloud_notm}} where the instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
+4. Log in to the region in the {{site.data.keyword.cloud_notm}} where the instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
-4. Set the resource group where the instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
+5. Set the resource group where the instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
     By default, the `default` resource group is set.
 
@@ -86,41 +72,50 @@ Use this command to create an {{site.data.keyword.atracker_full_notm}} service t
 ```sh
  ibmcloud atracker target create --name <TARGET_NAME> --type <TARGET_TYPE> ( --file <COS_ENDPOINT_DEFINITION_JSON_FILE> |  --endpoint <COS_ENDPOINT> --bucket <COS_BUCKET> --target-crn <COS_TARGET_CRN> --api-key ( <COS_API_KEY> | <@COS_API_KEY_FILE> ) ) [--region <REGION>] [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #target-create-options}
 
-<dl>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--name &lt;TARGET_NAME&gt;</dt>
-<dd>The name to be given to the target.</dd>
-<dt>--type &lt;TARGET_TYPE&gt;</dt>
-<dd>Only supported value for &lt;TARGET_TYPE&gt; is `cloud-object-storage`.</dd>
-<dt>--file &lt;@COS_ENDPOINT_DEFINITION_JSON_FILE&gt;</dt>
-<dd>A file containing an endpoint definition in the following format:
-<code>
-{
-  "endpoint": "aaaaa", 
-  "target_crn": "yyyyy",
-  "bucket": "zzzzzz", 
-  "api_key": "xxxxxx"
-}
-</code></dd>
-<dt>--endpoint &lt;COS_ENDPOINT&gt;</dt>
-<dd>The {{site.data.keyword.cos_full_notm}} endpoint to be associated with the {{site.data.keyword.cos_full_notm}} bucket.</dd>
-<dt>--bucket &lt;BUCKET&gt;</dt>
-<dd>The name of the {{site.data.keyword.cos_full_notm}} bucket to be associated with the target.</dd>
-<dt>--target-crn &lt;COS_TARGET_CRN&gt;</dt>
-<dd>The CRN of the {{site.data.keyword.cos_full_notm}} instance.</dd>
-<dt>--api-key &lt;COS_API_KEY&gt; | &lt;@COS_API_KEY_FILE&gt;</dt>
-<dd>Your [API key](/docs/account?topic=account-manapikey) value or a reference to the API Key file used when logging in.  For example, `ibmcloud login --apikey $KEYFILE`</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd> 
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--name <TARGET_NAME>`
+:   The name to be given to the target.
+
+`--type <TARGET_TYPE>`
+:   Only supported value for `<TARGET_TYPE>` is `cloud-object-storage`.
+
+`--file <@COS_ENDPOINT_DEFINITION_JSON_FILE>`
+:   A file containing an endpoint definition in the following format:
+
+    ```json
+    {
+      "endpoint": "aaaaa", 
+      "target_crn": "yyyyy",
+      "bucket": "zzzzzz", 
+      "api_key": "xxxxxx"
+    }
+    ```
+    {: codeblock}
+
+`--endpoint <COS_ENDPOINT>`
+:   The {{site.data.keyword.cos_full_notm}} endpoint to be associated with the {{site.data.keyword.cos_full_notm}} bucket.
+
+`--bucket <BUCKET>`
+:    The name of the {{site.data.keyword.cos_full_notm}} bucket to be associated with the target.
+
+`--target-crn <COS_TARGET_CRN>`
+:   The CRN of the {{site.data.keyword.cos_full_notm}} instance.
+
+`--api-key <COS_API_KEY>` | `<@COS_API_KEY_FILE>`
+:   Your [API key](/docs/account?topic=account-manapikey) value or a reference to the API Key file used when logging in.  For example, `ibmcloud login --apikey $KEYFILE`
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #target-create-example}
@@ -130,7 +125,7 @@ The following is an example using the **`ibmcloud atracker target create --name 
 This example shows an example successful target creation.
 {: note}
 
-```
+```text
 Target
 Name:               my-target
 ID:                 000000000-00000000-0000-0000-00000000
@@ -155,48 +150,57 @@ Use this command to update a target for an {{site.data.keyword.atracker_full_not
 ```sh
 ibmcloud atracker target update --target <TARGET> [--name <TARGET_NAME>] [ --file <COS_ENDPOINT_DEFINITION_JSON_FILE> |  [--endpoint <COS_ENDPOINT>] [--bucket <COS_BUCKET>] [--target-crn <COS_TARGET_CRN>] [--api-key ( <COS_API_KEY> | <@COS_API_KEY_FILE> )] ) ] [--region <REGION>] [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #target-update-options}
 
-<dl>
-<dt>--target &lt;TARGET&gt;</dt>
-<dd>The ID or current target name.</dd>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--name &lt;TARGET_NAME&gt;</dt>
-<dd>The name to be given to the target.</dd>
-<dt>--file &lt;@COS_ENDPOINT_DEFINITION_JSON_FILE&gt;</dt>
-<dd>A file containing an endpoint definition in the following format:
-<code>
-{
-  "endpoint": "aaaaa", 
-  "target_crn": "yyyyy",
-  "bucket": "zzzzzz", 
-  "api_key": "xxxxxx"
-}
-</code></dd>
-<dt>--endpoint &lt;COS_ENDPOINT&gt;</dt>
-<dd>The {{site.data.keyword.cos_full_notm}} endpoint to be associated with the {{site.data.keyword.cos_full_notm}} bucket.</dd>
-<dt>--bucket &lt;COS_BUCKET&gt;</dt>
-<dd>The name of the {{site.data.keyword.cos_full_notm}} bucket to be associated with the target.</dd>
-<dt>--target-crn &lt;COS_TARGET_CRN&gt;</dt>
-<dd>The CRN of the {{site.data.keyword.cos_full_notm}} instance.</dd>
-<dt>--api-key &lt;COS_API_KEY&gt; | &lt;@COS_API_KEY_FILE&gt;</dt>
-<dd>Your [API key](/docs/account?topic=account-manapikey) value or a reference to the API Key file used when logging in.  For example, `ibmcloud login --apikey $KEYFILE`</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd> 
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--target <TARGET>`
+:   The ID or current target name.
+
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--name <TARGET_NAME>`
+:   The name to be given to the target.
+
+`--file <@COS_ENDPOINT_DEFINITION_JSON_FILE>`
+:   A file containing an endpoint definition in the following format:
+
+    ```json
+    {
+      "endpoint": "aaaaa", 
+      "target_crn": "yyyyy",
+      "bucket": "zzzzzz", 
+      "api_key": "xxxxxx"
+    }
+    ```
+    {: codeblock}
+
+`--endpoint <COS_ENDPOINT>`
+:   The {{site.data.keyword.cos_full_notm}} endpoint to be associated with the {{site.data.keyword.cos_full_notm}} bucket.
+
+`--bucket <COS_BUCKET>`
+:   The name of the {{site.data.keyword.cos_full_notm}} bucket to be associated with the target.
+
+`--target-crn <COS_TARGET_CRN>`
+:   The CRN of the {{site.data.keyword.cos_full_notm}} instance.
+
+`--api-key <COS_API_KEY>` | `<@COS_API_KEY_FILE>`
+:   Your [API key](/docs/account?topic=account-manapikey) value or a reference to the API Key file used when logging in.  For example, `ibmcloud login --apikey $KEYFILE`
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #target-update-example}
 
-The following is an example using the **`ibmcloud atracker target update --target my-target --name new-target-name `** command.
+The following is an example using the **`ibmcloud atracker target update --target my-target --name new-target-name`** command.
 
-```
+```text
 Target
 Name:               new-target-name
 ID:                 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -221,28 +225,29 @@ Use this command to delete a target for an {{site.data.keyword.atracker_full_not
 ```sh
 ibmcloud atracker target rm --target <TARGET> [--region <REGION>] [--force]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #target-rm-options}
 
-<dl>
-<dt>--target &lt;TARGET&gt;</dt>
-<dd>The ID or name of the target.</dd>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--force</dt>
-<dd>Will delete the target without providing the user with any additional prompt.</dd>
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--target <TARGET>`
+:   The ID or name of the target.
+
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--force`
+:   Will delete the target without providing the user with any additional prompt.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #target-rm-example}
 
 The following is an example using the **`ibmcloud atracker target rm --region us-east --target xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`** command.
 
-```
+```text
 Are you sure you want to remove the target with target ID xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx? [y/N]>y
 OK
 Target with target ID xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx was successfully removed.
@@ -254,7 +259,7 @@ The following is an example using the **`ibmcloud atracker target rm --region us
 This example shows a failed command where the specified target could not be found.
 {: note}
 
-```
+```text
 FAILED
 Something went wrong. Error: Delete "https://us-east.atracker.cloud.ibm.com/api/v1/targets/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx": dial tcp: lookup us-east.atracker.cloud.ibm.com: no such host
 ```
@@ -269,21 +274,22 @@ Use this command to validate that a target is correctly configured for an {{site
 ```sh
 ibmcloud atracker target validate --target <TARGET> [--region <REGION>] [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #target-validate-options}
 
-<dl>
-<dt>--target &lt;TARGET&gt;</dt>
-<dd>The ID or name of the target.</dd>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd>
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--target <TARGET>`
+:   The ID or name of the target.
+
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #target-validate-example}
@@ -293,7 +299,7 @@ The following is an example using the **`ibmcloud atracker target validate --tar
 This example shows a successfully validated target.
 {: note}
 
-```
+```text
 Target
 Name:               new-target-name
 ID:                 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -318,28 +324,29 @@ Use this command to get information about a target for an {{site.data.keyword.at
 ```sh
 ibmcloud atracker target get --target <TARGET> [--region <REGION>] [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #target-get-options}
 
-<dl>
-<dt>--target &lt;TARGET&gt;</dt>
-<dd>The ID or name of the target.</dd>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd> 
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--target <TARGET>`
+:   The ID or name of the target.
+
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #target-get-example}
 
 The following is an example using the **`ibmcloud atracker target get --target new-target-name`** command.
 
-```
+```text
 Target
 Name:               new-target-name
 ID:                 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -364,26 +371,26 @@ Use this command to list the configured targets for an {{site.data.keyword.atrac
 ```sh
 ibmcloud atracker target ls [--region <REGION>] [--output JSON]
 ```
-{:pre}
+{: pre}
 
 ### Command options 
 {: #target-options}
 
-<dl>
-<dt>--region &lt;REGION&gt; | -r &lt;REGION&gt;</dt>
-<dd>Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.</dd>
-<dt>--output JSON</dt>
-<dd>If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.</dd> 
-<dt>help | --help | -h</dt>
-<dd>List options available for the command.</dd>
-</dl>
+`--region <REGION>` | `-r <REGION>`
+:   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
+
+`--output JSON`
+:   If specified, output will be returned in JSON format.  If `JSON` is not specified, output will be returned in a tabular format.
+
+`help` | `--help` | `-h`
+:   List options available for the command.
   
 ### Example
 {: #target-example}
 
 The following is an example using the **`ibmcloud atracker target ls`** command.
 
-```
+```text
 Name                       ID                                     Region     Type                     Created
 target-01                  xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   us-south    cloud_object_storage     2020-11-18T03:52:08.603Z
 target-02                  xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   us-south    cloud_object_storage     2020-11-18T03:52:01.592Z
@@ -406,15 +413,15 @@ The following table lists the actions that you can run to manage targets:
 | Update a target            | `PUT`            | `<ENDPOINT>/api/v1/targets/<TARGET_ID>`  |
 | Delete a target            | `DELETE`         | `<ENDPOINT>/api/v1/targets/<TARGET_ID>`  |
 | Read a target              | `GET`            | `<ENDPOINT>/api/v1/targets/<TARGET_ID>`  |
-| List all targets           | `GET`            | `<ENDPOINT>/api/v1/targets `             |
+| List all targets           | `GET`            | `<ENDPOINT>/api/v1/targets`             |
 | Validate a target          | `POST`           | `<ENDPOINT>/api/v1/targets/{id}/validate` |
 {: caption="Table 2. Target actions by using the {{site.data.keyword.atracker_full_notm}} REST API" caption-side="top"}
 
 You can use private and public endpoints to manage targets. For more information about the list of `ENDPOINTS` that are available, see [Endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints).
 
-    * By default, you can manage targets from the private network. You must use an API endpoint with the following format: `https://private.<region>.atracker.cloud.ibm.com`
+* By default, you can manage targets from the private network. You must use an API endpoint with the following format: `https://private.<region>.atracker.cloud.ibm.com`
 
-    * You can also enable public endpoints in a region to manage targets. For more information, see [Managing endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints_manage).
+* You can also enable public endpoints in a region to manage targets. For more information, see [Managing endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints_manage).
 
 For more information about the REST API, see [Targets](/apidocs/atracker#create-target).
 
@@ -453,7 +460,7 @@ Where
 - `ENDPOINT` is the API endpoint in the region where you plan to configure or manage a target. For more information, see [Endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
 - `TARGET_NAME` is the name of the target. The maximum length of the name is 256 characters.
 - `TARGET_TYPE` is the type of the target. The only valid type is `cloud-object-storage`.
-- `cos_endpoint` includes information about the target. For more information on how to get the bucket details, see [Getting the bucket configuration details]().
+- `cos_endpoint` includes information about the target. For more information on how to get the bucket details, see [Getting the bucket configuration details](/docs/activity-tracker?topic=activity-tracker-cos#cos_bucket_details).
     
     `endpoint` indicates the {{site.data.keyword.atracker_full_notm}} endpoint where to look for this bucket. Use the private endpoint. 
 
@@ -514,7 +521,7 @@ Where
 - `<target_ID>` is the ID of the target.
 - `TARGET_NAME` is the name of the target. The maximum length of the name is 256 characters.
 - `TARGET_TYPE` is the type of the target. The only valid type is `cloud-object-storage`.
-- `cos_endpoint` includes information about the target. For more information on how to get the bucket details, see [Getting the bucket configuration details]().
+- `cos_endpoint` includes information about the target. For more information on how to get the bucket details, see [Getting the bucket configuration details](/docs/activity-tracker?topic=activity-tracker-cos#cos_bucket_details).
     
     `endpoint` indicates the {{site.data.keyword.atracker_full_notm}} endpoint where to look for this bucket. Use the private endpoint. 
 
@@ -547,7 +554,7 @@ curl -X PUT   https://private.us-south.atracker.cloud.ibm.com/api/v1/targets   -
 
 You can use the following cURL command to delete a target:
 
-```
+```text
 curl -X DELETE   <ENDPOINT>/api/v1/targets/<target_ID>   -H "Authorization:  $ACCESS_TOKEN"   -H "content-type: application/json"
 ```
 {: codeblock}

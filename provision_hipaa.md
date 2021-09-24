@@ -10,24 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Provisioning a HIPAA compliance instance
 {: #provision_hipaa}
 
 Across every industry, organizations require tighter controls and visibility into where their data is stored and processed in the {{site.data.keyword.cloud}}. To manage events for HIPAA resources by using the {{site.data.keyword.at_full_notm}} service, consider the following information:
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -81,7 +71,7 @@ Complete the following steps:
 1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 2. Go to the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Resource List** to view your list of resources. 
 3. In the *Services* section, identify the instance that you want to tag.
-4. Go to the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg). Select **Add tags** or **Edit tags**.
+4. Go to the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg). Select **Add tags** or **Edit tags**.
 5. Enter the tag **HIPAA**.
 6. Click **Save**.
  

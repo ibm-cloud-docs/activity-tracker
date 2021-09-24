@@ -10,20 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:download: .download}
-{:faq: data-hd-content-type='faq'}
-{:term: .term}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 # FAQs
 {: #at_faq}
@@ -195,7 +182,7 @@ To configure a region, add 1 route in the region where you want to collect the g
 {: #faq_10}
 {: faq}
 
-In {{site.data.keyword.cloud_notm}}, auditing events are generated automatically with the exception of some services that require additional configuration or a specific service plan. For more information about these services, see [Enabling Activity Tracker events](/docs/activity-tracker?topic=activity-tracker-events_opt-in).
+In {{site.data.keyword.cloud_notm}}, auditing events are generated automatically with the exception of some services that require additional configuration or a specific service plan. For more information about these services, see [Enabling Activity Tracker events](/docs/activity-tracker?topic=activity-tracker-events-opt-in).
 
 There are 2 ways by which you can access the auditing events in your account:
 - Option 1: You can see auditing events through {{site.data.keyword.at_full_notm}} event viewing. This is the default option. For more information, see [Getting started tutorial](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-st).

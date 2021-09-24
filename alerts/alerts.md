@@ -10,23 +10,14 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
  
 # Working with alerts
 {: #alerts}
 
 You can configure alerts to notify about the activity in your {{site.data.keyword.cloud_notm}} account and changes in configuration in the account. 
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -102,7 +93,7 @@ You can choose any of the following options to create an alert:
 
 You can configure alerts graphically through the {{site.data.keyword.at_short}} UI, or programmatically.
 - For more information on how to configure an alert, see [Creating alerts through the UI](/docs/activity-tracker?topic=activity-tracker-create_alert_ui).
-- For more information on how to create alerts programmatically, see [Managing views and alerts programmatically](/docs/activity-tracker?topic=activity-tracker-config_api).
+- For more information on how to create alerts programmatically, see [Managing views and alerts programmatically](/docs/activity-tracker?topic=activity-tracker-config-api).
 
 
 ## Deleting alerts
@@ -110,7 +101,7 @@ You can configure alerts graphically through the {{site.data.keyword.at_short}} 
 
 You can delete alerts graphically through the {{site.data.keyword.at_short}} UI, or programmatically.
 - For more information on how to delete an alert, see [Removing alerts through the UI](/docs/activity-tracker?topic=activity-tracker-remove_alert_ui).
-- For more information on how to delete alerts programmatically, see [Managing views and alerts programmatically](/docs/activity-tracker?topic=activity-tracker-config_api#config_api-create-view-alert).
+- For more information on how to delete alerts programmatically, see [Managing views and alerts programmatically](/docs/activity-tracker?topic=activity-tracker-config-api#config-api-create-view-alert).
 
 
 ## Managing presets (alert templates)

@@ -11,15 +11,7 @@ subcollection: activity-tracker
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Using service endpoints to privately connect to {{site.data.keyword.atracker_full_notm}}
@@ -41,14 +33,14 @@ You can connect to {{site.data.keyword.atracker_full_notm}} over a private netwo
 
 Check if the account is VRF enabled by running the following command:
 
-```
+```text
 ibmcloud account show
 ```
 {: pre}
 
 To enable private endpoints, run the following command:
 
-```
+```text
 ibmcloud account update --service-endpoint-enable true
 ```
 {: pre}
@@ -70,7 +62,7 @@ You can disable public endpoints per region in your account for {{site.data.keyw
 - If public and private endpoints are enabled, you can disable a public endpoint by using private or public endpoints.
 - If public endpoints have been disabled, you can only enable public endpoints by using the private endpoint. 
 
-For more information on how to disable a public endpoint, see [Disabling public endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints_manage#endpoints_manage_disable).
+For more information on how to disable a public endpoint, see [Disabling public endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints_manage#endpoints-manage-disable-cli).
 
 
 ## Limitations using private endpoints

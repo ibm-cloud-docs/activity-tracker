@@ -10,24 +10,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
+{{site.data.keyword.attribute-definition-list}}
 
 # Configuring conditional streaming
 {: #streaming-conditional}
 
 In an {{site.data.keyword.at_full_notm}} instance, you can configure streaming exclusion rules through the UI to filter what data is streamed.
-{:shortdesc}
+{: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
@@ -47,7 +36,7 @@ Complete the following steps to define an exclusion rule:
 
 5. Enter the exclusion criteria by adding a query. For more information on how to build a query, see [Select the set of events to display through a view by applying a search query](/docs/activity-tracker?topic=activity-tracker-views#views_step2).
 
-7. Click **Save**.
+6. Click **Save**.
 
 
 

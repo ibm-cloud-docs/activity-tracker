@@ -10,16 +10,7 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Retrieving IAM access tokens
 {: #retrieve-iam-token}
@@ -95,7 +86,7 @@ You can also retrieve your access token programmatically by creating a [service 
 
 Run the following cURL command to call the [IAM Identity Services API](/apidocs/iam-identity-token-api) to retrieve your access token:
 
-```
+```text
 curl -X POST \
     'https://iam.cloud.ibm.com/identity/token' \
     -H 'content-type: application/x-www-form-urlencoded' \
