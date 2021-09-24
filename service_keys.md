@@ -278,7 +278,7 @@ To create the service key through the API, complete the following steps:
 
     The access token is only valid for 1 hour. ACCESS_TOKEN includes the string "Bearer" followed by the IAM token.
 
-3. Get the name and GUID of the service instance if you do not already have it.
+3. Get the GUID of an {{site.data.keyword.cloud_notm}} IAM service key that is associated with the auditing instance.
 
     Get the list of resource instances:
 
