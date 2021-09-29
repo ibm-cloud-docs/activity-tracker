@@ -27,7 +27,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 
 When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-alerts#configure-an-alert) you can have that alert sent to {{site.data.keyword.mon_short}}.
 
-1. When configuring your alert, click ![icon](../images/sysdig.png "icon").
+1. When configuring your alert, click ![Sysdig icon](../images/sysdig.png "Sysdig icon").
 
 2. Select if you want the alert to be sent when the condition exists (**Presence**) or does not exist (**Absence**).
 
