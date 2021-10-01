@@ -118,6 +118,7 @@ toc:
           - streaming-configure.md
           - streaming-monitor.md
           - streaming-conditional.md
+          - streaming-manage-api.md
       
       - topicgroup: 
           label: UI
@@ -191,6 +192,7 @@ toc:
         - topicgroup: 
             label: Troubleshooting
             topics:  
+            - troubleshoot-04.md
             - atracker/troubleshoot-01.md
             - atracker/troubleshoot-02.md
             - atracker/troubleshoot-03.md
