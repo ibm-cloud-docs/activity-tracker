@@ -217,26 +217,19 @@ The response will be similar to the following:
 ## Update a streaming exclusion rule
 {: #streaming-api-update-rules}
 
-<!--Use [this method](https://{DomainName}/apidocs/activity-tracker#patch-v1-config-stream-exclusions-rule-id){: external} to update an existing streaming exclusion rule.
+Use [this method](https://{DomainName}/apidocs/activity-tracker#patch-v1-config-stream-exclusions-rule-id){: external} to update an existing streaming exclusion rule.
 
 ```text
-curl --request PUT https://api.eu-gb.logging.cloud.ibm.com/v1/config/stream/exclusions/{ruleId}  
+curl --request PATCH https://api.eu-gb.logging.cloud.ibm.com/v1/config/stream/exclusions/{ruleId}  
  -H "content-type: application/json"  
  -H "servicekey: <SERVICE_KEY>"  
  -d '{"title": "Exclude Example Update", "query": "example", "active": false}' 
 ```
 {: pre}
 
-The response will be similar to the following:
-
 ```text
+{"hosts":[],"apps":[],"title":"Exclude Example Update","query":"example","active":false,"id":"xxxxxxxxxx"}
 ```
-{: codeblock} -->
-
-To update an existing streaming rule, do the following:
-
-1. [Delete the existing streaming rule.](#streaming-api-delete-rules)
-
-2. [Create a new streaming rule.](#streaming-api-add-rules)
+{: codeblock}
 
 
