@@ -169,11 +169,17 @@ toc:
                 label: Activity Tracker Export API
                 href: https://{DomainName}/apidocs/activity-tracker#export
             - link:
-                label: Activity Tracker Configuration API
+                label: Activity Tracker Archiving API
+                href: https://{DomainName}/apidocs/activity-tracker#get-v1-config-archiving
+            - link:
+                label: Activity Tracker Alerts and views API
                 href: https://{DomainName}/apidocs/activity-tracker#create-view
             - link:
                 label: Activity Tracker Streaming API
                 href: https://{DomainName}/apidocs/activity-tracker#post-v1-config-stream
+            - link:
+                label: Activity Tracker Groups API
+                href: https://{DomainName}/apidocs/activity-tracker#create-group
   
       - topicgroup: 
           label: Events
