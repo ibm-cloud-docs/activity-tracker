@@ -23,7 +23,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 
 ![{{site.data.keyword.cloud_notm}} services integration scenario](images/sqlquery.png "{{site.data.keyword.cloud_notm}} services integration scenario")
 
-Each {{site.data.keyword.at_full_notm}} instance has a service plan associated that indicates the number of days that you can query data through the web UI. To have access to the events after this period, you must enable archiving in the {{site.data.keyword.at_full_notm}} instance. When you enable archiving, you get an archive file daily. This file contains information for the previous day. Notice that UTC timestamps are used to determine which records are included in each file. The file name includes the ID of your {{site.data.keyword.at_full_notm}} instance and the date of the records that are included in the file.
+Each {{site.data.keyword.at_full_notm}} instance has a service plan associated that indicates the number of days that you can query data through the web UI. To have access to the events after this period, you must enable archiving in the {{site.data.keyword.at_full_notm}} instance. When you enable archiving, you get an archive file hourly. This file contains information for that hour. Notice that UTC timestamps are used to determine which records are included in each file. The file name includes the ID of your {{site.data.keyword.at_full_notm}} instance and the date of the records that are included in the file.
 
 To query the archive data in a file, you can use the {{site.data.keyword.sqlquery_short}} service. The service offers an SQL editor through the UI, and also programmatic options such as a REST API.
 
