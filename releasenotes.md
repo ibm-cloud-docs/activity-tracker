@@ -20,6 +20,14 @@ subcollection: activity-tracker
 Use these release notes to learn about the latest updates to {{site.data.keyword.atracker_full}}.
 {: shortdesc}
 
+## 4 October 2021
+{: #activity-tracker-oct0421}
+
+### {{site.data.keyword.at_short}} hosted event search offering
+
+API for Archiving
+:   Documentation of API changes supporting archiving is generally available.  [Learn more about the archiving API](/apidocs/activity-tracker#get-v1-config-archiving).
+
 ## 31 September 2021
 {: #activity-tracker-sep3121}
 

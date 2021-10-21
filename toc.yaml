@@ -23,8 +23,6 @@ toc:
           - atracker/getting-started-routing.md
           - getting-started-search.md
       
-      - releasenotes.md
-      
       - topicgroup: 
           label: Cloud services
           topics:
@@ -44,7 +42,10 @@ toc:
           topics:
           - adoption.md
           - manage_eu_acc.md
-
+      
+          - topic: releasenotes.md
+            navtitle: Release notes
+  
   - navgroup: 
       id: howto
       topics:
