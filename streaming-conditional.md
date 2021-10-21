@@ -15,13 +15,13 @@ subcollection: activity-tracker
 # Configuring conditional streaming
 {: #streaming-conditional}
 
-In an {{site.data.keyword.at_full_notm}} instance, you can configure streaming exclusion rules through the UI to filter what data is streamed.
+In an {{site.data.keyword.at_full}} instance, you can configure streaming exclusion rules through the UI to filter what data is streamed.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+This information applies only if you use an {{site.data.keyword.at_short}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
-You must have manager access to define exclusion rules.
+You must have manager access for {{site.data.keyword.at_short}} to define exclusion rules.  See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streaming#streaming-1) for more information on roles required for streaming.
 {: note}
 
 Complete the following steps to define an exclusion rule:
