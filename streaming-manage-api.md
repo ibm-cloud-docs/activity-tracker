@@ -22,6 +22,8 @@ subcollection: activity-tracker
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
+See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streaming#streaming-1) for more information on roles required for streaming.
+{: note}
 
 ## Get details of the streaming configuration
 {: #streaming-api-get-conf}
@@ -231,5 +233,4 @@ curl --request PATCH https://api.eu-gb.logging.cloud.ibm.com/v1/config/stream/ex
 {"hosts":[],"apps":[],"title":"Exclude Example Update","query":"example","active":false,"id":"xxxxxxxxxx"}
 ```
 {: codeblock}
-
 
