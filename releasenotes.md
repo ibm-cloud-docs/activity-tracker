@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-10-21"
 
 keywords: IBM Cloud, Activity Tracker, release notes, whats new
 
