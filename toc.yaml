@@ -43,8 +43,8 @@ toc:
           - adoption.md
           - manage_eu_acc.md
       
-          - topic: releasenotes.md
-            navtitle: Release notes
+      - topic: releasenotes.md
+        navtitle: Release notes
   
   - navgroup: 
       id: howto
