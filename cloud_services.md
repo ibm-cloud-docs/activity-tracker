@@ -298,7 +298,7 @@ The following table lists web and mobile services that send auditing events:
 ## Power IaaS services
 {: #power_iaas_services}
 
-Power Systems Virtual Server (PowerVS) projects deliver flexible compute capacity for Power Systems workloads. Integrated with the {{site.data.keyword.cloud_notm}} platform for on-demand provisioning, this offering provides a secure and scalable server virtualization environment that is built upon the advanced RAS features and leading performance of the Power Systems™ platform. See [{{site.data.keyword.power-iaas_full}} Power-IaaS](/docs/power-iaas?topic=power-iaas).
+Power Systems Virtual Server (PowerVS) projects deliver flexible compute capacity for Power Systems workloads. Integrated with the {{site.data.keyword.cloud_notm}} platform for on-demand provisioning, this offering provides a secure and scalable server virtualization environment that is built upon the advanced RAS features and leading performance of the Power Systems™ platform. See [IBM® Power Systems™ Virtual Server](/docs/power-iaas?topic=power-iaas-getting-started).
 
 
 The following table lists Power IaaS infrastructure services that send auditing events:
