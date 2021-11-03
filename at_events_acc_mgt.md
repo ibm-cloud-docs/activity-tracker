@@ -2,30 +2,22 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-08"
 
-keywords: IBM Cloud, Activity Tracker, account events, catalog, tags
+lastupdated: "2021-08-09"
+
+keywords: IBM Cloud, Activity Tracker, account events, catalog, tags, software instance
 
 subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Auditing events for account management  
 {: #at_events_acc_mgt}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with an {{site.data.keyword.cloud}} account. 
-{:shortdesc}
+{: shortdesc}
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. To get started, see [{{site.data.keyword.at_full_notm}}](/docs/services/activity-tracker?topic=activity-tracker-getting-started#getting-started). 
 
@@ -41,7 +33,7 @@ The following table lists the actions that generate an event:
 | `billing.account.create`             | An event is generated when you create an account after the account ID is assigned to the account. |
 | `billing.account.update`             | An event is generated when you update information about the account.  |
 | `billing.account.active`             | An event is generated when you verify the account, that is, an event is generated when the account becomes active. |
-| `billing.account-subscription.create` | An event is generated when you create a [Subscription account](/docs/account?topic=account-accounts#subscription-account) </br><a href="/docs/account?topic=account-accounts#subscription-account">Subscription account</a>. |
+| `billing.account-subscription.create` | An event is generated when you create a [Subscription account](/docs/account?topic=account-accounts#subscription-account). |
 {: caption="Table 1. Actions that generate account management events" caption-side="top"} 
 
 
@@ -73,7 +65,7 @@ The following table lists the actions that generate an event:
 | Action                                               | Description |
 |------------------------------------------------------|-------------|
 | `billing.enterprise-usage-report.read`               | An event is generated when a user views the enterprise account level summary usage page that is displayed by default. |
-| `billing.enterprise-usage-report.download `          | An event is generated when a user requests a **summary** export of the data in csv format from the enterprise account level summary usage page.  |
+| `billing.enterprise-usage-report.download`          | An event is generated when a user requests a **summary** export of the data in csv format from the enterprise account level summary usage page.  |
 | `billing.enterprise-instances-usage-report.download` | An event is generated when a user requests an **instances** export of the data in csv format from the enterprise account level summary usage page. |
 {: caption="Table 3. Actions that generate account management events" caption-side="top"} 
 
@@ -82,7 +74,7 @@ The following table lists the actions that generate an event:
 
 The following tables list the actions that generate an event:
 
-### Events for managing catalogs
+### Events for managing private catalogs
 {: #at_events_catalog_1}
 
 | Action                                           | Description                                                           | 
@@ -92,7 +84,7 @@ The following tables list the actions that generate an event:
 | `globalcatalog-collection.instances.list`           | An event is generated when you get a list of the catalogs in an account.           | 
 {: caption="Table 4. Actions that generate catalog management events" caption-side="top"}
 
-### Events for managing products in a catalog
+### Events for managing products in a private catalog
 {: #at_events_catalog_2}
 
 | Action                                           | Description                                                           | 
@@ -104,8 +96,9 @@ The following tables list the actions that generate an event:
 | `globalcatalog-collection.offering.delete`         | An event is generated when you delete a product.          |
 {: caption="Table 5. Actions that generate product catalog management events" caption-side="top"}
 
-### Events for managing account settings that are related to catalogs
-{: #at_events_catalog_3}
+
+### Events for managing catalog settings at the account level
+{: #at_events_catalog_5}
 
 | Action                                           | Description                                                           | 
 |--------------------------------------------------|-----------------------------------------------------------------------|
@@ -113,7 +106,8 @@ The following tables list the actions that generate an event:
 | `globalcatalog-collection.account-settings.update` | An event is generated when you update the account settings. |
 {: caption="Table 6. Actions that generate account settings management events" caption-side="top"}
 
-### Events for managing enterprise account settings that are related to catalogs
+
+### Events for managing catalog settings in enterprise accounts
 {: #at_events_catalog_4}
 
 | Action                                           | Description                                                           | 
@@ -123,7 +117,8 @@ The following tables list the actions that generate an event:
 | `globalcatalog-collection.enterprise-settings.list` | An event is generated when you get a list of the enterprises in an account and their corresponding settings. | 
 {: caption="Table 7. Actions that generate enterprise account settings management events" caption-side="top"}
 
-### Events for managing license and entitlement events
+
+### Events for managing software licenses and entitlements
 {: #at_events_catalog_entitlement}
 
 The following table lists the actions that generate an event:
@@ -156,6 +151,7 @@ The following table lists the actions that are generated when an account setting
 {: caption="Table 4. Actions that generate events when the account settings are changed" caption-side="top"} 
 
 
+
 The following table lists the `requestData` fields that report the configuration changes:
 
 | Action                                                         | Description | 
@@ -171,6 +167,7 @@ The following table lists the `requestData` fields that report the configuration
 | `requestData.request_body.new_allowed_ip_addresses`            | Reports the new value for the `Restrict IP address access` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
 | `requestData.team_directory_enabled`                           | Reports the boolean value that is set when the `Restrict user list visibility` setting is modified. |
 {: caption="Table 5. Actions that generate events when the account settings are changed" caption-side="top"} 
+
 
 
 The following table lists the `deprecated` actions that generate an event when an account setting that is controlled from the **Manage** &gt; **Access IAM** &gt; **Settings** dashboard is modified:
@@ -198,6 +195,7 @@ The following table lists the actions that generate an event for software instan
 | `globalcatalog-instance.dashboard.view` | An event is generated when you access the software instance details page. |
 {: caption="Table 7. Actions that generate events for software instances" caption-side="top"}
 
+
 ## Events for managing organizations
 {: #at_events_acc_mgt_org}
 
@@ -208,6 +206,21 @@ The following table lists the actions that generate an event:
 | `billing.account-org.create`         | An event is generated when you add an organization to the account. |
 {: caption="Table 8. Actions that generate events" caption-side="top"} 
 
+## Events for managing software instances
+{: #at_events_sw_instance}
+
+The following table lists the actions that generate an event for software instances:
+
+| Action                                           | Description                                                           | 
+|--------------------------------------------------|-----------------------------------------------------------------------|
+| `globalcatalog-instance.offering-instance.create` | An event is generated when you create a software instance. |
+| `globalcatalog-instance.offering-instance.delete` | An event is generated when you delete a software instance. |
+| `globalcatalog-instance.offering-instance.list` | An event is generated when you list all software instances in an account. |
+| `globalcatalog-instance.offering-instance.read` | An event is generated when you retrieve a software instance. |
+| `globalcatalog-instance.offering-instance.retrieve_history` | An event is generated when you access the audit logs for a software instance. |
+| `globalcatalog-instance.offering-instance.update` | An event is generated when you install updates to a software instance. | 
+| `globalcatalog-instance.dashboard.view` | An event is generated when you access the software instance details page. |
+{: caption="Table 9. Actions that generate events for software instances" caption-side="top"}
 
 ## Events for managing tags
 {: #at_events_acc_mgt_resources}
@@ -216,13 +229,17 @@ The following table lists the actions that generate an event:
 
 | Action                                          | Description |
 |-------------------------------------------------|-------------|
-| `global-search-tagging.tag.attach`              | An event is generated when you associate a tag to a resource. |
-| `global-search-tagging.tag.detach`              | An event is generated when you remove a tag from a resource.  |
-| `global-search-tagging.tag.update`              | An event is generated when you update a tag that is attached to a resource.  For internal use.|
+| `global-search-tagging.tag.create`              | An event is generated when you create a tag. The tag type is included in the requestData object. |
 | `global-search-tagging.tag.delete`              | An event is generated when you delete a tag in your account.  |
 | `global-search-tagging.tags.delete`             | An event is generated when you delete all the tags that are not attached to resources in your account.  |
-| `global-search-tagging.tag.create`              | An event is generated when you create a tag. The tag type is included in the requestData object. |
-{: caption="Table 9. Actions that generate events" caption-side="top"} 
+| `<service-name>.tag.attach`                     | An event is generated when you associate a tag to a resource. |
+| `<service-name>.tag.detach`                     | An event is generated when you remove a tag from a resource.  |
+{: caption="Table 10. Actions that generate events" caption-side="top"} 
+
+When an access tag is created, you get an event with `global-search-tagging.tag.create`.
+
+When an access tag is attached to a resource you get the event `<service-name>.tag.attach`.
+
 
 
 ## Events for managing users
@@ -237,7 +254,8 @@ The following table lists the actions that generate an event:
 | `user-management.user.update`        | An event is generated when log in configurations are modified for a user from the {{site.data.keyword.cloud_notm}} UI. |
 | `user-management.user.delete`        | An event is generated when you remove a user from the account. |
 | `user-management.user-setting.update` | An event is generated when you update the user's login configuration settings: User one-time passcode authentication ,Require MFA security questions at login, User-managed login or Setting up security questions |
-{: caption="Table 10. Actions that generate events" caption-side="top"} 
+{: caption="Table 11. Actions that generate events" caption-side="top"} 
+
 
 
 ## Where to look for the events
@@ -374,11 +392,11 @@ The following table lists *requestData* fields that you can find in events that 
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `2FA`                      | Boolean         | Defines the MFA requirements for users in the account. </br>This field is set to `true` when MFA is enabled for users.  | 
+| `2FA`                      | Boolean         | Defines the MFA requirements for users in the account.   \n This field is set to `true` when MFA is enabled for users.  | 
 | `allowed_ip_addresses`     | String          | List of IP addresses from where a user is allowed to access account resources. |
 | `iam_id`                   | String          | Defines the IBM ID of the user whose settings are being modified. |
-| `security_questions_setup` | Boolean         | Defines when a user requires security questions to log in to the account. </br>This field is set to `true` to indicate that questions are required.  |
-| `self_manage`              | Boolean         | Defines whether a user can configure his log in settings on how to log in to the account.  </br>This field is set to `true` to allow a user to set password expiration, turn on security questions for login, and define allowed IP addresses for log in to {{site.data.keyword.cloud_notm}} and from classic infrastructure API calls.  | 
+| `security_questions_setup` | Boolean         | Defines when a user requires security questions to log in to the account.   \n This field is set to `true` to indicate that questions are required.  |
+| `self_manage`              | Boolean         | Defines whether a user can configure his log in settings on how to log in to the account.    \n This field is set to `true` to allow a user to set password expiration, turn on security questions for login, and define allowed IP addresses for log in to {{site.data.keyword.cloud_notm}} and from classic infrastructure API calls.  | 
 {: caption="Table 15. User management requestData fields" caption-side="top"} 
 
 
@@ -407,9 +425,9 @@ The following table lists the fields that are available through the `requestData
 | Field               | Type      | Description | Status |
 |---------------------|-----------|-------------|--------|
 | `month`             | String    | Indicates the month that the user selects to view usage data. |  Included always in the event |
-| `usage_report_type` | String    | Indicates the type of report. </br>Valid values are `instances` and `rollup`.|  Included always in the event |
+| `usage_report_type` | String    | Indicates the type of report.   \n Valid values are `instances` and `rollup`.|  Included always in the event |
 | `sub_account_id`    | String    | Indicates the sub-account ID. | Optional | 
-| `resource_group`    | String    | Indicates the resource group. | Optional </br>Included if the user filters data by resource group. |
+| `resource_group`    | String    | Indicates the resource group. | Optional   \n Included if the user filters data by resource group. |
 | `organization_id`   | String    | Indicates the organization ID. | Optional |
 | `daily`             | Boolean   | Indicates the frequency of the report. | Optional |
 {: caption="Table 17. Account usage requestData fields" caption-side="top"} 
@@ -423,7 +441,7 @@ The following table lists the fields that are available through the `requestData
 | `children`          | Boolean   | Indicates whether the usage is aggregated at account level. | Included always in the event |
 | `enterprise_id`     | String    | Indicates the ID of the enterprise. |  Included always in the event |
 | `account_id`        | String    | Indicates the sub-account ID that is requested in the report. | Optional | 
-| `account_group_id`  | String    | Indicates the account group when a user selects one. | Optional </br>Included if the user filters data by selecting 1 account group. |
+| `account_group_id`  | String    | Indicates the account group when a user selects one. | Optional   \n Included if the user filters data by selecting 1 account group. |
 {: caption="Table 18. Enterprise usage requestData fields" caption-side="top"} 
 
 
@@ -434,7 +452,7 @@ The following table lists the fields that are available through the `requestData
 | `month`             | String    | Indicates the month that the user selects to view usage data. |  Included always in the event |
 | `enterprise_id`     | String    | Indicates the ID of the enterprise. |  Included always in the event |
 | `account_id`        | String    | Indicates the the sub-account IDs that is requested in the report. | Optional | 
-| `account_group_id`  | String    | Indicates the account group when a user selects one. | Optional </br>Included if the user filters data by selecting 1 account group. |
+| `account_group_id`  | String    | Indicates the account group when a user selects one. | Optional   \n Included if the user filters data by selecting 1 account group. |
 {: caption="Table 19. Enterprise instances usage requestData fields" caption-side="top"} 
 
 
@@ -493,6 +511,6 @@ The following table lists *requestData* fields that you can find in events that 
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `team_directory_enabled`   | Boolean         | Defines the status of the *User list visibility restriction* IAM account setting. </br>When it is set to `true`, users in your account can view other users from the Users page. |
-| `mfa`                      | String          | Defines the MFA method that is required for users to log in to the account. </br>Valid values are *TOTP*, and *TOTP4ALL* </br>This field is set to `TOTP` when the account requires MFA for non-federated users only. Users are required an ID, password, and a time-based one-time passcode to log in. </br>This field is set to `TOTP4ALL` when the account requires MFA for all users.</br>All users by requiring an ID, password, and a time-based one-time passcode. </br>When this field is empty, MFA is not enabled in the account, and all users log in by using a standard ID and password. |
+| `team_directory_enabled`   | Boolean         | Defines the status of the *User list visibility restriction* IAM account setting.   \n When it is set to `true`, users in your account can view other users from the Users page. |
+| `mfa`                      | String          | Defines the MFA method that is required for users to log in to the account.   \n Valid values are *TOTP*, and *TOTP4ALL*   \n This field is set to `TOTP` when the account requires MFA for non-federated users only. Users are required an ID, password, and a time-based one-time passcode to log in.   \n This field is set to `TOTP4ALL` when the account requires MFA for all users.  \n All users by requiring an ID, password, and a time-based one-time passcode.   \n When this field is empty, MFA is not enabled in the account, and all users log in by using a standard ID and password. |
 {: caption="Table 20. Account IAM settings requestData fields" caption-side="top"} 

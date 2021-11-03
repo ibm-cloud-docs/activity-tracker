@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, streaming
 
@@ -10,25 +10,20 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
+{{site.data.keyword.attribute-definition-list}}
 
 # Monitoring streaming
 {: #streaming-monitor}
 
-You can use {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full_notm}} to monitor streaming of data from your {{site.data.keyword.at_short}} instance.
-{:shortdesc}
 
+You can use {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full_notm}} to monitor streaming of data from your {{site.data.keyword.at_short}} instance.
+{: shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
+
+See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streaming#streaming-1) for more information on roles required for streaming.
+{: note}
 
 ## Monitoring streaming by using {{site.data.keyword.mon_full_notm}}
 {: #streaming-monitor-1}
@@ -40,8 +35,8 @@ Complete the following steps to monitor the {{site.data.keyword.messagehub}} ins
 
 1. Check that you have an instance of the {{site.data.keyword.mon_short}} in the same region as your {{site.data.keyword.messagehub}} instance. This instance must be configured to collect platform metrics. For more information, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling).
 2. [Launch the {{site.data.keyword.mon_short}} UI](/docs/monitoring?topic=monitoring-launch).
-3. In the **Dashboards** section, go to **Dashboard templates** and select the template **IBM Event Streams (Enterprise)**.
-4. Create a copy of the temnplate by clicking **Create custom dashboard**.
+3. In the **Dashboards** section, go to **Dashboard templates** and select the template **IBM** > **IBM Event Streams (Enterprise)**.
+4. Create a copy of the template by clicking **Create custom dashboard**.
 
     You can use the metric *Topic bytes in per second* to see how data is sent by {{site.data.keyword.at_short}} to {{site.data.keyword.messagehub}}.
 
@@ -124,7 +119,7 @@ The following sections include samples of some fields in the notification event 
 
 In {{site.data.keyword.at_short}}, you can create a view with the following query to filter for event stream failure notifications:
 
-```
+```text
 action:logdnaat.streaming-logs.send reason.reasonCode:500 severity:critical target.typeURI:"logdna/account/streaming-notification"
 ```
 {: codeblock}
@@ -133,7 +128,7 @@ You can define a presence alert on this view to notify you as soon as 1 event re
 
 In addition, you can create views for each type of notification. For example, to monitor for a failure to authenticate with {{site.data.keyword.messagehub}}, you can use the following query:
 
-```
+```text
 action:logdnaat.streaming-logs.send reason.reasonCode:500 severity:critical target.typeURI:"logdna/account/streaming-notification" requestData.notificationType:"authentication_failure"
 ```
 {: codeblock}

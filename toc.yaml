@@ -1,0 +1,205 @@
+toc:
+  properties:
+    subcollection: activity-tracker
+    version: 2
+    category: logging_monitoring
+    audience: service
+    href: /docs/activity-tracker?topic=activity-tracker-getting-started
+    console-page: /observe/activitytracker
+    product-page: https://www.ibm.com/cloud/activity-tracker
+    path: activity-tracker
+    label: Activity Tracker
+
+  entries: 
+  - navgroup: 
+      id: learn
+      topics:
+
+      - getting-started.md
+      
+      - topicgroup: 
+          label: Get started
+          topics:
+          - atracker/getting-started-routing.md
+          - getting-started-search.md
+      
+      - topicgroup: 
+          label: Cloud services
+          topics:
+          - cloud_services.md
+          - cloud_services_locations.md
+      
+      - topicgroup: 
+          label: Events
+          topics:
+          - event.md
+          - event_types.md
+          - events_opt-in.md
+          - events_collect.md
+      
+      - topicgroup: 
+          label: Security and compliance
+          topics:
+          - adoption.md
+          - manage_eu_acc.md
+      
+      - topic: releasenotes.md
+        navtitle: Release notes
+  
+  - navgroup: 
+      id: howto
+      topics:
+      - provision.md
+      - provision_hipaa.md
+      - upgrade.md
+      - remove.md
+      - observe.md
+      - view_events.md
+      - views.md 
+      
+      - topicgroup: 
+          label: Controlling access
+          topics:
+          - iam.md
+          - teams_data_access.md
+          - iam_grant_team.md
+          - iam_manage_events.md
+          - iam_view_events.md
+      
+      - topicgroup: 
+          label: DevOps admin tasks
+          topics:
+          - archive.md
+          - control_usage.md
+          - parsing.md
+          - exclusion_rules.md
+          - service_keys.md
+          - reuse_resource_definitions.md
+          - sqlquery.md
+      
+      - topicgroup: 
+          label: Enhancing security
+          topics:
+          - architecture-workload-isolation.md
+          - service-endpoints.md
+          - data-security.md
+      
+      - topicgroup: 
+          label: Exporting events
+          topics:
+          - export_config.md
+          - export.md
+          - export_api.md
+      
+      - topicgroup: 
+          label: Logging and monitoring
+          topics:
+          - at_events.md
+          - atracker/platform_metrics.md
+      
+      - manage_events.md
+      - atracker/endpoints_manage.md
+      - atracker/target.md
+      - atracker/route.md
+      - atracker/cos.md
+      - atracker/config_report.md
+      
+      - topicgroup: 
+          label: Monitoring activity
+          topics:
+          - analyze/iam_manage_login.md
+      
+      - alerts/alerts_configuration.md
+      - atracker/retrieve-iam-token.md
+      
+      - topicgroup: 
+          label: Streaming data
+          topics:
+          - streaming.md
+          - streaming-configure.md
+          - streaming-monitor.md
+          - streaming-conditional.md
+          - streaming-manage-api.md
+      
+      - topicgroup: 
+          label: UI
+          topics:
+          - launch.md
+          - config.md
+          - get_web_url.md
+          - monitor_events.md
+      
+      - topicgroup: 
+          label: Working with alerts
+          topics:
+          - alerts/alerts.md
+          - alerts/create_alert_ui.md
+          - alerts/remove_alert_ui.md
+          - alerts/preset_ui.md
+          - config_api.md
+          - alerts/email.md
+          - pagerduty.md
+          - alerts/monitoring.md
+          - alerts/sms.md
+  
+  - navgroup: 
+      id: reference
+      topics: 
+      - regions.md
+      - endpoints.md
+      - cidr.md
+      - channels.md
+      - service_plan.md
+      - shared-responsibilities.md
+      - ha-dr.md
+      - service-ip-changes.md
+      
+      - topicgroup: 
+          label: CLI
+          topics:
+          - atracker/atracker-cli.md
+          - /activity-tracker-cli-plugin/activity-tracker-cli-plugin-activity-tracker-cli
+  
+      - topicgroup: 
+          label: API
+          links: 
+            - link: 
+                label: Activity Tracker event routing API
+                href: https://{DomainName}/apidocs/atracker
+            - link:
+                label: Activity Tracker Export API
+                href: https://{DomainName}/apidocs/activity-tracker#export
+            - link:
+                label: Activity Tracker Archiving API
+                href: https://{DomainName}/apidocs/activity-tracker#get-v1-config-archiving
+            - link:
+                label: Activity Tracker Alerts and views API
+                href: https://{DomainName}/apidocs/activity-tracker#create-view
+            - link:
+                label: Activity Tracker Streaming API
+                href: https://{DomainName}/apidocs/activity-tracker#post-v1-config-stream
+            - link:
+                label: Activity Tracker Groups API
+                href: https://{DomainName}/apidocs/activity-tracker#create-group
+  
+      - topicgroup: 
+          label: Events
+          topics:     
+          - at_events_iam.md
+          - at_events_acc_mgt.md
+          - at_events_rc.md
+          - at_event_dashdb.md
+  
+  - navgroup: 
+        id: help
+        topics: 
+        - gettinghelp.md
+        - at_faq.md
+
+        - topicgroup: 
+            label: Troubleshooting
+            topics:  
+            - troubleshoot-04.md
+            - atracker/troubleshoot-01.md
+            - atracker/troubleshoot-02.md
+            - atracker/troubleshoot-03.md

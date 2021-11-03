@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, export
 
@@ -10,24 +10,17 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
  
 # Exporting events through the UI
 {: #export}
 
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance graphically through the web UI. 
-{:shortdesc}
+{: shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 Consider the following information when you export events:
 * You can export a set of log entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
@@ -57,7 +50,7 @@ Complete the following steps to export data through the UI:
 3. Select a view.
 4. Select the view name. 
 5. Select **Export lines**. A new window opens.
-6. Check the time range. If you need to change it, click the predefined time range in the *Change the Time Range for export* field.
+6. Check the time range. If you need to change it, click the predefined time range in the *Time Range for Export* field.
 7. Select **Prefer newer lines** or **Prefer older lines** in case the export request exceeds the line limit.
 8. Check your email. You should receive an email with a link to download your exported lines.
 
@@ -73,10 +66,10 @@ Complete the following steps to export data through the UI:
 2. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 3. Select **Everything**.
 4. Apply filters and search criteria until you see the entries that you want to export.
-4. Click **Unsaved View**.
-5. Select **Export lines**. A new window opens.
-6. Check the time range. If you need to change it, click the predefined time range in the *Change the Time Range for export* field.
-7. Select **Prefer newer lines** or **Prefer older lines** in case the export request exceeds the line limit.
-8. Check your email. You receive an email with a link to download your exported lines.
+5. Click **Unsaved View**.
+6. Select **Export lines**. A new window opens.
+7. Check the time range. If you need to change it, click the predefined time range in the *Time Range for Export* field.
+8. Select **Prefer newer lines** or **Prefer older lines** in case the export request exceeds the line limit.
+9. Check your email. You receive an email with a link to download your exported lines.
 
 

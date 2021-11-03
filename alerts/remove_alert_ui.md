@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, getting started, auditing, alerts, delete
 
@@ -11,23 +11,19 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
  
 # Removing alerts through the UI
 {: #remove_alert_ui}
 
+
 You can detach alerts graphically by detaching an alert from a view or by deleting a preset.
-{:shortdesc}
+{: shortdesc}
+
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 
 ## Detaching all alerts from a view
@@ -38,7 +34,7 @@ Complete the following steps to detach all the alerts that are configured for a 
 1. [Navigate to the web UI through the {{site.data.keyword.cloud_notm}} UI](/docs/activity-tracker?topic=activity-tracker-launch).
 2. Identify the view with the alert.
 3. Select **Detach alert**.
-4. Confirm that you want to remove all the alerts. Click **Detach**.
+4. Confirm that you want to remove all the alerts. Click **Yes, detach**.
 
 
 
@@ -50,8 +46,8 @@ Complete the following steps to detach 1 alert that is configured for a view:
 1. [Navigate to the web UI through the {{site.data.keyword.cloud_notm}} UI](/docs/activity-tracker?topic=activity-tracker-launch).
 2. Identify the view with the alert.
 3. Select **Edit alert**.
-4. Select the alerdefinition that you want to delete.
-4. Click **Delete Alert Channel**.
+4. Select the alert definition that you want to delete.
+5. Click **Delete alert channel**.
 
 
 

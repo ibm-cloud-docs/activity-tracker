@@ -2,29 +2,52 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, regions
 subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Locations
 {: #regions}
 
-{{site.data.keyword.at_full}} is available in the following locations:
-{:shortdesc}
+{{site.data.keyword.atracker_full}} is available in the following locations:
+{: shortdesc}
+
+
+## Locations for {{site.data.keyword.atracker_short}} event routing
+{: #regions-atracker}
+
+This information applies only to {{site.data.keyword.atracker_full_notm}} event routing.
+{: important}
+
+
+![The image shows the locations where the {{site.data.keyword.atracker_short}} service is available.](images/world-map_usonly.svg)
+{: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.atracker_short}} resources." caption-side="bottom"}
+
+
+| Geography             | Region                   | EU-Supported | HA Status |
+|-----------------------|--------------------------|--------------|-----------|
+| `North America`       | `Dallas (us-south)`      | `N/A`        | `MZR`     |
+| `North America`       | `Washington (us-east)`   | `N/A`        | `MZR`     |
+{: caption="Table 1. List of locations where the {{site.data.keyword.atracker_short}} is available" caption-side="top"}
+
+Where
+* A *geography* is a geographic area or larger political body that contains one or more regions.
+* A *region* is a defined geographic territory. A region could be a specific postal code area, a town, a city, a state, a group of states, or even a group of countries. 
+* `N/A` means feature that is not applicable to that geography.
+
+`(*)` For more information, see [Enabling the EU Supported setting](/docs/account?topic=account-eu-hipaa-supported#bill_eusupported).
+
+
+## Locations for {{site.data.keyword.at_short}} hosted event search offerings
+{: #regions-at}
+
+This information applies only to {{site.data.keyword.at_full_notm}} hosted event search offerings.
+{: important}
 
 ![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/world-map_min.png)
 {: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}
@@ -41,7 +64,8 @@ subcollection: activity-tracker
 | `Europe`              | `London (eu-gb)`         | `NO`         | `MZR`     |
 | `North America`       | `Dallas (us-south)`      | `N/A`        | `MZR`     |
 | `North America`       | `Washington (us-east)`   | `N/A`        | `MZR`     |
-| `North America`       | `Toronto (ca-tor)    `   | `N/A`        | `MZR`     |
+| `North America`       | `Toronto (ca-tor)`   | `N/A`        | `MZR`     |
+| `South America`       | `Sao Paulo (br-sao)`     | `N/A`        | `MZR`     |
 {: caption="Table 1. List of locations where the service is available" caption-side="top"}
 
 {: #end-api-table-1}

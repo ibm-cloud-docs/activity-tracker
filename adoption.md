@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-28"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, services
 
@@ -10,25 +10,17 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Adoption guidelines for regulated and highly available workloads
 {: #adoption}
 
 For regulated and highly available workloads, consider the following adoption guidelines when using the {{site.data.keyword.at_full}} (AT) service:
-{:shortdesc}
+{: shortdesc}
 
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Define resources naming standards for compliance
 {: #adoption_naming}
@@ -549,7 +541,7 @@ For more information, see [Activity Tracker events](/docs/cloud-object-storage?t
 Enable collection of COS management and data events on the bucket that you use to archive data from an auditing instance. Use these events to monitor activity in your COS bucket.
 {: tip}
 
-In {{site.data.keyword.at_full_notm}}, you can define views, dashboard, and screens to monitor COS management and data events. You can also configure alerts on views to notify you when a specific condition occurs. On a view, you can configure an email alert, a Slack alert, a PagerDuty alert, or any combination of these. For more information, see [Creating custom views](/docs/activity-tracker?topic=activity-tracker-views) and [Managing alerts](/docs/activity-tracker?topic=activity-tracker-alerts).
+In {{site.data.keyword.at_full}}, you can define views, dashboard, and screens to monitor COS management and data events. You can also configure alerts on views to notify you when a specific condition occurs. On a view, you can configure an email alert, a Slack alert, a PagerDuty alert, or any combination of these. For more information, see [Creating custom views](/docs/activity-tracker?topic=activity-tracker-views) and [Managing alerts](/docs/activity-tracker?topic=activity-tracker-alerts).
 
 For example, you can define a view that reports when an object is archived in a bucket. On that view, you can configure an email alert to notify you when an object has been archived. You might have compliance requirements that require you to control who accesses data that is archived. You can define a view that reports access to a bucket, and define an alert to notify you when that happens.
 
@@ -584,7 +576,7 @@ The {{site.data.keyword.sqlquery_short}} service provides a server-less, no-ETL 
 
 The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. Archived files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format. When you use the {{site.data.keyword.sqlquery_short}} service, each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in an {{site.data.keyword.cos_short}} instance of your choice. 
 
-When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/activity-tracker?topic=activity-tracker-sqlquery#sqlquery_step3-4) to be able to query the contents successfully.
+When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/activity-tracker?topic=activity-tracker-sqlquery#sqlquery_step3_4) to be able to query the contents successfully.
 {: tip}
 
 Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and test your queries, and the [SQL Query REST API](#restapi) to automate them.

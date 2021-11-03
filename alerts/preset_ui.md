@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing, alerts, presets
 
@@ -11,23 +11,19 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
  
 # Managing presets through the UI
 {: #preset_ui}
 
+
 To reuse an alert configuration, a service administrator can configure an **alert preset** (alert template).
-{:shortdesc}
+{: shortdesc}
+
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Creating a preset
 {: #preset_ui_create}
@@ -80,7 +76,7 @@ Complete the following steps to delete a preset from the **ALERTS** dashboard:
 
 1. In the web UI, select the **Settings** icon ![Settings icon](images/admin.png "Settings icon").
 2. Select **ALERTS**.
-3. Hover the mouse over the **Edit**** button of the preset that you want to delete. The **Delete** option displays.
+3. Hover the mouse over the **Edit** button of the preset that you want to delete. The **Delete** option displays.
 4. Click **Delete**.
 5. Confirm that you want to delete the preset by clicking **Yes, delete**.
 

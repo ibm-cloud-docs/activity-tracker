@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-28"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, archive logs, COS, cloud object storage
 
@@ -10,23 +10,17 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
  
 # Archiving events to IBM Cloud Object Storage
 {: #archiving}
 
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. 
-{:shortdesc}
+{: shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 Complete the following steps to archive an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} instance:
 
@@ -71,14 +65,14 @@ The following table lists the roles that a user can have to complete the actions
 | Service                    | Platform roles    | Action                                                                                        | 
 |----------------------------|-------------------|-----------------------------------------------------------------------------------------------|       
 | `Cloud Object Storage`     | Administrator     | Allows the user to assign policies to users in the account to work with the {{site.data.keyword.cos_full_notm}} service. |
-| `Cloud Object Storage`     | Administrator </br>Editor | Allows the user to provision an instance of the {{site.data.keyword.cos_full_notm}} service.    |
-| `Cloud Object Storage`     | Administrator </br>Editor </br>Operator | Allows the user to create a service ID.    | 
-{: caption="Table 1. Roles and actions" caption-side="top"} 
+| `Cloud Object Storage`     | Administrator   \n Editor | Allows the user to provision an instance of the {{site.data.keyword.cos_full_notm}} service.    |
+| `Cloud Object Storage`     | Administrator   \n Editor   \n Operator | Allows the user to create a service ID.    | 
+{: caption="Table 2. Roles and actions" caption-side="top"} 
 
 
 Complete the following steps to assign a user administrator role to the {{site.data.keyword.cos_full_notm}} service within the context of a resource group: 
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.    
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.    
 2. From the menu bar, click **Manage** &gt; **Access (IAM)**, and then select **Users**.
 3. From the row for the user that you want to assign access, select the **Actions** menu, and then click **Assign access**.
 4. Select **Assign access within a resource group**.
@@ -221,7 +215,7 @@ If you want to restrict the service ID to only have writing permissions for a bu
 
 3. Select **Service IDs**.
 
-4. In the field **Select a service ID**, look for a service ID that has the following name: **auto-generated-serviceId-<ID that is part of the iam_apikey_name value>.
+4. In the field **Select a service ID**, look for a service ID that has the following name: `auto-generated-serviceId-<ID that is part of the iam_apikey_name value>`.
 
 5. Select the service ID. Then, in **Access policies**, select **Writer**.
 
@@ -236,7 +230,7 @@ An endpoint defines where to look for a bucket. There are different endpoints de
 
 Complete the following steps to obtain the endpoint for your bucket:
 
-1. [Log in to your {{site.data.keyword.cloud_notm}} account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
 	After you log in, the {{site.data.keyword.cloud_notm}} Dashboard opens.
 
@@ -259,7 +253,7 @@ The following table lists the policies that a user must have to configure archiv
 |--------------------------------------|---------------------------|-------------------------------------|  
 | `{{site.data.keyword.at_full_notm}}` | Platform role: Viewer     | Allows the user to view the list of service instances in the Observability Logging dashboard. |
 | `{{site.data.keyword.at_full_notm}}` | Service role: Manager     | Allows the user to launch the web UI and view events in the web UI.                             |
-{: caption="Table 2. IAM policies" caption-side="top"} 
+{: caption="Table 3. IAM policies" caption-side="top"} 
 
 [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam#iam).
 
@@ -296,29 +290,13 @@ Complete the following steps to configure archiving of your {{site.data.keyword.
 
 4. Set the bucket, endpoint, API key, and instance ID where you want events to be archived.
 
-    <table>
-      <caption>Table 3. COS fields</caption>
-      <tr>
-         <th>Field</th>
-         <th>Value</th>
-      </tr>
-      <tr>
-         <td>Bucket</td>
-         <td>Set to the COS bucket name. </td>
-      </tr>
-      <tr>
-         <td>Endpoint</td>
-         <td>Set to the COS bucket private endpoint.</td>
-      </tr>
-      <tr>
-         <td>API Key</td>
-         <td>Set to the API key associated to the COS service ID.</td>
-      </tr>
-      <tr>
-         <td>Instance ID</td>
-         <td>Set to the COS instance ID. </td>
-      </tr>
-    </table>
+    | Field       | Value                                                |
+    |-------------|------------------------------------------------------|
+    | Bucket      | Set to the COS bucket name.                          |
+    | Endpoint    | Set to the COS bucket private endpoint.              |
+    | API Key     | Set to the API key associated to the COS service ID. |
+    | Instance ID | Set to the COS instance ID.                          |
+    {: caption="Table 4. COS fields" caption-side="top"}
 
 5. Click **Save**.
 

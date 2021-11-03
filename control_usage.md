@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, usage
 
@@ -10,26 +10,18 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Controlling data usage
 {: #control_usage}
 
+
 In {{site.data.keyword.at_full}}, you can control the data that is collected and available for analysis through a logging instance. You can define exclusion rules in the UI that apply to data collected in that instance. You can define an alert that is triggered when the data usage threshold that you define for that logging instance is reached.
-{:shortdesc}
+{: shortdesc}
 
-
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Controlling data by using exclusion rules
 {: #control_usage_rule}
@@ -56,7 +48,7 @@ Complete the following steps to configure an alert that informs you when you rea
 You must have manager access to configure data threshold alerts.
 {: note}
 
-1. [Launch the {{site.data.keyword.at_full_notm}} UI](/docs/services/activity-tracker?topic=activity-tracker-launch).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/activity-tracker?topic=activity-tracker-launch).
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Usage**.
 

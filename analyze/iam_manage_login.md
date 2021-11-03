@@ -2,32 +2,24 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-28"
+lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, IAM events
+keywords: IBM Cloud, {{site.data.keyword.atracker_short}}, IAM events
 
 subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Managing events from log in actions in an account
 {: #iam_manage_login}
 
+
+
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users, applications, and services interact with your account. The {{site.data.keyword.iamlong}} (IAM) service in {{site.data.keyword.cloud_notm}} generates events that you can use to monitor log in activity to your account. This tutorial explains the different log in options to {{site.data.keyword.cloud_notm}} and what happens from an IAM and an {{site.data.keyword.at_full_notm}} perspective. You can also find out how to define views and dashboards to monitor these actions in your account.
-{:shortdesc}
+{: shortdesc}
 
 To work in the {{site.data.keyword.cloud_notm}}, a user, an application, or a service must log in to {{site.data.keyword.cloud_notm}}. The user, application, or service needs valid credentials to access an account and run actions on services in that account.
 
@@ -41,7 +33,7 @@ As a service, you log in to the {{site.data.keyword.cloud_notm}} by using an API
 
 If you are a new user of the {{site.data.keyword.cloud_notm}}, [you must request an IBMid](https://cloud.ibm.com/login){: external}. When you register to work in the {{site.data.keyword.cloud_notm}}, you get an IBMid, and an account is created and associated to your IBMid. 
 
-Once you have registered to {{site.data.keyword.cloud_notm}}, you can be invited to be a member in other accounts in {{site.data.keyword.cloud_notm}}. When you are invited to work in an account that is different from the default account that is associated with your IBMid, an event with action **user-management.user.create** is generated and available in the  account where you are invited to work. Users in the account with permissions to monitor Activity Tracker events can monitor these events through the {{site.data.keyword.at_full_notm}} instance in Frankfurt (eu-de).
+Once you have registered to {{site.data.keyword.cloud_notm}}, you can be invited to be a member in other accounts in {{site.data.keyword.cloud_notm}}. When you are invited to work in an account that is different from the default account that is associated with your IBMid, an event with action **user-management.user.create** is generated and available in the  account where you are invited to work. Users in the account with permissions to monitor {{site.data.keyword.atracker_short}} events can monitor these events through the {{site.data.keyword.at_full_notm}} instance in Frankfurt (eu-de).
 
 For a user to log in successfully to your account:
 1. First, the credentials of the user or service are validated in {{site.data.keyword.cloud_notm}}.
@@ -51,7 +43,7 @@ For a user to log in successfully to your account:
 
 3. [User log in request only] If account information is not included, the user must select or switch to the desired account. 
 
-An Activity Tracker event is generated and available in your account after the credentials are validated in the {{site.data.keyword.cloud_notm}}, and account details are available.
+An {{site.data.keyword.atracker_short}} event is generated and available in your account after the credentials are validated in the {{site.data.keyword.cloud_notm}}, and account details are available.
 
 As the owner or person responsible of the account access management, you can expect an event in your account in any of the following scenarios:
 * User logs in from the UI: You get a log in event after the user's log in credentials (IBMid) are validated in {{site.data.keyword.cloud_notm}} and the user switches to work with your account.
@@ -60,7 +52,7 @@ As the owner or person responsible of the account access management, you can exp
 * Service logs in by using a service ID: You get a log in event after the credentials (API key of a service ID) are validated in {{site.data.keyword.cloud_notm}}. The account details are included in the API key.
 
 
-**You only get Activity Tracker events for successful log in requests to your account.**
+**You only get {{site.data.keyword.atracker_short}} events for successful log in requests to your account.**
 {: important}
 
 
@@ -78,7 +70,7 @@ When a user successfully logs in to your account through the {{site.data.keyword
 
     By default, an account is pre-selected. This account is the one that is associated to the user's IBMid. 
 
-4. At this point in the process, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-refreshtoken.login**. This event is available in the user's default account, that is the account where the user is account owner.
+4. At this point in the process, the IAM Identity Service generates an {{site.data.keyword.atracker_short}} event with action **iam-identity.user-refreshtoken.login**. This event is available in the user's default account, that is the account where the user is account owner.
 
 5. Next, the user switches account and selects a different account.
 
@@ -86,7 +78,7 @@ When a user successfully logs in to your account through the {{site.data.keyword
 
 6. The IAM Identity Service checks the current tokens. If the user is authorized to work in the new account, the IAM Identity Service returns a new access token and a new refresh token that are bound to the new account.
 
-7. At this point in the process, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-refreshtoken.login**. This event is available in the new account.
+7. At this point in the process, the IAM Identity Service generates an {{site.data.keyword.atracker_short}} event with action **iam-identity.user-refreshtoken.login**. This event is available in the new account.
 
 
 
@@ -95,9 +87,9 @@ When a user successfully logs in to your account through the {{site.data.keyword
 
 In this scenario, a user is already logged in successfully to your account and runs an action on a service in your account. 
 
-* If the user's access and refresh tokens have expired, the user needs to log in through the {{site.data.keyword.cloud_notm}} UI to continue working through the UI. An Activity Tracker event with action **iam-identity.user-refreshtoken.login** is generated.
+* If the user's access and refresh tokens have expired, the user needs to log in through the {{site.data.keyword.cloud_notm}} UI to continue working through the UI. An {{site.data.keyword.atracker_short}} event with action **iam-identity.user-refreshtoken.login** is generated.
 
-* When the user runs an action through the {{site.data.keyword.cloud_notm}} UI, a cookie is generated. At this point in the process, an Activity Tracker event with action **iam-identity.user-identitycookie.login** is generated in the account. 
+* When the user runs an action through the {{site.data.keyword.cloud_notm}} UI, a cookie is generated. At this point in the process, an {{site.data.keyword.atracker_short}} event with action **iam-identity.user-identitycookie.login** is generated in the account. 
 
 
 
@@ -113,7 +105,7 @@ When a user successfully logs in to your account through the {{site.data.keyword
 
     The API key includes information about the account.
 
-3. After the credentials are validated and the API key is authenticated to work in the account, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-apikey.login**. This event is available in the account that is associated with the API key.
+3. After the credentials are validated and the API key is authenticated to work in the account, the IAM Identity Service generates an {{site.data.keyword.atracker_short}} event with action **iam-identity.user-apikey.login**. This event is available in the account that is associated with the API key.
 
 
 
@@ -134,7 +126,7 @@ When a user successfully logs in to your account through the {{site.data.keyword
 
 4. Next, the user selects an account. An access token and a refresh token are generated and returned to the user. These tokens are bound to the selected account. The tokens contain an identity, an account, and some rights.
 
-5. At this point in the process, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-refreshtoken.login**.
+5. At this point in the process, the IAM Identity Service generates an {{site.data.keyword.atracker_short}} event with action **iam-identity.user-refreshtoken.login**.
 
 
 
@@ -159,7 +151,7 @@ When a user successfully logs in to your account through the {{site.data.keyword
 
 4. Next, the user selects an account. An access token and a refresh token are generated and returned to the user. These tokens are bound to the selected account. The tokens contain an identity, an account, and some rights.
 
-5. At this point in the process, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.user-refreshtoken.login**.
+5. At this point in the process, the IAM Identity Service generates an {{site.data.keyword.atracker_short}} event with action **iam-identity.user-refreshtoken.login**.
 
 
 
@@ -174,7 +166,7 @@ When a service or application successfully logs in to your account by using an A
 
     The API key includes information about the account.
 
-2. After the credentials are validated and the API key is authenticated to work in the account, the IAM Identity Service generates an Activity Tracker event with action **iam-identity.serviceid-apikey.login**. This event is available in the account that is associated with the API key.
+2. After the credentials are validated and the API key is authenticated to work in the account, the IAM Identity Service generates an {{site.data.keyword.atracker_short}} event with action **iam-identity.serviceid-apikey.login**. This event is available in the account that is associated with the API key.
 
 
 

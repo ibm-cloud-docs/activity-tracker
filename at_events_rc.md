@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, resource controller events
 
@@ -10,23 +10,13 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 # Auditing events for service instances  
 {: #at_events_rc}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.cloud_notm}} services. 
-{:shortdesc}
+{: shortdesc}
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. To get started monitoring your user's actions, see [{{site.data.keyword.at_full_notm}}](/docs/services/activity-tracker?topic=activity-tracker-getting-started#getting-started). 
 
@@ -102,7 +92,7 @@ To view these events, you must [provision an instance](/docs/services/activity-t
 {: #rc_analyze}
 
 ### Action service_name.instance.delete
-{: #rc_analyze-1}
+{: #rc_analyze_1}
 
 When a service instance is deleted, consider the following information:
 * Other actions are automatically triggered to clean up IAM permissions. These actions remove policies that are configured for users and service IDs in the account to work with the service instance. 
@@ -111,7 +101,7 @@ When a service instance is deleted, consider the following information:
 
 When the service instance that is deleted does not have IAM policies configured for users and service IDs, the events that are automatically generated for any of these resources report an outcome of`failure` with a `404` outcome code. The following sample shows the events that are generated when a service instance that does not have policies configured in the account is deleted:
 
-```
+```text
 Apr 30 09:04:16 cloudcerts: delete instance Certificate Manager-v1
 Apr 30 09:41:20 IAM Access Management: delete policy -failure
 Apr 30 09:41:20 IAM Access Management: delete policy -failure

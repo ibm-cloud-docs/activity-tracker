@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, streaming
 
@@ -10,28 +10,17 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:beta: .beta}
+{{site.data.keyword.attribute-definition-list}}
 
 # Streaming data
 {: #streaming}
 
-Stream data from an {{site.data.keyword.at_full_notm}} instance to other corporate tools such as Security Information and Event Management (SIEM) tools. 
-{:shortdesc}
 
-This feature is available as a public beta in the US-South and Frankfurt regions.
-{: beta}
+Stream data from an {{site.data.keyword.at_full_notm}} instance to other corporate tools such as Security Information and Event Management (SIEM) tools. 
+{: shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 When you stream data to data lakes, other analysis tools, or other SIEM tools, you can add additional capabilities to the ones provided by the {{site.data.keyword.at_full_notm}} service:
 - You can gain visibility into enterprise data across on-premises and cloud-based environments. 
@@ -56,14 +45,17 @@ If you have any regulatory requirement for data residency and compliance needs, 
 For information on how to configure streaming, see [Configuring streaming](/docs/activity-tracker?topic=activity-tracker-streaming-configure).
 
 In addition, consider the following information:
-- You must have the **manager** role to configure streaming.
-- When you configure streaming, the {{site.data.keyword.at_full_notm}} instance and the {{site.data.keyword.messagehub}} instance must be provisioned in the same account.
-- To connect the {{site.data.keyword.at_full_notm}} instance to the {{site.data.keyword.messagehub}} instance, you need the following information:
+- You must have the **manager** role to configure streaming in the {{site.data.keyword.at_full_notm}} instance. This role includes the **logdna.dashboard.manage** IAM action role that allows a user to perform admin tasks such as configure streaming.
+- When you configure streaming, the {{site.data.keyword.at_short}} instance and the {{site.data.keyword.messagehub}} instance must be provisioned in the same account.
+- To connect the {{site.data.keyword.at_short}} instance to the {{site.data.keyword.messagehub}} instance, you need the following information:
     
     - Endpoint URLs to call the APIs
     
     - Credentials for authentication
 
+- To create a topic in {{site.data.keyword.messagehub}}, you must have **manager** role. This role includes the **messagehub.topic.manage** IAM action role that allows an app or user to create or delete topic.
+
+- The credential that {{site.data.keyword.at_short}} uses to publish data in {{site.data.keyword.messagehub}} must have **writer** role. This role includes the **messagehub.topic.write** IAM action role that allows an app or service to write data to 1 or more topics.
 
 ## Monitor streaming
 {: #streaming-2}

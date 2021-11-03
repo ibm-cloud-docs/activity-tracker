@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, getting started, auditing, monitoring
 
@@ -10,29 +10,24 @@ subcollection: activity-tracker
 
 ---
 
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 # Integrating with the {{site.data.keyword.mon_short}} service
 {: #monitoring}
 
 You can send alerts to the {{site.data.keyword.mon_short}} service and manage them through the *Events* view section.
-{:shortdesc}
+{: shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
+
 
 ## Configuring a {{site.data.keyword.mon_short}} alert
 {: #monitoring-config}
 
 When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-alerts#configure-an-alert) you can have that alert sent to {{site.data.keyword.mon_short}}.
 
-1. When configuring your alert, click ![icon](images/sysdig.png "icon").
+1. When configuring your alert, click ![Sysdig icon](../images/sysdig.png "Sysdig icon").
 
 2. Select if you want the alert to be sent when the condition exists (**Presence**) or does not exist (**Absence**).
 
@@ -42,10 +37,10 @@ When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-aler
 
 5. Optionally you can specify a **Custom schedule** with alerting limited to a specified timezone, days of the week, or timeframe. To configure a **Custom schedule**:
 
-  1. Select **on** for **Custom schedule**.
-  2. Select the Timezone for the log entries. 
-  3. Select the days of the week when alerts should be generated.
-  4. Optionally specify a time range for the selected days. A graph will help you determine the number of log entries for the timezone and time range.
+    1. Select **on** for **Custom schedule**.
+    2. Select the Timezone for the log entries. 
+    3. Select the days of the week when alerts should be generated.
+    4. Optionally specify a time range for the selected days. A graph will help you determine the number of log entries for the timezone and time range.
 
 6. Configure the Monitoring instance details.
 

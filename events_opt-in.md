@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-28"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud,Activity Tracker, events, global, regional, data, management
 
@@ -10,29 +10,20 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Enabling Activity Tracker events
-{: #events_opt-in}
+{: #events-opt-in}
 
 In {{site.data.keyword.at_full_notm}}, events are collected automatically for most enabled-services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them.
-{:shortdesc}
+{: shortdesc}
 
 
 
 
 ## Management events
-{: #events_opt-in_mgt}
+{: #events-opt-in_mgt}
 
 The following table lists the services that require additional steps for you to be able to monitor [management events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_management) that they generate:
 
@@ -45,14 +36,14 @@ The following table lists the services that require additional steps for you to 
 
 
 ## Data events
-{: #events_opt-in_data}
+{: #events-opt-in_data}
 
 The following table lists the services that require additional steps for you to be able to monitor [data events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_data) that they generate:
 
 | Service                            | Upgrade plan                       | Configure the service              | More info |
 |------------------------------------|------------------------------------|------------------------------------|-----------|
 | {{site.data.keyword.appid_full}}   | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg)   | [Monitoring runtime activity](/docs/appid?topic=appid-at-events#at-monitor-runtime-activity)   |
-| {{site.data.keyword.cos_full}}     |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Enabling activity tracking](/docs/cloud-object-storage?topic=cloud-object-storage-at#at-console-enable) |
+| {{site.data.keyword.cos_full}}     |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Enabling {{site.data.keyword.atracker_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-at#at-console-enable) |
 | {{site.data.keyword.cloudantfull}} |  | ![Checkmark icon](../icons/checkmark-icon.svg) | [Configuring data events for an IBM Cloudant instance](/docs/Cloudant?topic=Cloudant-at_events#at_event_configure) |
 | {{site.data.keyword.messagehub_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | [Enabling message audit events](/docs/EventStreams?topic=EventStreams-at_events#enable-message-events) |
 | [Watson services](/docs/activity-tracker?topic=activity-tracker-cloud_services#watson_ai)    | ![Checkmark icon](../icons/checkmark-icon.svg) |  |   |
@@ -60,13 +51,13 @@ The following table lists the services that require additional steps for you to 
 
 
 ## Details per Watson service
-{: #events_opt-in_watson}
+{: #events-opt-in_watson}
 
 The following table lists the Watson services and related information about additional steps that you might need to be able to monitor events:
 
 | Service Name | Paid plan required | Other configuration required | 
 | -- | -- | -- |
-| {{site.data.keyword.conversationfull}} | ![Checkmark icon](../icons/checkmark-icon.svg) </br>Premium & Enterprise Plans only feature ||  
+| {{site.data.keyword.conversationfull}} | ![Checkmark icon](../icons/checkmark-icon.svg)   \n Premium & Enterprise Plans only feature ||  
 | {{site.data.keyword.discoveryfull}} |   |   |  
 | {{site.data.keyword.DSX_full}} | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  
 | IBM Watson&trade; Knowledge Catalog | ![Checkmark icon](../icons/checkmark-icon.svg) |   |  

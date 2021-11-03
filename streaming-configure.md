@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, streaming
 
@@ -10,24 +10,20 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
+{{site.data.keyword.attribute-definition-list}}
 
 # Configuring streaming
 {: #streaming-configure}
 
+
 Complete the following steps to configure streaming for an {{site.data.keyword.at_full}} instance:
-{:shortdesc}
+{: shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
+
+See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streaming#streaming-1) for more information on roles required for streaming.
+{: note}
 
 ## Prereqs
 {: #streaming-configure-prereqs}
@@ -101,15 +97,15 @@ To restrict access to 1 topic, complete the following steps:
 
 1. From the menu bar, click **Manage** &gt; **Access (IAM)**, and select **Service IDS**.
 
-    ![Create a topic.](images/streaming-credentials2.png "Create a topic") 
+    ![Service IDs](images/streaming-credentials2.png "Service IDs") 
 
 2. Select the service ID.
 3. Select **Access policies**.
 4. Select the policy and modify it to specify the topic.
 
-    ![Create a topic.](images/streaming-credentials-2.png "Create a topic") 
+    ![Edit Policy](images/streaming-credentials-2.png "Edit Policy") 
 
-    ![Create a topic.](images/streaming-credentials-3.png "Create a topic") 
+    ![Select Role](images/streaming-credentials-3.png "Select Role") 
 
 5. [Get credentials using the IBM Cloud CLI](/docs/EventStreams?topic=EventStreams-connecting#connect_enterprise_external_cli) and make note of the api key and broker URL values.
 

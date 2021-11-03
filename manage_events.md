@@ -2,36 +2,28 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-28"
+lastupdated: "2021-08-09"
 
 subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:beta: .beta}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing events in your account
 {: #manage_events}
 
 {{site.data.keyword.at_full_notm}} is used to collect, archive, view and analyze events. 
-{:shortdesc}
+{: shortdesc}
 
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Collecting events to monitor activity in the account
 {: #manage_events_provision}
 
 In {{site.data.keyword.at_full_notm}}, events are collected automatically for most enabled-AT services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them. [Learn more](/docs/activity-tracker?topic=activity-tracker-events_collect).
+
 
 
 ## Defining views, dashboards, and screens to analyze events
@@ -55,14 +47,10 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 * Events are automatically archived in a compressed format **(.json.gz)**. Each event preserves its metadata.
 * Events are archived within 24-48 hours after you save the configuration. 
 * Logs are archived hourly. 
+* The archive directory format looks like this:
 
-    Previously, logs have been archived daily. Through this transition, you might observe a small overlap between the older daily format archives and the new archives.
-    {: note}
-
-* The hourly archive directory format looks like this:
-
-    ```
-    YYYY/MM/DD/<accountID>.<YYYY>-<MM>-<DD>.<HH>00.json.gz
+    ```text
+    year=<YYYY>/month=<MM>/day=<DD>/<accountID>.<YYYY>-<MM>-<DD>.<HHHH>.json.gz
     ```
     {: codeblock}
     
@@ -72,15 +60,8 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 
     `<accountID>` represents the auditing account ID, that is, the ID that showd in the [web UI URL](/docs/activity-tracker?topic=activity-tracker-get_web_url).
     
-    `HH` represents hours in 24 format. 
-
-    The daily archive directory format looks like this:
-    
-    ```
-    <accountID>.<YYYY>-<MM>-<DD>.<clusterId>.json.gz
-    ```
-    {: codeblock}
-     
+    `HHHH` represents hours in 24 format. 
+   
 * The timestamp that is used to determine whether the event is included in an archive is the UTC timestamp.
 
     Depending on your location, there might be events that you see in local time in your views on a specific day. However, you cannot find them in the archive file. You are most likely viewing events in local time and the archive process uses the UTC timestamp.

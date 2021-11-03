@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, view events
 
@@ -10,24 +10,17 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 
-# Viewing events
+# Viewing events through the Views section
 {: #view_events}
 
 After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view events through the {{site.data.keyword.at_full_notm}} web UI. You view events in your local time.
-{:shortdesc}
+{: shortdesc}
 
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## View events
 {: #view_events_step1}
@@ -38,21 +31,11 @@ Complete the following steps to view events:
 
     The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
 
-    <table>
-      <caption>Table 1. IAM roles</caption>
-      <tr>
-        <th>Role</th>
-        <th>Permission granted</th>
-      </tr>
-      <tr>
-        <td>Platform role: `Viewer`</td>
-        <td>Allows the user to view the list of service instances in the *Observability* dashboard.</td>
-      </tr>
-      <tr>
-        <td>Service role: `Reader`</td>
-        <td>Allows the user to launch the web UI, and view, search, and filter events in the web UI.</td>
-      </tr>
-    </table>
+    | Role                    | Permission granted                                                                       |
+    |-------------------------|------------------------------------------------------------------------------------------|
+    | Platform role: `Viewer` | Allows the user to view the list of service instances in the *Observability* dashboard.  |
+    | Service role: `Reader`  | Allows the user to launch the web UI, and view, search, and filter events in the web UI. |
+    {: caption="Table 1. IAM roles" caption-side="top"}
 
     For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
@@ -93,7 +76,7 @@ Complete the following steps to jump to a specific time:
 
     * Enter a time range such as `yesterday 10am to yesterday 11am`, `last fri 4:30pm to 11/12 1 AM`, `last wed 4:30pm to 23/05 1 AM`, or `May 20 10am to May 22 10am`. Make sure to include `to` to separate the initial timestamp from the end timestamp.
 
-5. Click **ENTER**.
+5. Press **ENTER**.
 
     You might get the error message: `Your request is taking longer than expected, try refreshing your browser in a bit as we try to catch up. Retry.` You might get this error when the timeframe that you have specified does not have any events available to show. Change the time query, and retry.
 
@@ -117,8 +100,6 @@ Complete the following steps:
 
 When you finish exploring the event, click **Close** to close the line.
 
-
-
 ## Copy an event to the clipboard
 {: #view_events_step5}
 
@@ -132,10 +113,24 @@ Complete the following steps to copy an event to the clipboard:
 
     Information about line identifiers, tags, and labels is displayed.
 
-5. Click **Copy to clipboard** to copy the event to the clipboard.
+5. Click **Copy to clipboard** to copy the event to the clipboard.  You can select to copy the event as a formatted line, a raw line of key/value pairs, or in JSON format.
 
 When you finish exploring the event, click **Close** to close the line.
 
+## Copy an event URL to the clipboard
+{: #view_events_step6}
 
 
+Complete the following steps to copy an event to the clipboard that can then be used to directly access the event: 
+
+1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
+2. Select **Everything** or a custom view.
+3. Identify a line that you want to explore.
+4. Expand the event line. 
+
+    Information about line identifiers, tags, and labels is displayed.
+
+5. Click **Share this line**.  A link URL is generated that can be copied to the clipboard.
+
+When you finish exploring the event, click **Close** to close the line.
 

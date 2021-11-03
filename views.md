@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud,Activity Tracker, search, filter, events
 
@@ -10,25 +10,17 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Searching events by using queries
 {: #views}
 
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search and filtering criteria to define the set of events that are displayed through a custom view.
-{:shortdesc}
+{: shortdesc}
 
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Prerequisites
 {: #views_prereqs}
@@ -71,7 +63,7 @@ You can only search events for the number of days that is specified through the 
 
 Complete the following steps:
 1. Enter a search query. 
-2. Click **Enter**. 
+2. Press **Enter**. 
 
 As you apply a query, notice that the name of the view changes to **Unsaved View**.
 
@@ -81,7 +73,7 @@ As you apply a query, notice that the name of the view changes to **Unsaved View
 
 To filter out events for a specific service, you need to enter the following query:
 
-```
+```text
 _platform:==SERVICENAME
 ```
 {: codeblock}
@@ -105,7 +97,7 @@ The following table lists core services:
 
 When a service generates different types of events, you can enter the following query:
 
-```
+```text
 _platform:==SERVICENAME [(action TYPEOFACTION)] 
 ```
 {: codeblock}
@@ -133,7 +125,7 @@ The following table show examples of how to query for a group of events that is 
 
 Each event has an **action** field that informs about the action that triggered the event. You can enter the following query to search for all events that have the same action:
 
-```
+```text
 action ACTIONVALUE
 ```
 {: codeblock}
@@ -154,7 +146,7 @@ The following table show examples of queries for different actions:
 
 You can enter the following query to search for events with a specific reason code:
 
-```
+```text
 reason.reasonCode:VALUE
 ```
 {: codeblock}
@@ -163,7 +155,7 @@ Where *VALUE* represents the reason code value.
 
 For example, to filter events with reason code 500, you can enter the following query:
 
-```
+```text
 reason.reasonCode:500
 ```
 {: codeblock}
@@ -173,7 +165,7 @@ reason.reasonCode:500
 
 When an action requested fails, the field **outcome** is set to **failure**. You can enter the following query to search for these type of events:
 
-```
+```text
 outcome:failure
 ```
 {: codeblock}
@@ -191,7 +183,7 @@ Valid values are *normal*, *warning*, and *critical*.
 
 You can enter the following query to search for these type of events:
 
-```
+```text
 severity:VALUE
 ```
 {: codeblock}
@@ -200,7 +192,7 @@ Where `VALUE` can be set to *normal*, *warning*, or *critical*
 
 For example, to query for critical events, you can run the following query:
 
-```
+```text
 severity:critical
 ```
 {: codeblock}

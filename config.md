@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, config, ui
 
@@ -10,23 +10,17 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Customizing the web UI
 {: #config}
 
 You can configure your web UI to work with UTC timestamps, change the log line format, change the background color and more.
-{:shortdesc}
+{: shortdesc}
+
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 
 ## Configure UTC timestamps 
@@ -55,6 +49,9 @@ Complete the following steps:
     
     Choose *Dark mode** to have a black background.
 
+4. Select the desired theme, text size, and line height.
+
+5. Click **Done** to save your changes.
 
 
 
@@ -68,16 +65,16 @@ Complete the following steps to display a log line that includes the timestamp a
 
     By default, the log format is configured in the following way:
     
-    ```
+    ```text
     %time('MMM D HH:mm:ss') %source %app %level %line
     ```
     {: screen}
 
-3. Remove source, app, and level by dragging them out.
+3. To remove items from the format, drag and drop the items.  For example, to remove source, app, and level drag them out.
 
     The log line changes to the following format:
 
-    ```
+    ```text
     %time('MMM D HH:mm:ss') %line
     ```
     {: screen}

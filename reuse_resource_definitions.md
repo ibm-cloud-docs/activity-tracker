@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, reuse
 
@@ -10,24 +10,16 @@ subcollection: activity-tracker
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Reusing definitions of resources
 {: #reuse_resource_definitions}
 
 To avoid recreating definitions of views, boards, parsing templates, and exclusion rules, you can export these resources from a {{site.data.keyword.at_full}} instance as a JSON file. Then, you can import the definitions into other logging instances.
-{:shortdesc}
+{: shortdesc}
 
-
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
 
 ## Export the configuration of resources
 {: #rrd_export_config}
@@ -38,15 +30,15 @@ Complete the following steps to export the configuration of your resources:
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Organization**. 
 
-3. Select **Account config**.
+3. Select **Export Config**.
 
 4. In the *Export configuration* section, select the types of resources that you want to export.
 
     Notice that options are disabled if you do not have definitions of this type of resource in your logging instance. 
 
-    You can export views and alerts, boards, parsing templates, and exclusion rules. 
+    You can export views and alerts, boards, screens, parsing templates, and exclusion rules. 
 
-5. Select **Export configuration** and save the file.
+5. Click **Export** to save the file.
 
 
 ## Import the configuration of resources into a logging instance
@@ -59,16 +51,16 @@ Complete the following steps to import the configuration of your resources:
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Organization**. 
 
-3. Select **Account config**.
+3. Select **Import Config**.
 
 4. In the *Import configuration* section, drop the JSON config file that inclides the resource definitions, or click to upload a file.
 
-5. Choose **Add to existing views, alerts, and boards** or **Replace existing views, alerts, and boards**.
+5. Choose **Add to existing configuration** or **Replace existing configuration**.
 
     When you choose the **add** option, you add assets to the exisiting ones.
 
     When you choose the **replace** option, you remove all assets, and new ones are created.
 
-6. Select  **Import configuration**.
+6. Click **Import**.
 
 
