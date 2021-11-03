@@ -17,7 +17,7 @@ subcollection: activity-tracker
 {: #control_usage}
 
 
-In {{site.data.keyword.at_full}}, you can control the data that is collected and available for analysis through a logging instance. You can define exclusion rules in the UI that apply to data collected in that instance. You can define an alert that is triggered when the data usage threshold that you define for that logging instance is reached.
+In {{site.data.keyword.at_full}}, you can control the data that is collected and available for analysis through an auditing instance. You can define exclusion rules in the UI that apply to data collected in that instance. You can define an alert that is triggered when the data usage threshold that you define for that logging instance is reached.
 {: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
