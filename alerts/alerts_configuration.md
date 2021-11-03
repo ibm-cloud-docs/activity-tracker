@@ -12,7 +12,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Generating alerts on {{site.data.keyword.cloud_notm}} configuration changes
+# Generating alerts on {{site.data.keyword.cloud_notm}} account configuration changes
 {: #alerts_configuration}
 
 In {{site.data.keyword.at_full}}, you can create alerts to notify on configuration changes on the {{site.data.keyword.cloud_notm}} account. For example, you can generate notifications that report when services are created, modified, and deleted. These alerts can be limited to specific resources, or can apply to any services offered within the {{site.data.keyword.cloud_notm}}.
@@ -52,7 +52,7 @@ If you already have an instance in the Frankfurt region, you should use that exi
 
 4. [Configure the alert](/docs/activity-tracker?topic=activity-tracker-alerts#alerts_create). Select 1 or more notification channels. Valid channels are email, Slack, PagerDuty, webHook, and {{site.data.keyword.mon_short}}. Select the type of alert, and define the condition that determines when the alert is triggered. For more information, see [Working with alerts](/docs/activity-tracker?topic=activity-tracker-alerts).
 
-For the query `instance.create OR instance.delete OR instance.update`, the alert will trigger when a service instance is created, deleted, or updated in any region in your account.  If you choose an email notification channel,  will be sent to the designated email address.
+For the query `instance.create OR instance.delete OR instance.update`, the alert will trigger when a service instance is created, deleted, or updated in any region in your account.  If you choose an email notification channel, the notification will be sent to the designated email address.
 
 
 

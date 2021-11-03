@@ -130,7 +130,7 @@ Complete the following steps to attach an alert to a view:
 
    Select if you want the alert to be sent when the condition exists (**Presence**) or does not exist (**Absence**).
    
-   Indicate the logging criteria when an alert should be sent.  For example, when 100 lines matching in the view are logged in an hour.  A graph will help you determine the number of event lines matching your specified criteria.
+   Indicate the criteria when an alert should be sent.  For example, when 100 lines matching in the view are logged in an hour.  A graph will help you determine the number of event lines matching your specified criteria.
    
    Select if the alert should be sent at the end of the selected period or immediately when the number of lines are logged.
    

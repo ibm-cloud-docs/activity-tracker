@@ -22,13 +22,13 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: important}
 
 
-| Plan                          | Number of days that data is available for seach | Number of users per plan | Plan ID |
-|-------------------------------|-------------------------------------------------|--------------------------|---------|
-| `HIPAA 30 day Event Search`   | 30                                              | 25                       | 254d26dc-3ef5-4006-912c-954186a0d033 |
-| `30 day Event Search`         | 30                                              | Unlimitted               | e914263e-8b62-475e-8206-938e3a31ad26 |
-| `14 day Event Search`         | 14                                              | Unlimitted               | b7f77c86-adde-4e32-8a1b-daba35b1d4fa |
-| `7 day Event Search`          | 7                                               | Unlimitted               | 9aae7491-5cb6-43eb-9b7a-3e0456c781f0 |
-| `Lite`   `[*]`                | Data is not available for search                | 1                        | 6efc5a58-4289-4632-867f-5a25e817bfe9 |
+| Plan                          | Number of days that data is available for seach | Number of users per plan | Plan Name |Plan ID |
+|-------------------------------|-------------------------------------------------|--------------------------|-----------|--------|
+| `HIPAA 30 day Event Search`   | 30                    | 25                       | `hipaa-30-day` | 254d26dc-3ef5-4006-912c-954186a0d033 |
+| `30 day Event Search`         | 30                    | Unlimitted               | `30-day` | e914263e-8b62-475e-8206-938e3a31ad26 |
+| `14 day Event Search`         | 14                     | Unlimitted               | `14-day` | b7f77c86-adde-4e32-8a1b-daba35b1d4fa |
+| `7 day Event Search`          | 7                      | Unlimitted               | `7-day` | 9aae7491-5cb6-43eb-9b7a-3e0456c781f0 |
+| `Lite`   `[*]`                | Data is not available for search    | 1            | `lite`            | 6efc5a58-4289-4632-867f-5a25e817bfe9 |
 {: caption="Table 1. List of service plans" caption-side="top"} 
 
 `[*]` In the lite plan, the log line is not formatted.
