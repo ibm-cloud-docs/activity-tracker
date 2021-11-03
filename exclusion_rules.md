@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-10-21"
 
 keywords:  IBM, activity tracker
 
@@ -12,7 +12,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Excluding data by using exclusion rules in the web UI
+# Excluding data by using exclusion rules
 {: #exclusion_rules}
 
 In an {{site.data.keyword.at_full_notm}} instance, you can configure exclusion rules through the UI to stop events from counting against your data usage quota and from being stored for search.
@@ -21,10 +21,17 @@ In an {{site.data.keyword.at_full_notm}} instance, you can configure exclusion r
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
-Complete the following steps to define an exclusion rule:
+## Prereqs
+{: #exclusion_rules_prereqs}
 
 You must have manager access to define exclusion rules.
 {: note}
+
+
+## Configuring an exclusion rule through the UI
+{: #exclusion_rules_ui}
+
+Complete the following steps to define an exclusion rule:
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/activity-tracker?topic=activity-tracker-launch).
 

@@ -327,7 +327,6 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.databases-for-cassandra_full_notm}}         | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.databases-for-elasticsearch_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.databases-for-etcd_full_notm}}              | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.databases-for-mongodb_full_notm}}           | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.databases-for-postgresql_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg)`               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}        | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}        | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
@@ -349,7 +348,6 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.databases-for-cassandra_full_notm}}         | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Tokyo instance` | ![Checkmark icon](images/checkmark-icon.svg) |               |
 | {{site.data.keyword.databases-for-elasticsearch_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Tokyo instance` | ![Checkmark icon](images/checkmark-icon.svg) |               |
 | {{site.data.keyword.databases-for-etcd_full_notm}}              | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Tokyo instance` | ![Checkmark icon](images/checkmark-icon.svg) |               |
-| {{site.data.keyword.databases-for-mongodb_full_notm}}           | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Tokyo instance` | ![Checkmark icon](images/checkmark-icon.svg) |               |
 | {{site.data.keyword.databases-for-postgresql_full_notm}}        | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Tokyo instance` | ![Checkmark icon](images/checkmark-icon.svg) |               |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}          |                 | `Events are available through the Dallas instance`             |                       |                       |               |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}       |                 | `Events are available through the Dallas instance`             |                       |                       |               |
@@ -371,7 +369,6 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.databases-for-cassandra_full_notm}}         | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)            | `Events are available through the London instance` |
 | {{site.data.keyword.databases-for-elasticsearch_full_notm}}   | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)            | `Events are available through the London instance` |
 | {{site.data.keyword.databases-for-etcd_full_notm}}            | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)            | `Events are available through the London instance` |
-| {{site.data.keyword.databases-for-mongodb_full_notm}}         | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)            | `Events are available through the London instance` |
 | {{site.data.keyword.databases-for-postgresql_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)            | `Events are available through the London instance` |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}        | ![Checkmark icon](images/checkmark-icon.svg)  |    |    |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}     | ![Checkmark icon](images/checkmark-icon.svg)   |    |    |
@@ -400,6 +397,7 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.bplong}}                   |  ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Dallas instance`  |
 | {{site.data.keyword.en_full}}         | ![Checkmark icon](images/checkmark-icon.svg)   |                     | 
+| {{site.data.keyword.appconfig_full}}         | ![Checkmark icon](images/checkmark-icon.svg)   |                     | 
 {: caption="Table 10. Developer tools services integration in America's locations" caption-side="top"}
 {: #cs-dev-tools-table-1}
 {: tab-title="America"}
@@ -415,6 +413,7 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) |  | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.bplong}}                   |   |   |   |
 | {{site.data.keyword.en_full}}                   |   |   | ![Checkmark icon](images/checkmark-icon.svg)   |
+| {{site.data.keyword.appconfig_full}}                   |   |   | ![Checkmark icon](images/checkmark-icon.svg)   |
 {: caption="Developer tools services integration in AP locations" caption-side="top"}
 {: #cs-dev-tools-table-2}
 {: tab-title="Asia Pacific"}
@@ -430,6 +429,7 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.bplong}}                   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Frankfurt instance` | 
 | {{site.data.keyword.en_full}}                  | | ![Checkmark icon](images/checkmark-icon.svg)  |   
+| {{site.data.keyword.appconfig_full}}                  | | ![Checkmark icon](images/checkmark-icon.svg)  | 
 {: caption="Table 10. Developer tools services integration in Europe locations" caption-side="top"}
 {: #cs-dev-tools-table-3}
 {: tab-title="Europe"}

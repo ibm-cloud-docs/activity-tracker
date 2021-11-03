@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-10-26"
 
 keywords: IBM Cloud, Activity Tracker, streaming
 
@@ -42,7 +42,9 @@ If you have any regulatory requirement for data residency and compliance needs, 
 ## Configure streaming
 {: #streaming-1}
 
-For information on how to configure streaming, see [Configuring streaming](/docs/activity-tracker?topic=activity-tracker-streaming-configure).
+For information on how to configure streaming, see the following topics:
+- [Configuring streaming through the UI](/docs/activity-tracker?topic=activity-tracker-streaming-configure).
+- [Configuring streaming by using the API](/docs/activity-tracker?topic=activity-tracker-streaming-manage-api#streaming-api-conf)
 
 In addition, consider the following information:
 - You must have the **manager** role to configure streaming in the {{site.data.keyword.at_full_notm}} instance. This role includes the **logdna.dashboard.manage** IAM action role that allows a user to perform admin tasks such as configure streaming.

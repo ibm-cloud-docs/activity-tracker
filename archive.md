@@ -13,7 +13,7 @@ subcollection: activity-tracker
 {{site.data.keyword.attribute-definition-list}}
 
  
-# Archiving events to IBM Cloud Object Storage
+# Archiving events through the UI
 {: #archiving}
 
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. 
@@ -22,28 +22,27 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
+For more information about archiving, see [Archiving events to {{site.data.keyword.cos_full_notm}}](/docs/activity-tracker?topic=activity-tracker-archiving-ov).
+
+
 Complete the following steps to archive an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} instance:
 
-## Prerequisites
+
+## Prerequisites on the {{site.data.keyword.at_full_notm}} service
 {: #archiving_prereqs}
-
-* The following figure shows a high-level view of the different components that are integrated when archiving events:
-
-    ![High-level view archiving events](images/archive.png "High-level view archiving events")
-
-    [Learn more about archiving events](/docs/services/activity-tracker?topic=activity-tracker-manage_events#manage_events_archive).
 
 * **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-service_plan#service_plan). 
 
-* Check that your user ID has permissions to launch the web UI and manage events. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and view, search, and filter events:
+* Check that your user ID has permissions to launch the web UI and configure archiving. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and configure archiving through the UI or by using the API:
 
 | Role                      | Permission granted            |
 |---------------------------|-------------------------------|  
 | Platform role: `Viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
-| Service role: `Manager`      | Allows the user to launch the web UI and manage events in the web UI.  |
+| Service role: `Manager`      | Allows the user to launch the web UI and configure archiving through the web UI or by using the API.  |
 {: caption="Table 1. IAM roles" caption-side="top"} 
 
 For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
+
 
 
 ## Step 1. Grant IAM policies to a user to work with {{site.data.keyword.cos_full_notm}}
@@ -304,4 +303,5 @@ Complete the following steps to configure archiving of your {{site.data.keyword.
 Notice that when you save the configuration, you can get a message that informs you that the configuration has been saved successfully. When you get this message, the integration between the logging instance and the bucket is verified. A test to upload and delete an object from the bucket is completed successfully. 
 
 If you get an error when you save the configuration, the verification process fails. Check your configuration and retry again. 
+
 

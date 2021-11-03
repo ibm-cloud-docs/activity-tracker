@@ -49,13 +49,16 @@ toc:
   - navgroup: 
       id: howto
       topics:
-      - provision.md
-      - provision_hipaa.md
-      - upgrade.md
-      - remove.md
       - observe.md
-      - view_events.md
-      - views.md 
+
+      - topicgroup: 
+          label: Provisioning
+          topics:
+          - provision.md
+          - provision_hipaa.md
+          - terraform/terraform-setup.md
+          - upgrade.md
+          - remove.md
       
       - topicgroup: 
           label: Controlling access
@@ -67,16 +70,39 @@ toc:
           - iam_view_events.md
       
       - topicgroup: 
-          label: DevOps admin tasks
+          label: Archiving
           topics:
+          - archiving-ov.md
           - archive.md
-          - control_usage.md
-          - parsing.md
-          - exclusion_rules.md
-          - service_keys.md
-          - reuse_resource_definitions.md
+          - archiving-manage-api.md
           - sqlquery.md
+          - archiving-at-monitor.md
+          - archiving-monitor.md
+
+      - topicgroup: 
+          label: Managing costs and data
+          topics:
+          - control_usage.md
+          - exclusion_rules.md
+          - control_usage_alert.md
+
+      - topicgroup: 
+          label: Managing keys
+          topics:
+          - service_keys.md
+          - atracker/retrieve-iam-token.md
+
+      - topicgroup: 
+          label: Managing resources
+          topics:
+          - reuse_resource_definitions.md
       
+      - topicgroup: 
+          label: Monitoring Cloud resources
+          topics:
+          - alerts/alerts_configuration.md
+          - analyze/iam_manage_login.md
+
       - topicgroup: 
           label: Enhancing security
           topics:
@@ -97,20 +123,11 @@ toc:
           - at_events.md
           - atracker/platform_metrics.md
       
-      - manage_events.md
       - atracker/endpoints_manage.md
       - atracker/target.md
       - atracker/route.md
       - atracker/cos.md
       - atracker/config_report.md
-      
-      - topicgroup: 
-          label: Monitoring activity
-          topics:
-          - analyze/iam_manage_login.md
-      
-      - alerts/alerts_configuration.md
-      - atracker/retrieve-iam-token.md
       
       - topicgroup: 
           label: Streaming data
@@ -127,7 +144,15 @@ toc:
           - launch.md
           - config.md
           - get_web_url.md
+
+      - topicgroup: 
+          label: Working with events
+          topics:
+          - manage_events.md
           - monitor_events.md
+          - view_events.md
+          - parsing.md
+          - views.md 
       
       - topicgroup: 
           label: Working with alerts
@@ -141,6 +166,7 @@ toc:
           - pagerduty.md
           - alerts/monitoring.md
           - alerts/sms.md
+          - alerts/webhook.md
   
   - navgroup: 
       id: reference

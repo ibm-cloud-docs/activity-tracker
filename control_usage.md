@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-10-21"
 
 keywords: IBM Cloud, Activity Tracker, usage
 
@@ -26,12 +26,12 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 ## Controlling data by using exclusion rules
 {: #control_usage_rule}
 
-You can configure exclusion rules through the UI to stop events from counting against your data usage quota and from being stored for search.
+You can configure exclusion rules through the UI to stop events from counting against your data usage quota and from being stored for long term storage.
 
 Events that are excluded do not count towards your data usage quota. Also, events that match the exclusion rule are not archived.
 {: note}
 
-When you exclude events through an exclusion rule, you can choose to **Preserve these lines for live-tail and alerting**. When you check this option, log lines that match the exclusion rule are shown through the live tail and you can set up an alert for that data.
+When you exclude events through an exclusion rule, you can choose to **Preserve these lines for live-tail and alerting**. When you check this option, log lines that match the exclusion rule are shown through the live tail and you can set up an alert for that data. These lines show as `(not retained)`.
 
 [Learn more](/docs/activity-tracker?topic=activity-tracker-exclusion_rules).
 
@@ -43,20 +43,6 @@ When you exclude events through an exclusion rule, you can choose to **Preserve 
 
 In a {{site.data.keyword.at_full_notm}} instance, you can define an alert to notify when the data usage in the instance reaches the data usage threshold that you set for the instance.
 
-Complete the following steps to configure an alert that informs you when you reach a specific data volume in the instance.
-
-You must have manager access to configure data threshold alerts.
-{: note}
-
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/activity-tracker?topic=activity-tracker-launch).
-
-2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Usage**.
-
-    In the **Dashboard** section, you can see your data usage.
-
-3. Define a **Usage Alert** to set the **Usage Limit** threshold for data usage in the instance. When the usage reaches the percentage of the threshold you selected, the email recipient will be notified. 
-
-4. In the **Add recipient** section, enter one or more emails where the notification will be sent.
-
+[Learn more](/docs/activity-tracker?topic=activity-tracker-control_usage_alert).
 
 

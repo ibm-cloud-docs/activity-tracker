@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-11-03"
 
 keywords: IBM Cloud, Activity Tracker, streaming
 
@@ -12,7 +12,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Configuring streaming
+# Configuring streaming through the UI
 {: #streaming-configure}
 
 
@@ -28,11 +28,21 @@ See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streamin
 ## Prereqs
 {: #streaming-configure-prereqs}
 
-* [Create an {{site.data.keyword.messagehub}} instance.](/docs/EventStreams?topic=EventStreams-connecting#provision_instance).
+* Create an {{site.data.keyword.messagehub}} instance.
+
+    a. Log in to the {{site.data.keyword.cloud_notm}} console.
+  
+    b. Click the [{{site.data.keyword.messagehub}} service](../../icons/launch-glyph.svg  icon")](https://cloud.ibm.com/catalog/event-streams){:  external} in the **Catalog**.
+  
+    c. Select the plan on the service instance page.
+  
+    d. Enter a name for your service. You can use the default value.
+  
+    e. Click **Create**. The {{site.data.keyword.messagehub}} **Getting started** page opens. 
+
 * Check the limitations of the service plans. For more information, see [Limits and quotas](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-kafka_quotas).
 
-The instructions on this topic are based on using an Enterprise plan.
-{: note}
+
 
 ## Step 1. Create a topic in {{site.data.keyword.messagehub}}
 {: #streaming-step1-1}
@@ -47,7 +57,7 @@ Complete the following steps to create an Event Streams topic:
 
 3. Look for the {{site.data.keyword.messagehub}} instance that you plan to use, and select it.
 
-4. In the {{site.data.keyword.messagehub}} instance console, click **Manage** &gt; **Launch Dashboard**.
+4. Select **Topics**.
 
 5. Click **Create a topic**. 
 
@@ -107,7 +117,9 @@ To restrict access to 1 topic, complete the following steps:
 
     ![Select Role](images/streaming-credentials-3.png "Select Role") 
 
-5. [Get credentials using the IBM Cloud CLI](/docs/EventStreams?topic=EventStreams-connecting#connect_enterprise_external_cli) and make note of the api key and broker URL values.
+
+You can [get credentials by using the {{site.data.keyword.cloud_notm}} CLI](/docs/EventStreams?topic=EventStreams-connecting#connect_enterprise_external_cli) and make note of the api key and broker URL values.
+{: note}
 
 
 ## Step 3. Configure the connection in {{site.data.keyword.at_short}} to {{site.data.keyword.messagehub}}
@@ -149,7 +161,7 @@ To verify that sample data is streaming, you can use {{site.data.keyword.mon_ful
 1. Check that you have an instance of {{site.data.keyword.mon_short}} in the same region as your {{site.data.keyword.messagehub}} instance. This instance must be configured to collect platform metrics. For more information, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling).
 2. [Launch the {{site.data.keyword.mon_short}} UI](/docs/monitoring?topic=monitoring-launch).
 3. In the **Dashboards** section, go to **Dashboard templates** and select the template **IBM Event Streams (Enterprise)**.
-4. Create a copy of the temnplate by clicking **Create custom dashboard**.
+4. Create a copy of the template by clicking **Create custom dashboard**.
 5. Edit the panel *Topic bytes in per second*. 
 
     ![Edit panel.](images/streaming-topic-metric.png "Edit panel") 
@@ -167,6 +179,9 @@ If you do not see data, do 1 of the following:
 
 
 If you see data, click **YES**.
+
+After you provision an instance of {{site.data.keyword.messagehub}}, the {{site.data.keyword.mon_short}} dashboard may take up to 15 mins to show.
+{: note}
 
 ## Step 5. Start streaming
 {: #streaming-step1-5}

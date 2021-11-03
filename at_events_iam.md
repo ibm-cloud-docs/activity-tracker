@@ -91,7 +91,7 @@ The following table lists the actions that generate an event:
 
 | Action                      | Description |
 |-----------------------------|-------------|
-| `iam-identity.account-profile.create`.  | An event is generated when an initiator creates a trusted profile. |
+| `iam-identity.account-profile.create`  | An event is generated when an initiator creates a trusted profile. |
 | `iam-identity.account-profile.update`   | An event is generated when an initiator updates a trusted profile. |
 | `iam-identity.account-profile.delete`   | An event is generated when an initiator deletes a trusted profile. |
 {: caption="Table 5. Events that are generated for access groups" caption-side="top"} 
