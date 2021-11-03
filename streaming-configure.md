@@ -135,9 +135,12 @@ Complete the following steps to configure the connection in {{site.data.keyword.
 
     1. In the **Username** field, enter the value **token**.
 
-    2. In the **Password** field, enter the API key that is associated with the service credential that you want to use to authenticate {{site.data.keyword.at_short}} with {{site.data.keyword.messagehub}}.
+    2. In the **Password** field, enter the `api_key` that is associated with the service credential that you want to use to authenticate {{site.data.keyword.at_short}} with {{site.data.keyword.messagehub}}.
 
-    3. In the **Kafka URLs** section, enter te `kafka_brokers_sasl` values that are listed in the service credential. Enter each URL as an individual line.
+    3. In the **Kafka URLs** section, enter the `kafka_brokers_sasl` values that are listed in the service credential. 
+    
+        You must enter each URL as an individual line.
+        {: note}
 
     4. Enter the name of a topic.
     
