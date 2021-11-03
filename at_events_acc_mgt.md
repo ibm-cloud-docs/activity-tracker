@@ -2,6 +2,7 @@
 
 copyright:
   years: 2019, 2021
+
 lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, account events, catalog, tags, software instance
@@ -93,7 +94,8 @@ The following tables list the actions that generate an event:
 | `globalcatalog-collection.offering.create`         | An event is generated when you create a product.          |
 | `globalcatalog-collection.offering.update`         | An event is generated when you update a product.          |
 | `globalcatalog-collection.offering.delete`         | An event is generated when you delete a product.          |
-{: caption="Table 5. Actions that generate events for products in a private catalog" caption-side="top"}
+{: caption="Table 5. Actions that generate product catalog management events" caption-side="top"}
+
 
 ### Events for managing catalog settings at the account level
 {: #at_events_catalog_5}
@@ -102,7 +104,8 @@ The following tables list the actions that generate an event:
 |--------------------------------------------------|-----------------------------------------------------------------------|
 | `globalcatalog-collection.account-settings.read`   | An event is generated when you view the account settings.   | 
 | `globalcatalog-collection.account-settings.update` | An event is generated when you update the account settings. |
-{: caption="Table 6. Actions that generate events related to catalog management settings" caption-side="top"}
+{: caption="Table 6. Actions that generate account settings management events" caption-side="top"}
+
 
 ### Events for managing catalog settings in enterprise accounts
 {: #at_events_catalog_4}
@@ -112,7 +115,8 @@ The following tables list the actions that generate an event:
 | `globalcatalog-collection.enterprise-settings.read` | An event is generated when you view the enterprise settings. |
 | `globalcatalog-collection.enterprise-settings.update` | An event is generated when you update the enterprise settings. |
 | `globalcatalog-collection.enterprise-settings.list` | An event is generated when you get a list of the enterprises in an account and their corresponding settings. | 
-{: caption="Table 7. Actions that generate events related to catalog management settings in enterprise accounts" caption-side="top"}
+{: caption="Table 7. Actions that generate enterprise account settings management events" caption-side="top"}
+
 
 ### Events for managing software licenses and entitlements
 {: #at_events_catalog_entitlement}
@@ -127,7 +131,8 @@ The following table lists the actions that generate an event:
 | `entitlement.entitlement.update`       | An event is generated when an initiator updates an entitlement. |
 | `entitlement.entitlement.check`        | An event is generated when an initiator uses an entitlement to pull an image from the governed IBM Container Registry. |
 | `entitlement.entitlement.invalidate`   | An event is generated when an entitlement's license is not valid anymore. |
-{: caption="Table 8. Actions that generate events related to licenses and entitlements" caption-side="top"}
+{: caption="Table 8. User entitlement actions" caption-side="top"}
+
 
 ## Events for managing IAM account settings
 {: #at_events_acc_mgt_acc_iam}
@@ -143,7 +148,8 @@ The following table lists the actions that are generated when an account setting
 | `iam-identity.accountsettings.update`      | An event is generated when an initiator modifies 1 or more of the following account settings: `Multifactor authentication (MFA)`, `Restrict API key creation`, `Restrict service ID creation`, and `Restrict IP address access`. |
 | `iam-groups.account-settings.update` | An event is generated when an initiator modifies the account setting `Public access group`. |
 | `billing.account-traits.update`      | An event is generated when an initiator modifies the account setting `Restrict user list visibility`. |
-{: caption="Table 9. Actions that generate events when the account settings are changed" caption-side="top"} 
+{: caption="Table 4. Actions that generate events when the account settings are changed" caption-side="top"} 
+
 
 
 The following table lists the `requestData` fields that report the configuration changes:
@@ -151,16 +157,17 @@ The following table lists the `requestData` fields that report the configuration
 | Action                                                         | Description | 
 |----------------------------------------------------------------|-------------|
 | `requestData.public_access_enabled`                            | Reports the boolean value that is set when the `Public access group` setting is modified. |
-| `requestData.request_body.old_mfa_traits`                      | Reports the original value for the `Multifactor authentication (MFA)` setting. Valid values are `NONE`, `TOTP`, `TOTP4ALL`, `LEVEL1`, `LEVEL2`, `LEVEL3`   \n  \n This field is set to `NONE` when MFA is not enabled in the account, and all users log in by using a standard ID and password.   \n  \n This field is set to `TOTP` when the account requires MFA for non-federated users only users with an IBMid. Users are required an ID, password, and a time-based one-time passcode to log in.   \n  \n This field is set to `TOTP4ALL` when the account requires MFA for all users with an IBMid.   \n  \n This field is set to `LEVEL1` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `email-based MFA`. Users must authenticate by using a security passcode that is sent via email.     \n  \n This field is set to `LEVEL2` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `TOTP MFA`. Users authenticate by using a time-based one-time passcode (TOTP) that uses the current time of day as an authentication factor.   \n  \n This field is set to `LEVEL3` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `U2F MFA`. Users authenticate by using a hardware security key that generates a six-digit numerical code. |
+| `requestData.request_body.old_mfa_traits`                      | Reports the original value for the `Multifactor authentication (MFA)` setting. </br>Valid values are `NONE`, `TOTP`, `TOTP4ALL`, `LEVEL1`, `LEVEL2`, `LEVEL3` </br>This field is set to `NONE` when MFA is not enabled in the account, and all users log in by using a standard ID and password. </br>This field is set to `TOTP` when the account requires MFA for non-federated users only users with an IBMid. Users are required an ID, password, and a time-based one-time passcode to log in. </br>This field is set to `TOTP4ALL` when the account requires MFA for all users with an IBMid. </br>This field is set to `LEVEL1` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `email-based MFA`. Users must authenticate by using a security passcode that is sent via email. </br>This field is set to `LEVEL2` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `TOTP MFA`. Users authenticate by using a time-based one-time passcode (TOTP) that uses the current time of day as an authentication factor. </br>This field is set to `LEVEL3` to enable MFA for all users (IBMid & supported IdPs) when you choose the method `U2F MFA`. Users authenticate by using a hardware security key that generates a six-digit numerical code. |
 | `requestData.request_body.new_mfa_traits`                      | Reports the new value for the `Multifactor authentication (MFA)` setting. |
-| `requestData.request_body.old_restrict_create_platform_apikey` | Reports the original value for the `Restrict API key creation` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
-| `requestData.request_body.new_restrict_create_platform_apikey` | Reports the new value for the `Restrict API key creation` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
-| `requestData.request_body.old_restrict_create_service_id`      | Reports the original value for the `Restrict service ID creation` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
-| `requestData.request_body.new_restrict_create_service_id`      | Reports the new value for the `Restrict service ID creation` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
-| `requestData.request_body.old_allowed_ip_addresses`            | Reports the original value for the `Restrict IP address access` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
-| `requestData.request_body.new_allowed_ip_addresses`            | Reports the new value for the `Restrict IP address access` setting.   \n Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.old_restrict_create_platform_apikey` | Reports the original value for the `Restrict API key creation` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.new_restrict_create_platform_apikey` | Reports the new value for the `Restrict API key creation` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.old_restrict_create_service_id`      | Reports the original value for the `Restrict service ID creation` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.new_restrict_create_service_id`      | Reports the new value for the `Restrict service ID creation` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.old_allowed_ip_addresses`            | Reports the original value for the `Restrict IP address access` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
+| `requestData.request_body.new_allowed_ip_addresses`            | Reports the new value for the `Restrict IP address access` setting. </br>Valid values: `NOT_RESTRICTED` and `RESTRICTED` |
 | `requestData.team_directory_enabled`                           | Reports the boolean value that is set when the `Restrict user list visibility` setting is modified. |
-{: caption="Table 10. Actions that generate events when the account settings are changed" caption-side="top"} 
+{: caption="Table 5. Actions that generate events when the account settings are changed" caption-side="top"} 
+
 
 
 The following table lists the `deprecated` actions that generate an event when an account setting that is controlled from the **Manage** &gt; **Access IAM** &gt; **Settings** dashboard is modified:
@@ -170,7 +177,24 @@ The following table lists the `deprecated` actions that generate an event when a
 | `billing.account-traits.update`      | An event is generated when an account setting is modified. |
 | `billing.account-mfa.set-on`         | An event is generated when the `Account Login` setting sets on multifactor authentication in the account. |
 | `billing.account-mfa.set-off`        | An event is generated when the `Account Login` setting sets off multifactor authentication in the account. |
-{: caption="Table 11. Actions that generate events when the account settings are changed" caption-side="top"} 
+{: caption="Table 6. Actions that generate events when the account settings are changed" caption-side="top"} 
+
+## Events for managing software instances
+{: #at_events_sw-instance}
+
+The following table lists the actions that generate an event for software instances:
+
+| Action                                           | Description                                                           | 
+|--------------------------------------------------|-----------------------------------------------------------------------|
+| `globalcatalog-instance.offering-instance.create` | An event is generated when you create a software instance. |
+| `globalcatalog-instance.offering-instance.delete` | An event is generated when you delete a software instance. |
+| `globalcatalog-instance.offering-instance.list` | An event is generated when you list all software instances in an account. |
+| `globalcatalog-instance.offering-instance.read` | An event is generated when you retrieve a software instance. |
+| `globalcatalog-instance.offering-instance.retrieve_history` | An event is generated when you access the audit logs for a software instance. |
+| `globalcatalog-instance.offering-instance.update` | An event is generated when you install updates to a software instance. | 
+| `globalcatalog-instance.dashboard.view` | An event is generated when you access the software instance details page. |
+{: caption="Table 7. Actions that generate events for software instances" caption-side="top"}
+
 
 ## Events for managing organizations
 {: #at_events_acc_mgt_org}
@@ -180,7 +204,7 @@ The following table lists the actions that generate an event:
 | Action                               | Description |
 |--------------------------------------|-------------|
 | `billing.account-org.create`         | An event is generated when you add an organization to the account. |
-{: caption="Table 12. Actions that generate events" caption-side="top"} 
+{: caption="Table 8. Actions that generate events" caption-side="top"} 
 
 ## Events for managing software instances
 {: #at_events_sw_instance}
@@ -196,7 +220,7 @@ The following table lists the actions that generate an event for software instan
 | `globalcatalog-instance.offering-instance.retrieve_history` | An event is generated when you access the audit logs for a software instance. |
 | `globalcatalog-instance.offering-instance.update` | An event is generated when you install updates to a software instance. | 
 | `globalcatalog-instance.dashboard.view` | An event is generated when you access the software instance details page. |
-{: caption="Table 13. Actions that generate events for software instances" caption-side="top"}
+{: caption="Table 9. Actions that generate events for software instances" caption-side="top"}
 
 ## Events for managing tags
 {: #at_events_acc_mgt_resources}
@@ -210,11 +234,12 @@ The following table lists the actions that generate an event:
 | `global-search-tagging.tags.delete`             | An event is generated when you delete all the tags that are not attached to resources in your account.  |
 | `<service-name>.tag.attach`                     | An event is generated when you associate a tag to a resource. |
 | `<service-name>.tag.detach`                     | An event is generated when you remove a tag from a resource.  |
-{: caption="Table 14. Actions that generate events" caption-side="top"} 
+{: caption="Table 10. Actions that generate events" caption-side="top"} 
 
 When an access tag is created, you get an event with `global-search-tagging.tag.create`.
 
 When an access tag is attached to a resource you get the event `<service-name>.tag.attach`.
+
 
 
 ## Events for managing users
@@ -229,7 +254,8 @@ The following table lists the actions that generate an event:
 | `user-management.user.update`        | An event is generated when log in configurations are modified for a user from the {{site.data.keyword.cloud_notm}} UI. |
 | `user-management.user.delete`        | An event is generated when you remove a user from the account. |
 | `user-management.user-setting.update` | An event is generated when you update the user's login configuration settings: User one-time passcode authentication ,Require MFA security questions at login, User-managed login or Setting up security questions |
-{: caption="Table 15. Actions that generate events" caption-side="top"} 
+{: caption="Table 11. Actions that generate events" caption-side="top"} 
+
 
 
 ## Where to look for the events
