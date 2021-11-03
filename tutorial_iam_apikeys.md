@@ -244,11 +244,11 @@ Complete the following steps to configure a dashboard:
 7. Click the **expand** icon ![Expand icon](images/expand.png). Choose the breakdown type *histogram*.
 8. Select the field to distribute the data in the histogram. Choose **action**. Then, click **Add breakdown**. You see entries for each action of type *iam-identity.user-apikey* that has data in the time interval that you selected.
 
-    ![Plus icon](images/sample_dashboard.png)
+    ![Histogram example](images/sample_dashboard.png)
 
 9. Select a line entry in the histogram to see the total number of records in that time interval.
 
-    ![Plus icon](images/dashboard_sample_1.png)
+    ![Line entry example](images/dashboard_sample_1.png)
 
 10. Click **Edit** to enter the name of the dashboard. Optionally, you can also create or add the dahboard to a category. Click **Save**.
 

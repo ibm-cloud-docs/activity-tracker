@@ -108,6 +108,9 @@ Next, go to the web UI to manage events in your account. [Learn more](/docs/serv
 
 Complete the following steps:
 
+### Step 1. Provision the instance
+{: #provision_cli_1}
+
 1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI. [Learn more](/docs/cli?topic=cli-install-ibmcloud-cli).
 
 2. Log in to the location in the {{site.data.keyword.cloud_notm}} where you want to provision the instance. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
@@ -121,7 +124,7 @@ Complete the following steps:
 4. Create the instance. Run the [ibmcloud resource service-instance-create](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command:
 
     ```text
-    ibmcloud resource service-instance-create NAME at_service SERVICE_PLAN_NAME LOCATION
+    ibmcloud resource service-instance-create NAME logdnaat SERVICE_PLAN_NAME LOCATION
     ```
     {: codeblock}
 
@@ -129,17 +132,39 @@ Complete the following steps:
 
     * NAME is the name of the instance
 
-    * The value *at_service* is the name of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}
-
     * SERVICE_PLAN_NAME is the type of plan. Valid values are *lite*, *7-day*, *14-day*, *30-day*
     
     * LOCATION is the region where the logging instance is created. To get the latest list of locations that are available for the {{site.data.keyword.at_full_notm}} service, see [Locations](/docs/services/activity-tracker?topic=activity-tracker-regions).
 
     
-For example, to provision an instance with the 7 days retention plan, run the following command:
+    For example, to provision an instance with the 7 days retention plan, run the following command:
+
+    ```text
+    ibmcloud resource service-instance-create my-instance logdnaat 7-day us-south
+    ```
+    {: codeblock}
+
+### Step 2. Create the credentials for your instance
+{: #provision_cli_2}
+
+Run the following command to create a service ID:
 
 ```text
-ibmcloud resource service-instance-create logging-instance-01 at_service 7-day us-south
+ibmcloud resource service-key-create NAME ROLE_NAME --instance-name SERVICE_INSTANCE_NAME
 ```
-{: codeblock}
+{: pre}
+
+Where 
+
+* `SERVICE_INSTANCE_NAME` is the name of the instance that you provisioned in the previous step.
+* `NAME` is the name of the service ID. Use the following format to name the key **<SERVICE_INSTANCE_NAME>-key-admin**
+* `ROLE_NAME` is the permission that you grant this service ID. Set it to **Manager**.
+
+ 
+For example, you can run the following command:
+
+```text
+ibmcloud resource service-key-create my-instance-key-admin Manager --instance-name my-instance
+```
+{: pre}
 

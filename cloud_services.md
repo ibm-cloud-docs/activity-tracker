@@ -2,7 +2,9 @@
 
 copyright:
   years: 2019, 2021
+
 lastupdated: "2021-09-23"
+
 
 keywords: IBM Cloud, {{site.data.keyword.atracker_short}} event routing, security, auditing, services, {{site.data.keyword.at_short}} hosted event search offering
 
@@ -162,6 +164,8 @@ The following table lists platform services that send auditing events:
 | [Software instances](/docs/account?topic=account-sw-instance-details) | `globalcatalog-instance` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_catalog_management) |
 {: caption="Table 9. List of platform services" caption-side="top"}
 
+
+
 For example, the following table lists core security actions that send events to {{site.data.keyword.at_full_notm}}:
 
 | Service     | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
@@ -209,6 +213,8 @@ The following table lists storage services that send auditing events:
 * {{site.data.keyword.mdms_short}} generates global events only, for each transition of the order state.
 
 
+
+
 ## VMware Solutions
 {: #vmware_solutions}
 
@@ -252,7 +258,7 @@ The following table lists serverless compute services that send auditing events:
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=openwhisk-getting-started) | `functions` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/openwhisk?topic=openwhisk-at_events) |
-| [{{site.data.keyword.codeenginefull}}](/docs/codeengine?topic=codeengine-getting-started)| `codeengine`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/codeengine?topic=codeengine-at_events) |
+| [{{site.data.keyword.codeenginefull}}](/docs/codeengine?topic=codeengine-getting-started)| `codeengine`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events](/docs/codeengine?topic=codeengine-at_events) |
 {: caption="Table 4. List of serverless compute services" caption-side="top"}
 
 ## Cloud Foundry applications

@@ -23,8 +23,6 @@ toc:
           - atracker/getting-started-routing.md
           - getting-started-search.md
       
-      - releasenotes.md
-      
       - topicgroup: 
           label: Cloud services
           topics:
@@ -44,7 +42,10 @@ toc:
           topics:
           - adoption.md
           - manage_eu_acc.md
-
+      
+      - topic: releasenotes.md
+        navtitle: Release notes
+  
   - navgroup: 
       id: howto
       topics:
@@ -118,6 +119,7 @@ toc:
           - streaming-configure.md
           - streaming-monitor.md
           - streaming-conditional.md
+          - streaming-manage-api.md
       
       - topicgroup: 
           label: UI
@@ -168,11 +170,17 @@ toc:
                 label: Activity Tracker Export API
                 href: https://{DomainName}/apidocs/activity-tracker#export
             - link:
-                label: Activity Tracker Configuration API
+                label: Activity Tracker Archiving API
+                href: https://{DomainName}/apidocs/activity-tracker#get-v1-config-archiving
+            - link:
+                label: Activity Tracker Alerts and views API
                 href: https://{DomainName}/apidocs/activity-tracker#create-view
             - link:
                 label: Activity Tracker Streaming API
                 href: https://{DomainName}/apidocs/activity-tracker#post-v1-config-stream
+            - link:
+                label: Activity Tracker Groups API
+                href: https://{DomainName}/apidocs/activity-tracker#create-group
   
       - topicgroup: 
           label: Events
@@ -191,6 +199,7 @@ toc:
         - topicgroup: 
             label: Troubleshooting
             topics:  
+            - troubleshoot-04.md
             - atracker/troubleshoot-01.md
             - atracker/troubleshoot-02.md
             - atracker/troubleshoot-03.md
