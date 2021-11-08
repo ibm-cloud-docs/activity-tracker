@@ -167,6 +167,7 @@ toc:
           - alerts/monitoring.md
           - alerts/sms.md
           - alerts/webhook.md
+          - alerts/slack.md
   
   - navgroup: 
       id: reference
