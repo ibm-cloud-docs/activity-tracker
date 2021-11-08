@@ -13,7 +13,7 @@ subcollection: activity-tracker
 {{site.data.keyword.attribute-definition-list}}
 
  
-# Archiving events through the UI
+# Configuring archiving through the UI
 {: #archiving}
 
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. 
