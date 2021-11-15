@@ -42,7 +42,7 @@ The following table lists services that send auditing events:
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.BluVirtServers_full}} (Classic)](/docs/vsi?topic=virtual-servers-about-virtual-servers#about-virtual-servers)| `audit-log` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  [Location-based events](/docs/vsi?topic=virtual-servers-at_events#at_events) |
 | [{{site.data.keyword.baremetal_long}} (Classic)](/docs/bare-metal?topic=bare-metal-about-bm#about-bm) | `audit-log` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/bare-metal?topic=bare-metal-bm-at-events#bm-at-events) |
-
+{: caption="Table 2. List of classic services" caption-side="top"}
 
 
 
@@ -58,9 +58,9 @@ The following table lists serverless compute services that send auditing events:
 
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
-| [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=openwhisk-getting-started) | `functions` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/openwhisk?topic=openwhisk-at_events) |
-| [{{site.data.keyword.codeenginefull}}](/docs/codeengine?topic=codeengine-getting-started)| `codeengine`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events](/docs/codeengine?topic=codeengine-at_events) |
-{: caption="Table 4. List of serverless compute services" caption-side="top"}
+| [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=openwhisk-getting-started) | `functions` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/openwhisk?topic=openwhisk-at_events) |
+| [{{site.data.keyword.codeenginefull}}](/docs/codeengine?topic=codeengine-getting-started)| `codeengine`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/codeengine?topic=codeengine-at_events) |
+{: caption="Table 3. List of serverless compute services" caption-side="top"}
 
 
 
@@ -75,7 +75,7 @@ The following table lists container platform services that send auditing events:
 | [{{site.data.keyword.containerlong}}](/docs/containers?topic=containers-getting-started) | `containers-kubernetes` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based event](/docs/containers?topic=containers-at_events) |
 | [{{site.data.keyword.openshiftlong}}](/docs/openshift?topic=openshift-getting-started) | `containers-kubernetes` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based event](/docs/openshift?topic=openshift-at_events) |
 | [{{site.data.keyword.satellitelong}}](/docs/satellite?topic=satellite-getting-started) | `satellite` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/satellite?topic=satellite-at_events) |
-{: caption="Table 3. Container events" caption-side="top"}
+{: caption="Table 4. Container events" caption-side="top"}
 
 `[*]` {{site.data.keyword.registrylong_notm}} generates also global registry events that are available in the region that you configure to collect global auditing events in your account. 
 
@@ -97,10 +97,11 @@ The following table lists database services that send auditing events:
 | [{{site.data.keyword.databases-for-etcd_full_notm}}](/docs/databases-for-etcd?topic=databases-for-etcd-getting-started) | `databases-for-etcd-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|   | [Location-based events](/docs/databases-for-etcd?topic=cloud-databases-activity-tracker) |
 | [{{site.data.keyword.databases-for-elasticsearch_full_notm}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started) | `databases-for-elasticsearch-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|   | [Location-based events](/docs/databases-for-elasticsearch?topic=cloud-databases-activity-tracker) |
 | [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started)  | `messages-for-rabbitmq-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|     | [Location-based events](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker) |
-| [{{site.data.keyword.Db2_on_Cloud_long}}](/docs/Db2onCloud?topic=Db2onCloud-about) | `db2oncloud` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|   | [Events](/docs/Db2onCloud?topic=Db2onCloud-activity-tracker) |
-{: caption="Table 4. List of database services" caption-side="top"}
+| [{{site.data.keyword.Db2_on_Cloud_long}}](/docs/Db2onCloud?topic=Db2onCloud-about) | `db2oncloud` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|   | [Location-based events](/docs/Db2onCloud?topic=Db2onCloud-activity-tracker) |
+| [{{site.data.keyword.dashdblong_notm}}](/docs/Db2whc?topic=Db2whc-getting-started) | `dashdb` | ! `[*]` | `[*]` | [Global events](docs/activity-tracker?topic=activity-tracker-at_events_dashdb) |
+{: caption="Table 5. List of database services" caption-side="top"}
 
-
+`[*]` - Events provided by [BSS - Provisioning](/docs/overview?topic=overview-ui#catalogcreate).
 
 ## Developer tools
 {: #devops}
@@ -112,11 +113,11 @@ The following table lists developer tools and DevOps services that send auditing
 | [{{site.data.keyword.apigw_full}}](/docs/api-gateway?topic=api-gateway-getting-started) | `api-gateway` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/api-gateway?topic=api-gateway-at_events) |
 | [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started)  | `schematics` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/schematics?topic=schematics-at_events) |
 | [Apps](/docs/apps?topic=apps-getting-started) | `developer-experience` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/apps?topic=apps-at_events) |
-| [{{site.data.keyword.cloud-shell_full}}](/docs/cloud-shell?topic=cloud-shell-getting-started) | `cloudshell` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/cloud-shell?topic=cloud-shell-at_events) |
-| [{{site.data.keyword.mobilepushfull}}](/docs/mobilepush?topic=mobilepush-getting-started) | `imfpush` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Events](/docs/mobilepush?topic=mobilepush-at_events#at_actions) |
-| [{{site.data.keyword.en_full}}](/docs/event-notifications?topic=event-notifications-getting-started) | `event-notifications`|![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events](/docs/event-notifications?topic=event-notifications-en-at_events)|
+| [{{site.data.keyword.cloud-shell_full}}](/docs/cloud-shell?topic=cloud-shell-getting-started) | `cloudshell` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/cloud-shell?topic=cloud-shell-at_events) |
+| [{{site.data.keyword.mobilepushfull}}](/docs/mobilepush?topic=mobilepush-getting-started) | `imfpush` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/mobilepush?topic=mobilepush-at_events#at_actions) |
+| [{{site.data.keyword.en_full}}](/docs/event-notifications?topic=event-notifications-getting-started) | `event-notifications`|![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/event-notifications?topic=event-notifications-en-at_events)|
 | [{{site.data.keyword.appconfig_full}}](/docs/app-configuration?topic=app-configuration-getting-started) | `apprapp`|![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/app-configuration?topic=app-configuration-ac-at_events)|
-{: caption="Table 5. List of developer tools services" caption-side="top"}
+{: caption="Table 6. List of developer tools services" caption-side="top"}
 
 
 The following table lists {{site.data.keyword.contdelivery_full}} services that send auditing events:
@@ -125,7 +126,7 @@ The following table lists {{site.data.keyword.contdelivery_full}} services that 
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.contdelivery_full}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started) | `continuous-delivery` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/ContinuousDelivery?topic=ContinuousDelivery-cd-at-events) |
 | [Toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-cd_about) | `toolchain` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/ContinuousDelivery?topic=ContinuousDelivery-cd-at-events#toolchain-events) | 
-{: caption="Table 6. List of developer tools services" caption-side="top"}
+{: caption="Table 7. List of developer tools services" caption-side="top"}
 
 
 
@@ -138,7 +139,7 @@ The following table lists integration services that send auditing events:
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting_started)| `event-streams` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/EventStreams?topic=EventStreams-at_events) |
 | [MQ on IBM Cloud](/docs/mqcloud?topic=mqcloud-mqoc_getting_started) |`mqcloud` |![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](/docs/mqcloud?topic=mqcloud-at_events) |
-{: caption="Table 7. List of integration Cloud services" caption-side="top"}
+{: caption="Table 8. List of integration Cloud services" caption-side="top"}
 
 
 
@@ -153,11 +154,11 @@ The following table lists network services that send auditing events:
 | [{{site.data.keyword.tg_full}}](/docs/transit-gateway?topic=transit-gateway-getting-started) | `transit` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/transit-gateway?topic=transit-gateway-at_events) |
 | [{{site.data.keyword.dns_full}}](/docs/dns-svcs?topic=dns-svcs-getting-started) | `dns-svcs` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/dns-svcs?topic=dns-svcs-at_events) |
 | [{{site.data.keyword.cis_full}} (CIS)](/docs/cis?topic=cis-getting-started)| `internet-svcs` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/cis?topic=cis-at_events) |
-| [Content Delivery Network](/docs/CDN#getting-started) | `cdn-powered-by-akamai` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Events](/docs/CDN?topic=CDN-at_events)|
-{: caption="Table 8. List of network services" caption-side="top"}
+| [Content Delivery Network](/docs/CDN#getting-started) | `cdn-powered-by-akamai` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Global events](/docs/CDN?topic=CDN-at_events)|
+{: caption="Table 9. List of network services" caption-side="top"}
 
 ## Observabiliy services
-{: observability}
+{: #observability}
 
 The following table lists observability services that send auditing events:
 
@@ -167,7 +168,7 @@ The following table lists observability services that send auditing events:
 | [{{site.data.keyword.at_full}} hosted event search offering](/docs/activity-tracker?topic=activity-tracker-getting-started) | `logdnaat` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/activity-tracker?topic=activity-tracker-at_events) |
 | [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | `logdna` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/log-analysis?topic=log-analysis-at_events) |
 | [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) | `sysdig-monitor` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/monitoring?topic=monitoring-at_events) |
-{: caption="Table 9. List of observability services" caption-side="top"} 
+{: caption="Table 10. List of observability services" caption-side="top"} 
 
 
 ## Platform services
@@ -186,7 +187,7 @@ The following table lists platform services that send auditing events:
 | [Global Search Service](/docs/account?topic=account-tag) | `global-search-tagging` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_resources) |
 | [Catalog](/docs/account?topic=account-filter-account) | `globalcatalog-collection` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_catalog_management) |
 | [Software instances](/docs/account?topic=account-sw-instance-details) | `globalcatalog-instance` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_sw_instance) |
-{: caption="Table 10. List of platform services" caption-side="top"}
+{: caption="Table 11. List of platform services" caption-side="top"}
 
 For example, the following table lists core security actions that send events to {{site.data.keyword.at_full_notm}}:
 
@@ -197,7 +198,7 @@ For example, the following table lists core security actions that send events to
 | [Log in to the {{site.data.keyword.cloud_notm}}](/docs/account?topic=account-iamoverview#iamoverview)| ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events that are generated when a user or app logs in to the {{site.data.keyword.cloud_notm}}](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_login) |
 | [Managing platform API keys](/docs/account?topic=account-manapikey#manapikey) |![Checkmark](/images/checkmark-icon.svg "Checkmark")  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events that are generated when you manage Platform API keys](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_apikeys) |
 | [Managing service IDs](/docs/account?topic=account-serviceids#serviceids) | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |![Checkmark](/images/checkmark-icon.svg "Checkmark")  | [Events that are generated when you manage service IDs](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_serviceids) |
-{: caption="Table 11. List of core security platform services" caption-side="top"}
+{: caption="Table 12. List of core security platform services" caption-side="top"}
 
 ## Security services
 {: #security}
@@ -212,7 +213,7 @@ The following table lists security Cloud services that send auditing events:
 | [{{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started) | `hs-crypto` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/hs-crypto?topic=hs-crypto-at-events) |
 | [{{site.data.keyword.secrets-manager_full}}](/docs/secrets-manager?topic=secrets-manager-getting-started) | `secrets-manager` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/secrets-manager?topic=secrets-manager-at-events) |
 | [{{site.data.keyword.cloudcerts_full}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager#about-certificate-manager) | `cloudcerts` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](/docs/certificate-manager?topic=certificate-manager-at_events#at_events) |
-{: caption="Table 12. List of security services" caption-side="top"}
+{: caption="Table 13. List of security services" caption-side="top"}
 
 
 
@@ -226,7 +227,7 @@ The following table lists storage services that send auditing events:
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.cos_full}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)| `cloud-object-storage` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global and location-based events `[*]`](/docs/cloud-object-storage?topic=cloud-object-storage-at-events) |
 | [{{site.data.keyword.mdms_short}}](/docs/mass-data-migration?topic=mass-data-migration-getting-started-tutorial)| `mass-data-migration` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events](/docs/mass-data-migration?topic=mass-data-migration-at-events) |
-{: caption="Table 13. List of storage events" caption-side="top"}
+{: caption="Table 14. List of storage events" caption-side="top"}
 
 
 `[*]` {{site.data.keyword.cos_full_notm}} (COS) generates global, and location-based events.
@@ -247,7 +248,7 @@ The following table lists VMware solution services that send auditing events:
 | [{{site.data.keyword.vmwaresolutions_short}}](/docs/vmwaresolutions?topic=vmwaresolutions-vc_vcenterserveroverview)   | `vmware-solutions` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/vmwaresolutions?topic=vmwaresolutions-at-events#at-events) |
 | [{{site.data.keyword.cloud}} for VMware® Solutions Shared](/docs/vmwaresolutions?topic=vmwaresolutions-shared_overview)      | `vmware-solutions` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vmwaresolutions?topic=vmwaresolutions-at-events#at-events-instance-mgmt) |
 | [KMIP for VMware](/docs/vmwaresolutions?topic=vmwaresolutions-kmip_standalone_considerations) | `vmware-solutions` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vmwaresolutions?topic=vmwaresolutions-at-events#at-events-kmip) |
-{: caption="Table 14. List of VMware solution services" caption-side="top"}
+{: caption="Table 15. List of VMware solution services" caption-side="top"}
 
 
 
@@ -268,7 +269,7 @@ The following table lists VPC infrastructure services that send auditing events:
 | [Load Balancer](/docs/vpc?topic=vpc-load-balancers)| `is.load-balancer` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-load-balancers) |
 | [VPN](/docs/vpc?topic=vpc-using-vpn)| `is.vpn` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#at-events) |
 | [Images](/docs/vpc?topic=vpc-about-images) | `is.image` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-images) |
-{: caption="Table 15. List of VPC infrastructure services (generation 2)" caption-side="top"}
+{: caption="Table 16. List of VPC infrastructure services (generation 2)" caption-side="top"}
 
 ## Watson AI
 {: #watson_ai}
@@ -291,7 +292,7 @@ The following table lists Watson AI services that send auditing events:
 | [{{site.data.keyword.texttospeechfull}}](/docs/text-to-speech?topic=text-to-speech-gettingStarted) | `text-to-speech` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/text-to-speech?topic=text-to-speech-atEvents) |
 | [{{site.data.keyword.visualrecognitionfull}}](/docs/visual-recognition?topic=visual-recognition-index) | `watson-vision-combined` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/visual-recognition?topic=visual-recognition-at_events) |
 | [{{site.data.keyword.wh-acd_full}}](/docs/wh-acd?topic=wh-acd-getting-started) | `wh-acd` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](/docs/wh-acd?topic=wh-acd-at_events) |
-{: caption="Table 16. List of Watson AI services" caption-side="top"}
+{: caption="Table 17. List of Watson AI services" caption-side="top"}
 
 ## Web and mobile services
 {: #web}
