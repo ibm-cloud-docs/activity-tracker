@@ -85,6 +85,7 @@ toc:
           - control_usage.md
           - exclusion_rules.md
           - control_usage_alert.md
+          - control_usage_api.md
 
       - topicgroup: 
           label: Managing keys
