@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-11-17"
 
 keywords: IBM Cloud, Activity Tracker, api
 
@@ -23,6 +23,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 
 
 - You can use the **POST** method to create a view, or create a view and attach an alert to it.
+- You can use the **GET** method to get all existing views and alerts.
 - You can use the **PUT** method to modify an existing view, and alerts that are attached to views.
 - You can use the **DELETE** method to delete a view and associated alerts.
 
@@ -78,6 +79,18 @@ If you try to define a view and you do not define any of the following body para
 ```
 {: screen}
 
+### Getting views
+{: #config-api-work-get-views}
+
+When you retrieve all the views and alerts for the instance using the GET method, consider the following information:
+
+* The GET method will return all configured views and associated alerts for the instance.
+* The data returned can be imported into a different instance to create the same views and alerts in that instance.
+
+   If presets are defined, importing the data received from the GET method will fail.
+   {: note
+
+
 ### Modifying views
 {: #config-api-work-modify-views}
 
@@ -111,6 +124,7 @@ The following table outlines the actions that you can run to manage views and al
 | Action                                                                  | Request  | URL                                  |
 | ------------------------------------------------------------------------|----------|--------------------------------------|
 | Create a view and attach an alert to a view.                            | `POST`   | `<ENDPOINT>/v1/config/view`          |
+| Get all configured views and alerts                            | `GET`   | `<ENDPOINT>/v1/config/view`          |
 | Modify an existing view and the alerts that are attached to the view.   | `PUT`    | `<ENDPOINT>/v1/config/view/<VIEWID>` |
 | Delete a view and its associated alerts.                                | `DELETE` | `<ENDPOINT>/v1/config/view/<VIEWID>` |
 {: caption="Table 1. Configuration API endpoints" caption-side="top"}
@@ -179,6 +193,7 @@ The following table indicates when the `name` parameter is required:
 | ----------------------------------------------------------------------|----------|--------------------------------------|
 | Create a view and attach an alert to a view.                          | `POST`   | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating required")|
 | Modify an existing view and the alerts that are attached to the view. | `PUT`    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating required")|
+| Get all configured views and alerts                            | `GET`   | |
 | Delete a view and its associated alerts.                              | `DELETE` |  |
 {: caption="Table 2. Required status per method" caption-side="top"}
 
@@ -360,6 +375,22 @@ A response similar to the following will be returned:
 ```
 {: screen}
 
+### Get all configured views and alerts
+{: #config-api-get}
+
+The following sample gets all configured views and alerts for the instance.
+
+```text
+curl --request GET  https://api.eu-de.logging.cloud.ibm.com/v1/config/view  -H "content-type: application/json"  -H "servicekey: <SERVICE_KEY>"  
+```
+{: pre}
+
+A response similar to the following will be returned:
+
+```text
+[{"viewid":"cf1a53da31","name":"(_platform:xxx create) OR (_platform:xxx delete)","query":"(_platform:xxx .create) OR (_platform:xxx .delete)","category":["Instance"],"account":"xxxxxxxxx"},{"viewid":"de6de89f6c","name":"[All] Logins","query":"reason.reasonCode:200 _platform:iam-identity (action login)","category":["Login"],"account":"xxxxxxxx"},{"viewid":"dfd136707e","name":"[All] Events","category":["COS"],"account":"xxxxxxxx","hosts":["cloud-object-storage"]}]
+```
+{: screen}
 
 ### Modifying a view by adding an alert
 {: #api-configuration-mod-view-alert}
