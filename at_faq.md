@@ -192,5 +192,14 @@ In a region, you can manage auditing events in {{site.data.keyword.atracker_full
 {: important}
 
 
+## Can I import archived data into the UI?
+{: #faq_11}
+{: faq}
 
+This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
+{: important}
+
+Archived data cannot be imported to be searched or used in the {{site.data.keyword.at_full_notm}} UI.  
+
+Use the [{{site.data.keyword.sqlquery_notm}} service](/docs/activity-tracker?topic=activity-tracker-sqlquery) to query archive data.
 
