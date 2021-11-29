@@ -98,7 +98,7 @@ The following table lists database services that send auditing events:
 | [{{site.data.keyword.databases-for-elasticsearch_full_notm}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started) | `databases-for-elasticsearch-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|   | [Location-based events](/docs/databases-for-elasticsearch?topic=cloud-databases-activity-tracker) |
 | [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started)  | `messages-for-rabbitmq-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|     | [Location-based events](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker) |
 | [{{site.data.keyword.Db2_on_Cloud_long}}](/docs/Db2onCloud?topic=Db2onCloud-about) | `db2oncloud` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|   | [Location-based events](/docs/Db2onCloud?topic=Db2onCloud-activity-tracker) |
-| [{{site.data.keyword.dashdblong_notm}}](/docs/Db2whc?topic=Db2whc-getting-started) | `dashdb` | ! `[*]` | `[*]` | [Global events](docs/activity-tracker?topic=activity-tracker-at_events_dashdb) |
+| [{{site.data.keyword.dashdblong_notm}}](/docs/Db2whc?topic=Db2whc-getting-started) | `dashdb` | ! `[*]` | `[*]` | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_dashdb) |
 {: caption="Table 5. List of database services" caption-side="top"}
 
 `[*]` - Events provided by [BSS - Provisioning](/docs/overview?topic=overview-ui#catalogcreate).
