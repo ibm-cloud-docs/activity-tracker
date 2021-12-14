@@ -35,7 +35,7 @@ Consider the following information when you export events:
 
 * You must have a user ID that has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
-* You must check that the logging instance has the export feature enabled.
+* You must check that the auditing instance has the export feature enabled.
 
 
 ## Export API

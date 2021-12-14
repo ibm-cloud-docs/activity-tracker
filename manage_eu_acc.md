@@ -31,7 +31,7 @@ Across every industry, organizations require tighter controls and visibility int
 ## Step 1. Set on the EU-Supported flag in your account
 {: #manage_eu_acc_step1}
 
-You must enable your account to be `EU-supported` so that logging instances in Frankfurt are supported by EU members. 
+You must enable your account to be `EU-supported` so that auditing instances in Frankfurt are supported by EU members. 
 
 Consider the following information when you turn on the `EU-supported` flag in your account:
 * Support is handled by team members in the European Union (EU). 
@@ -96,7 +96,7 @@ Users can export data through the UI or by using the *Export* API:
 
     * Users with **user** permissions to work with the Frankfurt {{site.data.keyword.at_short}} instance cannot see service keys. Therefore, these users cannot use the export API to download data.
 
-    * Service keys are only used to export data from a logging instance by using the Export API. 
+    * Service keys are only used to export data from an auditing instance by using the Export API. 
         
 
 * Users can request the export of data through the UI. [Learn more](/docs/activity-tracker?topic=activity-tracker-export).
@@ -108,7 +108,7 @@ Users can export data through the UI or by using the *Export* API:
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
-When you archive logs from the Frankfurt logging instance to a {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
+When you archive logs from the Frankfurt auditing instance to a {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
 * When you provision an instance of the COS service, this instance is a global one in your account. It is not region-bound.
 * You must configure a bucket that complies with the EU-supported and GDPR regulations. For the list of COS EU-supported endpoints, see [EU-supported endpoints](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
 
@@ -123,7 +123,7 @@ When you archive logs from the Frankfurt logging instance to a {{site.data.keywo
 * You must restrict user access to manage archived log files in these buckets.  
 * Users are responsible for downloading files to EU-supported locations.
 
-To learn how to configure archiving for your logging instance, see [Archiving logs](/docs/services/activity-tracker?topic=activity-tracker-archiving).
+To learn how to configure archiving for your auditing instance, see [Archiving logs](/docs/services/activity-tracker?topic=activity-tracker-archiving).
 
 
 

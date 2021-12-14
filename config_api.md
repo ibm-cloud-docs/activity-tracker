@@ -27,7 +27,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 - You can use the **PUT** method to modify an existing view, and alerts that are attached to views.
 - You can use the **DELETE** method to delete a view and associated alerts.
 
-Before you run any automated tasks, consider doing a back up of your account configuration resources. You can use the back up to restore the resources, to the state before any change is applied, if you encounter problems. See [Export the configuration of resources in a logging instance](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config).
+Before you run any automated tasks, consider doing a back up of your account configuration resources. You can use the back up to restore the resources, to the state before any change is applied, if you encounter problems. See [Export the configuration of resources in an auditing instance](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config).
 {: tip}
 
 
