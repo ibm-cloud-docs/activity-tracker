@@ -36,7 +36,7 @@ Consider the following information when you export events:
 
 * Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
-* Check that the audiring instance has the export feature enabled. [Learn more](/docs/activity-tracker?topic=activity-tracker-export_config).
+* Check that the auditing instance has the export feature enabled. [Learn more](/docs/activity-tracker?topic=activity-tracker-export_config).
 
 ## Exporting events from a custom view
 {: #export_ui_view}
