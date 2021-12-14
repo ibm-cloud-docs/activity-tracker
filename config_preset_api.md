@@ -28,7 +28,7 @@ Presets are templates that can be used to quickly configure alerts.  Presets can
 - You can use the **PUT** method to modify a preset.
 - You can use the **DELETE** method to delete a preset.
 
-Before you run any automated tasks, consider doing a back up of your account configuration resources. You can use the back up to restore the resources, to the state before any change is applied, if you encounter problems. See [Export the configuration of resources in a logging instance](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config).
+Before you run any automated tasks, consider doing a back up of your account configuration resources. You can use the back up to restore the resources, to the state before any change is applied, if you encounter problems. See [Export the configuration of resources in an auditing instance](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config).
 {: tip}
 
 

@@ -15,7 +15,7 @@ subcollection: activity-tracker
 # Using groups to control data access
 {: #group_data_access}
 
-You can configure, control, and manage data that is available to users in your {{site.data.keyword.cloud}} account by configuring **groups** in the logging instance. 
+You can configure, control, and manage data that is available to users in your {{site.data.keyword.cloud}} account by configuring **groups** in the auditing instance. 
 {: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
