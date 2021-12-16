@@ -200,7 +200,7 @@ For the service ID that you just created, click **View credentials**. You can se
 
 * Copy the API key. This is the value set for the field **apikey**.
 
-   When the service credential is rotated, make sure the [API Key is updated with with the new API Key.](#archiving_step8)  Archiving will stop if the API Key is not updated.
+   When the service credential is rotated, make sure the [API Key is updated with the new API Key.](#archiving_step8)  Archiving will stop if the API Key is not updated.
    {: important}
 
 * Copy the resource instance ID. This is the value set for the field **resource_instance_id**.
@@ -308,5 +308,5 @@ Notice that when you save the configuration, you can get a message that informs 
 
 If you get an error when you save the configuration, the verification process fails. Check your configuration and retry again. 
 
-When the service credential is rotated, make sure the API Key is updated with with the new API Key.  Archiving will stop if the API Key is not updated.
+When the service credential is rotated, make sure the API Key is updated with the new API Key.  Archiving will stop if the API Key is not updated.
 {: important}

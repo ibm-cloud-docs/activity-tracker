@@ -171,7 +171,7 @@ For more information on how to configure policies for a user, see [Grant IAM pol
 
 The service ID that you must create for an {{site.data.keyword.cos_full_notm}} instance is used by {{site.data.keyword.at_full_notm}} to authenticate and access the {{site.data.keyword.cos_full_notm}} instance. This service ID must have the **writer** role. This role grants permissions to upload archive files in the bucket.
 
-When the service credential is rotated, make sure the [API Key is updated with with the new API Key.](/docs/activity-tracker?topic=activity-tracker-archiving#archiving_step8)  Archiving will stop if the API Key is not updated.
+When the service credential is rotated, make sure the [API Key is updated with the new API Key.](/docs/activity-tracker?topic=activity-tracker-archiving#archiving_step8)  Archiving will stop if the API Key is not updated.
 {: important}
 
 ## {{site.data.keyword.at_short}} events
