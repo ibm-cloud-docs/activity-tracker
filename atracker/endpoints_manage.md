@@ -173,7 +173,7 @@ Before disabling a public endpoint (`--public-enabled FALSE`), make sure your ac
 {: important}
 
 ### Command options 
-{: #endpoint-update}
+{: #endpoint-update-disable}
 
 `--region <REGION>` | `-r <REGION>`
 :   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
@@ -188,7 +188,7 @@ Before disabling a public endpoint (`--public-enabled FALSE`), make sure your ac
 :   List options available for the command.
   
 ### Example
-{: #endpoint-update-example}
+{: #endpoint-update-example-false}
 
 The following is an example using the **`ibmcloud atracker endpoint api update --public-enabled false`** command.
 
@@ -220,7 +220,7 @@ You must have access to a private endpoint to enable a public endpoint.
 {: important}
 
 ### Command options 
-{: #endpoint-update}
+{: #endpoint-update-enable}
 
 `--region <REGION>` | `-r <REGION>`
 :   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
@@ -235,7 +235,7 @@ You must have access to a private endpoint to enable a public endpoint.
 :   List options available for the command.
   
 ### Example
-{: #endpoint-update-example}
+{: #endpoint-update-example-true}
 
 The following is an example using the **`ibmcloud atracker endpoint api update --public-enabled true`** command.
 
