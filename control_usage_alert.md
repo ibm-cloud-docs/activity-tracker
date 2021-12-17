@@ -32,7 +32,7 @@ You must have the service role **manager** to configure data threshold alerts.
 
 
 ## Configure an alert
-{: #control_usage_alert_prereqs}
+{: #control_usage_alert_configure}
 
 Complete the following steps to configure an alert that informs you when you reach a specific data volume in the instance:
 

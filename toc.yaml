@@ -10,48 +10,48 @@ toc:
     path: activity-tracker
     label: Activity Tracker
 
-  entries: 
-  - navgroup: 
+  entries:
+  - navgroup:
       id: learn
       topics:
 
       - getting-started.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: Get started
           topics:
           - atracker/getting-started-routing.md
           - getting-started-search.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: Cloud services
           topics:
           - cloud_services.md
           - cloud_services_locations.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: Events
           topics:
           - event.md
           - event_types.md
           - events_opt-in.md
           - events_collect.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: Security and compliance
           topics:
           - adoption.md
           - manage_eu_acc.md
-      
+
       - topic: releasenotes.md
         navtitle: Release notes
-  
-  - navgroup: 
+
+  - navgroup:
       id: howto
       topics:
       - observe.md
 
-      - topicgroup: 
+      - topicgroup:
           label: Provisioning
           topics:
           - provision.md
@@ -59,8 +59,8 @@ toc:
           - terraform/terraform-setup.md
           - upgrade.md
           - remove.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: Controlling access
           topics:
           - iam.md
@@ -68,8 +68,8 @@ toc:
           - iam_grant_team.md
           - iam_manage_events.md
           - iam_view_events.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: Archiving
           topics:
           - archiving-ov.md
@@ -79,7 +79,7 @@ toc:
           - archiving-at-monitor.md
           - archiving-monitor.md
 
-      - topicgroup: 
+      - topicgroup:
           label: Managing costs and data
           topics:
           - control_usage.md
@@ -87,50 +87,50 @@ toc:
           - control_usage_alert.md
           - control_usage_api.md
 
-      - topicgroup: 
+      - topicgroup:
           label: Managing keys
           topics:
           - service_keys.md
           - atracker/retrieve-iam-token.md
 
-      - topicgroup: 
+      - topicgroup:
           label: Managing resources
           topics:
           - reuse_resource_definitions.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: Monitoring Cloud resources
           topics:
           - alerts/alerts_configuration.md
           - analyze/iam_manage_login.md
 
-      - topicgroup: 
+      - topicgroup:
           label: Enhancing security
           topics:
           - architecture-workload-isolation.md
           - service-endpoints.md
           - data-security.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: Exporting events
           topics:
           - export_config.md
           - export.md
           - export_api.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: Logging and monitoring
           topics:
           - at_events.md
           - atracker/platform_metrics.md
-      
+
       - atracker/endpoints_manage.md
       - atracker/target.md
       - atracker/route.md
       - atracker/cos.md
       - atracker/config_report.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: Streaming data
           topics:
           - streaming.md
@@ -138,24 +138,24 @@ toc:
           - streaming-monitor.md
           - streaming-conditional.md
           - streaming-manage-api.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: UI
           topics:
           - launch.md
           - config.md
           - get_web_url.md
 
-      - topicgroup: 
+      - topicgroup:
           label: Working with events
           topics:
           - manage_events.md
           - monitor_events.md
           - view_events.md
           - parsing.md
-          - views.md 
-      
-      - topicgroup: 
+          - views.md
+
+      - topicgroup:
           label: Working with alerts
           topics:
           - alerts/alerts.md
@@ -163,16 +163,17 @@ toc:
           - alerts/remove_alert_ui.md
           - alerts/preset_ui.md
           - config_api.md
+          - config_preset_api.md
           - alerts/email.md
           - pagerduty.md
           - alerts/monitoring.md
           - alerts/sms.md
           - alerts/webhook.md
           - alerts/slack.md
-  
-  - navgroup: 
+
+  - navgroup:
       id: reference
-      topics: 
+      topics:
       - regions.md
       - endpoints.md
       - cidr.md
@@ -181,17 +182,17 @@ toc:
       - shared-responsibilities.md
       - ha-dr.md
       - service-ip-changes.md
-      
-      - topicgroup: 
+
+      - topicgroup:
           label: CLI
           topics:
           - atracker/atracker-cli.md
           - /activity-tracker-cli-plugin/activity-tracker-cli-plugin-activity-tracker-cli
-  
-      - topicgroup: 
+
+      - topicgroup:
           label: API
-          links: 
-            - link: 
+          links:
+            - link:
                 label: Activity Tracker event routing API
                 href: https://{DomainName}/apidocs/atracker
             - link:
@@ -209,24 +210,24 @@ toc:
             - link:
                 label: Activity Tracker Groups API
                 href: https://{DomainName}/apidocs/activity-tracker#create-group
-  
-      - topicgroup: 
+
+      - topicgroup:
           label: Events
-          topics:     
+          topics:
           - at_events_iam.md
           - at_events_acc_mgt.md
           - at_events_rc.md
           - at_event_dashdb.md
-  
-  - navgroup: 
+
+  - navgroup:
         id: help
-        topics: 
+        topics:
         - gettinghelp.md
         - at_faq.md
 
-        - topicgroup: 
+        - topicgroup:
             label: Troubleshooting
-            topics:  
+            topics:
             - troubleshoot-04.md
             - atracker/troubleshoot-01.md
             - atracker/troubleshoot-02.md
