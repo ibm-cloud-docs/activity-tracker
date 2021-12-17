@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-11-24"
 
 keywords: IBM Cloud, Activity Tracker, cidr
 
@@ -18,13 +18,16 @@ subcollection: activity-tracker
 The following Classless Inter-Domain Routing (CIDR) blocks are available:
 {: shortdesc}
 
+## {{site.data.keyword.at_full_notm}} hosted event search offering
+{: #cidr_at}
+
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
-## Public CIDR blocks
+### Public CIDR blocks
 {: #cidr_public_gen2}
 
-### US South
+#### US South
 {: #cidr_public_gen2_1}
 
 | Region | CIDR block |
@@ -43,7 +46,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | US-South | 169.59.255.128/25 |
 {: caption="Table 1. US-South public CIDR blocks" caption-side="top"}
 
-### US East
+#### US East
 {: #cidr_public_gen2_2}
 
 | Region   | CIDR block |
@@ -54,12 +57,12 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | US-East  | 52.117.100.16/28 |
 | US-East  | 169.62.40.192/27 |
 | US-East  | 169.47.188.0/27 |
+| US-East  | 52.117.81.128/26  |
 | US-East  | 150.239.98.0/26 |
-| US-East  | 52.117.81.128/26 |
 | US-East  | 169.59.154.128/26 |
 {: caption="Table 2. US-East public CIDR blocks" caption-side="top"}
 
-### Frankfurt
+#### Frankfurt
 {: #cidr_public_gen2_3}
 
 | Region   | CIDR block |
@@ -79,7 +82,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 3. Frankfurt public CIDR blocks" caption-side="top"}
 
 
-### Tokyo
+#### Tokyo
 {: #cidr_public_gen2_4}
 
 | Region   | CIDR block |
@@ -92,7 +95,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Tokyo	    | 165.192.107.32/27 |
 {: caption="Table 4. Tokyo public CIDR blocks" caption-side="top"}
 
-### London
+#### London
 {: #cidr_public_gen2_5}
 
 | Region   | CIDR block |
@@ -105,7 +108,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | London    | 158.175.168.32/27 |
 {: caption="Table 5. London public CIDR blocks" caption-side="top"}
 
-### Sydney
+#### Sydney
 {: #cidr_public_gen2_6}
 
 | Region   | CIDR block |
@@ -115,7 +118,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Sydney    | 135.90.90.240/28 |
 {: caption="Table 6. Sydney public CIDR blocks" caption-side="top"}
 
-### Seoul
+#### Seoul
 {: #cidr_public_gen2_7}
 
 | Region   | CIDR block |
@@ -124,7 +127,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Seoul    | 169.56.111.128/27 |
 {: caption="Table 7. Seoul public CIDR blocks" caption-side="top"}
 
-### Chennai
+#### Chennai
 {: #cidr_public_gen2_8}
 
 | Region   | CIDR block |
@@ -132,7 +135,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Chennai  | 169.38.96.224/28 |
 {: caption="Table 8. Chennai public CIDR blocks" caption-side="top"}
 
-### Osaka
+#### Osaka
 {: #cidr_public_gen2_9}
 
 | Region   | CIDR block |
@@ -142,7 +145,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Osaka	   | 163.69.68.48/28 |
 {: caption="Table 9. Osaka public CIDR blocks" caption-side="top"}
 
-### Toronto
+#### Toronto
 {: #cidr_public_gen2_10}
 
 | Region   | CIDR block |
@@ -153,7 +156,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 10. Toronto public CIDR blocks" caption-side="top"}
 
 
-### Sao Paulo
+#### Sao Paulo
 {: #cidr_public_gen2_11}
 
 | Region   | CIDR block |
@@ -164,10 +167,10 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 {: caption="Table 11. Sao Paulo public CIDR blocks" caption-side="top"}
 
 
-## Private CIDR blocks
+### Private CIDR blocks
 {: #cidr_private_gen2}
 
-### US South
+#### US South
 {: #cidr_private_gen2_12}
 
 | Region | CIDR block |
@@ -183,7 +186,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | US-South | 10.241.202.0/24 |
 {: caption="Table 12. US-South private CIDR blocks" caption-side="top"}
 
-### US East
+#### US East
 {: #cidr_private_gen2_13}
 
 | Region | CIDR block |
@@ -196,7 +199,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | US-East  | 10.189.123.128/25 |
 {: caption="Table 13. US-East private CIDR blocks" caption-side="top"}
 
-### Frankfurt
+#### Frankfurt
 {: #cidr_private_gen2_14}
 
 | Region | CIDR block |
@@ -212,7 +215,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Frankfurt | 10.13.100.0/24 |
 {: caption="Table 14. Frankfurt private CIDR blocks" caption-side="top"}
 
-### Tokyo
+#### Tokyo
 {: #cidr_private_gen2_15}
 
 | Region | CIDR block |
@@ -222,7 +225,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Tokyo	    | 10.193.77.192/26 |
 {: caption="Table 15. Tokyo private CIDR blocks" caption-side="top"}
 
-### London
+#### London
 {: #cidr_private_gen2_16}
 
 | Region | CIDR block |
@@ -232,7 +235,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | London    | 10.222.46.128/26 |
 {: caption="Table 16. London private CIDR blocks" caption-side="top"}
 
-### Sydney
+#### Sydney
 {: #cidr_private_gen2_17}
 
 | Region | CIDR block |
@@ -242,7 +245,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Sydney	  | 10.195.95.64/26 |
 {: caption="Table 17. Sydney private CIDR blocks" caption-side="top"}
 
-### Seoul
+#### Seoul
 {: #cidr_private_gen2_18}
 
 | Region | CIDR block |
@@ -250,7 +253,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Seoul	    | 10.178.139.64/26 |
 {: caption="Table 18. Seoul private CIDR blocks" caption-side="top"}
 
-### Chennai
+#### Chennai
 {: #cidr_private_gen2_19}
 
 | Region | CIDR block |
@@ -258,7 +261,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Chennai	  | 10.162.140.0/26 |
 {: caption="Table 19. Chennai private CIDR blocks" caption-side="top"}
 
-### Osaka
+#### Osaka
 {: #cidr_private_gen2_20}
 
 | Region | CIDR block |
@@ -268,7 +271,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Osaka	  | 10.8.30.64/26 |
 {: caption="Table 20. Osaka private CIDR blocks" caption-side="top"}
 
-### Toronto
+#### Toronto
 {: #cidr_private_gen2_21}
 
 | Region | CIDR block |
@@ -278,7 +281,7 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Toronto	  | 10.243.35.128/26 |
 {: caption="Table 21. Toronto private CIDR blocks" caption-side="top"}
 
-### Sao Paulo
+#### Sao Paulo
 {: #cidr_private_gen2_22}
 
 | Region   | CIDR block |
@@ -287,5 +290,63 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Brazil	   | 10.14.9.64/26  |
 | Brazil	   | 10.15.20.192/26  |
 {: caption="Table 22. Sao Paulo private CIDR blocks" caption-side="top"}
+
+## {{site.data.keyword.atracker_full_notm}} event routing offering 
+{: #atracker_cidr}
+
+This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
+{: important}
+
+### Public CIDR blocks
+{: #cidr_public_atracker_gen2}
+
+#### US South
+{: #cidr_public_atracker_gen2_1}
+
+| Region | CIDR block |
+|--------|------------|
+| US-South | 50.22.67.32/27  |
+| US-South | 52.117.31.64/27 |
+| US-South | 52.117.144.176/28 |
+| US-South | 52.118.128.64/27 |
+| US-South | 169.59.240.48/28 |
+| US-South | 169.61.48.48/28 |
+{: caption="Table 23. US-South public CIDR blocks - event routing" caption-side="top"}
+
+#### US East
+{: #cidr_public_atracker_gen2_2}
+
+| Region   | CIDR block |
+|----------|------------|
+| US-East  | 52.116.102.64/28  |
+| US-East  | 52.117.68.128/27 |
+| US-East  | 52.117.116.160/28 |
+| US-East  | 150.239.78.0/27 |
+| US-East  | 169.60.74.224/27 |
+| US-East  | 169.60.103.240/28 |
+{: caption="Table 24. US-East public CIDR blocks - event routing" caption-side="top"}
+
+### Private CIDR blocks
+{: #cidr_private_atracker_gen2}
+
+#### US South
+{: #cidr_private_atracker_gen2_1}
+
+| Region | CIDR block |
+|--------|------------|
+| US-South | 10.36.54.0/26 |
+| US-South | 10.177.221.0/26 |
+| US-South | 10.185.179.192/26 |
+{: caption="Table 25. US-South private CIDR blocks - event routing" caption-side="top"}
+
+#### US East
+{: #cidr_private_atracker_gen2_2}
+
+| Region   | CIDR block |
+|----------|------------|
+| US-East  | 10.39.3.192/26 |
+| US-East  | 10.188.255.128/26 |
+| US-East  | 10.213.37.128/26 |
+{: caption="Table 26. US-East private CIDR blocks - event routing" caption-side="top"}
 
 

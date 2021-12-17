@@ -22,6 +22,9 @@ You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} i
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
+Exporting using the UI uses the [V1 export API](/docs/activity-tracker?topic=activity-tracker-export_api) and is limited to the functionality provided by that version of the API.
+{: note}
+
 Consider the following information when you export events:
 * You can export a set of log entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
 * From the Web UI, when you export logs, you get an email that is sent to your email address, with a link to a compressed file that includes the data. To get the data, you must click the link and download the compressed file.
@@ -36,7 +39,7 @@ Consider the following information when you export events:
 
 * Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
-* Check that the logging instance has the export feature enabled. [Learn more](/docs/activity-tracker?topic=activity-tracker-export_config).
+* Check that the auditing instance has the export feature enabled. [Learn more](/docs/activity-tracker?topic=activity-tracker-export_config).
 
 ## Exporting events from a custom view
 {: #export_ui_view}

@@ -199,6 +199,10 @@ Complete the following steps to create a service ID with writing permissions for
 For the service ID that you just created, click **View credentials**. You can see information that is related to the service ID. 
 
 * Copy the API key. This is the value set for the field **apikey**.
+
+   When the service credential is rotated, make sure the [API Key is updated with the new API Key.](#archiving_step8)  Archiving will stop if the API Key is not updated.
+   {: important}
+
 * Copy the resource instance ID. This is the value set for the field **resource_instance_id**.
 * Copy the value of the **iam_apikey_name** field.
 
@@ -300,8 +304,9 @@ Complete the following steps to configure archiving of your {{site.data.keyword.
 5. Click **Save**.
 
 
-Notice that when you save the configuration, you can get a message that informs you that the configuration has been saved successfully. When you get this message, the integration between the logging instance and the bucket is verified. A test to upload and delete an object from the bucket is completed successfully. 
+Notice that when you save the configuration, you can get a message that informs you that the configuration has been saved successfully. When you get this message, the integration between the auditing instance and the bucket is verified. A test to upload and delete an object from the bucket is completed successfully. 
 
 If you get an error when you save the configuration, the verification process fails. Check your configuration and retry again. 
 
-
+When the service credential is rotated, make sure the API Key is updated with the new API Key.  Archiving will stop if the API Key is not updated.
+{: important}

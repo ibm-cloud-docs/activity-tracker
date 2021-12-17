@@ -15,7 +15,7 @@ subcollection: activity-tracker
 # Reusing definitions of resources
 {: #reuse_resource_definitions}
 
-To avoid recreating definitions of views, boards, parsing templates, and exclusion rules, you can export these resources from a {{site.data.keyword.at_full}} instance as a JSON file. Then, you can import the definitions into other logging instances.
+To avoid recreating definitions of views, boards, parsing templates, and exclusion rules, you can export these resources from a {{site.data.keyword.at_full}} instance as a JSON file. Then, you can import the definitions into other auditing instances.
 {: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
@@ -34,14 +34,14 @@ Complete the following steps to export the configuration of your resources:
 
 4. In the *Export configuration* section, select the types of resources that you want to export.
 
-    Notice that options are disabled if you do not have definitions of this type of resource in your logging instance. 
+    Notice that options are disabled if you do not have definitions of this type of resource in your auditing instance. 
 
     You can export views and alerts, boards, screens, parsing templates, and exclusion rules. 
 
 5. Click **Export** to save the file.
 
 
-## Import the configuration of resources into a logging instance
+## Import the configuration of resources into an auditing instance
 {: #import_config}
 
 

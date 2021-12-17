@@ -74,7 +74,7 @@ Before you use the the CLI to manage endpoints,complete the following steps:
 
 2. [Pre-requisite] [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-3. [Pre-requisite] [Install the {{site.data.keyword.atracker_notm}} CLI](/docs/activity-tracker?topic=activity-tracker-activity-tracking-cli#activity-tracking-cli-prereq).
+3. [Pre-requisite] [Install the {{site.data.keyword.atracker_full_notm}} CLI](/docs/activity-tracker?topic=activity-tracker-activity-tracking-cli#activity-tracking-cli-prereq).
 
 4. Log in to the region in the {{site.data.keyword.cloud_notm}} where the instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
@@ -173,7 +173,7 @@ Before disabling a public endpoint (`--public-enabled FALSE`), make sure your ac
 {: important}
 
 ### Command options 
-{: #endpoint-update}
+{: #endpoint-update-disable}
 
 `--region <REGION>` | `-r <REGION>`
 :   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
@@ -188,7 +188,7 @@ Before disabling a public endpoint (`--public-enabled FALSE`), make sure your ac
 :   List options available for the command.
   
 ### Example
-{: #endpoint-update-example}
+{: #endpoint-update-example-false}
 
 The following is an example using the **`ibmcloud atracker endpoint api update --public-enabled false`** command.
 
@@ -220,7 +220,7 @@ You must have access to a private endpoint to enable a public endpoint.
 {: important}
 
 ### Command options 
-{: #endpoint-update}
+{: #endpoint-update-enable}
 
 `--region <REGION>` | `-r <REGION>`
 :   Name of the region, for example, `us-south` or `eu-gb`. If not specified, the region logged into, or targeted, will be used.
@@ -235,7 +235,7 @@ You must have access to a private endpoint to enable a public endpoint.
 :   List options available for the command.
   
 ### Example
-{: #endpoint-update-example}
+{: #endpoint-update-example-true}
 
 The following is an example using the **`ibmcloud atracker endpoint api update --public-enabled true`** command.
 

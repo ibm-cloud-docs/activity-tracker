@@ -32,7 +32,7 @@ See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streamin
 
     a. Log in to the {{site.data.keyword.cloud_notm}} console.
   
-    b. Click the [{{site.data.keyword.messagehub}} service](../icons/launch-glyph.svg  icon")](https://cloud.ibm.com/catalog/event-streams){:  external} in the **Catalog**.
+    b. Access the [{{site.data.keyword.messagehub}} service](https://cloud.ibm.com/catalog/event-streams){: external} in the **Catalog**.
   
     c. Select the plan on the service instance page.
   

@@ -35,7 +35,7 @@ Consider the following information when you export events:
 
 * You must have a user ID that has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
-* You must check that the logging instance has the export feature enabled.
+* You must check that the auditing instance has the export feature enabled.
 
 
 ## Export API
@@ -184,7 +184,7 @@ Where
 To query events for a service in us-south, you can run the following command:
 
 ```text
-curl 'https://api.us-south.logging.cloud.ibm.com/v1/export?to=1592337600&from=1592179200&hosts=kms&size=10&query=(target.id:crn:v1:bluemix:public:kms:us-south:a/xxxxxxx:xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx%20(action:kms.secrets.create%20%20OR%20action:kms.secrets.delete%20))' -u $TOKEN:
+curl "https://api.us-south.logging.cloud.ibm.com/v1/export?to=1592337600&from=1592179200&hosts=kms&size=10&query=(target.id:crn:v1:bluemix:public:kms:us-south:a/xxxxxxx:xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx%20(action:kms.secrets.create%20%20OR%20action:kms.secrets.delete%20))" -u $TOKEN:
 ```
 {: codeblock}
 
