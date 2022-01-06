@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2021
+  years: 2019, 2022
 lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, security, auditing, target
