@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-12-2"
+  years: 2019, 2022
+lastupdated: "2021-12-02"
 
 keywords: IBM Cloud, {{site.data.keyword.atracker_short}} event routing, security, auditing, services, {{site.data.keyword.at_short}} hosted event search offering
 
