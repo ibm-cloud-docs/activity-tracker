@@ -41,7 +41,7 @@ The following table shows the private API endpoints:
 
 The following table shows the public API endpoints:
 
-| Region                   | ATracker Private endpoint                         | Port         |
+| Region                   | ATracker Public endpoint                         | Port         |
 |--------------------------|---------------------------------------------------|--------------|
 | `Dallas (us-south)`      | `https://us-south.atracker.cloud.ibm.com`         | `https/443`  |
 | `Washington (us-east)`   | `https://us-east.atracker.cloud.ibm.com`          | `https/443`  |
