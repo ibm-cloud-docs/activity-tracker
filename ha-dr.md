@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-01-20"
 
 keywords: IBM Cloud, Activity Tracker, auditing, disaster recovery, ha, high availability, redundancy
 
@@ -80,6 +80,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 | `North America`       | `Dallas (us-south)`      | `N/A`        | `MZR`     |
 | `North America`       | `Washington (us-east)`   | `N/A`        | `MZR`     |
 | `North America`       | `Toronto (ca-tor)`       | `N/A`        | `MZR`     |
+| `South America`     | `Sao Paulo (br-sao)`       | `N/A` | `MZR` | 
 {: caption="Table 1. List of locations where the service is available" caption-side="top"}
 
 
@@ -204,7 +205,16 @@ If a regional disaster occurs, consider the following information:
 * When the auditing instance in the DR region is available in the new location, you will be able to use it while the data is restored into the newly constructed region.
 
 
+#### DR recovery time
+{: #ha_dr_at_recovery_time}
 
+The following table indicates the estimated recovery times in the event of a DR situation:
+
+| Recovery objective for DR | Estimated time |
+|---------------------------|----------------|
+| Maximum Tolerable Downtime (MTD) / Recovery Time Objective (RTO)  | Less than 24 hours |
+| Recovery Point Objective (RPO) | Less than 4 hours |
+{: caption="Table 4. Recovery objectives for DR" caption-side="top"}
 
 
 
