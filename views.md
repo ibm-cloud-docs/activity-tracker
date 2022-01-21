@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-01-11"
 
 keywords: IBM Cloud,Activity Tracker, search, filter, events
 
@@ -29,8 +29,9 @@ Before you start, check that your user ID has permissions to launch the web UI a
 
 | Role                      | Permission granted            |
 |---------------------------|-------------------------------|  
-| Platform role: `Viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
-| Service role: `Reader`      | Allows the user to launch the web UI and view events in the web UI.  |
+| Platform role: `viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
+| Service role: `reader`      | Allows the user to launch the web UI and view events in the web UI.  |
+| Service role: `standard-member`      | Allows the user save a view based on a search.  |
 {: caption="Table 1. IAM roles" caption-side="top"} 
 
 For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
