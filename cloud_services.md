@@ -159,7 +159,7 @@ The following table lists network services that send auditing events:
 | [Content Delivery Network](/docs/CDN#getting-started) | `cdn-powered-by-akamai` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Global events](/docs/CDN?topic=CDN-at_events)|
 {: caption="Table 9. List of network services" caption-side="top"}
 
-## Observabiliy services
+## Observability services
 {: #observability}
 
 The following table lists observability services that send auditing events:
