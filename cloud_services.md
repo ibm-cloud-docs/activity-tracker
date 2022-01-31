@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-12-02"
+lastupdated: "2022-01-25"
 
 keywords: IBM Cloud, {{site.data.keyword.atracker_short}} event routing, security, auditing, services, {{site.data.keyword.at_short}} hosted event search offering
 
@@ -73,7 +73,7 @@ The following table lists container platform services that send auditing events:
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-getting-started) | `container-registry` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events `[*]`](/docs/Registry?topic=Registry-at_events) |
 | [{{site.data.keyword.containerlong}}](/docs/containers?topic=containers-getting-started) | `containers-kubernetes` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based event](/docs/containers?topic=containers-at_events) |
-| [{{site.data.keyword.openshiftlong}}](/docs/openshift?topic=openshift-getting-started) | `containers-kubernetes` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based event](/docs/openshift?topic=openshift-at_events) |
+| [{{site.data.keyword.openshiftlong}}](/docs/openshift?topic=openshift-getting-started) | `openshift` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based event](/docs/openshift?topic=openshift-at_events) |
 | [{{site.data.keyword.satellitelong}}](/docs/satellite?topic=satellite-getting-started) | `satellite` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/satellite?topic=satellite-at_events) |
 {: caption="Table 4. Container events" caption-side="top"}
 
@@ -159,7 +159,7 @@ The following table lists network services that send auditing events:
 | [Content Delivery Network](/docs/CDN#getting-started) | `cdn-powered-by-akamai` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Global events](/docs/CDN?topic=CDN-at_events)|
 {: caption="Table 9. List of network services" caption-side="top"}
 
-## Observabiliy services
+## Observability services
 {: #observability}
 
 The following table lists observability services that send auditing events:
@@ -283,18 +283,15 @@ The following table lists Watson AI services that send auditing events:
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.conversationfull}}](/docs/assistant?topic=assistant-getting-started) | `conversation`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/assistant?topic=assistant-at-events) |
-| [{{site.data.keyword.discoveryfull}}](/docs/discovery?topic=discovery-getting-started) | `discovery` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/discovery?topic=discovery-at_events)  |
-| [{{site.data.keyword.cncfull}}](/docs/compare-comply?topic=compare-comply-about)  | `compare-comply` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/compare-comply?topic=compare-comply-at_events) |
+| [{{site.data.keyword.discoveryfull}}](/docs/discovery-data?topic=discovery-data-getting-started) | `discovery` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/discovery-data?topic=discovery-data-at_events)  |
 | [{{site.data.keyword.DSX_full}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/overview-ws.html) | `data-science-experience`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html#ws) |
 | [IBM Watson&trade; Knowledge Catalog](https://dataplatform.cloud.ibm.com/docs/content/wsj/catalog/overview-wkc.html) | `datacatalog` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html#wkc) |
 | [{{site.data.keyword.knowledgestudiofull}}](/docs/watson-knowledge-studio) | `knowledge-studio` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-activity-tracker-events) |
 | [{{site.data.keyword.languagetranslatorfull}}](/docs/language-translator?topic=language-translator-gettingstarted) | `language-translator` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](/docs/language-translator?topic=language-translator-at_events) |
 | [{{site.data.keyword.pm_full}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html) | `pm-20` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html#wml) |
-| [{{site.data.keyword.nlclassifierfull}}](/docs/natural-language-classifier?topic=natural-language-classifier-natural-language-classifier) | `natural-language-classifier` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/natural-language-classifier?topic=natural-language-classifier-at_events) |
 | [{{site.data.keyword.nlufull}}](/docs/natural-language-understanding) | `natural-language-understanding` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/natural-language-understanding?topic=natural-language-understanding-at_events) |
-| [{{site.data.keyword.speechtotextfull}}](/docs/speech-to-text?topic=speech-to-text-gettingStarted) | `speech-to-text` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/speech-to-text?topic=speech-to-text-atEvents) |
-| [{{site.data.keyword.texttospeechfull}}](/docs/text-to-speech?topic=text-to-speech-gettingStarted) | `text-to-speech` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/text-to-speech?topic=text-to-speech-atEvents) |
-| [{{site.data.keyword.visualrecognitionfull}}](/docs/visual-recognition?topic=visual-recognition-index) | `watson-vision-combined` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/visual-recognition?topic=visual-recognition-at_events) |
+| [{{site.data.keyword.speechtotextfull}}](/docs/speech-to-text?topic=speech-to-text-gettingStarted) | `speech-to-text` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/speech-to-text?topic=speech-to-text-at-events) |
+| [{{site.data.keyword.texttospeechfull}}](/docs/text-to-speech?topic=text-to-speech-gettingStarted) | `text-to-speech` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/text-to-speech?topic=text-to-speech-at-events) |
 | [{{site.data.keyword.wh-acd_full}}](/docs/wh-acd?topic=wh-acd-getting-started) | `wh-acd` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](/docs/wh-acd?topic=wh-acd-at_events) |
 {: caption="Table 17. List of Watson AI services" caption-side="top"}
 
