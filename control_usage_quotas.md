@@ -121,6 +121,9 @@ To change the daily and monthly quotas, do the following:
 
    If logs are not being saved they will still be available for live tail and alerting.
 
+   Verify all conditions and exclusion rules when selecting these options.  Selecting these options will result in logs being discarded and not saved for searching, archiving, or streaming.
+   {: important}
+
 4. Click **Apply** to save your changes.
 
 ### Configuring usage quota exclusion rules
@@ -139,6 +142,9 @@ You can specify up to 5 daily exclusion rules and 5 monthly exclusion rules.
 {: #daily_usage_quota}
 
 To specify a daily exclusion rule, do the following from the *Usage Quotas* dialog:
+
+Verify that each exclusion rule that you add behaves as expected. Inproperly configured exclusion rules can result in data and cost spikes.
+{: important}
 
 1. In the **Triggered Exclusion Rules** section click **Add daily rule**.
 
@@ -161,6 +167,9 @@ To specify a daily exclusion rule, do the following from the *Usage Quotas* dial
 {: #monthly_usage_quota}
 
 To specify a monthly exclusion rule, do the following from the *Usage Quotas* dialog:
+
+Verify that each exclusion rule that you add behaves as expected. Inproperly configured exclusion rules can result in data and cost spikes.
+{: important}
 
 1. In the **Triggered Exclusion Rules** section click **Add monthly rule**.
 
