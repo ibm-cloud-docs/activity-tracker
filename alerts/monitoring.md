@@ -46,7 +46,7 @@ When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-aler
 
     Specify the **API key**. Set this field to the API token. For more information on how to get the token, see [Working with tokens](/docs/monitoring?topic=monitoring-api_token).
 
-    Specify the **{{site.data.keyword.mon_short}} instance URL**. Set this field to the endpoint where the instance is available. For more information, see [{{site.data.keyword.mon_short}} endpoints](/docs/monitoring?topic=monitoring-endpoints#endpoints).
+    Specify the **{{site.data.keyword.mon_short}} instance URL**. Set this field to the endpoint where the instance is available. For more information, see [{{site.data.keyword.mon_short}} endpoints](/docs/monitoring?topic=monitoring-endpoints#endpoints). For example, `https://eu-gb.monitoring.cloud.ibm.com`.
 
     Specify the **Severity**. Valid values are `Info`, `Low`, `Medium`, or `High`. 
 
