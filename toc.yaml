@@ -16,6 +16,7 @@ toc:
       topics:
 
       - getting-started.md
+      - about.md
 
       - topicgroup:
           label: Get started
