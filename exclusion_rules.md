@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-21"
+lastupdated: "2022-02-04"
 
-keywords:  IBM, activity tracker
+keywords:  IBM, activity tracker, exclusion rules, ingestion
 
 subcollection: activity-tracker
 
@@ -12,7 +12,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Excluding data by using exclusion rules
+# Excluding ingestion data by using exclusion rules
 {: #exclusion_rules}
 
 In an {{site.data.keyword.at_full_notm}} instance, you can configure exclusion rules through the UI to stop events from counting against your data usage quota and from being stored for search.
@@ -33,6 +33,9 @@ You must have manager access to define exclusion rules.
 
 Complete the following steps to define an exclusion rule:
 
+Verify that each exclusion rule that you add behaves as expected. Improper configured exclusion rules can result in storing data not intended for storage.
+{: important}
+
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/activity-tracker?topic=activity-tracker-launch).
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Usage** &gt; **Exclusion Rules**. 
@@ -50,5 +53,10 @@ Complete the following steps to define an exclusion rule:
 6. Select **Preserve these lines for live-tail and alerting** to show through the live tail the log lines that are excluded. Notice that you can still use these log lines to set up an alert.
 
 7. Click **Save**.
+
+8. After you configure an exclusion rule, verify that the exclusion rule behaves as you expect. 
+
+    Check the query in a custom view by entering the search criteria in the search bar of the *Everything* view, and validating that the data that is displayed is the data that you want excluded.
+    {: tip} 
 
 

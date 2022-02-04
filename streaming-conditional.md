@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-02-04"
 
 keywords: IBM Cloud, Activity Tracker, streaming
 
@@ -26,6 +26,9 @@ You must have manager access for {{site.data.keyword.at_short}} to define exclus
 
 Complete the following steps to define an exclusion rule:
 
+Verify that each exclusion rule that you add behaves as expected. Improper configured exclusion rules can result in storing data not intended for storage.
+{: important}
+
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/activity-tracker?topic=activity-tracker-launch).
 
 2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Streaming** &gt; **Exclusion Rules**. 
@@ -38,7 +41,10 @@ Complete the following steps to define an exclusion rule:
 
 6. Click **Save**.
 
+7. After you configure an exclusion rule, verify that the exclusion rule behaves as you expect.
 
+    Check the query in a custom view by entering the search criteria in the search bar of the *Everything* view, and validating that the data that is displayed is the data that you want excluded.
+    {: tip} 
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-04"
 
 keywords: IBM Cloud, Activity Tracker, usage, usage quotas
 
@@ -98,7 +98,7 @@ The Usage Quotas option is in the left-pane of the LogDNA application, under **S
 ### Enabling and disabling Usage Quotas
 {: #enable_disable_usage_quotas}
 
-To enable *Usage Quotas* make sure the selection at the top of the dialog is set to **on**.  To disable the *Usage Quota* configuration, make sure the selection is set to **off**.
+To enable *Usage Quotas* make sure the selection at the top of the dialog is set to **on**.  To disable the *Usage Quota* configuration, make sure the selection is set to **off**.  *Usage Quotes* are disabled by default.
 
 ### Setting up your usage quotas
 {: #setup_usage_quota}
@@ -121,6 +121,9 @@ To change the daily and monthly quotas, do the following:
 
    If logs are not being saved they will still be available for live tail and alerting.
 
+   Verify all conditions and exclusion rules when selecting these options.  Selecting these options will result in logs being discarded and not saved for searching, archiving, or streaming.
+   {: important}
+
 4. Click **Apply** to save your changes.
 
 ### Configuring usage quota exclusion rules
@@ -140,6 +143,9 @@ You can specify up to 5 daily exclusion rules and 5 monthly exclusion rules.
 
 To specify a daily exclusion rule, do the following from the *Usage Quotas* dialog:
 
+Verify that each exclusion rule that you add behaves as expected. Improper configured exclusion rules can result in storing data not intended for storage.
+{: important}
+
 1. In the **Triggered Exclusion Rules** section click **Add daily rule**.
 
 2. Drag the slider to the percentage of the daily usage quota when you want the rule triggered.  For example, 50%.  If you try to set a percentage where an exclusion rule exists, you will be warned that the existing rule will be replaced.
@@ -157,10 +163,18 @@ To specify a daily exclusion rule, do the following from the *Usage Quotas* dial
 
 7. Click **Apply** to save the exclusion rule.
 
+8. After you configure an exclusion rule, verify that the exclusion rule behaves as you expect.
+
+    Check the query in a custom view by entering the search criteria in the search bar of the *Everything* view, and validating that the data that is displayed is the data that you want excluded.
+    {: tip} 
+
 #### Monthly exclusion rules
 {: #monthly_usage_quota}
 
 To specify a monthly exclusion rule, do the following from the *Usage Quotas* dialog:
+
+Verify that each exclusion rule that you add behaves as expected. Improper configured exclusion rules can result in storing data not intended for storage.
+{: important}
 
 1. In the **Triggered Exclusion Rules** section click **Add monthly rule**.
 
@@ -179,6 +193,11 @@ To specify a monthly exclusion rule, do the following from the *Usage Quotas* di
 
 7. Click **Apply** to save the exclusion rule.
 
+8. After you configure an exclusion rule, verify that the exclusion rule behaves as you expect.
+
+    Check the query in a custom view by entering the search criteria in the search bar of the *Everything* view, and validating that the data that is displayed is the data that you want excluded.
+    {: tip} 
+
 #### Enable and disabling exclusion rules
 {: #enable_usage_rules}
 
@@ -194,10 +213,12 @@ To edit an exclusion rule click **Edit** next to the exclusion rule that you wan
 ### Configuring usage quota alerts
 {: #alerts_usage_quota}
 
-To configure the notifications when a quota threshold is exceeded, do the following:
+By default the account owner is configured to receive alert emails.  You can configure your systems to send email alerts, Slack notifications, or both.
 
-1. Under **Alert recipients** select the desired recipient email addresses. There must be at least one email address configured.
+To configure notifications when a quota threshold is exceeded, do the following:
 
-2. If desired, select one or more **Slack recipients** to receive notifications.
+1. Under **Alert recipients** select the desired recipient email addresses. There must be at least one email address configured if Slack notifcations are not configured.
+
+2. If desired, select one or more **Slack recipients** to receive notifications.  If you configure a Slack recipient, you can delete all email recipients if desired.
 
 

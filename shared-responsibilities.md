@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-01-28"
 
 keywords: IBM Cloud, Activity Tracker, auditing, customer responsibilities, IBM responsibilities, terms and conditions
 
@@ -34,6 +34,7 @@ Review the following sections for the specific responsibilities for you and for 
 | `Maintain {{site.data.keyword.cloud_notm}} high availability SLA for {{site.data.keyword.atracker_short}} hosted event search offerings`   | Provide Cloud Service across availability zones in a Multi-Zone Region (MZR).   \n  Provide Cloud Service across hosts in a Single-Zone Region (SZR).   \n Provides replication, fail-over features, and infrastructure maintenance and updates. | Use the list of available regions to plan for and create new instances of the service. |
 | `Archive events for {{site.data.keyword.atracker_short}} hosted event search offerings`  | Provide the ablity to archive to a client configured Cloud Object Storage (COS) location and archive data. | Configure Cloud Object Storage per your requirements.   \n [Enable archiving of the Activity Tracker instance.](/docs/activity-tracker?topic=activity-tracker-archiving) |
 | `Monitor events for {{site.data.keyword.atracker_short}} hosted event search offerings`  | [Participating Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services) publish relevant event data to their subscribing clients. {{site.data.keyword.at_full_notm}} provides clients with the ability to receive the events once the client configures their instance. | [Create an {{site.data.keyword.at_full_notm}} instance](/docs/activity-tracker?topic=activity-tracker-provision) in each region where Cloud service subscriptions publish events to receive the published events.   \n Create an instance in Frankfurt to get global Activity Tracker events.   \n [Create views, dashboards, and screens to view and analyze the data.](/docs/activity-tracker?topic=activity-tracker-monitor_events)|
+| `Configuring exclusion rules for {{site.data.keyword.atracker_short}} hosted event search offerings` |  | Verify that each exclusion rule that you add behaves as expected. Improper configured exclusion rules can result in storing data not intended for storage. For more information on how to use exclusion rules, see [Excluding data by using exclusion rules](/docs/activity-tracker?topic=activity-tracker-exclusion_rules), [Configuring conditional streaming](/docs/activity-tracker?topic=activity-tracker-streaming-conditional) and [Configuring usage quota exclusion rules](/docs/activity-tracker?topic=activity-tracker-control_usage_quotas#rules_usage_quota). |
 {: caption="Table 1. Responsibilities for incident and operations" caption-side="top"}
 
 

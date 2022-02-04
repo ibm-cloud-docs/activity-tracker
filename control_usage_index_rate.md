@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-03"
 
 keywords: IBM Cloud, Activity Tracker, auditing, index alerts, spike protection
 
@@ -59,6 +59,7 @@ The `max lines threshold` indicates the maximum number of lines per second that 
 
 If no log lines are ingested for over a 60-minute period, you get a **Check Later** message instead of the index rate value. When the ingestion of log lines is resumed, you get the index rate value. Measurements are taken every five minutes, therefore, the first measurement of ingested log lines for that five minutes will be averaged out for the full hour. Wait at least 1 hour before using the index rate value for analysis.
 
+Only one alert for each alert channel will be sent until the hour or day has elapsed.  This alert will show all thresholds that have been exceeded during the period. If index rate alerts are configured on each separate threshold, an alert will be sent indicating the first threshold crossed (either `Max lines/s`, `Max z-score`, or both) 
 
 ## Types of index rate alerts
 {: #control_usage_index_rate_type}
@@ -78,8 +79,8 @@ There are two types of index rate alerts:
 
     - The baseline value is calculated using data from the last 30 days.
 
-    - After you provision an instance, you must wait a minimum of 30 days of data that has been indexed to use this feature.
-    {: note}
+      After you provision an instance, you must wait a minimum of 30 days of data that has been indexed to use this feature.
+      {: note}
 
     - Each z-score represents 1 standard deviation that is based on the distribution of index rates as seen over the past 30 days. 
 
@@ -89,7 +90,8 @@ There are two types of index rate alerts:
 
         5 indicates a spike of data that requires quick action such as defining exclusion rules while you find out what source and app are causing a spike of data.
 
-
+    Setting a maximum of 3 standard deviations is a good starting point for alert triggering.  You can then refine your alerting based on your needs.
+    {: note}
 
 ## Launch the index rate alert page
 {: #control_usage_index_rate_launch}
@@ -112,6 +114,7 @@ Complete the following steps to view the index rate dashboard and enable the fea
 When the feature is enabled, the *index rate alert page* is displayed. 
 - You can use the index rate alerts page to monitor the daily average index rates or the standard deviation from the past 30 days.
 - You can toggle between viewing index rates or standard deviations for the past 30 days, the past 7 days, or the past 1 day.
+- If no log lines are ingested in a 60 minute period, **Check Later** will be displayed instead of the index rate value.  Since measurements are taken every five minutes, the first measurement of ingested log lines for that five minutes will be averaged for the first hour.  Wait at least an hour before using the index rate value for analysis any time there has been an ingestion interruption.
 
 
 
@@ -122,7 +125,7 @@ When the feature is enabled, the *index rate alert page* is displayed.
 You must set at least 1 threshold to activate the index rate alert feature.
 {: important}
 
-
+By default the index rate alert feature is disabled.
 
 ## Configure index rate alerts
 {: #control_usage_index_rate_configure}
@@ -161,7 +164,7 @@ Choose the notification frequency. Valid options are:
 - Hourly notifications 
 - Daily notifications at midnight UTC 
 
-Notifications are sent until the index rate repo-rts a value that is below the thresholds that you have configured.
+Notifications are sent until the index rate reports a value that is below the thresholds that you have configured.
 
 Individual recipients may mute alert emails.
 
