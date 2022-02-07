@@ -20,6 +20,17 @@ subcollection: activity-tracker
 Use these release notes to learn about the latest updates to {{site.data.keyword.atracker_full}}.
 {: shortdesc}
 
+## 31 January 2022
+{: #activity-tracker-jan0122}
+
+### {{site.data.keyword.at_short}} hosted event search offering
+
+Index rate analysis to alert on unexpected data volume spikes
+:   You can configure index rates alerts in your {{site.data.keyword.atracker_short}} instance to monitor and be alerted of unexpected spikes in your data volumes. Use the index rate to analyze and predict costs associated with storage of searchable data.  [Learn more about index rate analysis](/docs/activity-tracker?topic=activity-tracker-control_usage_index_rate).
+
+Managing and limiting data usage
+:   In your {{site.data.keyword.atracker_short}} instance, you can use the usage quota settings to control how much data is stored so you can manage your data cost while still being able to view and retain the data you need.  [Learn more about usage quotas](/docs/activity-tracker?topic=activity-tracker-control_usage_quotas).
+
 ## 4 October 2021
 {: #activity-tracker-oct0421}
 
