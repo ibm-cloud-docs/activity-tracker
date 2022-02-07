@@ -17,12 +17,11 @@ toc:
 
       - getting-started.md
       - about.md
-
-      - topicgroup:
-          label: Get started
-          topics:
-          - atracker/getting-started-routing.md
-          - getting-started-search.md
+      
+      - topic: cloud_services.md
+        navtitle: Services generating events
+      - topic: cloud_services_locations.md
+        navtitle: Services generating events by location
 
       - topicgroup:
           label: Cloud services
@@ -46,6 +45,12 @@ toc:
 
       - topic: releasenotes.md
         navtitle: Release notes
+
+  - navgroup: 
+      id: tutorial
+      topics:
+      - atracker/getting-started-routing.md
+      - getting-started-search.md
 
   - navgroup:
       id: howto
