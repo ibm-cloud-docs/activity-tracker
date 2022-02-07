@@ -221,6 +221,7 @@ toc:
           - at_events_acc_mgt.md
           - at_events_rc.md
           - at_event_dashdb.md
+          - at_events_cbr.md
 
   - navgroup:
         id: help

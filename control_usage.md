@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-21"
+lastupdated: "2022-02-07"
 
 keywords: IBM Cloud, Activity Tracker, usage
 
