@@ -21,7 +21,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: shortdesc}
 
 ## 31 January 2022
-{: #activity-tracker-jan0122}
+{: #activity-tracker-jan3122}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
