@@ -238,6 +238,7 @@ toc:
             label: Troubleshooting
             topics:
             - troubleshoot-04.md
+            - troubleshoot-05.md
             - atracker/troubleshoot-01.md
             - atracker/troubleshoot-02.md
             - atracker/troubleshoot-03.md
