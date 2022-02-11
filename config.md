@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-02-11"
 
 keywords: IBM Cloud, Activity Tracker, config, ui
 
@@ -30,7 +30,7 @@ By default, the web UI is configured to use local timestamps in views and search
 
 To display timestamps in UTC and do timeframe searches relative to UTC instead of local time, complete the following steps:
 
-1. In the web UI, click the **Settings** icon ![Settings icon](images/admin.png "Admin icon") &gt; **User preferences**.
+1. In the web UI, click the **User preferences** icon &gt; **User preferences**.
 2. Select **Viewer options**.
 3. Click **Show time as UTC** to enable UTC timestamps.
 
@@ -41,7 +41,7 @@ To display timestamps in UTC and do timeframe searches relative to UTC instead o
 
 Complete the following steps:
 
-1. In the web UI, click the **Settings** icon ![Settings icon](images/admin.png "Admin icon") &gt; **User preferences**.
+1. In the web UI, click the **User preferences** icon &gt; **User preferences**.
 2. Select **Viewer style**.
 3. Choose the default contrast. 
 
@@ -60,7 +60,7 @@ Complete the following steps:
 
 Complete the following steps to display a log line that includes the timestamp and message of an event:
 
-1. In the web UI, click the **Settings** icon ![Settings icon](images/admin.png "Admin icon") &gt; **User preferences**.
+1. In the web UI, click the **User preferences** icon &gt; **User preferences**.
 2. Select **Log format**.
 
     By default, the log format is configured in the following way:
