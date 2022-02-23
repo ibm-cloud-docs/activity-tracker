@@ -387,7 +387,7 @@ The following tables list the locations where automatic collection of database s
 ## Developer tools
 {: #cloud_services_locations_devops}
 
-The Apps service sends global events. These events are available through the Franfurt instance.
+The Apps service sends global events. These events are available through the Frankfurt instance.
 
 
 | Service                            | `Dallas (us-south)` | `Washington (us-east)`  |`Toronto (ca-tor)` | `Sao Paulo (br-sao)` |
