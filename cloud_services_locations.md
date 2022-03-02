@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-02-28"
 
 keywords: IBM Cloud,Activity Tracker, cloud services, services, locations, {{site.data.keyword.at_short}} hosted event search, {{site.data.keyword.atracker_short}} event routing,
 
@@ -301,13 +301,13 @@ You can track how users and applications interact with the {{site.data.keyword.r
 
 | Global service                                  | Location | 
 |-------------------------------------------------|---------------------|
-| BSS - Account and billing | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
-| BSS - User management | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
-| BSS - Provisioning | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
+| Billing | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
+| User management | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
+| Provisioning | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
 | {{site.data.keyword.iamlong}}    | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |        
 | {{site.data.keyword.compliance_short}}   | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |    
 | Global Search Service | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |  
-| Catalog | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
+| Catalog Management | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
 | Trusted profiles | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
 | Context-based restrictions | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
 {: caption="Table 8. Integrated security services integration in America locations" caption-side="top"}
