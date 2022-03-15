@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-15"
 
 keywords: IBM Cloud, cloud services, {{site.data.keyword.atracker_short}} event routing, security, auditing, services, {{site.data.keyword.at_short}} hosted event search
 
@@ -139,6 +139,7 @@ The following table lists integration services that send auditing events:
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting_started)| `event-streams` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/EventStreams?topic=EventStreams-at_events) |
 | [MQ on IBM Cloud](/docs/mqcloud?topic=mqcloud-mqoc_getting_started) |`mqcloud` |![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](/docs/mqcloud?topic=mqcloud-at_events) |
+|[{{site.data.keyword.apiconnect_long}}](/docs/apiconnect?topic=apiconnect-getting-started)| `apiconnect` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](/docs/apiconnect?topic=apiconnect-at_events) |
 {: caption="Table 8. List of integration Cloud services" caption-side="top"}
 
 
