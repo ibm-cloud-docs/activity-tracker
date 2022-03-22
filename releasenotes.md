@@ -135,4 +135,3 @@ Enhanced data residency, compliance, and security
 Introducing {{site.data.keyword.at_full_notm}}
 :   Use the {{site.data.keyword.at_full_notm}} service to capture a record of your {{site.data.keyword.cloud_notm}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 
-
