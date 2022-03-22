@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-21"
+lastupdated: "2022-03-22"
 
 keywords: IBM Cloud, Activity Tracker, release notes, whats new
 
@@ -19,6 +19,14 @@ subcollection: activity-tracker
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.atracker_full}}.
 {: shortdesc}
+
+## 22 March 2022
+{: #activity-tracker-mar2222}
+
+### {{site.data.keyword.atracker_short}} event routing offering
+
+{{site.data.keyword.atracker_short}} event routing available in Frankfurt (eu-de) and London (eu-gb)
+:   {{site.data.keyword.atracker_short}} event routing is now available in the Frankfurt (eu-de) and London (eu-gb) regions.  [Learn more](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker).
 
 ## 31 January 2022
 {: #activity-tracker-jan3122}

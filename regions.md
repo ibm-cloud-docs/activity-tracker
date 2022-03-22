@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-03"
+lastupdated: "2022-03-22"
 
 keywords: IBM Cloud, Activity Tracker, regions
 subcollection: activity-tracker
@@ -24,8 +24,7 @@ subcollection: activity-tracker
 This information applies only to {{site.data.keyword.at_full_notm}} hosted event search offerings.
 {: important}
 
-![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/world-map_min.png)
-{: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}
+![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/world-map_min.png){: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}
 
 
 | Geography             | Region                   | EU-Supported | HA Status |
@@ -42,7 +41,6 @@ This information applies only to {{site.data.keyword.at_full_notm}} hosted event
 | `North America`       | `Toronto (ca-tor)`   | `N/A`        | `MZR`     |
 | `South America`       | `Sao Paulo (br-sao)`     | `N/A`        | `MZR`     |
 {: caption="Table 1. List of locations for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
-
 {: #end-api-table-1}
 
 
@@ -64,14 +62,15 @@ This information applies only to {{site.data.keyword.atracker_full_notm}} event 
 {: important}
 
 
-![The image shows the locations where the {{site.data.keyword.atracker_short}} service is available.](images/world-map_usonly.svg)
-{: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.atracker_short}} resources." caption-side="bottom"}
+![The image shows the locations where the {{site.data.keyword.atracker_short}} service is available.](images/world-map_usonly.svg){: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.atracker_short}} resources." caption-side="bottom"}
 
 
 | Geography             | Region                   | EU-Supported | HA Status |
 |-----------------------|--------------------------|--------------|-----------|
 | `North America`       | `Dallas (us-south)`      | `N/A`        | `MZR`     |
 | `North America`       | `Washington (us-east)`   | `N/A`        | `MZR`     |
+| `Europe`              | `Frankfurt (eu-de) (*)`  | `YES`        | `MZR`     |
+| `Europe`              | `London (eu-gb)`  | `NO`        | `MZR`     |
 {: caption="Table 1. List of locations for {{site.data.keyword.atracker_short}} event routing" caption-side="top"}
 
 Where
