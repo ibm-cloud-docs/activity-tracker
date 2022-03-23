@@ -179,6 +179,7 @@ toc:
           - alerts/sms.md
           - alerts/webhook.md
           - alerts/slack.md
+          - atracker/cloud_notifications.md
 
   - navgroup:
       id: reference
