@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-24"
 
 keywords: IBM Cloud,Activity Tracker, cloud services, services, locations, {{site.data.keyword.at_short}} hosted event search, {{site.data.keyword.atracker_short}} event routing,
 
@@ -398,7 +398,7 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.mobilepush}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.bplong}}                   |  ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Dallas instance`  |
 | {{site.data.keyword.en_full}}         | ![Checkmark icon](images/checkmark-icon.svg)   |                     | 
-| {{site.data.keyword.appconfig_full}}         | ![Checkmark icon](images/checkmark-icon.svg)   |                     | 
+| {{site.data.keyword.appconfig_full}}         | ![Checkmark icon](images/checkmark-icon.svg)   |   ![Checkmark icon](images/checkmark-icon.svg) | 
 {: caption="Table 10. Developer tools services integration in America's locations" caption-side="top"}
 {: #cs-dev-tools-table-1}
 {: tab-title="America"}
