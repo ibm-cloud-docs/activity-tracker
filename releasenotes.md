@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-24"
 
 keywords: IBM Cloud, Activity Tracker, release notes, whats new
 
@@ -19,6 +19,14 @@ subcollection: activity-tracker
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.atracker_full}}.
 {: shortdesc}
+
+## 24 March 2022
+{: #activity-tracker-mar2422}
+
+### {{site.data.keyword.at_short}} hosted event search offering
+
+Ability to limit access to private endpoints only
+:   You can limit access to an {{site.data.keyword.at_full}} instance to private endpoints only.    [Learn more](/docs/activity-tracker?topic=activity-tracker-private_endpoints_only).
 
 ## 22 March 2022
 {: #activity-tracker-mar2222}
@@ -134,4 +142,5 @@ Enhanced data residency, compliance, and security
 
 Introducing {{site.data.keyword.at_full_notm}}
 :   Use the {{site.data.keyword.at_full_notm}} service to capture a record of your {{site.data.keyword.cloud_notm}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
+
 

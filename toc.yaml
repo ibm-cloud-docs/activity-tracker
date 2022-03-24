@@ -75,6 +75,7 @@ toc:
           - iam_grant_team.md
           - iam_manage_events.md
           - iam_view_events.md
+          - private_endpoints_only.md
 
       - topicgroup:
           label: Archiving
