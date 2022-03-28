@@ -22,6 +22,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 ## 24 March 2022
 {: #activity-tracker-mar2422}
+{: release-note}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
@@ -30,6 +31,7 @@ Ability to limit access to private endpoints only
 
 ## 22 March 2022
 {: #activity-tracker-mar2222}
+{: release-note}
 
 ### {{site.data.keyword.atracker_short}} event routing offering
 
@@ -38,6 +40,7 @@ Ability to limit access to private endpoints only
 
 ## 31 January 2022
 {: #activity-tracker-jan3122}
+{: release-note}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
@@ -49,6 +52,7 @@ Managing and limiting data usage
 
 ## 4 October 2021
 {: #activity-tracker-oct0421}
+{: release-note}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
@@ -57,6 +61,7 @@ API for Archiving
 
 ## 31 September 2021
 {: #activity-tracker-sep3121}
+{: release-note}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
@@ -65,6 +70,7 @@ API for data streaming
 
 ## 13 August 2021
 {: #activity-tracker-aug1321}
+{: release-note}
 
 ### {{site.data.keyword.atracker_short}} event routing offering
 
@@ -78,6 +84,7 @@ Data streaming support
 
 ## 2 July 2021
 {: #activity-tracker-jul0221}
+{: release-note}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
@@ -86,6 +93,7 @@ Support to stream data is available in beta
 
 ## 31 March 2021
 {: #activity-tracker-mar3121}
+{: release-note}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
@@ -97,6 +105,7 @@ New API support
 
 ## 31 January 2021
 {: #activity-tracker-jan3121}
+{: release-note}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
@@ -105,6 +114,7 @@ Changes to archiving frequency
 
 ## 31 December 2020
 {: #activity-tracker-dec3120}
+{: release-note}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
@@ -116,6 +126,7 @@ Terraform support
 
 ## 9 July 2020
 {: #activity-tracker-jul0920}
+{: release-note}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
@@ -124,6 +135,7 @@ HIPPA service plans available
 
 ## 19 July 2019
 {: #activity-tracker-jul1920}
+{: release-note}
 
 ### {{site.data.keyword.at_short}} hosted event search offering
 
