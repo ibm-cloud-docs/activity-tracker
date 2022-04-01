@@ -1,7 +1,7 @@
 toc:
   properties:
     subcollection: activity-tracker
-    service-name: atracker
+    service-name: logdnaat
     version: 2
     category: logging_monitoring
     audience: service
