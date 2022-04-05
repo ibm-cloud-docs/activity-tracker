@@ -54,7 +54,7 @@ Managing and limiting data usage *({{site.data.keyword.at_short}} hosted event s
 API for Archiving *({{site.data.keyword.at_short}} hosted event search offering)*
 :   Documentation of API changes supporting archiving is generally available.  [Learn more about the archiving API](/apidocs/activity-tracker#get-v1-config-archiving).
 
-## 31 September 2021
+## 1 October 2021
 {: #activity-tracker-sep3121}
 {: release-note}
 
