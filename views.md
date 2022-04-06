@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-11"
 
 keywords: IBM Cloud,Activity Tracker, search, filter, events
 
@@ -218,8 +218,9 @@ After you apply the search query to the **Everything** view or to an existing cu
 {: #views_step4}
 
 There are different options to customize how you see data in a view:
-* You can modify the properties of a view., You can rename a view, add or modify its description, and apply a specific line format.
-* You can change the `log format` in the *USER PREFERENCES* section.
+* You can modify the properties of a view. 
+* You can rename a view, add or modify its description, and apply a specific line format.
+* You can change the `log format` in the *User preferences* section.
 * You can apply a line template from the *Tools* section. Notice that this overrides any other line configuration. If you select **Persist these settings**, all views in the UI will show data per the line format that is specified in this section.
 * You can apply color to terms or strings by setting **Highlight Terms** in the **Tools** section.
 
@@ -243,14 +244,14 @@ Complete the following steps to modify the format of an event line in a single v
 ### Change the line format through the user preferences section
 {: #views_step4_2}
 
-In the **USER PREFERENCES** section, you can modify the order of the data fields that are displayed per line.
+In the **User preferences** section, you can modify the order of the data fields that are displayed per line.
 
 Complete the following steps to modify the format of an event line:
 
-1. In the web UI, click the **Configuration** icon ![Configuration icon](images/admin.png "Admin icon").
-2. Select **USER PREFERENCES**. A new window opens.
+1. In the web UI, click the **User preferences** icon.
+2. Select **User preferences**. A new window opens.
 3. Select **Log Format**.
-4. Modify the *Line Format* section to match your requirements. Drag boxes.
+4. Modify the *Line Format* section to match your requirements by dragging the boxes to the desired location.
 
 
 ### Change the line format through the line template in the tools section
@@ -283,7 +284,7 @@ Complete the following steps to highlight terms in a view:
 Consider the following guidelines that you must apply when you define a line template:
 * Use mustache style `{{field.name}}` or bash style `${field.name}` variables to construct your template. 
 * Use `{{line}}` or `$@` to reference the original line. 
-* All other characters or strings are interpreted as text literal. 
+* All other characters or strings are interpreted as a text literal. 
 
 
 For example, you can define a line template as `{{initiator.id}} -- {{action}} -- {{message}}` to see these fields for each event in a view.

@@ -1,6 +1,7 @@
 toc:
   properties:
     subcollection: activity-tracker
+    service-name: logdnaat
     version: 2
     category: logging_monitoring
     audience: service
@@ -17,12 +18,11 @@ toc:
 
       - getting-started.md
       - about.md
-
-      - topicgroup:
-          label: Get started
-          topics:
-          - atracker/getting-started-routing.md
-          - getting-started-search.md
+      
+      - topic: cloud_services.md
+        navtitle: Services generating events
+      - topic: cloud_services_locations.md
+        navtitle: Services generating events by location
 
       - topicgroup:
           label: Cloud services
@@ -47,6 +47,12 @@ toc:
       - topic: releasenotes.md
         navtitle: Release notes
 
+  - navgroup: 
+      id: tutorial
+      topics:
+      - atracker/getting-started-routing.md
+      - getting-started-search.md
+
   - navgroup:
       id: howto
       topics:
@@ -69,6 +75,7 @@ toc:
           - iam_grant_team.md
           - iam_manage_events.md
           - iam_view_events.md
+          - private_endpoints_only.md
 
       - topicgroup:
           label: Archiving
@@ -173,6 +180,7 @@ toc:
           - alerts/sms.md
           - alerts/webhook.md
           - alerts/slack.md
+          - atracker/cloud_notifications.md
 
   - navgroup:
       id: reference
@@ -233,6 +241,7 @@ toc:
             label: Troubleshooting
             topics:
             - troubleshoot-04.md
+            - troubleshoot-05.md
             - atracker/troubleshoot-01.md
             - atracker/troubleshoot-02.md
             - atracker/troubleshoot-03.md

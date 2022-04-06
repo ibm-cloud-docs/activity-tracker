@@ -4,9 +4,14 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, getting started, auditing
+keywords: IBM Cloud, Activity Tracker, getting started, auditing, tutorial
 
 subcollection: activity-tracker
+
+content-type: tutorial
+services: activity-tracker
+account-plan: lite 
+completion-time: 1h 
 
 ---
 
@@ -15,6 +20,9 @@ subcollection: activity-tracker
 
 # Getting started with {{site.data.keyword.at_short}} hosted event search offerings
 {: #getting-started-search}
+{: toc-content-type="tutorial"}
+{: toc-services-"activity-tracker"} 
+{: toc-completion-time="1h"} 
 
 
 Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
@@ -100,8 +108,9 @@ Complete this tutorial to learn how to provision a service in the {{site.data.ke
 * To complete the steps to manage access to the service, your user ID needs **administrator platform permissions** to manage the {{site.data.keyword.at_full_notm}} service. Contact the account owner. The account owner can grant another user access to the account for the purposes of managing user access, and managing account resources. [Learn more](/docs/account?topic=account-userroles).
 
 
-## Step 1. Provision an instance of the {{site.data.keyword.at_full_notm}} service
+## Provision an instance of the {{site.data.keyword.at_full_notm}} service
 {: #gs_step1}
+{: step}
 
 Complete the following steps to provision an instance:
 
@@ -134,8 +143,9 @@ Complete the following steps to provision an instance:
    After you provision an instance, the *Activity Tracker* dashboard, that is located in the *Observability* section of the {{site.data.keyword.cloud_notm}} UI, opens. 
 
 
-## Step 2. Manage access to the service
+## Manage access to the service
 {: #gs_step2}
+{: step}
 
 **Every user that accesses the {{site.data.keyword.at_full_notm}} service in your account must be assigned an access policy with an IAM user role defined.** The policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam).
 {: important}
@@ -143,7 +153,7 @@ Complete the following steps to provision an instance:
 To grant a user management permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of a resource group, complete the following steps:
 
 
-### Step 2.1. Create an access group
+### Create an access group
 {: #gs_step2_1}
 
 Complete the following steps to create an access group:
@@ -151,7 +161,7 @@ Complete the following steps to create an access group:
 2. Click **Create**.
 3. Enter a name and optional description for your group, and click **Create**.
 
-### Step 2.2. Add permissions to manage events
+### Add permissions to manage events
 {: #gs_step2_2}
 
 After you set up your group, you must assign a common access policy to the group. Any policy that you set for an access group applies to all entities, users and service IDs, within the group.
@@ -179,7 +189,7 @@ Complete the following steps to assign a policy through the UI:
 10. Click **Add**. Then, select **Assign**.
 
 
-### Step 2.3. Add the user to the group
+### Add the user to the group
 {: #gs_step2_3}
 
 Complete the following steps to add the user to the access group:
@@ -187,8 +197,9 @@ Complete the following steps to add the user to the access group:
 2. Select the user that you want to add from the list, and click **Add to group**.
 
 
-## Step 3. Generate {{site.data.keyword.at_full_notm}} events
+## Generate {{site.data.keyword.at_full_notm}} events
 {: #gs_step3}
+{: step}
 
 If you have a pay-as-you-go account, you can use {{site.data.keyword.cloudcerts_short}} to create an event. If you don't have a pay-as-you-go account, provisioning any of the available lite services triggers an event.
 
@@ -199,8 +210,9 @@ If you have a pay-as-you-go account, you can use {{site.data.keyword.cloudcerts_
 
 3. (Optional) [Provision an instance of the {{site.data.keyword.cloudcerts_short}} service](/docs/certificate-manager?topic=certificate-manager-getting-started).
 
-## Step 4. Launch the web UI 
+## Launch the web UI 
 {: #gs_step4}
+{: step}
 
 Complete the following steps to launch the web UI:
 
@@ -221,8 +233,9 @@ Complete the following steps to launch the web UI:
 The web UI opens. 
 
 
-## Step 5. View events
+## View events
 {: #gs_step5}
+{: step}
 
 
 The {{site.data.keyword.at_full_notm}} service captures activity data that is related to API calls and other actions that are made to selected cloud services in the {{site.data.keyword.cloud_notm}}. 
@@ -238,8 +251,9 @@ When the web UI opens, the **EVERYTHING** view is displayed. You can see events 
 You can also define custom views to view a set of events by applying a timestamp, a search query, or both. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-views).
 
 
-## Step 6. Learn about the structure of an event
+## Learn about the structure of an event
 {: #gs_step6}
+{: step}
 
 Events comply with the **Cloud Auditing Data Federation (CADF) standard**. The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
 
