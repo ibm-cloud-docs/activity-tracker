@@ -25,12 +25,6 @@ toc:
         navtitle: Services generating events by location
 
       - topicgroup:
-          label: Cloud services
-          topics:
-          - cloud_services.md
-          - cloud_services_locations.md
-
-      - topicgroup:
           label: Events
           topics:
           - event.md
