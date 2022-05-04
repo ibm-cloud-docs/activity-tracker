@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-21"
+lastupdated: "2022-05-40"
 
 keywords: IBM Cloud, Activity Tracker, archive logs, COS, cloud object storage
 
@@ -28,9 +28,11 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 ### {{site.data.keyword.at_short}} service
 {: #archiving-at-monitor-prereqs-at}
 
+- You must have an {{site.data.keyword.at_short}} instance provisioned that receives events from the COS bucket that you use for archiving.  Normally this instance is in the same region as the COS bucket.
+
 - **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-service_plan#service_plan). 
 
-- Check that your user ID has permissions to launch the web UI and create views and alerts in the Frankfurt {{site.data.keyword.at_short}} instance. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and manage resources:
+- Check that your user ID has permissions to launch the web UI and create views and alerts in the {{site.data.keyword.at_short}} instance. The following table lists the minimum roles that a user must have to be able to launch the {{site.data.keyword.at_full_notm}} web UI, and manage resources:
 
 | Role                      | Permission granted            |
 |---------------------------|-------------------------------|  
@@ -43,7 +45,7 @@ For more information on how to configure policies for a user, see [Granting user
 ### {{site.data.keyword.cos_full_notm}} service
 {: #archiving-at-monitor-prereqs-cos}
 
-- You must have enabled collection of data events for the bucket where you are archiving data for the {{site.data.keyword.at_short}} instance. 
+- You must have enabled collection of data events for the bucket where you are archiving data for the {{site.data.keyword.at_short}} instance. Make sure the events are saved to your {{site.data.keyword.at_full_notm}} instance.
 
     You must enable `write` data events to monitor upload of objects to the bucket.
 
@@ -63,13 +65,13 @@ For more information on how to configure policies for a user, see [Granting user
 
 Complete the following steps to get the service ID that is used to configure archiving in {{site.data.keyword.at_short}}:
 
-1. From the Navigation menu, select **Resource List**.
+1. From the Navigation menu, select **Resource List** > **Storage**.
 
 2. Select the {{site.data.keyword.cos_full_notm}} instance where the bucket is available.
 
 3. Select **Service credentials**. 
 
-4. For the service ID that you used to configure archiving, click **View credentials**. You can see information that is related to the service ID. 
+4. For the service ID that you used to configure archiving, open the details for the **Key name**. You will see information that is related to the key. 
 
 5. Copy the service ID value. This is the last section of the CRN value that is set for the field **iam_serviceid_crn**. 
 
@@ -82,6 +84,15 @@ Complete the following steps to get the service ID that is used to configure arc
 
     You must copy the section: `ServiceId-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx`
 
+6. Select **Buckets**.
+
+7. Select the bucket you are using for archiving.
+
+8. Click the **Configuration** tab.
+
+9. Copy the *Bucket Instance CRN*.
+
+10. In the **Activity Tracker** section make sure the selected service instance is the one you are using.  Also make sure **Data events** is set to *read & write*.
 
 
 ### Step 2. Define a view to filter the events that report the usage of that service ID
@@ -102,14 +113,14 @@ Complete the following steps to define a view:
 
     Replace `<GUID>` with the ID value of the service ID that you copied earlier.
 
-    Replace `<BUCKET-CRN>` with the CRN value of the bucket that you can get from the bucket configuration page.
+    Replace `<BUCKET-CRN>` with the CRN value of the bucket that you found on the bucket configuration page.
 
-4. Save the view. For example, you can name the view `Upload AT Frankfurt` to indicate archive files into the bucket from the {{site.data.keyword.at_full_notm}} instance located in Frankfurt.
+4. Save the view. For example, you can name the view `Upload AT Frankfurt` to indicate archive files into the bucket from an {{site.data.keyword.at_full_notm}} instance located in Frankfurt.
 
     The data that is displayed through the view reports write actions of archive files to the archive bucket.
 
 
-### Step 3. Define an alert to notify the absence of alerts
+### Step 3. Define an alert to notify the absence of new archive files
 {: #archiving-at-monitor-alert-3}
 
 Complete the following steps to define an absence alert that notifies you when archiving is not happening:
