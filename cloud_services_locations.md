@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-05-13"
 
 keywords: IBM Cloud,Activity Tracker, cloud services, services, locations, {{site.data.keyword.at_short}} hosted event search, {{site.data.keyword.atracker_short}} event routing,
 
@@ -209,50 +209,21 @@ The following table shows the locations where automatic collection of Cloud Foun
 {: class="simple-tab-table"}
 {: row-headers}
 
-
 ## Container services
 {: #cloud_services_locations_container}
 
-For {{site.data.keyword.containerlong_notm}}, see [Locations](/docs/containers?topic=containers-at_events#at-ui).
+{{site.data.keyword.registrylong_notm}}
+:   You can track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service. For information about the locations where the automatic collection of {{site.data.keyword.registryshort_notm}} service events is enabled, see [Auditing events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-at_events#at_events_locations).
 
-For {{site.data.keyword.openshiftlong_notm}}, see [Locations](/docs/openshift?topic=openshift-at_events#at-ui).
+{{site.data.keyword.containerlong_notm}}
+:   For {{site.data.keyword.containerlong_notm}}, see [Viewing your cluster events](/docs/containers?topic=containers-at_events#at-ui).
 
-For {{site.data.keyword.satellitelong_notm}}, see [Locations](/docs/satellite?topic=satellite-at_events#at_ui).
+{{site.data.keyword.satellitelong_notm}}
+:   For {{site.data.keyword.satellitelong_notm}}, see [Viewing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events#at_ui).
 
-You can track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service. The following table lists the locations where the automatic collection of {{site.data.keyword.registryshort_notm}} service events is enabled. For more information, see [Auditing the events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-at_events).
-
-| Service                                       | `Dallas (us-south)` | `Sao Paulo (br-sao)` | `Toronto (ca-tor)` | `Global` |
-|-----------------------------------------------|---------------------|----------------------|--------------------|------------------------|
-| {{site.data.keyword.registrylong_notm}}  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | `[*]` |         
-{: caption="Table 6. Container services integration in Americas locations" caption-side="top"}
-{: #cs-container-table-1}
-{: tab-title="America"}
-{: tab-group="cs-container"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                        |  `Osaka (jp-osa)`  | `Sydney (au-syd)`    | `Tokyo (jp-tok)`|
-|------------------------------------------------|--------------------|----------------------|-----------------|
-| {{site.data.keyword.registrylong_notm}}  `[*]` | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance.` | ![Checkmark icon](images/checkmark-icon.svg) |       
-{: caption="Table 6. Container services integration in Asia Pacific locations" caption-side="top"}
-{: #cs-container-table-2}
-{: tab-title="Asia Pacific"}
-{: tab-group="cs-container"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
-|-----------------------------------------------|---------------------|------------------|
-| {{site.data.keyword.registrylong_notm}} `[*]` | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |          
-{: caption="Table 6. Container services integration in Europe locations" caption-side="top"}
-{: #cs-container-table-3}
-{: tab-title="Europe"}
-{: tab-group="cs-container"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-`[*]` {{site.data.keyword.registrylong_notm}} events from the global registry (`icr.io`) are available through the Activity Tracker `Dallas (us-south)` instance.  
-
+{{site.data.keyword.openshiftlong_notm}}
+:   For {{site.data.keyword.openshiftlong_notm}}, see [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui).
+  
 ## Observability services
 {: #cloud_services_locations_observability}
 
@@ -262,7 +233,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 | {{site.data.keyword.at_full_notm}} event routing  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|
 | {{site.data.keyword.la_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)|  
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |     
-{: caption="Table 7. Observability services in America's locations" caption-side="top"}
+{: caption="Table 6. Observability services in America's locations" caption-side="top"}
 {: #cs-observability-table-1}
 {: tab-title="America"}
 {: tab-group="cs-observability"}
@@ -275,7 +246,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 | {{site.data.keyword.at_full_notm}} event routing  | | | | | |
 | {{site.data.keyword.la_full_notm}}  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|  | ![Checkmark icon](images/checkmark-icon.svg) | |  | 
-{: caption="Table 7. Observability services in AP locations" caption-side="top"}
+{: caption="Table 6. Observability services in AP locations" caption-side="top"}
 {: #cs-observability-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs-observability"}
@@ -288,7 +259,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 | {{site.data.keyword.at_full_notm}} event routing  | | |
 | {{site.data.keyword.la_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |     
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|        
-{: caption="Table 7. Observability services in Europe locations" caption-side="top"}
+{: caption="Table 6. Observability services in Europe locations" caption-side="top"}
 {: #cs-observability-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs-observability"}
@@ -310,7 +281,7 @@ You can track how users and applications interact with the {{site.data.keyword.r
 | Catalog Management | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
 | Trusted profiles | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
 | Context-based restrictions | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
-{: caption="Table 8. Integrated security services integration in America locations" caption-side="top"}
+{: caption="Table 7. Integrated security services integration in America locations" caption-side="top"}
 
 
 
@@ -334,7 +305,7 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.messages-for-rabbitmq_full_notm}}           | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.databases-for-redis_full_notm}}             | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.Db2_on_Cloud_long}}| ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 9. Database services integration in America locations" caption-side="top"}
+{: caption="Table 8. Database services integration in America locations" caption-side="top"}
 {: #cs-dbs-table-1}
 {: tab-title="America"}
 {: tab-group="cs_dbs"}
@@ -355,7 +326,7 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.messages-for-rabbitmq_full_notm}}           | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Tokyo instance` | ![Checkmark icon](images/checkmark-icon.svg) |               |
 | {{site.data.keyword.databases-for-redis_full_notm}}            | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Tokyo instance` | ![Checkmark icon](images/checkmark-icon.svg) |               |
 | {{site.data.keyword.Db2_on_Cloud_long}} | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |   | | |
-{: caption="Table 9. Database services integration in AP locations" caption-side="top"}
+{: caption="Table 8. Database services integration in AP locations" caption-side="top"}
 {: #cs-dbs-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs_dbs"}
@@ -376,7 +347,7 @@ The following tables list the locations where automatic collection of database s
 | {{site.data.keyword.messages-for-rabbitmq_full_notm}}         | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)            | `Events are available through the London instance` |
 | {{site.data.keyword.databases-for-redis_full_notm}}           | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)            | `Events are available through the London instance` |
 | {{site.data.keyword.Db2_on_Cloud_long}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |                        |
-{: caption="Table 9. Database services integration in Europe locations" caption-side="top"}
+{: caption="Table 8. Database services integration in Europe locations" caption-side="top"}
 {: #cs-dbs-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs_dbs"}
@@ -399,7 +370,7 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.bplong}}                   |  ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Dallas instance`  |
 | {{site.data.keyword.en_full}}         | ![Checkmark icon](images/checkmark-icon.svg)   |                     | 
 | {{site.data.keyword.appconfig_full}}         | ![Checkmark icon](images/checkmark-icon.svg)   |   ![Checkmark icon](images/checkmark-icon.svg) | 
-{: caption="Table 10. Developer tools services integration in America's locations" caption-side="top"}
+{: caption="Table 9. Developer tools services integration in America's locations" caption-side="top"}
 {: #cs-dev-tools-table-1}
 {: tab-title="America"}
 {: tab-group="cs-dev_tools"}
@@ -415,7 +386,7 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.bplong}}                   |   |   |   | | |
 | {{site.data.keyword.en_full}}                   |   | ![Checkmark icon](images/checkmark-icon.svg)   | |  | |
 | {{site.data.keyword.appconfig_full}}                   |   | ![Checkmark icon](images/checkmark-icon.svg)   |  | | |
-{: caption="Developer tools services integration in AP locations" caption-side="top"}
+{: caption="Table 9.Developer tools services integration in AP locations" caption-side="top"}
 {: #cs-dev-tools-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs-dev_tools"}
@@ -431,7 +402,7 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.bplong}}                   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Frankfurt instance` | 
 | {{site.data.keyword.en_full}}                  | | ![Checkmark icon](images/checkmark-icon.svg)  |   
 | {{site.data.keyword.appconfig_full}}                  | | ![Checkmark icon](images/checkmark-icon.svg)  | 
-{: caption="Table 10. Developer tools services integration in Europe locations" caption-side="top"}
+{: caption="Table 9. Developer tools services integration in Europe locations" caption-side="top"}
 {: #cs-dev-tools-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs-dev_tools"}
@@ -449,7 +420,7 @@ The Apps service sends global events. These events are available through the Fra
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
 | {{site.data.keyword.messagehub}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |          
 | MQ on IBM Cloud                                | ![Checkmark icon](images/checkmark-icon.svg) |                                       |
-{: caption="Table 11. Integration services integration in America's locations" caption-side="top"}
+{: caption="Table 10. Integration services integration in America's locations" caption-side="top"}
 {: #cs_integration-table-1}
 {: tab-title="America"}
 {: tab-group="cs_integration"}
@@ -460,7 +431,7 @@ The Apps service sends global events. These events are available through the Fra
 |----------------|---------------------|------------------|------------------|------------------|--------------------|
 | {{site.data.keyword.messagehub}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
 | MQ on IBM Cloud                                |                  | ![Checkmark icon](images/checkmark-icon.svg)  | | |
-{: caption="Table 11. Integration services integration in AP locations" caption-side="top"}
+{: caption="Table 10. Integration services integration in AP locations" caption-side="top"}
 {: #cs_integration-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs_integration"}
@@ -471,7 +442,7 @@ The Apps service sends global events. These events are available through the Fra
 |---------------------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.messagehub}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |          
 | MQ on IBM Cloud                                | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 11. Integration services integration in Europe locations" caption-side="top"}
+{: caption="Table 10. Integration services integration in Europe locations" caption-side="top"}
 {: #cs_integration-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs_integration"}
@@ -492,7 +463,7 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.tg_full}}                  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |
 | Content Delivery Network (CDN)                 | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` | 
 | {{site.data.keyword.vpc_full}}                 | `Events are available through the Activity Tracker Dallas (us-south) instance` |
-{: caption="Table 12. Network services that are global" caption-side="top"}
+{: caption="Table 11. Network services that are global" caption-side="top"}
 
 
 
@@ -510,7 +481,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.security-advisor_long}}                     | ![Checkmark icon](images/checkmark-icon.svg) |    |   
 | {{site.data.keyword.secrets-manager_full}}  | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 13. Security services integration in America's locations" caption-side="top"}
+{: caption="Table 12. Security services integration in America's locations" caption-side="top"}
 {: #cs-sec-table-1}
 {: tab-title="America"}
 {: tab-group="cs_sec"}
@@ -525,7 +496,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} |   ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) | |
 | {{site.data.keyword.security-advisor_long}}                     |      |     |   |
 | {{site.data.keyword.secrets-manager_full}}       | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | |
-{: caption="Table 13. Security services integration in AP locations" caption-side="top"}
+{: caption="Table 12. Security services integration in AP locations" caption-side="top"}
 {: #cs-sec-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs_sec"}
@@ -540,7 +511,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
 | {{site.data.keyword.security-advisor_long}}                     |   | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.secrets-manager_full}}  | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 13. Security services integration in Europe locations" caption-side="top"}
+{: caption="Table 12. Security services integration in Europe locations" caption-side="top"}
 {: #cs-sec-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs_sec"}
@@ -555,7 +526,7 @@ The following tables list the locations where automatic collection of security s
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
 | {{site.data.keyword.cos_full_notm}}  `[*]`          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)  |
 | {{site.data.keyword.mdms_short}}            | ![Checkmark icon](images/checkmark-icon.svg)  |       |  
-{: caption="Table 14. Storage services integration in America locations" caption-side="top"}
+{: caption="Table 13. Storage services integration in America locations" caption-side="top"}
 {: #cs-storage-table-1}
 {: tab-title="America"}
 {: tab-group="cs-storage"}
@@ -566,7 +537,7 @@ The following tables list the locations where automatic collection of security s
 |------------------------------------------------|------------------|----------------------------|-------------------|
 | {{site.data.keyword.cos_full_notm}}  `[*]`        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Tokyo (jp-tok) instance` |
 | {{site.data.keyword.mdms_short}}            |   |       |   |
-{: caption="Table 14. Storage services integration in AP locations" caption-side="top"}
+{: caption="Table 13. Storage services integration in AP locations" caption-side="top"}
 {: #cs-storage-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs-storage"}
@@ -577,7 +548,7 @@ The following tables list the locations where automatic collection of security s
 |---------------------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.cos_full_notm}}  `[*]`        | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  | 
 | {{site.data.keyword.mdms_short}}            |   |       |  
-{: caption="Table 14. Storage services integration in Europe locations" caption-side="top"}
+{: caption="Table 13. Storage services integration in Europe locations" caption-side="top"}
 {: #cs-storage-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs-storage"}
@@ -599,7 +570,7 @@ The following tables list the locations where automatic collection of security s
 | Service                            | `Dallas (us-south)` | `Washington (us-east)`  |`Toronto (ca-tor)` | `Sao Paulo (br-sao)` |
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
 | {{site.data.keyword.mobilefoundation_short}}   |![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |          
-{: caption="Table 15. Web and mobile services integration in America locations" caption-side="top"}
+{: caption="Table 14. Web and mobile services integration in America locations" caption-side="top"}
 {: #cs-web-table-1}
 {: tab-title="America"}
 {: tab-group="cs-web"}
@@ -609,7 +580,7 @@ The following tables list the locations where automatic collection of security s
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
 | {{site.data.keyword.mobilefoundation_short}}   |               | ![Checkmark icon](images/checkmark-icon.svg) |           
-{: caption="Table 15. Web and mobile services integration in AP locations" caption-side="top"}
+{: caption="Table 14. Web and mobile services integration in AP locations" caption-side="top"}
 {: #cs-web-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs-web"}
@@ -619,7 +590,7 @@ The following tables list the locations where automatic collection of security s
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.mobilefoundation_short}}   | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |   
-{: caption="Table 15. Web and mobile services integration in Europe locations" caption-side="top"}
+{: caption="Table 14. Web and mobile services integration in Europe locations" caption-side="top"}
 {: #cs-web-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs-web"}
@@ -636,7 +607,7 @@ The following tables list the locations where automatic collection of security s
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  |  | 
 | Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  |  | 
 | VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  |  | 
-{: caption="Table 16. VPC events in America's locations" caption-side="top"}
+{: caption="Table 15. VPC events in America's locations" caption-side="top"}
 {: #cs-vpc-table-1}
 {: tab-title="America"}
 {: tab-group="cs_vpc"}
@@ -650,7 +621,7 @@ The following tables list the locations where automatic collection of security s
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |
 | Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 16. VPC events in AP locations" caption-side="top"}
+{: caption="Table 15. VPC events in AP locations" caption-side="top"}
 {: #cs-vpc-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs_vpc"}
@@ -664,7 +635,7 @@ The following tables list the locations where automatic collection of security s
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |       
 | Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |            
-{: caption="Table 16. VPC events in Europe locations" caption-side="top"}
+{: caption="Table 15. VPC events in Europe locations" caption-side="top"}
 {: #cs-vpc-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs_vpc"}
@@ -690,7 +661,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.texttospeechshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.speechtotextshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.wh-acd_short}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 17. Watson AI services integration in America locations" caption-side="top"}
+{: caption="Table 16. Watson AI services integration in America locations" caption-side="top"}
 {: #cs-watsonai-table-1}
 {: tab-title="America"}
 {: tab-group="cs-watsonai"}
@@ -710,7 +681,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.texttospeechshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.speechtotextshort}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.wh-acd_short}} |   |   |   |
-{: caption="Table 17. Watson AI services integration in AP locations" caption-side="top"}
+{: caption="Table 16. Watson AI services integration in AP locations" caption-side="top"}
 {: #cs-watsonai-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs-watsonai"}
@@ -730,7 +701,7 @@ The following tables list the locations where automatic collection of security s
 | {{site.data.keyword.texttospeechshort}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.speechtotextshort}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.wh-acd_short}} |   |   |
-{: caption="Table 17. Watson AI services integration in Europe locations" caption-side="top"}
+{: caption="Table 16. Watson AI services integration in Europe locations" caption-side="top"}
 {: #cs-watsonai-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs-watsonai"}
@@ -760,7 +731,7 @@ The following tables list the locations where automatic collection of security s
 | SSHKeys                                | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` | 
 | IKE                                    | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` | 
 | IPSec                                  | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` | 
-{: caption="Table 18. Power IaaS events in Americas locations" caption-side="top"}
+{: caption="Table 17. Power IaaS events in Americas locations" caption-side="top"}
 {: #cs-power-iaas-table-1}
 {: tab-title="Americas"}
 {: tab-group="cs_power-iaas"}
@@ -782,7 +753,7 @@ The following tables list the locations where automatic collection of security s
 | SSHKeys                                | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | IKE                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | IPSec                                  | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 18. Power IaaS events in AP locations" caption-side="top"}
+{: caption="Table 17. Power IaaS events in AP locations" caption-side="top"}
 {: #cs-power-iaas-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs_power-iaas"}
@@ -804,7 +775,7 @@ The following tables list the locations where automatic collection of security s
 | SSHKeys                                | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` | 
 | IKE                                    | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` | 
 | IPSec                                  | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |         
-{: caption="Table 18. Power IaaS events in Europe locations" caption-side="top"}
+{: caption="Table 17. Power IaaS events in Europe locations" caption-side="top"}
 {: #cs-power-iaas-table-3}
 {: tab-title="Europe"}
 {: tab-group="cs_power-iaas"}
