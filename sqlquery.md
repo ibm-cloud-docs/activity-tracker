@@ -15,7 +15,7 @@ subcollection: activity-tracker
 # Searching archive data by using the {{site.data.keyword.sqlquery_short}} service
 {: #sqlquery}
 
-You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} (AT) archive files that are stored in an {{site.data.keyword.cos_short}} (COS) bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically.
+You can use the {{site.data.keyword.sqlquery_full}} service to query {{site.data.keyword.at_full_notm}} (AT) archive files that are stored in an {{site.data.keyword.cos_short}} (COS) bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically.
 {: shortdesc}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
@@ -85,7 +85,7 @@ Once you have {{site.data.keyword.sqlquery_short}} running on {{site.data.keywor
 ## Step 2. Granting user permissions to run a query
 {: #sqlquery_step2}
 
-To run queries with the SQL query service, a user needs a platform role and a service role. The following tables show the roles and actions that you can assign a user to run SQL queries:
+To run queries with the {{site.data.keyword.sqlquery_short}} service, a user needs a platform role and a service role. The following tables show the roles and actions that you can assign a user to run SQL queries:
 
 
 | Platform actions                        | Administrator                                     | Editor | Operator | Viewer  |
@@ -99,7 +99,7 @@ To run queries with the SQL query service, a user needs a platform role and a se
 | `Run an SQL query`              | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |                  |
 {: caption="Table 2. Service roles" caption-side="top"}
 
-Notice that users with the service role **reader** get an access error when they launch the SQL Query UI.
+Notice that users with the service role **reader** get an access error when they launch the {{site.data.keyword.sqlquery_short}} UI.
 
 To manage access or assign new access for users by using IAM policies, you must be the account owner, administrator on all services in the account, or an administrator for the particular service or service instance. 
 
@@ -186,7 +186,7 @@ When you query an archive file, the format of the data is JSON. You must transfo
 
 Parquet is an open source file format that stores nested data structures into a flat columnar format, and preserves the schema of the original data. 
 
-The {{site.data.keyword.sqlquery_short}} UI is an editor that lets you immediately start composing SQL queries. Since SQL Query uses Spark SQL, you can use Spark SQL functions and ANSI SQL to compose both simple and complex queries that involve large amounts of data.
+The {{site.data.keyword.sqlquery_short}} UI is an editor that lets you immediately start composing SQL queries. Since {{site.data.keyword.sqlquery_short}} uses Spark SQL, you can use Spark SQL functions and ANSI SQL to compose both simple and complex queries that involve large amounts of data.
 
 
 Complete the following steps to run the query to transform content from JSON into PARQUET:
