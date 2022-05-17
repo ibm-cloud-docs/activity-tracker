@@ -85,7 +85,7 @@ This information applies only to {{site.data.keyword.at_short}} event viewing.
 
 To access data, you can download the archived file locally.
 
-To query the data, you can also use a service like SQL Query to query your COS archives and get information based on queries that you define. [Learn more](/docs/activity-tracker?topic=activity-tracker-sqlquery).
+To query the data, you can also use a service like {{site.data.keyword.sqlquery_full}} to query your COS archives and get information based on queries that you define. [Learn more](/docs/activity-tracker?topic=activity-tracker-sqlquery).
 
 
 ## Can I import archived data back into the UI?
