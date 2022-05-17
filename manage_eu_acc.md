@@ -127,17 +127,17 @@ To learn how to configure archiving for your auditing instance, see [Archiving l
 
 
 
-## Step 8. Querying archived events with SQL Query service
+## Step 8. Querying archived events with {{site.data.keyword.sqlquery_short}} service
 {: #manage_eu_acc_step8}
 
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
-{{site.data.keyword.sqlquery_short}} provides a serverless, no-ETL solution to easily query data stored in COS. [Learn more](/docs/services/sql-query?topic=sql-query-overview).
+{{site.data.keyword.sqlquery_full}} provides a serverless, no-ETL solution to easily query data stored in COS. [Learn more](/docs/services/sql-query?topic=sql-query-overview).
 
 You can use this service to analyze data from archived files in COS. 
 
-Once you have SQL Query running on IBM Cloud, you can immediately start querying your data using the SQL Query user interface, programmatically by using either the REST API or the Python `ibmcloudsql` library, or write a serverless function by using {{site.data.keyword.openwhisk_short}}.
+Once you have {{site.data.keyword.sqlquery_short}} running on IBM Cloud, you can immediately start querying your data using the {{site.data.keyword.sqlquery_short}} user interface, programmatically by using either the REST API or the Python `ibmcloudsql` library, or write a serverless function by using {{site.data.keyword.openwhisk_short}}.
 
 When you query events, consider the following information:
 * You must provision an instance of the {{site.data.keyword.sqlquery_short}} service in Frankfurt.
