@@ -387,7 +387,7 @@ When you plan the bucket for an auditing instance, consider the following inform
 Create a custom COS bucket with the storage features and the policies that you identify. [Learn more](/docs/activity-tracker?topic=activity-tracker-archiving).
 {: tip}
 
-Do not configure a long-term retention policy on a COS bucket if you need access to the data and need to query it with the {{site.data.keyword.sqlquery_short}} service.
+Do not configure a long-term retention policy on a COS bucket if you need access to the data and need to query it with the {{site.data.keyword.sqlquery_full}} service.
 {: important}
 
 Use the following table to help you identify the features that you should consider when you create a bucket:
@@ -572,14 +572,14 @@ Avoid downloading data locally. Use the {{site.data.keyword.sqlquery_short}} ser
 {: tip}
 
 
-The {{site.data.keyword.sqlquery_short}} service provides a server-less, no-ETL solution to easily query data stored in {{site.data.keyword.cos_short}}. SQL Query uses Apache Spark SQL as its underlying query engine. You can use the {{site.data.keyword.sqlquery_short}} to run SQL queries (that is, `SELECT` statements) to analyze, transform structured and semi-structured data, or clean up rectangular data. You cannot run actions such as `CREATE`, `DELETE`, `INSERT`, and `UPDATE`.
+The {{site.data.keyword.sqlquery_short}} service provides a server-less, no-ETL solution to easily query data stored in {{site.data.keyword.cos_short}}. {{site.data.keyword.sqlquery_short} uses Apache Spark SQL as its underlying query engine. You can use the {{site.data.keyword.sqlquery_short}} to run SQL queries (that is, `SELECT` statements) to analyze, transform structured and semi-structured data, or clean up rectangular data. You cannot run actions such as `CREATE`, `DELETE`, `INSERT`, and `UPDATE`.
 
 The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. Archived files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format. When you use the {{site.data.keyword.sqlquery_short}} service, each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in an {{site.data.keyword.cos_short}} instance of your choice. 
 
 When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/activity-tracker?topic=activity-tracker-sqlquery#sqlquery_step3_4) to be able to query the contents successfully.
 {: tip}
 
-Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and test your queries, and the [SQL Query REST API](#restapi) to automate them.
+Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and test your queries, and the [{{site.data.keyword.sqlquery_short}} REST API](#restapi) to automate them.
 {: tip}
 
 If you plan to use the {{site.data.keyword.sqlquery_short}} service, and you require HIPAA compliance, create a bucket for your archives that uses a custom key to encrypt the data.
