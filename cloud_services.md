@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-03-15"
 
-keywords: IBM Cloud, cloud services, {{site.data.keyword.atracker_short}} event routing, security, auditing, services, {{site.data.keyword.at_short}} hosted event search
+keywords: IBM Cloud, cloud services, {{site.data.keyword.atracker_short}} Event Routing, security, auditing, services, {{site.data.keyword.at_short}} hosted event search
 
 subcollection: activity-tracker
 
@@ -26,7 +26,7 @@ subcollection: activity-tracker
 
 The following table lists analytics services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.iae_full}}](/docs/AnalyticsEngine?topic=AnalyticsEngine-getting-started) | `ibmanalyticsengine` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/AnalyticsEngine?topic=AnalyticsEngine-at_events) |
 | [{{site.data.keyword.sqlquery_full}}](/docs/sql-query?topic=sql-query-overview#overview) | `sql-query` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/sql-query?topic=sql-query-activitytracker#activitytracker) |
@@ -38,7 +38,7 @@ The following table lists analytics services that send auditing events:
 
 The following table lists services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.BluVirtServers_full}} (Classic)](/docs/vsi?topic=virtual-servers-about-virtual-servers#about-virtual-servers)| `audit-log` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  [Location-based events](/docs/vsi?topic=virtual-servers-at_events#at_events) |
 | [{{site.data.keyword.baremetal_long}} (Classic)](/docs/bare-metal?topic=bare-metal-about-bm#about-bm) | `audit-log` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/bare-metal?topic=bare-metal-bm-at-events#bm-at-events) |
@@ -56,7 +56,7 @@ The events that are sent by Cloud Foundry applications to {{site.data.keyword.cl
 
 The following table lists serverless compute services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=openwhisk-getting-started) | `functions` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/openwhisk?topic=openwhisk-at_events) |
 | [{{site.data.keyword.codeenginefull}}](/docs/codeengine?topic=codeengine-getting-started)| `codeengine`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/codeengine?topic=codeengine-at_events) |
@@ -69,7 +69,7 @@ The following table lists serverless compute services that send auditing events:
 
 The following table lists container platform services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-getting-started) | `container-registry` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/Registry?topic=Registry-at_events) |
 | [{{site.data.keyword.containerlong}}](/docs/containers?topic=containers-getting-started) | `containers-kubernetes` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/containers?topic=containers-at_events) |
@@ -83,7 +83,7 @@ The following table lists container platform services that send auditing events:
 
 The following table lists database services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.cloudantfull}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) | `cloudantnosqldb`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/Cloudant?topic=Cloudant-at_events) |
 | [{{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}](/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-gettingstarted) | `hyperp-dbaas-mongodb` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-activity-tracker-events) |
@@ -108,7 +108,7 @@ The following table lists database services that send auditing events:
 
 The following table lists developer tools and DevOps services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.apigw_full}}](/docs/api-gateway?topic=api-gateway-getting-started) | `api-gateway` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/api-gateway?topic=api-gateway-at_events) |
 | [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started)  | `schematics` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/schematics?topic=schematics-at_events) |
@@ -116,13 +116,13 @@ The following table lists developer tools and DevOps services that send auditing
 | [{{site.data.keyword.cloud-shell_full}}](/docs/cloud-shell?topic=cloud-shell-getting-started) | `cloudshell` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/cloud-shell?topic=cloud-shell-at_events) |
 | [{{site.data.keyword.mobilepushfull}}](/docs/mobilepush?topic=mobilepush-getting-started) | `imfpush` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/mobilepush?topic=mobilepush-at_events#at_actions) |
 | [{{site.data.keyword.en_full}}](/docs/event-notifications?topic=event-notifications-getting-started) | `event-notifications`|![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/event-notifications?topic=event-notifications-en-at_events)|
-| [{{site.data.keyword.appconfig_full}}](/docs/app-configuration?topic=app-configuration-getting-started) | `apprapp`|![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/app-configuration?topic=app-configuration-ac-at_events)|
+| [{{site.data.keyword.appconfig_full}}](/docs/app-configuration?topic=app-configuration-getting-started) | `apprapp`|![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/app-configuration?topic=app-configuration-ac-at_events)|
 {: caption="Table 6. List of developer tools services" caption-side="top"}
 
 
 The following table lists {{site.data.keyword.contdelivery_full}} services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.contdelivery_full}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started) | `continuous-delivery` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/ContinuousDelivery?topic=ContinuousDelivery-cd-at-events) |
 | [Toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-cd_about) | `toolchain` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/ContinuousDelivery?topic=ContinuousDelivery-cd-at-events#toolchain-events) | 
@@ -135,7 +135,7 @@ The following table lists {{site.data.keyword.contdelivery_full}} services that 
 
 The following table lists integration services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting_started)| `event-streams` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/EventStreams?topic=EventStreams-at_events) |
 | [MQ on IBM Cloud](/docs/mqcloud?topic=mqcloud-mqoc_getting_started) |`mqcloud` |![Checkmark](/images/checkmark-icon.svg "Checkmark") | | [Location-based events](/docs/mqcloud?topic=mqcloud-at_events) |
@@ -149,7 +149,7 @@ The following table lists integration services that send auditing events:
 
 The following table lists network services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.BluDirectLink}} solution](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) | `directlink.dedicated` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/dl?topic=dl-at_events) |
 | [{{site.data.keyword.tg_full}}](/docs/transit-gateway?topic=transit-gateway-getting-started) | `transit` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/transit-gateway?topic=transit-gateway-at_events) |
@@ -163,10 +163,10 @@ The following table lists network services that send auditing events:
 
 The following table lists observability services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.at_full}} hosted event search offering](/docs/activity-tracker?topic=activity-tracker-getting-started) | `logdnaat` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/activity-tracker?topic=activity-tracker-at_events) |
-| [{{site.data.keyword.atracker_full}} event routing](/docs/activity-tracker?topic=activity-tracker-getting-started) | `atracker` |  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/activity-tracker?topic=activity-tracker). |
+| [{{site.data.keyword.atracker_full}} Event Routing](/docs/activity-tracker?topic=activity-tracker-getting-started) | `atracker` |  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/activity-tracker?topic=activity-tracker). |
 | [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | `logdna` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/log-analysis?topic=log-analysis-at_events) |
 | [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) | `sysdig-monitor` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/monitoring?topic=monitoring-at_events) |
 {: caption="Table 10. List of observability services" caption-side="top"} 
@@ -177,7 +177,7 @@ The following table lists observability services that send auditing events:
 
 The following table lists platform services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [Billing](/docs/account?topic=account-account-services&interface=ui#billing-acct-mgmt ) | `billing` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_account) |
 | [User management](/docs/account?topic=account-iamuserinv) | `user-management` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_users) |
@@ -192,7 +192,7 @@ The following table lists platform services that send auditing events:
 
 For example, the following table lists core security actions that send events to {{site.data.keyword.at_full_notm}}:
 
-| Service     | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|------------------|-------------------|--------|
 | [Managing access groups](/docs/account?topic=account-groups#groups) | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events that are generated when you manage access groups](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_access) |
 | [Managing policies](/docs/account?topic=account-userroles#userroles) | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events that are generated when you manage IAM policies](/docs/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_policies) |
@@ -207,7 +207,7 @@ For example, the following table lists core security actions that send events to
 The following table lists security Cloud services that send auditing events:
 
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.appid_full}}](/docs/appid?topic=appid-getting-started) | `appid` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/appid?topic=appid-at-events)   |
 | [{{site.data.keyword.keymanagementservicelong}}](/docs/key-protect?topic=key-protect-getting-started-tutorial#getting-started-tutorial) | `kms` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  | [Location-based events](/docs/key-protect?topic=key-protect-at-events) |
@@ -224,7 +224,7 @@ The following table lists security Cloud services that send auditing events:
 
 The following table lists storage services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.cos_full}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)| `cloud-object-storage` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global and location-based events `[*]`](/docs/cloud-object-storage?topic=cloud-object-storage-at-events) |
 | [{{site.data.keyword.mdms_short}}](/docs/mass-data-migration?topic=mass-data-migration-getting-started-tutorial)| `mass-data-migration` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Events](/docs/mass-data-migration?topic=mass-data-migration-at-events) |
@@ -244,7 +244,7 @@ With {{site.data.keyword.vmwaresolutions_full_notm}}, you can quickly and seamle
 
 The following table lists VMware solution services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.vmwaresolutions_short}}](/docs/vmwaresolutions?topic=vmwaresolutions-vc_vcenterserveroverview)   | `vmware-solutions` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/vmwaresolutions?topic=vmwaresolutions-at-events#at-events) |
 | [{{site.data.keyword.cloud}} for VMware® Solutions Shared](/docs/vmwaresolutions?topic=vmwaresolutions-shared_overview)      | `vmware-solutions` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vmwaresolutions?topic=vmwaresolutions-at-events#at-events-instance-mgmt) |
@@ -262,13 +262,14 @@ You can provision a Virtual Private Cloud (VPC) in the {{site.data.keyword.cloud
 
 The following table lists VPC infrastructure services that send auditing events:
 
-| Service     | Service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | Service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [Storage resources](/docs/vpc?topic=vpc-block-storage-about) | `is.volume` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-storage) |
 | [Compute resources](/docs/vpc?topic=vpc-about-advanced-virtual-servers) | `is.instance` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-compute) |
 | [Network resources](/docs/vpc?topic=vpc-about-networking-for-vpc) | `is.subnet` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-network) |
 | [Load Balancer](/docs/vpc?topic=vpc-load-balancers)| `is.load-balancer` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-load-balancers) |
 | [VPN](/docs/vpc?topic=vpc-using-vpn)| `is.vpn` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#at-events) |
+| [Client VPN](/docs/vpc?topic=vpc-using-vpn)| `is.vpn-server` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-vpn-server) |
 | [Images](/docs/vpc?topic=vpc-about-images) | `is.image` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-images) |
 {: caption="Table 16. List of VPC infrastructure services (generation 2)" caption-side="top"}
 
@@ -277,7 +278,7 @@ The following table lists VPC infrastructure services that send auditing events:
 
 The following table lists Watson AI services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.conversationfull}}](/docs/assistant?topic=assistant-getting-started) | `conversation`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/assistant?topic=assistant-at-events) |
 | [{{site.data.keyword.discoveryfull}}](/docs/discovery-data?topic=discovery-data-getting-started) | `discovery` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/discovery-data?topic=discovery-data-at_events)  |
@@ -297,7 +298,7 @@ The following table lists Watson AI services that send auditing events:
 
 The following table lists web and mobile services that send auditing events:
 
-| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [{{site.data.keyword.mobilefoundation_long}}](/docs/mobilefoundation?topic=mobilefoundation-getting-started)| `mobile-foundation` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/mobilefoundation?topic=mobilefoundation-mfp_activity_tracker) |
 {: caption="Table 17. List of web and mobile events" caption-side="top"}
@@ -312,7 +313,7 @@ Power Systems Virtual Server (PowerVS) projects deliver flexible compute capacit
 
 The following table lists Power IaaS infrastructure services that send auditing events:
 
-| Service     | Service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} event routing | Events |
+| Service     | Service name | {{site.data.keyword.at_short}} hosted event search offering | {{site.data.keyword.atracker_short}} Event Routing | Events |
 |-------------|--------------|------------------|-------------------|--------|
 | [Images](/docs/power-iaas?topic=power-iaas-deploy-custom-image) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-images) |
 | [Networks](/docs/power-iaas?topic=power-iaas-connecting-networks) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-networks) |

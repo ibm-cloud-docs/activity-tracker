@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-12"
 
-keywords: IBM Cloud,Activity Tracker, cloud services, services, locations, {{site.data.keyword.at_short}} hosted event search, {{site.data.keyword.atracker_short}} event routing,
+keywords: IBM Cloud,Activity Tracker, cloud services, services, locations, {{site.data.keyword.at_short}} hosted event search, {{site.data.keyword.atracker_short}} Event Routing,
 
 subcollection: activity-tracker
 
@@ -223,14 +223,14 @@ The following table shows the locations where automatic collection of Cloud Foun
 
 {{site.data.keyword.openshiftlong_notm}}
 :   For {{site.data.keyword.openshiftlong_notm}}, see [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui).
-  
+
 ## Observability services
 {: #cloud_services_locations_observability}
 
 | Service                            | `Dallas (us-south)` | `Washington (us-east)`  |`Toronto (ca-tor)` | `Sao Paulo (br-sao)` |
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
 | {{site.data.keyword.at_full_notm}} hosted event search offering | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)|
-| {{site.data.keyword.at_full_notm}} event routing  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|
+| {{site.data.keyword.at_full_notm}} Event Routing  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|
 | {{site.data.keyword.la_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)|  
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |     
 {: caption="Table 6. Observability services in America's locations" caption-side="top"}
@@ -243,7 +243,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 | Service        | `Tokyo (jp-tok)`    |`Sydney (au-syd)` | `Seoul (kr-seo)` | `Osaka (jp-osa)` | `Chennai (in-che)` |
 |----------------|---------------------|------------------|------------------|------------------|--------------------|
 | {{site.data.keyword.at_full_notm}} hosted event search offering | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  
-| {{site.data.keyword.at_full_notm}} event routing  | | | | | |
+| {{site.data.keyword.at_full_notm}} Event Routing  | | | | | |
 | {{site.data.keyword.la_full_notm}}  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|  | ![Checkmark icon](images/checkmark-icon.svg) | |  | 
 {: caption="Table 6. Observability services in AP locations" caption-side="top"}
@@ -256,7 +256,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.at_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.at_full_notm}} event routing  | | |
+| {{site.data.keyword.at_full_notm}} Event Routing  | | |
 | {{site.data.keyword.la_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |     
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|        
 {: caption="Table 6. Observability services in Europe locations" caption-side="top"}
@@ -386,7 +386,7 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.bplong}}                   |   |   |   | | |
 | {{site.data.keyword.en_full}}                   |   | ![Checkmark icon](images/checkmark-icon.svg)   | |  | |
 | {{site.data.keyword.appconfig_full}}                   |   | ![Checkmark icon](images/checkmark-icon.svg)   |  | | |
-{: caption="Table 9.Developer tools services integration in AP locations" caption-side="top"}
+{: caption="Table 9. Developer tools services integration in AP locations" caption-side="top"}
 {: #cs-dev-tools-table-2}
 {: tab-title="Asia Pacific"}
 {: tab-group="cs-dev_tools"}
@@ -607,6 +607,7 @@ The following tables list the locations where automatic collection of security s
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  |  | 
 | Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  |  | 
 | VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  |  | 
+| Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  |  |
 {: caption="Table 15. VPC events in America's locations" caption-side="top"}
 {: #cs-vpc-table-1}
 {: tab-title="America"}
@@ -621,6 +622,7 @@ The following tables list the locations where automatic collection of security s
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |
 | Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
+| Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 {: caption="Table 15. VPC events in AP locations" caption-side="top"}
 {: #cs-vpc-table-2}
 {: tab-title="Asia Pacific"}
@@ -635,6 +637,7 @@ The following tables list the locations where automatic collection of security s
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |       
 | Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |            
+| Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 {: caption="Table 15. VPC events in Europe locations" caption-side="top"}
 {: #cs-vpc-table-3}
 {: tab-title="Europe"}
