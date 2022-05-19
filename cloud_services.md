@@ -269,7 +269,7 @@ The following table lists VPC infrastructure services that send auditing events:
 | [Network resources](/docs/vpc?topic=vpc-about-networking-for-vpc) | `is.subnet` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-network) |
 | [Load Balancer](/docs/vpc?topic=vpc-load-balancers)| `is.load-balancer` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-load-balancers) |
 | [VPN](/docs/vpc?topic=vpc-using-vpn)| `is.vpn` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#at-events) |
-| [Client VPN](/docs/vpc?topic=vpc-using-vpn)| `is.vpn-server` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-vpn-server) |
+| [Client VPN](/docs/vpc?topic=vpc-vpn-client-to-site-overview)| `is.vpn-server` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-vpn-server) |
 | [Images](/docs/vpc?topic=vpc-about-images) | `is.image` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-images) |
 {: caption="Table 16. List of VPC infrastructure services (generation 2)" caption-side="top"}
 
