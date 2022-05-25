@@ -23,7 +23,7 @@ If you use single quotes in an API request, the request fails with a binding err
 {: shortdesc}
 
 
-This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
+This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
 {: important}
 
 

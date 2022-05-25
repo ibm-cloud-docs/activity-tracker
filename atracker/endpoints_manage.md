@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-05-05"
 
 keywords: IBM Cloud, Activity Tracker, security, auditing, endpoints
 
@@ -17,8 +17,11 @@ subcollection: activity-tracker
 You can use the the {{site.data.keyword.atracker_full}} CLI or {{site.data.keyword.atracker_full_notm}} REST API to manage private and public endpoints in your account.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
+This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
 {: important}
+
+The V1 API is deprecated. This CLI and API can only be used while using the {{site.data.keyword.atracker_full_notm}} V1 API.  Once you have [migrated to the V2 API](/docs/activity-tracker?topic=activity-tracker-migrate-resources) this CLI and API can no longer be used.
+{: deprecated}
 
 By default, private endpoints are enabled. 
 
@@ -53,7 +56,7 @@ For more information about the list of `ENDPOINTS` that are available, see [Publ
 
 
 ## API actions
-{: endpoint-actions-api}
+{: #endpoint-actions-api}
 {: api}
 
 The following table lists the actions that you can run to manage endpoints:
@@ -63,6 +66,9 @@ The following table lists the actions that you can run to manage endpoints:
 | Get endpoints that are enabled in a region    | `GET`            | `<ENDPOINT>/api/v1/endpoints`              |
 | Update an endpoint in a region                | `PATCH`          | `<ENDPOINT>/api/v1/endpoints`  |
 {: caption="Table 1. Endpoints actions by using the {{site.data.keyword.atracker_full_notm}} REST API" caption-side="top"}
+
+For more information on the API, see the [{{site.data.keyword.atracker_full_notm}} reference](https://{DomainName}/apidocs/atracker/atracker-v1){: external}
+{: note}
 
 ## Prereqs
 {: #endpoint-prereqs-cli}

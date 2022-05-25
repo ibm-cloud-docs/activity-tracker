@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-05-09"
 
 keywords: IBM Cloud, Activity Tracker, getting started, auditing, tutorial
 
@@ -21,7 +21,7 @@ completion-time: 1h
 # Getting started with {{site.data.keyword.at_short}} hosted event search offerings
 {: #getting-started-search}
 {: toc-content-type="tutorial"}
-{: toc-services-"activity-tracker"} 
+{: toc-services="activity-tracker"} 
 {: toc-completion-time="1h"} 
 
 
@@ -29,10 +29,10 @@ Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{
 {: shortdesc}
 
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offerings](/docs/activity-tracker?topic=activity-tracker-service_plan).
+This information applies only if you use an [{{site.data.keyword.at_full}} hosted event search offerings](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
-![The {{site.data.keyword.at_full_notm}} service](images/atov.png "The {{site.data.keyword.at_full_notm}} service")
+![The {{site.data.keyword.at_full_notm}} service](images/atov.png "The {{site.data.keyword.at_full_notm}} service"){: caption="Figure 1. Activity Tracker hosted event search flow" caption-side="bottom"}
 
 
 {{site.data.keyword.at_full_notm}} collects and stores audit records for API calls made to resources that run in the {{site.data.keyword.cloud_notm}}. You can archive these events on {{site.data.keyword.cloud_notm}} for long-term storage.
@@ -73,7 +73,7 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 
 
 
-![Core features offered by the {{site.data.keyword.at_full_notm}} service](images/features.png "Core features offered by the {{site.data.keyword.at_full_notm}} service")
+![Core features offered by the {{site.data.keyword.at_full_notm}} service](images/features.png "Core features offered by the {{site.data.keyword.at_full_notm}} service"){: caption="Figure 2. Activity Tracker hosted event search UI functionality" caption-side="bottom"}
 
 For example, you can use the {{site.data.keyword.at_full_notm}} events to identify the following information:
 * The users who made API calls to cloud services

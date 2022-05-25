@@ -20,7 +20,7 @@ subcollection: activity-tracker
 To ensure that you have enhanced control and security over your data when you use {{site.data.keyword.atracker_full}}, you have the option of using private routes to {{site.data.keyword.cloud}} service endpoints. Private routes are not accessible or reachable over the internet. By using the {{site.data.keyword.cloud_notm}} private service endpoints feature, you can protect your data from threats from the public network and logically extend your private network.
 {: shortdesc}
 
-You can use private and public endpoints to configure {{site.data.keyword.atracker_full}} event routing resources in your account.
+You can use private and public endpoints to configure {{site.data.keyword.atracker_full}} Event Routing resources in your account.
 
 You can connect to {{site.data.keyword.atracker_full_notm}} over a private network by using {{site.data.keyword.cloud_notm}} private service endpoints. 
 
@@ -58,7 +58,7 @@ By default, private and public endpoints are enabled. For more information about
 
 You cannot disable private endpoints.
 
-You can disable public endpoints per region in your account for {{site.data.keyword.atracker_full_notm}} event routing:
+You can disable public endpoints per region in your account for {{site.data.keyword.atracker_full_notm}} Event Routing:
 - If public and private endpoints are enabled, you can disable a public endpoint by using private or public endpoints.
 - If public endpoints have been disabled, you can only enable public endpoints by using the private endpoint. 
 

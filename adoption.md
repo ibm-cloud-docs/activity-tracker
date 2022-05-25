@@ -535,8 +535,7 @@ In COS, you can track management and data events.
 * By default, these events are not enabled. 
 * Management events report actions that change the state of resource configurations, bucket properties, and object properties.
 * Data events report actions on buckets, objects, and multi-part objects such as creation, deletion, and access.
-* You must configure each bucket to enable management events, or management and data events. Notice that you cannot enable data events only for a bucket. 
-For more information, see [Activity Tracker events](/docs/cloud-object-storage?topic=cloud-object-storage-at-events).
+* You must configure each bucket to enable management events, or management and data events. Notice that you cannot enable data events only for a bucket. For more information, see [Activity Tracker events](/docs/cloud-object-storage?topic=cloud-object-storage-at-events).
 
 Enable collection of COS management and data events on the bucket that you use to archive data from an auditing instance. Use these events to monitor activity in your COS bucket.
 {: tip}

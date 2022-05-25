@@ -13,13 +13,13 @@ keywords: IBM Cloud ATracker CLI, IBM Cloud ATracker command line, IBM Cloud ATr
 {{site.data.keyword.attribute-definition-list}}
 
 
-# {{site.data.keyword.atracker_full_notm}} event routing CLI
+# {{site.data.keyword.atracker_full_notm}} Event Routing CLI
 {: #activity-tracking-cli}
 
-The {{site.data.keyword.cloud}} command-line interface (CLI) provides extra capabilities for service offerings. This information describes how you can use the CLI to interact with {{site.data.keyword.atracker_full}} event routing.
+The {{site.data.keyword.cloud}} command-line interface (CLI) provides extra capabilities for service offerings. This information describes how you can use the CLI to interact with {{site.data.keyword.atracker_full}} Event Routing.
 {: shortdesc} 
 
-This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
+This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
 {: important}
 
 ## Prerequisites

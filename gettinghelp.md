@@ -26,3 +26,5 @@ If you have problems or questions when using the {{site.data.keyword.atracker_fu
 * If you have technical questions about the {{site.data.keyword.at_full_notm}} service, post your question on [Stack Overflow](https://stackoverflow.com/search?q=ibm-cloud+log-analysis){: external} and tag your question with `ibm-cloud`, and `activity-tracker`.
 
 * If you still can't resolve the problem, you can open an IBM support ticket. For information about opening an IBM support ticket, or about support levels and ticket severities, see [Getting support](/docs/get-support).
+
+

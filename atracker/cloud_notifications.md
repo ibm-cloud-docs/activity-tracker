@@ -4,7 +4,7 @@ copyright:
   years: 2022
 lastupdated: "2022-03-22"
 
-keywords: IBM Cloud, Activity Tracker, notifications, event routing
+keywords: IBM Cloud, Activity Tracker, notifications, Event Routing
 
 subcollection: activity-tracker
 
@@ -16,13 +16,13 @@ subcollection: activity-tracker
 # Enabling IBM Cloud notifications
 {: #cloud_notifications}
 
-{{site.data.keyword.cloud_notm}} users can choose to receive email notifications about {{site.data.keyword.cloud_notm}} platform-related items, such as announcements, billing and usage, additional notification preferences, and ordering. Users can also update their preferences to receive email notifications about resource-related items, such as incidents, maintenance, security bulletins, or resource activity on the Notification preferences page. These notifications are for only the resources in use.  You can use these notifications to be alerted when credential issues affect {{site.data.keyword.atracker_full}} event routing.
+{{site.data.keyword.cloud_notm}} users can choose to receive email notifications about {{site.data.keyword.cloud_notm}} platform-related items, such as announcements, billing and usage, additional notification preferences, and ordering. Users can also update their preferences to receive email notifications about resource-related items, such as incidents, maintenance, security bulletins, or resource activity on the Notification preferences page. These notifications are for only the resources in use.  You can use these notifications to be alerted when credential issues affect {{site.data.keyword.atracker_full}} Event Routing.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full_notm}} event routing.
+This information applies only if you use {{site.data.keyword.atracker_full_notm}} Event Routing.
 {: important}
 
-## {{site.data.keyword.atracker_full_notm}} event routing notifications
+## {{site.data.keyword.atracker_full_notm}} Event Routing notifications
 {: #at_cloud_notifications}
 
 {{site.data.keyword.cloud_notm}} notifications can alert you when {{site.data.keyword.atracker_full_notm}} users update their {{site.data.keyword.cos_full_notm}} (COS) API key without updating the COS API key associated with the target.  Not updating the credentials in both places will result in failures writing to the target.
@@ -32,14 +32,14 @@ When you create a target initially, and the API keys do not match, you will rece
 If the API key is not updated in both {{site.data.keyword.atracker_full_notm}} and {{site.data.keyword.cos_full_notm}}, a notification similar to the following is sent:
 
 ```screen
-Misconfigured Activity Tracker event routing target
+Misconfigured Activity Tracker Event Routing target
 ```
 {: codeblock}
 
 Additional notifications include:
 
 ```screen
-Activity Tracker event routing target started discarding events
+Activity Tracker Event Routing target started discarding events
 ```
 {: codeblock}
 
@@ -48,7 +48,7 @@ This notification is sent when the limit of undelivered auditing events has been
 Once you have resolved the API key issue the following notification will be sent.
 
 ```screen
-Activity Tracker event routing target is recovered.
+Activity Tracker Event Routing target is recovered.
 ```
 {: codeblock}
 

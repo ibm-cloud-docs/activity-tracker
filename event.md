@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-05-09"
 
 keywords: IBM Cloud, Activity Tracker, event fields
 
@@ -325,7 +325,7 @@ When the reasonCode for an API call is any of the following values, the value of
 | `401`      | `Unauthorized`                | `critical`     |
 | `403`      | `Forbidden`                   | `critical`     |
 | `409`      | `Conflict`                    | `warning`      |
-| `424`      | `Failed Dependency`           | `warning `     |
+| `424`      | `Failed Dependency`           | `warning`      |
 | `500`      | `Internal Server Error`       | `warning`      |
 | `502`      | `Bad Gateway`                 | `warning`      |
 | `503`      | `Service Unavailable`         | `critical`     |

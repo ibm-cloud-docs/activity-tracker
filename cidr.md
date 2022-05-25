@@ -291,10 +291,10 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Brazil	   | 10.15.20.192/26  |
 {: caption="Table 22. Sao Paulo private CIDR blocks" caption-side="top"}
 
-## {{site.data.keyword.atracker_full_notm}} event routing offering 
+## {{site.data.keyword.atracker_full_notm}} Event Routing offering 
 {: #atracker_cidr}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
+This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
 {: important}
 
 ### Public CIDR blocks
@@ -311,7 +311,7 @@ This information applies only if you use {{site.data.keyword.atracker_full}} eve
 | US-South | 52.118.128.64/27 |
 | US-South | 169.59.240.48/28 |
 | US-South | 169.61.48.48/28 |
-{: caption="Table 23. US-South public CIDR blocks - event routing" caption-side="top"}
+{: caption="Table 23. US-South public CIDR blocks - Event Routing" caption-side="top"}
 
 #### US East
 {: #cidr_public_atracker_gen2_2}
@@ -324,7 +324,7 @@ This information applies only if you use {{site.data.keyword.atracker_full}} eve
 | US-East  | 150.239.78.0/27 |
 | US-East  | 169.60.74.224/27 |
 | US-East  | 169.60.103.240/28 |
-{: caption="Table 24. US-East public CIDR blocks - event routing" caption-side="top"}
+{: caption="Table 24. US-East public CIDR blocks - Event Routing" caption-side="top"}
 
 #### Frankfurt
 {: #cidr_public_atracker_gen2_3}
@@ -336,7 +336,7 @@ This information applies only if you use {{site.data.keyword.atracker_full}} eve
 | Frankfurt  | 161.156.48.160/27 |
 | Frankfurt  | 149.81.106.144/28 |
 | Frankfurt  | 149.81.105.32/27 |
-{: caption="Table 25. Frankfurt public CIDR blocks - event routing" caption-side="top"}
+{: caption="Table 25. Frankfurt public CIDR blocks - Event Routing" caption-side="top"}
 
 #### London
 {: #cidr_public_atracker_gen2_4}
@@ -347,7 +347,18 @@ This information applies only if you use {{site.data.keyword.atracker_full}} eve
 | London  | 141.125.137.128/2 |
 | London  | 141.125.75.128/27 |
 | London  | 159.8.165.128/28 |
-{: caption="Table 26. London public CIDR blocks - event routing" caption-side="top"}
+{: caption="Table 26. London public CIDR blocks - Event Routing" caption-side="top"}
+
+#### Sydney
+{: #cidr_public_atracker_gen2_5}
+
+| Region   | CIDR block |
+|----------|------------|
+| Sydney  | 159.23.66.0/27 |
+| Sydney  | 159.23.72.96/28 |
+| Sydney  | 130.198.123.64/28 |
+| Sydney  | 135.90.92.0/28 |
+{: caption="Table 27. Sydney public CIDR blocks - Event Routing" caption-side="top"}
 
 ### Private CIDR blocks
 {: #cidr_private_atracker_gen2}
@@ -360,7 +371,7 @@ This information applies only if you use {{site.data.keyword.atracker_full}} eve
 | US-South | 10.36.54.0/26 |
 | US-South | 10.177.221.0/26 |
 | US-South | 10.185.179.192/26 |
-{: caption="Table 27. US-South private CIDR blocks - event routing" caption-side="top"}
+{: caption="Table 28. US-South private CIDR blocks - Event Routing" caption-side="top"}
 
 #### US East
 {: #cidr_private_atracker_gen2_2}
@@ -370,7 +381,7 @@ This information applies only if you use {{site.data.keyword.atracker_full}} eve
 | US-East  | 10.39.3.192/26 |
 | US-East  | 10.188.255.128/26 |
 | US-East  | 10.213.37.128/26 |
-{: caption="Table 28. US-East private CIDR blocks - event routing" caption-side="top"}
+{: caption="Table 29. US-East private CIDR blocks - Event Routing" caption-side="top"}
 
 #### Frankfurt
 {: #cidr_private_atracker_gen2_3}
@@ -380,7 +391,7 @@ This information applies only if you use {{site.data.keyword.atracker_full}} eve
 | Frankfurt  | 10.85.82.0/26 |
 | Frankfurt  | 10.240.156.128/26 |
 | Frankfurt  | 10.123.179.128/26 |
-{: caption="Table 29. Frankfurt private CIDR blocks - event routing" caption-side="top"}
+{: caption="Table 30. Frankfurt private CIDR blocks - Event Routing" caption-side="top"}
 
 #### London
 {: #cidr_private_atracker_gen2_4}
@@ -390,5 +401,15 @@ This information applies only if you use {{site.data.keyword.atracker_full}} eve
 | London  | 10.112.246.128/26 |
 | London  | 10.45.252.128/26 |
 | London  | 10.196.7.192/26 |
-{: caption="Table 30. London private CIDR blocks - event routing" caption-side="top"}
+{: caption="Table 31. London private CIDR blocks - Event Routing" caption-side="top"}
+
+#### Sydney
+{: #cidr_private_atracker_gen2_5}
+
+| Region   | CIDR block |
+|----------|------------|
+| Sydney  | 10.210.37.192/26 |
+| Sydney  | 10.63.29.192/26 |
+| Sydney  | 10.195.92.128/26 |
+{: caption="Table 32. Sydney private CIDR blocks - Event Routing" caption-side="top"}
 

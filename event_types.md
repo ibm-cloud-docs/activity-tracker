@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-05-09"
 
 keywords: IBM Cloud, Activity Tracker, events, global, regional, data, management
 
@@ -107,7 +107,7 @@ The following services generate global events in the {{site.data.keyword.cloud_n
 * {{site.data.keyword.iamlong}} (IAM)
 * {{site.data.keyword.cos_full_notm}}
 
-For {{site.data.keyword.atracker_short}} event routing, you can choose the region where events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-routing#getting-started-routing-setp5).
+For {{site.data.keyword.atracker_short}} Event Routing, you can choose the region where events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-routing#getting-started-routing-setp5).
 
 For {{site.data.keyword.at_short}} hosted event search offerings, the global domain is set in **Frankfurt**. Global events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt.
 

@@ -55,7 +55,7 @@ Then, you need to determine the location of the events based on scope.
 
 For {{site.data.keyword.at_short}} event viewing, global events are available through the {{site.data.keyword.at_short}} instance in Frankfurt. Therefore, to view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
 
-For {{site.data.keyword.atracker_short}} event routing, global events are collected in the region that you configure. Therefore, to find those events, you must find the route that is configured in 1 region of your account to collect global events. 
+For {{site.data.keyword.atracker_short}} Event Routing, global events are collected in the region that you configure. Therefore, to find those events, you must find the route that is configured in 1 region of your account to collect global events. 
 
 For location-based events, you need to check the following scenarios to determine the {{site.data.keyword.atracker_short}} instance where the events are available for analysis:
 
@@ -65,7 +65,7 @@ For location-based events, you need to check the following scenarios to determin
     
     2. Check whether the {{site.data.keyword.atracker_short}} service is available in that region. See [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
 
-    3. For {{site.data.keyword.at_short}} event viewing, check that you have an {{site.data.keyword.atracker_short}} instance provisioned in the same location where your service is provisioned. For {{site.data.keyword.atracker_short}} event routing, check that you have a target and  aroute defines in that region.,
+    3. For {{site.data.keyword.at_short}} event viewing, check that you have an {{site.data.keyword.atracker_short}} instance provisioned in the same location where your service is provisioned. For {{site.data.keyword.atracker_short}} Event Routing, check that you have a target and  aroute defines in that region.,
 
 * Scenario 2: The service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is not available.
 
@@ -169,12 +169,14 @@ Complete the following steps:
 {: #faq_9}
 {: faq}
 
-This information applies only to {{site.data.keyword.atracker_short}} event routing.
+This information applies only to {{site.data.keyword.atracker_short}} Event Routing.
 {: important}
 
-Yes, you can choose the location where global events are collected. 
+With {{site.data.keyword.atracker_short}} Event Routing you can configure a route to send your global events to a target that sends the events to one of two locations:
 
-To configure a region, add 1 route in the region where you want to collect the global events, and set the property `receive_global_events` to `true`. [Learn more](/docs/activity-tracker?topic=activity-tracker-route#route_behaviour).
+* [An {{site.data.keyword.cos_full_notm}} instance](/docs/activity-tracker?topic=activity-tracker-target_v2_cos)
+
+* [An {{site.data.keyword.atracker_full_notm}} hosted event search instance](/docs/activity-tracker?topic=activity-tracker-target_v2_at&interface=cli)
 
 
 
@@ -186,7 +188,7 @@ In {{site.data.keyword.cloud_notm}}, auditing events are generated automatically
 
 There are 2 ways by which you can access the auditing events in your account:
 - Option 1: You can see auditing events through {{site.data.keyword.at_full_notm}} event viewing. This is the default option. For more information, see [Getting started tutorial](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-st).
-- Option 2: You can configure {{site.data.keyword.atracker_full_notm}} event routing per region in your account. For more information, see [Getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started).
+- Option 2: You can configure {{site.data.keyword.atracker_full_notm}} Event Routing per region in your account. For more information, see [Getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 In a region, you can manage auditing events in {{site.data.keyword.atracker_full_notm}} or in {{site.data.keyword.at_full_notm}}. Both options are not allowed in parallel per region. If a route is not defined in a region, by default, {{site.data.keyword.at_full_notm}} is the service that you can use to monitor auditing events.
 {: important}

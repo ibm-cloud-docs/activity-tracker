@@ -56,6 +56,7 @@ When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-aler
    {: important}
 
 ## Integrating with multiple PagerDuty services
+{: #pagerduty_integration}
 
 Each view can be linked to one or more PagerDuty services.  To alert multiple PagerDuty accounts, configure multiple alerts for the same view with each alert notifying a different PagerDuty account.
 

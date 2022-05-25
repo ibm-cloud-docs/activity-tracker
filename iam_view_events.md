@@ -72,8 +72,9 @@ When you define the policy, you need to select a platform role and a service rol
 * Service access roles define a user or service’s ability to perform actions on a service instance. The service access roles are manager, writer, and reader.
 
 To manage the {{site.data.keyword.at_full_notm}} service, a user needs the following roles:
-* Platform role: **Viewer**. 
-* Service role: **Reader**. 
+* Platform role: **Viewer**.
+* Service role: **Reader**.
+
 [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam#iam).
 
 

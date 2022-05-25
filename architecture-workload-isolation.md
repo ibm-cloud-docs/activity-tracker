@@ -26,10 +26,10 @@ Review the following sample architecture for {{site.data.keyword.atracker_full}}
 
 {{site.data.keyword.at_full_notm}} is a multi-tenant, regional service that is available in {{site.data.keyword.cloud_notm}}. With {{site.data.keyword.atracker_short}}, you can manage collection and storage of auditing data to monitor and audit activity in your account.
 
-### Architecture for {{site.data.keyword.atracker_short}} event routing
+### Architecture for {{site.data.keyword.atracker_short}} Event Routing
 {: #architecture-atracker}
 
-The following figure shows the high level architecture for {{site.data.keyword.atracker_full_notm}} event routing:
+The following figure shows the high level architecture for {{site.data.keyword.atracker_full_notm}} Event Routing:
 
 ![A diagram that shows a sample {{site.data.keyword.atracker_short}} architecture.](images/atracker_arch.svg "{{site.data.keyword.atracker_short}} architecture sample."){: caption="Figure 1. {{site.data.keyword.atracker_short}} sample architecture" caption-side="bottom"}
 
@@ -80,7 +80,7 @@ You cannot disable private endpoints.
 ### Public connections
 {: #compute-isolation-public-connections}
 
-You can choose to disable public endpoints for {{site.data.keyword.atracker_short}} event routing. For more information, see [Disabling public endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints_manage).
+You can choose to disable public endpoints for {{site.data.keyword.atracker_short}} Event Routing. For more information, see [Disabling public endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints_manage).
 
 
 ## Dependencies to other {{site.data.keyword.cloud_notm}} services
@@ -93,10 +93,10 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.at
 | {{site.data.keyword.at_full_notm}} | {{site.data.keyword.atracker_short}} generates {{site.data.keyword.atracker_short}} events that you can use to audit the service. For more information, see [Auditing events for {{site.data.keyword.atracker_short}}](/docs/activity-tracker?topic=activity-tracker-at_events). |
 | {{site.data.keyword.cis_full_notm}} | {{site.data.keyword.cis_full_notm}} is used as a provider for DNS and load-balancing capabilities in {{site.data.keyword.registrylong_notm}}. |
 | {{site.data.keyword.containerlong_notm}} | {{site.data.keyword.atracker_short}} uses {{site.data.keyword.containerlong_notm}} to run its service. |
-| {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.atracker_short}} event routing integrates with {{site.data.keyword.mon_short}}, by using a private connection, to send platform metrics. For more information, see [Monitoring metrics for {{site.data.keyword.atracker_short}}](/docs/activity-tracker?topic=activity-tracker-monitoring_metrics). |
+| {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.atracker_short}} Event Routing integrates with {{site.data.keyword.mon_short}}, by using a private connection, to send platform metrics. For more information, see [Monitoring metrics for {{site.data.keyword.atracker_short}}](/docs/activity-tracker?topic=activity-tracker-monitoring_metrics). |
 | {{site.data.keyword.cos_full_notm}} | {{site.data.keyword.atracker_short}} stores customer data in {{site.data.keyword.cos_short}} by using a private connection. All data is encrypted in transit and at rest. For more information, see [Managing your data in {{site.data.keyword.atracker_short}}](/docs/activity-tracker?topic=activity-tracker-mng-data).|
 | {{site.data.keyword.cloud_notm}} Platform | To authenticate requests to the service and authorize user actions, {{site.data.keyword.atracker_short}} implements platform and service access roles in {{site.data.keyword.iamshort}} (IAM). For more information about required IAM permissions to work with the service, see [Managing access for {{site.data.keyword.atracker_short}}](/docs/activity-tracker?topic=activity-tracker-iam). Connections from {{site.data.keyword.atracker_short}} to IAM do not use private connections. |
-| {{site.data.keyword.databases-for-postgresql_full_notm}} | {{site.data.keyword.atracker_short}} event routing uses {{site.data.keyword.databases-for-postgresql_full_notm}}  for storing metadata. |
+| {{site.data.keyword.databases-for-postgresql_full_notm}} | {{site.data.keyword.atracker_short}} Event Routing uses {{site.data.keyword.databases-for-postgresql_full_notm}}  for storing metadata. |
 {: caption="Table 1. {{site.data.keyword.atracker_short}} dependencies to other {{site.data.keyword.cloud_notm}} services." caption-side="top"}
 {: summary="The first column is the service. The second column is a description of the service."}
 
@@ -105,7 +105,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.at
 ## Workload isolation
 {: #compute-isolation-workload}
 
-### Workload isolation for {{site.data.keyword.atracker_short}} event routing
+### Workload isolation for {{site.data.keyword.atracker_short}} Event Routing
 {: #compute-isolation-workload-atracker}
 
 

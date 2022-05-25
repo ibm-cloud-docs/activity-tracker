@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-05-17"
 
 keywords: IBM Cloud, Activity Tracker, iam, manage user access
 
@@ -22,8 +22,8 @@ subcollection: activity-tracker
 The access policy that you assign users in your account determines what actions a user can perform within the context of the service or specific instance that you select. The allowable actions are customized and defined by {{site.data.keyword.atracker_short}} as operations that are allowed to be performed on the service. An action is mapped to an IAM platform or service role that you can assign to a user.
 
 For more information about the steps to assign IAM access, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
-- When you assign policies to users, use `atracker` for the service name in the CLI command or API call for {{site.data.keyword.atracker_short}} event routing. Use `logdnaat` for {{site.data.keyword.at_short}} hosted event search offerings.
-- When you assign policies to users, use `Activity Tracking` for {{site.data.keyword.atracker_short}} event routing. When you assign policies to users, use `IBM Cloud {{site.data.keyword.atracker_short}}` for the service name in the UI for {{site.data.keyword.at_short}} hosted event search offerings.
+- When you assign policies to users, use `atracker` for the service name in the CLI command or API call for {{site.data.keyword.atracker_short}} Event Routing. Use `logdnaat` for {{site.data.keyword.at_short}} hosted event search offerings.
+- When you assign policies to users, use `Activity Tracking` for {{site.data.keyword.atracker_short}} Event Routing. When you assign policies to users, use `IBM Cloud {{site.data.keyword.atracker_short}}` for the service name in the UI for {{site.data.keyword.at_short}} hosted event search offerings.
 
 **To organize a set of users and service IDs into a single entity that makes it easy for you to manage IAM permissions, use *access groups*.** You can assign a single policy to the group instead of assigning the same access multiple times per individual user or service ID.
 {: tip}
@@ -52,8 +52,6 @@ Choose any of the following actions to manage IAM policies in the {{site.data.ke
 * To review a user's permissions, see [Reviewing your assigned access](/docs/account?topic=account-assign-access-resources#review_your_access).
 
 
-
-
 ## {{site.data.keyword.cloud_notm}} platform roles
 {: #platform}
 
@@ -63,8 +61,10 @@ Platform roles enable users to perform tasks on service resources at the platfor
 
 Review the following tables that outline what types of tasks each role allows for when you're configuring {{site.data.keyword.atracker_short}} in your account.
 
-The following table describes the tasks that can be completed with each platform management role that is assigned on the **Account management** &gt **{{site.data.keyword.atracker_short}}** service when you use {{site.data.keyword.atracker_short}} event routing.
+### {{site.data.keyword.atracker_short}} Event Routing
+{: #iam_ater}
 
+Use the following table to identify the **Account management** **{{site.data.keyword.atracker_short}} Event Routing** platform role that you can grant a user in the {{site.data.keyword.cloud_notm}} to run any of the following platform actions:
 
 | Platform role            | Description of actions | 
 |--------------------------|------------------------|
@@ -72,30 +72,134 @@ The following table describes the tasks that can be completed with each platform
 | Operator                 | As an operator, you can view {{site.data.keyword.atracker_short}} configuration resources such as routes and targets. |
 | Editor                   | As an editor, you can view, create, update, and delete {{site.data.keyword.atracker_short}} resources. | 
 | Administrator            | As an administrator, you can view, create, update, and delete {{site.data.keyword.atracker_short}} resources. You can also assign access policies to manage {{site.data.keyword.atracker_short}} resources to other users in the account. |
-{: caption="Table 1. IAM platform roles for {{site.data.keyword.atracker_short}} event routing" caption-side="top"}
+{: caption="Table 1. IAM platform roles for {{site.data.keyword.atracker_short}} Event Routing" caption-side="top"}
 {: summary="Descriptions of the actions in the service that are permitted for the listed platform management role."}
 
 Review the available platform roles that are available, and the actions that are mapped to each to help you assign access. 
 
-| Action | IAM Action | Activity Tracker action | Administrator | Editor | Operator | Viewer |
-|--------|------------|-------------------------|---------------|--------|-----------|--------|
-| `Grant other account members access to configure {{site.data.keyword.atracker_short}}` | `iam-am.policy.create` | `iam-am.policy.create` |![Checkmark icon](images/checkmark-icon.svg) | | | |
-| `Revoke member access to configure {{site.data.keyword.atracker_short}}` | `iam-am.policy.delete` | `iam-am.policy.delete` |![Checkmark icon](images/checkmark-icon.svg) | | | |
-| `Modify member access to configure {{site.data.keyword.atracker_short}}`  | `iam-am.policy.update` | `iam-am.policy.update` |![Checkmark icon](images/checkmark-icon.svg) | | | |
-| `View a target`      | `atracker.target.read` | `atracker.target.read` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
-| `Create a target`    | `atracker.target.create` | `atracker.target.create` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
-| `Update a target`    | `atracker.target.update` | `atracker.target.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
-| `Delete a target`    | `atracker.target.delete` | `atracker.target.delete` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
-| `Update a target`    | `atracker.target.update` | `atracker.target.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
-| `List all targets`   | `atracker.target.list` | `atracker.target.list` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
-| `View a route` | `atracker.route.read` | `atracker.route.read` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
-| `Create a route` | `atracker.route.create` | `atracker.route.create` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
-| `Update a route` | `atracker.route.update` | `atracker.route.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
-| `Delete a route` | `atracker.route.delete` | `atracker.route.delete` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
-| `List all routes` | `atracker.route.list` | `atracker.route.list` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 2. IAM platform roles for {{site.data.keyword.atracker_short}} event routing" caption-side="top"}
+For {{site.data.keyword.atracker_short}} Event Routing the IAM actions and Activity Tracker actions are the same.
+{: note}
 
-The following table defines the platform roles that you can grant a user in {{site.data.keyword.cloud_notm}} on the  **IAM Services** &gt **IBM Cloud Activity Tracker**  service to run any of the following platform actions when you use {{site.data.keyword.at_short}} hosted event search offerings:
+| Action | IAM and Activity Tracker action | Administrator | Editor | Operator | Viewer |
+|--------|------------|---------------|--------|-----------|--------|
+| Grant other account members access to configure {{site.data.keyword.atracker_short}} | `iam-am.policy.create` |![Checkmark icon](images/checkmark-icon.svg) | | | |
+| Revoke member access to configure {{site.data.keyword.atracker_short}} | `iam-am.policy.delete` | ![Checkmark icon](images/checkmark-icon.svg) | | | |
+| Modify member access to configure {{site.data.keyword.atracker_short}}  | `iam-am.policy.update` | ![Checkmark icon](images/checkmark-icon.svg) | | | |
+{: caption="Table 2. IAM platform roles for {{site.data.keyword.atracker_short}} Event Routing" caption-side="top"}
+
+
+| Action | IAM and Activity Tracker action | Administrator | Editor | Operator | Viewer |
+|--------|------------|---------------|--------|-----------|--------|
+| View a target      | `atracker.target.read` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
+| Create a target    | `atracker.target.create` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
+| Update a target    | `atracker.target.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
+| Delete a target    | `atracker.target.delete` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
+| List all targets   | `atracker.target.list` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
+{: caption="Table 3. IAM platform roles for {{site.data.keyword.atracker_short}} Event Routing" caption-side="top"}
+
+| Action | IAM and Activity Tracker | Administrator | Editor | Operator | Viewer |
+|--------|------------|---------------|--------|-----------|--------|
+| View a route | `atracker.route.read` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
+| Create a route | `atracker.route.create` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
+| Update a route | `atracker.route.update` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
+| Delete a route | `atracker.route.delete` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) | | |
+| List all routes | `atracker.route.list` |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |![Checkmark icon](images/checkmark-icon.svg) |
+{: caption="Table 4. IAM platform roles for {{site.data.keyword.atracker_short}} Event Routing" caption-side="top"}
+
+
+| Action | IAM and Activity Tracker action | Administrator | Editor | Operator | Viewer |
+|--------|------------|---------------|--------|-----------|--------|
+| Set endpoint properties `[V1]` | `atracker.endpoint.set` | ![Checkmark icon](images/checkmark-icon.svg) | | |  |
+| View endpoint properties `[V1]` | `atracker.endpoint.get` | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+{: caption="Table 5. IAM platform roles for {{site.data.keyword.atracker_short}} Event Routing" caption-side="top"}
+
+
+| Action | IAM and Activity Tracker action | Administrator | Editor | Operator | Viewer |
+|--------|------------|---------------|--------|-----------|--------|
+| View configuration settings `[V2]` | `atracker.setting.get` | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| Update configuration settings `[V2]` | `atracker.setting.update` | ![Checkmark icon](images/checkmark-icon.svg) | | | |
+{: caption="Table 6. IAM platform roles for {{site.data.keyword.atracker_short}} Event Routing" caption-side="top"}
+
+| Action | IAM and Activity Tracker action | Administrator | Editor | Operator | Viewer |
+|--------|------------|---------------|--------|-----------|--------|
+| Start migration `[V2]` | `atracker.migration.post` | ![Checkmark icon](images/checkmark-icon.svg) | | | |
+| View migration status `[V2]` | `atracker.migration.get` | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+{: caption="Table 7. IAM platform roles for {{site.data.keyword.atracker_short}} Event Routing" caption-side="top"}
+
+`[V2]` is only applicable once you have [migrated to the V2 configuration.](/docs/activity-tracker?topic=activity-tracker-migration)  `[V1]` is only applicable to the V1 configuration and is unavailable after you migrate to the V2 configuration. All others are applicable to both configurations.
+{: note}
+
+### {{site.data.keyword.atracker_short}} Event Routing actions by role
+{: #iam_ater_byrole}
+
+The following tables show the {{site.data.keyword.atracker_short}} Event Routing actions by role.
+
+| Platform role | Activity Tracker action | Action |
+|---------------|-------------------------|-------------|
+| Operator | `atracker.target.read` | View a target |
+| Operator | `atracker.target.list` | List all targets |
+| Operator | `atracker.route.read` | View a route |
+| Operator | `atracker.route.list` | List all routes |
+| Operator | `atracker.endpoint.get` | View endpoint properties `[V1]` |
+| Operator | `atracker.setting.get` | View configuration settings `[V2]` |
+| Operator | `atracker.migration.get` | View migration status `[V2]` |
+{: caption="Table 8. {{site.data.keyword.atracker_short}} Event Routing actions for the operator role" caption-side="top"}
+
+| Platform role | Activity Tracker action | Action |
+|---------------|-------------------------|-------------|
+| Viewer | `atracker.target.read` | View a target |
+| Viewer | `atracker.target.list` | List all targets |
+| Viewer | `atracker.route.read` | View a route |
+| Viewer | `atracker.route.list` | List all routes |
+| Viewer | `atracker.endpoint.get` | View endpoint properties `[V1]` |
+| Viewer | `atracker.setting.get` | View configuration settings `[V2]` |
+| Viewer | `atracker.migration.get` | View migration status `[V2]` |
+{: caption="Table 9. {{site.data.keyword.atracker_short}} Event Routing actions for the viewer role" caption-side="top"}
+
+| Platform role | Activity Tracker action | Action |
+|---------------|-------------------------|-------------|
+| Editor | `atracker.target.read` | View a target |
+| Editor | `atracker.target.create` | Create a target |
+| Editor | `atracker.target.update` | Update a target |
+| Editor | `atracker.target.delete` | Delete a target |
+| Editor | `atracker.target.list` | List all targets |
+| Editor | `atracker.route.read` | View a route |
+| Editor | `atracker.route.create` | Create a route |
+| Editor | `atracker.route.update` | Update a route |
+| Editor | `atracker.route.delete` | Delete a route |
+| Editor | `atracker.route.list` | List all routes |
+| Editor | `atracker.endpoint.get` | View endpoint properties `[V1]` |
+| Editor | `atracker.setting.get` | View configuration settings `[V2]` |
+| Editor | `atracker.migration.get` | View migration status `[V2]` |
+{: caption="Table 10. {{site.data.keyword.atracker_short}} Event Routing actions for the editor role" caption-side="top"}
+
+| Platform role | Activity Tracker action | Action |
+|---------------|-------------------------|-------------|
+| Administrator | `atracker.target.read` | View a target |
+| Administrator | `atracker.target.create` | Create a target |
+| Administrator | `atracker.target.update` | Update a target |
+| Administrator | `atracker.target.delete` | Delete a target |
+| Administrator | `atracker.target.list` | List all targets |
+| Administrator | `atracker.route.read` | View a route |
+| Administrator | `atracker.route.create` | Create a route |
+| Administrator | `atracker.route.update` | Update a route |
+| Administrator | `atracker.route.delete` | Delete a route |
+| Administrator | `atracker.route.list` | List all routes |
+| Administrator | `atracker.endpoint.set` | Set endpoint properties `[V1]` |
+| Administrator | `atracker.endpoint.get` | View endpoint properties `[V1]` |
+| Administrator | `atracker.setting.get` | View configuration settings `[V2]` |
+| Administrator | `atracker.setting.update` | Update configuration settings `[V2]` |
+| Administrator | `atracker.migration.post` | Start migration `[V2]` |
+| Administrator | `atracker.migration.get` | View migration status `[V2]` |
+{: caption="Table 11. {{site.data.keyword.atracker_short}} Event Routing actions for the administrator role" caption-side="top"}
+
+`[V2]` is only applicable once you have [migrated to the V2 configuration.](/docs/activity-tracker?topic=activity-tracker-migration)  `[V1]` is only applicable to the V1 configuration and is unavailable after you migrate to the V2 configuration. All others are applicable to both configurations.
+{: note}
+
+### {{site.data.keyword.atracker_short}} hosted event search
+{: #iam_athes}
+
+Use the following table to identify the platform role for the {{site.data.keyword.at_short}} hosted event search offerings that you can grant a user in the {{site.data.keyword.cloud_notm}} to run any of the following platform actions:
 
 | Platform actions                                                          | Administrator                                     | Editor | Operator | Viewer  |
 |---------------------------------------------------------------------------|:-------------------------------------------------:|:-------:|:--------:|:------:|
@@ -107,7 +211,7 @@ The following table defines the platform roles that you can grant a user in {{si
 | `Create a service ID`                                                     | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |        |      |
 | `View details of a service instance`                                      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |
 | `View service instances in the Observability Activity Tracker dashboard`  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |
-{: caption="Table 1. IAM user platform roles and actions for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
+{: caption="Table 12. IAM user platform roles and actions for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
 
 
 ## {{site.data.keyword.cloud_notm}} service roles
@@ -138,7 +242,7 @@ Use the following table to identify the service roles that you can grant a user 
 | `Use views to monitor events`                                           | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")                    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |
 | `Use dashboards to monitor events`                                      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")                    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |
 | `Use screens to monitor events`                                         | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")                    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |
-{: caption="Table 2. IAM service roles and actions for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
+{: caption="Table 13. IAM service roles and actions for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
 
 
 The **manager** service role maps directly to the service admin role.
@@ -155,11 +259,6 @@ You can see which access policies are set for you in the [{{site.data.keyword.cl
 2. Click your name in the user table.
 3. Click the **Access policies** tab to see your access policies.
 4. Click the **Access groups** tab to see the access groups where you are a member. Check the policies for each group.
-
-
-
-
-
 
 
 

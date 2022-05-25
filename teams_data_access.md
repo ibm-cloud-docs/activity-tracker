@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-05-16"
 
 keywords: groups, access, activity tracker
 
@@ -21,7 +21,7 @@ You can configure, control, and manage data that is available to users in your {
 This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
 {: important}
 
-A **group** is comprised of **users** with authorization to specific data.
+A **group** defines the scope of the data that is available for users that belong to that group.
 
 
 ## Before you begin
@@ -67,7 +67,7 @@ Complete the following steps to define the default settings for viewing data:
 
 5. For your instance, click **Open Dashboard**. The UI will be displayed.
 
-6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **TEAM** &gt; **Settings**.
+6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **Settings** &gt; **Organization** &gt; **Security**.
 
 7. Set **Access Control** to your desired default setting:
 
@@ -98,7 +98,7 @@ You can edit a group to change the access scope as needed.
 
 5. For your instance, click **Open Dashboard**. The UI will be displayed.
 
-6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **TEAM** &gt; **Groups**.
+6. Click ![**Settings**](/images/config.png "Settings icon") &gt;  **Settings** &gt; **Organization** &gt; **Groups**.
 
 7. Click **Add Group**.
 
@@ -148,7 +148,7 @@ Complete the following steps to edit or delete a service group:
 
 5. For your instance, click **Open Dashboard**. The UI will be displayed.
 
-6. Click ![**Settings**](/images/config.png "Settings icon") &gt; **TEAM** &gt; **Groups**.
+6. Click ![**Settings**](/images/config.png "Settings icon") &gt;  **Settings** &gt; **Organization** &gt; **Groups**.
 
 7. Click **Edit** or **Delete** to change or remove the group.
 

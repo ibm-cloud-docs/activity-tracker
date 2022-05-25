@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-05-23"
 
 keywords: IBM Cloud, Activity Tracker, events, global, regional, data, management
 
@@ -16,68 +16,79 @@ subcollection: activity-tracker
 # Collecting events
 {: #events_collect}
 
-In {{site.data.keyword.at_full_notm}} (AT), events are collected automatically for most enabled-AT services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze them. 
+In {{site.data.keyword.at_full}}, events are collected automatically for most {{site.data.keyword.atracker_short}}-enabled services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze their events.
 {: shortdesc}
 
-To collect and monitor activity in your account, you must provision the {{site.data.keyword.at_full_notm}} (AT) service in your account. Then, 
-as soon as an instance of an AT-enabled service is provisioned, events are collected and available for monitoring.
+To collect and monitor activity in your account, you must configure the {{site.data.keyword.atracker_short}} service in your account by using any of the following methods:
 
-You can differentiate events by scope as global or location-based events. The scope determines where an event is collected and available for analysis:
+- You can [configure {{site.data.keyword.atracker_short}} Event Routing](/docs/activity-tracker?topic=activity-tracker-getting-started-routing-2) to manage auditing events in your account while maintaining Financial Services Validated status.
 
-* **Collection of management events** is automatic for AT-enabled services, except Watson services that require a paid plan. 
+    The target resource must be an {{site.data.keyword.cos_full}} bucket that is available in the same account where the auditing events are generated.
 
-* **Collection of data events** is also automatic with the exception of some services where you must opt-in to collect those events. To opt-in, you might need to configure the service, upgrade the service plan, or both.
+    You can also use a bucket that is available in a different account from where auditing events are generated.
+
+    You must follow and comply with the Financial Services Validated requirements for buckets to maintain Financial Services Validated status.
+    {: important}
+
+- You can [configure the {{site.data.keyword.atracker_short}} hosted event search offering](/docs/activity-tracker?topic=activity-tracker-getting-started-search) to manage auditing events through the UI, or if you need PCI, SOC2, Privacy Shield or HIPAA compliance.
+
+- You can configure {{site.data.keyword.atracker_short}} Event Routing to define the {{site.data.keyword.atracker_short}} hosted event search instances where auditing events are routed.
+
+    The {{site.data.keyword.atracker_short}} hosted event search instances can be located in the same account where auditing events are generated or in a different account.
 
 
+In {{site.data.keyword.atracker_short}}, you can differentiate events by scope as global or location-based events, and by operational impact as either management or data events.
 
-## Collecting Global events
+- The scope is determined from where an event is collected.
+
+- Collection of management events is automatic for {{site.data.keyword.atracker_short}}-enabled services, except for Watson services which require a paid plan.
+
+- Collection of data events is also automatic with the exception of some services where you must opt-in to collect those events. To opt-in, you might need to configure the service, upgrade the service plan, or both. For more information, see [Data events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_data).
+
+
+## Collecting global events
 {: #events_collect_global}
 
-For {{site.data.keyword.atracker_short}} event routing, you can choose the region where events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-routing#getting-started-routing-setp5).
+You can choose 1 of the following options to collect [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) in your account:
 
-For {{site.data.keyword.at_short}} hosted event search offerings, [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) are available through the {{site.data.keyword.atracker_short}} instance in Frankfurt. Therefore, to collect and view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
+1. Configure {{site.data.keyword.atracker_short}} Event Routing: You can choose the region where events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-routing-2#getting-started-routing-step6).
+
+2. Configure {{site.data.keyword.at_short}} hosted event search: Global events are available through the {{site.data.keyword.atracker_short}} instance in Frankfurt. To collect and view global events, you must provision an instance of the {{site.data.keyword.at_short}} service in Frankfurt. [Learn more](/docs/activity-tracker?topic=activity-tracker-monitor_events).
+
+3. While global events default to Frankfurt when you configure {{site.data.keyword.at_short}} hosted event search to manage auditing events, you can configure {{site.data.keyword.atracker_short}} Event Routing  to manage routing of global events to the instance of your choice.  
+
+    Routing can be to an {{site.data.keyword.at_short}} hosted event search instance so that you can monitor events through the UI or to an {{site.data.keyword.cos_full_notm}} bucket for archival purposes. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-target-1).
+
+    Routing can be done to an instance within the account that generates the auditing events, or to an instance in another {{site.data.keyword.cloud_notm}} account.
 
 
-## Collecting Location-based events
+## Collecting location-based events
 {: #events_collect_location}
 
-[Location-based events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_location) are available through the Activity Tracker instance that is available in the same region as the service. 
+You can choose 1 of the following options to collect [location-based events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_location) in your account:
 
-Consider the following scenarios that are exceptions to this behavior for location-based events:
+1. Configure {{site.data.keyword.atracker_short}} Event Routing: You can choose the region where location-based events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-atracker-resources).
+
+2. Configure {{site.data.keyword.at_short}} hosted event search: Location-based events are available through the {{site.data.keyword.at_short}} instance that is available in the same region as the service. [Learn more](/docs/activity-tracker?topic=activity-tracker-monitor_events).
+
+3. Configure {{site.data.keyword.atracker_short}} Event Routing to manage routing of location-based events to the instance of your choice.  
+
+    Routing can be to an {{site.data.keyword.at_short}} hosted event search instance to monitor events using the UI or to an {{site.data.keyword.cos_full_notm}} bucket for archival purposes. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-target-1).
+
+    Routing can be done to an instance within the account, or to an instance in another {{site.data.keyword.cloud_notm}} account.
+
+    Routing of location-based events from a give region is only supported for the regions where {{site.data.keyword.atracker_short}} Event Routing is supported. For more information about supported regions, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli#regions-atracker).
+
+
+The following are exceptions for location-based events:
+
 * The {{site.data.keyword.at_full_notm}} service might not be available in a region where a service is provisioned. [Learn more about supported locations](/docs/activity-tracker?topic=activity-tracker-regions).
 
-    Check the [Cloud services by location](/docs/activity-tracker?topic=activity-tracker-cloud_services_locations) documentation to find out if the service generates AT events in that region, and if it does, where are the events available for analysis.
+    Check the [Cloud services by location](/docs/activity-tracker?topic=activity-tracker-cloud_services_locations) documentation to find out if the service generates {{site.data.keyword.atracker_short}} events in that region, and if it does, where the events are available for analysis.
 
-* The service might not generate Activity Tracker events in the region where you have provisioned your instance.
+* The service might not generate {{site.data.keyword.atracker_short}} events in the region where you have provisioned your {{site.data.keyword.atracker_short}} instance.
 
     Check the [Cloud services by location](/docs/activity-tracker?topic=activity-tracker-cloud_services_locations) documentation to confirm if events are available in that region.
-
-
-## Defining the instances that I need to collect and monitor events in the account
-{: #events_collect_define}
-
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
-
-You can provison only 1 instance of the {{site.data.keyword.at_full_notm}} service per location. To get the list of locations where the service is available in the {{site.data.keyword.cloud_notm}}, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
-
-
-To monitor activity in your account, you need the following {{site.data.keyword.at_full_notm}} instances:
-* 1 instance in Frankfurt to monitor global events
-* 1 instance in each region where you operate
-
-For example, you might have services in the US South location only. To monitor activity in your account, you need 1 instance in US South to monitor events that are generated by services that are running in that location. You need 1 instance in EU-DE (Frankfurt) to monitor global actions that happen in your account such as user management actions, and provisioning of service instances. 
-
-
-## Viewing the instances that are available to monitor events in the account
-{: #events_collect_view}
-
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
-
-In the {{site.data.keyword.cloud_notm}}, you can click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability** &gt; **Activity Tracker** to see the dashboard where all the instances that are provisioned in the account are listed. 
-
-If you need to provision an instance, see [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision).
 
 
 

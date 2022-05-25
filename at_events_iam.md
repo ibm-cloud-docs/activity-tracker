@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2021
 lastupdated: "2021-09-24"
 
 keywords: IBM Cloud, Activity Tracker, IAM events
@@ -150,7 +150,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.serviceid-apikey.login`    | An event is generated when an initiator logs in to the {{site.data.keyword.cloud_notm}} by using an API key that is associated with a service ID. |  
 | `iam-identity.user-identitycookie.login` | This is an event that is generated when an initiator requests an identity cookie to run an action. |
 | `iam-identity.user-refreshtoken.login`   | This is an event that is generated when the initiator logs in to {{site.data.keyword.cloud_notm}}, or when an initiator that is already logged in requests a new refresh token to run an action. |
-| `iam-identity.trustedprofile-apikey.login` | This is an event that is generated when the initiator logs in to {{site.data.keyword.cloud_notm}} by applying a trusted profile, or when an initiator that is already logged in by applying a trusted profile requests a new refresh token to run an action. |
+| `iam-identity.user-passcode.login` `iam-identity.trustedprofile-apikey.login` | This is an event that is generated when the initiator logs in to {{site.data.keyword.cloud_notm}} by applying a trusted profile, or when an initiator that is already logged in by applying a trusted profile requests a new refresh token to run an action. |
 {: caption="Table 9. Events that are generated for user login actions" caption-side="top"} 
  
 
@@ -201,6 +201,7 @@ The following field includes extra information:
 * In requestData, the `client_id` field is set to **bx**. This value indicates a CLI request.
 
 #### Log in with a federated ID by using trusted profiles
+{: #at_events_iam_analyze_login_events-2a}
 
 When a user [logs in with a federated ID by using trusted profiles](/docs/account?topic=account-federated_id), you get an event in the account with action `iam-identity.trustedprofile-apikey.login`.
 

@@ -38,10 +38,10 @@ Data is hosted on the {{site.data.keyword.cloud_notm}}.
 
 Events can be classified as global or location-based. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-event_types).
 * **Location-based events** maintain data locality to the services that run in that Cloud location.
-* **Global events** are collected and made available through the region in your account that you configure to collect global auditing events for {{site.data.keyword.atracker_short}} event routing. **Global events** are collected and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt for {{site.data.keyword.at_short}} hosted event search offerings.
+* **Global events** are collected and made available through the region in your account that you configure to collect global auditing events for {{site.data.keyword.atracker_short}} Event Routing. **Global events** are collected and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt for {{site.data.keyword.at_short}} hosted event search offerings.
 
 
-### How your data is stored and encrypted in {{site.data.keyword.atracker_short}} event routing
+### How your data is stored and encrypted in {{site.data.keyword.atracker_short}} Event Routing
 {: #data-storage-atracker}
 
 You must configure where events are stored in your account. You can route auditing events from different regions to buckets in {{site.data.keyword.cos_full_notm}} in your account. To collect auditing events in your account, you must define 1 or more targets, and 1 or more routes to specify where the auditing events that are collected in the account must be stored. You define 1 target and 1 route per region. 

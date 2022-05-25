@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-40"
+lastupdated: "2022-05-04"
 
 keywords: IBM Cloud, Activity Tracker, archive logs, COS, cloud object storage
 

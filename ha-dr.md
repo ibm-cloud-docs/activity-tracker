@@ -32,7 +32,7 @@ A region (location) is a geographically and physically separate group of one or 
 * Each region has 3 different data centers (DC) for redundancy.
 
 
-### Availability zones for {{site.data.keyword.atracker_short}} event routing
+### Availability zones for {{site.data.keyword.atracker_short}} Event Routing
 {: #ha_dr_locations-atracker}
 
 {{site.data.keyword.atracker_short}} is a highly available, regional, service. 
@@ -113,7 +113,7 @@ The MZR architecture offers automatic failover between zones within the region, 
 
 The SZR architecture offers failover across 3 distinct systems within the single datacenter so that you get high availability from a system failure, but not from a datacenter failure.
 
-### Data availability for {{site.data.keyword.atracker_short}} event routing
+### Data availability for {{site.data.keyword.atracker_short}} Event Routing
 {: #ha_dr_data_availability_atracker}
 
 {{site.data.keyword.atracker_short}} data includes information on where and how to collect and store auditing events in your account for regional services and for global services like IAM.
@@ -151,7 +151,7 @@ Disaster recovery is about surviving a catastrophic failure or loss of availabil
 {{site.data.keyword.atracker_short}} is a regional service, there is no automatic cross-regional failover or cross-regional disaster recovery. If all of the availability zones in a region fail, {{site.data.keyword.atracker_short}} becomes unavailable in that location. 
 
 
-### Disaster recovery (DR) for {{site.data.keyword.atracker_short}} event routing
+### Disaster recovery (DR) for {{site.data.keyword.atracker_short}} Event Routing
 {: #dr-atracker}
 
 In the event of a regional disaster, you must complete the following steps to establish cross-region high availability:

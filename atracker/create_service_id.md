@@ -22,7 +22,7 @@ subcollection: activity-tracker
 When Activity Tracking collects auditing events in your account, it uses an API key to upload data into a bucket. Therefore, you must define credentials in your account to work with the {{site.data.keyword.cos_full_notm}} service. 
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
+This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
 {: important}
 
 [![Step 1. Check your {{site.data.keyword.compliance_short}} rules](images/create_service_id_1.svg)](#getting-started-step3_1) [![Step 2. Check your IAM account settings](images/create_service_id_2.svg)](#getting-started-step3_2) [![Step 3. Create a service ID](images/create_service_id_3.svg)](#getting-started-step3_3)

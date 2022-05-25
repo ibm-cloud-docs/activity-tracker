@@ -13,6 +13,7 @@ subcollection: activity-tracker
 {{site.data.keyword.attribute-definition-list}}
 
 # Auditing events for context-based restrictions
+{: #events_context_based}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} to track how users and applications interact with the Context-based restrictions rules and network zones in {{site.data.keyword.cloud_notm}}.
 
@@ -22,6 +23,7 @@ To get started monitoring your user's actions, see [IBM Cloud Activity Tracker](
 
 
 ## Network zone events
+{: #network_zone_events}
 
 The following table lists the actions that generate nerwork zone events:
 
@@ -35,6 +37,7 @@ The following table lists the actions that generate nerwork zone events:
 
 
 ## Context-based restricitons rules events
+{: #restriction_rules_events}
 
 The following table lists the actions that generate context-based restricitons rule events:
 
@@ -48,6 +51,7 @@ The following table lists the actions that generate context-based restricitons r
 
 
 ## Account settings events
+{: #account_setting_events}
 
 The following table lists the actions that generate account settings events:
 
@@ -57,6 +61,7 @@ The following table lists the actions that generate account settings events:
 
 
 ## Viewing events
+{: #cdr_viewing_events}
 
 Events are available in the Frankfurt (eu-de) region. To view these events, complete the following steps:
 1. Provision an instance of the {{site.data.keyword.at_full_notm}} service in the Frankfurt (eu-de) region. 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-05-05"
 
 keywords: IBM Cloud, Activity Tracker, configuration, route
 
@@ -19,8 +19,11 @@ subcollection: activity-tracker
 You can validate your account configuration for {{site.data.keyword.atracker_full}} by generating a report of the {{site.data.keyword.atracker_full_notm}} resources using the {{site.data.keyword.atracker_full_notm}} CLI. 
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
+This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
 {: important}
+
+The V1 API is deprecated. This CLI and API can only be used while using the {{site.data.keyword.atracker_full_notm}} V1 API.  Once you have [migrated to the V2 API](/docs/activity-tracker?topic=activity-tracker-migrate-resources) this CLI and API can no longer be used.
+{: deprecated}
 
 ## Prereqs
 {: #route-report-prereqs}
@@ -29,7 +32,7 @@ Before you use the CLI to generate your {{site.data.keyword.atracker_full_notm}}
 
 1. Identify the endpoint in the region where you need the report. For more information, see [Endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
 
-    Change the link to be direct to the Atracker endpoints (event routing ones)
+    Change the link to be direct to the Atracker endpoints (Event Routing ones)
     {: note}
 
 2. [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
@@ -38,7 +41,7 @@ Before you use the CLI to generate your {{site.data.keyword.atracker_full_notm}}
 
 
 ## Running the report
-{: route-report-running}
+{: #route-report-running}
 
 Use the following command to return a report about the {{site.data.keyword.atracker_full_notm}} service configuration.  This report will include any issues in the configuration. 
 

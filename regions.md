@@ -55,10 +55,10 @@ Where
 
 
 
-## Locations for {{site.data.keyword.atracker_short}} event routing
+## Locations for {{site.data.keyword.atracker_short}} Event Routing
 {: #regions-atracker}
 
-This information applies only to {{site.data.keyword.atracker_full_notm}} event routing.
+This information applies only to {{site.data.keyword.atracker_full_notm}} Event Routing.
 {: important}
 
 
@@ -71,7 +71,8 @@ This information applies only to {{site.data.keyword.atracker_full_notm}} event 
 | `North America`       | `Washington (us-east)`   | `N/A`        | `MZR`     |
 | `Europe`              | `Frankfurt (eu-de) (*)`  | `YES`        | `MZR`     |
 | `Europe`              | `London (eu-gb)`  | `NO`        | `MZR`     |
-{: caption="Table 1. List of locations for {{site.data.keyword.atracker_short}} event routing" caption-side="top"}
+| `Asia Pacific`        | `Sydney (au-syd)`        | `N/A`        | `MZR`     |
+{: caption="Table 1. List of locations for {{site.data.keyword.atracker_short}} Event Routing" caption-side="top"}
 
 Where
 * A *geography* is a geographic area or larger political body that contains one or more regions.
