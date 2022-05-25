@@ -195,7 +195,8 @@ toc:
 
       - atracker/cos.md
       - atracker/config_report.md
-
+      - atracker/config_report_v2.md
+      
       - topicgroup:
           label: Streaming data
           topics:
