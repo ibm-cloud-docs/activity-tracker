@@ -21,14 +21,14 @@ toc:
       - topicgroup: 
           label:  Configuring the account
           topics:
-          - topic: atracker/atracker-resources.md
+          - topic: atracker/atracker-acc-config.md
             navtitle: Overview
-          - topic: atracker/atracker-scenarios.md
-            navtitle: Scenarios
           - topic: atracker/atracker-resources-planning.md
             navtitle: Planning
-          - topic: atracker/atracker-acc-config.md
-            navtitle: Options to configure the account
+          - topic: atracker/atracker-scenarios.md
+            navtitle: Scenarios
+          - topic: atracker/atracker-resources.md
+            navtitle: Specifications
           - topic: atracker/limitations.md
             navtitle: Restrictions and limitations
       
