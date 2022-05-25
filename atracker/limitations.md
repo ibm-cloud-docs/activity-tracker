@@ -33,7 +33,7 @@ This information applies only if you use {{site.data.keyword.atracker_short}} Ev
     - {{site.data.keyword.messagehub_full}}
     - {{site.data.keyword.dev_cli_notm}}
 
-- [Metrics](/docs/activity-tracker?topic=activity-tracker-monitoring_metrics#monitoring_metrics_details) for a [logDNA target](/docs/activity-tracker?topic=activity-tracker-target_v2_at) are not available.
+
 
 - To collect {{site.data.keyword.cos_full}} auditing events by configuring {{site.data.keyword.atracker_short}} Event Routing, you must enable collection of data events. To enable data events through the UI, you need to select or provision an instance of {{site.data.keyword.atracker_short}} hosted event search. If you use the API, you must define the CRN of an {{site.data.keyword.atracker_short}} hosted event search instance. 
 
