@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-06-10"
 
 keywords: IBM Cloud, Activity Tracker, events, global, regional, data, management
 
@@ -106,6 +106,22 @@ The following services generate global events in the {{site.data.keyword.cloud_n
 * Integrated platform services fo managing account settings and resources such as service instances, users, billing, and tags
 * {{site.data.keyword.iamlong}} (IAM)
 * {{site.data.keyword.cos_full_notm}}
+* {{site.data.keyword.dashdblong_notm}}
+* {{site.data.keyword.tg_full}}
+* {{site.data.keyword.dns_full}}
+* {{site.data.keyword.cis_full}} (CIS)
+* Content Delivery Network
+* Provisioning
+* {{site.data.keyword.compliance_full}}
+* Global Search Service
+* Catalog Management
+* Software instances
+* Context-based restrictions
+* {{site.data.keyword.mdms_short}}
+* {{site.data.keyword.vmwaresolutions_short}}
+* {{site.data.keyword.BluDirectLink}} solution
+
+For more information on services generating global events, see [IBM Cloud services that generate Activity Tracker events](/docs/activity-tracker?topic=activity-tracker-cloud_services).
 
 For {{site.data.keyword.atracker_short}} Event Routing, you can choose the region where events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-routing#getting-started-routing-setp5).
 
