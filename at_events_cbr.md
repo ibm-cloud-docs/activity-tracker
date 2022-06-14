@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2021-01-11"
+lastupdated: "2022-06-14"
 
 keywords: IBM Cloud, Activity Tracker, services, context-based restrictions
 
@@ -36,7 +36,7 @@ The following table lists the actions that generate nerwork zone events:
 | context-based-restrictions.zone.delete | An event is generated when an initiator deletes a CBR zone. |
 
 
-## Context-based restricitons rules events
+## Context-based restrictions rules events
 {: #restriction_rules_events}
 
 The following table lists the actions that generate context-based restricitons rule events:
