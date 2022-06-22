@@ -30,7 +30,7 @@ This information applies only if you use {{site.data.keyword.atracker_full_notm}
 Your requests fail indicating you do not have access or the correct privileges.
 {: tsSymptoms}
 
-If Administrator privileges are set to `All Identity and Access enabled services` in {{site.data.keyword.iamshort}} you will be unable to manage the {{site.data.keyword.atracker_full_notm}} Event Routing configuration. Administrator privileges must be configured in `Activity Tracker event routing` under  [`All Account Management Services` in {{site.data.keyword.iamshort}}.](/docs/account?topic=account-account-services)
+If Administrator privileges are set to `All Identity and Access enabled services` in {{site.data.keyword.iamshort}} you will be unable to manage the {{site.data.keyword.atracker_full_notm}} Event Routing configuration. Administrator privileges must be configured for `Activity Tracker event routing` or [`All Account Management Services`](/docs/account?topic=account-account-services) in {{site.data.keyword.iamshort}}.
 {: tsCauses}
 
 Reconfigure the Administrator privileges in {{site.data.keyword.iamshort}} and retry your {{site.data.keyword.atracker_full_notm}} Event Routing requests.
