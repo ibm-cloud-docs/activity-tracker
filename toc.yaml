@@ -108,6 +108,7 @@ toc:
           - archiving-ov.md
           - archive.md
           - archiving-manage-api.md
+          - templates-archiving.md
           - sqlquery.md
           - archiving-at-monitor.md
           - archiving-monitor.md
