@@ -36,4 +36,3 @@ If Administrator privileges are set to `All Identity and Access enabled services
 Reconfigure the Administrator privileges in {{site.data.keyword.iamshort}} and retry your {{site.data.keyword.atracker_full_notm}} Event Routing requests.
 {: tsResolve}
 
-
