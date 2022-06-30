@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-09-24"
+  years: 2019, 2022
+lastupdated: "2022-06-30"
 
 keywords: IBM Cloud, Activity Tracker, IAM events
 
@@ -139,7 +139,7 @@ The following table lists the actions that generate an event:
 {: caption="Table 8. Events that are generated for API keys actions" caption-side="top"} 
 
 
-## Login events
+## Login and logout events
 {: #at_events_iam_login}
 
 The following table lists the actions that generate an event:
@@ -151,7 +151,8 @@ The following table lists the actions that generate an event:
 | `iam-identity.user-identitycookie.login` | This is an event that is generated when an initiator requests an identity cookie to run an action. |
 | `iam-identity.user-refreshtoken.login`   | This is an event that is generated when the initiator logs in to {{site.data.keyword.cloud_notm}}, or when an initiator that is already logged in requests a new refresh token to run an action. |
 | `iam-identity.user-passcode.login` `iam-identity.trustedprofile-apikey.login` | This is an event that is generated when the initiator logs in to {{site.data.keyword.cloud_notm}} by applying a trusted profile, or when an initiator that is already logged in by applying a trusted profile requests a new refresh token to run an action. |
-{: caption="Table 9. Events that are generated for user login actions" caption-side="top"} 
+| `iam-identity.user.logout` | This is an event that is generated when the initiator logs out of the {{site.data.keyword.cloud_notm}}. |
+{: caption="Table 9. Events that are generated for user login and logout actions" caption-side="top"} 
  
 
 
@@ -215,7 +216,10 @@ After the user ID is authenticated successfully in the {{site.data.keyword.cloud
 
 In Activity Tracker, you can see events that are associated to your account. Failed log in actions do not generate an event that you can monitor in your account.
 
+### Logout events
+{: #at_events_iam_analyze_logout_events} 
 
+When a user logs out of the {{site.data.keyword.cloud_notm}}, the `iam-identity.user.logout` event is generated.
 
 ### Update an account service ID
 {: #at_events_iam_analyze_update_acc_scvid}
