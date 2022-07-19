@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-07-14"
 
 keywords: IBM Cloud, {{site.data.keyword.at_short}}, faq
 
@@ -18,6 +18,15 @@ subcollection: activity-tracker
 Frequently asked questions about {{site.data.keyword.atracker_short}}.
 {: shortdesc}
 
+## What are the different ways to manage auditing events?
+{: #faq_0}
+{: faq}
+
+{{site.data.keyword.atracker_short}} offers 2 different ways to manage auditing events in an {{site.data.keyword.cloud_notm}} account. You can use {{site.data.keyword.atracker_short}} hosted event search, an IAM enabled service, to manage auditing events through instances that you provision in each {{site.data.keyword.cloud_notm}} region where you operate. Alternatively, you can use {{site.data.keyword.atracker_short}} Event Routing, a platform service, to manage auditing events at the account-level by configuring targets and routes that define where auditing data is routed. {{site.data.keyword.atracker_short}} Event Routing can only route events that are generated in [supported regions](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker). Other regions, where {{site.data.keyword.atracker_short}} Event Routing is not available, continue to manage events by using {{site.data.keyword.atracker_short}} hosted event search.
+
+{{site.data.keyword.atracker_short}} hosted event search routes location-based auditing events to an {{site.data.keyword.atracker_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.atracker_short}} instance that is provisioned in Frankfurt.
+
+{{site.data.keyword.atracker_short}} Event Routing routes events based on the location that is specified in the `logSourceCRN` field included in the event. You can define a target, the resource where events are routed to, in any {{site.data.keyword.atracker_short}} Event Routing supported region. However, the target resource can be located in any region where that type of target is supported, in the same account or in a different account. You can define rules to determine where auditing events are to be routed by configuring 1 or more routes in the account. You can define rules for managing global events and location-based events that are generated in regions where {{site.data.keyword.atracker_short}} Event Routing is supported. 
 
 ## Where can I find the list of Cloud services that generate {{site.data.keyword.atracker_short}} events?
 {: #faq_1}

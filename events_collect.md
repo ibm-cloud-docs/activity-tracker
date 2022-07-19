@@ -46,6 +46,11 @@ In {{site.data.keyword.atracker_short}}, you can differentiate events by scope a
 - Collection of data events is also automatic with the exception of some services where you must opt-in to collect those events. To opt-in, you might need to configure the service, upgrade the service plan, or both. For more information, see [Data events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_data).
 
 
+{{site.data.keyword.atracker_short}} hosted event search routes location-based auditing events to an {{site.data.keyword.atracker_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.atracker_short}} instance that is provisioned in Frankfurt.
+
+{{site.data.keyword.atracker_short}} Event Routing routes events based on the location that is specified in the `logSourceCRN` field included in the event. You can define a target, the resource where events are routed to, in any {{site.data.keyword.atracker_short}} Event Routing supported region. However, the target resource can be located in any region where that type of target is supported, in the same account or in a different account. You can define rules to determine where auditing events are to be routed by configuring 1 or more routes in the account. You can define rules for managing global events and location-based events that are generated in regions where {{site.data.keyword.atracker_short}} Event Routing is supported. 
+
+
 ## Collecting global events
 {: #events_collect_global}
 
@@ -77,7 +82,7 @@ You can choose 1 of the following options to collect [location-based events](/do
 
     Routing can be done to an instance within the account, or to an instance in another {{site.data.keyword.cloud_notm}} account.
 
-    Routing of location-based events from a give region is only supported for the regions where {{site.data.keyword.atracker_short}} Event Routing is supported. For more information about supported regions, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli#regions-atracker).
+    Routing of location-based events from a given region is only supported for the regions where {{site.data.keyword.atracker_short}} Event Routing is supported. For more information about supported regions, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli#regions-atracker).
 
 
 The following are exceptions for location-based events:

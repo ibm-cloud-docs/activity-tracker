@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-21"
+lastupdated: "2022-07-14"
 
 keywords: IBM Cloud, cloud services, {{site.data.keyword.atracker_short}} Event Routing, security, auditing, services, {{site.data.keyword.at_short}} hosted event search
 
@@ -20,6 +20,13 @@ subcollection: activity-tracker
 
 {{site.data.keyword.cloud_notm}} services that use {{site.data.keyword.atracker_short}} to monitor user-initiated activities that change the state of any of the following services in the {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
+
+{{site.data.keyword.atracker_short}} hosted event search routes location-based auditing events to an {{site.data.keyword.atracker_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.atracker_short}} instance that is provisioned in Frankfurt.
+{: important}
+
+{{site.data.keyword.atracker_short}} Event Routing routes events based on the location that is specified in the `logSourceCRN` field included in the event. You can define a target, the resource where events are routed to, in any {{site.data.keyword.atracker_short}} Event Routing supported region. However, the target resource can be located in any region where that type of target is supported, in the same account or in a different account. You can define rules to determine where auditing events are to be routed by configuring 1 or more routes in the account. You can define rules for managing global events and location-based events that are generated in regions where {{site.data.keyword.atracker_short}} Event Routing is supported. 
+{: important}
+
 
 ## Analytics services
 {: #analytics}
