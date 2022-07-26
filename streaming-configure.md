@@ -12,7 +12,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Configuring streaming through the UI
+# Configuring streaming to {{site.data.keyword.messagehub}} through the UI 
 {: #streaming-configure}
 
 

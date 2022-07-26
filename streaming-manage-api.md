@@ -12,7 +12,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing streaming by using the API
+# Managing streaming to an {{site.data.keyword.messagehub}} instance by using the API
 {: #streaming-manage-api}
 
 

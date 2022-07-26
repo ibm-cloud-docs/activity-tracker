@@ -12,7 +12,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Monitoring streaming
+# Monitoring streaming to an {{site.data.keyword.messagehub}} instance
 {: #streaming-monitor}
 
 
