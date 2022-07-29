@@ -152,6 +152,7 @@ toc:
           label: Managing resources
           topics:
           - reuse_resource_definitions.md
+          - config_categories.md
 
       - topicgroup:
           label: Monitoring Cloud resources
