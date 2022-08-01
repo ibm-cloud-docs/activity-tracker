@@ -1,13 +1,8 @@
 ---
 
 copyright:
-<<<<<<< HEAD
   years: 2019, 2022
 lastupdated: "2022-07-29"
-=======
-  years:  2018, 2022
-lastupdated: "2022-07-28"
->>>>>>> b2af1e4f8b11fed978472c5fc7537628e1d9a1d5
 
 keywords: IBM Cloud, Activity Tracker, service keys
 
@@ -29,11 +24,7 @@ You must use a logging service key to complete any of the following tasks:
 - Manage views and alerts programmatically by using the Configuration API or Terraform.
 - Configure resources such as groups, archiving, keys by using the Configuration API or Terraform.
 
-<<<<<<< HEAD
-You can enable a maximum of 20 auditing service keys for each auditing instance.  To create more than one auditing service key, you have to add additional service keys by using the UI.
-=======
 You can enable a maximum of 20 service keys for each instance.  You can manage service keys by using the UI, the API or the CLI.
->>>>>>> b2af1e4f8b11fed978472c5fc7537628e1d9a1d5
 {: important}
 
  
@@ -87,12 +78,6 @@ You must have the **manager** role for the {{site.data.keyword.at_full_notm}} se
 
 For more information, see [service roles](/docs/activity-tracker?topic=activity-tracker-iam#service).
 
-<<<<<<< HEAD
-=======
-You can only delete a service Key through the logging web UI.
-{: important}
-
->>>>>>> b2af1e4f8b11fed978472c5fc7537628e1d9a1d5
 Complete the following steps to delete a service key:
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
