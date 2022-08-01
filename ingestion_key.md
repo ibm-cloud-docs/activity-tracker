@@ -1,10 +1,11 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-05-23"
+  years:  2018, 2022
+lastupdated: "2022-07-28"
 
 keywords: IBM Cloud, Activity Tracker, security, auditing, ingestion key
+
 subcollection: activity-tracker
 
 ---
@@ -14,155 +15,102 @@ subcollection: activity-tracker
 # Working with ingestion keys
 {: #ingestion_key}
 
-The ingestion key is a security key that you must use to forward auditing events to your {{site.data.keyword.at_short}} instance in {{site.data.keyword.cloud}}. The ingestion key is created automatically when you provision an instance. Alternatively, you can also obtain the ingestion key by creating a service ID for the instance.
+The ingestion key is a security key that you must use to configure agents and successfully forward events to your {{site.data.keyword.at_full_notm}} instance in {{site.data.keyword.cloud_notm}}. You automatically get the ingestion key when you provision an instance. 
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
-
-* To work with ingestion keys through the {{site.data.keyword.at_short}} Web UI, you must have an IAM policy with platform role **Viewer** and service role **Manager** for the {{site.data.keyword.at_short}} service. 
-* To work with ingestion keys through the {{site.data.keyword.cloud_notm}} UI, you must have an IAM policy with platform role **Editor** and service role **Manager** for the {{site.data.keyword.at_short}} service. 
+To work with ingestion keys through the {{site.data.keyword.at_full_notm}} Web UI, you must have an IAM policy with platform role **Viewer** and service role **Manager** for the {{site.data.keyword.at_full_notm}} service. 
 
 
-
-## Getting the ingestion key through the {{site.data.keyword.at_short}} web UI
-{: #log_analysis_ui}
+## Getting ingestion keys
+{: #get_ingestion_key}
 {: ui}
 
-To get the ingestion key for an {{site.data.keyword.at_short}} instance by using the {{site.data.keyword.at_short}} web UI, complete the following steps:
+### Getting the ingestion key through the {{site.data.keyword.cloud_notm}} UI
+{: #ingestion_key_ui}
 
-1. [Go to the Activity Tracker web UI.](/docs/activity-tracker?topic=activity-tracker-launch).
+To get the ingestion key for an {{site.data.keyword.at_full_notm}} instance by using the {{site.data.keyword.cloud_notm}} UI, complete the following steps:
 
-2. Click the **Settings** icon ![Settings icon](/images/admin.png) &gt; **Organization** &gt; **API keys**. 
+1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
+
+2. Go to the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) &gt; **Observability**. 
+
+3. Click **Logging**. The {{site.data.keyword.at_full_notm}} dashboard opens. You can see the list of logging instances that are available on {{site.data.keyword.cloud_notm}}.
+
+4. Identify the instance that you want to use to collect your events.
+
+5. Click the **Actions** icon ![Actions icon](../../icons/action-menu-icon.svg) >  **View key**.
+
+    A window opens where you can click **Show** to view the ingestion key.
+
+
+### Getting the key through the {{site.data.keyword.at_short}} web UI
+{: #ingestion_key_at_ui}
+
+To get the ingestion key for an {{site.data.keyword.at_full_notm}} instance by using the {{site.data.keyword.at_full_notm}} Web UI, complete the following steps:
+
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
+
+2. Click the **Settings** icon ![Settings icon](../images/admin.png) &gt; **Organization** &gt; **API keys**. 
 
     You can see the ingestion keys that are enabled. 
 
-3. Copy the ingestion key displayed in the **API keys** section. 
+3. Copy the ingestion key that shows in the **API keys** section. 
+
+### Creating a service key by using the logging UI
+{: #ingestion_key_create_ui}
+
+You must have the **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
+{: important} 
+
+For more information, see [service roles](/docs/activity-tracker?topic=activity-tracker-iam#service).
+  
+Complete the following steps to create a service key:
+
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
+
+2. Click the **Settings** icon ![Settings icon](../images/admin.png). 
+
+3. Select **Organization**. 
+
+4. Select **API keys**.
+
+   If you have the correct permissions, the available service keys are displayed in the **Ingestion keys** section.   
+
+5. Click **Generate Ingestion Key**. A new key is added to the list. 
+
+### Deleting a service key by using the UI
+{: #ingestion_key_delete_ui}
+
+You must have the **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
+{: important} 
+
+For more information, see [service roles](/docs/activity-tracker?topic=activity-tracker-iam#service).
+
+Complete the following steps to delete an ingestion key:
+
+1. [Launch the {{site.data.keyword.at_short}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
+
+2. Click the **Settings** icon ![Settings icon](../images/admin.png). 
+
+3. Select **Organization**. 
+
+4. Select **API keys**.
+
+   If you have the correct permissions, the available service keys are displayed in the **Ingestion Keys** section.   
+
+5. Delete the key by clicking the **X** next to the key to be deleted.
 
 
-## Getting the ingestion key through the CLI
-{: #ingestion_key_cli}
-{: cli}
+### Rotating an ingestion key through the UI
+{: #ingestion_key_rotate_ui}
 
-To get the ingestion key for a auditing instance through the command line, complete the following steps:
+If the ingestion key is compromised or you have a policy to renew it after a number of days, you can generate a new key and delete the old one.
 
-1. [Pre-requisite] [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
+To renew the ingestion key for an {{site.data.keyword.at_full_notm}} instance by using the {{site.data.keyword.at_full_notm}} Web UI, complete the following steps:
 
-2. Log in to the {{site.data.keyword.cloud_notm}} region where the auditing instance is by running the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login).
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-3. Set the resource group where the auditing instance by running the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
-
-    By default, the `default` resource group is set.
-
-4. Get the instance name by running the following command: [ibmcloud resource service-instances](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instances)
-
-    ```text
-    ibmcloud resource service-instances
-    ```
-    {: pre}
-
-5. Get the name of the key that is associated with the auditing instance by running the [ibmcloud resource service-keys](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_keys) command:
-
-    ```text
-    ibmcloud resource service-keys --instance-name INSTANCE_NAME
-    ```
-    {: pre}
-
-    where INSTANCE_NAME is the name of the instance that you obtained in the previous step.
-
-6. Get the ingestion key by running the [ibmcloud resource service-key](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_key) command:
-
-    ```text
-    ibmcloud resource service-key APIKEY_NAME
-    ```
-    {: pre}
-
-    where APIKEY_NAME is the name of the API key.
- 
-    The output from this command includes the field **ingestion key** that contains the ingestion key for the instance.
-
-
-## Getting the ingestion key through the API
-{: #ingestion_key_api}
-{: api}
-
-To get the ingestion key for a auditing instance through the API, complete the following steps:
-
-1. Generate an [{{site.data.keyword.cloud_notm}} API key](/docs/account?topic=account-userapikey&interface=api#create_user_key).
-
-2. Get an access token. For more information, see [Generating an {{site.data.keyword.cloud_notm}} access token by using an API key](/docs/account?topic=account-iamtoken_from_apikey&interface=api).
-
-    You need an IAM access token to authenticate in {{site.data.keyword.cloud_notm}}.
-
-    To generate an IAM access token, run the following command:
-
-    ```text
-    curl -X POST 'https://iam.cloud.ibm.com/identity/token' -H 'Content-Type: application/x-www-form-urlencoded' -d 'grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey=<MY_APIKEY>'
-    ```
-    {: pre}
-
-    Replace `<MY_APIKEY>` with your API key from the previous step.
-
-    The access token is only valid for 1 hour. The `access_token` includes the string "Bearer" followed by the IAM token.
-    {: important}
-
-3. Get the name and GUID of the service instance if you do not already have it.
-
-    To get the list of resource instances, run the following:
-
-    ```text
-    curl -X GET   https://resource-controller.cloud.ibm.com/v2/resource_instances   -H "Authorization: Bearer <ACCESS_TOKEN>"
-    ```
-    {: pre}
-
-    Where `<ACCESS_TOKEN>` is the IAM access token obtained in the prior step.
-
-    Look for the returned `guid` field to get the instance GUID.
-
-4. Get the ingestion key by running the following cURL command:
-
-    ```shell
-    curl -X POST  https://resource-controller.cloud.ibm.com/v2/resource_keys   -H "Authorization: Bearer <ACCESS_TOKEN>"   -H 'Content-Type: application/json'  -d '{"name": "<RESOURCE_KEY_NAME>", "source": "<INSTANCE_GUID>"}'
-    ```
-    {: pre}
-
-    Where 
-    
-    - `<ACCESS_TOKEN>` is the IAM access token obtained in a prior step.
-
-    - `<INSTANCE_GUID>` is the instance GUID obtained in the prior step.
-
-    - `<RESOURCE_KEY_NAME>` is the name that you give the resource key associated to the instance.
-
-    The result will include a section with the following information:
-
-    ```json
-    "credentials": {
-        "apikey": "xxxxxxxxxxxx",
-        "iam_apikey_description": "Auto-generated for key xxxxxxxx",
-        "iam_apikey_name": "<RESOURCE_KEY_NAME>",
-        "iam_serviceid_crn": ".....",
-        "ingestion_key": "xxxxxxx",
-        "service_key": "xxxxxxxxxx"
-    }
-    ```
-    {: codeblock}
-
-    The `ingestion_key` value is the ingestion key.
-
-
-
-## Resetting the ingestion key through the UI
-{: #reset}
-{: ui}
-
-If the ingestion key is compromised, or you have a policy to renew it after a number of days, you can generate a new key and delete the old one.
-
-To renew the ingestion key for an {{site.data.keyword.at_short}} instance by using the {{site.data.keyword.at_short}} Web UI, complete the following steps:
-
-1. [Launch the {{site.data.keyword.at_short}} web UI](/docs/log-analysis?topic=log-analysis-view_logs#view_logs_step2).
-
-2. Click the **Settings** icon ![Settings icon](/images/admin.png) &gt; **Organization**. 
+2. Click the **Settings** icon ![Settings icon](../images/admin.png) &gt; **Organization**. 
 
 3. Select **API keys**.
 
@@ -174,15 +122,206 @@ To renew the ingestion key for an {{site.data.keyword.at_short}} instance by usi
 
 5. Delete the old ingestion key. Click **X** next to the ingestion key to be deleted.
 
-## Resetting the ingestion key using the CLI
-{: #reset_cli}
+After you reset the ingestion key, you must update the ingestion key for any event sources that you have configured to forward events to this {{site.data.keyword.at_full_notm}} instance.
+{: important}
+
+For example, if you have configured streaming to an {{site.data.keyword.at_short}} instance, and you rotate the service key of the destinaltion {{site.data.keyword.at_short}} instance, you need to reconfigure streaming to continue streaming data. For more info, see [Configuring streaming to a Activity Tracker instance through the UI](/docs/activity-tracker?topic=activity-tracker-streaming-configure-l2l).
+
+## Getting the ingestion key through the CLI
+{: #ingestion_key_cli}
 {: cli}
 
-You can only reset the ingestion key using the [web UI.](/docs/activity-tracker?topic=activity-tracker-ingestion_key&interface=ui#reset)
+To get the ingestion key for a logging instance through the command line, complete the following steps:
 
-## Resetting the ingestion key using the API
-{: #reset_api}
+1. [Pre-requisite] [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
+
+2. Log in to the region in the {{site.data.keyword.cloud_notm}} where the logging instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
+
+3. Set the resource group where the logging instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
+
+    By default, the `default` resource group is set.
+
+4. Get the instance name. Run the following command: [ibmcloud resource service-instances](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instances)
+
+    ```text
+    ibmcloud resource service-instances
+    ```
+    {: pre}
+
+5. Get the name of the key that is associated with the logging instance. Run the [ibmcloud resource service-keys](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_keys) command:
+
+    ```text
+    ibmcloud resource service-keys --instance-name INSTANCE_NAME
+    ```
+    {: pre}
+
+    where INSTANCE_NAME is the name of the instance that you obtained in the previous step.
+
+6. Get the ingestion key. Run the [ibmcloud resource service-key](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_key) command:
+
+    ```text
+    ibmcloud resource service-key APIKEY_NAME
+    ```
+    {: pre}
+
+    where APIKEY_NAME is the name of the API key.
+ 
+    The output from this command includes the field **ingestion key** that contains the ingestion key for the instance.
+
+## Managing ingestion keys through the API
+{: #ingestion_key_api}
 {: api}
 
-You can only reset the ingestion key using the [web UI.](/docs/activity-tracker?topic=activity-tracker-ingestion_key&interface=ui#reset)
+You can use the configuration API to manage keys.
+
+### List all keys
+{: #ingestion_key_api_list}
+
+To list all ingestion keys that ae available in an instance, you can run the following request:
+
+```sh
+curl  https://API_ENDPOINT/v1/config/keys?type="ingestion"
+  -H 'content-type: application/json' \
+  -H 'servicekey: SERVICE_KEY'
+```
+{: pre}
+
+Where:
+
+`API_ENDPOINT`
+:   Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage categories programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
+
+`SERVICE_KEY`
+:   Service key value. A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
+
+For example, to list all the ingestion keys that are available in an instance in US South, you can run the following request:
+
+```sh
+curl  https://api.us-south.logging.cloud.ibm.com/v1/config/keys?type="ingestion"  -H "content-type: application/json"  -H "servicekey: xxxxxxxxx"
+```
+{: pre}
+
+### Get details on a key
+{: #ingestion_key_api_get}
+
+To get information on an ingestion key, you can run:
+
+```sh
+curl -X GET  https://API_ENDPOINT/v1/config/keys/KEY_ID
+  -H 'content-type: application/json' \
+  -H 'servicekey: SERVICE_KEY'
+```
+{: pre}
+
+Where:
+
+`API_ENDPOINT`
+:   Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage categories programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
+
+`KEY_ID`
+:   ID value of the ingestion key for which you want to get details.
+
+`SERVICE_KEY`
+:   Service key value. A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
+
+For example, to get information on an ingestion key that is available in an instance in US South, you can run the following request:
+
+```sh
+curl  https://api.us-south.logging.cloud.ibm.com/v1/config/keys/123456789"  -H "content-type: application/json"  -H "servicekey: xxxxxxxxx"
+```
+{: pre}
+
+### Create a key
+{: #ingestion_key_api_create}
+
+```sh
+curl -X POST  https://API_ENDPOINT/v1/config/keys/KEY_ID
+  -H 'content-type: application/json' \
+  -H 'servicekey: SERVICE_KEY' \
+  -d '{"name": "KEY_NAME"}'
+```
+{: pre}
+
+Where:
+
+`API_ENDPOINT`
+:   Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage categories programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
+
+`SERVICE_KEY`
+:   Service key value. A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
+
+`KEY_NAME`
+:   Name that you want to give the key. The maximum size of a name is 30 characters.
+
+### Change the name of a key
+{: #ingestion_key_api_update}
+
+```sh
+curl -X POST  https://API_ENDPOINT/v1/config/keys/KEY_ID
+  -H 'content-type: application/json' \
+  -H 'servicekey: SERVICE_KEY' \
+  -d '{"name": "KEY_NAME"}'
+```
+{: pre}
+
+Where:
+
+`API_ENDPOINT`
+:   Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage categories programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
+
+`SERVICE_KEY`
+:   Service key value. A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
+
+`KEY_ID`
+:   ID value of the ingestion key for which you want to get details.
+
+`KEY_NAME`
+:   Name that you want to give the key. The maximum size of a name is 30 characters.
+
+### Delete a key
+{: #ingestion_key_api_delete}
+
+To delete an ingestion key, run the following command.
+
+```sh
+curl -X DELETE "API_ENDPOINT/v1/config/keys/KEY_ID"  
+  -H 'content-type: application/json' \
+  -H 'servicekey: SERVICE_KEY'
+```
+{: pre}
+
+Where:
+
+`API_ENDPOINT`
+:   Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage categories programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
+
+`KEY_ID`
+:   ID value of the ingestion key to be deleted.
+
+`SERVICE_KEY`
+:   Service key value. A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
+
+
+## Rotating the ingestion key by using the API
+{: #ingestion_key_replace_api}
+{: api}
+
+If the ingestion key is compromised or you have a policy that requies renewal of a key after a number of days, you can generate a new key and delete the old one.
+
+
+To rotate a key, complete the following steps:
+
+1. Get the details of the key that you want to rotate.
+
+    You can list all ingestion keys to obtain the ID of the key that you want to rotate. For more information, see [Listing all ingestion keys](#ingestion_key_api_list).
+
+    If you know the Key ID, skip to the next step.
+
+2. Create a new key. For more information, see [Creating an ingestion key](#ingestion_key_api_create).
+
+3. Delete the old key. Make sure you use the ID of the key that you identified previously. For more information, see [Deleting a key](#ingestion_key_api_delete).
+
+4. After you rotate the ingestion key, you must update the ingestion key for any sources that you have configured to forward logs to this {{site.data.keyword.at_short}} instance. 
+
+    For example, if you have configured streaming to an {{site.data.keyword.at_short}} instance, and you rotate the service key of the destinaltion {{site.data.keyword.at_short}} instance, you need to reconfigure streaming to continue streaming data. For more info, see [Configuring streaming to a Activity Tracker instance through the UI](/docs/activity-tracker?topic=activity-tracker-streaming-configure-l2l).
 

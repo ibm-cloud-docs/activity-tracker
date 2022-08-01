@@ -1,8 +1,13 @@
 ---
 
 copyright:
+<<<<<<< HEAD
   years: 2019, 2022
-lastupdated: "2021-09-23"
+lastupdated: "2022-07-29"
+=======
+  years:  2018, 2022
+lastupdated: "2022-07-28"
+>>>>>>> b2af1e4f8b11fed978472c5fc7537628e1d9a1d5
 
 keywords: IBM Cloud, Activity Tracker, service keys
 
@@ -15,24 +20,21 @@ subcollection: activity-tracker
 # Managing service keys
 {: #service_keys}
 
-In an {{site.data.keyword.at_full_notm}} instance you can create, delete, and view service keys using the UI.  You can also create and view service keys using the CLI and API.
-{: shortdesc}
-
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+In an {{site.data.keyword.at_full}} instance you can create, delete, and view service keys by using the UI.  You can also create and view service keys by using the CLI and API.
 
 A service key is a unique code that is passed in an API request to identify the calling application or user. 
 
-You must use a service key to complete any of the following tasks:
+You must use a logging service key to complete any of the following tasks:
 - Export data programmatically 
 - Manage views and alerts programmatically by using the Configuration API or Terraform.
+- Configure resources such as groups, archiving, keys by using the Configuration API or Terraform.
 
-You can enable a maximum of 20 service keys for each auditing instance.  To create more than one service key, you have to add additional service keys using the UI.  You can only create one service key using the API or CLI.
+<<<<<<< HEAD
+You can enable a maximum of 20 auditing service keys for each auditing instance.  To create more than one auditing service key, you have to add additional service keys by using the UI.
+=======
+You can enable a maximum of 20 service keys for each instance.  You can manage service keys by using the UI, the API or the CLI.
+>>>>>>> b2af1e4f8b11fed978472c5fc7537628e1d9a1d5
 {: important}
-
-If a service key does not exist, the first API command sent to {{site.data.keyword.at_full_notm}} will automatically generate a service key.
-{: note}
-
 
  
 ## Prereqs. Check your IAM permissions to manage service keys
@@ -49,22 +51,23 @@ To restrict access to a service key, you need the following role on the `IAM Ide
 
 ## Managing service keys by using the UI
 {: #service_keys_ui}
+{: ui}
 
-You can create, delete, and view service keys by using the UI.
+You can create, delete, and view service keys through the UI.
 
-### Creating a service key by using the UI
+### Creating a service key by using the logging UI
 {: #service_keys_create}
 
-You must have the **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
+You must have the **manager** role for the {{site.data.keyword.at_short}} service to complete this step.
 {: important} 
 
 For more information, see [service roles](/docs/activity-tracker?topic=activity-tracker-iam#service).
   
 Complete the following steps to create a service key:
 
-1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
+1. [Launch the {{site.data.keyword.at_short}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Select the **Configuration** icon ![Configuration icon](/images/admin.png). 
+2. Click the **Settings** icon ![Settings icon](../images/admin.png). 
 
 3. Select **Organization**. 
 
@@ -84,14 +87,17 @@ You must have the **manager** role for the {{site.data.keyword.at_full_notm}} se
 
 For more information, see [service roles](/docs/activity-tracker?topic=activity-tracker-iam#service).
 
-You can only delete a service Key through the auditing web UI.
+<<<<<<< HEAD
+=======
+You can only delete a service Key through the logging web UI.
 {: important}
 
+>>>>>>> b2af1e4f8b11fed978472c5fc7537628e1d9a1d5
 Complete the following steps to delete a service key:
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Select the **Configuration** icon ![Configuration icon](/images/admin.png). 
+2. Click the **Settings** icon ![Settings icon](../images/admin.png). 
 
 3. Select **Organization**. 
 
@@ -114,7 +120,7 @@ Complete the following steps to view a service key:
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Select the **Configuration** icon ![Configuration icon](/images/admin.png). 
+2. Click the **Settings** icon ![Settings icon](../images/admin.png). 
 
 3. Select **Organization**. 
 
@@ -123,10 +129,39 @@ Complete the following steps to view a service key:
    If you have the correct permissions, the available service keys are displayed in the **Service Keys** section.   
 
 
-## Managing a service key by using the CLI
-{: #service_keys_cli}
 
-You can create and view service keys by using the {{site.data.keyword.cloud_notm}} CLI.
+### Rotating an service key through the UI
+{: #service_keys_rotate_ui}
+
+If the service key is compromised or you have a policy to renew it after a number of days, you can generate a new key and delete the old one.
+
+To renew the service key for an {{site.data.keyword.at_full_notm}} instance by using the {{site.data.keyword.at_full_notm}} Web UI, complete the following steps:
+
+1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
+
+2. Click the **Settings** icon ![Settings icon](../images/admin.png) &gt; **Organization**. 
+
+3. Select **API keys**.
+
+    You can see the service keys that are enabled. 
+
+4. Select **Generate Service Key**.
+
+    A new key is added to the list.
+
+5. Delete the old service key. Click **X** next to the service key to be deleted.
+
+After you reset the service key, you must update any operation processes where the service key is used with the new value.
+{: important}
+
+
+
+
+## Managing a logging service key by using the CLI
+{: #service_keys_cli}
+{: cli}
+
+You can create and view logging service keys by using the {{site.data.keyword.cloud_notm}} CLI.
 
 ### Creating a service key by using the CLI
 {: #service_keys_cli_create}
@@ -134,13 +169,13 @@ You can create and view service keys by using the {{site.data.keyword.cloud_notm
 Only a single service key can be created using the CLI.  Using these commands to create a service key where one already exists will not create a new key.  If you need to create more than one service key, use the [UI](#service_keys_ui).
 {: important}
 
-To create a service key for a auditing instance through the command line, complete the following steps:
+To create a logging service key for a logging instance through the command line, complete the following steps:
 
 1. [Pre-requisite] [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-2. Log in to the region in the {{site.data.keyword.cloud_notm}} where the auditing instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
+2. Log in to the region in the {{site.data.keyword.cloud_notm}} where the logging instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
-3. Set the resource group where the auditing instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
+3. Set the resource group where the logging instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
     By default, the `default` resource group is set.
 
@@ -151,7 +186,7 @@ To create a service key for a auditing instance through the command line, comple
     ```
     {: pre}
 
-5. Create the service key. Run the [ibmcloud resource service-key-create](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_key_create) command:
+5. Create the {{site.data.keyword.cloud_notm}} resource service key. Run the [ibmcloud resource service-key-create](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_key_create) command:
 
     ```text
     ibmcloud resource service-key-create <NAME> --instance-name <SERVICE_INSTANCE>
@@ -160,9 +195,9 @@ To create a service key for a auditing instance through the command line, comple
 
     Where NAME is the desired name of the service key and SERVICE_INSTANCE is the name of the service instance from the previous step.
  
-    The output from this command includes the field **service_key** that contains the service key for the instance.
+    The output from this command includes the field **service_key** that contains the logging service key for the instance.
 
-6. Restrict access to the service key so that only users that have the `administrator` and `manager` roles can see information associated with the service key.
+6. Restrict access to the {{site.data.keyword.cloud_notm}} resource service key so that only users that have the `administrator` and `manager` roles can see information associated with the service key.
     
     Identify the service ID associated with the service that you created in the previous step. Run the following command to list all the service IDs that are available in the resource group:
 
@@ -173,17 +208,17 @@ To create a service key for a auditing instance through the command line, comple
 
     The **ID** column indicates the `SERVICE_ID` that is associated with the service key that you created in the previous step.
 
-    Identify the auditing instance ID. Run the following command:
+    Identify the logging instance ID. Run the following command:
 
     ```text
-    ibmcloud resource service-instance <AUDITING_INSTANCE_NAME>
+    ibmcloud resource service-instance <LOGGING_INSTANCE_NAME>
     ```
     {: pre}
 
     Then, create a policy to restrict access to the service key:
 
     ```text
-    ibmcloud iam service-policy-create <SERVICE_ID> --roles Administrator,Manager --service-name logdnaat --service-instance <AUDITING_INSTANCE_ID]
+    ibmcloud iam service-policy-create <SERVICE_ID> --roles Administrator,Manager --service-name logdna --service-instance <LOGGING_INSTANCE_ID]
     ```
     {: pre}
 
@@ -208,9 +243,9 @@ To get the service key through the command line, complete the following steps:
 
 1. [Pre-requisite] [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-2. Log in to the region in the {{site.data.keyword.cloud_notm}} where the auditing instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
+2. Log in to the region in the {{site.data.keyword.cloud_notm}} where the logging instance is running. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
-3. Set the resource group where the auditing instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
+3. Set the resource group where the logging instance is running. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
 
     By default, the `default` resource group is set.
 
@@ -221,7 +256,7 @@ To get the service key through the command line, complete the following steps:
     ```
     {: pre}
 
-5. Get the name of the key that is associated with the auditing instance. Run the [ibmcloud resource service-keys](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_keys) command:
+5. Get the name of the key that is associated with the logging instance. Run the [ibmcloud resource service-keys](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_keys) command:
 
     ```text
     ibmcloud resource service-keys --instance-name <INSTANCE_NAME>
@@ -230,7 +265,7 @@ To get the service key through the command line, complete the following steps:
 
     where INSTANCE_NAME is the name of the instance that you obtained in the previous step.
 
-6. Get the service key. Run the [ibmcloud resource service-key](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_key) command:
+6. Get the {{site.data.keyword.cloud_notm}} resource service key. Run the [ibmcloud resource service-key](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_key) command:
 
     ```text
     ibmcloud resource service-key <KEY_NAME>
@@ -245,117 +280,167 @@ To get the service key through the command line, complete the following steps:
 
 ## Managing a service key by using the API
 {: #service_keys_api}
+{: api}
 
-You can create and view service keys using the {{site.data.keyword.cloud_notm}} API.
+You can manage service keys by using the Configuration API.
 
 
-### Creating a service key by using the API
-{: #service_keys_api_create}
+### List all keys
+{: #service_keys_api_list}
 
-Only a single auditing service key can be created using the API.  Using the API to create a service key where one already exists will not create a new key.  If you need to create more than one service key, use the [UI](#service_keys_ui).
-{: important}
+To list all service keys that ae available in an instance, you can run the following request:
 
-To create the service key through the API, complete the following steps:
+```sh
+curl  https://API_ENDPOINT/v1/config/keys?type="service"
+  -H 'content-type: application/json' \
+  -H 'servicekey: SERVICE_KEY'
+```
+{: pre}
 
-1. Generate an [{{site.data.keyword.cloud_notm}} API key](/docs/account?topic=account-userapikey&interface=api#create_user_key). Run the following command:
+Where:
 
-    ```text
-    curl -X POST 'https://iam.cloud.ibm.com/v1/apikeys' -H 'Authorization: Bearer TOKEN' -H 'Content-Type: application/json' -d '{
-      "name": "MY_APIKEY", "description": "my personal key", "iam_id": "IBMid-xxxxxx", "account_id": "ACCOUNT_ID", "store_value": false}'
-    ```
-    {: pre}
+`API_ENDPOINT`
+:   Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage categories programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
 
-2. Get an access token. For more information, see [Generating an {{site.data.keyword.cloud_notm}} IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey&interface=api).
-
-    You need an IAM access token to authenticate in {{site.data.keyword.cloud_notm}}.
-
-    To generate an IAM access token, run the following command:
-
-    ```text
-    curl -X POST 'https://iam.cloud.ibm.com/identity/token' -H 'Content-Type: application/x-www-form-urlencoded' -d 'grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey=MY_APIKEY'
-    ```
-    {: pre}
-
-    The access token is only valid for 1 hour. ACCESS_TOKEN includes the string "Bearer" followed by the IAM token.
-
-3. Get the GUID of an {{site.data.keyword.cloud_notm}} IAM service key that is associated with the auditing instance.
-
-    Get the list of resource instances:
-
-    ```text
-    curl -X GET   https://resource-controller.cloud.ibm.com/v2/resource_instances   -H "Authorization: Bearer <IAM token>"
-    ```
-    {: pre}
-
-    Look for the `guid` field of the instance to get the instance GUID.
-
-4. [Create the IAM service key](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#post-resource-key). Run the following cURL command:
-
-    ```text
-    curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_keys -H "Authorization: $ACCESS_TOKEN" -H "content-type: application/json" -d '{"name":"<NAME>", "source":"<AUDITING_INSTANCE_GUID>"}'
-    ```
-    {: codeblock}
-
-    Where NAME is the name to be given to the IAM service key and GUID is the auditing instance GUID obtained in the previous step.  
-
-5. Add a policy on the service ID that is associated with the service key. For more information, see [Create a policy](/apidocs/iam-policy-management#create-policy).
-
-6. Delete the {{site.data.keyword.cloud_notm}} service key. Run the following command:
-
-    ```text
-    curl -X DELETE https://resource-controller.cloud.ibm.com/v2/resource_keys/<IAM_SERVICE_KEY_GUID> -H "Authorization: $ACCESS_TOKEN" -H "content-type: application/json"
-    ```
-    {: pre}
-
-    There is a limit on the number of service IDs per account. For more information, see [IBM Cloud IAM limits](/docs/account?topic=account-known-issues&interface=cli#iam_limits).
-    {: note}
+`SERVICE_KEY`
+:   Service key value. A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
 
 
 
-### Getting the service key by using the API
+For example, to list all the service keys that are available in an instance in US South, you can run the following request:
+
+```sh
+curl  https://api.us-south.logging.cloud.ibm.com/v1/config/keys?type="service"  -H "content-type: application/json"  -H "servicekey: xxxxxxxxx"
+```
+{: pre}
+
+### Get details on a key
 {: #service_keys_api_get}
 
+To get information on an service key, you can run:
 
-To get the service key through the API, complete the following steps:
+```sh
+curl -X GET  https://API_ENDPOINT/v1/config/keys/KEY_ID
+  -H 'content-type: application/json' \
+  -H 'servicekey: SERVICE_KEY'
+```
+{: pre}
 
-1. Generate an [{{site.data.keyword.cloud_notm}} API key](/docs/account?topic=account-userapikey&interface=api#create_user_key). Run the following command:
+Where:
 
-    ```text
-    curl -X POST 'https://iam.cloud.ibm.com/v1/apikeys' -H 'Authorization: Bearer TOKEN' -H 'Content-Type: application/json' -d '{
-      "name": "MY_APIKEY", "description": "my personal key", "iam_id": "IBMid-xxxxxx", "account_id": "ACCOUNT_ID", "store_value": false}'
-    ```
-    {: pre}
+`API_ENDPOINT`
+:   Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage categories programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
 
-2. Get an access token. For more information, see [Generating an {{site.data.keyword.cloud_notm}} IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey&interface=api).
+`KEY_ID`
+:   ID value of the service key for which you want to get details.
 
-    You need an IAM access token to authenticate in {{site.data.keyword.cloud_notm}}.
+`SERVICE_KEY`
+:   Service key value. A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
 
-    To generate an IAM access token, run the following command:
 
-    ```text
-    curl -X POST 'https://iam.cloud.ibm.com/identity/token' -H 'Content-Type: application/x-www-form-urlencoded' -d 'grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey=MY_APIKEY'
-    ```
-    {: pre}
+For example, to get information on an service key that is available in an instance in US South, you can run the following request:
 
-    The access token is only valid for 1 hour. ACCESS_TOKEN includes the string "Bearer" followed by the IAM token.
+```sh
+curl  https://api.us-south.logging.cloud.ibm.com/v1/config/keys/123456789"  -H "content-type: application/json"  -H "servicekey: xxxxxxxxx"
+```
+{: pre}
 
-3. Get the GUID of an IAM service key.
+### Create a key
+{: #service_keys_api_create}
 
-    Get the list of resource keys:
+```sh
+curl -X POST  https://API_ENDPOINT/v1/config/keys/KEY_ID
+  -H 'content-type: application/json' \
+  -H 'servicekey: SERVICE_KEY' \
+  -d '{"name": "KEY_NAME"}'
+```
+{: pre}
 
-    ```text
-    curl -X GET   https://resource-controller.cloud.ibm.com/v2/resource_keys   -H "Authorization: Bearer <IAM token>"
-    ```
-    {: pre}
+Where:
 
-    Look for the `guid` field.
+`API_ENDPOINT`
+:   Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage categories programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
 
-4. [Get the service key](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#get-resource-key). Run the following cURL command:
+`SERVICE_KEY`
+:   Service key value. A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
 
-    ```shell
-    curl -X GET https://resource-controller.cloud.ibm.com/v2/resource_keys/<GUID> -H "Authorization: $ACCESS_TOKEN" -H "content-type: application/json"
-    ```
-    {: codeblock}
+`KEY_NAME`
+:   Name that you want to give the key. The maximum size of a name is 30 characters.
 
-    Where GUID is the GUID obtained in the first step.
+
+### Change the name of a key
+{: #service_keys_api_update}
+
+```sh
+curl -X POST  https://API_ENDPOINT/v1/config/keys/KEY_ID
+  -H 'content-type: application/json' \
+  -H 'servicekey: SERVICE_KEY' \
+  -d '{"name": "KEY_NAME"}'
+```
+{: pre}
+
+Where:
+
+`API_ENDPOINT`
+:   Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage categories programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
+
+`SERVICE_KEY`
+:   Service key value. A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
+
+`KEY_ID`
+:   ID value of the service key for which you want to get details.
+
+`KEY_NAME`
+:   Name that you want to give the key. The maximum size of a name is 30 characters.
+
+
+### Delete a key
+{: #service_keys_api_delete}
+
+To delete an service key, run the following command.
+
+```sh
+curl -X DELETE "API_ENDPOINT/v1/config/keys/KEY_ID"  
+  -H 'content-type: application/json' \
+  -H 'servicekey: SERVICE_KEY'
+```
+{: pre}
+
+Where:
+
+`API_ENDPOINT`
+:   Depending on [your account settings](/docs/account?topic=account-service-endpoints-overview), you can use public or private endpoints to manage categories programmatically. For information about endpoints per region, see [API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api).
+
+`KEY_ID`
+:   ID value of the service key to be deleted.
+
+`SERVICE_KEY`
+:   Service key value. A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
+
+
+
+
+## Rotating the service key by using the API
+{: #service_keys_replace_api}
+{: api}
+
+If the service key is compromised or you have a policy that requies renewal of a key after a number of days, you can generate a new key and delete the old one.
+
+
+To rotate a key, complete the following steps:
+
+1. Get the details of the key that you want to rotate.
+
+    You can list all service keys to obtain the ID of the key that you want to rotate. For more information, see [Listing all service keys](#service_keys_api_list).
+
+    If you know the Key ID, skip to the next step.
+
+2. Create a new key. For more information, see [Creating an service key](#service_keys_api_create).
+
+3. Delete the old key. Make sure you use the ID of the key that you identified previously. For more information, see [Deleting a key](#service_keys_api_delete).
+
+4. After you rotate the service key, you must update any operation processes where the service key is used with the new value.
+{: important}
+
+
 
