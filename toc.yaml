@@ -108,6 +108,7 @@ toc:
           - archiving-ov.md
           - archive.md
           - archiving-manage-api.md
+          - terraform/terraform-archive.md
           - templates-archiving.md
           - sqlquery.md
           - archiving-at-monitor.md
@@ -208,6 +209,7 @@ toc:
           - streaming-monitor.md
           - streaming-conditional.md
           - streaming-manage-api.md
+          - terraform/terraform-streaming.md
 
       - topicgroup:
           label: UI
