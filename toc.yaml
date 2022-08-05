@@ -146,7 +146,9 @@ toc:
           label: Managing keys
           topics:
           - service_keys.md
+          - terraform/terraform-service-keys.md
           - ingestion_key.md
+          - terraform/terraform-ingestion-keys.md
           - atracker/retrieve-iam-token.md
 
       - topicgroup:
@@ -154,6 +156,7 @@ toc:
           topics:
           - reuse_resource_definitions.md
           - config_categories.md
+          - terraform/terraform-categories.md
 
       - topicgroup:
           label: Monitoring Cloud resources
