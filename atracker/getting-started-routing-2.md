@@ -29,10 +29,10 @@ Use {{site.data.keyword.atracker_short}} to collect auditing events that are gen
 {: shortdesc}
 
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing V2 API.
+This information applies only if you use {{site.data.keyword.atracker_full}} V2 API.
 {: important}
 
-In this tutorial, you will learn how to configure {{site.data.keyword.atracker_short}} Event Routing in an {{site.data.keyword.cloud_notm}} account. 
+In this tutorial, you will learn how to configure {{site.data.keyword.atracker_short}} in an {{site.data.keyword.cloud_notm}} account. 
 
 
 ## Scenarios
@@ -48,11 +48,11 @@ You can define a Cloud Object Storage bucket as a target in any of the following
 ## Prerequisites
 {: #getting-started-routing-2-prereqs}
 
-- Learn about {{site.data.keyword.atracker_short}} Event Routing. For more information, see [About](/docs/activity-tracker?topic=activity-tracker-atracker-resources).
+- Learn about {{site.data.keyword.atracker_short}}. For more information, see [About](/docs/activity-tracker?topic=activity-tracker-atracker-resources).
 
 - Install the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-- Install the latest {{site.data.keyword.atracker_short}} Event Routing CLI V2 plugin in your local system. See [Installing the {{site.data.keyword.atracker_short}} Event Routing CLI](/docs/activity-tracker?topic=activity-tracker-atracker-cli-config&interface=cli).
+- Install the latest {{site.data.keyword.atracker_short}} CLI V2 plugin in your local system. See [Installing the {{site.data.keyword.atracker_short}} CLI](/docs/activity-tracker?topic=activity-tracker-atracker-cli-config&interface=cli).
 
 - You need a user ID that is a member, or an owner of, an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Create an account](https://cloud.ibm.com/login){: external}.
 
@@ -68,13 +68,13 @@ You can define a Cloud Object Storage bucket as a target in any of the following
 
 Your user ID needs **account management permissions** to manage {{site.data.keyword.atracker_short}} configurations in the account.
 
-Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to manage the {{site.data.keyword.atracker_short}} Event Routing account settings. 
+Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to manage the {{site.data.keyword.atracker_short}} account settings. 
 
 | Role                      | Minimum scope  | Minimum required roles | Action         |
 | ------------------------- | -------------- | ---------------------- | -------------- |
 | `atracker.setting.get`    | Account        | `Administrator`  \n `Editor`  \n `Viewer`  \n `Operator` | Get setting information |
 | `atracker.setting.update` | Account        | `Administrator`| Update settings |
-{: caption="Table 1. Required IAM roles to manage the {{site.data.keyword.atracker_short}} Event Routing account settings." caption-side="top"}
+{: caption="Table 1. Required IAM roles to manage the {{site.data.keyword.atracker_short}} account settings." caption-side="top"}
 
 Users must have the following [{{site.data.keyword.atracker_full}} IAM roles](/docs/account?topic=account-assign-access-resources) to work with targets. Users with regional IAM scope will be limited to access targets in their authorized region.
 
@@ -114,25 +114,25 @@ Use the **serviceName** `atracker`.
 The account settings configuration defines information such as default targets where events are collected in the account, type of endpoints that are allowed to manage the configuration, and allowed locations to store the data in the account. 
 
 You must configure the account settings to define the following information at the account level:
-1. The location in your {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.atracker_short}} Event Routing account configuration metadata is stored. 
+1. The location in your {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.atracker_short}} account configuration metadata is stored. 
 
     By metadata, we refer to the target,route,settings data that is available across the account in any region.
 
-    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
 
     Take into account any corporate or industry compliance requirements such as Financial Services Validated locations, or EU-managed regions.
 
-2. The type of endpoints that are allowed to manage the {{site.data.keyword.atracker_short}} Event Routing account configuration in the account. 
+2. The type of endpoints that are allowed to manage the {{site.data.keyword.atracker_short}} account configuration in the account. 
 
     You can configure public endpoints, private endpoints, or both.
 
 3. The locations where an account administrator can define targets to collect auditing events.
 
-    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
     
     Take into account any corporate or industry compliance requirements such as Financial Services Validated locations, or EU-managed regions.
 
-4. 1 or more targets in the account that will collect auditing events from supported {{site.data.keyword.atracker_short}} Event Routing locations where you have not configured how you want to collect the auditing data. 
+4. 1 or more targets in the account that will collect auditing events from supported {{site.data.keyword.atracker_short}} locations where you have not configured how you want to collect the auditing data. 
 
     If you define more than 1 target, all default targets get a copy of the auditing events that are not explicitly managed in the account's routing rules.
     {: note}

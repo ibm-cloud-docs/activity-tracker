@@ -291,10 +291,10 @@ This information applies only if you use an {{site.data.keyword.at_full}} [hoste
 | Brazil	   | 10.15.20.192/26  |
 {: caption="Table 22. Sao Paulo private CIDR blocks" caption-side="top"}
 
-## {{site.data.keyword.atracker_full_notm}} Event Routing offering 
+## {{site.data.keyword.atracker_full_notm}}  offering 
 {: #atracker_cidr}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 ### Public CIDR blocks

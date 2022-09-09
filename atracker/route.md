@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can manage routes in your account by using the {{site.data.keyword.atracker_full}} CLI or {{site.data.keyword.atracker_full_notm}} REST API. A route defines the rules that indicate what auditing events are collected in a region and where to store them. 
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 ## Understanding how routes work in your account

@@ -23,7 +23,7 @@ When updating settings, the following message is returned: `Your request has fai
 {: shortdesc}
 
 
-This information applies only if you use {{site.data.keyword.atracker_full_notm}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full_notm}} .
 {: important}
 
 

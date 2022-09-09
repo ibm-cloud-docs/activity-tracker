@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can manage routes in your account by using the {{site.data.keyword.atracker_full}} CLI or {{site.data.keyword.atracker_full_notm}} REST API. A route defines the rules that indicate what auditing events are collected in a region and where to store them. 
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 The V1 API is deprecated. See [managing routes using the V2 API](/docs/activity-tracker?topic=activity-tracker-route_v2) for information on using the V2 API.  Also see [migrating resources](/docs/activity-tracker?topic=activity-tracker-migrate-resources) for information on migrating from your V1 configuration.

@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can manage targets in your account by using the {{site.data.keyword.atracker_full}} CLI or the {{site.data.keyword.atracker_full_notm}} REST API. A target is a resource where you can collect auditing events. 
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 The V1 API is deprecated. See [managing {{site.data.keyword.atracker_full_notm}} hosted event search offering targets by using the V2 API](/docs/activity-tracker?topic=activity-tracker-target_v2_at) and [managing COS targets by using the V2 API](/docs/activity-tracker?topic=activity-tracker-target_v2_cos) for information on using the V2 API.  Also see [migrating resources](/docs/activity-tracker?topic=activity-tracker-migrate-resources) for information on migrating from your V1 configuration.

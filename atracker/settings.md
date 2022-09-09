@@ -13,18 +13,18 @@ subcollection: activity-tracker
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Configuring {{site.data.keyword.atracker_short}} Event Routing account settings
+# Configuring {{site.data.keyword.atracker_short}} account settings
 {: #settings}
 
-You can configure the {{site.data.keyword.atracker_short}} Event Routing account settings in your account by using the {{site.data.keyword.atracker_short}} CLI V2 or {{site.data.keyword.atracker_short}} REST API V2. Set these settings to define where and how auditing events are collected, routed, and managed in your account. 
+You can configure the {{site.data.keyword.atracker_short}} account settings in your account by using the {{site.data.keyword.atracker_short}} CLI V2 or {{site.data.keyword.atracker_short}} REST API V2. Set these settings to define where and how auditing events are collected, routed, and managed in your account. 
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_short}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_short}}.
 {: important}
 
-When you configure or modify the {{site.data.keyword.atracker_short}} Event Routing account settings, consider the following information:
+When you configure or modify the {{site.data.keyword.atracker_short}} account settings, consider the following information:
 
-- Every time you modify the {{site.data.keyword.atracker_short}} Event Routing account settings, the data that is passed in the new request replaces any existing configuration data. You must ensure that any existing data is not deleted when you run an update of the account settings by including it in the new request.
+- Every time you modify the {{site.data.keyword.atracker_short}} account settings, the data that is passed in the new request replaces any existing configuration data. You must ensure that any existing data is not deleted when you run an update of the account settings by including it in the new request.
 {: important}
 
 - Before you disable public endpoints by setting `--private-api-endpoint-only TRUE`, make sure your account has access to the private endpoint.  You can do this by running the command `ibmcloud account show`.  If `VRF Enabled` is `true` and `Service Endpoint Enabled` is `true` then you have access to the private endpoint.  If you do not have access to the private endpoint, you will be unable to re-enable the public endpoint since private endpoint access is required to re-enable the public endpoint.
@@ -32,29 +32,29 @@ When you configure or modify the {{site.data.keyword.atracker_short}} Event Rout
 
 
 
-## What data can you configure through the {{site.data.keyword.atracker_full}} Event Routing account settings?
+## What data can you configure through the {{site.data.keyword.atracker_full}} account settings?
 {: #settings-what}
 
 You can define any of the following information:
-1. The location in your {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.atracker_short}} Event Routing account configuration metadata is stored. 
+1. The location in your {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.atracker_short}} account configuration metadata is stored. 
 
     By metadata, we refer to the target/route/settings data that is available across the account in any region.
 
-    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
 
     Take into account any corporate or industry compliance requirements such as Financial Services Validated locations, or EU-managed regions.
 
-2. The type of endpoints that are allowed to manage the {{site.data.keyword.atracker_short}} Event Routing account configuration in the account. 
+2. The type of endpoints that are allowed to manage the {{site.data.keyword.atracker_short}} account configuration in the account. 
 
     You can configiure public endpoints, private endpoints, or both.
 
 3. The locations where an account administrator can define targets to collect auditing events.
 
-    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
     
     Take into account any corporate or industry compliance requirements such as Financial Services Validated locations, or EU-managed regions.
 
-4. 1 or more targets in the account that will collect auditing events from supported {{site.data.keyword.atracker_short}} Event Routing locations where you have not configured how you want to collect the auditing data. 
+4. 1 or more targets in the account that will collect auditing events from supported {{site.data.keyword.atracker_short}} locations where you have not configured how you want to collect the auditing data. 
 
     If you define more than 1 target, all default targets get a copy of auditing events that do not have a routing rule to indicate where to collect them in the account. You can define up to 2 default targets per account.
     {: note}
@@ -78,16 +78,16 @@ Users must have the following [IAM roles](/docs/account?topic=account-assign-acc
 {: #settings-prereqs-cli}
 {: cli}
 
-Before you use the the CLI to manage {{site.data.keyword.atracker_short}} Event Routing account settings, [Install the {{site.data.keyword.atracker_full_notm}} CLI V2 plugin](/docs/activity-tracker?topic=activity-tracker-atracker-cli-config&interface=api).
+Before you use the the CLI to manage {{site.data.keyword.atracker_short}} account settings, [Install the {{site.data.keyword.atracker_full_notm}} CLI V2 plugin](/docs/activity-tracker?topic=activity-tracker-atracker-cli-config&interface=api).
 
-Check that you have IAM permissions to read, update, or both the {{site.data.keyword.atracker_short}} Event Routing account settings. 
+Check that you have IAM permissions to read, update, or both the {{site.data.keyword.atracker_short}} account settings. 
 
 
 ## Getting account settings using the CLI
 {: #settings-get-cli}
 {: cli}
 
-Use this command to get the settings for the {{site.data.keyword.atracker_full_notm}} Event Routing account configurations.
+Use this command to get the settings for the {{site.data.keyword.atracker_full_notm}}  account configurations.
 
 ```sh
 ibmcloud atracker setting get [--output FORMAT]

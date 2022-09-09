@@ -23,7 +23,7 @@ When working with a target, for example, when validating a target using the `ibm
 {: shortdesc}
 
 
-This information applies only if you use {{site.data.keyword.atracker_full_notm}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full_notm}} .
 {: important}
 
 

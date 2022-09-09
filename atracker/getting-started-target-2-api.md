@@ -29,7 +29,7 @@ A target is an {{site.data.keyword.cloud_notm}} resource where you can collect a
 
 Use this tutorial to learn how to configure an {{site.data.keyword.cos_full_notm}} bucket as a target by using the {{site.data.keyword.atracker_short}} V2 API and configuring service-to-service authorization between COS and {{site.data.keyword.atracker_short}}. The bucket is defined in the same account that generates the auditing events. 
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 ## Scenarios
@@ -74,13 +74,13 @@ To disable the use of public endpoints to configure {{site.data.keyword.atracker
 
 Your user ID needs **account management permissions** to manage {{site.data.keyword.atracker_short}} configurations in the account.
 
-Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to manage the {{site.data.keyword.atracker_short}} Event Routing account settings. 
+Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to manage the {{site.data.keyword.atracker_short}} account settings. 
 
 | Role                      | Minimum scope  | Minimum required roles | Action         |
 | ------------------------- | -------------- | ---------------------- | -------------- |
 | `atracker.setting.get`    | Account        | `Administrator`  \n `Editor`  \n `Viewer`  \n `Operator` | Get setting information |
 | `atracker.setting.update` | Account        | `Administrator`| Update settings |
-{: caption="Table 1. Required IAM roles to manage the {{site.data.keyword.atracker_short}} Event Routing account settings." caption-side="top"}
+{: caption="Table 1. Required IAM roles to manage the {{site.data.keyword.atracker_short}} account settings." caption-side="top"}
 
 Users must have the following [{{site.data.keyword.atracker_full}} IAM roles](/docs/account?topic=account-assign-access-resources) to work with targets. Users with regional IAM scope will be limited to access targets in their authorized region.
 
@@ -253,7 +253,7 @@ Do the following to configure a service-to-service authorization using the {{sit
 {: #getting-started-target-2-api-step5}
 {: step}
 
-This tutorial uses the {{site.data.keyword.atracker_full}} Event Routing v2 API.
+This tutorial uses the {{site.data.keyword.atracker_full}} v2 API.
 {: important}
 
 After you create the bucket, you can configure a target in a region. The target defines the COS bucket where auditing events in that region are collected.
