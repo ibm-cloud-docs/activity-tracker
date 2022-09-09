@@ -20,7 +20,7 @@ Use {{site.data.keyword.atracker_short}} to collect auditing events that are gen
 {: shortdesc}
 
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 ![The {{site.data.keyword.atracker_short}} service](images/atracker_ov.svg "The {{site.data.keyword.atracker_short}} service"){: caption="Figure 1. The {{site.data.keyword.atracker_short}} service" caption-side="bottom"}
@@ -29,7 +29,7 @@ This information applies only if you use {{site.data.keyword.atracker_full}} Eve
 ## Configuring the account
 {: #atracker-resources-config}
 
-To configure {{site.data.keyword.atracker_short}} Event Routing in your account, define where auditing events are routed and stored. You must configure 1 or more targets, and 1 or more routes. You must also configure the account settings.
+To configure {{site.data.keyword.atracker_short}} in your account, define where auditing events are routed and stored. You must configure 1 or more targets, and 1 or more routes. You must also configure the account settings.
 - A target defines the resource where you can store auditing events. 
 - A route defines the rules that determine where auditing events are routed in your account.
 - The account settings configuration defines information such as default targets where events are collected in the account, type of endpoints that are allowed to manage the configuration, and allowed locations to store the data in the account.
@@ -43,34 +43,34 @@ Per account, you can choose the region where events are collected.
 ## Account configuration settings
 {: #atracker-resources-settings}
 
-When you configure the {{site.data.keyword.atracker_short}} Event Routing account settings, you can define any of the following information:
-1. The location in your {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.atracker_short}} Event Routing account configuration metadata is stored. 
+When you configure the {{site.data.keyword.atracker_short}} account settings, you can define any of the following information:
+1. The location in your {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.atracker_short}} account configuration metadata is stored. 
 
     By metadata, we refer to the target/route/settings data that is available across the account in any region.
 
-    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
 
     Take into account any corporate or industry compliance requirements such as Financial Services Validated locations, or EU-managed regions, and any data residency requirements.
 
-2. The type of endpoints that are allowed to manage the {{site.data.keyword.atracker_short}} Event Routing account configuration in the account. 
+2. The type of endpoints that are allowed to manage the {{site.data.keyword.atracker_short}} account configuration in the account. 
 
     You can configiure public endpoints, private endpoints, or both.
 
 3. The locations where an account administrator can define targets to collect auditing events.
 
-    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
     
     Take into account any corporate or industry compliance requirements such as Financial Services Validated locations, or EU-managed regions, and any data residency requirements.
 
-4. 1 or more targets in the account that will collect auditing events from supported {{site.data.keyword.atracker_short}} Event Routing locations where you have not configured how you want to route the auditing events. 
+4. 1 or more targets in the account that will collect auditing events from supported {{site.data.keyword.atracker_short}} locations where you have not configured how you want to route the auditing events. 
 
     If you define more than 1 target, all default targets get a copy of the auditing events that do not have a routing rule to indicate where to route them in the account. You can define up to 2 default targets per account.
     {: note}
 
 
-When you configure or modify the {{site.data.keyword.atracker_short}} Event Routing account settings, consider the following information:
+When you configure or modify the {{site.data.keyword.atracker_short}} account settings, consider the following information:
 
-- Every time you modify the {{site.data.keyword.atracker_short}} Event Routing account settings, the data that is passed in the new request replaces any existing configuration data. You must ensure that any existing data is not deleted when you run an update of the account settings by including it in the new request.
+- Every time you modify the {{site.data.keyword.atracker_short}} account settings, the data that is passed in the new request replaces any existing configuration data. You must ensure that any existing data is not deleted when you run an update of the account settings by including it in the new request.
 {: important}
 
 - Before you disable public endpoints by setting `--private-api-endpoint-only TRUE`, make sure your account has access to the private endpoint.  You can do this by running the command `ibmcloud account show`.  If `VRF Enabled` is `true` and `Service Endpoint Enabled` is `true` then you have access to the private endpoint.  If you do not have access to the private endpoint, you will be unable to re-enable the public endpoint since private endpoint access is required to re-enable the public endpoint.
@@ -98,9 +98,9 @@ Note the following information about targets:
 
 * When you define a Cloud Object Storage target, you can use an API key or service to service authentication to upload events.
 
-* You can manage targets in your account by using the {{site.data.keyword.atracker_short}} CLI, and programmatically by using the {{site.data.keyword.atracker_short}} Event Routing REST API and Terraform scripts.
+* You can manage targets in your account by using the {{site.data.keyword.atracker_short}} CLI, and programmatically by using the {{site.data.keyword.atracker_short}} REST API and Terraform scripts.
 
-* To manage targets, you need IAM permissions. For more information, see [{{site.data.keyword.atracker_short}} Event Routing actions](/docs/activity-tracker?topic=activity-tracker-iam&interface=cli#platform).
+* To manage targets, you need IAM permissions. For more information, see [{{site.data.keyword.atracker_short}} actions](/docs/activity-tracker?topic=activity-tracker-iam&interface=cli#platform).
 
 
 The following table outlines valid target types:
@@ -154,20 +154,20 @@ A route defines the rules that indicate what auditing events are routed in a reg
 
 * Any update to a `rules` configuration must include all `location` rules.  An update will discard the existing rule set and replace it with the specified configuration.
 
-* You can manage routes in your account by using the {{site.data.keyword.atracker_short}} CLI, and programmatically by using the {{site.data.keyword.atracker_short}} Event Routing REST API and Terraform scripts.
+* You can manage routes in your account by using the {{site.data.keyword.atracker_short}} CLI, and programmatically by using the {{site.data.keyword.atracker_short}} REST API and Terraform scripts.
 
-* To manage routes, you need IAM permissions. For more information, see [{{site.data.keyword.atracker_short}} Event Routing actions](/docs/activity-tracker?topic=activity-tracker-iam&interface=cli#platform).
+* To manage routes, you need IAM permissions. For more information, see [{{site.data.keyword.atracker_short}} actions](/docs/activity-tracker?topic=activity-tracker-iam&interface=cli#platform).
 
 
 ## Collecting auditing events
 {: #atracker-resources-collect}
 
-To collect auditing events in your {{site.data.keyword.cloud_notm}} account, you can configure {{site.data.keyword.atracker_short}} Event Routing by using the {{site.data.keyword.atracker_short}} Event Routing API, the {{site.data.keyword.atracker_short}} Event Routing CLI and Terraform scripts.
+To collect auditing events in your {{site.data.keyword.cloud_notm}} account, you can configure {{site.data.keyword.atracker_short}} by using the {{site.data.keyword.atracker_short}} API, the {{site.data.keyword.atracker_short}} CLI and Terraform scripts.
 
-The {{site.data.keyword.atracker_full}} Event Routing feature has been enhanced and a new API version 2 is available. To use the new V2 features and configurations, your existing {{site.data.keyword.atracker_short}} Event Routing V1 account configuration must be migrated to an {{site.data.keyword.atracker_short}} Event Routing V2 account configuration.
+The {{site.data.keyword.atracker_full}} feature has been enhanced and a new API version 2 is available. To use the new V2 features and configurations, your existing {{site.data.keyword.atracker_short}} V1 account configuration must be migrated to an {{site.data.keyword.atracker_short}} V2 account configuration.
 {: note}
 
-If you configured {{site.data.keyword.atracker_full}} Event Routing prior to 16 May 2022, you will need to migrate your configuration to the new version V2. The {{site.data.keyword.atracker_full}} Event Routing API version 1 is deprecated. For more information, see [Migrating the {{site.data.keyword.atracker_short}} Event Routing account configuration from V1 to V2](/docs/activity-tracker?topic=activity-tracker-migration&interface=cli).
+If you configured {{site.data.keyword.atracker_full}} prior to 16 May 2022, you will need to migrate your configuration to the new version V2. The {{site.data.keyword.atracker_full}} API version 1 is deprecated. For more information, see [Migrating the {{site.data.keyword.atracker_short}} account configuration from V1 to V2](/docs/activity-tracker?topic=activity-tracker-migration&interface=cli).
 
 For more in formation, see [Collecting events](/docs/activity-tracker?topic=activity-tracker-events_collect&interface=cli).
 
@@ -175,7 +175,7 @@ For more in formation, see [Collecting events](/docs/activity-tracker?topic=acti
 ## What are the API V2 enhancements?
 {: #atracker-api-diff}
 
-The following table outlines key feature differences between {{site.data.keyword.atracker_short}} Event Routing API versions:
+The following table outlines key feature differences between {{site.data.keyword.atracker_short}} API versions:
 
 | Feature comparison | API Version 2 | API Version 1 (deprecated) |
 |--------------------|---------------|----------------------------|
@@ -193,7 +193,7 @@ The following table outlines key feature differences between {{site.data.keyword
 | Auditing events are routed based on the location that is specified in the field `logSourceCRN`. | ![Checkmark icon](images/checkmark-icon.svg) | |
 | Routes are specific to a region. | | ![Checkmark icon](images/checkmark-icon.svg) |
 | Routes are global to the account. | ![Checkmark icon](images/checkmark-icon.svg) | |
-{: caption="Table 1. {{site.data.keyword.atracker_short}} Event Routing API version feature comparison" caption-side="top"}
+{: caption="Table 1. {{site.data.keyword.atracker_short}} API version feature comparison" caption-side="top"}
 
 
 

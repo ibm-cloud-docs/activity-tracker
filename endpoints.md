@@ -19,10 +19,10 @@ The following table lists the endpoints per region for the {{site.data.keyword.a
 {: shortdesc}
 
 
-## API endpoints for {{site.data.keyword.atracker_short}} Event Routing
+## API endpoints for {{site.data.keyword.atracker_short}}
 {: #endpoints_api-atracker}
 
-This information applies only to {{site.data.keyword.atracker_full_notm}} Event Routing.
+This information applies only to {{site.data.keyword.atracker_full_notm}} .
 {: important}
 
 ### Private API endpoints
@@ -37,7 +37,7 @@ The following table shows the private API endpoints:
 | `Frankfurt (eu-de)`   | `https://private.eu-de.atracker.cloud.ibm.com`  | `https/443`  | `166.9.30.195`   \n `166.9.28.229`   \n `166.9.32.161` |
 | `London (eu-gb)`   | `https://private.eu-gb.atracker.cloud.ibm.com`  | `https/443`  | `166.9.38.78`   \n `166.9.34.154`   \n `166.9.36.109` |
 | `Sydney (au-syd)` | `https://private.au-syd.atracker.cloud.ibm.com` | `https/443` | `166.9.54.51`  \n `166.9.52.48`  \n `166.9.56.53` |
-{: caption="Table 1. Lists of private API endpoints for interacting with {{site.data.keyword.atracker_full_notm}} Event Routing" caption-side="top"}
+{: caption="Table 1. Lists of private API endpoints for interacting with {{site.data.keyword.atracker_full_notm}} " caption-side="top"}
 
 ### Public API endpoints
 {: #endpoints_api-atracker-public}
@@ -51,7 +51,7 @@ The following table shows the public API endpoints:
 | `Frankfurt (eu-de)`   | `https://eu-de.atracker.cloud.ibm.com`          | `https/443`  |
 | `London (eu-gb)`   | `https://eu-gb.atracker.cloud.ibm.com`          | `https/443`  |
 | `Sydney (au-syd)` | `https://au-syd.atracker.cloud.ibm.com` | `https/443`  |
-{: caption="Table 2. Lists of public API endpoints for interacting with {{site.data.keyword.atracker_full_notm}} Event Routing" caption-side="top"}
+{: caption="Table 2. Lists of public API endpoints for interacting with {{site.data.keyword.atracker_full_notm}} " caption-side="top"}
 
 
 ## Endpoints for {{site.data.keyword.at_short}} hosted event search offerings

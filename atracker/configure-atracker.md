@@ -12,20 +12,20 @@ subcollection: activity-tracker
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Configuring {{site.data.keyword.atracker_short}} Event Routing in your account
+# Configuring {{site.data.keyword.atracker_short}} in your account
 {: #configure-atracker}
 
-To collect auditing events in your {{site.data.keyword.cloud}} account, you can configure {{site.data.keyword.atracker_short}} Event Routing by using the {{site.data.keyword.atracker_short}} Event Routing API, the {{site.data.keyword.atracker_short}} Event Routing CLI and Terraform scripts.
+To collect auditing events in your {{site.data.keyword.cloud}} account, you can configure {{site.data.keyword.atracker_short}} by using the {{site.data.keyword.atracker_short}} API, the {{site.data.keyword.atracker_short}} CLI and Terraform scripts.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_short}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_short}}.
 {: important}
 
 
-The {{site.data.keyword.atracker_full}} Event Routing feature has been enhanced and a new API version 2 is available. To use the new V2 features and configurations, your existing {{site.data.keyword.atracker_short}} Event Routing V1 account configuration must be migrated to an {{site.data.keyword.atracker_short}} Event Routing V2 account configuration.
+The {{site.data.keyword.atracker_full}} feature has been enhanced and a new API version 2 is available. To use the new V2 features and configurations, your existing {{site.data.keyword.atracker_short}} V1 account configuration must be migrated to an {{site.data.keyword.atracker_short}} V2 account configuration.
 {: note}
 
-If you configured {{site.data.keyword.atracker_full}} Event Routing prior to 16 May 2022, you will need to migrate your configuration to the new version V2. The {{site.data.keyword.atracker_full}} Event Routing API version 1 is deprecated. For more information, see [Migrating the {{site.data.keyword.atracker_short}} Event Routing account configuration from V1 to V2](/docs/activity-tracker?topic=activity-tracker-migration&interface=cli).
+If you configured {{site.data.keyword.atracker_full}} prior to 16 May 2022, you will need to migrate your configuration to the new version V2. The {{site.data.keyword.atracker_full}} API version 1 is deprecated. For more information, see [Migrating the {{site.data.keyword.atracker_short}} account configuration from V1 to V2](/docs/activity-tracker?topic=activity-tracker-migration&interface=cli).
 
 
 
@@ -38,21 +38,21 @@ If you configured {{site.data.keyword.atracker_full}} Event Routing prior to 16 
 ## IAM permissions 
 {: #configure-atracker-iam}
 
-Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to manage the {{site.data.keyword.atracker_short}} Event Routing account settings. 
+Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to manage the {{site.data.keyword.atracker_short}} account settings. 
 
 | Role                      | Minimum scope  | Minimum required roles | Action         |
 | ------------------------- | -------------- | ---------------------- | -------------- |
 | `atracker.setting.get`    | Account        | `Administrator`  \n `Editor`  \n `Viewer`  \n `Operator` | Get setting information |
 | `atracker.setting.update` | Account        | `Administrator`| Update settings |
-{: caption="Table 1. Required IAM roles to manage the {{site.data.keyword.atracker_short}} Event Routing account settings." caption-side="top"}
+{: caption="Table 1. Required IAM roles to manage the {{site.data.keyword.atracker_short}} account settings." caption-side="top"}
 
-Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to migrate the account's {{site.data.keyword.atracker_short}} Event Routing configuration. 
+Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to migrate the account's {{site.data.keyword.atracker_short}} configuration. 
 
 | Role                      | Minimum scope  | Minimum required roles | Action         |
 | ------------------------- | -------------- | ---------------------- | -------------- |
-| `atracker.migration.post` | Account        | `Administrator`        | Start the migration of {{site.data.keyword.atracker_short}} Event Routing resources in the account. | 
-| `atracker.migration.get`  | Account        | `Administrator`  \n `Editor`  \n `Viewer`  \n `Operator` | Get the status of {{site.data.keyword.atracker_short}} Event Routing resources that are being migrated from V1 to V2. |
-{: caption="Table 2. Required IAM roles to migrate the {{site.data.keyword.atracker_short}} Event Routing account configuration." caption-side="top"}
+| `atracker.migration.post` | Account        | `Administrator`        | Start the migration of {{site.data.keyword.atracker_short}} resources in the account. | 
+| `atracker.migration.get`  | Account        | `Administrator`  \n `Editor`  \n `Viewer`  \n `Operator` | Get the status of {{site.data.keyword.atracker_short}} resources that are being migrated from V1 to V2. |
+{: caption="Table 2. Required IAM roles to migrate the {{site.data.keyword.atracker_short}} account configuration." caption-side="top"}
 
 
 
@@ -60,7 +60,7 @@ Users must have the following [IAM roles](/docs/account?topic=account-assign-acc
 {: #configure-atracker-step1}
 {: cli}
 
-Install the latest {{site.data.keyword.atracker_short}} Event Routing CLI V2 plugin in your local system. See [Installing the {{site.data.keyword.atracker_short}} Event Routing CLI](/docs/activity-tracker?topic=activity-tracker-atracker-cli-config&interface=cli).
+Install the latest {{site.data.keyword.atracker_short}} CLI V2 plugin in your local system. See [Installing the {{site.data.keyword.atracker_short}} CLI](/docs/activity-tracker?topic=activity-tracker-atracker-cli-config&interface=cli).
 
 Next, log in to the {{site.data.keyword.cloud_notm}}. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
@@ -70,9 +70,9 @@ Next, log in to the {{site.data.keyword.cloud_notm}}. Run the following command:
 {: #configure-atracker-step2}
 {: cli}
 
-When you configure {{site.data.keyword.atracker_short}} Event Routing in your account, you can configure the account settings such as the metadata location, type of endpoints allowed to manage the configuration, locations where targets can be defined, and default targets for collecting auditing events in regions that yiu have not explicitly configured.
+When you configure {{site.data.keyword.atracker_short}} in your account, you can configure the account settings such as the metadata location, type of endpoints allowed to manage the configuration, locations where targets can be defined, and default targets for collecting auditing events in regions that yiu have not explicitly configured.
 
-You can configure the {{site.data.keyword.atracker_short}} Event Routing account settings in your account by using the {{site.data.keyword.atracker_short}} CLI V2 or {{site.data.keyword.atracker_short}} REST API V2. For more information, see [Configuring {{site.data.keyword.atracker_short}} Event Routing account settings](/docs/activity-tracker?topic=activity-tracker-settings&interface=cli).
+You can configure the {{site.data.keyword.atracker_short}} account settings in your account by using the {{site.data.keyword.atracker_short}} CLI V2 or {{site.data.keyword.atracker_short}} REST API V2. For more information, see [Configuring {{site.data.keyword.atracker_short}} account settings](/docs/activity-tracker?topic=activity-tracker-settings&interface=cli).
 
 Set these settings to define where and how auditing events are collected, routed, and managed in your account.
 {: note}
@@ -80,7 +80,7 @@ Set these settings to define where and how auditing events are collected, routed
 ### Define the metadata location
 {: #configure-atracker-step2-1}
 
-The metadata location is the region where all your {{site.data.keyword.atracker_short}} Event Routing resource definitions are stored.
+The metadata location is the region where all your {{site.data.keyword.atracker_short}} resource definitions are stored.
 
 When you set the metadata location, check any compliance or industry regulations that apply to data location.
 {: tip}
@@ -92,13 +92,13 @@ ibmcloud atracker setting update --metadata-region-primary <REGION>
 ```
 {: codeblock}
 
-Where `<REGION>` you can set the region to any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available.
+Where `<REGION>` you can set the region to any of the supported locations where {{site.data.keyword.atracker_short}} is available.
 
 
 ### Define the type of endpoints allowed
 {: #configure-atracker-step2-2}
 
-You can use public endpoints, private endpoints or both to manage the {{site.data.keyword.atracker_short}} Event Routing account configuration.
+You can use public endpoints, private endpoints or both to manage the {{site.data.keyword.atracker_short}} account configuration.
 
 Configure private endpoints only when you require to be Financial Services Validated.
 {: tip}
@@ -132,7 +132,7 @@ Note the following information about targets:
 
 * When you define a Cloud Object Storage target, you can use an API key or a service to service authentication to upload events.
 
-* You can manage targets in your account by using the {{site.data.keyword.atracker_short}} CLI, and programmatically by using the {{site.data.keyword.atracker_short}} Event Routing REST API and Terraform scripts.
+* You can manage targets in your account by using the {{site.data.keyword.atracker_short}} CLI, and programmatically by using the {{site.data.keyword.atracker_short}} REST API and Terraform scripts.
 
 The following table outlines valid target types:
 
@@ -197,7 +197,7 @@ A route defines the rules that indicate what auditing events are collected in a 
 
 * Any update to a `rules` configuration must include all `location` rules.  An update will discard the existing rule set and replace it with the specified configuration.
 
-* You can manage routes in your account by using the {{site.data.keyword.atracker_short}} CLI, and programmatically by using the {{site.data.keyword.atracker_short}} Event Routing REST API and Terraform scripts.
+* You can manage routes in your account by using the {{site.data.keyword.atracker_short}} CLI, and programmatically by using the {{site.data.keyword.atracker_short}} REST API and Terraform scripts.
 
 After you configure a route, it might take up to 1 hour for the configuration to be enabled.
 {: note}

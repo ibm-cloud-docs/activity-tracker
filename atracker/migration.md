@@ -13,19 +13,19 @@ subcollection: activity-tracker
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Migrating the {{site.data.keyword.atracker_short}} Event Routing account configuration from V1 to V2
+# Migrating the {{site.data.keyword.atracker_short}} account configuration from V1 to V2
 {: #migration}
 
-The {{site.data.keyword.atracker_full}} Event Routing feature has been enhanced. A new version (V2) is now available. To use the new V2 features and configurations, your existing {{site.data.keyword.atracker_short}} Event Routing V1 account configuration must be migrated to an {{site.data.keyword.atracker_short}} Event Routing V2 account configuration.
+The {{site.data.keyword.atracker_full}} feature has been enhanced. A new version (V2) is now available. To use the new V2 features and configurations, your existing {{site.data.keyword.atracker_short}} V1 account configuration must be migrated to an {{site.data.keyword.atracker_short}} V2 account configuration.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_short}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_short}}.
 {: important}
 
 ## Why do you need to migrate?
 {: #migration-why}
 
-In the {{site.data.keyword.atracker_short}} Event Routing V1 configuration, each region is managed separately. In the {{site.data.keyword.atracker_short}} Event Routing V2 configuration, all of the account configuration metadata is managed in a user-specified location. As a result, when you migrate to V2, all V1 regions are migrated at the same time so that when the migration is complete, the account as a whole will be migrated to the V2 configuration.
+In the {{site.data.keyword.atracker_short}} V1 configuration, each region is managed separately. In the {{site.data.keyword.atracker_short}} V2 configuration, all of the account configuration metadata is managed in a user-specified location. As a result, when you migrate to V2, all V1 regions are migrated at the same time so that when the migration is complete, the account as a whole will be migrated to the V2 configuration.
 
 Once you have migrated from your existing V1 configuration to V2, you must use the V2 APIs.  After migration you will no longer be able to use the V1 APIs.
 {: important}
@@ -34,23 +34,23 @@ Once you have migrated from your existing V1 configuration to V2, you must use t
 ## Planning the migration
 {: #migration-ov}
 
-When you migrate the {{site.data.keyword.atracker_short}} Event Routing account configuration from V1 to V2 in your account, you must plan and decide how the account's {{site.data.keyword.atracker_short}} Event Routing configuration is managed and stored:
+When you migrate the {{site.data.keyword.atracker_short}} account configuration from V1 to V2 in your account, you must plan and decide how the account's {{site.data.keyword.atracker_short}} configuration is managed and stored:
 
-1. Decide the location in your {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.atracker_short}} Event Routing account configuration metadata is stored. 
+1. Decide the location in your {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.atracker_short}} account configuration metadata is stored. 
 
-    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
 
     Take into account any corporate or industry compliance requirements such as Financial Services Validated locations, or EU-managed regions.
 
-2. Decide whether public endpoints, private endpoints, or both are allowed to manage the {{site.data.keyword.atracker_short}} Event Routing account configuration.
+2. Decide whether public endpoints, private endpoints, or both are allowed to manage the {{site.data.keyword.atracker_short}} account configuration.
 
 3. Define the locations where an account administrator can define targets to collect auditing events.
 
-    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+    You can choose any of the supported locations where {{site.data.keyword.atracker_short}} is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
 
     Take into account any corporate or industry compliance requirements such as Financial Services Validated locations, or EU-managed regions.
 
-4. Define 1 or more default targets in the account that will collect auditing events from supported {{site.data.keyword.atracker_short}} Event Routing locations where you have not configured how you want to collect the auditing data.
+4. Define 1 or more default targets in the account that will collect auditing events from supported {{site.data.keyword.atracker_short}} locations where you have not configured how you want to collect the auditing data.
 
     If you define more than 1 target, all default targets get a copy of an auditing event that does not have a clearly defined routing rule to indicate where to collect it in the account. You can define up to 2 default targets per account.
     {: note}
@@ -58,22 +58,22 @@ When you migrate the {{site.data.keyword.atracker_short}} Event Routing account 
 ## IAM permissions
 {: #migration-iam}
 
-Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to manage the {{site.data.keyword.atracker_short}} Event Routing account settings.
+Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to manage the {{site.data.keyword.atracker_short}} account settings.
 
 | Role                      | Minimum scope  | Minimum required roles | Action         |
 | ------------------------- | -------------- | ---------------------- | -------------- |
 | `atracker.setting.get`    | Account        | `Administrator`  \n `Editor`  \n `Viewer`  \n `Operator` | Get setting information |
 | `atracker.setting.update` | Account        | `Administrator`| Update settings |
-{: caption="Table 1. Required IAM roles to manage the {{site.data.keyword.atracker_short}} Event Routing account settings." caption-side="top"}
+{: caption="Table 1. Required IAM roles to manage the {{site.data.keyword.atracker_short}} account settings." caption-side="top"}
 
-Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to migrate the account's {{site.data.keyword.atracker_short}} Event Routing configuration. 
+Users must have the following [IAM roles](/docs/account?topic=account-assign-access-resources) to migrate the account's {{site.data.keyword.atracker_short}} configuration. 
 
 | Role                      | Minimum scope  | Minimum required roles | Action         |
 | ------------------------- | -------------- | ---------------------- | -------------- |
-| `atracker.migration.post` | Account        | `Administrator`        | Start the migration of {{site.data.keyword.atracker_short}} Event Routing resources in the account. | 
-| `atracker.migration.get`  | Account        | `Administrator`  \n `Editor`  \n `Viewer`  \n `Operator` | Get the status of {{site.data.keyword.atracker_short}} Event Routing resources that are being migrated from V1 to V2. |
+| `atracker.migration.post` | Account        | `Administrator`        | Start the migration of {{site.data.keyword.atracker_short}} resources in the account. | 
+| `atracker.migration.get`  | Account        | `Administrator`  \n `Editor`  \n `Viewer`  \n `Operator` | Get the status of {{site.data.keyword.atracker_short}} resources that are being migrated from V1 to V2. |
 | `atracker.migration.delete`  | Account        | IBM INTERNAL USE ONLY | IBM INTERNAL USE ONLY |
-{: caption="Table 2. Required IAM roles to migrate the {{site.data.keyword.atracker_short}} Event Routing account configuration." caption-side="top"}
+{: caption="Table 2. Required IAM roles to migrate the {{site.data.keyword.atracker_short}} account configuration." caption-side="top"}
 
 ## Migration steps
 {: #migration-steps}
@@ -95,7 +95,7 @@ Use the following diagrams to follow the steps to migrate the {{site.data.keywor
 
 Complete the following prerequisites to configure and initialize the {{site.data.keyword.atracker_short}} CLI in your local system:
 
-1. Install the latest {{site.data.keyword.atracker_short}} Event Routing CLI V2 plugin in your local system. See [Installing the {{site.data.keyword.atracker_short}} Event Routing CLI](/docs/activity-tracker?topic=activity-tracker-atracker-cli-mng&interface=cli#atracker-cli-mng-install).
+1. Install the latest {{site.data.keyword.atracker_short}} CLI V2 plugin in your local system. See [Installing the {{site.data.keyword.atracker_short}} CLI](/docs/activity-tracker?topic=activity-tracker-atracker-cli-mng&interface=cli#atracker-cli-mng-install).
 
 2. Log in to the {{site.data.keyword.cloud_notm}}. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
@@ -158,16 +158,16 @@ Complete the following steps:
 
     Where
     
-    - `METADATA_REGION` defines the {{site.data.keyword.cloud_notm}} location where the {{site.data.keyword.atracker_short}} Event Routing account metadata is stored. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+    - `METADATA_REGION` defines the {{site.data.keyword.cloud_notm}} location where the {{site.data.keyword.atracker_short}} account metadata is stored. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
 
-    - `TARGET` defines 1 or more target IDs. When a supported {{site.data.keyword.atracker_short}} Event Routing location is not configured to collect auditing events, these events are routed to every target that is listed in this section. 
+    - `TARGET` defines 1 or more target IDs. When a supported {{site.data.keyword.atracker_short}} location is not configured to collect auditing events, these events are routed to every target that is listed in this section. 
 
         The target IDs that you list must be defined within the account where the auditing events are being generated.
         {: important}
 
-    - `REGION` defines the list of supported {{site.data.keyword.atracker_short}} Event Routing locations where the account administrator can define a target to collect auditing events.
+    - `REGION` defines the list of supported {{site.data.keyword.atracker_short}} locations where the account administrator can define a target to collect auditing events.
     
-    - `--private-api-endpoint-only` indicates whether an account administrator can only use private api endpoints to manage the {{site.data.keyword.atracker_short}} Event Routing account configuration.
+    - `--private-api-endpoint-only` indicates whether an account administrator can only use private api endpoints to manage the {{site.data.keyword.atracker_short}} account configuration.
 
     Make sure that the `--permitted-target-regions` list all the regions where you have currently defined targets in your account. Also, you must have a `--metadata-region-primary` defined as well as a `--default-targets` target before [migrating your account configuration.](#migration-step4)
     {: important}
@@ -312,7 +312,7 @@ To migrate using the API you will need to use a combination of the CLI and API.
 
 Complete the following prerequisites to configure and initialize the {{site.data.keyword.atracker_short}} API in your local system:
 
-1. Install the latest {{site.data.keyword.atracker_short}} Event Routing CLI V2 plugin in your local system. See [Installing the {{site.data.keyword.atracker_short}} Event Routing CLI](/docs/activity-tracker?topic=activity-tracker-atracker-cli-mng&interface=cli#atracker-cli-mng-install).
+1. Install the latest {{site.data.keyword.atracker_short}} CLI V2 plugin in your local system. See [Installing the {{site.data.keyword.atracker_short}} CLI](/docs/activity-tracker?topic=activity-tracker-atracker-cli-mng&interface=cli#atracker-cli-mng-install).
 
 2. Log in to the {{site.data.keyword.cloud_notm}}. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 

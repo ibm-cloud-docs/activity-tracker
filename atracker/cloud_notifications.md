@@ -16,13 +16,13 @@ subcollection: activity-tracker
 # Enabling IBM Cloud notifications
 {: #cloud_notifications}
 
-{{site.data.keyword.cloud_notm}} users can choose to receive email notifications about {{site.data.keyword.cloud_notm}} platform-related items, such as announcements, billing and usage, additional notification preferences, and ordering. Users can also update their preferences to receive email notifications about resource-related items, such as incidents, maintenance, security bulletins, or resource activity on the Notification preferences page. These notifications are for only the resources in use.  You can use these notifications to be alerted when credential issues affect {{site.data.keyword.atracker_full}} Event Routing.
+{{site.data.keyword.cloud_notm}} users can choose to receive email notifications about {{site.data.keyword.cloud_notm}} platform-related items, such as announcements, billing and usage, additional notification preferences, and ordering. Users can also update their preferences to receive email notifications about resource-related items, such as incidents, maintenance, security bulletins, or resource activity on the Notification preferences page. These notifications are for only the resources in use.  You can use these notifications to be alerted when credential issues affect {{site.data.keyword.atracker_full}}.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full_notm}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full_notm}} .
 {: important}
 
-## {{site.data.keyword.atracker_full_notm}} Event Routing notifications
+## {{site.data.keyword.atracker_full_notm}}  notifications
 {: #at_cloud_notifications}
 
 {{site.data.keyword.cloud_notm}} notifications can alert you when {{site.data.keyword.atracker_full_notm}} users update their {{site.data.keyword.cos_full_notm}} (COS) API key without updating the COS API key associated with the target.  Not updating the credentials in both places will result in failures writing to the target.

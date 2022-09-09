@@ -19,20 +19,20 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-When attempting to manage {{site.data.keyword.atracker_full_notm}} Event Routing, you are unable to do so and are getting errors indicating you do not have access to do so.
+When attempting to manage {{site.data.keyword.atracker_full_notm}} , you are unable to do so and are getting errors indicating you do not have access to do so.
 {: shortdesc}
 
 
-This information applies only if you use {{site.data.keyword.atracker_full_notm}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full_notm}} .
 {: important}
 
 
 Your requests fail indicating you do not have access or the correct privileges.
 {: tsSymptoms}
 
-If Administrator privileges are set to `All Identity and Access enabled services` in {{site.data.keyword.iamshort}} you will be unable to manage the {{site.data.keyword.atracker_full_notm}} Event Routing configuration. Administrator privileges must be configured for `Activity Tracker event routing` or [`All Account Management Services`](/docs/account?topic=account-account-services) in {{site.data.keyword.iamshort}}.
+If Administrator privileges are set to `All Identity and Access enabled services` in {{site.data.keyword.iamshort}} you will be unable to manage the {{site.data.keyword.atracker_full_notm}}  configuration. Administrator privileges must be configured for `Activity Tracker event routing` or [`All Account Management Services`](/docs/account?topic=account-account-services) in {{site.data.keyword.iamshort}}.
 {: tsCauses}
 
-Reconfigure the Administrator privileges in {{site.data.keyword.iamshort}} and retry your {{site.data.keyword.atracker_full_notm}} Event Routing requests.
+Reconfigure the Administrator privileges in {{site.data.keyword.iamshort}} and retry your {{site.data.keyword.atracker_full_notm}}  requests.
 {: tsResolve}
 

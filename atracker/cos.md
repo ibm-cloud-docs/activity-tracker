@@ -20,7 +20,7 @@ subcollection: activity-tracker
 Buckets are a way to organize your data in an {{site.data.keyword.cos_full_notm}} instance. 
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 To manage buckets, your user must be granted permissions to work with buckets on the {{site.data.keyword.cos_full_notm}} instance. For more information about roles, see [Identity and Access Management roles](/docs/cloud-object-storage?topic=cloud-object-storage-iam).

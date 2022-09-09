@@ -13,14 +13,14 @@ subcollection: activity-tracker
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Planning for the {{site.data.keyword.atracker_short}} Event Routing account configuration
+# Planning for the {{site.data.keyword.atracker_short}} account configuration
 {: #atracker-resources-planning}
 
-You must plan and decide how the account's {{site.data.keyword.atracker_short}} Event Routing configuration is managed and stored.
+You must plan and decide how the account's {{site.data.keyword.atracker_short}} configuration is managed and stored.
 {: shortdesc}
 
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 
@@ -28,26 +28,26 @@ This information applies only if you use {{site.data.keyword.atracker_full}} Eve
 ## Metadata location
 {: #atracker-resources-planning-1}
 
-Decide the location in your {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.atracker_short}} Event Routing account configuration metadata is stored. 
+Decide the location in your {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.atracker_short}} account configuration metadata is stored. 
 
-You can choose any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+You can choose any of the supported locations where {{site.data.keyword.atracker_short}} is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
 
 Take into account any corporate or industry compliance requirements such as Financial Services Validated locations, or EU-managed regions.
 
 ## Endpoints allowed
 {: #atracker-resources-planning-2}
 
-Decide whether public endpoints, private endpoints, or both are allowed to manage the {{site.data.keyword.atracker_short}} Event Routing account configuration. For more information, see [Enforcing private endpoints to configure {{site.data.keyword.atracker_short}} resources](/docs/activity-tracker?topic=activity-tracker-getting-started-mng-endpoints).
+Decide whether public endpoints, private endpoints, or both are allowed to manage the {{site.data.keyword.atracker_short}} account configuration. For more information, see [Enforcing private endpoints to configure {{site.data.keyword.atracker_short}} resources](/docs/activity-tracker?topic=activity-tracker-getting-started-mng-endpoints).
 
 
 ## Target locations
 {: #atracker-resources-planning-3}
 
-Define the locations where an account administrator can configure targets to collect auditing events. You can choose any of the supported locations where {{site.data.keyword.atracker_short}} Event Routing is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
+Define the locations where an account administrator can configure targets to collect auditing events. You can choose any of the supported locations where {{site.data.keyword.atracker_short}} is available. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli).
     
 Take into account any corporate or industry compliance requirements such as Financial Services Validated locations, or EU-managed regions.
 
-The location of a target definition must be a supported location where {{site.data.keyword.atracker_short}} Event Routing is available. The target can configure a resource in the same account where the events are located or in a different account. In addition, the resource can be located in any region where that type of resource is supported in {{site.data.keyword.cloud_notm}}.
+The location of a target definition must be a supported location where {{site.data.keyword.atracker_short}} is available. The target can configure a resource in the same account where the events are located or in a different account. In addition, the resource can be located in any region where that type of resource is supported in {{site.data.keyword.cloud_notm}}.
 
 ## Default targets
 {: #atracker-resources-planning-4}

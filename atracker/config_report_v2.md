@@ -19,7 +19,7 @@ subcollection: activity-tracker
 After configuring your {{site.data.keyword.atracker_full}} resources for your account, you should save a copy of your configuration for reference and backup purposes.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 ## Prereqs

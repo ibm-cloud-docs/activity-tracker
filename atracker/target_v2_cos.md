@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can manage {{site.data.keyword.cos_full_notm}} (COS) targets in your account by using the {{site.data.keyword.atracker_full}} CLI or the {{site.data.keyword.atracker_full_notm}} REST API. A target is a resource where you can collect auditing events.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 The version of the API running in your account can be determined by running the [`ibmcloud atracker init version`](/docs/activity-tracker?topic=activity-tracker-v2api) command.

@@ -25,8 +25,8 @@ For more information about {{site.data.keyword.atracker_full_notm}}, see [About 
 
 For information on the services that are sending events to {{site.data.keyword.atracker_short}}, see [{{site.data.keyword.cloud_notm}} services that generate {{site.data.keyword.atracker_short}} events](/docs/activity-tracker?topic=activity-tracker-cloud_services).
 
-Depending on your compliance and organizational requirements, you can choose {{site.data.keyword.atracker_full_notm}} Event Routing or an {{site.data.keyword.at_full_notm}} hosted event search offering.
-- Application environments seeking to maintain Financial Services (FS) validation status on {{site.data.keyword.cloud_notm}} should use {{site.data.keyword.atracker_full_notm}} Event Routing. 
+Depending on your compliance and organizational requirements, you can choose {{site.data.keyword.atracker_full_notm}}  or an {{site.data.keyword.at_full_notm}} hosted event search offering.
+- Application environments seeking to maintain Financial Services (FS) validation status on {{site.data.keyword.cloud_notm}} should use {{site.data.keyword.atracker_full_notm}} . 
 - Application environments seeking compliance with PCI, SOC2, Privacy Shield and HIPAA should use an {{site.data.keyword.at_full_notm}} hosted event search offering.
 
 [![Getting started with Event Routing](/images/getting_started_routing.svg)](/docs/activity-tracker?topic=activity-tracker-getting-started-routing-2) [![Getting started with hosted event and search offerings](/images/getting_started_event.svg)](/docs/activity-tracker?topic=activity-tracker-getting-started-search)

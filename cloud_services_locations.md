@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-06-21"
 
-keywords: IBM Cloud,Activity Tracker, cloud services, services, locations, {{site.data.keyword.at_short}} hosted event search, {{site.data.keyword.atracker_short}} Event Routing,
+keywords: IBM Cloud,Activity Tracker, cloud services, services, locations, {{site.data.keyword.at_short}} hosted event search, {{site.data.keyword.atracker_short}},
 
 subcollection: activity-tracker
 
@@ -230,7 +230,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 | Service                            | `Dallas (us-south)` | `Washington (us-east)`  |`Toronto (ca-tor)` | `Sao Paulo (br-sao)` |
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
 | {{site.data.keyword.at_full_notm}} hosted event search offering | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)|
-| {{site.data.keyword.at_full_notm}} Event Routing  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|
+| {{site.data.keyword.attracker_full_notm}}  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|
 | {{site.data.keyword.la_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)|  
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |     
 {: caption="Table 6. Observability services in America's locations" caption-side="top"}
@@ -243,7 +243,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 | Service        | `Tokyo (jp-tok)`    |`Sydney (au-syd)` | `Seoul (kr-seo)` | `Osaka (jp-osa)` | `Chennai (in-che)` |
 |----------------|---------------------|------------------|------------------|------------------|--------------------|
 | {{site.data.keyword.at_full_notm}} hosted event search offering | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  
-| {{site.data.keyword.at_full_notm}} Event Routing  | | | | | |
+| {{site.data.keyword.attracker_full_notm}}  | | | | | |
 | {{site.data.keyword.la_full_notm}}  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|  | ![Checkmark icon](images/checkmark-icon.svg) | |  | 
 {: caption="Table 6. Observability services in AP locations" caption-side="top"}
@@ -256,7 +256,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` |
 |---------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.at_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.at_full_notm}} Event Routing  | | |
+| {{site.data.keyword.attracker_full_notm}}  | | |
 | {{site.data.keyword.la_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |     
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|        
 {: caption="Table 6. Observability services in Europe locations" caption-side="top"}

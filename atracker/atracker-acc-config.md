@@ -20,11 +20,11 @@ Learn how to configure your account to manage auditing events by using {{site.da
 
 ![The {{site.data.keyword.atracker_short}} service](images/atracker_ov.svg "The {{site.data.keyword.atracker_short}} service"){: caption="Figure 1. The {{site.data.keyword.atracker_short}} service" caption-side="bottom"}
 
-{{site.data.keyword.atracker_short}} offers 2 different ways to manage auditing events in an {{site.data.keyword.cloud_notm}} account. You can use {{site.data.keyword.atracker_short}} hosted event search, an IAM enabled service, to manage auditing events through instances that you provision in each {{site.data.keyword.cloud_notm}} region where you operate. Alternatively, you can use {{site.data.keyword.atracker_short}} Event Routing, a platform service, to manage auditing events at the account-level by configuring targets and routes that define where auditing data is routed. {{site.data.keyword.atracker_short}} Event Routing can only route events that are generated in [supported regions](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker). Other regions, where {{site.data.keyword.atracker_short}} Event Routing is not available, continue to manage events by using {{site.data.keyword.atracker_short}} hosted event search.
+{{site.data.keyword.atracker_short}} offers 2 different ways to manage auditing events in an {{site.data.keyword.cloud_notm}} account. You can use {{site.data.keyword.atracker_short}} hosted event search, an IAM enabled service, to manage auditing events through instances that you provision in each {{site.data.keyword.cloud_notm}} region where you operate. Alternatively, you can use {{site.data.keyword.atracker_short}}, a platform service, to manage auditing events at the account-level by configuring targets and routes that define where auditing data is routed. {{site.data.keyword.atracker_short}} can only route events that are generated in [supported regions](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker). Other regions, where {{site.data.keyword.atracker_short}} is not available, continue to manage events by using {{site.data.keyword.atracker_short}} hosted event search.
 
 The following table outlines the options to configure {{site.data.keyword.atracker_short}} per region:
 
-| Geo                   | Region                   | {{site.data.keyword.atracker_short}} hosted event search | {{site.data.keyword.atracker_short}} Event Routing |
+| Geo                   | Region                   | {{site.data.keyword.atracker_short}} hosted event search | {{site.data.keyword.atracker_short}} |
 |-----------------------|--------------------------|----------------------------------------------|--------------------------------|
 | `Asia Pacific`        | `Chennai (in-che)`       | ![Checkmark icon](images/checkmark-icon.svg) | |
 | `Asia Pacific`        | `Tokyo (jp-tok)`         | ![Checkmark icon](images/checkmark-icon.svg) | |
@@ -40,11 +40,11 @@ The following table outlines the options to configure {{site.data.keyword.atrack
 
 
 
-## Configuring the account to collect events by using {{site.data.keyword.atracker_short}} Event Routing
+## Configuring the account to collect events by using {{site.data.keyword.atracker_short}}
 {: #atracker-acc-config-1}
 
 
-To configure {{site.data.keyword.atracker_short}} Event Routing in your account, you must define which locations auditing events are collected from and where are they routed and stored. You must configure 1 or more targets, and 1 or more routes. You must also configure the account settings. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-routing-2).
+To configure {{site.data.keyword.atracker_short}} in your account, you must define which locations auditing events are collected from and where are they routed and stored. You must configure 1 or more targets, and 1 or more routes. You must also configure the account settings. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-routing-2).
 
 - A target defines a resource where you can collect auditing events. For more information, see [Targets](/docs/activity-tracker?topic=activity-tracker-atracker-resources&interface=cli#atracker-resources-targets).
 - A route defines the rules that determine the targets where auditing events are routed to in your account. For more information, see [Routes](/docs/activity-tracker?topic=activity-tracker-atracker-resources&interface=cli#atracker-resources-routes).
@@ -53,7 +53,7 @@ To configure {{site.data.keyword.atracker_short}} Event Routing in your account,
 
 For each account, you can choose the regions where auditing events are collected.
 
-You can only configure regions where {{site.data.keyword.atracker_short}} Event Routing is supported. See [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli#regions-atracker).
+You can only configure regions where {{site.data.keyword.atracker_short}} is supported. See [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli#regions-atracker).
 {: important}
 
 
@@ -87,19 +87,19 @@ To monitor auditing events, choose an instance and click **Open dashboard**.
 {: #atracker-acc-config-3}
 
 
-To configure your account to manage auditing events and route them to the {{site.data.keyword.at_short}} instance of your choice, you can combine the configuration of {{site.data.keyword.atracker_short}} Event Routing with the configuration of {{site.data.keyword.at_short}} hosted event search offering.
+To configure your account to manage auditing events and route them to the {{site.data.keyword.at_short}} instance of your choice, you can combine the configuration of {{site.data.keyword.atracker_short}} with the configuration of {{site.data.keyword.at_short}} hosted event search offering.
 
-- You must configure 1 or more {{site.data.keyword.at_short}} hosted event search instances in the account. These instances are the ones where you plan to send auditing events. In addition, you must provision 1 instance of the {{site.data.keyword.at_short}} hosted event search service for each location where you operate and {{site.data.keyword.atracker_short}} Event Routing is [not supported](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker). 
+- You must configure 1 or more {{site.data.keyword.at_short}} hosted event search instances in the account. These instances are the ones where you plan to send auditing events. In addition, you must provision 1 instance of the {{site.data.keyword.at_short}} hosted event search service for each location where you operate and {{site.data.keyword.atracker_short}} is [not supported](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker). 
 
     You can provison only 1 instance of the {{site.data.keyword.at_short}} hosted event search service per location. To get the list of locations where the service is available in the {{site.data.keyword.cloud_notm}}, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
 
 - After you provision your account auditing instances, you must define 1 target definition for each {{site.data.keyword.at_short}} instance. 
 
-    You can only define targets in supported {{site.data.keyword.atracker_short}} Event Routing locations. [Learn more about supported locations](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker).
+    You can only define targets in supported {{site.data.keyword.atracker_short}} locations. [Learn more about supported locations](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker).
 
 - You must define 1 or more route definitions that indicate how to route events to those targets.
 
-    You can only define routing rules for those regions where {{site.data.keyword.atracker_short}} Event Routing is supported. [Learn more about supported locations](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker). 
+    You can only define routing rules for those regions where {{site.data.keyword.atracker_short}} is supported. [Learn more about supported locations](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker). 
     
     For all other regions, location-based events are routed to the {{site.data.keyword.atracker_short}} hosted event search instance that is provisioned in that region in your account.
 

@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can manage routes in your account by using the {{site.data.keyword.atracker_full}} CLI or {{site.data.keyword.atracker_short}} REST API. A route defines the rules that indicate what auditing events are collected in a region and where to route them.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 The version of the API running in your account can be determined by running the [`ibmcloud atracker init version`](/docs/activity-tracker?topic=activity-tracker-v2api) command.
@@ -104,7 +104,7 @@ Users must have the following [IAM roles](/docs/account?topic=account-assign-acc
 {: #route-prereqs-cli}
 {: cli}
 
-Before you use the the CLI to manage routes, install the latest {{site.data.keyword.atracker_short}} Event Routing CLI V2 plugin in your local system. See [Installing the {{site.data.keyword.atracker_short}} Event Routing CLI](/docs/activity-tracker?topic=activity-tracker-atracker-cli-config&interface=cli).
+Before you use the the CLI to manage routes, install the latest {{site.data.keyword.atracker_short}} CLI V2 plugin in your local system. See [Installing the {{site.data.keyword.atracker_short}} CLI](/docs/activity-tracker?topic=activity-tracker-atracker-cli-config&interface=cli).
 
 Next, log in to the {{site.data.keyword.cloud_notm}}. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 

@@ -19,12 +19,12 @@ Across every industry, organizations require tighter controls and visibility int
 {: shortdesc}
 
 * [You must enable your account to be EU-supported](/docs/services/activity-tracker?topic=activity-tracker-manage_eu_acc#manage_eu_acc_step1), so support is handled by team members in the European Union. 
-* You must **configure resources to collect global events in an EU-supported location.** For {{site.data.keyword.at_full_notm}} hosted event search offerings, you must provision 1 {{site.data.keyword.at_full_notm}} instance in the `EU-DE (Frankfurt)` location. (You can only have 1 instance per region.) For {{site.data.keyword.atracker_full_notm}} Event Routing, you must configure the route that is defined in an EU-supported location to collect global events.
+* You must **configure resources to collect global events in an EU-supported location.** For {{site.data.keyword.at_full_notm}} hosted event search offerings, you must provision 1 {{site.data.keyword.at_full_notm}} instance in the `EU-DE (Frankfurt)` location. (You can only have 1 instance per region.) For {{site.data.keyword.atracker_full_notm}} , you must configure the route that is defined in an EU-supported location to collect global events.
 * You must **restrict access to users** to manage and view events.
 * You must ensure that you configure **an EU-Supported {{site.data.keyword.cos_full_notm}} (COS) bucket**. 
 * To monitor activity from {{site.data.keyword.cloud_notm}} services and Cloud Foundry (CF) resources, you must provision these resources in an EU location such as Frankfurt.
     
-    For services that generate global events such as the {{site.data.keyword.cos_full_notm}} (COS) service, when you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location-bound. As soon as you provision a COS instance, you get [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) automatically. You can also enable management and data events per bucket. For {{site.data.keyword.at_full_notm}} hosted event search offerings, when you enable all events to go to the Frankfurt instance, the global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt. For {{site.data.keyword.atracker_full_notm}} Event Routing, you must configure a location in your account to collect global events. If you need to collect all types of events, you should configure the location where your bucket is provisioned. [Learn more about COS global events.](/docs/services/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-global).
+    For services that generate global events such as the {{site.data.keyword.cos_full_notm}} (COS) service, when you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location-bound. As soon as you provision a COS instance, you get [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) automatically. You can also enable management and data events per bucket. For {{site.data.keyword.at_full_notm}} hosted event search offerings, when you enable all events to go to the Frankfurt instance, the global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt. For {{site.data.keyword.atracker_full_notm}} , you must configure a location in your account to collect global events. If you need to collect all types of events, you should configure the location where your bucket is provisioned. [Learn more about COS global events.](/docs/services/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-global).
 
 
 
@@ -45,7 +45,7 @@ Consider the following information when you turn on the `EU-supported` flag in y
 For {{site.data.keyword.at_full_notm}} hosted event search offerings, you can provision 1 {{site.data.keyword.at_full_notm}} instance per [location](/docs/services/activity-tracker?topic=activity-tracker-regions). However, only the instance that is provisioned in the `EU-DE (Frankfurt)` location is EU-Supported when you set on the EU-supported flag in your account. For more information on how to provision an instance, see [Provisioning an instance](/docs/services/activity-tracker?topic=activity-tracker-provision).
 
 
-For {{site.data.keyword.atracker_full_notm}} Event Routing, you must configure the route that is defined in an EU-supported location to collect global events. For more information on how to create a route, see [Define a route](/docs/activity-tracker?topic=activity-tracker-getting-started-routing&interface=cli#getting-started-routing-setp5).
+For {{site.data.keyword.atracker_full_notm}} , you must configure the route that is defined in an EU-supported location to collect global events. For more information on how to create a route, see [Define a route](/docs/activity-tracker?topic=activity-tracker-getting-started-routing&interface=cli#getting-started-routing-setp5).
 
 
 ## Step 3. Working with global services in the {{site.data.keyword.cloud_notm}}
@@ -53,7 +53,7 @@ For {{site.data.keyword.atracker_full_notm}} Event Routing, you must configure t
 
 [Global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) report on activity in your account that relate to data and resources that are generally synchronized across all regions. The common theme for global events is a single, synchronized location where account administrators can monitor certain types of activity across the Cloud. The services that users interact with are integrated into the core of the global {{site.data.keyword.cloud_notm}} experience. 
 - For {{site.data.keyword.at_full_notm}} hosted event search offerings, the global domain is set for **Frankfurt**. Global events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt.
-- For {{site.data.keyword.atracker_full_notm}} Event Routing, you must configure the route in the **Frankfurt** location to collect global events in that region.
+- For {{site.data.keyword.atracker_full_notm}} , you must configure the route in the **Frankfurt** location to collect global events in that region.
 
 For example, to monitor management events from actions on {{site.data.keyword.cos_full_notm}} (COS) buckets, you must create buckets in [(COS) EU-supported locations](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
 

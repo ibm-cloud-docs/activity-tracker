@@ -21,7 +21,7 @@ In {{site.data.keyword.at_full}}, events are collected automatically for most {{
 
 To collect and monitor activity in your account, you must configure the {{site.data.keyword.atracker_short}} service in your account by using any of the following methods:
 
-- You can [configure {{site.data.keyword.atracker_short}} Event Routing](/docs/activity-tracker?topic=activity-tracker-getting-started-routing-2) to manage auditing events in your account while maintaining Financial Services Validated status.
+- You can [configure {{site.data.keyword.atracker_short}}](/docs/activity-tracker?topic=activity-tracker-getting-started-routing-2) to manage auditing events in your account while maintaining Financial Services Validated status.
 
     The target resource must be an {{site.data.keyword.cos_full}} bucket that is available in the same account where the auditing events are generated.
 
@@ -32,7 +32,7 @@ To collect and monitor activity in your account, you must configure the {{site.d
 
 - You can [configure the {{site.data.keyword.atracker_short}} hosted event search offering](/docs/activity-tracker?topic=activity-tracker-getting-started-search) to manage auditing events through the UI, or if you need PCI, SOC2, Privacy Shield or HIPAA compliance.
 
-- You can configure {{site.data.keyword.atracker_short}} Event Routing to define the {{site.data.keyword.atracker_short}} hosted event search instances where auditing events are routed.
+- You can configure {{site.data.keyword.atracker_short}} to define the {{site.data.keyword.atracker_short}} hosted event search instances where auditing events are routed.
 
     The {{site.data.keyword.atracker_short}} hosted event search instances can be located in the same account where auditing events are generated or in a different account.
 
@@ -48,7 +48,7 @@ In {{site.data.keyword.atracker_short}}, you can differentiate events by scope a
 
 {{site.data.keyword.atracker_short}} hosted event search routes location-based auditing events to an {{site.data.keyword.atracker_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.atracker_short}} instance that is provisioned in Frankfurt.
 
-{{site.data.keyword.atracker_short}} Event Routing routes events based on the location that is specified in the `logSourceCRN` field included in the event. You can define a target, the resource where events are routed to, in any {{site.data.keyword.atracker_short}} Event Routing supported region. However, the target resource can be located in any region where that type of target is supported, in the same account or in a different account. You can define rules to determine where auditing events are to be routed by configuring 1 or more routes in the account. You can define rules for managing global events and location-based events that are generated in regions where {{site.data.keyword.atracker_short}} Event Routing is supported. 
+{{site.data.keyword.atracker_short}} routes events based on the location that is specified in the `logSourceCRN` field included in the event. You can define a target, the resource where events are routed to, in any {{site.data.keyword.atracker_short}} supported region. However, the target resource can be located in any region where that type of target is supported, in the same account or in a different account. You can define rules to determine where auditing events are to be routed by configuring 1 or more routes in the account. You can define rules for managing global events and location-based events that are generated in regions where {{site.data.keyword.atracker_short}} is supported. 
 
 
 ## Collecting global events
@@ -56,11 +56,11 @@ In {{site.data.keyword.atracker_short}}, you can differentiate events by scope a
 
 You can choose 1 of the following options to collect [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) in your account:
 
-1. Configure {{site.data.keyword.atracker_short}} Event Routing: You can choose the region where events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-routing-2#getting-started-routing-step6).
+1. Configure {{site.data.keyword.atracker_short}}: You can choose the region where events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-routing-2#getting-started-routing-step6).
 
 2. Configure {{site.data.keyword.at_short}} hosted event search: Global events are available through the {{site.data.keyword.atracker_short}} instance in Frankfurt. To collect and view global events, you must provision an instance of the {{site.data.keyword.at_short}} service in Frankfurt. [Learn more](/docs/activity-tracker?topic=activity-tracker-monitor_events).
 
-3. While global events default to Frankfurt when you configure {{site.data.keyword.at_short}} hosted event search to manage auditing events, you can configure {{site.data.keyword.atracker_short}} Event Routing  to manage routing of global events to the instance of your choice.  
+3. While global events default to Frankfurt when you configure {{site.data.keyword.at_short}} hosted event search to manage auditing events, you can configure {{site.data.keyword.atracker_short}}  to manage routing of global events to the instance of your choice.  
 
     Routing can be to an {{site.data.keyword.at_short}} hosted event search instance so that you can monitor events through the UI or to an {{site.data.keyword.cos_full_notm}} bucket for archival purposes. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-target-1).
 
@@ -72,17 +72,17 @@ You can choose 1 of the following options to collect [global events](/docs/activ
 
 You can choose 1 of the following options to collect [location-based events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_location) in your account:
 
-1. Configure {{site.data.keyword.atracker_short}} Event Routing: You can choose the region where location-based events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-atracker-resources).
+1. Configure {{site.data.keyword.atracker_short}}: You can choose the region where location-based events are collected. [Learn more](/docs/activity-tracker?topic=activity-tracker-atracker-resources).
 
 2. Configure {{site.data.keyword.at_short}} hosted event search: Location-based events are available through the {{site.data.keyword.at_short}} instance that is available in the same region as the service. [Learn more](/docs/activity-tracker?topic=activity-tracker-monitor_events).
 
-3. Configure {{site.data.keyword.atracker_short}} Event Routing to manage routing of location-based events to the instance of your choice.  
+3. Configure {{site.data.keyword.atracker_short}} to manage routing of location-based events to the instance of your choice.  
 
     Routing can be to an {{site.data.keyword.at_short}} hosted event search instance to monitor events using the UI or to an {{site.data.keyword.cos_full_notm}} bucket for archival purposes. [Learn more](/docs/activity-tracker?topic=activity-tracker-getting-started-target-1).
 
     Routing can be done to an instance within the account, or to an instance in another {{site.data.keyword.cloud_notm}} account.
 
-    Routing of location-based events from a given region is only supported for the regions where {{site.data.keyword.atracker_short}} Event Routing is supported. For more information about supported regions, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli#regions-atracker).
+    Routing of location-based events from a given region is only supported for the regions where {{site.data.keyword.atracker_short}} is supported. For more information about supported regions, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli#regions-atracker).
 
 
 The following are exceptions for location-based events:

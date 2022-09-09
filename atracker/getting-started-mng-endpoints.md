@@ -27,7 +27,7 @@ completion-time: 1h
 Use this tutorial to learn how to enforce the use of private endpoints to configure {{site.data.keyword.atracker_short}} resources in your account.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 You can use the {{site.data.keyword.atracker_short}} CLI or the {{site.data.keyword.atracker_short}} REST API to define the type of endpoints that are allowed to configure {{site.data.keyword.atracker_short}} resources in the account. 

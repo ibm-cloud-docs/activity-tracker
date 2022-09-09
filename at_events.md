@@ -26,7 +26,7 @@ As a security officer, auditor, or manager, you can use the {{site.data.keyword.
 {{site.data.keyword.atracker_short}} automatically generates events so that you can track activity on your service instance.
 
 
-## Management events for {{site.data.keyword.atracker_short}} Event Routing
+## Management events for {{site.data.keyword.atracker_short}}
 {: #at_events_mgt_atracker}
 
 ### Targets
@@ -70,7 +70,7 @@ The following table lists the auditing events that are generated when you manage
 | `atracker.endpoint.get` | This event is generated when an administrator gets information about the public and private endpoints that are enabled in a region.  |
 {: caption="Table 3. Events for managing endpoints" caption-side="top"} 
 
-These events are only applicable to the {{site.data.keyword.atracker_short}} Event Routing V1 configuration and are unavailable after you have [migrated to the V2 configuration.](/docs/activity-tracker?topic=activity-tracker-migration) 
+These events are only applicable to the {{site.data.keyword.atracker_short}} V1 configuration and are unavailable after you have [migrated to the V2 configuration.](/docs/activity-tracker?topic=activity-tracker-migration) 
 {: note}
 
 ### Settings
@@ -80,25 +80,25 @@ The following table lists the auditing events that are generated when you manage
 
 | Action                                            | Description                |
 |---------------------------------------------------|----------------------------|
-| `atracker.setting.set` | This event is generated when an administrator configures the {{site.data.keyword.atracker_short}} Event Routing settings for an account. |
-| `atracker.setting.get` | This event is generated when an administrator gets information about the {{site.data.keyword.atracker_short}} Event Routing settings for an account. |
+| `atracker.setting.set` | This event is generated when an administrator configures the {{site.data.keyword.atracker_short}} settings for an account. |
+| `atracker.setting.get` | This event is generated when an administrator gets information about the {{site.data.keyword.atracker_short}} settings for an account. |
 {: caption="Table 4. Events for managing settings" caption-side="top"} 
 
-These events are only applicable to the {{site.data.keyword.atracker_short}} Event Routing V2 configuration and are not available before you have [migrated to the V2 configuration.](/docs/activity-tracker?topic=activity-tracker-migration) 
+These events are only applicable to the {{site.data.keyword.atracker_short}} V2 configuration and are not available before you have [migrated to the V2 configuration.](/docs/activity-tracker?topic=activity-tracker-migration) 
 {: note}
 
 ### Migration
 {: #at_events_migrate}
 
-The following table lists the auditing events that are generated when you migrate your {{site.data.keyword.atracker_short}} Event Routing configuration from V1 to V2:
+The following table lists the auditing events that are generated when you migrate your {{site.data.keyword.atracker_short}} configuration from V1 to V2:
 
 | Action                                            | Description                |
 |---------------------------------------------------|----------------------------|
-| `atracker.migration.post` | This event is generated when an administrator starts the migration of the {{site.data.keyword.atracker_short}} Event Routing configuration from V1 to V2. |
-| `atracker.migration.get` | This event is generated when an administrator request the status of a migration of the {{site.data.keyword.atracker_short}} Event Routing configuration. |
+| `atracker.migration.post` | This event is generated when an administrator starts the migration of the {{site.data.keyword.atracker_short}} configuration from V1 to V2. |
+| `atracker.migration.get` | This event is generated when an administrator request the status of a migration of the {{site.data.keyword.atracker_short}} configuration. |
 {: caption="Table 5. Events for migration" caption-side="top"} 
 
-These events are only applicable when an account is being [migrated from an {{site.data.keyword.atracker_short}} Event Routing V1 configuration to V2.](/docs/activity-tracker?topic=activity-tracker-migration)
+These events are only applicable when an account is being [migrated from an {{site.data.keyword.atracker_short}} V1 configuration to V2.](/docs/activity-tracker?topic=activity-tracker-migration)
 {: note}
 
 
@@ -356,7 +356,7 @@ The following table lists custom fields that are included in these events:
 {: #at_events_ui}
 
 
-### Viewing events for {{site.data.keyword.atracker_short}} Event Routing
+### Viewing events for {{site.data.keyword.atracker_short}}
 {: #at_events_ui_atracker}
 
 Location based events are automatically forwarded to the {{site.data.keyword.atracker_short}} target that is available in the same location (region).
