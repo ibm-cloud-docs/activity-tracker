@@ -52,7 +52,7 @@ You can collect [global events](/docs/activity-tracker?topic=activity-tracker-ev
 
 Per account, you can choose the region where global events are collected.  
 
-To configure {{site.data.keyword.atracker_short}}, you must use the [{{site.data.keyword.atracker_short}} REST API](https://test.cloud.ibm.com/apidocs/atracker){: external}. You can also use it with the golang language to define, retrieve, and modify routing targets and routes. 
+To configure {{site.data.keyword.atracker_short}}, you must use the [{{site.data.keyword.atracker_short}} REST API](https://{DomainName}/apidocs/atracker){: external}. You can also use it with the golang language to define, retrieve, and modify routing targets and routes. 
 
 ## Prerequisites
 {: #getting-started-routing-prereqs}
@@ -102,9 +102,9 @@ Complete the following steps to provision a VPC VSI so that you can run cURL com
 
 1. [Generate an ssh key](/docs/vpc?topic=vpc-ssh-keys).
 
-2. [Create a VSI](https://test.cloud.ibm.com/docs/vpc?topic=vpc-creating-virtual-servers) in your account.
+2. [Create a VSI](/docs/vpc?topic=vpc-creating-virtual-servers) in your account.
 
-3. [Connect to the VSI](https://test.cloud.ibm.com/docs/vpc?topic=vpc-vsi_is_connecting_linux) from a terminal in your local environment.
+3. [Connect to the VSI](/docs/vpc?topic=vpc-vsi_is_connecting_linux) from a terminal in your local environment.
 
 4. After you ssh into the VSI, [install the IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cli-install-ibmcloud-cli). Run the following command:
 
