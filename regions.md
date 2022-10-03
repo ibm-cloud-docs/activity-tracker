@@ -26,6 +26,9 @@ This information applies only to {{site.data.keyword.at_full_notm}} hosted event
 
 ![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/world-map_min.png){: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}
 
+This image is an artistic representation and does not reflect actual political or geographic boundaries.
+{: note}
+
 
 | Geography             | Region                   | EU-Supported | HA Status |
 |-----------------------|--------------------------|--------------|-----------|
@@ -63,6 +66,9 @@ This information applies only to {{site.data.keyword.atracker_full_notm}} .
 
 
 ![The image shows the locations where the {{site.data.keyword.atracker_short}} service is available.](images/world-map_usonly.svg){: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.atracker_short}} resources." caption-side="bottom"}
+
+This image is an artistic representation and does not reflect actual political or geographic boundaries.
+{: note}
 
 
 | Geography             | Region                   | EU-Supported | HA Status |
