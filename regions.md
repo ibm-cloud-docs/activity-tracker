@@ -26,6 +26,9 @@ This information applies only to {{site.data.keyword.at_full_notm}} hosted event
 
 ![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/world-map_min.png){: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}
 
+This image is an artistic representation and does not reflect actual political or geographic boundaries.
+{: note}
+
 
 | Geography             | Region                   | EU-Supported | HA Status |
 |-----------------------|--------------------------|--------------|-----------|
@@ -55,14 +58,17 @@ Where
 
 
 
-## Locations for {{site.data.keyword.atracker_short}} Event Routing
+## Locations for {{site.data.keyword.atracker_short}}
 {: #regions-atracker}
 
-This information applies only to {{site.data.keyword.atracker_full_notm}} Event Routing.
+This information applies only to {{site.data.keyword.atracker_full_notm}} .
 {: important}
 
 
 ![The image shows the locations where the {{site.data.keyword.atracker_short}} service is available.](images/world-map_usonly.svg){: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.atracker_short}} resources." caption-side="bottom"}
+
+This image is an artistic representation and does not reflect actual political or geographic boundaries.
+{: note}
 
 
 | Geography             | Region                   | EU-Supported | HA Status |
@@ -72,7 +78,7 @@ This information applies only to {{site.data.keyword.atracker_full_notm}} Event 
 | `Europe`              | `Frankfurt (eu-de) (*)`  | `YES`        | `MZR`     |
 | `Europe`              | `London (eu-gb)`  | `NO`        | `MZR`     |
 | `Asia Pacific`        | `Sydney (au-syd)`        | `N/A`        | `MZR`     |
-{: caption="Table 1. List of locations for {{site.data.keyword.atracker_short}} Event Routing" caption-side="top"}
+{: caption="Table 1. List of locations for {{site.data.keyword.atracker_short}}" caption-side="top"}
 
 Where
 * A *geography* is a geographic area or larger political body that contains one or more regions.

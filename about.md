@@ -44,8 +44,8 @@ The CADF standard defines a full event model that includes the information that 
 ## Selecting your {{site.data.keyword.at_full_notm}} offering
 {: #select_offering}
 
-Depending on your compliance and organizational requirements, you can choose {{site.data.keyword.atracker_full_notm}} Event Routing or an {{site.data.keyword.at_full_notm}} hosted event search offering.
-- Application environments seeking to maintain Financial Services (FS) validation status on {{site.data.keyword.cloud_notm}} should use {{site.data.keyword.atracker_full_notm}} Event Routing. 
+Depending on your compliance and organizational requirements, you can choose {{site.data.keyword.atracker_full_notm}}  or an {{site.data.keyword.at_full_notm}} hosted event search offering.
+- Application environments seeking to maintain Financial Services (FS) validation status on {{site.data.keyword.cloud_notm}} should use {{site.data.keyword.atracker_full_notm}} . 
 - Application environments seeking compliance with PCI, SOC2, Privacy Shield and HIPAA should use an {{site.data.keyword.at_full_notm}} hosted event search offering.
 
 [![Getting started with Event Routing](/images/getting_started_routing.svg)](/docs/activity-tracker?topic=activity-tracker-getting-started-routing) [![Getting started with hosted event and search offerings](/images/getting_started_event.svg)](/docs/activity-tracker?topic=activity-tracker-getting-started-search)
@@ -57,7 +57,7 @@ If you're the account owner, you can enable your {{site.data.keyword.cloud}} acc
 
 The {{site.data.keyword.cloud_notm}} for Financial Services Validated designation is available for services that are operating in the Dallas (us-south), Washington DC (us-east), Frankfurt (eu-de), and London (eu-gb) [multizone regions](#x9774820){: term}. 
 
-Use {{site.data.keyword.atracker_short}} Event Routing to manage auditing events in your account while maintaining Financial Services Validated status.
+Use {{site.data.keyword.atracker_short}} to manage auditing events in your account while maintaining Financial Services Validated status.
 {: tip}
 
 
@@ -78,7 +78,7 @@ Use {{site.data.keyword.atracker_short}} hosted event search offerings to manage
 
     Boost audit tasks on your {{site.data.keyword.cloud_notm}} account by automatically collecting events that report on actions to resources in your account. Analyze and get notified on the events that report out of compliance actions. 
 
-    {{site.data.keyword.atracker_short}} Event Routing is Financial Services Validated.
+    {{site.data.keyword.atracker_short}} is Financial Services Validated.
 
     {{site.data.keyword.atracker_short}} hosted event search offerings is certified for PCI, SOC2, Privacy Shield and HIPAA compliance.
 
@@ -102,7 +102,7 @@ Use {{site.data.keyword.atracker_short}} hosted event search offerings to manage
 
     For {{site.data.keyword.atracker_short}} hosted event search offerings, use the export API to share filtered datasets with other analytic tools. Stream live tail events to a centralize location for additional analysis across other areas of your business by using other analytic tools. Filter out events so you only stream the ones that are of most interest to you. 
 
-    For {{site.data.keyword.atracker_short}} Event Routing, you can download event data that you can then analyze by using other analytic tools.
+    For {{site.data.keyword.atracker_short}}, you can download event data that you can then analyze by using other analytic tools.
 
 
 

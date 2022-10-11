@@ -23,7 +23,7 @@ When creating a target, a message similar to `Your request has failed due to the
 {: shortdesc}
 
 
-This information applies only if you use {{site.data.keyword.atracker_full_notm}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full_notm}} .
 {: important}
 
 

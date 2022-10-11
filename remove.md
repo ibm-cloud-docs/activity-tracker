@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-08-19"
 
 keywords: IBM Cloud, Activity Tracker, delete instance
 
@@ -44,31 +44,51 @@ Next, remove permissions that are granted to users to work with the instance tha
 
 To remove an instance of {{site.data.keyword.at_full_notm}} through the command line, complete the following steps:
 
-1. [Pre-requisite] Installation of the {{site.data.keyword.cloud_notm}} CLI.
+1. [Pre-requisite] Install the {{site.data.keyword.cloud_notm}} CLI.
 
    For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-2. Log in to the region in the {{site.data.keyword.cloud_notm}} where you want to provision the instance. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
+2. Log in to {{site.data.keyword.cloud_notm}}. Run the following command: [ibmcloud login](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login)
 
-3. Set the resource group where the instance is provisioned. Run the following command: [ibmcloud target](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target)
+3. Get information about the instance that you plan to delete.
 
-    By default, the *default* resource group is set.
+    ```text
+    ibmcloud resource service-instance INSTANCE-NAME --output JSON
+    ```
+    {: codeblock}
 
-4. Remove the instance. Run the [ibmcloud resource service-instance-delete](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command:
+4. Remove any service key associated with the instance.
+
+    Find the service keys that are associated with an instance:
+
+    ```text
+    ibmcloud resource service-keys --instance-id INSTANCE-GUID
+    ```
+    {: codeblock}
+
+    Run the following command to delete 1 service key. You must delete all.
+
+    ```text
+    ibmcloud resource service-key-delete SERVICE-KEY-NAME
+    ```
+    {: codeblock}
+
+5. Remove the instance. Run the [ibmcloud resource service-instance-delete](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command:
 
     ```text
     ibmcloud resource service-instance-delete NAME 
     ```
     {: codeblock}
 
-    Where NAME is the name of the instance
+    Where NAME is the name of the instance.
 
-    To list all the instances that are available in the resource group where you logged in, run the following command:
+    For example, to remove an instance, run the following command:
 
     ```text
-    ibmcloud resource service-instances
+    ibmcloud resource service-instance-delete logging-instance-01
     ```
     {: codeblock}
+
     
     
 For example, to remove an instance, run the following command:

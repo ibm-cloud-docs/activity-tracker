@@ -17,17 +17,17 @@ subcollection: activity-tracker
 # Configuring {{site.data.keyword.at_short}} Event Routing in the account by using Terraform
 {: #atracker-tf-config}
 
-Terraform on {{site.data.keyword.cloud}} enables predictable and consistent provisioning of {{site.data.keyword.cloud_notm}} services so that you can rapidly build complex, multitier cloud environments that follow Infrastructure as Code (IaC) principles. Similar to using the {{site.data.keyword.cloud_notm}} CLI or API and SDKs, you can automate the creation, update, and deletion of your {{site.data.keyword.atracker_short}} Event Routing resources by using HashiCorp Configuration Language (HCL).
+Terraform on {{site.data.keyword.cloud}} enables predictable and consistent provisioning of {{site.data.keyword.cloud_notm}} services so that you can rapidly build complex, multitier cloud environments that follow Infrastructure as Code (IaC) principles. Similar to using the {{site.data.keyword.cloud_notm}} CLI or API and SDKs, you can automate the creation, update, and deletion of your {{site.data.keyword.atracker_short}} resources by using HashiCorp Configuration Language (HCL).
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_short}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_short}}.
 {: important}
 
 
 Looking for a managed Terraform on {{site.data.keyword.cloud_notm}} solution? Try out [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started). With {{site.data.keyword.bpshort}}, you can use the Terraform scripting language that you are familiar with, but you don't need to worry about setting up and maintaining the Terraform command line and the {{site.data.keyword.cloud_notm}} Provider plug-in. {{site.data.keyword.bpshort}} also provides pre-defined Terraform templates that you can install from the {{site.data.keyword.cloud_notm}} catalog.
 {: tip}
 
-Before you begin, ensure that you have the [required access](/docs/activity-tracker?topic=activity-tracker-iam) to create and work with {{site.data.keyword.atracker_short}} Event Routing resources.
+Before you begin, ensure that you have the [required access](/docs/activity-tracker?topic=activity-tracker-iam) to create and work with {{site.data.keyword.atracker_short}} resources.
 
 ## Step 1. Install the Terraform CLI
 {: #terraform-install-cli}
@@ -235,7 +235,7 @@ To see the list of valid regions, see [Locations](/docs/activity-tracker?topic=a
 ## Step 6. Create a Terraform configuration file
 {: #terraform-main-tf}
 
-Next, create a Terraform configuration file that is named `main.tf`. In this file, you configure {{site.data.keyword.atracker_short}} Event Routing by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform documentation](https://www.terraform.io/docs/language/index.html){: external}.
+Next, create a Terraform configuration file that is named `main.tf`. In this file, you configure {{site.data.keyword.atracker_short}} by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform documentation](https://www.terraform.io/docs/language/index.html){: external}.
 
 The following code shows a sample configuration file to define the account setting configuration:
 

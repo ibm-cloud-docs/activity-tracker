@@ -37,7 +37,7 @@ This template uses auditing events from the following services:
 
     This template uses Cloud Object Storage data auditing events to monitor when objects are uploaded to a bucket and management events to monitor the deletion of buckets. 
 
-    Cloud Object Storage management events are global, which means that the events are available through the Franfurt {{site.data.keyword.at_short}} instance if you have configured your account to manage auditing events by using the {{site.data.keyword.at_short}} hosted event search offering. However, if you configure your account to manage auditing events by using {{site.data.keyword.atracker_short}} Event Routing, you can choose the {{site.data.keyword.at_short}} instance where you want to route them.
+    Cloud Object Storage management events are global, which means that the events are available through the Franfurt {{site.data.keyword.at_short}} instance if you have configured your account to manage auditing events by using the {{site.data.keyword.at_short}} hosted event search offering. However, if you configure your account to manage auditing events by using {{site.data.keyword.atracker_short}}, you can choose the {{site.data.keyword.at_short}} instance where you want to route them.
     
     You must enable data events per bucket to be able to use this template.
     {: important}

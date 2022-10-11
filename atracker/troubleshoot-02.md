@@ -23,7 +23,7 @@ The API request fails if the token that you use does not have permissions to wor
 {: shortdesc}
 
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 

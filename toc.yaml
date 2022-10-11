@@ -257,6 +257,7 @@ toc:
       - service_plan.md
       - shared-responsibilities.md
       - ha-dr.md
+      - ha_dr_steps.md
       - service-ip-changes.md
 
       - topicgroup: 

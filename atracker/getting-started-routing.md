@@ -18,7 +18,7 @@ completion-time: 1h
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Getting started with {{site.data.keyword.atracker_short}} Event Routing
+# Getting started with {{site.data.keyword.atracker_short}}
 {: #getting-started-routing}
 {: toc-content-type="tutorial"}
 {: toc-services="activity-tracker"} 
@@ -29,13 +29,13 @@ Use {{site.data.keyword.atracker_short}} to collect auditing events that are gen
 {: shortdesc}
 
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing V1 API.
+This information applies only if you use {{site.data.keyword.atracker_full}} V1 API.
 {: important}
 
 
 ![The {{site.data.keyword.atracker_full_notm}} service](images/atracker_ov.svg "The {{site.data.keyword.atracker_full_notm}} service")
 
-To configure {{site.data.keyword.atracker_short}} Event Routing in your account to collect auditing events, you must configure {{site.data.keyword.atracker_short}} for each [supported region](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli#regions-atracker) where you operate in {{site.data.keyword.cloud_notm}}. You must define a target and a route. 
+To configure {{site.data.keyword.atracker_short}} in your account to collect auditing events, you must configure {{site.data.keyword.atracker_short}} for each [supported region](/docs/activity-tracker?topic=activity-tracker-regions&interface=cli#regions-atracker) where you operate in {{site.data.keyword.cloud_notm}}. You must define a target and a route. 
 - A target is a resource where you can collect auditing events. 
 
     Valid targets are a bucket in Cloud Object Storage, or an {{site.data.keyword.atracker_short}} instance.
@@ -52,7 +52,7 @@ You can collect [global events](/docs/activity-tracker?topic=activity-tracker-ev
 
 Per account, you can choose the region where global events are collected.  
 
-To configure {{site.data.keyword.atracker_short}}, you must use the [{{site.data.keyword.atracker_short}} REST API](https://test.cloud.ibm.com/apidocs/atracker){: external}. You can also use it with the golang language to define, retrieve, and modify routing targets and routes. 
+To configure {{site.data.keyword.atracker_short}}, you must use the [{{site.data.keyword.atracker_short}} REST API](https://{DomainName}/apidocs/atracker){: external}. You can also use it with the golang language to define, retrieve, and modify routing targets and routes. 
 
 ## Prerequisites
 {: #getting-started-routing-prereqs}
@@ -102,9 +102,9 @@ Complete the following steps to provision a VPC VSI so that you can run cURL com
 
 1. [Generate an ssh key](/docs/vpc?topic=vpc-ssh-keys).
 
-2. [Create a VSI](https://test.cloud.ibm.com/docs/vpc?topic=vpc-creating-virtual-servers) in your account.
+2. [Create a VSI](/docs/vpc?topic=vpc-creating-virtual-servers) in your account.
 
-3. [Connect to the VSI](https://test.cloud.ibm.com/docs/vpc?topic=vpc-vsi_is_connecting_linux) from a terminal in your local environment.
+3. [Connect to the VSI](/docs/vpc?topic=vpc-vsi_is_connecting_linux) from a terminal in your local environment.
 
 4. After you ssh into the VSI, [install the IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cli-install-ibmcloud-cli). Run the following command:
 

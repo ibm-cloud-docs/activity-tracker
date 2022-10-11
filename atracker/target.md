@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can manage targets in your account by using the {{site.data.keyword.atracker_full}} CLI or the {{site.data.keyword.atracker_full_notm}} REST API. A target is a resource where you can collect auditing events. 
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} event routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 

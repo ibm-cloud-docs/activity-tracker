@@ -16,15 +16,15 @@ subcollection: activity-tracker
 # Configuring the CLI to manage the {{site.data.keyword.atracker_short}} account configuration
 {: #atracker-cli-config}
 
-You must configure your local {{site.data.keyword.atracker_short}} Event Routing CLI so that you can manage the {{site.data.keyword.atracker_short}} Event Routing account configuration by using CLI commands.
+You must configure your local {{site.data.keyword.atracker_short}} CLI so that you can manage the {{site.data.keyword.atracker_short}} account configuration by using CLI commands.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full_notm}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full_notm}} .
 {: important}
 
-To manage the {{site.data.keyword.atracker_short}} Event Routing account configuration by using CLI commands, the version of the {{site.data.keyword.atracker_short}} Event Routing CLI (`atracker`) must match the API version that was used to create the configuration resources. You can run the `ibmcloud atracker init version` command to initialize the CLI plugin to use the API version that was used to create the configuration resources in your account.
+To manage the {{site.data.keyword.atracker_short}} account configuration by using CLI commands, the version of the {{site.data.keyword.atracker_short}} CLI (`atracker`) must match the API version that was used to create the configuration resources. You can run the `ibmcloud atracker init version` command to initialize the CLI plugin to use the API version that was used to create the configuration resources in your account.
 
-You must install the latest version of the {{site.data.keyword.atracker_full_notm}} Event Routing CLI in order to pick up the latest CLI features including the commands to setup the V2 configuration and the migration of your V1 configuration if applicable. Once the {{site.data.keyword.atracker_full_notm}} account configuration has been migrated to V2, anyone using the `ibmcloud atracker` CLI to interact with the {{site.data.keyword.atracker_short}} Event Routing CLI plugin will need to upgrade their CLI plugins in order to leverage the updated V2 APIs. Older client plugins will report errors.
+You must install the latest version of the {{site.data.keyword.atracker_full_notm}}  CLI in order to pick up the latest CLI features including the commands to setup the V2 configuration and the migration of your V1 configuration if applicable. Once the {{site.data.keyword.atracker_full_notm}} account configuration has been migrated to V2, anyone using the `ibmcloud atracker` CLI to interact with the {{site.data.keyword.atracker_short}} CLI plugin will need to upgrade their CLI plugins in order to leverage the updated V2 APIs. Older client plugins will report errors.
 
 ## Step 1. Installing the {{site.data.keyword.atracker_short}} CLI
 {: #atracker-cli-config-install}

@@ -15,10 +15,10 @@ subcollection: activity-tracker
 # Scenarios
 {: #atracker-scenarios}
 
-Check out these sample scenarios to learn how to set up your account so that you can manage auditing events by using {{site.data.keyword.atracker_full}} Event Routing.
+Check out these sample scenarios to learn how to set up your account so that you can manage auditing events by using {{site.data.keyword.atracker_full}}.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_short}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_short}}.
 {: important}
 
 
@@ -45,13 +45,13 @@ Forward your activity event data to {{site.data.keyword.cos_full_notm}} for {{si
 
 If you require a solution that is Finantial Services (FS) Validated, you can run your business in {{site.data.keyword.cloud_notm}} in any of the supported regions such as us-south, us-east, eu-de, and eu-gb.
 
-Therefore, to configure {{site.data.keyword.atracker_short}} Event Routing for your account, you must define your account settings, targets and routes as follows:
+Therefore, to configure {{site.data.keyword.atracker_short}} for your account, you must define your account settings, targets and routes as follows:
 
 - You must set your account *Metadata region primary* setting to any of the supported FS validated regions in  {{site.data.keyword.cloud_notm}}. For example, you can set it to `us-east`.
 
 - You must set your account *Permitted target region* to the set of FS Validated regions where you operate. For example, you can set it to: `us-south,us-east,eu-gb,eu-de`. This setting will prevent administrators from creating targets in non-allowed locations.
 
-- You must set your account *Private api endpoint only* setting to only allow administrators to use private endpoints to manage the {{site.data.keyword.atracker_short}} Event Routing configuration.
+- You must set your account *Private api endpoint only* setting to only allow administrators to use private endpoints to manage the {{site.data.keyword.atracker_short}} configuration.
 
 - You can define 1 or more targets of type `cloud-object-storage` to store your auditing events. 
 
@@ -140,13 +140,13 @@ Improve data residency compliance by keeping data at-rest within EU-managed loca
 
 If you require a solution that is EU-managed compliant, you must run your business in {{site.data.keyword.cloud_notm}} in the Frankfurt (eu-de) region, which is the only supported location that is EU-managed compliant.
 
-Therefore, to configure {{site.data.keyword.atracker_short}} Event Routing for your account, you must define your account settings, targets and routes as follows:
+Therefore, to configure {{site.data.keyword.atracker_short}} for your account, you must define your account settings, targets and routes as follows:
 
 - You must set your account *Metadata region primary* setting to `Frankfurt (eu-de)`.
 
 - You must set your account *Permitted target region* to `eu-de`. This setting will prevent administrators from creating targets in non-allowed locations.
 
-- You can set your account *Private api endpoint only* setting to specifiy whether you allow administrators to use public endpoints, private endpoints, or both. This setting indicate the type of endpoints that are allowed to manage the {{site.data.keyword.atracker_short}} Event Routing configuration.
+- You can set your account *Private api endpoint only* setting to specifiy whether you allow administrators to use public endpoints, private endpoints, or both. This setting indicate the type of endpoints that are allowed to manage the {{site.data.keyword.atracker_short}} configuration.
 
 - You can define 1 or more targets of type `cloud-object-storage` or `logdna` to store your auditing events. These targets must be located in Frankfurt. 
 
@@ -218,13 +218,13 @@ For example, if you have an Enterprise with multiple child accounts, you can run
 - You only allow private endpoints to operate in {{site.data.keyword.cloud_notm}}.
 - You only want to collect auditing events from your production regions.
 
-In this scenario, to configure {{site.data.keyword.atracker_short}} Event Routing for your account, you must define your account settings, targets and routes as follows:
+In this scenario, to configure {{site.data.keyword.atracker_short}} for your account, you must define your account settings, targets and routes as follows:
 
-- You must set your account *Metadata region primary* setting to any of the supported {{site.data.keyword.atracker_short}} Event Routing regions in  {{site.data.keyword.cloud_notm}}. For example, you can set it to `us-east`.
+- You must set your account *Metadata region primary* setting to any of the supported {{site.data.keyword.atracker_short}} regions in  {{site.data.keyword.cloud_notm}}. For example, you can set it to `us-east`.
 
 - You must set your account *Permitted target region* to the regions where you operate. For example, you can set it to: `us-south,us-east,eu-gb,eu-de`. This setting will prevent administrators from creating targets in non-allowed locations.
 
-- You must set your account *Private api endpoint only* setting to only allow administrators to use private endpoints to manage the {{site.data.keyword.atracker_short}} Event Routing configuration.
+- You must set your account *Private api endpoint only* setting to only allow administrators to use private endpoints to manage the {{site.data.keyword.atracker_short}} configuration.
 
 - You can define 1 or more targets of type `cloud-object-storage` or `logdna` to store your auditing events. 
 
@@ -331,15 +331,15 @@ target-cross-acc-cos       <COS TARGET ID 2>                      eu-de    cloud
 Manage global events in an account and route them to the location of your choice. 
 {: note}
 
-If you manage auditing events through {{site.data.keyword.atracker_short}} event search instances in the account, global events are automatically routed to the instance in Frankfurt. However, you can configure {{site.data.keyword.atracker_short}} Event Routing to configure the {{site.data.keyword.atracker_short}} instance of your choice where you can manage global events.
+If you manage auditing events through {{site.data.keyword.atracker_short}} event search instances in the account, global events are automatically routed to the instance in Frankfurt. However, you can configure {{site.data.keyword.atracker_short}} to configure the {{site.data.keyword.atracker_short}} instance of your choice where you can manage global events.
 
 For example, 
 - You run your business in {{site.data.keyword.cloud_notm}} across multiple regions such as us-south, us-east, ca-tor, au-syd, and br-sao.
 - You want to collect global events in a different location from Frankfurt. Notice that Frankfurt is the location where global events are available if you configure {{site.data.keyword.atracker_short}} event search in the account to manage auditing events in the account.
 
-In this example, to configure {{site.data.keyword.atracker_short}} Event Routing for your account, you must define your account settings, targets and routes as follows:
+In this example, to configure {{site.data.keyword.atracker_short}} for your account, you must define your account settings, targets and routes as follows:
 
-- You must set your account *Metadata region primary* setting to any of the supported {{site.data.keyword.atracker_short}} Event Routing regions in {{site.data.keyword.cloud_notm}}. For example, you can set it to `us-east`.
+- You must set your account *Metadata region primary* setting to any of the supported {{site.data.keyword.atracker_short}} regions in {{site.data.keyword.cloud_notm}}. For example, you can set it to `us-east`.
 
 - You must set your account *Permitted target region* to the region where you want to define the target resource that indicates the {{site.data.keyword.atracker_short}} instance where global events are routed. Consider setting it to the same location as the metadata region.
 
@@ -403,7 +403,7 @@ You can choose any of the following options to send auditing events to a data la
     Simplify the {{site.data.keyword.atracker_short}} hosted event search configuration so only 1 instance needs to be configured to feed auditing events to {{site.data.keyword.messagehub}}.
     {: note}
 
-- Configure {{site.data.keyword.atracker_short}} Event Routing in your account to route auditing events directly to an {{site.data.keyword.cos_full_notm}} data lake. 
+- Configure {{site.data.keyword.atracker_short}} in your account to route auditing events directly to an {{site.data.keyword.cos_full_notm}} data lake. 
 
     Use this option for Financial Services Cloud workloads where end-to-end compliance is required.
     {: note}

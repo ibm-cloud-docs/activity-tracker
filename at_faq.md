@@ -22,11 +22,11 @@ Frequently asked questions about {{site.data.keyword.atracker_short}}.
 {: #faq_0}
 {: faq}
 
-{{site.data.keyword.atracker_short}} offers 2 different ways to manage auditing events in an {{site.data.keyword.cloud_notm}} account. You can use {{site.data.keyword.atracker_short}} hosted event search, an IAM enabled service, to manage auditing events through instances that you provision in each {{site.data.keyword.cloud_notm}} region where you operate. Alternatively, you can use {{site.data.keyword.atracker_short}} Event Routing, a platform service, to manage auditing events at the account-level by configuring targets and routes that define where auditing data is routed. {{site.data.keyword.atracker_short}} Event Routing can only route events that are generated in [supported regions](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker). Other regions, where {{site.data.keyword.atracker_short}} Event Routing is not available, continue to manage events by using {{site.data.keyword.atracker_short}} hosted event search.
+{{site.data.keyword.atracker_short}} offers 2 different ways to manage auditing events in an {{site.data.keyword.cloud_notm}} account. You can use {{site.data.keyword.atracker_short}} hosted event search, an IAM enabled service, to manage auditing events through instances that you provision in each {{site.data.keyword.cloud_notm}} region where you operate. Alternatively, you can use {{site.data.keyword.atracker_short}}, a platform service, to manage auditing events at the account-level by configuring targets and routes that define where auditing data is routed. {{site.data.keyword.atracker_short}} can only route events that are generated in [supported regions](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker). Other regions, where {{site.data.keyword.atracker_short}} is not available, continue to manage events by using {{site.data.keyword.atracker_short}} hosted event search.
 
 {{site.data.keyword.atracker_short}} hosted event search routes location-based auditing events to an {{site.data.keyword.atracker_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.atracker_short}} instance that is provisioned in Frankfurt.
 
-{{site.data.keyword.atracker_short}} Event Routing routes events based on the location that is specified in the `logSourceCRN` field included in the event. You can define a target, the resource where events are routed to, in any {{site.data.keyword.atracker_short}} Event Routing supported region. However, the target resource can be located in any region where that type of target is supported, in the same account or in a different account. You can define rules to determine where auditing events are to be routed by configuring 1 or more routes in the account. You can define rules for managing global events and location-based events that are generated in regions where {{site.data.keyword.atracker_short}} Event Routing is supported. 
+{{site.data.keyword.atracker_short}} routes events based on the location that is specified in the `logSourceCRN` field included in the event. You can define a target, the resource where events are routed to, in any {{site.data.keyword.atracker_short}} supported region. However, the target resource can be located in any region where that type of target is supported, in the same account or in a different account. You can define rules to determine where auditing events are to be routed by configuring 1 or more routes in the account. You can define rules for managing global events and location-based events that are generated in regions where {{site.data.keyword.atracker_short}} is supported. 
 
 ## Where can I find the list of Cloud services that generate {{site.data.keyword.atracker_short}} events?
 {: #faq_1}
@@ -64,7 +64,7 @@ Then, you need to determine the location of the events based on scope.
 
 For {{site.data.keyword.at_short}} event viewing, global events are available through the {{site.data.keyword.at_short}} instance in Frankfurt. Therefore, to view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
 
-For {{site.data.keyword.atracker_short}} Event Routing, global events are collected in the region that you configure. Therefore, to find those events, you must find the route that is configured in 1 region of your account to collect global events. 
+For {{site.data.keyword.atracker_short}}, global events are collected in the region that you configure. Therefore, to find those events, you must find the route that is configured in 1 region of your account to collect global events. 
 
 For location-based events, you need to check the following scenarios to determine the {{site.data.keyword.atracker_short}} instance where the events are available for analysis:
 
@@ -74,7 +74,7 @@ For location-based events, you need to check the following scenarios to determin
     
     2. Check whether the {{site.data.keyword.atracker_short}} service is available in that region. See [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
 
-    3. For {{site.data.keyword.at_short}} event viewing, check that you have an {{site.data.keyword.atracker_short}} instance provisioned in the same location where your service is provisioned. For {{site.data.keyword.atracker_short}} Event Routing, check that you have a target and  aroute defines in that region.,
+    3. For {{site.data.keyword.at_short}} event viewing, check that you have an {{site.data.keyword.atracker_short}} instance provisioned in the same location where your service is provisioned. For {{site.data.keyword.atracker_short}}, check that you have a target and  aroute defines in that region.,
 
 * Scenario 2: The service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is not available.
 
@@ -178,10 +178,10 @@ Complete the following steps:
 {: #faq_9}
 {: faq}
 
-This information applies only to {{site.data.keyword.atracker_short}} Event Routing.
+This information applies only to {{site.data.keyword.atracker_short}}.
 {: important}
 
-With {{site.data.keyword.atracker_short}} Event Routing you can configure a route to send your global events to a target that sends the events to one of two locations:
+With {{site.data.keyword.atracker_short}} you can configure a route to send your global events to a target that sends the events to one of two locations:
 
 * [An {{site.data.keyword.cos_full_notm}} instance](/docs/activity-tracker?topic=activity-tracker-target_v2_cos)
 
@@ -197,7 +197,7 @@ In {{site.data.keyword.cloud_notm}}, auditing events are generated automatically
 
 There are 2 ways by which you can access the auditing events in your account:
 - Option 1: You can see auditing events through {{site.data.keyword.at_full_notm}} event viewing. This is the default option. For more information, see [Getting started tutorial](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-st).
-- Option 2: You can configure {{site.data.keyword.atracker_full_notm}} Event Routing per region in your account. For more information, see [Getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started).
+- Option 2: You can configure {{site.data.keyword.atracker_full_notm}}  per region in your account. For more information, see [Getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 In a region, you can manage auditing events in {{site.data.keyword.atracker_full_notm}} or in {{site.data.keyword.at_full_notm}}. Both options are not allowed in parallel per region. If a route is not defined in a region, by default, {{site.data.keyword.at_full_notm}} is the service that you can use to monitor auditing events.
 {: important}

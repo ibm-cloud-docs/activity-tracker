@@ -18,7 +18,7 @@ subcollection: activity-tracker
 To use the Activity Tracking API, you must use an {{site.data.keyword.iamlong}} (IAM) access token. Each token is valid only for one hour, and after a token expires, you must request a new one if you want to continue using the API.
 {: shortdesc}
 
-This information applies only if you use {{site.data.keyword.atracker_full}} Event Routing.
+This information applies only if you use {{site.data.keyword.atracker_full}}.
 {: important}
 
 ## Retrieving an access token for the current session by using the {{site.data.keyword.cloud_notm}} CLI
