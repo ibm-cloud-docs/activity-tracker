@@ -41,7 +41,7 @@ For a user to monitor data within the context of a group, you must grant the use
 You can grant any of the following IAM service roles:
 - Standard-member: A standard-member role allows a user to monitor data through views, dashboards, screens, and alerts, and to manage resources such as dashboards, and alerts that are in scope for the group.
 - Reader: A reader role allows a user to monitor data through views, dashboards, screens, and alerts that are in scope for the group.
-- Manager: The manager role is an instance level role that grants administrative permissions. If you grant this role in a policy for a group, you are granting admin permissions over the instance to the users that belong to that group.
+- Manager: The manager role is an instance level role that grants administrative permissions. If you grant this role in a policy for a group, you are granting admin permissions over the instance to the users that belong to that group. Managers can see all log data.
 
 
 The following table shows the user roles that you can grant a user to work with the {{site.data.keyword.at_short}} service:
