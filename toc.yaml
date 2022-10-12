@@ -53,6 +53,7 @@ toc:
 
       - topic: releasenotes.md
         navtitle: Release notes
+      - releasenotes_notifications.md
 
   - navgroup: 
       id: tutorial
