@@ -196,7 +196,7 @@ With {{site.data.keyword.atracker_short}} you can configure a route to send your
 In {{site.data.keyword.cloud_notm}}, auditing events are generated automatically with the exception of some services that require additional configuration or a specific service plan. For more information about these services, see [Enabling Activity Tracker events](/docs/activity-tracker?topic=activity-tracker-events-opt-in).
 
 There are 2 ways by which you can access the auditing events in your account:
-- Option 1: You can see auditing events through {{site.data.keyword.at_full_notm}} event viewing. This is the default option. For more information, see [Getting started tutorial](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-st).
+- Option 1: You can see auditing events through {{site.data.keyword.at_full_notm}} event viewing. This is the default option. For more information, see [Getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started).
 - Option 2: You can configure {{site.data.keyword.atracker_full_notm}}  per region in your account. For more information, see [Getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 In a region, you can manage auditing events in {{site.data.keyword.atracker_full_notm}} or in {{site.data.keyword.at_full_notm}}. Both options are not allowed in parallel per region. If a route is not defined in a region, by default, {{site.data.keyword.at_full_notm}} is the service that you can use to monitor auditing events.
