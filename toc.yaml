@@ -161,6 +161,7 @@ toc:
       - topicgroup:
           label: Monitoring Cloud resources
           topics:
+          - templates-track-access.md
           - alerts/alerts_configuration.md
           - analyze/iam_manage_login.md
 
