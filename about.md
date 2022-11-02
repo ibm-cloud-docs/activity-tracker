@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-11-03"
 
 keywords: IBM Cloud, Activity Tracker, about, auditing
 
@@ -11,13 +11,25 @@ subcollection: activity-tracker
 ---
 
 {{site.data.keyword.attribute-definition-list}}
- 
 
-# About {{site.data.keyword.atracker_short}}
+
+# About {{site.data.keyword.atracker_full_notm}}
 {: #about}
 
-Use the {{site.data.keyword.atracker_short}} service to capture a record of your {{site.data.keyword.cloud_notm}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
+Use {{site.data.keyword.atracker_full}} to capture a record of your {{site.data.keyword.cloud_notm}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 {: shortdesc}
+
+{{site.data.keyword.atracker_full_notm}}:
+
+* Lets you manage your event data locally.
+
+* Lets you keep data with FS-Cloud controls.
+
+* Provides options for where and how data can be stored for investigation and analysis.
+
+   For example, you can use [{{site.data.keyword.at_full_notm}} hosted event search](/docs/activity-tracker?topic=activity-tracker-getting-started) to investigate and analyze events.
+
+   You can store data in {{site.data.keyword.cos_full_notm}} for use with data lake and other tools.
 
 Compliance with internal policies and industry regulations is a key requirement in any organization's strategy, regardless of where applications run: on-premises, in a hybrid cloud, or in a public cloud. The {{site.data.keyword.at_full_notm}} service provides the framework and functionality to monitor API calls to services on the {{site.data.keyword.cloud_notm}} and produces the evidence to comply with corporate policies and market industry-specific regulations.
 
@@ -45,7 +57,7 @@ The CADF standard defines a full event model that includes the information that 
 {: #select_offering}
 
 Depending on your compliance and organizational requirements, you can choose {{site.data.keyword.atracker_full_notm}}  or an {{site.data.keyword.at_full_notm}} hosted event search offering.
-- Application environments seeking to maintain Financial Services (FS) validation status on {{site.data.keyword.cloud_notm}} should use {{site.data.keyword.atracker_full_notm}} . 
+- Application environments seeking to maintain Financial Services (FS) validation status on {{site.data.keyword.cloud_notm}} should use {{site.data.keyword.atracker_full_notm}} .
 - Application environments seeking compliance with PCI, SOC2, Privacy Shield and HIPAA should use an {{site.data.keyword.at_full_notm}} hosted event search offering.
 
 [![Getting started with Event Routing](/images/getting_started_routing.svg)](/docs/activity-tracker?topic=activity-tracker-getting-started-routing) [![Getting started with hosted event and search offerings](/images/getting_started_event.svg)](/docs/activity-tracker?topic=activity-tracker-getting-started-search)
@@ -55,7 +67,7 @@ Depending on your compliance and organizational requirements, you can choose {{s
 
 If you're the account owner, you can enable your {{site.data.keyword.cloud}} account to be Financial Services Validated, which means your account stores and manages regulated financial services information. Services that are designated as {{site.data.keyword.cloud_notm}} for Financial Services Validated leverage the industry’s highest levels of encryption certification, provides preventive and compensatory controls for financial services regulatory workloads, multi-architecture support and proactive, and automated security. For more information on how to enable your account, see [Enabling your account to use Finantial Services Validated products](/docs/account?topic=account-enabling-fs-validated).
 
-The {{site.data.keyword.cloud_notm}} for Financial Services Validated designation is available for services that are operating in the Dallas (us-south), Washington DC (us-east), Frankfurt (eu-de), and London (eu-gb) [multizone regions](#x9774820){: term}. 
+The {{site.data.keyword.cloud_notm}} for Financial Services Validated designation is available for services that are operating in the Dallas (us-south), Washington DC (us-east), Frankfurt (eu-de), and London (eu-gb) [multizone regions](#x9774820){: term}.
 
 Use {{site.data.keyword.atracker_short}} to manage auditing events in your account while maintaining Financial Services Validated status.
 {: tip}
@@ -76,7 +88,7 @@ Use {{site.data.keyword.atracker_short}} hosted event search offerings to manage
 
 * Simplify compliance sign-off tasks
 
-    Boost audit tasks on your {{site.data.keyword.cloud_notm}} account by automatically collecting events that report on actions to resources in your account. Analyze and get notified on the events that report out of compliance actions. 
+    Boost audit tasks on your {{site.data.keyword.cloud_notm}} account by automatically collecting events that report on actions to resources in your account. Analyze and get notified on the events that report out of compliance actions.
 
     {{site.data.keyword.atracker_short}} is Financial Services Validated.
 
@@ -84,8 +96,8 @@ Use {{site.data.keyword.atracker_short}} hosted event search offerings to manage
 
 * Adhere to standards
 
-   Events comply with the Cloud Auditing Data Federation (CADF) standard. 
-   
+   Events comply with the Cloud Auditing Data Federation (CADF) standard.
+
    For {{site.data.keyword.atracker_short}} hosted event search offerings, you can use simple to use keyword-based search to search across your events instead of using custom query languages. Apply the same keyword search to instantly build time series graphs.
 
 * Accelerate detection of security incidents
@@ -94,17 +106,12 @@ Use {{site.data.keyword.atracker_short}} hosted event search offerings to manage
 
 * Improve visibility on actions in your {{site.data.keyword.cloud_notm}} account
 
-    Improve the visibility into user and resource activity in your account by easily identifying the initiator who requested an action, the object on which the action was requested, and the time when the action took place. 
+    Improve the visibility into user and resource activity in your account by easily identifying the initiator who requested an action, the object on which the action was requested, and the time when the action took place.
 
     For {{site.data.keyword.atracker_short}} hosted event search offerings, search by using simple keywords to quickly and intuitively gain insight. Use time series graphs to analyze and compare data. Use of dashboards to visualize and monitor common patterns and event trends.
 
 * Share filtered datasets with other analytic tools
 
-    For {{site.data.keyword.atracker_short}} hosted event search offerings, use the export API to share filtered datasets with other analytic tools. Stream live tail events to a centralize location for additional analysis across other areas of your business by using other analytic tools. Filter out events so you only stream the ones that are of most interest to you. 
+    For {{site.data.keyword.atracker_short}} hosted event search offerings, use the export API to share filtered datasets with other analytic tools. Stream live tail events to a centralize location for additional analysis across other areas of your business by using other analytic tools. Filter out events so you only stream the ones that are of most interest to you.
 
     For {{site.data.keyword.atracker_short}}, you can download event data that you can then analyze by using other analytic tools.
-
-
-
-
-
