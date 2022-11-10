@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-11-10"
 
-keywords: IBM Cloud, Activity Tracker, iam, manage user access
+keywords:
 
 subcollection: activity-tracker
 
@@ -12,14 +12,14 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
- 
+
 # Managing access with IAM
 {: #iam}
 
-{{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Access to {{site.data.keyword.at_full_notm}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). 
+{{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Access to {{site.data.keyword.at_full_notm}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).
 {: shortdesc}
 
-The access policy that you assign users in your account determines what actions a user can perform within the context of the service or specific instance that you select. The allowable actions are customized and defined by {{site.data.keyword.atracker_short}} as operations that are allowed to be performed on the service. An action is mapped to an IAM platform or service role that you can assign to a user.
+The access policy that you assign users in your account determines what actions a user can perform within the context of the service or specific instance that you select. The allowable actions are customized and defined by {{site.data.keyword.at_short}} as operations that are allowed to be performed on the service. An action is mapped to an IAM platform or service role that you can assign to a user.
 
 For more information about the steps to assign IAM access, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 - When you assign policies to users, use `atracker` for the service name in the CLI command or API call for {{site.data.keyword.atracker_short}}. Use `logdnaat` for {{site.data.keyword.at_short}} hosted event search offerings.
@@ -32,7 +32,7 @@ For more information about the steps to assign IAM access, see [Managing access 
 ## Managing access by using access groups
 {: #groups}
 
-To manage access or assign new access for users by using access groups, you must be the account owner, administrator, or editor on all Identity and Access enabled services in the account, or the assigned administrator or editor for the IAM Access Groups Service. 
+To manage access or assign new access for users by using access groups, you must be the account owner, administrator, or editor on all Identity and Access enabled services in the account, or the assigned administrator or editor for the IAM Access Groups Service.
 
 Choose any of the following actions to manage access groups in the {{site.data.keyword.cloud_notm}}:
 
@@ -43,7 +43,7 @@ Choose any of the following actions to manage access groups in the {{site.data.k
 ## Managing access by assigning policies directly to users
 {: #users}
 
-To manage access or assign new access for users by using IAM policies, you must be the account owner, administrator on all services in the account, or an administrator for the particular service or service instance. 
+To manage access or assign new access for users by using IAM policies, you must be the account owner, administrator on all services in the account, or an administrator for the particular service or service instance.
 
 Choose any of the following actions to manage IAM policies in the {{site.data.keyword.cloud_notm}}:
 
@@ -51,11 +51,15 @@ Choose any of the following actions to manage IAM policies in the {{site.data.ke
 * To revoke permissions, see [Removing access](/docs/account?topic=account-assign-access-resources#removing_access).
 * To review a user's permissions, see [Reviewing your assigned access](/docs/account?topic=account-assign-access-resources#review_your_access).
 
+## Managing access through trusted profiles
+{: #iam-profiles}
+
+[Trusted profiles](/docs/account?topic=account-identity-overview#trustedprofiles-bestpract) are supported.
 
 ## {{site.data.keyword.cloud_notm}} platform roles
 {: #platform}
 
-The following tables detail actions that are mapped to platform roles. 
+The following tables detail actions that are mapped to platform roles.
 
 Platform roles enable users to perform tasks on service resources at the platform level, for example, assign user access for the service, create or delete instances, and bind instances to applications.
 
@@ -66,16 +70,16 @@ Review the following tables that outline what types of tasks each role allows fo
 
 Use the following table to identify the **Account management** **{{site.data.keyword.atracker_short}}** platform role that you can grant a user in the {{site.data.keyword.cloud_notm}} to run any of the following platform actions:
 
-| Platform role            | Description of actions | 
+| Platform role            | Description of actions |
 |--------------------------|------------------------|
 | Viewer                   | As a viewer, you can view {{site.data.keyword.atracker_short}} configuration resources such as routes and targets. |
 | Operator                 | As an operator, you can view {{site.data.keyword.atracker_short}} configuration resources such as routes and targets. |
-| Editor                   | As an editor, you can view, create, update, and delete {{site.data.keyword.atracker_short}} resources. | 
+| Editor                   | As an editor, you can view, create, update, and delete {{site.data.keyword.atracker_short}} resources. |
 | Administrator            | As an administrator, you can view, create, update, and delete {{site.data.keyword.atracker_short}} resources. You can also assign access policies to manage {{site.data.keyword.atracker_short}} resources to other users in the account. |
 {: caption="Table 1. IAM platform roles for {{site.data.keyword.atracker_short}}" caption-side="top"}
 {: summary="Descriptions of the actions in the service that are permitted for the listed platform management role."}
 
-Review the available platform roles that are available, and the actions that are mapped to each to help you assign access. 
+Review the available platform roles that are available, and the actions that are mapped to each to help you assign access.
 
 For {{site.data.keyword.atracker_short}} the IAM actions and Activity Tracker actions are the same.
 {: note}
@@ -259,6 +263,3 @@ You can see which access policies are set for you in the [{{site.data.keyword.cl
 2. Click your name in the user table.
 3. Click the **Access policies** tab to see your access policies.
 4. Click the **Access groups** tab to see the access groups where you are a member. Check the policies for each group.
-
-
-
