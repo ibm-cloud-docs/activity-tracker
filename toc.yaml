@@ -42,7 +42,7 @@ toc:
         navtitle: Release notes
       - releasenotes_notifications.md
 
-- navgroup:
+  - navgroup:
       id: howto
       topics:
       - observe.md
@@ -124,7 +124,7 @@ toc:
           label: Logging and monitoring
           topics:
           - at_events.md
-      
+
       - topicgroup:
           label: Streaming data
           topics:
@@ -245,7 +245,3 @@ toc:
             topics:
             - troubleshoot-04.md
             - troubleshoot-05.md
-
-
-
-                
