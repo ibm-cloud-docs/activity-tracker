@@ -42,12 +42,7 @@ toc:
         navtitle: Release notes
       - releasenotes_notifications.md
 
-  - navgroup:
-      id: tutorial
-      topics:
-      - control_usage_instance.md
-
-  - navgroup:
+- navgroup:
       id: howto
       topics:
       - observe.md
