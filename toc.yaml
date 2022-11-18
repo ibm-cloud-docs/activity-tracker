@@ -108,13 +108,6 @@ toc:
           label: Monitoring Cloud resources
           topics:
           - templates-track-access.md
-          - alerts/alerts_configuration.md
-          - analyze/iam_manage_login.md
-
-      - topicgroup:
-          label: Monitoring Cloud resources
-          topics:
-          - templates-track-access.md
           - topic: alerts/alerts_configuration.md
             navtitle: Generating alerts on configuration changes
           - analyze/iam_manage_login.md
