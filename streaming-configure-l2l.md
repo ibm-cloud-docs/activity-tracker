@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-08-18"
 
-keywords: IBM Cloud, Activity Tracker, streaming
+keywords: 
 
 subcollection: activity-tracker
 
@@ -13,7 +13,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Configuring streaming to a {{site.data.keyword.at_short}} instance through the UI
+# Configuring streaming to an {{site.data.keyword.at_short}} instance through the UI
 {: #streaming-configure-l2l}
 
 Complete the following steps to configure streaming from a {{site.data.keyword.at_short}} instance to another {{site.data.keyword.at_short}} instance:

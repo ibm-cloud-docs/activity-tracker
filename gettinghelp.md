@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, help, support
+keywords: 
 
 subcollection: activity-tracker
 
@@ -16,7 +16,7 @@ subcollection: activity-tracker
 # Getting help and support
 {: #gettinghelp}
 
-If you have problems or questions when using the {{site.data.keyword.atracker_full_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open a support ticket.
+If you have problems or questions when using the {{site.data.keyword.at_full_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open a support ticket.
 {: shortdesc}
 
 * You can check whether the {{site.data.keyword.cloud_notm}} is available by going to the [{{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.

@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-09-30"
 
-keywords: IBM Cloud, Activity Tracker, streaming, API
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 {{site.data.keyword.at_full}} provides an API that you can use to configure streaming for an {{site.data.keyword.at_full_notm}} instance.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streaming#streaming-1) for more information on roles required for streaming.
 {: note}

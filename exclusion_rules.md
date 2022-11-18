@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-02-04"
 
-keywords:  IBM, activity tracker, exclusion rules, ingestion
+keywords:  
 
 subcollection: activity-tracker
 
@@ -18,8 +18,7 @@ subcollection: activity-tracker
 In an {{site.data.keyword.at_full_notm}} instance, you can configure exclusion rules through the UI to stop events from counting against your data usage quota and from being stored for search.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 ## Prereqs
 {: #exclusion_rules_prereqs}

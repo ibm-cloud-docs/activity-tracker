@@ -4,7 +4,7 @@ copyright:
   years:  2022
 lastupdated: "2022-10-12"
 
-keywords: IBM, release notes
+keywords: 
 
 subcollection: activity-tracker
 

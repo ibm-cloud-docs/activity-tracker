@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, web UI, browser
+keywords: 
 
 subcollection: activity-tracker
 
@@ -20,8 +20,7 @@ After you provision an instance of the {{site.data.keyword.at_full_notm}} servic
 {: shortdesc}
 
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 ## Granting IAM policies to a user to launch the web UI
 {: #launch_iam}

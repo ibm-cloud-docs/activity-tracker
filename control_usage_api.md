@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-11-04"
 
-keywords: IBM Cloud, Activity Tracker, usage
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full}}, you can query your auditing instance and identify usage trends over a period of time by using the *Usage API*. You can get aggregated usage data information for 1 or more services during a specific period of time and within the last 6 months.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 
 ## API method

@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, {{site.data.keyword.at_short}}, EU-supported
+keywords: 
 
 subcollection: activity-tracker
 
@@ -15,16 +15,16 @@ subcollection: activity-tracker
 # Managing events for an EU-supported account
 {: #manage_eu_acc}
 
-Across every industry, organizations require tighter controls and visibility into where their data is stored and processed in the {{site.data.keyword.cloud_notm}}. To manage events that are generated in your **EU-supported account** by using the {{site.data.keyword.atracker_full_notm}} service, consider the following information:
+Across every industry, organizations require tighter controls and visibility into where their data is stored and processed in the {{site.data.keyword.cloud_notm}}. To manage events that are generated in your **EU-supported account** by using the {{site.data.keyword.at_full_notm}} service, consider the following information:
 {: shortdesc}
 
 * [You must enable your account to be EU-supported](/docs/services/activity-tracker?topic=activity-tracker-manage_eu_acc#manage_eu_acc_step1), so support is handled by team members in the European Union. 
-* You must **configure resources to collect global events in an EU-supported location.** For {{site.data.keyword.at_full_notm}} hosted event search offerings, you must provision 1 {{site.data.keyword.at_full_notm}} instance in the `EU-DE (Frankfurt)` location. (You can only have 1 instance per region.) For {{site.data.keyword.atracker_full_notm}} , you must configure the route that is defined in an EU-supported location to collect global events.
+* You must **configure resources to collect global events in an EU-supported location.** For {{site.data.keyword.at_full_notm}} hosted event search offerings, you must provision 1 {{site.data.keyword.at_full_notm}} instance in the `EU-DE (Frankfurt)` location. (You can only have 1 instance per region.) For {{site.data.keyword.atracker_full_notm}}, you must configure the route that is defined in an EU-supported location to collect global events.
 * You must **restrict access to users** to manage and view events.
 * You must ensure that you configure **an EU-Supported {{site.data.keyword.cos_full_notm}} (COS) bucket**. 
 * To monitor activity from {{site.data.keyword.cloud_notm}} services and Cloud Foundry (CF) resources, you must provision these resources in an EU location such as Frankfurt.
     
-    For services that generate global events such as the {{site.data.keyword.cos_full_notm}} (COS) service, when you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location-bound. As soon as you provision a COS instance, you get [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) automatically. You can also enable management and data events per bucket. For {{site.data.keyword.at_full_notm}} hosted event search offerings, when you enable all events to go to the Frankfurt instance, the global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt. For {{site.data.keyword.atracker_full_notm}} , you must configure a location in your account to collect global events. If you need to collect all types of events, you should configure the location where your bucket is provisioned. [Learn more about COS global events.](/docs/services/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-global).
+    For services that generate global events such as the {{site.data.keyword.cos_full_notm}} (COS) service, when you provision this service, the instance is not bound to a specific location, but COS resources such as buckets are location-bound. As soon as you provision a COS instance, you get [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) automatically. You can also enable management and data events per bucket. For {{site.data.keyword.at_full_notm}} hosted event search offerings, when you enable all events to go to the Frankfurt instance, the global, management, and data events are hosted from the same {{site.data.keyword.at_full_notm}} instance in Frankfurt. For {{site.data.keyword.atracker_full_notm}}, you must configure a location in your account to collect global events. If you need to collect all types of events, you should configure the location where your bucket is provisioned. [Learn more about COS global events.](/docs/services/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-global).
 
 
 
@@ -45,7 +45,7 @@ Consider the following information when you turn on the `EU-supported` flag in y
 For {{site.data.keyword.at_full_notm}} hosted event search offerings, you can provision 1 {{site.data.keyword.at_full_notm}} instance per [location](/docs/services/activity-tracker?topic=activity-tracker-regions). However, only the instance that is provisioned in the `EU-DE (Frankfurt)` location is EU-Supported when you set on the EU-supported flag in your account. For more information on how to provision an instance, see [Provisioning an instance](/docs/services/activity-tracker?topic=activity-tracker-provision).
 
 
-For {{site.data.keyword.atracker_full_notm}} , you must configure the route that is defined in an EU-supported location to collect global events. For more information on how to create a route, see [Define a route](/docs/activity-tracker?topic=activity-tracker-getting-started-routing&interface=cli#getting-started-routing-setp5).
+For {{site.data.keyword.atracker_full_notm}}, you must configure the route that is defined in an EU-supported location to collect global events. For more information on how to create a route, see [Define a route](/docs/activity-tracker?topic=activity-tracker-getting-started-routing&interface=cli#getting-started-routing-setp5).
 
 
 ## Step 3. Working with global services in the {{site.data.keyword.cloud_notm}}
@@ -53,7 +53,7 @@ For {{site.data.keyword.atracker_full_notm}} , you must configure the route that
 
 [Global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) report on activity in your account that relate to data and resources that are generally synchronized across all regions. The common theme for global events is a single, synchronized location where account administrators can monitor certain types of activity across the Cloud. The services that users interact with are integrated into the core of the global {{site.data.keyword.cloud_notm}} experience. 
 - For {{site.data.keyword.at_full_notm}} hosted event search offerings, the global domain is set for **Frankfurt**. Global events are captured and made available through the {{site.data.keyword.at_full_notm}} instance that is configured in Frankfurt.
-- For {{site.data.keyword.atracker_full_notm}} , you must configure the route in the **Frankfurt** location to collect global events in that region.
+- For {{site.data.keyword.atracker_full_notm}}, you must configure the route in the **Frankfurt** location to collect global events in that region.
 
 For example, to monitor management events from actions on {{site.data.keyword.cos_full_notm}} (COS) buckets, you must create buckets in [(COS) EU-supported locations](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-eu-managed).
 
@@ -81,8 +81,7 @@ For more information, see [Managing access with IAM](/docs/activity-tracker?topi
 ## Step 6. Exporting logs
 {: #manage_eu_acc_step6}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 In an {{site.data.keyword.at_full_notm}} instance, you can configure and control whether users can export data. [Learn more](/docs/activity-tracker?topic=activity-tracker-export_config).
 
@@ -105,8 +104,7 @@ Users can export data through the UI or by using the *Export* API:
 ## Step 7. Archiving logs
 {: #manage_eu_acc_step7}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 When you archive logs from the Frankfurt auditing instance to a {{site.data.keyword.cos_full_notm}} (COS) bucket, consider the following information:
 * When you provision an instance of the COS service, this instance is a global one in your account. It is not region-bound.
@@ -130,8 +128,7 @@ To learn how to configure archiving for your auditing instance, see [Archiving l
 ## Step 8. Querying archived events with SQL Query service
 {: #manage_eu_acc_step8}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 {{site.data.keyword.sqlquery_short}} provides a serverless, no-ETL solution to easily query data stored in COS. [Learn more](/docs/services/sql-query?topic=sql-query-overview).
 

@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, streaming
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 You can use {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full_notm}} to monitor streaming of data from your {{site.data.keyword.at_short}} instance.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streaming#streaming-1) for more information on roles required for streaming.
 {: note}

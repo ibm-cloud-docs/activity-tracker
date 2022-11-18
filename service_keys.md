@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-07-29"
 
-keywords: IBM Cloud, Activity Tracker, service keys
+keywords: 
 
 subcollection: activity-tracker
 
@@ -18,8 +18,7 @@ subcollection: activity-tracker
 In an {{site.data.keyword.at_full_notm}} instance you can create, delete, and view auditing service keys by using the UI.  You can also create and view auditing service keys by using the CLI and API.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 A service key is a unique code that is passed in an API request to identify the calling application or user. 
 
@@ -47,6 +46,7 @@ To restrict access to a service key, you need the following role on the `IAM Ide
 
 ## Managing service keys by using the UI
 {: #service_keys_ui}
+{: ui}
 
 You can create, delete, and view service keys by using the UI.
 
@@ -145,6 +145,7 @@ After you reset the service key, you must update any operation processes where t
 
 ## Managing a service key by using the CLI
 {: #service_keys_cli}
+{: cli}
 
 You can create and view service keys by using the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -265,6 +266,7 @@ To get the service key through the command line, complete the following steps:
 
 ## Managing a service key by using the API
 {: #service_keys_api}
+{: api}
 
 You can manage service keys by using the Configuration API.
 
@@ -404,9 +406,8 @@ Where:
 
 
 
-## Rotating the service key by using the API
+### Rotating the service key by using the API
 {: #service_keys_replace_api}
-{: api}
 
 If the service key is compromised or you have a policy that requies renewal of a key after a number of days, you can generate a new key and delete the old one.
 

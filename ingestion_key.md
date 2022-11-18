@@ -4,8 +4,7 @@ copyright:
   years:  2018, 2022
 lastupdated: "2022-07-28"
 
-keywords: IBM Cloud, Activity Tracker, security, auditing, ingestion key
-
+keywords: 
 subcollection: activity-tracker
 
 ---

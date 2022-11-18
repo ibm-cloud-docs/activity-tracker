@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: groups, access, log analysis
+keywords: 
 
 subcollection: activity-tracker
 
@@ -18,8 +18,7 @@ subcollection: activity-tracker
 {{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and consistently control access to all cloud resources in the {{site.data.keyword.cloud_notm}}. Groups provide an isolated workspace in an {{site.data.keyword.at_full_notm}} instance for a user or group of users to have access to auditing events in a defined scope. 
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 IAM can map a combination of groups and roles so that a user only has access to a specific set of auditing events and can take a defined set of actions within the product.
 {: note}
@@ -42,26 +41,6 @@ You can grant any of the following IAM service roles:
 - Standard-member: A standard-member role allows a user to monitor data through views, dashboards, screens, and alerts, and to manage resources such as dashboards, and alerts that are in scope for the group.
 - Reader: A reader role allows a user to monitor data through views, dashboards, screens, and alerts that are in scope for the group.
 - Manager: The manager role is an instance level role that grants administrative permissions. If you grant this role in a policy for a group, you are granting admin permissions over the instance to the users that belong to that group. Managers can see all log data.
-
-
-The following table shows the user roles that you can grant a user to work with the {{site.data.keyword.at_short}} service:
-
-| User role            | IAM service role |
-|----------------------|------------------|
-| `ROLE_USER`          | `reader`         |
-| `ROLE_ADVANCED_USER` | `standard-member` |
-| `ROLE_ADMIN`         | `manager`        | 
-{: caption="Table 1. List of user roles" caption-side="top"} 
-
-
-The following table shows the group roles that you can grant users to work within the context of a group in an {{site.data.keyword.at_short}} instance:
-
-| Team role            | IAM service role | logGroup   |
-|----------------------|------------------|--------|
-| `ROLE_GROUP_READ`     | `reader`         | Custom group |
-| `ROLE_GROUP_EDIT`     | `standard-member` | Custom group |
-| `ROLE_GROUP_ADMIN`    | `manager`        | Custom group |
-{: caption="Table 2. List of group roles" caption-side="top"} 
 
 You can define in the {{site.data.keyword.at_short}} UI more groups to define different levels of access to data per group and set of users.
 
@@ -183,7 +162,7 @@ ibmcloud iam access-group-policy-create GROUP_NAME {-f, --file @JSON_FILE | --ro
 ```
 {: codeblock}
 
-Where valid roles are `Reader`, `Standard-member`, and `Manager`.
+Where valid roles are `Reader`, and `Standard-member`.
 
 You must use a JSON file to create the group policy.
 {: important}
@@ -272,7 +251,7 @@ Complete the following steps to assign a policy to an access group through the U
 
 7. Select a service role. The service role defines the permissions a user has to view and manage resources in that group.
 
-    * Select **manager** to grant admin permissions for the service.
+    * Select **standard-member** to grant permissions to create views, alerts and more.
 
     * Select **reader** to grant permissions to view data only.
 

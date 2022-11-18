@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2021-10-21"
 
-keywords: IBM Cloud, Activity Tracker, usage
+keywords: 
 
 subcollection: activity-tracker
 
@@ -20,8 +20,7 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full}}, you can control the data that is collected and available for analysis through an auditing instance. You can define exclusion rules in the UI that apply to data collected in that instance. You can define an alert that is triggered when the data usage threshold that you define for that auditing instance is reached.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 ## Controlling data by using exclusion rules
 {: #control_usage_1}

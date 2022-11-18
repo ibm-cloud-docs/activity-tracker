@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-06-22"
 
-keywords: IBM Cloud, Activity Tracker, security, auditing, templates, archiving
+keywords: 
 
 subcollection: activity-tracker
 
@@ -18,10 +18,6 @@ subcollection: activity-tracker
 
 Use the {{site.data.keyword.at_full_notm}} archiving template (Track Archiving) to monitor {{site.data.keyword.at_short}} instances and {{site.data.keyword.la_short}} instances that have the archiving feature enabled and configured to send data to an IBM Cloud Object Storage bucket.
 {: shortdesc}
-
-
-This information applies only if you use an {{site.data.keyword.at_short}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
 
 ## Overview
 {: #templates-archiving-ov}
@@ -254,4 +250,30 @@ The following table outlines the predefined screens that you can use to monitor 
 
 To use these screens, you must customize them by entering the bucket name and the service ID that is used to authenticate and work with the bucket.
 {: note}
+
+
+## Scenarios
+{: #templates-scenarios}
+
+Use the following scenarios to learn where to deploy the template and how to use it:
+
+### Global events are managed through the Frankfurt {{site.data.keyword.at_short}} hosted event search instance
+{: #templates-scenarios-1}
+
+You can use these predefined views, dashboards, and screens to monitor archiving in any of the following scenarios:
+- If your account is configured to monitor auditing events by using the {{site.data.keyword.at_short}} hosted event search offering, 
+
+For the {{site.data.keyword.at_short}} instance or for {{site.data.keyword.at_short}} and {{site.data.keyword.la_short}} instances that are running in your account,. to quickly deploy predefined views, dashboards, and screens in an {{site.data.keyword.at_short}} hosted event search instance. that you can use to view and monitor Cloud Object Storage resources and actions such as the status of archiving of your {{site.data.keyword.at_short}} instance..
+
+### Global events are managed through a custom {{site.data.keyword.at_short}} hosted event search instance
+{: #templates-scenarios-2}
+
+
+## Monitor archiving for {{site.data.keyword.at_short}} and {{site.data.keyword.la_short}} instances
+{: #templates-scenarios-3}
+
+Global events are managed through the Frankfurt {{site.data.keyword.at_short}} hosted event search instance. However you want to monitor archiving for 1 or more {{site.data.keyword.at_short}} and {{site.data.keyword.la_short}} instances in an account.
+
+
+
 

@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, provision instance
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 Across every industry, organizations require tighter controls and visibility into where their data is stored and processed in the {{site.data.keyword.cloud}}. To manage events for HIPAA resources by using the {{site.data.keyword.at_full_notm}} service, consider the following information:
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 HIPAA compliance is a shared responsibility. {{site.data.keyword.IBM_notm}} only provides the security and the tools to ensure its cloud platform can be used without violating HIPAA rules. It is the responsibility of HIPAA-covered entities to ensure that cloud-based infrastructure and applications are not misconfigured, and that stored files are appropriately secured.
 {: important}

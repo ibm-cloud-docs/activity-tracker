@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, getting started, auditing, alerts, create
+keywords: 
 
 subcollection: activity-tracker
 
@@ -20,8 +20,7 @@ You can create alerts graphically through the UI.
 {: shortdesc}
 
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 Complete the following steps to create an alert:
 

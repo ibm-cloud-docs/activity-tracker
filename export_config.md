@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, export
+keywords: 
 
 subcollection: activity-tracker
 
@@ -18,8 +18,7 @@ subcollection: activity-tracker
 For each {{site.data.keyword.at_full_notm}} instance, you can configure whether users can export data.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 When the export configuration setting is enabled, you can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance.
 

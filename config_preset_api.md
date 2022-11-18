@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-11-18"
 
-keywords: IBM Cloud, Activity Tracker, api
+keywords: 
 
 subcollection: activity-tracker
 
@@ -18,8 +18,7 @@ subcollection: activity-tracker
 You can use the *Configuration REST API* to manage presets programmatically.  
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 Presets are templates that can be used to quickly configure alerts.  Presets can also be configured through the [UI](/docs/activity-tracker?topic=activity-tracker-preset_ui).
 

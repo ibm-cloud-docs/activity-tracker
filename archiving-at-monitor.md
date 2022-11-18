@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-05-04"
 
-keywords: IBM Cloud, Activity Tracker, archive logs, COS, cloud object storage
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 You can monitor archiving of an {{site.data.keyword.at_short}} instance by monitoring the service ID that is used to write data into {{site.data.keyword.cos_full_notm}} (COS). 
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 ## Prereqs
 {: #archiving-at-monitor-prereqs}

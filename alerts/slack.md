@@ -4,7 +4,7 @@ copyright:
   years:  2021, 2022
 lastupdated: "2021-11-04"
 
-keywords: IBM, Activity Tracker, Slack
+keywords: 
 
 subcollection: activity-tracker
 

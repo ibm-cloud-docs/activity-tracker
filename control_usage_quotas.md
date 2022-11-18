@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-02-04"
 
-keywords: IBM Cloud, Activity Tracker, usage, usage quotas
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full}}, you can use the *Usage Quota* settings to control how much data is stored so you can manage your data cost while still being able to view and retain the data you need.  
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 ## What are usage quotas?
 {: #about_usage_quotas}

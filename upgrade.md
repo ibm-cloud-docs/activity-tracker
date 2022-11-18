@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, logging, web UI, observability
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 When you provision an instance of the {{site.data.keyword.at_full_notm}} service, you must choose a service plan. Different plans offer different features. You can change the service plan at any time.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 [Learn more about service plans](/docs/activity-tracker?topic=activity-tracker-service_plan).
 
@@ -67,7 +66,7 @@ Complete the following steps to change the service plan:
    ```
    {: codeblock}
 
-5. Change the service plan. Run the [ibmcloud resource service-instance-update](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command:
+5. Change the service plan. Run the [ibmcloud resource service-instance-update](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_update) command:
 
    ```text
    ibmcloud resource service-instance-update NAME --service-plan-id RESOURCE_PLAN_ID
@@ -83,10 +82,10 @@ Complete the following steps to change the service plan:
    * `RESOURCE_PLAN_ID` is the ID of the plan that you want to set. To get the service plan IDs, see [Service plans](/docs/activity-tracker?topic=activity-tracker-service_plan).
     
 
-For example, to change the service plan of an instance to the 7 days retention plan, run the following command:
+   For example, to change the service plan of an instance to the 7 days retention plan, run the following command:
 
-```text
-ibmcloud resource service-instance-update logdna-instance-01 9aae7491-5cb6-43eb-9b7a-3e0456c781f0
-```
-{: codeblock}
+   ```text
+   ibmcloud resource service-instance-update logdna-instance-01 9aae7491-5cb6-43eb-9b7a-3e0456c781f0
+   ```
+   {: codeblock}
 

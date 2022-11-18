@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-07-21"
 
-keywords: IBM Cloud, Activity Tracker, streaming
+keywords: 
 
 subcollection: activity-tracker
 

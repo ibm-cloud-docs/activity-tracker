@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-07-14"
 
-keywords: IBM Cloud, {{site.data.keyword.at_short}}, faq
+keywords: 
 
 subcollection: activity-tracker
 
@@ -15,24 +15,24 @@ subcollection: activity-tracker
 # FAQs
 {: #at_faq}
 
-Frequently asked questions about {{site.data.keyword.atracker_short}}.
+Frequently asked questions about {{site.data.keyword.at_short}}.
 {: shortdesc}
 
 ## What are the different ways to manage auditing events?
 {: #faq_0}
 {: faq}
 
-{{site.data.keyword.atracker_short}} offers 2 different ways to manage auditing events in an {{site.data.keyword.cloud_notm}} account. You can use {{site.data.keyword.atracker_short}} hosted event search, an IAM enabled service, to manage auditing events through instances that you provision in each {{site.data.keyword.cloud_notm}} region where you operate. Alternatively, you can use {{site.data.keyword.atracker_short}}, a platform service, to manage auditing events at the account-level by configuring targets and routes that define where auditing data is routed. {{site.data.keyword.atracker_short}} can only route events that are generated in [supported regions](/docs/activity-tracker?topic=activity-tracker-regions#regions-atracker). Other regions, where {{site.data.keyword.atracker_short}} is not available, continue to manage events by using {{site.data.keyword.atracker_short}} hosted event search.
+{{site.data.keyword.at_short}} offers 2 different ways to manage auditing events in an {{site.data.keyword.cloud_notm}} account. You can use {{site.data.keyword.at_short}} hosted event search, an IAM enabled service, to manage auditing events through instances that you provision in each {{site.data.keyword.cloud_notm}} region where you operate. Alternatively, you can use {{site.data.keyword.atracker_short}}, a platform service, to manage auditing events at the account-level by configuring targets and routes that define where auditing data is routed. 
 
-{{site.data.keyword.atracker_short}} hosted event search routes location-based auditing events to an {{site.data.keyword.atracker_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.atracker_short}} instance that is provisioned in Frankfurt.
+{{site.data.keyword.at_short}} hosted event search routes location-based auditing events to an {{site.data.keyword.at_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.at_short}} instance that is provisioned in Frankfurt.
 
 {{site.data.keyword.atracker_short}} routes events based on the location that is specified in the `logSourceCRN` field included in the event. You can define a target, the resource where events are routed to, in any {{site.data.keyword.atracker_short}} supported region. However, the target resource can be located in any region where that type of target is supported, in the same account or in a different account. You can define rules to determine where auditing events are to be routed by configuring 1 or more routes in the account. You can define rules for managing global events and location-based events that are generated in regions where {{site.data.keyword.atracker_short}} is supported. 
 
-## Where can I find the list of Cloud services that generate {{site.data.keyword.atracker_short}} events?
+## Where can I find the list of Cloud services that generate {{site.data.keyword.at_short}} events?
 {: #faq_1}
 {: faq}
 
-You can find information about the services that generate audit events and send those to {{site.data.keyword.atracker_short}} in the following documentation topic: [Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services).
+You can find information about the services that generate audit events and send those to {{site.data.keyword.at_short}} in the following documentation topic: [Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services).
 
 ## Where can I find the actions that a service generates?
 {: #faq_2}
@@ -50,7 +50,7 @@ First, you need to check if you need to configure your service, upgrade your pla
 
 * Management events are collected automatically for most services except Watson services that require a paid plan.
 
-    If you are looking for Watson {{site.data.keyword.atracker_short}} events, check your plan and make sure you have a service plan that includes them.
+    If you are looking for Watson {{site.data.keyword.at_short}} events, check your plan and make sure you have a service plan that includes them.
 
 * Data events are collected automatically for most services except the following ones:
 
@@ -62,9 +62,9 @@ First, you need to check if you need to configure your service, upgrade your pla
 
 Then, you need to determine the location of the events based on scope.
 
-For {{site.data.keyword.at_short}} event viewing, global events are available through the {{site.data.keyword.at_short}} instance in Frankfurt. Therefore, to view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
+For {{site.data.keyword.at_short}} hosted event search, global events are available through the {{site.data.keyword.at_short}} instance in Frankfurt. Therefore, to view global events, you must provision an instance of the {{site.data.keyword.at_full_notm}} service in Frankfurt.
 
-For {{site.data.keyword.atracker_short}}, global events are collected in the region that you configure. Therefore, to find those events, you must find the route that is configured in 1 region of your account to collect global events. 
+For {{site.data.keyword.atracker_short}}, global events are collected in the region that you configure. Therefore, to find those events, you must find the route that is configured in 1 region of your account to collect global events.
 
 For location-based events, you need to check the following scenarios to determine the {{site.data.keyword.atracker_short}} instance where the events are available for analysis:
 
@@ -72,15 +72,15 @@ For location-based events, you need to check the following scenarios to determin
 
     1. Identify the location where your service is provisioned. 
     
-    2. Check whether the {{site.data.keyword.atracker_short}} service is available in that region. See [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
+    2. Check whether the {{site.data.keyword.atracker_short}} service is available in that region. See [Locations](/docs/atracker?topic=atracker-regions).
 
-    3. For {{site.data.keyword.at_short}} event viewing, check that you have an {{site.data.keyword.atracker_short}} instance provisioned in the same location where your service is provisioned. For {{site.data.keyword.atracker_short}}, check that you have a target and  aroute defines in that region.,
+    3. For {{site.data.keyword.at_short}} hosted event search, check that you have an {{site.data.keyword.atracker_short}} instance provisioned in the same location where your service is provisioned. For {{site.data.keyword.atracker_short}}, check that you have a targets and routes defined correctly.
 
 * Scenario 2: The service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is not available.
 
     1. Identify the location where your service is provisioned. 
         
-    2. Check the [Cloud services locations](/docs/activity-tracker?topic=activity-tracker-regions) to identify the {{site.data.keyword.atracker_short}} instance where events are available.
+    2. Check the [Cloud services locations](/docs/activity-tracker?topic=activity-tracker-regions) to identify the {{site.data.keyword.at_short}} instance where events are available.
 
 
 
@@ -89,8 +89,7 @@ For location-based events, you need to check the following scenarios to determin
 {: #faq_4}
 {: faq}
 
-This information applies only to {{site.data.keyword.at_short}} event viewing.
-{: important}
+
 
 To access data, you can download the archived file locally.
 
@@ -101,8 +100,7 @@ To query the data, you can also use a service like SQL Query to query your COS a
 {: #faq_5}
 {: faq}
 
-This information applies only to {{site.data.keyword.at_short}} event viewing.
-{: important}
+
 
 You cannot import archived data into the UI. 
 
@@ -110,8 +108,7 @@ You cannot import archived data into the UI.
 {: #faq_6}
 {: faq}
 
-This information applies only to {{site.data.keyword.at_short}} event viewing.
-{: important}
+
 
 To configure archiving see [Archiving events to IBM Cloud Object Storage](/docs/activity-tracker?topic=activity-tracker-archiving).
 
@@ -119,8 +116,7 @@ To configure archiving see [Archiving events to IBM Cloud Object Storage](/docs/
 {: #faq_7}
 {: faq}
 
-This information applies only to {{site.data.keyword.at_short}} event viewing.
-{: important}
+
 
 You can only have 1 instance of the {{site.data.keyword.at_full_notm}} service per region. 
 
@@ -159,7 +155,7 @@ Complete the following steps:
 
     You can assign access permissions for your service ID [by using the {{site.data.keyword.cloud_notm}} console](/docs/iam?topic=iam-serviceidpolicy#access_new).
     
-    To learn how roles map to specific actions, see [Managing IAM access for {{site.data.keyword.atracker_full_notm}}](/docs/activity-tracker?topic=activity-tracker-iam).
+    To learn how roles map to specific actions, see [Managing IAM access for {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-iam).
     {: tip}
 
 4. Create a [service ID API key](/docs/iam?topic=iam-serviceidapikeys).
@@ -174,21 +170,6 @@ Complete the following steps:
     Save your API key by downloading it to a secure location.
 
 
-## Can I choose the region where global events are collected?
-{: #faq_9}
-{: faq}
-
-This information applies only to {{site.data.keyword.atracker_short}}.
-{: important}
-
-With {{site.data.keyword.atracker_short}} you can configure a route to send your global events to a target that sends the events to one of two locations:
-
-* [An {{site.data.keyword.cos_full_notm}} instance](/docs/activity-tracker?topic=activity-tracker-target_v2_cos)
-
-* [An {{site.data.keyword.atracker_full_notm}} hosted event search instance](/docs/activity-tracker?topic=activity-tracker-target_v2_at&interface=cli)
-
-
-
 ## I cannot find auditing events in my account. Where can I find them?
 {: #faq_10}
 {: faq}
@@ -196,10 +177,10 @@ With {{site.data.keyword.atracker_short}} you can configure a route to send your
 In {{site.data.keyword.cloud_notm}}, auditing events are generated automatically with the exception of some services that require additional configuration or a specific service plan. For more information about these services, see [Enabling Activity Tracker events](/docs/activity-tracker?topic=activity-tracker-events-opt-in).
 
 There are 2 ways by which you can access the auditing events in your account:
-- Option 1: You can see auditing events through {{site.data.keyword.at_full_notm}} event viewing. This is the default option. For more information, see [Getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started).
-- Option 2: You can configure {{site.data.keyword.atracker_full_notm}}  per region in your account. For more information, see [Getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started).
+- Option 1: You can see auditing events through {{site.data.keyword.at_full_notm}} hosted event search. This is the default option. For more information, see [Getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started).
+- Option 2: You can configure {{site.data.keyword.atracker_full_notm}} in your account. For more information, see [Getting started tutorial](/docs/atracker?topic=atracker-getting-started).
 
-In a region, you can manage auditing events in {{site.data.keyword.atracker_full_notm}} or in {{site.data.keyword.at_full_notm}}. Both options are not allowed in parallel per region. If a route is not defined in a region, by default, {{site.data.keyword.at_full_notm}} is the service that you can use to monitor auditing events.
+In a region, you can manage auditing events in {{site.data.keyword.atracker_full_notm}} or in {{site.data.keyword.at_full_notm}}. Both options are not allowed in parallel in a region. If a route is not defined in a region, by default, {{site.data.keyword.at_full_notm}} is the service that you can use to monitor auditing events.
 {: important}
 
 
@@ -207,8 +188,7 @@ In a region, you can manage auditing events in {{site.data.keyword.atracker_full
 {: #faq_11}
 {: faq}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 Archived data cannot be imported to be searched or used in the {{site.data.keyword.at_full_notm}} UI.  
 

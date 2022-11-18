@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-11-17"
 
-keywords: IBM Cloud, Activity Tracker, api
+keywords: 
 
 subcollection: activity-tracker
 

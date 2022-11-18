@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, export
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance graphically through the web UI. 
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 Exporting using the UI uses the [V1 export API](/docs/activity-tracker?topic=activity-tracker-export_api) and is limited to the functionality provided by that version of the API.
 {: note}

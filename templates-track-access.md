@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-06-22"
 
-keywords: IBM Cloud, Activity Tracker, security, auditing, templates, archiving
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,9 +19,6 @@ subcollection: activity-tracker
 Use the {{site.data.keyword.at_full_notm}} Track Access template to gain insight on your {{site.data.keyword.cloud_notm}} access requests. Monitor login requests, unauthorize access, and denied requests.
 {: shortdesc}
 
-
-This information applies only if you use an {{site.data.keyword.at_short}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
 
 ## Overview
 {: #templates-track-access-ov}

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-19"
+lastupdated: "2022-11-02"
 
-keywords: IBM Cloud, Activity Tracker, delete instance
+keywords: 
 
 subcollection: activity-tracker
 
@@ -18,9 +18,10 @@ subcollection: activity-tracker
 You can remove an instance of the {{site.data.keyword.at_full_notm}} service from the {{site.data.keyword.cloud_notm}} UI or through the command line.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+## Considerations if you are using archiving
+{: #remove_archiving}
 
+If you are using [archiving](/docs/activity-tracker?topic=activity-tracker-archiving-ov), make sure all archiving has completed and that you have stopped archiving before you remove your instance. Removing an instance while archiving is still active can result in archive records being lost.
 
 ## Removing an instance through the {{site.data.keyword.cloud_notm}} UI
 {: #remove_ui}

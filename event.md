@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-05-09"
 
-keywords: IBM Cloud, Activity Tracker, event fields
+keywords: 
 
 subcollection: activity-tracker
 

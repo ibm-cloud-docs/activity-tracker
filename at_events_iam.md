@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-06-30"
 
-keywords: IBM Cloud, Activity Tracker, IAM events
+keywords: 
 
 subcollection: activity-tracker
 

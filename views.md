@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-02-11"
 
-keywords: IBM Cloud,Activity Tracker, search, filter, events
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search and filtering criteria to define the set of events that are displayed through a custom view.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 ## Prerequisites
 {: #views_prereqs}

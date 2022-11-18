@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2021-03-24"
+lastupdated: "2022-03-24"
 
-keywords: IBM Cloud, Activity Tracker, endpoint
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 You can limit access to an {{site.data.keyword.at_full}} instance to private endpoints only. 
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 You can configure your {{site.data.keyword.at_full_notm}} instance so it is accessible through [private endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints) only.
 

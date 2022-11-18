@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-21"
+lastupdated: "2022-08-16"
 
-keywords: IBM Cloud, Activity Tracker, archive logs, COS, cloud object storage
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance. 
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 In {{site.data.keyword.at_short}}, by default archiving is not enabled. Data is available for search and analysis for the number of days that your service instance plan indicates. However, you might need to access the data longer for troubleshooting. You might also have to keep the data for longer for compliance, and for corporate or industry regulations. When you need access to data for longer than the number of search days, you must configure archiving. 
 
@@ -29,7 +28,7 @@ You can only have 1 {{site.data.keyword.at_short}} instance per region. Each {{s
 
 The following figure shows a high-level view of the different components that are involved when archiving events:
 
-![High-level view archiving events](images/archive.png "High-level view archiving events")
+![High-level view archiving events](images/archive.png "High-level view archiving events"){: caption="Figure 1. High-level view archiving events" caption-side="bottom"}
 
 The {{site.data.keyword.cos_full_notm}} instance is provisioned within the context of a resource group. The {{site.data.keyword.at_full_notm}} instance is also provisioned within the context of a resource group. Both instances can be grouped under the same resource group or in different ones. 
 
@@ -48,12 +47,10 @@ After you configure archiving,consider the following information:
 - Events are archived hourly.
 - The first archive file is created when the archiving process runs and there is data.
 
-The first time the archive process runs the number of days archived is dependent on the plan:
-- The maximum number of days that data is archived includes events for the past 30 days when the instance has a `30 day search` plan.
-- The maximum number of days that data is archived includes events for the past 14 days when the instance has a `14 day search` plan.
-- The maximum number of days that data is archived includes events for the past 7 days when the instance has a `7 day search` plan.
+You have a service plan of 30 days. You configured the instance 10 days ago. You enable archiving today. There will be no archive data for the first 10 days the instance was running.
+{: note}
 
-For example, you have a service plan of 30 days. You configured the instance 10 days ago. You enable archiving on the 10th day. The archiving process generates multiple files. Each file includes events for the period of time indicated as part of its name. If there is no data, the archive file for that period is empty.
+The archiving process generates multiple files. Each file includes events for the period of time indicated as part of its name. If there is no data, the archive file for that period is empty.
 
 
 

@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-02-23"
 
-keywords: IBM Cloud, Activity Tracker, auditing
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 Due to maintenance, {{site.data.keyword.at_full}} makes changes periodically to service IPs in some regions. You might need to take action to continue using the service.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 Endpoints and regions that are not listed are unchanged.
 {: note}

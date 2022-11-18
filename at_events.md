@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, {{site.data.keyword.atracker_short}}, events, security, auditlog
+keywords: 
 
 subcollection: activity-tracker
 
@@ -14,95 +14,19 @@ subcollection: activity-tracker
 
 ---
 
-# Auditing events for {{site.data.keyword.atracker_short}}
+# Auditing events for {{site.data.keyword.at_short}}
 {: #at_events}
 
-As a security officer, auditor, or manager, you can use the {{site.data.keyword.atracker_short}} service to track how users and applications interact with the {{site.data.keyword.atracker_short}} service in {{site.data.keyword.cloud}}.
+As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_short}} service to track how users and applications interact with the {{site.data.keyword.at_short}} service in {{site.data.keyword.cloud}}.
 {: shortdesc}
 
 
-{{site.data.keyword.atracker_short}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [getting started tutorial for {{site.data.keyword.atracker_short}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
+{{site.data.keyword.at_short}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [getting started tutorial for {{site.data.keyword.at_short}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
-{{site.data.keyword.atracker_short}} automatically generates events so that you can track activity on your service instance.
-
-
-## Management events for {{site.data.keyword.atracker_short}}
-{: #at_events_mgt_atracker}
-
-### Targets
-{: #at_events_mgt_target}
-
-The following table lists the auditing events that are generated when you manage targets:
-
-| Action                                            | Description                |
-|---------------------------------------------------|----------------------------|
-| `atracker.target.create`       | This event is generated when an administrator creates a new Cloud Object Storage (COS) target with specified COS endpoint information and credentials.  |
-| `atracker.target.list` | This event is generated when an administrator lists all Cloud Object Storage (COS) targets defined under a region. |
-| `atracker.target.get` | This event is generated when an administrator retrieves a target and its details by specifying the ID of the target.|
-| `atracker.target.update` | This event is generated when an administrator updates a target details by specifying the ID of the target. |
-| `atracker.target.delete` | This event is generated when an administrator deletes a target by specifying the ID of the target. |
-{: caption="Table 1. Events for managing targets" caption-side="top"} 
+{{site.data.keyword.at_short}} automatically generates events so that you can track activity on your service instance.
 
 
-### Routes
-{: #at_events_mgt_route}
-
-The following table lists the auditing events that are generated when you manage routes:
-
-| Action                                            | Description                |
-|---------------------------------------------------|----------------------------|
-| `atracker.route.create` | This event is generated when an administrator creates a route with rules defined how to route auditing events to targets for a region. |
-| `atracker.route.list` | This event is generated when an administrator lists routes defined under this region.  |
-| `atracker.route.get` | This event is generated when an administrator retrieves a route and its details by specifying the ID of the route. |
-| `atracker.route.update` | This event is generated when an administrator replaces a route details by specifying the ID of the route. You can also get this event when you validate a target by checking the credentials to write to the bucket. |
-| `atracker.route.delete` | This event is generated when an administrator deletes a route by specifying the ID of the route. |
-{: caption="Table 2. Events for managing routes" caption-side="top"} 
-
-
-### Endpoints
-{: #at_events_mgt_endpoint}
-
-The following table lists the auditing events that are generated when you manage endpoints:
-
-| Action                                            | Description                |
-|---------------------------------------------------|----------------------------|
-| `atracker.endpoint.set` | This event is generated when an administrator configures the public endpoint availability in a region. |
-| `atracker.endpoint.get` | This event is generated when an administrator gets information about the public and private endpoints that are enabled in a region.  |
-{: caption="Table 3. Events for managing endpoints" caption-side="top"} 
-
-These events are only applicable to the {{site.data.keyword.atracker_short}} V1 configuration and are unavailable after you have [migrated to the V2 configuration.](/docs/activity-tracker?topic=activity-tracker-migration) 
-{: note}
-
-### Settings
-{: #at_events_setting}
-
-The following table lists the auditing events that are generated when you manage settings:
-
-| Action                                            | Description                |
-|---------------------------------------------------|----------------------------|
-| `atracker.setting.set` | This event is generated when an administrator configures the {{site.data.keyword.atracker_short}} settings for an account. |
-| `atracker.setting.get` | This event is generated when an administrator gets information about the {{site.data.keyword.atracker_short}} settings for an account. |
-{: caption="Table 4. Events for managing settings" caption-side="top"} 
-
-These events are only applicable to the {{site.data.keyword.atracker_short}} V2 configuration and are not available before you have [migrated to the V2 configuration.](/docs/activity-tracker?topic=activity-tracker-migration) 
-{: note}
-
-### Migration
-{: #at_events_migrate}
-
-The following table lists the auditing events that are generated when you migrate your {{site.data.keyword.atracker_short}} configuration from V1 to V2:
-
-| Action                                            | Description                |
-|---------------------------------------------------|----------------------------|
-| `atracker.migration.post` | This event is generated when an administrator starts the migration of the {{site.data.keyword.atracker_short}} configuration from V1 to V2. |
-| `atracker.migration.get` | This event is generated when an administrator request the status of a migration of the {{site.data.keyword.atracker_short}} configuration. |
-{: caption="Table 5. Events for migration" caption-side="top"} 
-
-These events are only applicable when an account is being [migrated from an {{site.data.keyword.atracker_short}} V1 configuration to V2.](/docs/activity-tracker?topic=activity-tracker-migration)
-{: note}
-
-
-## Management events for {{site.data.keyword.at_short}} hosted event search offerings
+## Management events
 {: #at_events_mgt_at}
 
 ### Account settings
@@ -117,10 +41,10 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                      | Valid values         | Description                |
 |------------------------------------|----------------------|----------------------------|
-| `requestData.owneremail`        | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx@logdna.ibm.com`  | Defines an {{site.data.keyword.atracker_short}} account. |
-| `requestData.type`              | `meta.addrawline` | Defines an {{site.data.keyword.atracker_short}} administrative feature. |
+| `requestData.owneremail`        | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx@logdna.ibm.com`  | Defines an {{site.data.keyword.at_short}} account. |
+| `requestData.type`              | `meta.addrawline` | Defines an {{site.data.keyword.at_short}} administrative feature. |
 | `requestData.value`            | `false`   \n `true`  | When is set to `true`, the feature specified in the field `requestData.type` is enabled.  |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
 {: caption="Table 7. Custom fields for account settings actions" caption-side="top"} 
 
 
@@ -139,10 +63,10 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                      | Valid values         | Description                |
 |------------------------------------|----------------------|----------------------------|
-| `requestData.feature`              | `archive`            | Defines a {{site.data.keyword.atracker_short}} administrative feature. |
+| `requestData.feature`              | `archive`            | Defines a {{site.data.keyword.at_short}} administrative feature. |
 | `requestData.isEnabled`            | `false`   \n `true`  | Defines if archiving of the auditing instance to a COS bucket is configured.   \n When is set to `true`, archiving is enabled.  |
 | `requestData.provider`             | `ibm`                | Defines the Cloud provider where data is archived. |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
 {: caption="Table 9. Custom fields for archiving actions" caption-side="top"} 
 
 
@@ -160,7 +84,7 @@ The following table lists custom fields that are included in exclusion rule even
 
 | Custom fields                | Description          |
 |------------------------------|----------------------|
-| `feature`                    | Defines an {{site.data.keyword.atracker_short}} administrative feature.   \n Valid value is `exclusion-rule`. |
+| `feature`                    | Defines an {{site.data.keyword.at_short}} administrative feature.   \n Valid value is `exclusion-rule`. |
 | `ruleId`                     | Defines the ID of the rule. |
 | `isEnabled`                  | Defines when the exclusion rule is enabled.   \n Set to `true` when the rule is enabled. |
 | `requestData.hosts`          | Defines 1 or more hosts whose data is excluded from search. |
@@ -168,7 +92,7 @@ The following table lists custom fields that are included in exclusion rule even
 | `requestData.query`          | Defines an advanced query to refine the data that is excluded from search. |
 | `requestData.description`    | Description of the exclusion rule. |
 | `requestData.indexonly`      | Defines whether the data is available to see through the UI.   \n Set to `true` when data is visible but not available for search. |
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
 {: caption="Table 11. Custom fields for exclusion rules actions" caption-side="top"} 
 
 
@@ -187,7 +111,7 @@ The following table lists custom fields that are included in these events:
 |------------------------------------|----------------------|----------------------------|
 | `requestData.key`                  | Masked field         | Use this field to identify the ingestion key that is created. |
 | `requestData.keyType`              | `ingestion`          | Defines the type of key that is configured. |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
 {: caption="Table 13. Custom fields for ingestion keys actions" caption-side="top"} 
 
 
@@ -206,9 +130,9 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                      | Valid values         | Description                |
 |------------------------------------|----------------------|----------------------------|
-| `requestData.key`                  | Masked field         | Use this field to identify the service key that is created to export data by using the {{site.data.keyword.atracker_short}}  export API. |
+| `requestData.key`                  | Masked field         | Use this field to identify the service key that is created to export data by using the {{site.data.keyword.at_short}}  export API. |
 | `requestData.keyType`              | `service`            | Defines the type of key that is configured. |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
 {: caption="Table 15. Custom fields for service keys actions" caption-side="top"} 
 
 
@@ -243,12 +167,12 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                | Description          | 
 |------------------------------|----------------------|
-| `requestData.feature`        | Defines an {{site.data.keyword.atracker_short}} administrative feature.   \n Valid value is `custom-parsing`. |
+| `requestData.feature`        | Defines an {{site.data.keyword.at_short}} administrative feature.   \n Valid value is `custom-parsing`. |
 | `requestData.isEnabled`      | Defines when the template is enabled.   \n Set to `true` when the template is enabled. |
 | `requestData.name`           | Defines the name of the template.   \n This field is available for create actions.|
 | `requestData.query`          | Defines the query that is configured to identify log lines where the custome parsing is applied. |
 | `requestData.templateId`     | Defines the ID of the template.   \n This field is available for update actions. |
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
 {: caption="Table 18. Custom fields for parsing templates actions" caption-side="top"} 
 
 
@@ -265,14 +189,14 @@ The following table lists custom fields that are included in these events:
 
 | Custom fields                | Description          | 
 |------------------------------|----------------------|
-| `feature`                    | Defines an {{site.data.keyword.atracker_short}} administrative feature.   \n Valid value is `export-configuration`. |
+| `feature`                    | Defines an {{site.data.keyword.at_short}} administrative feature.   \n Valid value is `export-configuration`. |
 | `requestData.configResources` | Defines the list of resources that a user chooses to export or import. |
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
 {: caption="Table 20. Custom fields for user-metadata related actions" caption-side="top"} 
 
 
 
-## Data events for {{site.data.keyword.at_short}} hosted event search offerings
+## Data events
 {: #at_events_data-at}
 
 ### Views
@@ -299,7 +223,7 @@ The following table lists custom fields that are included in these events:
 | `requestData.viewId`   | Defines the view ID. |
 | `requestData.description` | Describes the view. | 
 | `requestData.customLine` | Describes how the information is displayed in the view. |
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
 {: caption="Table 22. Custom fields for view actions" caption-side="top"} 
 
 
@@ -322,7 +246,7 @@ The following table lists custom fields that are included in these events:
 | `requestData.name`    | Defines the name of the preset. |
 | `requestData.preset`  | Defines whether the alert is defined as a preset. |
 | `requestData.channels` | List of channels that are configured in a preset. Each channel includes information about the notification method and the trigger conditions per method. |
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
 {: caption="Table 24. Custom fields for view actions" caption-side="top"} 
 
 
@@ -345,7 +269,7 @@ The following table lists custom fields that are included in these events:
 | `requestData.category`       | Defines the category where the board is included. |
 | `requestData.title`          | Defines the name of the dashboard. |
 | `requestData.graphId`        | Defines the ID of a graph that is added to a board. | 
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.atracker_short}} ID that is associated with the {{site.data.keyword.atracker_short}} instance. | 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
 {: caption="Table 26. Custom fields for boards" caption-side="top"} 
 
 
@@ -354,20 +278,6 @@ The following table lists custom fields that are included in these events:
 
 ## Viewing events
 {: #at_events_ui}
-
-
-### Viewing events for {{site.data.keyword.atracker_short}}
-{: #at_events_ui_atracker}
-
-Location based events are automatically forwarded to the {{site.data.keyword.atracker_short}} target that is available in the same location (region).
-
-Global events are available in the location that you configure to collect global events in your account.
-
-{{site.data.keyword.atracker_short}} can have only one target and route per location. To view events, you must access the target and download the object.
-
-
-### Viewing events for {{site.data.keyword.at_short}} hosted event search offerings
-{: #at_events_ui-at}
 
  
 Events that are generated by an instance of the {{site.data.keyword.at_short}} service are automatically forwarded to the {{site.data.keyword.at_short}} service instance that is available in the same location. For more information, see [Cloud services locations](/docs/activity-tracker?topic=activity-tracker-cloud_services_locations).

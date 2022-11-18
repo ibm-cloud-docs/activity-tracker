@@ -4,7 +4,7 @@ copyright:
   years: 2021, 2022
 lastupdated: "2022-06-14"
 
-keywords: IBM Cloud, Activity Tracker, services, context-based restrictions
+keywords: 
 
 subcollection: activity-tracker
 

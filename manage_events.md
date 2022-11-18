@@ -16,8 +16,7 @@ subcollection: activity-tracker
 {{site.data.keyword.at_full_notm}} is used to collect, archive, view and analyze events. 
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 ## Collecting events to monitor activity in the account
 {: #manage_events_provision}

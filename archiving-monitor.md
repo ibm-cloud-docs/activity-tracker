@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-10-21"
 
-keywords: IBM Cloud, Activity Tracker, archive logs, COS, cloud object storage
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 {{site.data.keyword.cos_full_notm}} is integrated with the {{site.data.keyword.mon_short}} service. {{site.data.keyword.mon_short}} provides a default template that you can customize to monitor the bucket that you configure to store data for long term from an {{site.data.keyword.at_short}} instance.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 
 Complete the following steps to monitor the {{site.data.keyword.messagehub}} instance:

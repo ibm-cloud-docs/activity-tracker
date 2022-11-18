@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-08-09"
 
-keywords: IBM Cloud, Activity Tracker, account settings, config, custom fields
+keywords: 
 
 subcollection: activity-tracker
 
@@ -19,8 +19,7 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full_notm}}, you can create custom fields that you can use in advanced searches and in filtering queries by using parsing rules. You define parsing templates through the UI to add custom fields to your records.
 {: shortdesc}
 
-This information applies only if you use an {{site.data.keyword.at_full}} [hosted event search offering](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
+
 
 ## Create a parsing rule
 {: #AT-create-parsing rule}

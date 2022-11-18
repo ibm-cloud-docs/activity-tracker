@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2021-11-03"
 
-keywords: IBM Cloud, LogDNA, Activity Tracker, getting started, auditing, webhooks
+keywords: 
 
 subcollection: activity-tracker
 

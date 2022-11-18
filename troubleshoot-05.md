@@ -4,7 +4,7 @@ copyright:
   years: 2022
 lastupdated: "2021-02-08"
 
-keywords: IBM Cloud, Activity Tracker, streaming, troubleshooting
+keywords: 
 
 subcollection: activity-tracker
 
