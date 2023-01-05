@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-05-09"
+  years: 2019, 2023
+lastupdated: "2023-01-05"
 
 keywords: IBM Cloud, Activity Tracker, getting started, auditing, tutorial
 
@@ -10,8 +10,8 @@ subcollection: activity-tracker
 
 content-type: tutorial
 services: activity-tracker
-account-plan: lite 
-completion-time: 1h 
+account-plan: lite
+completion-time: 1h
 
 ---
 
@@ -21,8 +21,8 @@ completion-time: 1h
 # Getting started with {{site.data.keyword.at_short}} hosted event search offerings
 {: #getting-started-search}
 {: toc-content-type="tutorial"}
-{: toc-services="activity-tracker"} 
-{: toc-completion-time="1h"} 
+{: toc-services="activity-tracker"}
+{: toc-completion-time="1h"}
 
 
 Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
@@ -57,7 +57,7 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 
 * Simplify compliance sign-off tasks
 
-    Boost audit tasks on your {{site.data.keyword.cloud_notm}} account by automatically collecting events that report on actions to resources in your account. Analyze and get notified on the events that report out of compliance actions. 
+    Boost audit tasks on your {{site.data.keyword.cloud_notm}} account by automatically collecting events that report on actions to resources in your account. Analyze and get notified on the events that report out of compliance actions.
 
 * Accelerate detection of security incidents
 
@@ -65,7 +65,7 @@ When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm
 
 * Improve visibility on actions in your {{site.data.keyword.cloud_notm}} account
 
-    Improve the visibility into user and resource activity in your account by easily identifying the initiator who requested an action, the object on which the action was requested, and the time when the action took place. 
+    Improve the visibility into user and resource activity in your account by easily identifying the initiator who requested an action, the object on which the action was requested, and the time when the action took place.
 
 * Adhere to standards
 
@@ -95,7 +95,7 @@ Consider the following information about security when you work with the {{site.
 ## Objectives
 {: #gs_objectives}
 
-Complete this tutorial to learn how to provision a service in the {{site.data.keyword.cloud_notm}}. Find out what common data is available in each event and how it can help you monitor your {{site.data.keyword.cloud_notm}} environment. Learn to navigate in the web UI. 
+Complete this tutorial to learn how to provision a service in the {{site.data.keyword.cloud_notm}}. Find out what common data is available in each event and how it can help you monitor your {{site.data.keyword.cloud_notm}} environment. Learn to navigate in the web UI.
 
 
 ## Prerequisites
@@ -120,27 +120,27 @@ Complete the following steps to provision an instance:
 
 2. Go to the menu icon ![Menu icon](../icons/icon_hamburger.svg) and select **Observability** to access the *Observability* dashboard.
 
-3. Select **Activity Tracker**, then click **Create**. 
+3. Select **Activity Tracker**, then click **Create**.
 
 4. Enter a name for the service instance.
 
-5. Select the **Frankfurt** location. 
+5. Select the **Frankfurt** location.
 
    For more information about the regions where the service is available, see [Regions](/docs/services/activity-tracker?topic=activity-tracker-regions).
 
-6. Select a resource group. 
+6. Select a resource group.
 
    By default, the **default** resource group is set.
 
    **Note:** If you are not able to select a resource group, check that you have editing permissions on the resource group where you want to provision the instance.
 
-7. Select the `Lite` service plan. 
+7. Select the `Lite` service plan.
 
    By default, the lite plan is set.
 
 8. Click **Create**.
 
-   After you provision an instance, the *Activity Tracker* dashboard, that is located in the *Observability* section of the {{site.data.keyword.cloud_notm}} UI, opens. 
+   After you provision an instance, the *Activity Tracker* dashboard, that is located in the *Observability* section of the {{site.data.keyword.cloud_notm}} UI, opens.
 
 
 ## Manage access to the service
@@ -171,19 +171,19 @@ When you define the policy, you need to select a platform role and a service rol
 * Service access roles define a user or service’s ability to perform actions on a service instance. The service access roles are manager, writer, and reader.
 
 To manage the {{site.data.keyword.at_full_notm}} service, a user needs the following roles:
-* Platform role: **Administrator**. 
-* Service role: **Manager**. 
+* Platform role: **Administrator**.
+* Service role: **Manager**.
 
 
 Complete the following steps to assign a policy through the UI:
 
 1. From the menu bar, click **Manage** &gt; **Access (IAM)**.
 2. Select **Access Groups**.
-3. Select the name of the group that you want to assign access to. 
+3. Select the name of the group that you want to assign access to.
 4. Click **Access policies** &gt; **Assign access**.
 5. Select **IAM services**.
 6. For the field *What type of access do you want to assign?*, select **{{site.data.keyword.at_full_notm}}**.
-7. For the *in* field, select the resource group. 
+7. For the *in* field, select the resource group.
 8. Select the platform role **Administrator**.
 9. Select the service role **Manager**.
 10. Click **Add**. Then, select **Assign**.
@@ -201,16 +201,16 @@ Complete the following steps to add the user to the access group:
 {: #gs_step3}
 {: step}
 
-If you have a pay-as-you-go account, you can use {{site.data.keyword.cloudcerts_short}} to create an event. If you don't have a pay-as-you-go account, provisioning any of the available lite services triggers an event.
+If you have a pay-as-you-go account, you can use {{site.data.keyword.keymanagementservicelong}} to create an event. If you don't have a pay-as-you-go account, provisioning any of the available lite services triggers an event.
 
 
-1. From the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external}, select the category **Security and Identity**.
+1. From the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external}, select the category **Security**.
 
-2. Select the {{site.data.keyword.cloudcerts_short}} service.
+2. Select the {{site.data.keyword.keymanagementserviceshort}} service.
 
-3. (Optional) [Provision an instance of the {{site.data.keyword.cloudcerts_short}} service](/docs/certificate-manager?topic=certificate-manager-getting-started).
+3. (Optional) [Provision an instance of the {{site.data.keyword.keymanagementserviceshort}} service](/docs/key-protect?topic=key-protect-getting-started-tutorial#getting-started-tutorial).
 
-## Launch the web UI 
+## Launch the web UI
 {: #gs_step4}
 {: step}
 
@@ -220,9 +220,9 @@ Complete the following steps to launch the web UI:
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
-2. In the navigation menu, select **Observability**. 
+2. In the navigation menu, select **Observability**.
 
-3. Select **Activity Tracker**. 
+3. Select **Activity Tracker**.
 
     The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
 
@@ -230,7 +230,7 @@ Complete the following steps to launch the web UI:
 
     Global events, such as provisioning a service, are available through the global domain instance that is located in Frankfurt.
 
-The web UI opens. 
+The web UI opens.
 
 
 ## View events
@@ -238,13 +238,13 @@ The web UI opens.
 {: step}
 
 
-The {{site.data.keyword.at_full_notm}} service captures activity data that is related to API calls and other actions that are made to selected cloud services in the {{site.data.keyword.cloud_notm}}. 
+The {{site.data.keyword.at_full_notm}} service captures activity data that is related to API calls and other actions that are made to selected cloud services in the {{site.data.keyword.cloud_notm}}.
 
-* Events are collected automatically. 
+* Events are collected automatically.
 * Events that are collected in {{site.data.keyword.at_full_notm}} comply with the **Cloud Auditing Data Federation (CADF) standard**. The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
-* {{site.data.keyword.at_full_notm}} stores and groups events by location. 
+* {{site.data.keyword.at_full_notm}} stores and groups events by location.
 * Events that report on global {{site.data.keyword.cloud_notm}} account actions, are collected and stored in **Frankfurt (EU-DE)**.
-* The service plan that you select for your {{site.data.keyword.at_full_notm}} instance sets the number of days that events are available for search through the web UI. 
+* The service plan that you select for your {{site.data.keyword.at_full_notm}} instance sets the number of days that events are available for search through the web UI.
 
 When the web UI opens, the **EVERYTHING** view is displayed. You can see events through this view.
 
@@ -266,7 +266,7 @@ The CADF event model includes the following components:
 | `Observer` | The observer is the resource that creates and stores a CADF record from information available in a CADF event. |
 | `Outcome`  | The outcome is the status of the action against the target. |
 | `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
-{: caption="Table 1. Components that are available in a CADF event model" caption-side="top"} 
+{: caption="Table 1. Components that are available in a CADF event model" caption-side="top"}
 
 [Learn more](/docs/services/activity-tracker?topic=activity-tracker-event#event).
 
@@ -275,10 +275,8 @@ The CADF event model includes the following components:
 ## Next steps
 {: #gs_next_steps}
 
-1. [Define custom views](/docs/services/activity-tracker?topic=activity-tracker-views). 
+1. [Define custom views](/docs/services/activity-tracker?topic=activity-tracker-views).
 
-2. Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [search events by applying a query](/docs/services/activity-tracker?topic=activity-tracker-views#views_step2) and [configure alerts](/docs/services/activity-tracker?topic=activity-tracker-alerts). 
+2. Upgrade the {{site.data.keyword.at_full_notm}} service plan to a paid plan to be able to [search events by applying a query](/docs/services/activity-tracker?topic=activity-tracker-views#views_step2) and [configure alerts](/docs/services/activity-tracker?topic=activity-tracker-alerts).
 
    For more information about {{site.data.keyword.at_full_notm}} service plans, see [Service plans](/docs/services/activity-tracker?topic=activity-tracker-service_plan#service_plan).
-
-
