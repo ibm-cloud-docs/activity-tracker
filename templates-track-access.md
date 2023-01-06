@@ -1,17 +1,17 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-06-22"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
- 
+
 
 # Using the Track Access template
 {: #templates-track-access}
@@ -62,13 +62,13 @@ Complete the following steps to launch the {{site.data.keyword.at_short}} templa
 
 Complete the following steps to deploy the **Track Access** template:
 
-1. From the {{site.data.keyword.at_short}} instance UI, click the **Settings** icon ![Settings icon](/images/config.png) &gt; **Template Library**.  The tiles show the available template libraries.  
+1. From the {{site.data.keyword.at_short}} instance UI, click the **Settings** icon ![Settings icon](/images/config.png) &gt; **Template Library**.  The tiles show the available template libraries.
 
 2. In the Template library section, select the **Track Access** tile.
 
 3. Choose the views and screen resources that you want to deploy. Make sure you select the parsing templates.
 
-4. Click **Apply template**.  
+4. Click **Apply template**.
 
     If you do not select one or more options within the template library, all options will be deployed.
     {: note}
@@ -109,16 +109,10 @@ For more information, see [Monitoring login sessions for trusted profiles](/docs
 {: #templates-track-access-screens}
 
 
-The following table outlines the predefined screens that you can use to gain insight on your {{site.data.keyword.cloud_notm}} access requests. 
+The following table outlines the predefined screens that you can use to gain insight on your {{site.data.keyword.cloud_notm}} access requests.
 
 | Screen name | Description |
 |-------------|-------------|
 | `Activity Summary` | View statistics and gain insight on your {{site.data.keyword.cloud_notm}} requests. |
 | `Login and Requests Status`  | View statistics about login, unauthorize access, and denied requests. |
 {: caption="Table 2. Predefined screens" caption-side="bottom"}
-
-
-
-
-
-

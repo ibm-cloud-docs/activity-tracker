@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-05-16"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -43,8 +43,8 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task                                                    | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |---------------------------------------------------------|-----------------------|--------|
-| `Updates to {{site.data.keyword.at_short}}` | Provide major, minor, and patch version updates for {{site.data.keyword.at_full_notm}} interfaces.   \n Document changes in the [Release notes](https://docs.mezmo.com/changelog){: external} | `N/A` | 
-| `Track versions of custom views, dashboards, screens, parsing templates, and alerts for {{site.data.keyword.at_short}}`    | `N/A` | Use your own change management process to control versions of metadata resources such as views, dashboards, screens, parsing templates, and alerts`.   \n To learn how to export metadata, see [Export the configuration of resources in an auditing instance](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config). | 
+| `Updates to {{site.data.keyword.at_short}}` | Provide major, minor, and patch version updates for {{site.data.keyword.at_full_notm}} interfaces.   \n Document changes in the [Release notes](https://docs.mezmo.com/changelog){: external} | `N/A` |
+| `Track versions of custom views, dashboards, screens, parsing templates, and alerts for {{site.data.keyword.at_short}}`    | `N/A` | Use your own change management process to control versions of metadata resources such as views, dashboards, screens, parsing templates, and alerts`.   \n To learn how to export metadata, see [Export the configuration of resources in an auditing instance](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config). |
 {: caption="Table 2. Responsibilities for change management" caption-side="top"}
 
 
@@ -55,7 +55,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task                           | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |--------------------------------|-------------------------------------------------|-----------------------|
-| `Manage permissions for {{site.data.keyword.at_short}}`           |Provide the ability to restrict access to resources.   \n {{site.data.keyword.IBM_notm}} is responsible for the security and compliance of {{site.data.keyword.at_full_notm}}. | Restrict access to resources by using Cloud IAM access policies by defining IAM policies to control which users within your account have access to the data.    \n [Learn more about controlling access through IAM](/docs/activity-tracker?topic=activity-tracker-iam).| 
+| `Manage permissions for {{site.data.keyword.at_short}}`           |Provide the ability to restrict access to resources.   \n {{site.data.keyword.IBM_notm}} is responsible for the security and compliance of {{site.data.keyword.at_full_notm}}. | Restrict access to resources by using Cloud IAM access policies by defining IAM policies to control which users within your account have access to the data.    \n [Learn more about controlling access through IAM](/docs/activity-tracker?topic=activity-tracker-iam).|
 {: caption="Table 3. Responsibilities for identity and access management" caption-side="top"}
 
 
@@ -91,4 +91,3 @@ Review the following sections for the specific responsibilities for you and for 
 
 To plan and prepare in the event of a DR scenario for {{site.data.keyword.at_short}}, see [Recovering from a disaster region](/docs/activity-tracker?topic=activity-tracker-ha_dr_steps).
 {: important}
-

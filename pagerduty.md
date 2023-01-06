@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -16,7 +16,7 @@ subcollection: activity-tracker
 {: #pagerduty}
 
 
-You can send alerts to PagerDuty. 
+You can send alerts to PagerDuty.
 {: shortdesc}
 
 
@@ -37,11 +37,11 @@ When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-aler
 5. Optionally you can specify a **Custom schedule** with alerting limited to a specified timezone, days of the week, or timeframe. To configure a **Custom schedule**:
 
     1. Select **on** for **Custom schedule**.
-    2. Select the Timezone for the log entries. 
+    2. Select the Timezone for the log entries.
     3. Select the days of the week when alerts should be generated.
     4. Optionally specify a time range for the selected days. A graph will help you determine the number of log entries for the timezone and time range.
 
-6. Specify the **Service**. If required, you will be prompted to connect to PagerDuty.  
+6. Specify the **Service**. If required, you will be prompted to connect to PagerDuty.
 
     If no services are listed, click **Add PagerDuty** to connect and add a service. Create a PagerDuty service and associate it with an escalation policy. You will be directed to PagerDuty to authorize the integration. After authorization, your alerts will display in the PagerDuty incidents dashboard.
 
@@ -65,4 +65,3 @@ You can also configure differnt views to notify a single PagerDuty account.
 {: #pagerduty-limitations}
 
 Due to [PagerDuty API limitations](https://developer.pagerduty.com/docs/events-api-v2/overview/){: external}, all requests are trimmed to a maximum of 400 KB.
-

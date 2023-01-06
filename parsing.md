@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -12,7 +12,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
- 
+
 # Enhancing your data by defining custom indexed fields
 {: #parsing}
 
@@ -31,17 +31,17 @@ There are occasions when you might want to reference information that is availab
 
 2. Select the view with the fields you want to use.  Your view will be listed under the category where it was created, or under **UNCATEGORIZED** if you didn't specify a category when the view was created. For example, the following shows a view named "My View" that was created without an assigned category.
 
-   ![Navigation example](/images/uncategorized_myview.png "An uncategorized view named My View in the navigation") 
+   ![Navigation example](/images/uncategorized_myview.png "An uncategorized view named My View in the navigation")
 
 3. Click the selected view name.  The following example shows the view named "My View".
 
-   ![My View view](/images/myview.png "Heading showing the My View view") 
+   ![My View view](/images/myview.png "Heading showing the My View view")
 
 4. Click the view name.  The menu is displayed.  Click **Edit view properties**.
 
-   ![Edit view properties](/images/editviewproperties.png "Edit view properties") 
+   ![Edit view properties](/images/editviewproperties.png "Edit view properties")
 
-5. In the **Custom Template** you can find the fields you can use for parsing.  
+5. In the **Custom Template** you can find the fields you can use for parsing.
 
    * To determine the possible fields, click the down arrow on a log line in the view.
 
@@ -58,7 +58,7 @@ There are occasions when you might want to reference information that is availab
 
       In this case, the following fields can be used for parsing: `logSourceCRN` and `message`.
 
-      The `saveServiceCopy` field value cannot be used because it is a boolean value.  
+      The `saveServiceCopy` field value cannot be used because it is a boolean value.
       {: important}
 
 6. Click the **Settings** icon ![Settings icon](/images/config.png "Settings icon").
@@ -104,4 +104,3 @@ There are occasions when you might want to reference information that is availab
     {: note}
 
 The rule will take affect for views in approximately 15 minutes.  Dashboards and screen updates can take a bit longer.
-

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
 keywords:
@@ -37,7 +37,7 @@ When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-aler
 5. Optionally you can specify a **Custom schedule** with alerting limited to a specified timezone, days of the week, or timeframe. To configure a **Custom schedule**:
 
     1. Select **on** for **Custom schedule**.
-    2. Select the Timezone for the log entries. 
+    2. Select the Timezone for the log entries.
     3. Select the days of the week when alerts should be generated.
     4. Optionally specify a time range for the selected days. A graph will help you determine the number of log entries for the timezone and time range.
 
@@ -47,7 +47,7 @@ When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-aler
 
     Specify the **{{site.data.keyword.mon_short}} instance URL**. Set this field to the endpoint where the instance is available. For more information, see [{{site.data.keyword.mon_short}} endpoints](/docs/monitoring?topic=monitoring-endpoints#endpoints). For example, `https://eu-gb.monitoring.cloud.ibm.com`.
 
-    Specify the **Severity**. Valid values are `Info`, `Low`, `Medium`, or `High`. 
+    Specify the **Severity**. Valid values are `Info`, `Low`, `Medium`, or `High`.
 
 7. Optional: You can click **Test** to test that your alert configuration is correct.
 
@@ -61,14 +61,10 @@ When you [configure an alert](/docs/activity-tracker?topic=activity-tracker-aler
 ## Managing alerts
 {: #monitoring-manage}
 
-In {{site.data.keyword.mon_short}}, you get a **custom** event when an alert is triggered. 
+In {{site.data.keyword.mon_short}}, you get a **custom** event when an alert is triggered.
 
 You can view the events by filtering by name or level in the *Events* section of the {{site.data.keyword.mon_short}} instance.
 
 ![{{site.data.keyword.mon_short}} sample](images/sysdig-sample.png "Monitoring sample")
 
 To view alerts, a user must have permissions to navigate to the web UI. [Learn more](/docs/monitoring?topic=monitoring-launch).
-
-
-
-

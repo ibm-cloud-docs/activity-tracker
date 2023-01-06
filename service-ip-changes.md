@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-02-23"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -78,7 +78,3 @@ If you have firewalls set up on the public or private network in your {{site.dat
 {: #service-ip-changes-tasks-2}
 
 If you have applications and services that restrict connectivity to specific IPs and communicate with the {{site.data.keyword.at_short}} service, make sure the new IPs are configured to avoid interruption of the logging service.
-
-
-
-

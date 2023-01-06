@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-02-04"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -16,7 +16,7 @@ subcollection: activity-tracker
 # Managing usage quotas
 {: #control_usage_quotas}
 
-In {{site.data.keyword.at_full}}, you can use the *Usage Quota* settings to control how much data is stored so you can manage your data cost while still being able to view and retain the data you need.  
+In {{site.data.keyword.at_full}}, you can use the *Usage Quota* settings to control how much data is stored so you can manage your data cost while still being able to view and retain the data you need.
 {: shortdesc}
 
 
@@ -61,7 +61,7 @@ When deciding to use *Usage Quotas*, consider the following:
 
 * *Usage Quotas* configured actions are separate from any other [defined exclusion rules.](/docs/activity-tracker?topic=activity-tracker-exclusion_rules)   *Usage Quotas* rules are triggered dynamically based on your defined thresholds while other exclusion rules are always in effect.
 
-* If the quota is set to a value lower than what has been consumed and sent to storage, all incoming logs after the rule value has been set will be discarded. 
+* If the quota is set to a value lower than what has been consumed and sent to storage, all incoming logs after the rule value has been set will be discarded.
 
 * If you change your daily or monthly usage quota, all exclusion rules will be automatically disabled.  For example, if your set your monthly usage quota to 100 GB, and you have three daily exclusion rules configured to that quota, if you change your monthly usage quota to a different value the exclusion rules will be disabled.  You can reenable them if desired.  Exclusion rules are automatically disabled to help avoid having having logs being unintentionally discarded.
 
@@ -81,9 +81,9 @@ The Usage Quotas option is in the left-pane of the LogDNA application, under **S
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
-2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**. 
+2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**.
 
-3. Select **Activity Tracker**. 
+3. Select **Activity Tracker**.
 
     The list of {{site.data.keyword.at_full_notm}} instances is displayed.
 
@@ -102,7 +102,7 @@ To enable *Usage Quotas* make sure the selection at the top of the dialog is set
 ### Setting up your usage quotas
 {: #setup_usage_quota}
 
-When you first access the *Usage Quotas* dialog you will see the daily and monthly quotas set for your instance.  
+When you first access the *Usage Quotas* dialog you will see the daily and monthly quotas set for your instance.
 
 To change the daily and monthly quotas, do the following:
 
@@ -130,9 +130,9 @@ To change the daily and monthly quotas, do the following:
 
 If you want to take action prior to daily or monthly quota being reached, you can set up exclusion rules that operate as soft quotas.
 
-These exclusion rules will allow you to discard specific non-critial logs before reaching the hard quota threshold.  
+These exclusion rules will allow you to discard specific non-critial logs before reaching the hard quota threshold.
 
-For example, if the daily usage quote is 2 GB and your set an exclusion rule for 50%, {{site.data.keyword.at_full_notm}} will apply the configured exclusion rule and no longer retain logs from the sources, apps, hosts, or queries specified in the rule. 
+For example, if the daily usage quote is 2 GB and your set an exclusion rule for 50%, {{site.data.keyword.at_full_notm}} will apply the configured exclusion rule and no longer retain logs from the sources, apps, hosts, or queries specified in the rule.
 
 You can specify up to 5 daily exclusion rules and 5 monthly exclusion rules.
 {: note}
@@ -165,7 +165,7 @@ Verify that each exclusion rule that you add behaves as expected. Improper confi
 8. After you configure an exclusion rule, verify that the exclusion rule behaves as you expect.
 
     Check the query in a custom view by entering the search criteria in the search bar of the *Everything* view, and validating that the data that is displayed is the data that you want excluded.
-    {: tip} 
+    {: tip}
 
 #### Monthly exclusion rules
 {: #monthly_usage_quota}
@@ -195,7 +195,7 @@ Verify that each exclusion rule that you add behaves as expected. Improper confi
 8. After you configure an exclusion rule, verify that the exclusion rule behaves as you expect.
 
     Check the query in a custom view by entering the search criteria in the search bar of the *Everything* view, and validating that the data that is displayed is the data that you want excluded.
-    {: tip} 
+    {: tip}
 
 #### Enable and disabling exclusion rules
 {: #enable_usage_rules}
@@ -219,5 +219,3 @@ To configure notifications when a quota threshold is exceeded, do the following:
 1. Under **Alert recipients** select the desired recipient email addresses. There must be at least one email address configured if Slack notifcations are not configured.
 
 2. If desired, select one or more **Slack recipients** to receive notifications.  If you configure a Slack recipient, you can delete all email recipients if desired.
-
-

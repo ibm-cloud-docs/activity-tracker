@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-10-21"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -12,7 +12,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
- 
+
 # Monitoring archiving by using {{site.data.keyword.mon_full_notm}}
 {: #archiving-monitor}
 
@@ -38,13 +38,13 @@ Complete the following steps to monitor the {{site.data.keyword.messagehub}} ins
 
     You can use the metric *ibm_cos_bucket_object_count* to see how many objects are uploaded into the bucket.
 
-5. (Optional) Edit each panel to view data by bucket name and storage class. 
+5. (Optional) Edit each panel to view data by bucket name and storage class.
 
-    ![Edit panel.](images/archive-monitor-1.png "Edit panel") 
+    ![Edit panel.](images/archive-monitor-1.png "Edit panel")
 
     Then, customize the metric to see data per storage class.
 
-    ![Customize metric.](images/archive-monitor-2.png "Customize metric") 
+    ![Customize metric.](images/archive-monitor-2.png "Customize metric")
 
     Check that the resolution is set to **10M**.
 

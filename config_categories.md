@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-11-17"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -12,7 +12,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
- 
+
 # Managing categories programmatically
 {: #config_categories}
 
@@ -52,7 +52,7 @@ Depending on [your account settings](/docs/account?topic=account-service-endpoin
 {: #config_categories_authentication}
 
 When you manage categories programmatically, you must use a service key. Authorization to the logging configuration API is enforced by using a service key.
-{: note} 
+{: note}
 
 A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to a logging instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
 
@@ -66,7 +66,7 @@ For example, in a cURL request, you must set the `content-type` header as follow
 {: codeblock}
 
 
-## Additional headers 
+## Additional headers
 {: #config_api_headers}
 
 Some additional headers might be required to make successful requests to the API. Those additional headers are:
@@ -112,7 +112,7 @@ The following table indicates when the `name` parameter is required:
 
 The following are examples of how to use the categories configuration API.
 
-In these examples, `<SERVICE_KEY>` is the [service key](/docs/activity-tracker?topic=activity-tracker-service_keys) for your {{site.data.keyword.la_short}} instance. 
+In these examples, `<SERVICE_KEY>` is the [service key](/docs/activity-tracker?topic=activity-tracker-service_keys) for your {{site.data.keyword.la_short}} instance.
 
 ### Creating a category for boards
 {: #config-categories-create-category-boards}
@@ -180,5 +180,3 @@ curl GET https://api.us-south.logging.cloud.ibm.com/v1/config/categories/views/x
   -H 'servicekey: <SERVICE_KEY>' \
 ```
 {: pre}
-
-

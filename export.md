@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -12,11 +12,11 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
- 
+
 # Exporting events through the UI
 {: #export}
 
-You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance graphically through the web UI. 
+You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance graphically through the web UI.
 {: shortdesc}
 
 
@@ -25,16 +25,16 @@ Exporting using the UI uses the [V1 export API](/docs/activity-tracker?topic=act
 {: note}
 
 Consider the following information when you export events:
-* You can export a set of log entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range. 
+* You can export a set of log entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range.
 * From the Web UI, when you export logs, you get an email that is sent to your email address, with a link to a compressed file that includes the data. To get the data, you must click the link and download the compressed file.
-* The compressed log file that contains the data that you want to export is available for a maximum of 12 hours. 
-* When you export logs, you have a limit of lines that you can export in a request. You can specify to export older lines or newer lines in case you reach the limit in the time range that you specify for the export. 
+* The compressed log file that contains the data that you want to export is available for a maximum of 12 hours.
+* When you export logs, you have a limit of lines that you can export in a request. You can specify to export older lines or newer lines in case you reach the limit in the time range that you specify for the export.
 
 
 ## Prerequisites
 {: #export_prereqs}
 
-* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-service_plan#service_plan). 
+* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-service_plan#service_plan).
 
 * Check that your user ID has permissions to launch the web UI, view or manage service keys, and view events. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
@@ -50,7 +50,7 @@ Complete the following steps to export data through the UI:
 1. [Launch the UI](/docs/services/activity-tracker?topic=activity-tracker-launch#launch).
 2. Click the **Views** icon ![Views icon](images/views.png "Views icon").
 3. Select a view.
-4. Select the view name. 
+4. Select the view name.
 5. Select **Export lines**. A new window opens.
 6. Check the time range. If you need to change it, click the predefined time range in the *Time Range for Export* field.
 7. Select **Prefer newer lines** or **Prefer older lines** in case the export request exceeds the line limit.
@@ -73,5 +73,3 @@ Complete the following steps to export data through the UI:
 7. Check the time range. If you need to change it, click the predefined time range in the *Time Range for Export* field.
 8. Select **Prefer newer lines** or **Prefer older lines** in case the export request exceeds the line limit.
 9. Check your email. You receive an email with a link to download your exported lines.
-
-

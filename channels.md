@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -21,14 +21,11 @@ The following table lists the notification channels that you can configure when 
 
 
 
-| Channel           | Configuration details | 
+| Channel           | Configuration details |
 |-------------------|-----------------------|
-| `email`             | You can configure one or more email addresses.  | 
+| `email`             | You can configure one or more email addresses.  |
 | `Slack`             | You can configure a slack channel. |
 | `Webhook`           | You can configure a web hook URL. |
 | `PagerDuty`         | You can configure connection details to your PagerDuty system, and select a service.|
 | `Monitoring`            | You can configure a {{site.data.keyword.mon_full_notm}} instance to collect notifications. |
-{: caption="Notification channels" caption-side="top"} 
-
-
-
+{: caption="Notification channels" caption-side="top"}

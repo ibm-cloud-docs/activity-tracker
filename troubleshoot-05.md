@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2022
+  years: 2022, 2023
 lastupdated: "2021-02-08"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Are you getting a failed to connect message when configuring streaming?
 {: #troubleshoot-05}
 {: troubleshoot}
-{: support} 
+{: support}
 
 You are trying to configure streaming and receive a "failure to connect" error.
 {: shortdesc}
@@ -30,7 +30,3 @@ You are attempting to configure multiple **Bootstrap Server URLs** at the same t
 
 Configure **Bootstrap Server URLs** one at a time clicking **Add another URL** to add each new URL.  Multiple URLs cannot be specified in a single **Bootstrap Server URLs** field and the **Bootstrap Server URLs** cannot include quotes or commas.
 {: tsResolve}
-
-
-
-
