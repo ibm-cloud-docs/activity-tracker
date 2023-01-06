@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -36,9 +36,9 @@ To change the service plan of an instance from the Observability dashboard in th
 
 3. Select **Activity Tracker**.
 
-4. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg) for the instance you want to change and select **Edit plan**. 
+4. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg) for the instance you want to change and select **Edit plan**.
 
-5. Select a service plan. 
+5. Select a service plan.
 
 6. Click **Save**.
 
@@ -80,7 +80,7 @@ Complete the following steps to change the service plan:
    * `service-plan-id` indicates the type of plan.
 
    * `RESOURCE_PLAN_ID` is the ID of the plan that you want to set. To get the service plan IDs, see [Service plans](/docs/activity-tracker?topic=activity-tracker-service_plan).
-    
+
 
    For example, to change the service plan of an instance to the 7 days retention plan, run the following command:
 
@@ -88,4 +88,3 @@ Complete the following steps to change the service plan:
    ibmcloud resource service-instance-update logdna-instance-01 9aae7491-5cb6-43eb-9b7a-3e0456c781f0
    ```
    {: codeblock}
-

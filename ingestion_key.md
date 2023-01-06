@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years:  2018, 2022
+  years:  2018, 2023
 lastupdated: "2022-07-28"
 
-keywords: 
+keywords:
 subcollection: activity-tracker
 
 ---
@@ -14,10 +14,10 @@ subcollection: activity-tracker
 # Working with ingestion keys
 {: #ingestion_key}
 
-The ingestion key is a security key that you must use to configure agents and successfully forward events to your {{site.data.keyword.at_full_notm}} instance in {{site.data.keyword.cloud_notm}}. You automatically get the ingestion key when you provision an instance. 
+The ingestion key is a security key that you must use to configure agents and successfully forward events to your {{site.data.keyword.at_full_notm}} instance in {{site.data.keyword.cloud_notm}}. You automatically get the ingestion key when you provision an instance.
 {: shortdesc}
 
-To work with ingestion keys through the {{site.data.keyword.at_full_notm}} Web UI, you must have an IAM policy with platform role **Viewer** and service role **Manager** for the {{site.data.keyword.at_full_notm}} service. 
+To work with ingestion keys through the {{site.data.keyword.at_full_notm}} Web UI, you must have an IAM policy with platform role **Viewer** and service role **Manager** for the {{site.data.keyword.at_full_notm}} service.
 
 
 ## Getting ingestion keys
@@ -31,7 +31,7 @@ To get the ingestion key for an {{site.data.keyword.at_full_notm}} instance by u
 
 1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
-2. Go to the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) &gt; **Observability**. 
+2. Go to the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) &gt; **Observability**.
 
 3. Click **Logging**. The {{site.data.keyword.at_full_notm}} dashboard opens. You can see the list of logging instances that are available on {{site.data.keyword.cloud_notm}}.
 
@@ -49,39 +49,39 @@ To get the ingestion key for an {{site.data.keyword.at_full_notm}} instance by u
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Click the **Settings** icon ![Settings icon](../images/admin.png) &gt; **Organization** &gt; **API keys**. 
+2. Click the **Settings** icon ![Settings icon](../images/admin.png) &gt; **Organization** &gt; **API keys**.
 
-    You can see the ingestion keys that are enabled. 
+    You can see the ingestion keys that are enabled.
 
-3. Copy the ingestion key that shows in the **API keys** section. 
+3. Copy the ingestion key that shows in the **API keys** section.
 
 ### Creating a service key by using the logging UI
 {: #ingestion_key_create_ui}
 
 You must have the **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
-{: important} 
+{: important}
 
 For more information, see [service roles](/docs/activity-tracker?topic=activity-tracker-iam#service).
-  
+
 Complete the following steps to create a service key:
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Click the **Settings** icon ![Settings icon](../images/admin.png). 
+2. Click the **Settings** icon ![Settings icon](../images/admin.png).
 
-3. Select **Organization**. 
+3. Select **Organization**.
 
 4. Select **API keys**.
 
-   If you have the correct permissions, the available service keys are displayed in the **Ingestion keys** section.   
+   If you have the correct permissions, the available service keys are displayed in the **Ingestion keys** section.
 
-5. Click **Generate Ingestion Key**. A new key is added to the list. 
+5. Click **Generate Ingestion Key**. A new key is added to the list.
 
 ### Deleting a service key by using the UI
 {: #ingestion_key_delete_ui}
 
 You must have the **manager** role for the {{site.data.keyword.at_full_notm}} service to complete this step.
-{: important} 
+{: important}
 
 For more information, see [service roles](/docs/activity-tracker?topic=activity-tracker-iam#service).
 
@@ -89,13 +89,13 @@ Complete the following steps to delete an ingestion key:
 
 1. [Launch the {{site.data.keyword.at_short}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Click the **Settings** icon ![Settings icon](../images/admin.png). 
+2. Click the **Settings** icon ![Settings icon](../images/admin.png).
 
-3. Select **Organization**. 
+3. Select **Organization**.
 
 4. Select **API keys**.
 
-   If you have the correct permissions, the available service keys are displayed in the **Ingestion Keys** section.   
+   If you have the correct permissions, the available service keys are displayed in the **Ingestion Keys** section.
 
 5. Delete the key by clicking the **X** next to the key to be deleted.
 
@@ -109,11 +109,11 @@ To renew the ingestion key for an {{site.data.keyword.at_full_notm}} instance by
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Click the **Settings** icon ![Settings icon](../images/admin.png) &gt; **Organization**. 
+2. Click the **Settings** icon ![Settings icon](../images/admin.png) &gt; **Organization**.
 
 3. Select **API keys**.
 
-    You can see the ingestion keys that are enabled. 
+    You can see the ingestion keys that are enabled.
 
 4. Select **Generate Ingestion Key**.
 
@@ -164,7 +164,7 @@ To get the ingestion key for a logging instance through the command line, comple
     {: pre}
 
     where APIKEY_NAME is the name of the API key.
- 
+
     The output from this command includes the field **ingestion key** that contains the ingestion key for the instance.
 
 ## Managing ingestion keys through the API
@@ -283,7 +283,7 @@ Where:
 To delete an ingestion key, run the following command.
 
 ```sh
-curl -X DELETE "https://API_ENDPOINT/v1/config/keys/KEY_ID"  
+curl -X DELETE "https://API_ENDPOINT/v1/config/keys/KEY_ID"
   -H 'content-type: application/json' \
   -H 'servicekey: SERVICE_KEY'
 ```
@@ -320,7 +320,6 @@ To rotate a key, complete the following steps:
 
 3. Delete the old key. Make sure you use the ID of the key that you identified previously. For more information, see [Deleting a key](#ingestion_key_api_delete).
 
-4. After you rotate the ingestion key, you must update the ingestion key for any sources that you have configured to forward logs to this {{site.data.keyword.at_short}} instance. 
+4. After you rotate the ingestion key, you must update the ingestion key for any sources that you have configured to forward logs to this {{site.data.keyword.at_short}} instance.
 
     For example, if you have configured streaming to an {{site.data.keyword.at_short}} instance, and you rotate the service key of the destinaltion {{site.data.keyword.at_short}} instance, you need to reconfigure streaming to continue streaming data. For more info, see [Configuring streaming to a Activity Tracker instance through the UI](/docs/activity-tracker?topic=activity-tracker-streaming-configure-l2l).
-

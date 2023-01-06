@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-11-04"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -15,7 +15,7 @@ subcollection: activity-tracker
 # Managing archiving by using the API
 {: #archiving-manage-api}
 
-You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance by using an API. 
+You can archive events from an {{site.data.keyword.at_full_notm}} instance into a bucket in an {{site.data.keyword.cos_full_notm}} (COS) instance by using an API.
 {: shortdesc}
 
 
@@ -24,15 +24,15 @@ You can archive events from an {{site.data.keyword.at_full_notm}} instance into 
 ## Prerequisites on the {{site.data.keyword.at_full_notm}} service
 {: #archiving_prereqs}
 
-* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-service_plan#service_plan). 
+* **You must have a paid service plan** for the {{site.data.keyword.at_full_notm}} service. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-service_plan#service_plan).
 
 * Check that your user ID has permissions to manage archiving. The following table lists the minimum roles that a user must have to manage archiving by using the API:
 
 | Role                      | Permission granted            |
-|---------------------------|-------------------------------|  
+|---------------------------|-------------------------------|
 | Platform role: `Viewer`     | Allows the user to view the list of service instances. |
 | Service role: `Manager`      | Allows the user to manage archiving by using the API.  |
-{: caption="Table 1. IAM roles" caption-side="top"} 
+{: caption="Table 1. IAM roles" caption-side="top"}
 
 For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
@@ -45,9 +45,9 @@ You must have a COS bucket configured, and the details of the service credential
 Use [this method](https://{DomainName}/apidocs/activity-tracker#get-v1-config-archiving){: external} to get the details about an existing archiving configuration.
 
 ```text
-curl -X GET https://<ENDPOINT>/v1/config/archiving  
- -H "content-type: application/json"  
- -H "servicekey: <SERVICE_KEY>"  
+curl -X GET https://<ENDPOINT>/v1/config/archiving
+ -H "content-type: application/json"
+ -H "servicekey: <SERVICE_KEY>"
 ```
 {: pre}
 
@@ -57,9 +57,9 @@ curl -X GET https://<ENDPOINT>/v1/config/archiving
 For example, the following is a sample get request:
 
 ```text
-curl -X GET https://api.us-south.logging.cloud.ibm.com/v1/config/archiving  
- -H "content-type: application/json"  
- -H "servicekey: xxxxxxxx"  
+curl -X GET https://api.us-south.logging.cloud.ibm.com/v1/config/archiving
+ -H "content-type: application/json"
+ -H "servicekey: xxxxxxxx"
 ```
 {: codeblock}
 
@@ -79,9 +79,9 @@ Use [this method](https://{DomainName}/apidocs/activity-tracker#delete-v1-config
 
 ```text
 
-curl -X DELETE https://<ENDPOINT>/v1/config/archiving  
- -H "content-type: application/json"  
- -H "servicekey: <SERVICE_KEY>"  
+curl -X DELETE https://<ENDPOINT>/v1/config/archiving
+ -H "content-type: application/json"
+ -H "servicekey: <SERVICE_KEY>"
 ```
 {: pre}
 
@@ -96,7 +96,7 @@ The response will be similar to the following if the configuration is successful
 ```
 {: codeblock}
 
-If an incorrect service key was specified, a response similar to the following will be returned: 
+If an incorrect service key was specified, a response similar to the following will be returned:
 
 ```text
 {"error":"Service Key Validation Error: Invalid or deactivated servicekey","status":"error","code":"NotAuthorized"}
@@ -112,10 +112,10 @@ You must have a [{{site.data.keyword.cos_full_notm}} bucket configured](/docs/cl
 {: important}
 
 ```text
-curl -X POST https://<ENDPOINT>/v1/config/archiving  
- -H "content-type: application/json"  
- -H "servicekey: <SERVICE_KEY>"  
- -d '{"integration": "ibm", "bucket": "<BUCKET>", "endpoint": "<COS_ENDPOINT>", "apikey": "<API_KEY>", "resourceinstanceid": "<ID>"}' 
+curl -X POST https://<ENDPOINT>/v1/config/archiving
+ -H "content-type: application/json"
+ -H "servicekey: <SERVICE_KEY>"
+ -d '{"integration": "ibm", "bucket": "<BUCKET>", "endpoint": "<COS_ENDPOINT>", "apikey": "<API_KEY>", "resourceinstanceid": "<ID>"}'
  ```
 {: pre}
 
@@ -140,10 +140,10 @@ The response will be similar to the following if archiving is successfully confi
 Use [this method](https://{DomainName}/apidocs/activity-tracker#put-v1-config-archiving){: external} to update an archiving configuration.
 
 ```text
-curl -X PUT https://api.eu-gb.logging.cloud.ibm.com/v1/config/archiving 
- -H "content-type: application/json"  
- -H "servicekey: <SERVICE_KEY>"  
- -d '{"integration": "ibm", "bucket": "<BUCKET>", "endpoint": "<COS_ENDPOINT>", "apikey": "<API_KEY>", "resourceinstanceid": "<ID>"}' 
+curl -X PUT https://api.eu-gb.logging.cloud.ibm.com/v1/config/archiving
+ -H "content-type: application/json"
+ -H "servicekey: <SERVICE_KEY>"
+ -d '{"integration": "ibm", "bucket": "<BUCKET>", "endpoint": "<COS_ENDPOINT>", "apikey": "<API_KEY>", "resourceinstanceid": "<ID>"}'
 ```
 {: pre}
 
@@ -173,19 +173,16 @@ If archiving is not configured, the following will be returned when trying to do
 
 To check if archiving is enabled or disabled, you can use either the GET or PUT methods.
 
-When archiving is not enabled, the following is returned when running the [GET method](#archivingapi-get-conf): 
+When archiving is not enabled, the following is returned when running the [GET method](#archivingapi-get-conf):
 
 ```text
 {"error":"No active archiving configuration exists","code":"NotFound","status":"error"}
 ```
 {: codeblock}
 
-When archiving is not enabled, the following is returned when running the [PUT method](#archivingapi-update-conf): 
+When archiving is not enabled, the following is returned when running the [PUT method](#archivingapi-update-conf):
 
 ```text
 {"error":"Active archiving configuration does not exist for this account. Try creating one instead.","code":"ServerError","status":"error"}
 ```
 {: codeblock}
-
-
-

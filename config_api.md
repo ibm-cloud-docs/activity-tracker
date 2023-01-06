@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-11-17"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -37,7 +37,7 @@ Before you run any automated tasks, consider doing a back up of your account con
 {: #config-api-work-create-views}
 
 When you create a view, consider the following information:
-- You can create a view with no alerts. 
+- You can create a view with no alerts.
 - You can create a view with 1 or more notification channels. Valid alert notification channels that are supported by the *Configuration* API are: email, webhook, or PagerDuty.
 - The response to an API request to create a view includes the ID of the view.
 - The `name` body parameter, that defines the name of the view, is always required.
@@ -45,17 +45,17 @@ When you create a view, consider the following information:
 - You can define body parameters to refine the data that is displayed through the view. You must specify 1 or more of the following body parameters: query, apps, levels, hosts, or tags.
 
 When you create a PagerDuty notification channel, consider the following information:
-- You must manually configure the integration with PagerDuty. 
-- You must provide the PagerDuty API key. 
+- You must manually configure the integration with PagerDuty.
+- You must provide the PagerDuty API key.
 
-After you create a view, check the view in the UI. 
-1. Refresh the browser to see the view listed in the *Views* section. 
+After you create a view, check the view in the UI.
+1. Refresh the browser to see the view listed in the *Views* section.
 2. Select the view to display it.
 3. Check the data that is available through the view is the one that you expect.
 
-    - If you do not see any data, check that data is being generated for the auditing events that you are planning to monitor through this view. For example, you can check the **Everything** view and look for events. 
+    - If you do not see any data, check that data is being generated for the auditing events that you are planning to monitor through this view. For example, you can check the **Everything** view and look for events.
 
-    - If data is being generated, and you still cannot see any data, check the body parameter values that you have defined for the view. One of them might be set to the wrong value and the search criteria does not find any matching events. 
+    - If data is being generated, and you still cannot see any data, check the body parameter values that you have defined for the view. One of them might be set to the wrong value and the search criteria does not find any matching events.
 
 If you try to create a view without defining a category, you get the following error message:
 
@@ -94,13 +94,13 @@ When you retrieve all the views and alerts for the instance using the GET method
 {: #config-api-work-modify-views}
 
 When you modify a view, consider the following information:
-- You must specify the name and the view ID of the view. 
+- You must specify the name and the view ID of the view.
 - If you are viewing a view in the UI, the view is not refreshed automatically after you run an API request to modify the view. To refresh the view in the UI, you must navigate to the `Everything` view and back to the view.
 
 An API request to modify a view replaces the existing view definition and associated alerts with your request body data. Any properties that are not specified in your PUT request will be removed.
 {: important}
 
-If the `viewid` that you are trying to modify does not exist, a response similar to the following will be returned: 
+If the `viewid` that you are trying to modify does not exist, a response similar to the following will be returned:
 
 ```text
 {"error":"Nothing to configure","code":"BadRequest","status":"error"}
@@ -140,7 +140,7 @@ Depending on [your account settings](/docs/account?topic=account-service-endpoin
 {: #config-api-authentication}
 
 When you manage views and alerts programmatically, you must use a service key. Authorization to the Configuration API is enforced by using a service key.
-{: note} 
+{: note}
 
 A service key is a unique code that is passed in an API request to identify the calling application or user. The service key is specific to an auditing instance. For more information on how to generate a service key, see [Managing service keys](/docs/activity-tracker?topic=activity-tracker-service_keys).
 
@@ -154,7 +154,7 @@ For example, in a cURL request, you must set the `content-type` header as follow
 {: codeblock}
 
 
-## Additional headers 
+## Additional headers
 {: #config-api-headers}
 
 Some additional headers might be required to make successful requests to the API. Those additional headers are:
@@ -287,7 +287,7 @@ Specifies the notification channels and trigger conditions that are associated w
 ### category (array of strings)
 {: #config-api-parm-category}
 
-Specifies the classification of views. 
+Specifies the classification of views.
 - You can include a view in 1 or more categories.
 
 For example, to associate a view to a category named `My category`, you can set it as follows:
@@ -304,10 +304,10 @@ For example, to associate a view to a category named `My category`, you can set 
 
 The following are examples of how to use the Configuration API.
 
-A category must exist before you create a view. In these examples, replace `<MY_CATEGORY>` with your category. 
+A category must exist before you create a view. In these examples, replace `<MY_CATEGORY>` with your category.
 {: note}
 
-In these examples, `<SERVICE_KEY>` is the [service key](/docs/activity-tracker?topic=activity-tracker-service_keys) for your {{site.data.keyword.at_full_notm}} instance. 
+In these examples, `<SERVICE_KEY>` is the [service key](/docs/activity-tracker?topic=activity-tracker-service_keys) for your {{site.data.keyword.at_full_notm}} instance.
 
 ### Creating a view
 {: #config-api-create-view}
@@ -354,7 +354,7 @@ curl https://api.eu-de.logging.cloud.ibm.com/v1/config/view \
       "channels": [
         {
           "integration": "email",
-          "emails": ["myemail@ibm.com"],   
+          "emails": ["myemail@ibm.com"],
           "triggerlimit": 15,
           "triggerinterval": "5m",
           "immediate": true,
@@ -380,7 +380,7 @@ A response similar to the following will be returned:
 The following sample gets all configured views and alerts for the instance.
 
 ```text
-curl --request GET  https://api.eu-de.logging.cloud.ibm.com/v1/config/view  -H "content-type: application/json"  -H "servicekey: <SERVICE_KEY>"  
+curl --request GET  https://api.eu-de.logging.cloud.ibm.com/v1/config/view  -H "content-type: application/json"  -H "servicekey: <SERVICE_KEY>"
 ```
 {: pre}
 
@@ -441,7 +441,7 @@ curl --request DELETE \
   --url https://api.us-south.logging.cloud.ibm.com/v1/config/view/<VIEWID> \
   -H 'content-type: application/json' \
   -H 'servicekey: <SERVICE_KEY>'  \
-```  
+```
 {: pre}
 
 The following response will be returned when the view is successfully deleted:
@@ -450,5 +450,3 @@ The following response will be returned when the view is successfully deleted:
 {"deleted":true}
 ```
 {: screen}
-
-

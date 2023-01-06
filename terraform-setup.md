@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
 keywords: IBM Cloud, Activity Tracker, cidr
@@ -32,7 +32,7 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
 1. To install the Terraform CLI and configure the {{site.data.keyword.cloud}} Provider plug-in for Terraform, follow the [Terraform on {{site.data.keyword.cloud}} getting started tutorial](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started). The plug-in abstracts the {{site.data.keyword.cloud_notm}} APIs that are used to provision, update, or delete {{site.data.keyword.registryshort}} resources.
 
     1. Create a terraform folder on your local machine, and navigate to your terraform folder.
-   
+
         ```text
         mkdir terraform && cd terraform
         ```
@@ -64,17 +64,17 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
    data "ibm_resource_group" "group" {
      name = "default"
    }
-   
+
    resource "ibm_cr_namespace" "cr_namespace" {
      name = "<namespace_name>"
      resource_group_id = data.ibm_resource_group.group.id
    }
-   
+
    resource "ibm_cr_retention_policy" "cr_retention_policy" {
      namespace = ibm_cr_namespace.cr_namespace.id
      images_per_repo = 10
    }
-   
+
    resource "ibm_iam_user_policy" "policy" {
      ibm_id = "user@ibm.com"
      roles  = ["Manager"]
@@ -122,7 +122,7 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
 
 Now that you successfully created your first {{site.data.keyword.registryshort}} namespace with Terraform on {{site.data.keyword.cloud_notm}}, you can choose between the following tasks:
 
-- Learn how to [add images to your namespace](/docs/Registry?topic=Registry-registry_images_). 
+- Learn how to [add images to your namespace](/docs/Registry?topic=Registry-registry_images_).
 - Explore other supported arguments and attributes for the [{{site.data.keyword.registryshort}} Terraform resources and data sources](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace){: external} that were used in this example.
 
 
@@ -150,5 +150,5 @@ ibm_resource_key.resourceKey: Creating...
 ibm_resource_key.resourceKey: Creation complete after 4s [id=crn:v1:bluemix:public:logdnaat:ca-tor:a/81de6380e6232019c6567c9c8de6dece:279d5d5d-fe0d-4806-8f98-1510d2ad8fe1:resource-key:938ee790-ff3c-4f4d-ade6-a709747d984d]
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
-MacBook-Pro:myproject luisalopezdesicanes$ 
+MacBook-Pro:myproject luisalopezdesicanes$
 ````

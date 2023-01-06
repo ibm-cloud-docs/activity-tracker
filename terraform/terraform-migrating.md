@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years:  2022
+  years:  2022, 2023
 lastupdated: "2022-05-04"
 
 keywords: IBM Cloud, Activity Tracker, terraform
@@ -24,7 +24,3 @@ After you have migrated to the {{site.data.keyword.atracker_full}} V2 API you wi
 These instructions assume you have an {{site.data.keyword.atracker_full}} instance that you have provisioned using Terraform prior to the availability of the {{site.data.keyword.atracker_full}} V2 API.
 
 Once you have [migrated to the V2 API](/docs/activity-tracker?topic=activity-tracker-migrate-resources) you will need to follow these instructions to update your Terraform configuration.
-
-
-
-

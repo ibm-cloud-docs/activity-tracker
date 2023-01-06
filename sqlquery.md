@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -26,16 +26,16 @@ Each {{site.data.keyword.at_full_notm}} instance has a service plan associated t
 
 To query the archive data in a file, you can use the {{site.data.keyword.sqlquery_short}} service. The service offers an SQL editor through the UI, and also programmatic options such as a REST API.
 
-Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and test your queries, and the [SQL Query REST API](#restapi) to automate them. 
+Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and test your queries, and the [SQL Query REST API](#restapi) to automate them.
 {: tip}
 
-The {{site.data.keyword.sqlquery_short}} service provides a serverless, no-ETL solution to easily query data stored in {{site.data.keyword.cos_short}}. Underneath, SQL Query uses Apache Spark SQL as its underlying query engine. 
+The {{site.data.keyword.sqlquery_short}} service provides a serverless, no-ETL solution to easily query data stored in {{site.data.keyword.cos_short}}. Underneath, SQL Query uses Apache Spark SQL as its underlying query engine.
 
 You can use the {{site.data.keyword.sqlquery_short}} to run SQL queries (that is, `SELECT` statements) to analyze, transform structured and semi-structured data, or clean up rectangular data. You cannot run actions such as `CREATE`, `DELETE`, `INSERT`, and `UPDATE`.
 
 The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. The archive files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format.
 
-Each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in a {{site.data.keyword.cos_short}} instance of your choice. 
+Each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in a {{site.data.keyword.cos_short}} instance of your choice.
 
 When you query an {{site.data.keyword.at_full_notm}} archive file, you must convert the JSON formatted file into `PARQUET` format to be able to query the contents successfully.
 {: important}
@@ -47,15 +47,15 @@ When you query an {{site.data.keyword.at_full_notm}} archive file, you must conv
 ## Prerequisites
 {: #sqlquery_prereq}
 
-To be able to use the {{site.data.keyword.sqlquery_short}} service to query archived event files, check the following prerequites: 
+To be able to use the {{site.data.keyword.sqlquery_short}} service to query archived event files, check the following prerequites:
 
-* You must have access to a COS instance in your account. 
+* You must have access to a COS instance in your account.
 
-    You must have access to a bucket that contains the {{site.data.keyword.at_full_notm}} archive files and a bucket to use to store results from your queries. 
+    You must have access to a bucket that contains the {{site.data.keyword.at_full_notm}} archive files and a bucket to use to store results from your queries.
 
-* You must have an {{site.data.keyword.at_full_notm}} instance provisioned in your account that has [archiving configured to a bucket in the COS instance in your account](/docs/services/activity-tracker?topic=activity-tracker-archiving). 
+* You must have an {{site.data.keyword.at_full_notm}} instance provisioned in your account that has [archiving configured to a bucket in the COS instance in your account](/docs/services/activity-tracker?topic=activity-tracker-archiving).
 
-    Events are archived daily to a file in a COS bucket. 
+    Events are archived daily to a file in a COS bucket.
 
     Notice that if archiving is not configured, you must wait at least 24 hours before an archive file is available after archiving is configured.
 
@@ -78,7 +78,7 @@ You must provision the {{site.data.keyword.sqlquery_short}} service in the same 
 To provision an instance, see [Create your {{site.data.keyword.sqlquery_short}} service instance](/docs/sql-query?topic=sql-query-getting-started).
 
 
-Once you have {{site.data.keyword.sqlquery_short}} running on {{site.data.keyword.cloud_notm}}, you can immediately start querying your data by using the {{site.data.keyword.sqlquery_short}} UI, or programmatically by using either [the {{site.data.keyword.sqlquery_short}} REST API](https://cloud.ibm.com/apidocs/sql-query){: external}, or the Python `ibmcloudsql` library. 
+Once you have {{site.data.keyword.sqlquery_short}} running on {{site.data.keyword.cloud_notm}}, you can immediately start querying your data by using the {{site.data.keyword.sqlquery_short}} UI, or programmatically by using either [the {{site.data.keyword.sqlquery_short}} REST API](https://cloud.ibm.com/apidocs/sql-query){: external}, or the Python `ibmcloudsql` library.
 
 
 ## Step 2. Granting user permissions to run a query
@@ -100,7 +100,7 @@ To run queries with the SQL query service, a user needs a platform role and a se
 
 Notice that users with the service role **reader** get an access error when they launch the SQL Query UI.
 
-To manage access or assign new access for users by using IAM policies, you must be the account owner, administrator on all services in the account, or an administrator for the particular service or service instance. 
+To manage access or assign new access for users by using IAM policies, you must be the account owner, administrator on all services in the account, or an administrator for the particular service or service instance.
 
 Choose any of the following actions to manage IAM policies in the {{site.data.keyword.cloud_notm}}:
 
@@ -112,7 +112,7 @@ Choose any of the following actions to manage IAM policies in the {{site.data.ke
 ## Step 3. Running a query through the {{site.data.keyword.sqlquery_short}} UI
 {: #sqlquery_step3}
 
-In SQL, the term *query* is just another way of saying *SELECT statement*. 
+In SQL, the term *query* is just another way of saying *SELECT statement*.
 
 To run a query, complete the following steps:
 
@@ -129,7 +129,7 @@ To run a query, complete the following steps:
 
 4. From the *Manage* tab, select **Launch {{site.data.keyword.sqlquery_short}} UI**.
 
-When the {{site.data.keyword.sqlquery_short}} query UI opens, a COS bucket is automatically generated. This bucket is used by default by the {{site.data.keyword.sqlquery_short}} service to store the results from your SQL queries. 
+When the {{site.data.keyword.sqlquery_short}} query UI opens, a COS bucket is automatically generated. This bucket is used by default by the {{site.data.keyword.sqlquery_short}} service to store the results from your SQL queries.
 
 Wen you run queries, you can specify a custom bucket to store results in. If your query does not specify one, the default one is used.
 {: note}
@@ -145,7 +145,7 @@ Complete the following steps:
 
     Contact your {{site.data.keyword.at_full_notm}} administrator to get the COS information.
 
-3. Select **Buckets**. 
+3. Select **Buckets**.
 
 4. Select the bucket name. You can see the list of archive files in the bucket.
 
@@ -166,7 +166,7 @@ Complete the following steps:
 
 Complete the following steps:
 
-1. In the COS instance UI, select **Buckets**. 
+1. In the COS instance UI, select **Buckets**.
 
 2. Select the bucket name that you plan to use to store the results from queries.
 
@@ -180,10 +180,10 @@ Complete the following steps:
 ### Step 3.4. Transform an archive file to PARQUET format
 {: #sqlquery_step3_4}
 
-When you query an archive file, the format of the data is JSON. You must transform the format to **PARQUET** to query successfully the data. 
+When you query an archive file, the format of the data is JSON. You must transform the format to **PARQUET** to query successfully the data.
 {: important}
 
-Parquet is an open source file format that stores nested data structures into a flat columnar format, and preserves the schema of the original data. 
+Parquet is an open source file format that stores nested data structures into a flat columnar format, and preserves the schema of the original data.
 
 The {{site.data.keyword.sqlquery_short}} UI is an editor that lets you immediately start composing SQL queries. Since SQL Query uses Spark SQL, you can use Spark SQL functions and ANSI SQL to compose both simple and complex queries that involve large amounts of data.
 
@@ -192,7 +192,7 @@ Complete the following steps to run the query to transform content from JSON int
 1. In the SQL editor field of the {{site.data.keyword.sqlquery_short}} UI, enter the following SELECT statement:
 
     ```text
-    SELECT * FROM cleancols(SQL_URL STORED AS JSON) 
+    SELECT * FROM cleancols(SQL_URL STORED AS JSON)
     INTO RESULTS_BUCKET STORED AS PARQUET
     ```
     {: codeblock}
@@ -200,7 +200,7 @@ Complete the following steps to run the query to transform content from JSON int
     Where
 
     * **SQL_URL** is the SQL URL of the archive file in COS
-    
+
     * **RESULTS_BUCKET** is the SQL URL of the custom COS bucket that you plan to use to upload the query results
 
     * Use [cleancols](/docs/sql-query?topic=sql-query-sql-reference) to avoid transformation problems into PARQUET format when the name of the columns include special characters or blanks.
@@ -215,10 +215,10 @@ Complete the following steps to run the query to transform content from JSON int
 
 2. Click **Run**.
 
-    You can see the query result in the *Result* area of the UI. 
+    You can see the query result in the *Result* area of the UI.
 
     You can see the target COS URL in the *Result location* area of the UI. This URL points to the object storage bucket used by {{site.data.keyword.sqlquery_short}} to store the results.
-    
+
     With the lite plan, you can run only 1 query. You can run up to 5 queries simultaneously with a paid plan.
 
 3. Copy the **Result location URL**. You need it to run other queries to analyze the events that are included in that archive file.
@@ -229,7 +229,7 @@ After you run the query, three objects are written as a result set in your COS r
 2. `jobid=<job_id>/_SUCCESS`
 3. `jobid=<job_id>/<part-number>`
 
-Only one object contains the result set (`jobid=<job_id>/<part-number>`), and the other two are empty and don't contain any data. 
+Only one object contains the result set (`jobid=<job_id>/<part-number>`), and the other two are empty and don't contain any data.
 
 It is important not to delete any of the files if you want to use the result set.
 {: important}
@@ -291,7 +291,7 @@ For example, to get the list of actions, you can run the following query:
 
 ```text
 SELECT DISTINCT  _source.action
-FROM cos://eu-gb/sql-results/jobid=17cee056-4da1-4429-8aca-3a7eb320ee27 STORED AS PARQUET 
+FROM cos://eu-gb/sql-results/jobid=17cee056-4da1-4429-8aca-3a7eb320ee27 STORED AS PARQUET
 INTO cos://eu-gb/sql-results STORED AS CSV
 ```
 {: screen}
@@ -300,7 +300,7 @@ For example, to get the list of actions for a user, you can run the following qu
 
 ```text
 SELECT  _source.eventTime, _source.action, _source.o_target.name
-FROM cos://eu-gb/sql-results/jobid=3aa9e732-ba88-4ffe-b9fc-b8a265876467 STORED AS PARQUET 
+FROM cos://eu-gb/sql-results/jobid=3aa9e732-ba88-4ffe-b9fc-b8a265876467 STORED AS PARQUET
 WHERE _source.o_initiator.name = "xxx@ibm.com"
 ORDER BY _source.eventTime
 INTO cos://eu-gb/sql-results STORED AS CSV
@@ -322,7 +322,7 @@ INTO RESULTS_BUCKET STORED AS CSV
 To see information about each event, run the following query:
 
 ```text
-SELECT FIELDS FROM PARQUET_FILE STORED AS PARQUET 
+SELECT FIELDS FROM PARQUET_FILE STORED AS PARQUET
 ORDER BY _source.eventTime
 INTO RESULTS_BUCKET STORED AS CSV
 ```
@@ -349,8 +349,8 @@ INTO RESULTS_BUCKET STORED AS CSV
 To see all the events for a specific action, run the following query:
 
 ```text
-SELECT FIELDS 
-FROM PARQUET_FILE STORED AS PARQUET 
+SELECT FIELDS
+FROM PARQUET_FILE STORED AS PARQUET
 WHERE _source.action = ACTION
 ORDER BY _source.eventTime
 INTO RESULTS_BUCKET STORED AS CSV
@@ -367,8 +367,8 @@ Where
 For example, to get all the events for the action **iam-identity.serviceid-apikey.login**, you can run the following query:
 
 ```text
-SELECT _source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS severity, _source.outcome AS OUTCOME 
-FROM cos://eu-de/results-marisa/jobid=f178778e-7707-46a9-982d-1e89261b63a5 STORED AS PARQUET 
+SELECT _source.eventTime AS EVENTTIME, _source.action AS ACTION, _source.severity AS severity, _source.outcome AS OUTCOME
+FROM cos://eu-de/results-marisa/jobid=f178778e-7707-46a9-982d-1e89261b63a5 STORED AS PARQUET
 WHERE _source.action = "iam-identity.serviceid-apikey.login"
 ORDER BY _source.eventTime
 INTO cos://eu-de/results-marisa STORED AS CSV
@@ -404,7 +404,4 @@ The following table lists the event fields and the column name that you must use
 | `severity`                    | `_source.severity`    |
 | `requestData`                 | `_source.requestData` |
 | `responseData`                | `_source.responseData` |
-{: caption="Table 3. Mapping of event fields to SQL query column names" caption-side="top"} 
-
-
-
+{: caption="Table 3. Mapping of event fields to SQL query column names" caption-side="top"}

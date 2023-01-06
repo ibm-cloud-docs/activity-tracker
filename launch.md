@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -32,8 +32,8 @@ The following table lists the minimum policy that a user must have to be able to
 | Role                      | Permission granted       |
 |---------------------------|---------------------|
 | Platform role: `Viewer`   | Allows the user to view the list of service instances in the Observability dashboard. |
-| Service role: `Reader`    | Allows the user to view events through the web UI. | 
-{: caption="Table 1. IAM policies" caption-side="top"} 
+| Service role: `Reader`    | Allows the user to view events through the web UI. |
+{: caption="Table 1. IAM policies" caption-side="top"}
 
 For more information, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
@@ -41,7 +41,7 @@ For more information, see [Granting user permissions to a user or service ID](/d
 ## Launching the UI through the {{site.data.keyword.cloud_notm}} UI
 {: #launch_cloud_ui}
 
-You can launch the UI within the context of an {{site.data.keyword.at_full_notm}} instance, from the {{site.data.keyword.cloud_notm}} UI. 
+You can launch the UI within the context of an {{site.data.keyword.at_full_notm}} instance, from the {{site.data.keyword.cloud_notm}} UI.
 
 Complete the following steps to launch the web UI:
 
@@ -49,9 +49,9 @@ Complete the following steps to launch the web UI:
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
-2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**. 
+2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**.
 
-3. Select **Activity Tracker**. 
+3. Select **Activity Tracker**.
 
     The list of {{site.data.keyword.at_full_notm}} instances is displayed.
 
@@ -66,7 +66,7 @@ The {{site.data.keyword.at_full_notm}} web UI opens and shows the **Everything**
 ## Launching the UI from a browser
 {: #launch_browser}
 
-You can launch the UI directly from a browser. 
+You can launch the UI directly from a browser.
 
 Complete the following steps:
 
@@ -93,7 +93,7 @@ Complete the following steps:
 
     * `<ENDPOINT>` represents the dashboard URL in the region where the instance is available. See [UI endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_ui).
 
-    * `<QUERY>` represents the search query that is applied for the view, for example, `q=table%3Amangle%20reason%3A%27refresh%20timer%27`. 
+    * `<QUERY>` represents the search query that is applied for the view, for example, `q=table%3Amangle%20reason%3A%27refresh%20timer%27`.
 
         Use `%3A` to represent a colon (`:`).
 
@@ -108,11 +108,9 @@ Complete the following steps:
     * `<LEVELS>` represents the list of levels for which data is included in the view. Multiple levels are separated by commas, for example, `levels=normal,critical`.
 
     * `<TIMEFRAME>` represents the timeframe that you apply to the data that is displayed through the view. For example, look at the following samples:
-    
-        When you specify a timeframe of `July 12`, the value is `t=July%2012`. 
-        
-        When you specify a timeframe of `July 12, 2020`, the value is `t=July%2012%2C%202020`. 
+
+        When you specify a timeframe of `July 12`, the value is `t=July%2012`.
+
+        When you specify a timeframe of `July 12, 2020`, the value is `t=July%2012%2C%202020`.
 
         When you specify a timeframe of `July 12, 2020 to July 15,2020`, the value is `t=July%2012%2C%202020%20to%20July%2015%2C2020`.
-
-

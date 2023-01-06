@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-05-23"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -37,7 +37,7 @@ In {{site.data.keyword.at_short}}, you can differentiate events by scope as glob
 ## Collecting global events
 {: #events_collect_global}
 
-[Global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) are available through the {{site.data.keyword.at_short}} instance in Frankfurt. 
+[Global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) are available through the {{site.data.keyword.at_short}} instance in Frankfurt.
 
 To collect and view global events, you must provision an instance of the {{site.data.keyword.at_short}} service in Frankfurt. [Learn more](/docs/activity-tracker?topic=activity-tracker-monitor_events).
 
@@ -47,4 +47,3 @@ To collect and view global events, you must provision an instance of the {{site.
 {: #events_collect_location}
 
 Location-based events are available through the {{site.data.keyword.at_short}} instance that is available in the same region as the service. [Learn more](/docs/activity-tracker?topic=activity-tracker-monitor_events).
-

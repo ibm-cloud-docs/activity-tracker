@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2022
+  years: 2022, 2023
 lastupdated: "2022-03-24"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -16,7 +16,7 @@ subcollection: activity-tracker
 # Limiting instance access to only private endpoints
 {: #private_endpoints_only}
 
-You can limit access to an {{site.data.keyword.at_full}} instance to private endpoints only. 
+You can limit access to an {{site.data.keyword.at_full}} instance to private endpoints only.
 {: shortdesc}
 
 
@@ -48,9 +48,9 @@ If you have an existing {{site.data.keyword.at_full_notm}} instance and need to 
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
-2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**. 
+2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**.
 
-3. Select **Activity Tracker**. 
+3. Select **Activity Tracker**.
 
     The list of {{site.data.keyword.at_full_notm}} instances is displayed.
 
@@ -59,7 +59,7 @@ If you have an existing {{site.data.keyword.at_full_notm}} instance and need to 
 
 4. Select the instance in the region where you want to view events. Then, click **Open Dashboard**.
 
-5. Select the **settings** icon. 
+5. Select the **settings** icon.
 
 6. Click **Organization** &gt; **General**.
 
@@ -92,7 +92,7 @@ If you have an existing {{site.data.keyword.at_full_notm}} instance and need to 
    * `NAME` is the name of the instance.
 
    * `PRIVATE_ENDPOINT` is either `true` or `false`.  If `true` only [private endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints) can be used to access the instance.
-    
+
 
     For example, to change the instance named `my-instance` to be accessible by both public and private endpoints, run the following command:
 
@@ -100,6 +100,3 @@ If you have an existing {{site.data.keyword.at_full_notm}} instance and need to 
     ibmcloud resource service-instance-update my-instance -p '{"private_endpoints_only": false}'
     ```
     {: codeblock}
-
-
-

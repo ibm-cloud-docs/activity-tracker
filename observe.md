@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -28,9 +28,9 @@ Complete the following steps to launch the Activity Tracker dashboard in {{site.
 
 1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
 
-2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**. 
+2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**.
 
-3. Select **Activity Tracker**. 
+3. Select **Activity Tracker**.
 
     The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
 
@@ -38,8 +38,8 @@ Complete the following steps to launch the Activity Tracker dashboard in {{site.
 ## Managing Activity Tracker instances
 {: #observe_manage}
 
-In the *Activity Tracker UI*, you can manage your audit instances. 
-* You can view all instances across all locations. You can also specify 1 location and view the instances that are available in that location. 
+In the *Activity Tracker UI*, you can manage your audit instances.
+* You can view all instances across all locations. You can also specify 1 location and view the instances that are available in that location.
 * You can view all instances across all the resource groups in your account. You can also select 1 resource group and view the instances that are available in that resource group.
 * You can create instances. [Learn more](/docs/activity-tracker?topic=activity-tracker-provision).
 * You can remove instances. [Learn more](/docs/activity-tracker?topic=activity-tracker-remove).
@@ -51,13 +51,3 @@ For each instance, you can view the following information:
 * The resource group that is associated with an instance
 * The region where the instance is provisioned
 * The service plan of an instance
-
-
-
-
-
-
-
-
-    
-

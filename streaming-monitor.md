@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -41,13 +41,13 @@ Complete the following steps to monitor the {{site.data.keyword.messagehub}} ins
 
     You can use the metric *Topic bytes out per second* to see how data is consumed by any application or service that is subscribed to {{site.data.keyword.messagehub}}.
 
-5. (Optional) Edit the panel *Topic bytes in per second*. 
+5. (Optional) Edit the panel *Topic bytes in per second*.
 
-    ![Edit panel.](images/streaming-topic-metric.png "Edit panel") 
+    ![Edit panel.](images/streaming-topic-metric.png "Edit panel")
 
     Then, customize the metric to see data per topic.
 
-    ![Customize metric.](images/streaming-topic-metric-1.png "Customize metric") 
+    ![Customize metric.](images/streaming-topic-metric-1.png "Customize metric")
 
     Check that the resolution is set to **10M**.
 
@@ -57,17 +57,17 @@ Complete the following steps to monitor the {{site.data.keyword.messagehub}} ins
 ## Monitoring streaming by using {{site.data.keyword.at_full_notm}}
 {: #streaming-monitor-2}
 
-Streaming generates {{site.data.keyword.at_short}} events with the action **logdnaat.streaming-logs.send** to notify about failures that occur when data is streamed to {{site.data.keyword.messagehub}}. 
+Streaming generates {{site.data.keyword.at_short}} events with the action **logdnaat.streaming-logs.send** to notify about failures that occur when data is streamed to {{site.data.keyword.messagehub}}.
 
 There are different reasons for failure, for example:
 
-- **unknown_topic or unknown_topic_or_partition**: This notification reports that the topic that is configured for streaming is not valid.  
+- **unknown_topic or unknown_topic_or_partition**: This notification reports that the topic that is configured for streaming is not valid.
 
     If you get this notification, check the topic that is configured for streaming is defined in {{site.data.keyword.messagehub}}.
 
-- **broker_handle_destroyed**: This notification reports a change in the Kafka cluster configuration. 
+- **broker_handle_destroyed**: This notification reports a change in the Kafka cluster configuration.
 
-    If you get this notification, check the SASL URLs and update the streaming configuration. 
+    If you get this notification, check the SASL URLs and update the streaming configuration.
 
 - **authentication_failure**: This notification reports a failure to authenticate with {{site.data.keyword.messagehub}}.
 
@@ -75,7 +75,7 @@ There are different reasons for failure, for example:
 
 - **broker_transport_failure**: This notification reports connectivity problems with {{site.data.keyword.messagehub}}. There are different reasons why you might get this notification such as that credentials were deleted after streaming was activated and started.
 
-- **message_timed_out or timed_out**: This notification reports generic timeout errors when streaming messages to {{site.data.keyword.messagehub}}. 
+- **message_timed_out or timed_out**: This notification reports generic timeout errors when streaming messages to {{site.data.keyword.messagehub}}.
 
 
 The {{site.data.keyword.at_short}} event includes different fields that you can use to monitor streaming data failures:

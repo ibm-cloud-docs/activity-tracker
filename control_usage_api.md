@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-11-04"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -28,7 +28,7 @@ In {{site.data.keyword.at_full}}, you can query your auditing instance and ident
 The method for querying usage data is:
 
 ```text
-curl "<ENDPOINT>/v1/usage/hosts/<SERVICE_NAME>?from=<FROM_DATE>&to=<TO_DATE>&limit=<LIMIT_NUMBER>" -u <SERVICE_KEY>: 
+curl "<ENDPOINT>/v1/usage/hosts/<SERVICE_NAME>?from=<FROM_DATE>&to=<TO_DATE>&limit=<LIMIT_NUMBER>" -u <SERVICE_KEY>:
 ```
 
 - Replace `<ENDPOINT>` with the {{site.data.keyword.at_full_notm}} API endpoint. To see the list of endpoints, see either [Public API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api-at-public) or [Private API endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints#endpoints_api-at-private) as appropriate for your environment.
@@ -83,7 +83,7 @@ curl "https://api.us-south.logging.cloud.ibm.com/v1/usage/hosts" -u <SERVICE_KEY
 ### List usage data for the top N services for the past 6 months
 {: #control_usage_examples2}
 
-This command lists the aggregated usage information for the highest-usage `N` services for the past 6 months where `N` is an integer number. 
+This command lists the aggregated usage information for the highest-usage `N` services for the past 6 months where `N` is an integer number.
 
 ```text
 curl "https://api.us-south.logging.cloud.ibm.com/v1/usage/hosts?limit=N" -u <SERVICE_KEY>:
@@ -182,8 +182,3 @@ For example, to return the service with the highest data usage in October 2021, 
 curl "https://api.us-south.logging.cloud.ibm.com/v1/usage/hosts?from=1633046400&to=1635724800&limit=1" -u <SERVICE_KEY>:
 ```
 {: codeblock}
-
-
-
-
-

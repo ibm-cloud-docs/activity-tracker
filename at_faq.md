@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-07-14"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -22,11 +22,11 @@ Frequently asked questions about {{site.data.keyword.at_short}}.
 {: #faq_0}
 {: faq}
 
-{{site.data.keyword.at_short}} offers 2 different ways to manage auditing events in an {{site.data.keyword.cloud_notm}} account. You can use {{site.data.keyword.at_short}} hosted event search, an IAM enabled service, to manage auditing events through instances that you provision in each {{site.data.keyword.cloud_notm}} region where you operate. Alternatively, you can use {{site.data.keyword.atracker_short}}, a platform service, to manage auditing events at the account-level by configuring targets and routes that define where auditing data is routed. 
+{{site.data.keyword.at_short}} offers 2 different ways to manage auditing events in an {{site.data.keyword.cloud_notm}} account. You can use {{site.data.keyword.at_short}} hosted event search, an IAM enabled service, to manage auditing events through instances that you provision in each {{site.data.keyword.cloud_notm}} region where you operate. Alternatively, you can use {{site.data.keyword.atracker_short}}, a platform service, to manage auditing events at the account-level by configuring targets and routes that define where auditing data is routed.
 
 {{site.data.keyword.at_short}} hosted event search routes location-based auditing events to an {{site.data.keyword.at_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.at_short}} instance that is provisioned in Frankfurt.
 
-{{site.data.keyword.atracker_short}} routes events based on the location that is specified in the `logSourceCRN` field included in the event. You can define a target, the resource where events are routed to, in any {{site.data.keyword.atracker_short}} supported region. However, the target resource can be located in any region where that type of target is supported, in the same account or in a different account. You can define rules to determine where auditing events are to be routed by configuring 1 or more routes in the account. You can define rules for managing global events and location-based events that are generated in regions where {{site.data.keyword.atracker_short}} is supported. 
+{{site.data.keyword.atracker_short}} routes events based on the location that is specified in the `logSourceCRN` field included in the event. You can define a target, the resource where events are routed to, in any {{site.data.keyword.atracker_short}} supported region. However, the target resource can be located in any region where that type of target is supported, in the same account or in a different account. You can define rules to determine where auditing events are to be routed by configuring 1 or more routes in the account. You can define rules for managing global events and location-based events that are generated in regions where {{site.data.keyword.atracker_short}} is supported.
 
 ## Where can I find the list of Cloud services that generate {{site.data.keyword.at_short}} events?
 {: #faq_1}
@@ -44,7 +44,7 @@ You can link to the list of events that each service generates from the followin
 {: #faq_3}
 {: faq}
 
-In {{site.data.keyword.atracker_short}}, you can differentiate events by scope as [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) or [location-based events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_location), and by operational impact as management or data events. 
+In {{site.data.keyword.atracker_short}}, you can differentiate events by scope as [global events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_global) or [location-based events](/docs/activity-tracker?topic=activity-tracker-event_types#event_types_location), and by operational impact as management or data events.
 
 First, you need to check if you need to configure your service, upgrade your plan, or both to be able to collect {{site.data.keyword.at_short}} events.
 
@@ -70,16 +70,16 @@ For location-based events, you need to check the following scenarios to determin
 
 * Scenario 1: The service is provisioned in a location where the {{site.data.keyword.atracker_short}} service is available.
 
-    1. Identify the location where your service is provisioned. 
-    
+    1. Identify the location where your service is provisioned.
+
     2. Check whether the {{site.data.keyword.atracker_short}} service is available in that region. See [Locations](/docs/atracker?topic=atracker-regions).
 
     3. For {{site.data.keyword.at_short}} hosted event search, check that you have an {{site.data.keyword.atracker_short}} instance provisioned in the same location where your service is provisioned. For {{site.data.keyword.atracker_short}}, check that you have a targets and routes defined correctly.
 
 * Scenario 2: The service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is not available.
 
-    1. Identify the location where your service is provisioned. 
-        
+    1. Identify the location where your service is provisioned.
+
     2. Check the [Cloud services locations](/docs/activity-tracker?topic=activity-tracker-regions) to identify the {{site.data.keyword.at_short}} instance where events are available.
 
 
@@ -102,7 +102,7 @@ To query the data, you can also use a service like SQL Query to query your COS a
 
 
 
-You cannot import archived data into the UI. 
+You cannot import archived data into the UI.
 
 ## How do I configure archiving for my instance?
 {: #faq_6}
@@ -118,15 +118,15 @@ To configure archiving see [Archiving events to IBM Cloud Object Storage](/docs/
 
 
 
-You can only have 1 instance of the {{site.data.keyword.at_full_notm}} service per region. 
+You can only have 1 instance of the {{site.data.keyword.at_full_notm}} service per region.
 
-When an auditing instance already exists in a region, you get a message when you try to provision an auditing instance a second time. 
+When an auditing instance already exists in a region, you get a message when you try to provision an auditing instance a second time.
 
-Most likely, your account administrator has already provisioned the auditing instances and has not given you permisisons to see work with them. 
+Most likely, your account administrator has already provisioned the auditing instances and has not given you permisisons to see work with them.
 
-To see auditing instances, you must have IAM platform permissions for the {{site.data.keyword.at_full_notm}} service. 
+To see auditing instances, you must have IAM platform permissions for the {{site.data.keyword.at_full_notm}} service.
 
-Therefore, if you cannot see any Auditing instances when you [launch the {{site.data.keyword.at_short}} observability dashboard](/docs/activity-tracker?topic=activity-tracker-launch), check that you have permissions to at least view them. You need at least the **viewer** platform role to see the auditing instances. To learn more about IAM permissions, see [Managing access with IAM](/docs/activity-tracker?topic=activity-tracker-iam). 
+Therefore, if you cannot see any Auditing instances when you [launch the {{site.data.keyword.at_short}} observability dashboard](/docs/activity-tracker?topic=activity-tracker-launch), check that you have permissions to at least view them. You need at least the **viewer** platform role to see the auditing instances. To learn more about IAM permissions, see [Managing access with IAM](/docs/activity-tracker?topic=activity-tracker-iam).
 
 ## How do I create an API key?
 {: #faq_8}
@@ -154,7 +154,7 @@ Complete the following steps:
 3. [Assign an access policy](/docs/iam?topic=iam-serviceidpolicy) for the service ID.
 
     You can assign access permissions for your service ID [by using the {{site.data.keyword.cloud_notm}} console](/docs/iam?topic=iam-serviceidpolicy#access_new).
-    
+
     To learn how roles map to specific actions, see [Managing IAM access for {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-iam).
     {: tip}
 
@@ -165,8 +165,8 @@ Complete the following steps:
     ```
     {: pre}
 
-    Replace `SERVICE_ID_NAME` with the service ID name. 
-    
+    Replace `SERVICE_ID_NAME` with the service ID name.
+
     Save your API key by downloading it to a secure location.
 
 
@@ -190,7 +190,6 @@ In a region, you can manage auditing events in {{site.data.keyword.atracker_full
 
 
 
-Archived data cannot be imported to be searched or used in the {{site.data.keyword.at_full_notm}} UI.  
+Archived data cannot be imported to be searched or used in the {{site.data.keyword.at_full_notm}} UI.
 
 Use the [{{site.data.keyword.sqlquery_notm}} service](/docs/activity-tracker?topic=activity-tracker-sqlquery) to query archive data.
-

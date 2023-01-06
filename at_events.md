@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -35,7 +35,7 @@ As a security officer, auditor, or manager, you can use the {{site.data.keyword.
 | Action                                            | Description                |
 |---------------------------------------------------|----------------------------|
 | `logdnaat.account.update`       | This event is generated when an administrator turns on or off a feature for an auditing instance. |
-{: caption="Table 6. Events for account settings actions" caption-side="top"} 
+{: caption="Table 6. Events for account settings actions" caption-side="top"}
 
 The following table lists custom fields that are included in these events:
 
@@ -44,8 +44,8 @@ The following table lists custom fields that are included in these events:
 | `requestData.owneremail`        | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx@logdna.ibm.com`  | Defines an {{site.data.keyword.at_short}} account. |
 | `requestData.type`              | `meta.addrawline` | Defines an {{site.data.keyword.at_short}} administrative feature. |
 | `requestData.value`            | `false`   \n `true`  | When is set to `true`, the feature specified in the field `requestData.type` is enabled.  |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
-{: caption="Table 7. Custom fields for account settings actions" caption-side="top"} 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. |
+{: caption="Table 7. Custom fields for account settings actions" caption-side="top"}
 
 
 
@@ -56,7 +56,7 @@ The following table lists custom fields that are included in these events:
 | Action                                            | Description                |
 |---------------------------------------------------|----------------------------|
 | `logdnaat.account-archive-setting.configure` | This event is generated when an administrator configures archiving for an auditing instance. |
-{: caption="Table 8. Events for archiving actions" caption-side="top"} 
+{: caption="Table 8. Events for archiving actions" caption-side="top"}
 
 
 The following table lists custom fields that are included in these events:
@@ -66,8 +66,8 @@ The following table lists custom fields that are included in these events:
 | `requestData.feature`              | `archive`            | Defines a {{site.data.keyword.at_short}} administrative feature. |
 | `requestData.isEnabled`            | `false`   \n `true`  | Defines if archiving of the auditing instance to a COS bucket is configured.   \n When is set to `true`, archiving is enabled.  |
 | `requestData.provider`             | `ibm`                | Defines the Cloud provider where data is archived. |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
-{: caption="Table 9. Custom fields for archiving actions" caption-side="top"} 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. |
+{: caption="Table 9. Custom fields for archiving actions" caption-side="top"}
 
 
 ### Exclusion rules
@@ -78,7 +78,7 @@ The following table lists custom fields that are included in these events:
 | `logdnaat.exclusion-rule.create`      | This event is generated when an administrator creates an exclusion rule through the UI. |
 | `logdnaat.exclusion-rule.update`      | This event is generated when an administrator updates an exclusion rule through the UI. |
 | `logdnaat.exclusion-rule.delete`      | This event is generated when an administrator deletes an exclusion rule through the UI. |
-{: caption="Table 10. Events for exclusion rules actions" caption-side="top"} 
+{: caption="Table 10. Events for exclusion rules actions" caption-side="top"}
 
 The following table lists custom fields that are included in exclusion rule events:
 
@@ -92,8 +92,8 @@ The following table lists custom fields that are included in exclusion rule even
 | `requestData.query`          | Defines an advanced query to refine the data that is excluded from search. |
 | `requestData.description`    | Description of the exclusion rule. |
 | `requestData.indexonly`      | Defines whether the data is available to see through the UI.   \n Set to `true` when data is visible but not available for search. |
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
-{: caption="Table 11. Custom fields for exclusion rules actions" caption-side="top"} 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. |
+{: caption="Table 11. Custom fields for exclusion rules actions" caption-side="top"}
 
 
 ### Ingestion keys
@@ -103,7 +103,7 @@ The following table lists custom fields that are included in exclusion rule even
 |--------------------------------------|----------------------------|
 | `logdnaat.ingestion-key.create`        | This event is generated when an administrator creates an ingestion key through the UI. |
 | `logdnaat.ingestion-key.delete`        | This event is generated when an administrator deletes an ingestion key through the UI. |
-{: caption="Table 12. Events for ingestion keys actions" caption-side="top"} 
+{: caption="Table 12. Events for ingestion keys actions" caption-side="top"}
 
 The following table lists custom fields that are included in these events:
 
@@ -111,8 +111,8 @@ The following table lists custom fields that are included in these events:
 |------------------------------------|----------------------|----------------------------|
 | `requestData.key`                  | Masked field         | Use this field to identify the ingestion key that is created. |
 | `requestData.keyType`              | `ingestion`          | Defines the type of key that is configured. |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
-{: caption="Table 13. Custom fields for ingestion keys actions" caption-side="top"} 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. |
+{: caption="Table 13. Custom fields for ingestion keys actions" caption-side="top"}
 
 
 
@@ -124,7 +124,7 @@ The following table lists custom fields that are included in these events:
 |--------------------------------------|----------------------------|
 | `logdnaat.service-key.create`          | This event is generated when an administrator creates a service key through the UI. |
 | `logdnaat.service-key.delete`          | This event is generated when an administrator deletes a service key through the UI. |
-{: caption="Table 14. Events for service keys actions" caption-side="top"} 
+{: caption="Table 14. Events for service keys actions" caption-side="top"}
 
 The following table lists custom fields that are included in these events:
 
@@ -132,8 +132,8 @@ The following table lists custom fields that are included in these events:
 |------------------------------------|----------------------|----------------------------|
 | `requestData.key`                  | Masked field         | Use this field to identify the service key that is created to export data by using the {{site.data.keyword.at_short}}  export API. |
 | `requestData.keyType`              | `service`            | Defines the type of key that is configured. |
-| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
-{: caption="Table 15. Custom fields for service keys actions" caption-side="top"} 
+| `responseData.logdnaId`            | Sample `3a941d8ert`  | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. |
+{: caption="Table 15. Custom fields for service keys actions" caption-side="top"}
 
 
 ### Streaming events
@@ -149,7 +149,7 @@ The following table lists custom fields that are included in these events:
 | `logdnaat.streaming-logs.send`              | This event is generated when there is a failure streaming data. |
 | `logdnaat.exclusion-rule.create`            | This event is generated when an streaming exclusion rule is configured. |
 | `logdnaat.exclusion-rule.delete`            | This event is generated when an streaming exclusion rule is deleted. |
-{: caption="Table 16. Events for streaming actions" caption-side="top"} 
+{: caption="Table 16. Events for streaming actions" caption-side="top"}
 
 
 
@@ -161,38 +161,38 @@ The following table lists custom fields that are included in these events:
 | `logdnaat.parsing-template.create`      | This event is generated when an administrator creates a parsing template through the UI. |
 | `logdnaat.parsing-template.update`      | This event is generated when an administrator updates a parsing template through the UI. |
 | `logdnaat.parsing-template.delete`      | This event is generated when an administrator deletes a parsing template through the UI. |
-{: caption="Table 17. Events for parsing templates actions" caption-side="top"} 
+{: caption="Table 17. Events for parsing templates actions" caption-side="top"}
 
 The following table lists custom fields that are included in these events:
 
-| Custom fields                | Description          | 
+| Custom fields                | Description          |
 |------------------------------|----------------------|
 | `requestData.feature`        | Defines an {{site.data.keyword.at_short}} administrative feature.   \n Valid value is `custom-parsing`. |
 | `requestData.isEnabled`      | Defines when the template is enabled.   \n Set to `true` when the template is enabled. |
 | `requestData.name`           | Defines the name of the template.   \n This field is available for create actions.|
 | `requestData.query`          | Defines the query that is configured to identify log lines where the custome parsing is applied. |
 | `requestData.templateId`     | Defines the ID of the template.   \n This field is available for update actions. |
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
-{: caption="Table 18. Custom fields for parsing templates actions" caption-side="top"} 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. |
+{: caption="Table 18. Custom fields for parsing templates actions" caption-side="top"}
 
 
-### Configuration 
+### Configuration
 {: #at_events_configuration}
 
 | Action                              | Description                |
 |-------------------------------------|----------------------------|
 | `logdnaat.configuration.import`      | This event is generated when an administrator imports user-metadata such as views, and alerts through the UI. |
 | `logdnaat.configuration.export`      | This event is generated when an administrator exports user-metadata such as views, and alerts through the UI. |
-{: caption="Table 19. Events for user-metadata related actions" caption-side="top"} 
+{: caption="Table 19. Events for user-metadata related actions" caption-side="top"}
 
 The following table lists custom fields that are included in these events:
 
-| Custom fields                | Description          | 
+| Custom fields                | Description          |
 |------------------------------|----------------------|
 | `feature`                    | Defines an {{site.data.keyword.at_short}} administrative feature.   \n Valid value is `export-configuration`. |
 | `requestData.configResources` | Defines the list of resources that a user chooses to export or import. |
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
-{: caption="Table 20. Custom fields for user-metadata related actions" caption-side="top"} 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. |
+{: caption="Table 20. Custom fields for user-metadata related actions" caption-side="top"}
 
 
 
@@ -207,12 +207,12 @@ The following table lists custom fields that are included in these events:
 | `logdnaat.view.create`      | This event is generated when a view is created. |
 | `logdnaat.view.update`      | This event is generated when a view is updated. This event is also generated when an alert is attached or dettached from a view. |
 | `logdnaat.view.delete`      | This event is generated when a view is deleted. |
-{: caption="Table 21. Events for views" caption-side="top"} 
+{: caption="Table 21. Events for views" caption-side="top"}
 
 
 The following table lists custom fields that are included in these events:
 
-| Custom fields                | Description          | 
+| Custom fields                | Description          |
 |------------------------------|----------------------|
 | `requestData.name`    | Defines the name of the view. |
 | `requestData.query`   | Defines the search query that is applied to filter data in the view. |
@@ -221,10 +221,10 @@ The following table lists custom fields that are included in these events:
 | `requestData.levels`  | Defines the list of levels that are selected and whose data is included in the view. |
 | `requestData.category` | Defines the category where the view is included. |
 | `requestData.viewId`   | Defines the view ID. |
-| `requestData.description` | Describes the view. | 
+| `requestData.description` | Describes the view. |
 | `requestData.customLine` | Describes how the information is displayed in the view. |
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
-{: caption="Table 22. Custom fields for view actions" caption-side="top"} 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. |
+{: caption="Table 22. Custom fields for view actions" caption-side="top"}
 
 
 
@@ -236,18 +236,18 @@ The following table lists custom fields that are included in these events:
 | `logdnaat.alert.create`      | This event is generated when an alert is created as a preset. |
 | `logdnaat.alert.update`      | This event is generated when an alert is updated. |
 | `logdnaat.alert.delete`      | This event is generated when an alert is deleted. |
-{: caption="Table 23. Events for alerts" caption-side="top"} 
+{: caption="Table 23. Events for alerts" caption-side="top"}
 
 The following table lists custom fields that are included in these events:
 
-| Custom fields                | Description          | 
+| Custom fields                | Description          |
 |------------------------------|----------------------|
 | `requestData.alertId`   | Defines the preset ID. |
 | `requestData.name`    | Defines the name of the preset. |
 | `requestData.preset`  | Defines whether the alert is defined as a preset. |
 | `requestData.channels` | List of channels that are configured in a preset. Each channel includes information about the notification method and the trigger conditions per method. |
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
-{: caption="Table 24. Custom fields for view actions" caption-side="top"} 
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. |
+{: caption="Table 24. Custom fields for view actions" caption-side="top"}
 
 
 ### Dashboards
@@ -258,19 +258,19 @@ The following table lists custom fields that are included in these events:
 | `logdnaat.board.create`         | This event is generated when a dashboard is created. |
 | `logdnaat.board.delete`         | This event is generated when a dashboard is deleted. |
 | `logdnaat.board-graph.update`   | This event is generated when a graph is added to a dashboard. |
-{: caption="Table 25. Events for dashboards" caption-side="top"} 
+{: caption="Table 25. Events for dashboards" caption-side="top"}
 
 
 The following table lists custom fields that are included in these events:
 
-| Custom fields                | Description          | 
+| Custom fields                | Description          |
 |------------------------------|----------------------|
 | `requestData.boardId`         | Defines the ID of the dashboard. |
 | `requestData.category`       | Defines the category where the board is included. |
 | `requestData.title`          | Defines the name of the dashboard. |
-| `requestData.graphId`        | Defines the ID of a graph that is added to a board. | 
-| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. | 
-{: caption="Table 26. Custom fields for boards" caption-side="top"} 
+| `requestData.graphId`        | Defines the ID of a graph that is added to a board. |
+| `responseData.logdnaId`      | Defines the {{site.data.keyword.at_short}} ID that is associated with the {{site.data.keyword.at_short}} instance. |
+{: caption="Table 26. Custom fields for boards" caption-side="top"}
 
 
 
@@ -279,7 +279,7 @@ The following table lists custom fields that are included in these events:
 ## Viewing events
 {: #at_events_ui}
 
- 
+
 Events that are generated by an instance of the {{site.data.keyword.at_short}} service are automatically forwarded to the {{site.data.keyword.at_short}} service instance that is available in the same location. For more information, see [Cloud services locations](/docs/activity-tracker?topic=activity-tracker-cloud_services_locations).
 
 {{site.data.keyword.at_short}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_short}} service in the same location where your service instance is available. For more information, see [Launching the web UI through the IBM Cloud UI](/docs/activity-tracker?topic=activity-tracker-launch).
@@ -291,4 +291,4 @@ Events that are generated by an instance of the {{site.data.keyword.at_short}} s
 
 {{site.data.keyword.at_short}} hosted event search offerings events only report success outcomes.
 
-{{site.data.keyword.at_short}} hosted event search offerings events that report update actions do not include information about the delta of the change. 
+{{site.data.keyword.at_short}} hosted event search offerings events that report update actions do not include information about the delta of the change.
