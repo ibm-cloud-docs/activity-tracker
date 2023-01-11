@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-11-02"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -77,7 +77,7 @@ To remove an instance of {{site.data.keyword.at_full_notm}} through the command 
 5. Remove the instance. Run the [ibmcloud resource service-instance-delete](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command:
 
     ```text
-    ibmcloud resource service-instance-delete NAME 
+    ibmcloud resource service-instance-delete NAME
     ```
     {: codeblock}
 
@@ -90,8 +90,8 @@ To remove an instance of {{site.data.keyword.at_full_notm}} through the command 
     ```
     {: codeblock}
 
-    
-    
+
+
 For example, to remove an instance, run the following command:
 
 ```text
@@ -100,5 +100,3 @@ ibmcloud resource service-instance-delete logdna-instance-01
 {: codeblock}
 
 Next, remove permissions that are granted to users to work with the instance that you deleted.
-
-

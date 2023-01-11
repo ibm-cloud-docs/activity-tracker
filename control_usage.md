@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-10-21"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -54,9 +54,9 @@ In {{site.data.keyword.at_full}}, you can define an alert to notify when the dat
 ## Analyzing event data trends
 {: #control_usage_4}
 
-In {{site.data.keyword.at_full}}, you can query your auditing instance by using the *Usage API* and identify trends over a period of time. 
+In {{site.data.keyword.at_full}}, you can query your auditing instance by using the *Usage API* and identify trends over a period of time.
 
-You can analyze event data trends to assess the growth or decline of auditing data over time for services running in your account. You can monitor data trends to identify patterns and make predictions of how services are used in the account. 
+You can analyze event data trends to assess the growth or decline of auditing data over time for services running in your account. You can monitor data trends to identify patterns and make predictions of how services are used in the account.
 
 When you use the *Usage* API, consider the following information:
 - Analyze 3 or more months worth of auditing data to identify patterns and trends.
@@ -68,5 +68,3 @@ You can query data usage for up to 6 months.
 {: note}
 
 [Learn more](/docs/activity-tracker?topic=activity-tracker-control_usage_api).
-
-

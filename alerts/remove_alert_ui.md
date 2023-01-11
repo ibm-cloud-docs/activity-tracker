@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -13,7 +13,7 @@ subcollection: activity-tracker
 
 {{site.data.keyword.attribute-definition-list}}
 
- 
+
 # Removing alerts through the UI
 {: #remove_alert_ui}
 
@@ -57,4 +57,3 @@ When you delete a preset, any alerts that are defined by using this preset are a
 {: note}
 
 For more inform ation on how to delete a preset, see [Delete a preset](/docs/activity-tracker?topic=activity-tracker-preset_ui#preset_ui_delete).
-

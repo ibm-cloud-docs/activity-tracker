@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -29,7 +29,7 @@ A federated user or non-federated user can create an API key to use on the CLI o
 You can manage {{site.data.keyword.cloud_notm}} API keys that are associated with your user identity from the UI or by using CLI commands.
 {: note}
 
-To manage user API keys from the UI, go to **Manage** &gt; **Access (IAM)** &gt; **IBM Cloud API keys**. Then, you can create, lock, unlock, edit, or delete API keys. 
+To manage user API keys from the UI, go to **Manage** &gt; **Access (IAM)** &gt; **IBM Cloud API keys**. Then, you can create, lock, unlock, edit, or delete API keys.
 
 To manage user API keys from the command-line, you can run any of the following CLI commands:
 * [ibmcloud iam api-key-create](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)
@@ -40,7 +40,7 @@ To manage user API keys from the command-line, you can run any of the following 
 
 When you run any of these actions, an event is generated. You can use these events to monitor user API keys in the account. You monitor these events through the {{site.data.keyword.at_short}} instance that is available in the Frankfurt location.
 
-For example, you might be interested in finding out why an action to delete a user API key fails. Has it failed because the initiator of the action does not have the correct permissions in the account? Has it failed because the API key is locked, and any update and delete actions are blocked and consequently fail? 
+For example, you might be interested in finding out why an action to delete a user API key fails. Has it failed because the initiator of the action does not have the correct permissions in the account? Has it failed because the API key is locked, and any update and delete actions are blocked and consequently fail?
 
 
 ## Prerequisites
@@ -62,9 +62,9 @@ For example, you might be interested in finding out why an action to delete a us
 
 	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} dashboard opens.
 
-2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**. 
+2. Click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Observability**.
 
-3. Select **Activity Tracker**. 
+3. Select **Activity Tracker**.
 
     The list of instances that are available on {{site.data.keyword.cloud_notm}} is displayed.
 
@@ -85,7 +85,7 @@ Complete the following steps to generate events from the UI:
 4. [Unlock the API key](/docs/account?topic=account-userapikey#lock-user-key-ui).
 5. [Delete the API key](/docs/account?topic=account-userapikey#delete_user_key).
 
-In the web UI, verify that you see the events for each of these actions. 
+In the web UI, verify that you see the events for each of these actions.
 
 For example, if you create an API key with name `demo-key`, you can see the following events:
 
@@ -110,7 +110,7 @@ Complete the following steps to generate events by using the command-line:
 4. [Unlock the API key](/docs/account?topic=account-userapikey#lock-user-key-ui).
 5. [Delete the API key](/docs/account?topic=account-userapikey#delete_user_key).
 
-In the web UI, verify that you see the events for each of these actions. 
+In the web UI, verify that you see the events for each of these actions.
 
 For example, if you create an API key with name `demo-key`, you can see the following events:
 
@@ -137,7 +137,7 @@ Complete the following steps to generate events as a result of actions on user A
 6. [Unlock the API key](/docs/account?topic=account-userapikey#lock-user-key-ui).
 7. [Delete the API key](/docs/account?topic=account-userapikey#delete_user_key).
 
-In the web UI, verify that you see the events for each of these actions. 
+In the web UI, verify that you see the events for each of these actions.
 
 ```text
     17/May/2019:16:34:44 IAM Identity Service: create user-apikey demo-key-for-fail-scenario
@@ -153,7 +153,7 @@ In the web UI, verify that you see the events for each of these actions.
 
 
 
-## Step 3. Configure a view to see events 
+## Step 3. Configure a view to see events
 {: #tutorial_iam_apikeys_step3}
 
 From the {{site.data.keyword.at_short}} web UI, complete the following steps to customize views that you can use to monitor user API key actions in your account:
@@ -172,7 +172,7 @@ From the {{site.data.keyword.at_short}} web UI, complete the following steps to 
     | View events that originate from actions in the CLI                                                | `initiator.host.agent:"IBM Cloud CLI" (action user-apikey) -login` |
     {: caption="Table 1. Condition to filter user API key events for create, delete, lock, unlock, and update actions." caption-side="top"}
 
-4. Enter the condition in the **Search bar**, then click `Enter`. 
+4. Enter the condition in the **Search bar**, then click `Enter`.
 
     For example, create a view to show events that report deletion of user API keys. The condition is `(action user-apikey.delete) -login`.
 
@@ -194,7 +194,7 @@ To create multiple views based on the search condition, repeat the tasks in this
 ## Step 4. Define an email alert
 {: #tutorial_iam_apikeys_step4}
 
-After you save a view, you might decide that you want to be notified when certain conditions occur. 
+After you save a view, you might decide that you want to be notified when certain conditions occur.
 
 In the previous step, you saved a view to monitor deletion of user API keys. When you configure an alert on a view, you can choose to be notified when a key is deleted, when a number of keys are deleted, or after a period of time.
 
@@ -203,26 +203,26 @@ Complete the following steps to configure an email alert:
 1. In the web UI, click the **Views** icon ![Views icon](images/views.png "Views icon").
 2. Select your view. Then, click **Attach an alert**.
 3. Choose **View-specific alert** and select **Email**.
-4. Select the type of notification. Choose **Presence** to trigger an alert when a number of events show in the view, or after a period of time. You can use the *absence* type to trigger an alert when events are not shown in the view after a period of time. 
-5. Configure the condition that triggers the alert. 
+4. Select the type of notification. Choose **Presence** to trigger an alert when a number of events show in the view, or after a period of time. You can use the *absence* type to trigger an alert when events are not shown in the view after a period of time.
+5. Configure the condition that triggers the alert.
 
     You can configure any of the following conditions for an alert:
 
     * *Time frequency*: Specify how often to trigger an alert. Valid values are: 30 seconds, 1 minute, 5 minutes, 15 minutes, 30 minutes, 1 hour, 6 hours, 12 hours, 24 hours
 
     * *event lines counter*: Specify the number of event lines that match the view's filtering and search criteria. When the number of event lines is reached, an alert is triggered.
- 
+
     To define the threshold condition, set the number of lines after which you want the alert to trigger. Enter **2**.
 
 6. Choose the trigger condition **Immediately after 2 lines**.
-7. Enter one or more recipients. 
+7. Enter one or more recipients.
 
 8. Optionally, enter a time zone. This setting indicates the timestamp of the events that are reported through the email.
 
 9. Click **Save alert**.
 
 
-To verify the alert, you can generate more events. Check that you run delete actions. 
+To verify the alert, you can generate more events. Check that you run delete actions.
 
 After you delete 2 user API keys, you get an email with information about the user API keys that are deleted.
 
@@ -250,6 +250,3 @@ Complete the following steps to configure a dashboard:
     ![Line entry example](images/dashboard_sample_1.png)
 
 10. Click **Edit** to enter the name of the dashboard. Optionally, you can also create or add the dahboard to a category. Click **Save**.
-
-
-

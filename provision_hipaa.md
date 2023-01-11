@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -68,18 +68,13 @@ Set the tag **HIPAA** to the {{site.data.keyword.at_full_notm}} instances that y
 Complete the following steps:
 
 1. [Log in to your {{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/login){: external}.
-2. Go to the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Resource List** to view your list of resources. 
+2. Go to the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg) &gt; **Resource List** to view your list of resources.
 3. In the *Services* section, identify the instance that you want to tag.
 4. Go to the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg). Select **Add tags** or **Edit tags**.
 5. Enter the tag **HIPAA**.
 6. Click **Save**.
- 
+
 ## Next steps
 {: #compliance_hipaa_iam}
 
 Restrict access to manage and view the data. [Learn more](/docs/activity-tracker?topic=activity-tracker-iam).
-
-
-
-
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-11-13"
+  years: 2019, 2023
+lastupdated: "2023-01-05"
 
 keywords:
 
@@ -216,7 +216,6 @@ The following table lists security Cloud services that send auditing events:
 | [{{site.data.keyword.keymanagementservicelong}}](/docs/key-protect?topic=key-protect-getting-started-tutorial#getting-started-tutorial) | `kms` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/key-protect?topic=key-protect-at-events) |
 | [{{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started) | `hs-crypto` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/hs-crypto?topic=hs-crypto-at-events) |
 | [{{site.data.keyword.secrets-manager_full}}](/docs/secrets-manager?topic=secrets-manager-getting-started) | `secrets-manager` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/secrets-manager?topic=secrets-manager-at-events) |
-| [{{site.data.keyword.cloudcerts_full}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager#about-certificate-manager) | `cloudcerts` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/certificate-manager?topic=certificate-manager-at_events#at_events) |
 {: caption="Table 13. List of security services" caption-side="top"}
 
 

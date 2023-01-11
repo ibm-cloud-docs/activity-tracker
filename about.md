@@ -1,17 +1,17 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-10-13"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
- 
+
 
 # About Activity Tracker in {{site.data.keyword.cloud_notm}}
 {: #about}
@@ -45,7 +45,7 @@ The CADF standard defines a full event model that includes the information that 
 {: #select_offering}
 
 Depending on your compliance and organizational requirements, you can choose {{site.data.keyword.atracker_full_notm}} or an {{site.data.keyword.at_full_notm}} hosted event search offering.
-- Application environments seeking to maintain Financial Services (FS) validation status on {{site.data.keyword.cloud_notm}} should use {{site.data.keyword.atracker_full_notm}}. 
+- Application environments seeking to maintain Financial Services (FS) validation status on {{site.data.keyword.cloud_notm}} should use {{site.data.keyword.atracker_full_notm}}.
 - Application environments seeking compliance with PCI, SOC2, Privacy Shield and HIPAA should use an {{site.data.keyword.at_full_notm}} hosted event search offering.
 
 [![Getting started with Event Routing](/images/getting_started_routing.svg)](/docs/atracker?topic=atracker-getting-started) [![Getting started with hosted event and search](/images/getting_started_event.svg)](/docs/activity-tracker?topic=activity-tracker-getting-started)
@@ -55,7 +55,7 @@ Depending on your compliance and organizational requirements, you can choose {{s
 
 If you're the account owner, you can enable your {{site.data.keyword.cloud}} account to be Financial Services Validated, which means your account stores and manages regulated financial services information. Services that are designated as {{site.data.keyword.cloud_notm}} for Financial Services Validated leverage the industry’s highest levels of encryption certification, provides preventive and compensatory controls for financial services regulatory workloads, multi-architecture support and proactive, and automated security. For more information on how to enable your account, see [Enabling your account to use Finantial Services Validated products](/docs/account?topic=account-enabling-fs-validated).
 
-The {{site.data.keyword.cloud_notm}} for Financial Services Validated designation is available for services that are operating in the Dallas (us-south), Washington DC (us-east), Frankfurt (eu-de), and London (eu-gb) [multizone regions](#x9774820){: term}. 
+The {{site.data.keyword.cloud_notm}} for Financial Services Validated designation is available for services that are operating in the Dallas (us-south), Washington DC (us-east), Frankfurt (eu-de), and London (eu-gb) [multizone regions](#x9774820){: term}.
 
 Use {{site.data.keyword.atracker_short}} to manage auditing events in your account while maintaining Financial Services Validated status.
 {: tip}
@@ -78,7 +78,7 @@ Use {{site.data.keyword.at_short}} hosted event search offering to manage events
 
 * Simplify compliance sign-off tasks
 
-    Boost audit tasks on your {{site.data.keyword.cloud_notm}} account by automatically collecting events that report on actions to resources in your account. Analyze and get notified on the events that report out of compliance actions. 
+    Boost audit tasks on your {{site.data.keyword.cloud_notm}} account by automatically collecting events that report on actions to resources in your account. Analyze and get notified on the events that report out of compliance actions.
 
 * Accelerate detection of security incidents
 
@@ -86,7 +86,7 @@ Use {{site.data.keyword.at_short}} hosted event search offering to manage events
 
 * Improve visibility on actions in your {{site.data.keyword.cloud_notm}} account
 
-    Improve the visibility into user and resource activity in your account by easily identifying the initiator who requested an action, the object on which the action was requested, and the time when the action took place. 
+    Improve the visibility into user and resource activity in your account by easily identifying the initiator who requested an action, the object on which the action was requested, and the time when the action took place.
 
 * Adhere to standards
 
@@ -99,5 +99,3 @@ For example, you can use the {{site.data.keyword.at_full_notm}} events to identi
 * The time-stamp when the API calls were made
 * The status of the API call
 * The criticality of the action
-
-

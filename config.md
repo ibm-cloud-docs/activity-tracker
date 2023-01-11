@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-02-11"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -22,7 +22,7 @@ You can configure your web UI to work with UTC timestamps, change the log line f
 
 
 
-## Configure UTC timestamps 
+## Configure UTC timestamps
 {: #config_utc}
 
 By default, the web UI is configured to use local timestamps in views and searches.
@@ -42,10 +42,10 @@ Complete the following steps:
 
 1. In the web UI, click the **User preferences** icon &gt; **User preferences**.
 2. Select **Viewer style**.
-3. Choose the default contrast. 
+3. Choose the default contrast.
 
-    Choose *Light mode* to have a light background. 
-    
+    Choose *Light mode* to have a light background.
+
     Choose *Dark mode** to have a black background.
 
 4. Select the desired theme, text size, and line height.
@@ -63,7 +63,7 @@ Complete the following steps to display a log line that includes the timestamp a
 2. Select **Log format**.
 
     By default, the log format is configured in the following way:
-    
+
     ```text
     %time('MMM D HH:mm:ss') %source %app %level %line
     ```
@@ -77,5 +77,3 @@ Complete the following steps to display a log line that includes the timestamp a
     %time('MMM D HH:mm:ss') %line
     ```
     {: screen}
-
-

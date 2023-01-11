@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-02-04"
 
-keywords:  
+keywords:
 
 subcollection: activity-tracker
 
@@ -37,7 +37,7 @@ Verify that each exclusion rule that you add behaves as expected. Improper confi
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/services/activity-tracker?topic=activity-tracker-launch).
 
-2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Usage** &gt; **Exclusion Rules**. 
+2. Select the **Settings** icon ![Configuration icon](images/admin.png "Admin icon"). Then select **Usage** &gt; **Exclusion Rules**.
 
 3. Select **Add Rule**. The **Create Rule** section opens.
 
@@ -53,9 +53,7 @@ Verify that each exclusion rule that you add behaves as expected. Improper confi
 
 7. Click **Save**.
 
-8. After you configure an exclusion rule, verify that the exclusion rule behaves as you expect. 
+8. After you configure an exclusion rule, verify that the exclusion rule behaves as you expect.
 
     Check the query in a custom view by entering the search criteria in the search bar of the *Everything* view, and validating that the data that is displayed is the data that you want excluded.
-    {: tip} 
-
-
+    {: tip}

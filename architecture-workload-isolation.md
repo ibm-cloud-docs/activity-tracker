@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -42,7 +42,7 @@ The UI is the front-end component where users can monitor and manage logs from h
 ## Connections
 {: #compute-isolation-connections}
 
-You can use private and public endpoints to configure {{site.data.keyword.at_short}} resources in your account. 
+You can use private and public endpoints to configure {{site.data.keyword.at_short}} resources in your account.
 
 ### Private connections
 {: #compute-isolation-private-connections}
@@ -65,13 +65,9 @@ Each regional deployment of the {{site.data.keyword.at_full_notm}} service serve
 
 * There is 1 {{site.data.keyword.at_full_notm}} service per region that is responsible for running user workloads in the region.
 * The data that is collected and processed by the {{site.data.keyword.at_full_notm}} service is associated with that location and not visible to the other regions by virtue of this association.
-* Within a service instance, data is isolated per auditing instance within a region. 
+* Within a service instance, data is isolated per auditing instance within a region.
 * The {{site.data.keyword.at_full_notm}} service offers soft isolation for data storage. Data is mixed together in the same data stores and segmented by tags that are associated with each of the records to enforce access control policies.
 
 You can use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to control which users see, create, use, and manage resources in your service instance. [Learn more](/docs/activity-tracker?topic=activity-tracker-iam).
-* To grant access to manage the {{site.data.keyword.at_full_notm}} in {{site.data.keyword.cloud_notm}}, you can assign platform roles that define users levels of access for completing platform management tasks and accessing account resources. 
+* To grant access to manage the {{site.data.keyword.at_full_notm}} in {{site.data.keyword.cloud_notm}}, you can assign platform roles that define users levels of access for completing platform management tasks and accessing account resources.
 * To grant access to manage the service instance and its resources, you can assign service roles that define users levels of access for viewing data and managing features such as dashboards, screens, and alerts.
-
-
-
-

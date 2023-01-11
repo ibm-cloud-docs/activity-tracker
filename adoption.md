@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2021-08-09"
 
-keywords: 
+keywords:
 
 subcollection: activity-tracker
 
@@ -24,7 +24,7 @@ For regulated and highly available workloads, consider the following adoption gu
 ## Define resources naming standards for compliance
 {: #adoption_naming}
 
-When you create resources in the {{site.data.keyword.cloud_notm}}, you can choose how to name them, what information to include in their description fields, which tags to use to group them, associate metadata, and more. 
+When you create resources in the {{site.data.keyword.cloud_notm}}, you can choose how to name them, what information to include in their description fields, which tags to use to group them, associate metadata, and more.
 
 Define naming standards that do not include PII and other sensitive information for all resources that are created in the {{site.data.keyword.cloud_notm}}.
 {: important}
@@ -33,12 +33,12 @@ Define naming standards that do not include PII and other sensitive information 
 ## Define the account management strategy
 {: #adoption_account}
 
-In {{site.data.keyword.cloud_notm}}, you can have 1 or more **stand-alone** accounts. You can manage each account individually or within an **enterprise** by configuring a multitiered hierarchy of accounts. 
+In {{site.data.keyword.cloud_notm}}, you can have 1 or more **stand-alone** accounts. You can manage each account individually or within an **enterprise** by configuring a multitiered hierarchy of accounts.
 
-Within an enterprise account, you create a multitiered hierarchy of accounts, with billing and payments for all accounts managed at the enterprise level. [Learn more](/docs/account?topic=account-what-is-enterprise).  
-* The enterprise account serves as the parent account to all other accounts in the enterprise. 
+Within an enterprise account, you create a multitiered hierarchy of accounts, with billing and payments for all accounts managed at the enterprise level. [Learn more](/docs/account?topic=account-what-is-enterprise).
+* The enterprise account serves as the parent account to all other accounts in the enterprise.
 * Users and access management is isolated between the enterprise and its child accounts. No access is automatically inherited between the two types of accounts.
-* Resources and services within an enterprise function the same as in stand-alone accounts. Each account in an enterprise can contain resources in resource groups and services in Cloud Foundry orgs and spaces. 
+* Resources and services within an enterprise function the same as in stand-alone accounts. Each account in an enterprise can contain resources in resource groups and services in Cloud Foundry orgs and spaces.
 
 An enterprise can contain up to 5 tiers of accounts and account groups. In its most basic form, an enterprise has two tiers: the enterprise account, and a single child account.
 
@@ -52,10 +52,10 @@ The following table highlights some of the key features per account management s
 | `Isolation of resources and services per account`     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | `Isolation of account settings`                       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | `IAM enabled`                                         | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 1. Types of accounts" caption-side="top"} 
+{: caption="Table 1. Types of accounts" caption-side="top"}
 
 
-In stand-alone accounts, you control access to resources by grouping them in resource groups, and configuring IAM policies that you assign to users and service IDs directly or through access groups. These policies define the level of access to work with services in the account. For example, you might have a stand-alone account where you run your development, pre-production, and production services and applications. 
+In stand-alone accounts, you control access to resources by grouping them in resource groups, and configuring IAM policies that you assign to users and service IDs directly or through access groups. These policies define the level of access to work with services in the account. For example, you might have a stand-alone account where you run your development, pre-production, and production services and applications.
 
 By using an enterprise management account strategy, you achieve greater isolation of resources. When you configure a multitiered hierarchy of accounts, you get the flexibility to separate your development environments into separate tiers, or isolate by Line of Business (LoB) applications and services, or a combination of both. Each account retains the features of a stand-alone account, and you can still manage billing and payments from the enterprise account.
 
@@ -71,7 +71,7 @@ Define an enterprise account management strategy to add an additional layer of i
 ## Configure account settings for compliance
 {: #adoption_acc_settings}
 
-Across every industry, organizations require tight controls and visibility into where their data is stored and processed. 
+Across every industry, organizations require tight controls and visibility into where their data is stored and processed.
 
 Indicate to {{site.data.keyword.IBM_notm}} your compliance requirements by enabling your {{site.data.keyword.cloud_notm}} account or {{site.data.keyword.cloud_notm}} Entreprise account as HIPAA or EU supported.
 {: tip}
@@ -80,7 +80,7 @@ In the {{site.data.keyword.cloud_notm}}, you can configure your account for EU s
 * You might choose to enable the **EU Supported** setting, for example, if you use resources to process personal data for European citizens. For more information, see [Set the EU-Supported flag on in your account](/docs/account?topic=account-eu-hipaa-supported#bill_eusupported).
 * You might choose to enable the **HIPAA Supported** setting if you plan to include Protected Health Information (PHI) in HIPAA-enabled services. For more information, see [Set the HIPAA flag on in your account](/docs/account?topic=account-eu-hipaa-supported#enabling-hipaa).
 
-Only the account owner can enable the account to be EU supported and HIPAA supported. 
+Only the account owner can enable the account to be EU supported and HIPAA supported.
 
 ### HIPAA
 {: #adoption_acc_settings_hipaa}
@@ -91,7 +91,7 @@ The US Health Insurance Portability and Accountability Act (HIPAA) and the Healt
 {: tip}
 
 When you configure your account to be HIPAA enabled:
-* You can filter on *HIPAA Enabled* services in the catalog. Accounts that enable the **HIPAA Supported** setting still have access to the full catalog of services. 
+* You can filter on *HIPAA Enabled* services in the catalog. Accounts that enable the **HIPAA Supported** setting still have access to the full catalog of services.
 * You indicate to {{site.data.keyword.IBM_notm}} that your account stores protected health information (PHI).
 * You digitally accept the IBM Business Associate Addendum (BAA) for covered entities.
 
@@ -100,12 +100,12 @@ Enable this setting only if you or your company is a covered entity as defined b
 
 
 
-## Define the auditing instances strategy 
+## Define the auditing instances strategy
 {: #adoption_resource_svc}
 
 {{site.data.keyword.at_full_notm}} collects and aggregates events in one centralized system.
 * Data is hosted on the {{site.data.keyword.cloud_notm}}.
-* Data is collocated in the location where an {{site.data.keyword.at_full_notm}} instance is provisioned, except for events that report on global actions. 
+* Data is collocated in the location where an {{site.data.keyword.at_full_notm}} instance is provisioned, except for events that report on global actions.
 
 
 ### Locations
@@ -113,9 +113,9 @@ Enable this setting only if you or your company is a covered entity as defined b
 
 You can provision instances of the {{site.data.keyword.at_full_notm}} service in any of the supported locations in the {{site.data.keyword.cloud_notm}}. For more information, see [Locations](/docs/activity-tracker?topic=activity-tracker-regions).
 
-Per location (region), you can provision 1 auditing instance. 
+Per location (region), you can provision 1 auditing instance.
 * Events from enabled-AT services in the {{site.data.keyword.cloud_notm}} are collected automatically.
-* Each location represents the geographic area where your {{site.data.keyword.at_full_notm}} requests are handled and processed for that instance, and where data is resident. 
+* Each location represents the geographic area where your {{site.data.keyword.at_full_notm}} requests are handled and processed for that instance, and where data is resident.
 * Each MZR location has three different data centers for redundancy. The data for each location is kept in the three data centers near that location. If all three data centers in a location fail, the {{site.data.keyword.at_full_notm}} service for that location becomes unavailable.
 * Each MZR configuration can accept a single data center failure.
 
@@ -124,7 +124,7 @@ When you choose the locations where you plan to provision {{site.data.keyword.at
 
 For example, in Europe, only the Frankfurt region is EU-supported.
 
-You can also check [ensure zero downtime](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}. 
+You can also check [ensure zero downtime](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}.
 
 
 ### Resource groups
@@ -132,7 +132,7 @@ You can also check [ensure zero downtime](/docs/overview?topic=overview-zero-dow
 
 Resource groups are a logical container for organizing your IAM-enabled resources.
 * IAM-enabled services belong to a resource group. The {{site.data.keyword.at_full_notm}} service is an IAM-enabled service.
-* You assign a resource to its resource group when you create it from the catalog. 
+* You assign a resource to its resource group when you create it from the catalog.
 * You can't change the resource group assignment after you set it, which is why it's important to plan your resource groups.
 * If you add PII information in the resource group name, you might be disclosing sensitive data to others in the same account.
 
@@ -166,16 +166,16 @@ The HIPAA plan has a maximum of 25 users. If you need to grant permissions to mo
 ### Tags
 {: #adoption_resource_svc_tags}
 
-A tag is a label that you assign to a resource for easy filtering of resources in your resource list. 
-* You can use tags to organize your resources and easily find them later. 
+A tag is a label that you assign to a resource for easy filtering of resources in your resource list.
+* You can use tags to organize your resources and easily find them later.
 * You can also use tags to help you with identifying specific team usage or cost allocation when you view your [exported usage report](/docs/billing-usage?topic=billing-usage-viewingusage#export-csv).
 
 Use tags to organize your resources and track usage costs.
 {: tip}
 
-Tags are case-sensitive, and the maximum length of a tag is 128 characters. 
-* The characters that are permitted to name tags are A-Z, 0-9, spaces, underscore, hyphen, period, and colon. 
-* Colons turn the tag into a string where you can isolate two logical parts, like a `key:value` pair. You can't use a colon in a tag without creating this pairing. 
+Tags are case-sensitive, and the maximum length of a tag is 128 characters.
+* The characters that are permitted to name tags are A-Z, 0-9, spaces, underscore, hyphen, period, and colon.
+* Colons turn the tag into a string where you can isolate two logical parts, like a `key:value` pair. You can't use a colon in a tag without creating this pairing.
 * A comma separates tags and can't be used within the tag name itself.
 
 If you add PII information in the name, you might be disclosing sensitive data to others in the same account.
@@ -183,7 +183,7 @@ If you add PII information in the name, you might be disclosing sensitive data t
 When you define your tags, do not add sensitive information in the tag name.
 {: important}
 
-Tags are visible to all members of an account. 
+Tags are visible to all members of an account.
 
 To control tag visibility, circulate tagging guidelines, and let users know that tags are visible account-wide.
 {: tip}
@@ -204,7 +204,7 @@ When you define your IAM resources, do not add sensitive information in their na
 ### Access groups
 {: #adoption_iam_access_groups}
 
-You can assign permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of the service, a resource group, or an access group. 
+You can assign permissions to work with the {{site.data.keyword.at_full_notm}} service within the context of the service, a resource group, or an access group.
 
 Use access groups to organize a set of users and service IDs into a single entity that makes it easy for you to manage IAM permissions.
 {: tip}
@@ -219,22 +219,22 @@ Define a minimum of 4 access groups:
 | `Managers`               | Users in this group should have permissions to fully manage the service in the {{site.data.keyword.cloud_notm}}. |
 | `Advanced service users` | Users in this group should have permissions to run advanced service tasks.  |
 | `Users`                  | Users in this group should have permissions to run basic tasks.  |
-{: caption="Table 2. List of access groups" caption-side="top"} 
+{: caption="Table 2. List of access groups" caption-side="top"}
 
 ### Policies
 {: #adoption_iam_policies}
 
-A policy determines the full set of actions that a user or service ID can perform. 
+A policy determines the full set of actions that a user or service ID can perform.
 
-For each access group, define a policy for each resource group that defines the level of access to that resource group. 
+For each access group, define a policy for each resource group that defines the level of access to that resource group.
 {: tip}
 
-By default, the account owner is the only user in the account that can grant permissions to other users to manage and work with the {{site.data.keyword.at_full_notm}} service. 
+By default, the account owner is the only user in the account that can grant permissions to other users to manage and work with the {{site.data.keyword.at_full_notm}} service.
 
-To allow other users or service IDs in the account to manage the service and be able to grant permissions to work with the {{site.data.keyword.at_full_notm}} service, define a policy for the {{site.data.keyword.at_full_notm}} service with the platform role *administrator*. Grant this policy to the administrators access group. 
+To allow other users or service IDs in the account to manage the service and be able to grant permissions to work with the {{site.data.keyword.at_full_notm}} service, define a policy for the {{site.data.keyword.at_full_notm}} service with the platform role *administrator*. Grant this policy to the administrators access group.
 {: tip}
 
-Access to resources within a resource group can be granted to all resources in a group, or only selected services within a group. 
+Access to resources within a resource group can be granted to all resources in a group, or only selected services within a group.
 
 Access policies set a target, which is typically a service instance or all instances of a service in a resource group, and a role, which defines what type of access is allowed.
 
@@ -251,12 +251,12 @@ For each access group, define a policy for each resource group that specifies th
 | `Managers`               | Grant a policy for the resource group with platform role **editor**. Select the {{site.data.keyword.at_full_notm}} service, and select the platform role **editor**, and the service role **manager**. |
 | `Advanced service users` | Grant a policy for the resource group with platform role **viewer**. Select the {{site.data.keyword.at_full_notm}} service, and select the platform role **viewer**, and the service role **standard member**. |
 | `Users`                  | Grant a policy for the resource group with platform role **viewer**. Select the {{site.data.keyword.at_full_notm}} service, and select the platform role **viewer**, and the service role **reader**. |
-{: caption="Table 3. Roles per access group policy" caption-side="top"} 
+{: caption="Table 3. Roles per access group policy" caption-side="top"}
 
 Every user that requires permissions to work with the {{site.data.keyword.at_full_notm}} service in your account must be assigned a resource group policy that includes the permissions for the {{site.data.keyword.at_full_notm}} service.
 {: important}
 
-You can assign a single policy to the access group instead of assigning the same access multiple times per individual user or service ID. 
+You can assign a single policy to the access group instead of assigning the same access multiple times per individual user or service ID.
 
 Add users and service IDs to an access group. Grant permissions to these users and service IDs through the access group.
 {: tip}
@@ -267,7 +267,7 @@ For more information, see [Granting administration permissions to a user or serv
 ## Configure the account settings for authentication into your account
 {: #adoption_login}
 
-Multi-factor authentication (MFA) adds an extra layer of security to your account by requiring all users to authenticate by using an additional authentication method beyond an ID and password. This is also commonly known as two-factor authentication (2FA). 
+Multi-factor authentication (MFA) adds an extra layer of security to your account by requiring all users to authenticate by using an additional authentication method beyond an ID and password. This is also commonly known as two-factor authentication (2FA).
 
 The {{site.data.keyword.cloud_notm}} account owner or administrator for the billing service can choose to require multi-factor authentication (MFA) for every user in the account or just users with non-federated IDs who do not use SSO. All users with an IBMid use a time-based one-time passcode (TOTP) MFA method, and any users with a different type of ID must be enabled to use the time-based one-time passcode authentication (TOTP), security questions, or an external authentication method separately. [Learn more](/docs/account?topic=account-enablemfa).
 
@@ -278,7 +278,7 @@ Enable multi-factor authentication (MFA) in your {{site.data.keyword.cloud_notm}
 
 
 
-## Define the notification strategy 
+## Define the notification strategy
 {: #adoption_alerts}
 
 In an auditing instance, you define views to analyze the data. Then, you can configure 1 or more alerts per view to notify of an abnormal situation. [Learn more](/docs/activity-tracker?topic=activity-tracker-alerts).
@@ -288,9 +288,9 @@ You can choose to be notified by using an absence alert that is triggered when n
 Define an absence alert to be notified when inactivity in an application or service is identified. Notice that absence alerts require data in the view within the past 24 hours for the alert to be active.
 {: tip}
 
-You can choose to be notified by using a presence alert that is triggered when more log lines than expected are present.  
+You can choose to be notified by using a presence alert that is triggered when more log lines than expected are present.
 
-Define a presence alert to be notified of exceptional situations in your applications and services that require immediate attention.    
+Define a presence alert to be notified of exceptional situations in your applications and services that require immediate attention.
 {: tip}
 
 You can configure multiple notification channels. Valid channels are: `email`, `Slack`, `PagerDuty`, `Webhook`
@@ -311,7 +311,7 @@ You can also define a **preset**. A preset is an alert template that you can att
 To reuse an alert configuration with different views and enforce notification channels across users that analyze data through that instance, configure alert presets.
 {: tip}
 
-When you send a notification, you can include log data as part of the notification. 
+When you send a notification, you can include log data as part of the notification.
 
 Customize the data that is included in a notification for situations where the receiver of the notification does not have access to the log data.
 {: tip}
@@ -322,7 +322,7 @@ Customize the data that is included in a notification for situations where the r
 You might have different requirements that require archiving your data:
 * Backup requirements to keep data for a period of time
 * Data access requirements so that you can query the data after it is not available for search through the web UI
-* Disaster recovery requirements 
+* Disaster recovery requirements
 * Compliance requirements
 
 {{site.data.keyword.at_full_notm}} does not backup your data. 
@@ -330,7 +330,7 @@ You might have different requirements that require archiving your data:
 There are 2 types of data that you should consider archiving:
 * Log data
 
-    By default, archiving of log data is not enabled for any auditing instance. 
+    By default, archiving of log data is not enabled for any auditing instance.
 
     When you enable archiving of your log data, you are responsible for checking that your archived files are not corrupted, and for the maintenance of your archived files.
     {: note}
@@ -356,7 +356,7 @@ Backup resource definitions into a version control system such as a git reposito
 Enable archiving of your data from an auditing instance to an {{site.data.keyword.cos_full_notm}} (COS) bucket.
 {: tip}
 
-After you provision an auditing instance, you can configure archiving to an {{site.data.keyword.cos_full_notm}} (COS) bucket. You can create different types of buckets based on your requirements. 
+After you provision an auditing instance, you can configure archiving to an {{site.data.keyword.cos_full_notm}} (COS) bucket. You can create different types of buckets based on your requirements.
 
 When you plan the bucket for an auditing instance, consider the following information:
 
@@ -364,21 +364,21 @@ When you plan the bucket for an auditing instance, consider the following inform
 |----------------------|------------------------|-----------------------------|
 | `Type of workload` [1]                                | How often do you need to access the data?                         | [Information about storage classes](/docs/cloud-object-storage?topic=cloud-object-storage-classes#classes-about) |
 | `Retention policy` [2]                                | Do you need to protect data from being deleted?                   | [Information about Immutable Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-immutable) |
-| `Expiration policy` [3]                               | Do you need automatic deletion of files?                          | [Information about expiration rules](/docs/cloud-object-storage?topic=cloud-object-storage-expiry) |                            
+| `Expiration policy` [3]                               | Do you need automatic deletion of files?                          | [Information about expiration rules](/docs/cloud-object-storage?topic=cloud-object-storage-expiry) |
 | `Long-term retention policy` [4]                      | Do you need to keep data for a long period of time?               | [Information about archiving COS files for long term storage](/docs/cloud-object-storage?topic=cloud-object-storage-archive) |
 | `Encryption of data at-rest with my own key` [5]      | Can I use my own key to encrypt data at-rest?                     | [Information about encryption of data at-rest](/docs/cloud-object-storage?topic=cloud-object-storage-encryption) |
 | `Data resiliency` [6]                                 | Do you need to store the data in a specific geographical location? | [Information about resiliency](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints) |
-{: caption="Table 5. COS bucket requirements" caption-side="top"} 
+{: caption="Table 5. COS bucket requirements" caption-side="top"}
 
 `[1]`: Data might sit untouched for long periods of time. For less active workloads, you can create buckets with different storage classes. For example, use the standard storage class for active workloads, where you need to access data at any time.
 
 `[2]`: You can choose *Immutable Object Storage* to preserve electronic records and maintain data integrity. When you define a retention policy for a bucket, you are specifying that the data is stored in a WORM (Write-Once-Read-Many), non-erasable and non-rewritable manner. This policy is enforced until the end of a retention period and the removal of any legal holds. Notice that `Immutable Object Storage` is available in certain regions only.
 
-`[3]`: You can use an expiration rule to delete objects automatically after a defined period from the object creation date. 
+`[3]`: You can use an expiration rule to delete objects automatically after a defined period from the object creation date.
 
 `[4]`: You can define a retention policy to retain data for a long period of time and have the data available for downloads and queries. If you do not need to query the data, and you just need to keep it for compliance, look into archiving COS files from any of the storage tiers to a long-term offline archive location or use the online *Cold Vault* option.
 
-`[5]`: COS provides several options to encrypt your data. By default, all objects that are stored in COS are encrypted by using randomly generated keys and an all-or-nothing-transform (AONT). With COS, you can also manage your keys manually by providing your own encryption keys - referred to as Server-Side Encryption with Customer-Provided Keys (SSE-C). Alternatively, you can choose to use the integration capabilities with {{site.data.keyword.cloud}} Key Management Services like {{site.data.keyword.keymanagementservicelong}} and {{site.data.keyword.hscrypto}}. 
+`[5]`: COS provides several options to encrypt your data. By default, all objects that are stored in COS are encrypted by using randomly generated keys and an all-or-nothing-transform (AONT). With COS, you can also manage your keys manually by providing your own encryption keys - referred to as Server-Side Encryption with Customer-Provided Keys (SSE-C). Alternatively, you can choose to use the integration capabilities with {{site.data.keyword.cloud}} Key Management Services like {{site.data.keyword.keymanagementservicelong}} and {{site.data.keyword.hscrypto}}.
 
 `[6]`: Resiliency refers to the scope and scale of the geographic area across which your data is distributed. For example, you can choose cross region resiliency to spread your data across several geographical areas, or regional resiliency to spread data across a single region. Notice that a single data center distributes data across devices within a single site only.
 
@@ -396,7 +396,7 @@ Use the following table to help you identify the features that you should consid
 | `Type of workload`                           | `Continuous access`             | `Data isn't accessed frequently` | `Accessed every 90 days or less` | `Dynamic workloads where access patterns are difficult to predict` |
 | `Data resiliency`                            | `Cross region`                  | `Cross region`             | `Cross region`                  | `Cross region`             |
 | `Retention policy`                           | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| `Expiration policy`                          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |                         
+| `Expiration policy`                          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | `Long-term retention policy`                 | `NO`                            | `NO`                        | `NO`                             | `NO`                         |
 {: caption="Table 6. Disaster recovery or compliance requirements" caption-side="top"}
 {: #archive-table-4}
@@ -410,7 +410,7 @@ Use the following table to help you identify the features that you should consid
 | `Type of workload`                           | `Continuous access`             | `Data isn't accessed frequently` | `Accessed every 90 days or less` | `Dynamic workloads where access patterns are difficult to predict` |
 | `Data resiliency`                            | `Cross region` or `Regional`    | `Cross region` or `Regional`    | `Cross region` or `Regional`   | `Cross region` or `Regional`   |
 | `Retention policy`                           | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| `Expiration policy`                          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |                         
+| `Expiration policy`                          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | `Long-term retention policy`                 | `NO`                            | `NO`                        | `NO`                             | `NO`                         |
 {: caption="Table 7. Backup or access to data beyond the service plan days requirements" caption-side="top"}
 {: #archive-table-5}
@@ -427,7 +427,7 @@ Use the following table to help you identify the features that you should consid
 
 `[10]`:  Flex is used for dynamic workloads where access patterns are more difficult to predict.
 
-Objects that are subject to a bucket's `Immutable Object Storage` retention policy will have expiration actions deferred until the retention policy is no longer enforced. 
+Objects that are subject to a bucket's `Immutable Object Storage` retention policy will have expiration actions deferred until the retention policy is no longer enforced.
 {: note}
 
 
@@ -436,11 +436,11 @@ Objects that are subject to a bucket's `Immutable Object Storage` retention poli
 
 By default, all objects that are stored in COS are encrypted by using randomly generated keys and an all-or-nothing-transform (AONT). When you archive data into your COS instance, your objects are automatically encrypted with data encryption keys (DEKs). When you need to access a bucket, the service checks your user permissions and decrypts the objects within the bucket for you. This encryption model is called *provider-managed encryption*.
 
-While this default encryption model provides at-rest security, some workloads need full control over the data encryption keys used. 
+While this default encryption model provides at-rest security, some workloads need full control over the data encryption keys used.
 
 COS provides several options to encrypt your data. This encryption model is called *customer-managed encryption*:
-* You can manage your keys manually by providing your own encryption keys - referred to as Server-Side Encryption with Customer-Provided Keys (SSE-C). 
-* You can choose to use the integration capabilities with {{site.data.keyword.cloud}} Key Management Services like {{site.data.keyword.keymanagementservicelong}} and {{site.data.keyword.hscrypto}}. 
+* You can manage your keys manually by providing your own encryption keys - referred to as Server-Side Encryption with Customer-Provided Keys (SSE-C).
+* You can choose to use the integration capabilities with {{site.data.keyword.cloud}} Key Management Services like {{site.data.keyword.keymanagementservicelong}} and {{site.data.keyword.hscrypto}}.
 
     You can use {{site.data.keyword.keymanagementservicelong}} to provision encrypted keys for apps across {{site.data.keyword.cloud_notm}} services. As you manage the lifecycle of your keys, you can benefit from knowing that your keys are secured by FIPS 140-2 Level 3 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. When you integrate COS with the {{site.data.keyword.keymanagementserviceshort}} service, you can add envelope encryption to your DEKs. In {{site.data.keyword.keymanagementserviceshort}}, you can provision highly secure root keys, which serve as primary keys that you control in the service. When you create a bucket, you can configure envelope encryption for the bucket at its creation. This added protection wraps (or encrypts) the DEKs associated with the bucket by using a root key that you manage in {{site.data.keyword.keymanagementserviceshort}}. The practice, called *key wrapping*, uses multiple AES algorithms to protect the privacy and the integrity of your DEKs, so only you control access to their associated data.
 
@@ -454,13 +454,13 @@ If you need to use your own key to encrypt the data at-rest in a bucket, use the
 | `Type of workload`                           | `Continuous access`             | `Data isn't accessed frequently` | `Accessed every 90 days or less` | `Dynamic workloads where access patterns are difficult to predict` |
 | `Data resiliency`                            | `Regional`                      | `Regional`                   | `Regional`                      | `Regional`                   |
 | `Retention policy` [15]                      | `NO`                            | `NO`                        | `NO`                             | `NO`                         |
-| `Expiration policy`                          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |                         
+| `Expiration policy`                          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | `Long-term retention policy`                 | `NO`                            | `NO`                        | `NO`                             | `NO`                         |
 {: caption="Table 8. Use your own encryption key" caption-side="top"}
 
-`[15]`: Currently, you cannot use your own key with a bucket that has a retention policy configured. 
+`[15]`: Currently, you cannot use your own key with a bucket that has a retention policy configured.
 
- 
+
 Use the customer-managed encryption model to manage and control the key that is used to encrypt data at-rest.
 {: tip}
 
@@ -489,14 +489,14 @@ To configure archiving, you need the following IAM policies:
 You also need a service ID. A service ID identifies a service similar to how a user ID identifies a user. Service IDs are not tied to a specific user. If the user that creates the service ID leaves your organization and is deleted from the account, the service ID remains. The {{site.data.keyword.at_full_notm}} service uses an API key that is associated to a service ID that you define on your COS instance to authenticate and write files to the COS bucket.
 
 Create a service ID for for the COS instance with **writer** permissions. Restrict access to the service ID so that the API key that is associated to it can only write to the bucket that you configure for archiving.
-{: tip} 
+{: tip}
 
 If you add PII information in the name or the description of the service ID, you might be disclosing sensitive data to others in the same account.
 
 When you define your service ID name, do not add sensitive information in the name or in the description.
 {: important}
 
-You might have a requirement to rotate API keys regularly or your API key might be compromised. 
+You might have a requirement to rotate API keys regularly or your API key might be compromised.
 
 Rotate the API key that is associated with your service ID regularly to prevent any security breaches caused by leaked keys or to comply with security guidelines.
 {: tip}
@@ -507,7 +507,7 @@ Rotate the API key that is associated with your service ID regularly to prevent 
 In COS, you can define policies to control the permissions that are granted to service IDs and users to read, write, update object properties, and delete objects. [Learn more](/docs/cloud-object-storage?topic=cloud-object-storage-iam).
 
 Restrict user access to archived files in the bucket.
-{: tip} 
+{: tip}
 
 ### EU supported account
 {: #adoption_archive_5}
@@ -522,7 +522,7 @@ When you archive logs from the Frankfurt auditing instance to an {{site.data.key
 
     * For a bucket with **cross region** resiliency, you can create the bucket in the `eu-geo` location. Data is kept within the EU geography across datacenters that are located in Milan, Amsterdam, and Frankfurt.
 
-* You must restrict user access to manage archived log files in these buckets.  
+* You must restrict user access to manage archived log files in these buckets.
 * Users are responsible for downloading files to EU-supported locations.
 
 ### Monitor archiving through Activity Tracker
@@ -530,8 +530,8 @@ When you archive logs from the Frankfurt auditing instance to an {{site.data.key
 
 You can use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate for abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 
-In COS, you can track management and data events. 
-* By default, these events are not enabled. 
+In COS, you can track management and data events.
+* By default, these events are not enabled.
 * Management events report actions that change the state of resource configurations, bucket properties, and object properties.
 * Data events report actions on buckets, objects, and multi-part objects such as creation, deletion, and access.
 * You must configure each bucket to enable management events, or management and data events. Notice that you cannot enable data events only for a bucket. For more information, see [Activity Tracker events](/docs/cloud-object-storage?topic=cloud-object-storage-at-events).
@@ -559,12 +559,12 @@ Add a *legal hold* flag or an *indefinite retention* flag to individual archived
 
 
 
-## Define the strategy to query archived data 
+## Define the strategy to query archived data
 {: #adoption_query}
 
 You can download data locally, and then use your own tools to query the data. When you download data for analysis, you are responsible for ensuring that your users comply with the regulations and compliance requirements that may be required for your organization. For example, if you must comply with GDPR, you need to control that users are following the download guidelines per GDPR rules.
 
-You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} archived files that are stored in a COS bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically. 
+You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} archived files that are stored in a COS bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically.
 
 Avoid downloading data locally. Use the {{site.data.keyword.sqlquery_short}} service to query archived data.
 {: tip}
@@ -572,7 +572,7 @@ Avoid downloading data locally. Use the {{site.data.keyword.sqlquery_short}} ser
 
 The {{site.data.keyword.sqlquery_short}} service provides a server-less, no-ETL solution to easily query data stored in {{site.data.keyword.cos_short}}. SQL Query uses Apache Spark SQL as its underlying query engine. You can use the {{site.data.keyword.sqlquery_short}} to run SQL queries (that is, `SELECT` statements) to analyze, transform structured and semi-structured data, or clean up rectangular data. You cannot run actions such as `CREATE`, `DELETE`, `INSERT`, and `UPDATE`.
 
-The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. Archived files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format. When you use the {{site.data.keyword.sqlquery_short}} service, each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in an {{site.data.keyword.cos_short}} instance of your choice. 
+The {{site.data.keyword.sqlquery_short}} service can process input data that is read from CSV, JSON, ORC, Parquet, or AVRO files. Archived files from an {{site.data.keyword.at_full_notm}} instance contain data in JSON format. When you use the {{site.data.keyword.sqlquery_short}} service, each query result can be written to a `CSV`, `JSON`, `ORC`, `PARQUET`, or `AVRO` file in an {{site.data.keyword.cos_short}} instance of your choice.
 
 When you query an {{site.data.keyword.at_full_notm}} archive file, you must [convert the JSON formatted file into `PARQUET` format](/docs/activity-tracker?topic=activity-tracker-sqlquery#sqlquery_step3_4) to be able to query the contents successfully.
 {: tip}
@@ -582,8 +582,3 @@ Use the {{site.data.keyword.sqlquery_short}} user interface (UI) to develop and 
 
 If you plan to use the {{site.data.keyword.sqlquery_short}} service, and you require HIPAA compliance, create a bucket for your archives that uses a custom key to encrypt the data.
 {: tip}
-
-
-
-
-
