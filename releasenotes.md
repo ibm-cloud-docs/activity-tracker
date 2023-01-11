@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2023-01-10"
 
 keywords: 
 
@@ -22,6 +22,11 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
 
+## 10 January 2023
+{: #activity-tracker-jan1023}
+{: release-note}
+
+Webhook alerts are enabled for Index Rate alerting. For more information, see [Activate the index rate alert feature](/docs/activity-tracker?topic=activity-tracker-control_usage_index_rate&interface=ui#control_usage_index_rate_activate).
 
 ## 24 March 2022
 {: #activity-tracker-mar2422}
