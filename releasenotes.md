@@ -26,7 +26,8 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #activity-tracker-jan1023}
 {: release-note}
 
-Webhook alerts are enabled for Index Rate alerting. For more information, see [Activate the index rate alert feature](/docs/activity-tracker?topic=activity-tracker-control_usage_index_rate&interface=ui#control_usage_index_rate_activate).
+Webhook alerts are enabled for Index Rate alerting.
+:   For more information, see [Activate the index rate alert feature](/docs/activity-tracker?topic=activity-tracker-control_usage_index_rate&interface=ui#control_usage_index_rate_activate).
 
 ## 18 November 2022
 {: #activity-tracker-nov1822}
