@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-05"
+lastupdated: "2023-01-30"
 
 keywords:
 
@@ -27,6 +27,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
 | {{site.data.keyword.iae_full}}               | ![Checkmark icon](images/checkmark-icon.svg) |                                      |
 | {{site.data.keyword.sqlquery_full}}          | ![Checkmark icon](images/checkmark-icon.svg) |                                      |
+| {{site.data.keyword.PA_SaaS_full}}           |  | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.dv_short}}               | ![Checkmark icon](images/checkmark-icon.svg) |                                      |
 {: caption="Table 1. Analytics services integration in Americas locations" caption-side="top"}
 {: #analytics-table-1}
@@ -39,6 +40,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |----------------|---------------------|------------------|------------------|------------------|
 | {{site.data.keyword.iae_full}}               | ![Checkmark icon](images/checkmark-icon.svg) |  |
 | {{site.data.keyword.sqlquery_full}}          | |  |
+| {{site.data.keyword.PA_SaaS_full}}          | |  |
 | {{site.data.keyword.dv_short}}               | ![Checkmark icon](images/checkmark-icon.svg)   |  |
 {: caption="Table 1. Analytics services integration in AP locations" caption-side="top"}
 {: #analytics-table-2}
@@ -51,6 +53,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 |------------------------------------------------|---------------------|------------------|
 | {{site.data.keyword.iae_full}}               | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.sqlquery_full}}          | ![Checkmark icon](images/checkmark-icon.svg) |                                 |
+| {{site.data.keyword.PA_SaaS_full}}          | |  |
 | {{site.data.keyword.dv_short}}               | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 {: caption="Table 1. Analytics services integration in Europe locations" caption-side="top"}
 {: #analytics-table-3}
