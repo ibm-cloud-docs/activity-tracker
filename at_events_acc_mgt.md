@@ -225,7 +225,7 @@ The following table lists the actions that generate an event:
 | Action                               | Description |
 |--------------------------------------|-------------|
 | `user-management.user.create`        | An event is generated when you invite a user to the account. |
-| `billing.user.active`                | An event is generated when a user, that has received an email invitation to join an account, verifies the email address. |
+| `user-management.user-invitation.accept` | An event is generated when a user, that has received an email invitation to join an account, verifies the email address. |
 | `user-management.user.update`        | An event is generated when log in configurations are modified for a user from the {{site.data.keyword.cloud_notm}} UI. |
 | `user-management.user.delete`        | An event is generated when you remove a user from the account. |
 | `user-management.user-setting.update` | An event is generated when you update the user's login configuration settings: User one-time passcode authentication ,Require MFA security questions at login, User-managed login or Setting up security questions |
@@ -243,16 +243,11 @@ To view these events, you must [provision an instance](/docs/services/activity-t
 ## Analyzing events
 {: #at_events_analyze}
 
-
-
-
 ### Catalog events
 {: #at_events_analyze_2}
 
 You can find the value `unavailable` in catalog events. This value indicates when an update is made, but specific details about the update aren't included.
 {: important}
-
-
 
 ### User management events
 {: #at_events_analyze_3}
@@ -261,30 +256,42 @@ This section explains events that are generated when you manage users from the *
 
 When you analyze user management events, `target.name` is set to the user ID of the user on which the action is requested.
 
-
 #### Modify the status of a user
 {: #at_events_analyze_3_1}
 
-When you modify information about the user status from the **User Details** section, you get the following 2 events:
+When you modify the status of a user by selecting a user, clicking **Edit** in the **Details** section, and changing the **User status**, you get the following event:
 * Event with action `user-management.user.update` that reports a request in the account to modify the user's properties.
-* Event with action `user-management.user-setting.update` that indicates the values of the user's properties after the update request completes.
 
-Depending on the request, you might get additional events with action `user-management.user-setting.update`. If your account is a Lite one, you only get 1 event with action `user-management.user.update`.
-
-For example, see the `requestData` field for the event `user-management.user-setting.update`:
+For example, see the `action` field for the event `user-management.user.update`:
 
 ```json
-"action": "user-management.user-setting.update",
-"message": "User management service: update user settings",
-"requestData": {
-    "2FA": false,
-    "allowed_ip_addresses": "",
-    "iam_id": "IBMid-xxxxxxx",
-    "origin": "BSS",
-    "security_questions_setup": false
+"action": "user-management.user.update",
+"message": "User management service: update user"
+"initiator": {
+    "id": "IBMid-12345",
+    "typeURI": "service/security/account/user",
+    "name": "example@ibm.com",
+    "host": {
+      "agent": "",
+      "address": "...",
+      "addressType": "IPv4"
+    },
+    "credential": {
+      "type": "token"
+    }
+  },
+  "target": {
+    "id": "crn:v1:bluemix:public:user-management:global:a/account1234:::",
+    "typeURI": "user-management/user",
+    "name": "IBMid-12345",
+    "host": {
+      "address": "user-management.cloud.ibm.com"
+    }
 }
+
 ```
 {: screen}
+
 
 #### Restrict IP addresses
 {: #at_events_analyze_3_2}
@@ -294,13 +301,34 @@ When you configure IP address restrictions from the **IP address restrictions** 
 For example, see the `requestData` field for the event `user-management.user-setting.update`:
 
 ```json
-"action": "user-management.user-setting.update",
-"message": "User management service: update user settings",
-"requestData": {
-    "allowed_ip_addresses": "14.15.98.123",
-    "iam_id": "IBMid-xxxxxxx",
-    "origin": "BSS"
-}
+{
+    "action": "user-management.user-setting.update",
+    "message": "IAM User Management: update user-setting user@company.com",
+    "requestData": {
+        "totalNumberChanges": 1,
+        "update": [
+            {
+                "ips_added": [
+                    {
+                        "address": "241.211.116.250",
+                        "addressType": "IPv4"
+                    },
+                    {
+                        "address": "89.78.194.127",
+                        "addressType": "IPv4"
+                    },
+                    {
+                        "address": "40.190.11.111",
+                        "addressType": "IPv4"
+                    },
+                    {
+                        "address": "246.140.117.83",
+                        "addressType": "IPv4"
+                    },
+                ],
+                "updateType": "allowed_ip_addresses changes"
+            }
+        ]
 ```
 {: screen}
 
@@ -310,54 +338,88 @@ For example, see the `requestData` field for the event `user-management.user-set
 
 When you modify information about a user's login from the **Manage** &gt; **Access IAM** &gt; **Users** &gt; **User Details** section, you get 1 event with action `user-management.user-setting.update`.
 
-See the sample of the `requestData` field when the **User-managed login:** property is disabled:
+See the sample of the `requestData` field when the **User-managed login** property is disabled:
 
 ```json
-"action": "user-management.user-setting.update",
- "message": "User management service: update user settings",
-"requestData": {
-    "iam_id": "IBMid-27000757DW",
-    "origin": "BSS",
-    "self_manage": false
-}
+{
+    "action": "user-management.user-setting.update",
+    "message": "IAM User Management: update user-setting user@company.com",
+    "requestData": {
+        "totalNumberChanges": 1,
+        "update": [
+            {
+                "initialValue": true,
+                "newValue": false,
+                "updateType": "self_manage update"
+            }
+        ]
+    }
 ```
 {: screen}
 
 
-See the sample of the `requestData` field when the **User one-time passcode authentication:** property is enabled. The `requestData.2FA` field is set to `true`.
+See the sample of the `requestData` field when the **User one-time passcode authentication** property is enabled. The `requestData.2FA` field is set to `true`.
+
 
 ```json
-"action": "user-management.user-setting.update",
-"message": "User management service: update user settings",
-"requestData": {
-    "2FA": true,
-    "iam_id": "IBMid-xxxxx",
-    "origin": "BSS",
-    "security_questions_setup": true,
-    "self_manage": false
- }
-}
+{
+    "action": "user-management.user-setting.update",
+    "message": "IAM User Management: update user-setting user@company.com",
+    "requestData": {
+        "totalNumberChanges": 1,
+        "update": [
+            {
+                "initialValue": false,
+                "newValue": true,
+                "updateType": "2FA update"
+            },
+        ]
+    }
 ```
 {: screen}
+
 
 See the sample of the `requestData` field when the **Require MFA security questions at login:** property is enabled. The `requestData.security_questions_setup` field is set to `true`.
 
 ```json
-"action": "user-management.user-setting.update",
-"message": "User management service: update user settings",
-"requestData": {
-    "2FA": true,
-    "iam_id": "IBMid-xxxxxx",
-    "origin": "BSS",
-    "security_questions_setup": true,
-    "self_manage": false
- }
-}
+{
+    "action": "user-management.user-setting.update",
+    "message": "IAM User Management: update user-setting user@company.com",
+    "requestData": {
+        "totalNumberChanges": 1,
+        "update": [
+            {
+                "initialValue": false,
+                "newValue": true,
+                "updateType": "security_questions_setup update"
+            }
+        ]
+    }
 ```
 {: screen}
 
+#### User accepts an account invitation
+{: #at_events_analyze_accept_invitation}
 
+When a user accepts an account invitation, you get the following event:
+* Event with action `user-management.user-invitation.accept` that reports which user accepted the account invitation.
 
+See the sample of the `responseData` field when the user accepts the invitation:
+
+```json
+    "action": "user-management.user-invitation.accept",
+    "message": "IBM User Management: accept user invitation to account Joe Test's Account",
+    "responseData": {
+        "update": [
+            {
+                "initialValue": "BSS-3f6af42016b440e087025542cbd9cb91",
+                "newValue": "IBMid-663003Z105",
+                "updateType": "IAM ID Update during Accept"
+            }
+        ]
+    }
+```
+{: screen}
 
 #### requestData fields
 {: #at_events_analyze_3_reqdata}
@@ -368,12 +430,16 @@ The following table lists *requestData* fields that you can find in events that 
 |-------|------|-------------|
 | `2FA`                      | Boolean         | Defines the MFA requirements for users in the account.   \n This field is set to `true` when MFA is enabled for users.  |
 | `allowed_ip_addresses`     | String          | List of IP addresses from where a user is allowed to access account resources. |
+| `ips_added` | String | The new IP adresses that are added to the `allowed_ip_addresses`. |
+| `ips_removed` | String | The IP adresses that are removed from the `allowed_ip_addresses`. |
 | `iam_id`                   | String          | Defines the IBM ID of the user whose settings are being modified. |
+| `initialValue` | String | The original value for a specific user setting. Not applicable for `allowed_ip_addresses`. |
+| `newValue` | String | The new value for a specific user setting. Not applicable for `allowed_ip_addresses`. |
+| `updateType` | String | The specific user setting that is updated. |
 | `security_questions_setup` | Boolean         | Defines when a user requires security questions to log in to the account.   \n This field is set to `true` to indicate that questions are required.  |
 | `self_manage`              | Boolean         | Defines whether a user can configure his log in settings on how to log in to the account.    \n This field is set to `true` to allow a user to set password expiration, turn on security questions for login, and define allowed IP addresses for log in to {{site.data.keyword.cloud_notm}} and from classic infrastructure API calls.  |
+| `totalNumberChanges` | The number of settings updated. |
 {: caption="Table 15. User management requestData fields" caption-side="top"}
-
-
 
 ### Events for managing account usage reports
 {: #at_events_analyze_4}
