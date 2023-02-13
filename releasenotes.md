@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-02-13"
 
 keywords:
 
@@ -21,6 +21,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
+
+## 13 February 2023
+{: #activity-tracker-feb1323}
+{: release-note}
+
+New API method to retrieve account usage totals
+:   A [new method](/apidocs/activity-tracker#list-usage-v2) is available to get aggregate data usage information for an account during a specified time period.
 
 ## 10 January 2023
 {: #activity-tracker-jan1023}
