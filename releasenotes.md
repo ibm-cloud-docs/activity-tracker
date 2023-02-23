@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-22"
 
 keywords:
 
@@ -21,6 +21,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
+
+## 22 February 2023
+{: #activity-tracker-feb2223}
+{: release-note}
+
+New CIDR blocks available
+:   New CIDR blocks will be available on 9 March 2023. See [CIDR blocks](/docs/activity-tracker?topic=activity-tracker-cidr) for more information.
 
 ## 13 February 2023
 {: #activity-tracker-feb1323}
