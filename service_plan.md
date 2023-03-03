@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2021-11-03"
+lastupdated: "2023-03-03"
 
 keywords:
 
@@ -34,7 +34,7 @@ Different pricing plans are available that you can choose for an {{site.data.key
 `[*]` In the lite plan, the log line is not formatted.
 {: important}
 
-{{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your events as they pass through the system. You can view events by using event tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
+{{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your events as they pass through the system. You can view events by using event tailing. You can also design filters to prepare for upgrading to a longer retention period plan. You cannot use an instance on the `Lite` plan to receive streamed data. This plan has a 0-day retention period.
 
 
 ## Features by plan

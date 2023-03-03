@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-07-21"
+lastupdated: "2023-03-03"
 
 keywords:
 
@@ -58,6 +58,7 @@ Consider the following information when streaming data to an {{site.data.keyword
 - The credential that {{site.data.keyword.at_short}}  uses to publish data in {{site.data.keyword.messagehub}} must have **writer** role. This role includes the **messagehub.topic.write** IAM action role that allows an app or service to write data to 1 or more topics.
 
 Consider the following information when streaming data to an {{site.data.keyword.at_short}} instance:
+- The {{site.data.keyword.at_short}} instance data that will receive data must be configured with a paid service plan. {{site.data.keyword.at_short}} instances on the [`Lite` plan](/docs/log-analysis?topic=log-analysis-service_plans) cannot receive streamed data.
 - You must have **manager** role to configure streaming in the {{site.data.keyword.at_short}} instance. This role includes the **logdnaat.dashboard.manage** IAM action role that allows a user to perform admin tasks such as configure streaming.
 - When you configure streaming, the source {{site.data.keyword.at_short}} instance and the destination {{site.data.keyword.at_short}} instance can be provisioned in the same account or in different accounts.
 - To connect the source {{site.data.keyword.at_short}} instance to the destination {{site.data.keyword.at_short}}  instance, you need the following information:
@@ -117,3 +118,4 @@ The following {{site.data.keyword.at_short}} events are generated when you confi
 | `logdnaat.streaming-logs.send`              | This event is generated when there is a failure streaming data. |
 | `logdnaat.exclusion-rule.create`            | This event is generated when an streaming exclusion rule is configured. |
 | `logdnaat.exclusion-rule.delete`            | This event is generated when an streaming exclusion rule is deleted. |
+{: caption="Table 1. Events generated when configuring streaming" caption-side="bottom"}
