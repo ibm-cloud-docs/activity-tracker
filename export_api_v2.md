@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-01-26"
+lastupdated: "2023-03-14"
 
 keywords:
 
@@ -26,6 +26,15 @@ Consider the following information when you export event data:
 * You export a set of event entries. To define the set of data that you want to export, you can apply filter and searches. You can also specify the time range.
 * The compressed event file that contains the data that you want to export is available for a maximum of 12 hours.
 * When you export events, you have a limit of lines that you can export in a request. You can specify to export older lines or newer lines in case you reach the limit in the time range that you specify for the export. The maximum number of lines that you can export per page is `10,000` lines with no limit on the number of pages.
+* The number of concurrent export request is limited depending on your [service plan.](/docs/activity-tracker?topic=activity-tracker-service_plan)
+
+    | Plan | Limit |
+    |------|-------|
+    | 7 days log search | 1 |
+    | 14 days log search | 1 |
+    | 30 days log search | 2 |
+    | HIPPA 30 days log search | 2 |
+    {: caption="Limits of concurrent export requests" caption-side="bottom"}
 
 ## Prerequisites
 {: #export_api_prereqs_v2}
