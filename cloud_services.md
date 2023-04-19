@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-08"
+lastupdated: "2023-04-19"
 
 keywords:
 
@@ -191,6 +191,7 @@ The following table lists platform services that send auditing events:
 | [Catalog Management](/docs/account?topic=account-filter-account) | `globalcatalog-collection` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_catalog_management) |
 | [Software instances](/docs/account?topic=account-sw-instance-details) | `globalcatalog-instance` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_sw_instance) |
 | [Context-based restrictions](/docs/account?topic=account-context-restrictions-whatis) | `context-based-restrections` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/activity-tracker?topic=activity-tracker-auditing-events-for-context-based-restrictions) |
+| [Projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects) | `project` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Global events](/docs/secure-enterprise?topic=secure-enterprise-at_events) |
 {: caption="Table 11. List of platform services" caption-side="top"}
 
 For example, the following table lists core security actions that send events to {{site.data.keyword.at_full_notm}}:

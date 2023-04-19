@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-04-19"
 
 keywords:
 
@@ -284,6 +284,7 @@ The following table shows the locations where automatic collection of Cloud Foun
 | Catalog Management | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |
 | Trusted profiles | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |
 | Context-based restrictions | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |
+| Projects | `Events are available through the Activity Tracker Frankfurt (eu-de) instance` |
 {: caption="Table 7. Integrated security services integration in America locations" caption-side="top"}
 
 
