@@ -15,7 +15,6 @@ content-type: release-note
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Release notes for {{site.data.keyword.at_full_notm}} hosted event search
 {: #activity-tracker-release-notes}
 
