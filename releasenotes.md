@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-04-25"
 
 keywords:
 
@@ -21,6 +21,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
+
+## 25 April 2023
+{: #log-analysis-apr2523}
+{: release-note}
+
+New private CIDR blocks available for Toronto
+:   New private CIDR blocks will be available on 10 May 2023 for Toronto. See [CIDR blocks](/docs/activity-tracker?topic=activity-tracker-cidr) for more information.
 
 ## 22 February 2023
 {: #activity-tracker-feb2223}
