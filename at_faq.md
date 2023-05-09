@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-07-14"
+lastupdated: "2023-05-09"
 
 keywords:
 
@@ -32,15 +32,15 @@ Frequently asked questions about {{site.data.keyword.at_short}}.
 {: #faq_1}
 {: faq}
 
-You can find information about the services that generate audit events and send those to {{site.data.keyword.at_short}} in the following documentation topic: [Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services).
+You can find information about the Cloud services that generate audit events and send those to {{site.data.keyword.at_short}} in the following documentation topic: [Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services).
 
 ## Where can I find the actions that a service generates?
 {: #faq_2}
 {: faq}
 
-You can link to the list of events that each service generates from the following documentation topic: [Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services).
+You can find links to the list of events that each Cloud service generates in the following documentation topic: [Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services).
 
-## Where can I find the events that a service generates?
+## Where can I find the events that a Cloud service generates?
 {: #faq_3}
 {: faq}
 
@@ -48,7 +48,7 @@ In {{site.data.keyword.atracker_short}}, you can differentiate events by scope a
 
 First, you need to check if you need to configure your service, upgrade your plan, or both to be able to collect {{site.data.keyword.at_short}} events.
 
-* Management events are collected automatically for most services except Watson services that require a paid plan.
+* Management events are collected automatically for most Cloud services except Watson services that require a paid plan.
 
     If you are looking for Watson {{site.data.keyword.at_short}} events, check your plan and make sure you have a service plan that includes them.
 
@@ -70,15 +70,15 @@ For location-based events, you need to check the following scenarios to determin
 
 * Scenario 1: The service is provisioned in a location where the {{site.data.keyword.atracker_short}} service is available.
 
-    1. Identify the location where your service is provisioned.
+    1. Identify the location where your Cloud service is provisioned.
 
     2. Check whether the {{site.data.keyword.atracker_short}} service is available in that region. See [Locations](/docs/atracker?topic=atracker-regions).
 
     3. For {{site.data.keyword.at_short}} hosted event search, check that you have an {{site.data.keyword.atracker_short}} instance provisioned in the same location where your service is provisioned. For {{site.data.keyword.atracker_short}}, check that you have a targets and routes defined correctly.
 
-* Scenario 2: The service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is not available.
+* Scenario 2: The Cloud service is provisioned in a location where the {{site.data.keyword.at_full_notm}} service is not available.
 
-    1. Identify the location where your service is provisioned.
+    1. Identify the location where your Cloud service is provisioned.
 
     2. Check the [Cloud services locations](/docs/activity-tracker?topic=activity-tracker-regions) to identify the {{site.data.keyword.at_short}} instance where events are available.
 
@@ -96,14 +96,6 @@ To access data, you can download the archived file locally.
 To query the data, you can also use a service like SQL Query to query your COS archives and get information based on queries that you define. [Learn more](/docs/activity-tracker?topic=activity-tracker-sqlquery).
 
 
-## Can I import archived data back into the UI?
-{: #faq_5}
-{: faq}
-
-
-
-You cannot import archived data into the UI.
-
 ## How do I configure archiving for my instance?
 {: #faq_6}
 {: faq}
@@ -117,12 +109,11 @@ To configure archiving see [Archiving events to IBM Cloud Object Storage](/docs/
 {: faq}
 
 
-
-You can only have 1 instance of the {{site.data.keyword.at_full_notm}} service per region.
+You can only have 1 instance of the {{site.data.keyword.at_full_notm}} service per region and an instance already exists in the region.
 
 When an auditing instance already exists in a region, you get a message when you try to provision an auditing instance a second time.
 
-Most likely, your account administrator has already provisioned the auditing instances and has not given you permisisons to see work with them.
+Most likely, your account administrator has already provisioned the auditing instances and has not given you permisisons to see or work with them.
 
 To see auditing instances, you must have IAM platform permissions for the {{site.data.keyword.at_full_notm}} service.
 
@@ -189,7 +180,26 @@ In a region, you can manage auditing events in {{site.data.keyword.atracker_full
 {: faq}
 
 
-
 Archived data cannot be imported to be searched or used in the {{site.data.keyword.at_full_notm}} UI.
 
 Use the [{{site.data.keyword.sqlquery_notm}} service](/docs/activity-tracker?topic=activity-tracker-sqlquery) to query archive data.
+
+
+
+## Can I control the ingested events so I can control my service cost?
+{: #faq_12}
+{: faq}
+
+You can control the volume of events that you ingest. Controlling the events helps you control your {{site.data.keyword.at_short}} service cost. Events that are filtered out (excluded) are not archived and are not available for search. You do not pay for events that are filtered out.
+
+There are different ways in which you can filter out events sent to {{site.data.keyword.at_short}}:
+
+* For some Cloud services you can [configure the collection of events.](/docs/activity-tracker?topic=activity-tracker-events-opt-in)
+
+* You can define [exclusion rules](/docs/activity-tracker?topic=activity-tracker-exclusion_rules) for events before they are stored for search.
+
+   * You can drop the events entirely and not see them at all through the UI
+
+   * You can view the events in the UI, but you cannot search on them. However, you can define views and alerts based on the data from these logs.
+
+* You can also configure [usage quotas](/docs/activity-tracker?topic=activity-tracker-control_usage_quotas) and define conditional usage quota exclusion rules.
