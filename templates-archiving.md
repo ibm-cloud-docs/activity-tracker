@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-06-22"
+lastupdated: "2023-04-20"
 
 keywords:
 
@@ -199,6 +199,7 @@ The following table outlines the predefined views that you can use to monitor wh
 | `Bucket delete`       | Reports when the bucket configured to collect data for 1 instance is deleted. |
 | `Archive failures`    | Reports unsuccessful requests uploading objects to a bucket. Reports all reason codes except 200. |
 {: caption="Table 3. Archiving enablement predefined views" caption-side="bottom"}
+{: #archive_template_views}
 
 To use these views, you must customize them by entering the {{site.data.keyword.at_short}} hosted event search instance CRN, the bucket name, and the service ID that is used to authenticate and work with the bucket.
 {: note}
@@ -211,6 +212,17 @@ The information on these views include the following information for each record
 - Account ID that indicates the account where the bucket is available.
 - Instance ID that indicates the Cloud Object Storage instance where the bucket is provisioned.
 
+The following table outlines the predefined views that you can use to monitor when archiving fails due to invalid credentials uploading objects to the bucket:
+
+| View name | Description |
+|-----------|-------------|
+| `COS credentials deleted`   | Reports when the COS serviceId credentials are deleted. |
+| `COS API key deleted`    | Reports when the API key associated with the COS service ID is deleted. |
+| `Internal error (RC 500)`    | Reports when there is a `SocketTimeoutException` and archiving fails. |
+| `IP invalid`       | Reports when the request is originating from an IP address that is not in the IP allowed list. |
+| `Unable to access bucket`    | Reports when there is a `ReplicationConfigurationNotFoundError` and archiving fails. |
+| `Unauthorized access` | Reports unauthorized attempts to access your archives and manage 1 bucket. Checks reason codes 403 and 401.|
+{: caption="Table 4. Archiving enablement predefined views to report failures" caption-side="bottom"}
 
 
 
@@ -223,7 +235,8 @@ The following table outlines the predefined dashboards that you can use to monit
 |----------------------|-------------|
 | `Archiving bucket`   | Monitor archiving for 1 {{site.data.keyword.at_short}} hosted event search instance in an account. |
 | `Archiving overview` | Monitor archiving across the account. |
-{: caption="Table 4. Predefined dashboard" caption-side="bottom"}
+| `Failures to archive` | Monitors scenarios where archiving fails. |
+{: caption="Table 5. Predefined dashboard" caption-side="bottom"}
 
 To use these dashboards, you must customize them by entering the bucket name and the service ID that is used to authenticate and work with the bucket.
 {: note}
@@ -232,8 +245,11 @@ The `Archiving bucket` dashboard includes graphs that show the log in requests t
 
 The `Archiving overview` dashboard offers different graphs where you can see the buckets that are configured, the Cloud Object Storage instances where buckets are available, and the accounts where buckets are defined. You can drill down into the data and look into the subplots that are defined to get more detailed information.
 
+The `Failures to archive` dashboard monitors when a credential to upload objects is deleted, and when unauthorized access prevents archiving due to lack of permissions or a request coming from an unauthorized  IP address.
+
 If you select a peak in a graph and select **Show logs**, a view opens and filters out the data to show you the auditing events that match that search criteria as defined in the dashboard.
 {: tip}
+
 
 
 ### Predefined screens
@@ -246,30 +262,8 @@ The following table outlines the predefined screens that you can use to monitor 
 |-------------|-------------|
 | `Bucket <BUCKETNAME>` | View statistics about a single bucket. |
 | `Archiving overview`  | View statistics about archiving across multiple instances in your account or Enterprise account. |
-{: caption="Table 5. Predefined screens" caption-side="bottom"}
+| `Failures to archive` | View statistics about archiving failures and the errors that cause the failure. |
+{: caption="Table 6. Predefined screens" caption-side="bottom"}
 
 To use these screens, you must customize them by entering the bucket name and the service ID that is used to authenticate and work with the bucket.
 {: note}
-
-
-## Scenarios
-{: #templates-scenarios}
-
-Use the following scenarios to learn where to deploy the template and how to use it:
-
-### Global events are managed through the Frankfurt {{site.data.keyword.at_short}} hosted event search instance
-{: #templates-scenarios-1}
-
-You can use these predefined views, dashboards, and screens to monitor archiving in any of the following scenarios:
-- If your account is configured to monitor auditing events by using the {{site.data.keyword.at_short}} hosted event search offering,
-
-For the {{site.data.keyword.at_short}} instance or for {{site.data.keyword.at_short}} and {{site.data.keyword.la_short}} instances that are running in your account,. to quickly deploy predefined views, dashboards, and screens in an {{site.data.keyword.at_short}} hosted event search instance. that you can use to view and monitor Cloud Object Storage resources and actions such as the status of archiving of your {{site.data.keyword.at_short}} instance..
-
-### Global events are managed through a custom {{site.data.keyword.at_short}} hosted event search instance
-{: #templates-scenarios-2}
-
-
-## Monitor archiving for {{site.data.keyword.at_short}} and {{site.data.keyword.la_short}} instances
-{: #templates-scenarios-3}
-
-Global events are managed through the Frankfurt {{site.data.keyword.at_short}} hosted event search instance. However you want to monitor archiving for 1 or more {{site.data.keyword.at_short}} and {{site.data.keyword.la_short}} instances in an account.

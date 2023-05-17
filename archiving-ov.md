@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-08-16"
+lastupdated: "2023-05-17"
 
 keywords:
 
@@ -28,7 +28,7 @@ You can only have 1 {{site.data.keyword.at_short}} instance per region. Each {{s
 
 The following figure shows a high-level view of the different components that are involved when archiving events:
 
-![High-level view archiving events](images/archive.png "High-level view archiving events"){: caption="Figure 1. High-level view archiving events" caption-side="bottom"}
+![High-level view archiving events](images/archiving-ov.svg "High-level view archiving events"){: caption="Figure 1. High-level view archiving events" caption-side="bottom"}
 
 The {{site.data.keyword.cos_full_notm}} instance is provisioned within the context of a resource group. The {{site.data.keyword.at_full_notm}} instance is also provisioned within the context of a resource group. Both instances can be grouped under the same resource group or in different ones.
 
@@ -46,6 +46,7 @@ After you configure archiving,consider the following information:
 - Events are archived within 24-48 hours after you save the configuration.
 - Events are archived hourly.
 - The first archive file is created when the archiving process runs and there is data.
+- Automatic archiving is disabled for an instance when an the credentials that are used to archive data are invalid for over 24 hours.
 
 You have a service plan of 30 days. You configured the instance 10 days ago. You enable archiving today. There will be no archive data for the first 10 days the instance was running.
 {: note}
