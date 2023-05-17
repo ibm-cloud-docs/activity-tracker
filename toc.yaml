@@ -243,5 +243,6 @@ toc:
         - topicgroup:
             label: Troubleshooting
             topics:
+            - troubleshoot-01.md
             - troubleshoot-04.md
             - troubleshoot-05.md

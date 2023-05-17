@@ -54,14 +54,18 @@ Consider the following information when streaming data to an {{site.data.keyword
     - Endpoint URLs to call the APIs
 
     - Credentials for authentication
+
+- If you configure the account to restrict access to configured IP addresses via IAM settings, or if the account limits the network locations that connections are accepted from via context based restrictions rules (CBR) for the {{site.data.keyword.messagehub}} service, you must allowlist the {{site.data.keyword.at_short}} CIDR blocks in the account. For more information, see [{{site.data.keyword.at_short}} CIDR blocks](/docs/activity-tracker?topic=activity-tracker-cidr) and [{{site.data.keyword.messagehub}} - Restricting network access](/docs/EventStreams?topic=EventStreams-restrict_access).
+
 - To create a topic in {{site.data.keyword.messagehub}}, you must have **manager** role. This role includes the **messagehub.topic.manage** IAM action role that allows an app or user to create or delete topic.
-- The credential that {{site.data.keyword.at_short}}  uses to publish data in {{site.data.keyword.messagehub}} must have **writer** role. This role includes the **messagehub.topic.write** IAM action role that allows an app or service to write data to 1 or more topics.
+- The credential that {{site.data.keyword.at_short}} uses to publish data in {{site.data.keyword.messagehub}} must have **writer** role. This role includes the **messagehub.topic.write** IAM action role that allows an app or service to write data to 1 or more topics.
+
 
 Consider the following information when streaming data to an {{site.data.keyword.at_short}} instance:
 - The {{site.data.keyword.at_short}} instance data that will receive data must be configured with a paid service plan. {{site.data.keyword.at_short}} instances on the [`Lite` plan](/docs/log-analysis?topic=log-analysis-service_plans) cannot receive streamed data.
 - You must have **manager** role to configure streaming in the {{site.data.keyword.at_short}} instance. This role includes the **logdnaat.dashboard.manage** IAM action role that allows a user to perform admin tasks such as configure streaming.
 - When you configure streaming, the source {{site.data.keyword.at_short}} instance and the destination {{site.data.keyword.at_short}} instance can be provisioned in the same account or in different accounts.
-- To connect the source {{site.data.keyword.at_short}} instance to the destination {{site.data.keyword.at_short}}  instance, you need the following information:
+- To connect the source {{site.data.keyword.at_short}} instance to the destination {{site.data.keyword.at_short}} instance, you need the following information:
 
     - Destination {{site.data.keyword.at_short}} ingestion URL
 
