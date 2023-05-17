@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-06-22"
+lastupdated: "2023-05-17"
 
 keywords:
 
@@ -101,6 +101,9 @@ Use these views to gain insight on your {{site.data.keyword.cloud_notm}} access 
 | `[Login] Service ID API Key logins` | Use this view to monitor logins with service ID API keys. |
 | `[Login] User API Key logins` | Use this view to monitor logins with user API keys. |
 {: caption="Table 1. Predefined views" caption-side="bottom"}
+
+`CBR` is the acronym that is used to group views that are related with context based restrictions.
+`TP` is the acronymn that is used to group views that are related with trusted profiles.
 
 For more information, see [Monitoring login sessions for trusted profiles](/docs/account?topic=account-trusted-profile-monitor&interface=ui) and [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor&interface=ui).
 
