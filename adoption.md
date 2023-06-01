@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2021-08-09"
+lastupdated: "2023-06-01"
 
 keywords:
 
@@ -38,7 +38,7 @@ In {{site.data.keyword.cloud_notm}}, you can have 1 or more **stand-alone** acco
 Within an enterprise account, you create a multitiered hierarchy of accounts, with billing and payments for all accounts managed at the enterprise level. [Learn more](/docs/account?topic=account-what-is-enterprise).
 * The enterprise account serves as the parent account to all other accounts in the enterprise.
 * Users and access management is isolated between the enterprise and its child accounts. No access is automatically inherited between the two types of accounts.
-* Resources and services within an enterprise function the same as in stand-alone accounts. Each account in an enterprise can contain resources in resource groups and services in Cloud Foundry orgs and spaces.
+* Resources and services within an enterprise function the same as in stand-alone accounts. Each account in an enterprise can contain resources in resource groups.
 
 An enterprise can contain up to 5 tiers of accounts and account groups. In its most basic form, an enterprise has two tiers: the enterprise account, and a single child account.
 
