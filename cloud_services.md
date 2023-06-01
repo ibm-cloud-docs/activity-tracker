@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-06-01"
 
 keywords:
 
@@ -50,11 +50,6 @@ The following table lists services that send auditing events:
 {: caption="Table 2. List of classic services" caption-side="top"}
 
 
-
-## Cloud Foundry applications
-{: #platform_cfapps}
-
-The events that are sent by Cloud Foundry applications to {{site.data.keyword.cloudaccesstrailshort}} are listed in the response area of the `GET /v2/events`, under the body section. The *Type* field lists all actions that generate an event. For more information, see the [Events API](https://apidocs.cloudfoundry.org/270/events/list_all_events.html){: external}.
 
 ## Compute serverless services
 {: #serverless}
