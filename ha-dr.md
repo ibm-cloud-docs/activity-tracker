@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-11-13"
+lastupdated: "2023-06-08"
 
 keywords:
 
@@ -65,7 +65,7 @@ Where
 ## Data availability
 {: #ha_dr_data_availability}
 
-The data that is managed by {{site.data.keyword.at_short}} in a region is kept in the data centers near that region.
+The data that is managed by {{site.data.keyword.at_short}} in a region is kept in the data centers in that region.
 
 A multizone region (MZR) consist of 3 or more availability zones that are independent from each other to ensure that single failure events affect only a single zone.
 
