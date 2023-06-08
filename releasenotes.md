@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-25"
+lastupdated: "2023-06-08"
 
 keywords:
 
@@ -15,14 +15,22 @@ content-type: release-note
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Release notes for {{site.data.keyword.at_full_notm}} hosted event search
 {: #activity-tracker-release-notes}
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
 
+## 8 June 2023
+{: #activity-tracker-jun0823}
+{: release-note}
+
+CIDR blocks deprecated in London and Toronto
+:   Some CIDR blocks have been deprecated in London and Toronto. You should remove deprecated CIDR blocks from any configured allowlists. See [CIDR blocks](/docs/activity-tracker?topic=activity-tracker-cidr) for more information.
+
 ## 25 April 2023
-{: #log-analysis-apr2523}
+{: #activity-tracker-apr2523}
 {: release-note}
 
 New private CIDR blocks available for Toronto
