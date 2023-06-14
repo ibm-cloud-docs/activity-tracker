@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-11-13"
+lastupdated: "2023-06-14"
 
 keywords:
 
@@ -19,7 +19,7 @@ subcollection: activity-tracker
 {: shortdesc}
 
 
-![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/world-map_min.svg){: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}
+![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/Activity-Tracker-Search-06-Locations.svg){: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}
 
 This image is an artistic representation and does not reflect actual political or geographic boundaries.
 {: note}

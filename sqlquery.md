@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2021-08-09"
+lastupdated: "2023-06-14"
 
 keywords:
 
@@ -20,7 +20,7 @@ You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.dat
 
 
 
-![{{site.data.keyword.cloud_notm}} services integration scenario](images/sqlquery.png "{{site.data.keyword.cloud_notm}} services integration scenario")
+![{{site.data.keyword.cloud_notm}} services integration scenario](images/Activity-Tracker-Search-03-Search-Archive.svg "{{site.data.keyword.cloud_notm}} services integration scenario"){: caption="Figure 1. {{site.data.keyword.cloud_notm}} services integration scenario" caption-side="bottom"}
 
 Each {{site.data.keyword.at_full_notm}} instance has a service plan associated that indicates the number of days that you can query data through the web UI. To have access to the events after this period, you must enable archiving in the {{site.data.keyword.at_full_notm}} instance. When you enable archiving, you get an archive file hourly. This file contains information for that hour. Notice that UTC timestamps are used to determine which records are included in each file. The file name includes the ID of your {{site.data.keyword.at_full_notm}} instance and the date of the records that are included in the file.
 

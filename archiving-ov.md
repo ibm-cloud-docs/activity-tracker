@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-06-14"
 
 keywords:
 
@@ -28,7 +28,7 @@ You can only have 1 {{site.data.keyword.at_short}} instance per region. Each {{s
 
 The following figure shows a high-level view of the different components that are involved when archiving events:
 
-![High-level view archiving events](images/archiving-ov.svg "High-level view archiving events"){: caption="Figure 1. High-level view archiving events" caption-side="bottom"}
+![High-level view archiving events](images/Activity-Tracker-Search-02-Archiving-Events.svg "High-level view archiving events"){: caption="Figure 1. High-level view archiving events" caption-side="bottom"}
 
 The {{site.data.keyword.cos_full_notm}} instance is provisioned within the context of a resource group. The {{site.data.keyword.at_full_notm}} instance is also provisioned within the context of a resource group. Both instances can be grouped under the same resource group or in different ones.
 

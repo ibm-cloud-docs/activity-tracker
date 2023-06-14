@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-06-14"
 
 keywords:
 
@@ -26,11 +26,9 @@ When you stream data to data lakes, other analysis tools, or other SIEM tools, y
 
 You can stream data to an {{site.data.keyword.messagehub}} instance or to an {{site.data.keyword.at_short}} instance. For example, when you enable streaming on an {{site.data.keyword.at_short}} instance, you configure {{site.data.keyword.at_short}} to send data to an {{site.data.keyword.messagehub}} instance. Then, you can configure Kafka Connect to consume the data and forward it to your destination tool. Once the data is persisted within {{site.data.keyword.messagehub}}, you can configure any application or service to create a subscription and take action on log data being streamed.
 
-![Streaming example with Event Streams](images/at_streams.svg "Streaming examples with Event Streams"){: caption="Figure 1. Streaming example with Event Streams" caption-side="bottom"}
-
 You can also also configure streaming from one {{site.data.keyword.at_short}} instance to a second {{site.data.keyword.at_short}} instance.
 
-![Activity Tracker to Activity Tracker streaming](images/at_to_at.svg "Activity Tracker to Activity Tracker streaming"){: caption="Figure 2. Activity Tracker to Activity Tracker streaming" caption-side="bottom"}
+![Streaming example](images/Activity-Tracker-Search-04-Data-Streaming.svg "Streaming example"){: caption="Figure 1. Streaming example" caption-side="bottom"}
 
 You can only stream from one {{site.data.keyword.at_short}} instance to one other {{site.data.keyword.at_short}} instance. You cannot stream from the second {{site.data.keyword.at_short}} instance to another {{site.data.keyword.at_short}} instance.
 {: important}
