@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-07-24"
 
 keywords:
 
@@ -21,6 +21,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
+
+## 24 July 2023
+{: #activity-tracker-jul2423}
+{: release-note}
+
+CIDR block deprecated in Frankfurt
+:   A CIDR block has been deprecated in Frankfurt. You should remove deprecated CIDR blocks from any configured allowlists. See [CIDR blocks](/docs/activity-tracker?topic=activity-tracker-cidr) for more information.
 
 ## 27 June 2023
 {: #activity-tracker-jun2723}
