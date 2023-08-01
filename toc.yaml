@@ -201,11 +201,9 @@ toc:
 
       - topicgroup:
           label: CLI
-          links:
-          - link:
-              label: Hosted event search CLI
-              href: https://{DomainName}/docs/activity-tracker-cli-plugin?topic=activity-tracker-cli-plugin-activity-tracker-cli
-
+          topics:
+          - include: ../activity-tracker-cli-plugin/activity-tracker-cli.md
+          
       - topicgroup:
           label: API
           links:
