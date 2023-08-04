@@ -140,7 +140,7 @@ curl GET https://api.us-south.logging.cloud.ibm.com/v1/config/categories/views \
 {: pre}
 
 ### Deleting a category
-{: #config-categories-create-category-boards}
+{: #config-categories-delete-category-boards}
 
 The following sample deletes a category.
 
