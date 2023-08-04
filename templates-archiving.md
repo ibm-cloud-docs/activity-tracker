@@ -168,7 +168,7 @@ The information on these views include the following information for each record
 
 
 ### Predefined views to monitor archiving of an instance
-{: #templates-archiving-views}
+{: #templates-archiving-view-archive}
 
 Use these views to monitor the archiving of {{site.data.keyword.at_short}} hosted event search instances.
 {: note}
