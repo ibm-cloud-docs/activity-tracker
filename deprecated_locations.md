@@ -43,7 +43,7 @@ The following are the CIDR blocks for deprecated regions.
 {: caption="Table 1. Seoul public CIDR blocks" caption-side="top"}
 
 ### Private CIDR blocks
-{: #dep-cidr-public}
+{: #dep-cidr-private}
 
 #### Seoul
 {: #cidr_private_gen2_18}
