@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-01"
+lastupdated: "2023-08-31"
 
 keywords:
 
@@ -281,7 +281,7 @@ This field provides additional information as to why the action has failed.
 
 When the field is available, it includes additional information about the request.
 
-The information that is included in requestData is specific for each type of action. Check the [API documentation](/docs?tab=api-docs&) of a request to learn about some of the fields that may be included.
+The information that is included in requestData is specific for each type of action. Check the [API documentation](/apidocs/activity-tracker) of a request to learn about some of the fields that may be included.
 
 
 ## responseData (JSON)
@@ -289,7 +289,7 @@ The information that is included in requestData is specific for each type of act
 
 When the field is available, it includes additional information about the request.
 
-The information that is included in responseData is specific for each type of action. Check the [API documentation](/docs?tab=api-docs&) of a request to learn about some of the fields that may be included.
+The information that is included in responseData is specific for each type of action. Check the [API documentation](/apidocs/activity-tracker) of a request to learn about some of the fields that may be included.
 
 
 ## saveServiceCopy (boolean)
