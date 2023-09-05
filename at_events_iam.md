@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-06-30"
+lastupdated: "2023-09-05"
 
 keywords:
 
@@ -154,7 +154,76 @@ The following table lists the actions that generate an event:
 | `iam-identity.user.logout` | This is an event that is generated when the initiator logs out of the {{site.data.keyword.cloud_notm}}. |
 {: caption="Table 9. Events that are generated for user login and logout actions" caption-side="top"}
 
+## Enterprise IAM events
+{: #at_events_iam_enterprise}
 
+### Policy tempalte events
+{: #at_events_iam_enterprise_policy}
+
+The following table lists the actions that generate an event:
+
+| Action                                   | Description |
+|------------------------------------------|---------|
+| `iam-access-management.policy-template.create` | An event is generated when a user creates an enterprise-managed IAM policy template. |
+| `iam-access-management.policy-template.update`    | An event is generated when a user updates an enterprise-managed IAM policy template. |
+| `iam-access-management.policy-template.delete`  | An event is generated when a user deletes an enterprise-managed IAM policy template. |
+| `iam-access-management.policy-template.read` | An event is generated when a user reads an enterprise-managed IAM policy template. |
+| `iam-access-management.policy-assignment.create`    | An event is generated when a user assigns an enterprise-managed IAM policy template to child accounts. |
+| `iam-access-management.policy-assignment.update` | An event is generated when a user updates an enterprise-managed IAM policy template assignment. |
+| `iam-access-management.policy-assignment.delete` | An event is generated when a user deletes an enterprise-managed IAM policy template assignment. |
+| `iam-access-management.policy-assignment.read` | An event is generated when a user reads an enterprise-managed IAM policy template assignment. |
+{: caption="Table 10. Events that are generated for enterprise-managed IAM policy template actions" caption-side="top"}
+
+### Access group tempalte events
+{: #at_events_iam_enterprise_groups}
+
+The following table lists the actions that generate an event:
+
+| Action                                   | Description |
+|------------------------------------------|---------|
+| `iam-groups.groups-template.create` | An event is generated when a user creates an enterprise-managed IAM access group template. |
+| `iam-groups.groups-template.delete` | An event is generated when a user deletes an enterprise-managed IAM access group template. |
+| `iam-groups.groups-template.update`| An event is generated when a user updates an enterprise-managed IAM access group template. |
+| `iam-groups.groups-template.read` | An event is generated when a user reads an enterprise-managed IAM access group template. |
+| `iam-groups.groups-template.assign` | An event is generated when a user assigns an enterprise-managed IAM access group template to child accounts. |
+| `iam-groups.groups-template.remove` | An event is generated when a user removes an enterprise-managed IAM access group template assignment. |
+| `iam-groups.groups-template.assignment-read` | An event is generated when a user reads an enterprise-managed IAM access group template assignment. |
+| `iam-groups.groups-template.assignment-update` | An event is generated when a user updates an enterprise-managed IAM access group template assignment. |
+{: caption="Table 11. Events that are generated for user enterprise-managed IAM access group template actions" caption-side="top"}
+
+### Trusted profile tempalte events
+{: #at_events_iam_enterprise_tp}
+
+The following table lists the actions that generate an event:
+
+| Action                                   | Description |
+|------------------------------------------|---------|
+| `iam-identity.profile-template.create` | An event is generated when a user creates an enterprise-managed IAM trusted profile template. |
+| `iam-identity.profile-template.delete` | An event is generated when a user deletes an enterprise-managed IAM trusted profile template. |
+| `iam-identity.profile-template.update` | An event is generated when a user updates an enterprise-managed IAM trusted profile template. |
+| `iam-identity.profile-template.read` | An event is generated when a user reads an enterprise-managed IAM trusted profile template. |
+| `iam-identity.profile-template.assign` | An event is generated when a user assigns an enterprise-managed IAM trusted profile template to child accounts. |
+| `iam-identity.profile-template.remove` | An event is generated when a user removes an enterprise-managed IAM trusted profile template assignment. |
+| `iam-identity.profile-template.assignment-read` | An event is generated when a user reads an enterprise-managed IAM trusted profile template assignment. |
+| `iam-identity.profile-template.assignment-update` | An event is generated when a user updates an enterprise-managed IAM trusted profile template assignment. |
+{: caption="Table 12. Events that are generated for user enterprise-managed IAM trusted profile template actions" caption-side="top"}
+
+### Settings tempalte events
+{: #at_events_iam_enterprise_settings}
+
+The following table lists the actions that generate an event:
+
+| Action                                   | Description |
+|------------------------------------------|---------|
+| `iam-identity.account-settings-template.create` | An event is generated when a user creates an enterprise-managed IAM settings template. |
+| `iam-identity.account-settings-template.delete` | An event is generated when a user deletes an enterprise-managed IAM settings template. |
+| `iam-identity.account-settings-template.update` | An event is generated when a user updates an enterprise-managed IAM settings template. |
+| `iam-identity.account-settings-template.read` | An event is generated when a user reads an enterprise-managed IAM settings template. |
+| `iam-identity.account-settings-template.assign` | An event is generated when a user assigns an enterprise-managed IAM settings template to child accounts. |
+| `iam-identity.account-settings-template.remove` | An event is generated when a user removes an enterprise-managed IAM settings template assignment. |
+| `iam-identity.account-settings-template.assignment-read` | An event is generated when a user reads an enterprise-managed IAM settings template assignment. |
+| `iam-identity.account-settings-template.assignment-update` | An event is generated when a user updates an enterprise-managed IAM settings template assignment. |
+{: caption="Table 12. Events that are generated for user enterprise-managed IAM settings template actions" caption-side="top"}
 
 ## Viewing events
 {: #at_events_iam_ui}
