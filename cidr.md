@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-26"
 
 keywords:
 
@@ -73,9 +73,9 @@ The CIDR blocks with a date next to them indicates the date they will be availab
 
 | Region   | CIDR block |
 |----------|------------|
-| Madrid    | 13.120.68.144/28 [6 September 2023]{: tag-cool-gray} |
-| Madrid    | 13.122.68.112/28 [6 September 2023]{: tag-cool-gray} |
-| Madrid    | 13.121.68.64/28 [6 September 2023]{: tag-cool-gray} |
+| Madrid    | 13.120.68.144/28 [26 September 2023]{: tag-cool-gray} |
+| Madrid    | 13.122.68.112/28 [26 September 2023]{: tag-cool-gray} |
+| Madrid    | 13.121.68.64/28 [26 September 2023]{: tag-cool-gray} |
 {: caption="Table 4. Madrid public CIDR blocks" caption-side="top"}
 
 ### Osaka
@@ -210,9 +210,9 @@ The CIDR blocks with a date next to them indicates the date they will be availab
 
 | Region   | CIDR block |
 |----------|------------|
-| Madrid    | 10.118.14.192/26 [6 September 2023]{: tag-cool-gray} |
-| Madrid    | 10.118.76.192/26 [6 September 2023]{: tag-cool-gray} |
-| Madrid    | 10.118.142.128/26 [6 September 2023]{: tag-cool-gray} |
+| Madrid    | 10.118.14.192/26 [26 September 2023]{: tag-cool-gray} |
+| Madrid    | 10.118.76.192/26 [26 September 2023]{: tag-cool-gray} |
+| Madrid    | 10.118.142.128/26 [26 September 2023]{: tag-cool-gray} |
 {: caption="Table 14. Madrid public CIDR blocks" caption-side="top"}
 
 ### Osaka
