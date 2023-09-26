@@ -177,6 +177,8 @@ toc:
           - topic: service-endpoints.md
             navtitle: Private service endpoints
           - data-security.md
+          - topic: cbr.md
+            navtitle: Protecting resources with context-based restrictions
 
   - navgroup:
       id: reference
