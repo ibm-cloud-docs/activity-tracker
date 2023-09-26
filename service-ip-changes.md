@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-02-23"
+lastupdated: "2023-09-26"
 
 keywords:
 
@@ -26,6 +26,27 @@ Endpoints and regions that are not listed are unchanged.
 
 If you are using private endpoints, there are no user-required tasks. Private endpoints have not changed.
 {: important}
+
+## After 26 September 2023
+{: #endpoint-changes-26Sep2023}
+
+The following endpoints will be changing after 26 September 2023. 
+
+### Madrid (eu-es)
+{: #092ß623_eues}
+
+This is a newly opened region.
+{: note}
+
+* `api.eu-es.logging.cloud.ibm.com`
+* `api.private.eu-es.logging.cloud.ibm.com`
+* `logs.eu-es.logging.cloud.ibm.com`
+* `logs.private.eu-es.logging.cloud.ibm.com`
+* `app.eu-es.logging.cloud.ibm.com`
+* `syslog-a.eu-es.logging.cloud.ibm.com`
+* `syslog-a.private.eu-es.logging.cloud.ibm.com`
+* `syslog-u.eu-es.logging.cloud.ibm.com`
+* `syslog-u.private.eu-es.logging.cloud.ibm.com`
 
 ## 28 May 2021 changes
 {: #service-ip-changes-28May2021}
