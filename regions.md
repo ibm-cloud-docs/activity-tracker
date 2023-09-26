@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-14"
+lastupdated: "2023-09-11"
 
 keywords:
 
@@ -33,6 +33,7 @@ This image is an artistic representation and does not reflect actual political o
 | `Asia Pacific`        | `Osaka (jp-osa)`         | `N/A`        | `MZR`     |
 | `Europe`              | `Frankfurt (eu-de) (*) (**)`  | `YES`        | `MZR`     |
 | `Europe`              | `London (eu-gb)`         | `NO`         | `MZR`     |
+| `Europe`              | `Madrid (eu-es) (*) (**)`  | `YES`        | `MZR`     |
 | `North America`       | `Dallas (us-south)`      | `N/A`        | `MZR`     |
 | `North America`       | `Washington (us-east)`   | `N/A`        | `MZR`     |
 | `North America`       | `Toronto (ca-tor)`   | `N/A`        | `MZR`     |
@@ -46,6 +47,6 @@ Where
 * A *region* is a defined geographic territory. A region could be a specific postal code area, a town, a city, a state, a group of states, or even a group of countries.
 * `N/A` means feature that is not applicable to that geography.
 
-`(*)` For more information, see [Enabling the EU Supported setting](/docs/account?topic=account-eu-hipaa-supported#bill_eusupported).
+`(*)` For more information, see [Enabling EU support for your account](/docs/account?topic=account-eu-supported).
 
 `(**)` Fixes to bugs and new features take a few days more to deploy into Frankfurt than to other regions.

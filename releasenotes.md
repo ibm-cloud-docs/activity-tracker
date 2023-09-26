@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-09-26"
 
 keywords:
 
@@ -21,6 +21,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
+
+## 26 September 2023
+{: #activity-tracker-sep2623}
+{: release-note}
+ 
+Madrid region support
+:   Madrid is now an online region for {{site.data.keyword.at_full}} hosted event search. Services can now be provisioned in Madrid and Madrid endpoints can be used. Platform metrics will continue flowing to the Frankfurt region.
 
 ## 24 July 2023
 {: #activity-tracker-jul2423}
