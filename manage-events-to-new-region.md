@@ -41,6 +41,12 @@ As soon as the {{site.data.keyword.at_full_notm}} service is available in the ne
 2. [Configure IAM access](/docs/activity-tracker?topic=activity-tracker-iam) for the new instance.
 
 
+Consider the following information:
+
+- The Schematics service will continue to send events to the Frankfurt region.
+
+- For Cloud Object Storage buckets, once the service makes the change to send events to Madrid, you will continue to receive events in Frankfurt. To move the events that are gerenared by a bucket to be managed through Madrid, you must use the [COS Resource Configuration API](https://cloud.ibm.com/apidocs/cos/cos-configuration){: external} to reconfigure the {{site.data.keyword.at_short}} instance to the one located in Madrid. Otherwise, these events will continue to go to the instance that is configured for the bucket.
+
 ## Step 2. Configure the new instance
 {: #manage-events-to-new-region-2}
 
