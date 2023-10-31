@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-10-31"
 
 keywords:
 
@@ -21,6 +21,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
+
+## 31 October 2023
+{: #activity-tracker-oct3123}
+{: release-note}
+ 
+Services now sending events to Madrid
+:   Some services are now sending events to Madrid. See [services generating events by location](/docs/activity-tracker?topic=activity-tracker-cloud_services_locations) for the services sending events to Madrid.
 
 ## 26 September 2023
 {: #activity-tracker-sep2623}

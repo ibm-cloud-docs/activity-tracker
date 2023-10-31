@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-10-31"
 
 keywords:
 
@@ -306,7 +306,7 @@ The following tables list the locations where automatic collection of database s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Madrid (eu-es)` |
 |---------------------------------------------------------------|---------------------|------------------|----------|
-| {{site.data.keyword.cloudant_short_notm}}                     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |                        |    |
+| {{site.data.keyword.cloudant_short_notm}}                     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |                        |  ![Checkmark icon](images/checkmark-icon.svg)  |
 | {{site.data.keyword.databases-for-mongodb_full_notm}}           | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)            |    |
 | {{site.data.keyword.databases-for-enterprisedb_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)            |    |
 | {{site.data.keyword.databases-for-cassandra_full_notm}}         | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)            |    |
@@ -408,7 +408,7 @@ The Apps service sends global events. These events are available through the Fra
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Madrid (eu-es)` |
 |---------------------------------------------------------------|---------------------|------------------|----------|
-| {{site.data.keyword.messagehub}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  `Events are available through the Activity Tracker Frankfurt (eu-de) instance.`  |
+| {{site.data.keyword.messagehub}}               | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
 | MQ on IBM Cloud                                | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    |
 {: caption="Table 9. Integration services integration in Europe locations" caption-side="top"}
 {: #cs_integration-table-3}
@@ -471,7 +471,7 @@ The following tables list the locations where automatic collection of security s
 | Service                                                       |`Frankfurt (eu-de)`                                 | `London (eu-gb)` | `Madrid (eu-es)` |
 |---------------------------------------------------------------|----------------------------------------------------|------------------|---------------|
 | {{site.data.keyword.appid_full}}                              | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |    |
-| {{site.data.keyword.keymanagementservicelong}}                | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |    |
+| {{site.data.keyword.keymanagementservicelong}}                | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |    |
 | {{site.data.keyword.security-advisor_long}}                     |   | ![Checkmark icon](images/checkmark-icon.svg) |    |
 | {{site.data.keyword.secrets-manager_full}}  | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |    |
@@ -510,7 +510,7 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Madrid (eu-es)` |
 |---------------------------------------------------------------|---------------------|------------------|---------|
-| {{site.data.keyword.cos_full_notm}}  `[*]`        | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.`  |
+| {{site.data.keyword.cos_full_notm}}  `[*]`        | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)  |
 | {{site.data.keyword.mdms_short}}            |   |       |     |
 {: caption="Table 12. Storage services integration in Europe locations" caption-side="top"}
 {: #cs-storage-table-3}
@@ -596,12 +596,12 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Madrid (eu-es)` |
 |---------------------------------------------------------------|---------------------|------------------|-----------|
-| Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |  `Events are available through the Activity Tracker Frankfurt (eu-de) instance.`  |
-| Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |  `Events are available through the Activity Tracker Frankfurt (eu-de) instance.`  |
-| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |  `Events are available through the Activity Tracker Frankfurt (eu-de) instance.`  |
-| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |  `Events are available through the Activity Tracker Frankfurt (eu-de) instance.`  |
-| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |   `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |
-| Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.`   |
+| Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
+| Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
+| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
+| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
+| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |   ![Checkmark icon](images/checkmark-icon.svg) |
+| Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)   |
 {: caption="Table 14. VPC events in Europe locations" caption-side="top"}
 {: #cs-vpc-table-3}
 {: tab-title="Europe"}
