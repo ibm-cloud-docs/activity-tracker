@@ -367,7 +367,7 @@ The Apps service sends global events. These events are available through the Fra
 | {{site.data.keyword.apigw_full}}               | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |    |
 | {{site.data.keyword.cloud-shell_notm}}        | ![Checkmark icon](images/checkmark-icon.svg)   |                     |    |
 | {{site.data.keyword.contdelivery_full}}        | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)                    |    |
-| {{site.data.keyword.bplong}}                   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Frankfurt instance` |    |
+| {{site.data.keyword.bplong}}                   | ![Checkmark icon](images/checkmark-icon.svg) | `Events are available through the Frankfurt instance` |  `Events are available through the Frankfurt instance`  |
 | {{site.data.keyword.en_full}}                  | | ![Checkmark icon](images/checkmark-icon.svg)  |    |
 | {{site.data.keyword.appconfig_full}}                  | | ![Checkmark icon](images/checkmark-icon.svg)  |    |
 {: caption="Table 8. Developer tools services integration in Europe locations" caption-side="top"}
