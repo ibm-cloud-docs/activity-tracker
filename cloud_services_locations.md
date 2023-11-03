@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-03"
 
 keywords:
 
@@ -143,7 +143,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                            | `Dallas (us-south)` | `Washington (us-east)`  |`Toronto (ca-tor)` | `Sao Paulo (br-sao)` |
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
-| {{site.data.keyword.openwhisk_short}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.codeengineshort}}          | ![Checkmark icon](images/checkmark-icon.svg) | |
 {: caption="Table 4. Compute serverless services integration in Americas locations" caption-side="top"}
 {: #cs-comp-table-1}
@@ -154,7 +153,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service        | `Tokyo (jp-tok)`    |`Sydney (au-syd)` | `Osaka (jp-osa)` | `Chennai (in-che)` |
 |----------------|---------------------|------------------|------------------|------------------|
-| {{site.data.keyword.openwhisk_short}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  |
 | {{site.data.keyword.codeengineshort}}          | ![Checkmark icon](images/checkmark-icon.svg) |   |
 {: caption="Table 4. Compute serverless services integration in AP locations" caption-side="top"}
 {: #cs-comp-table-2}
@@ -165,7 +163,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Madrid (eu-es)` |
 |---------------------------------------------------------------|---------------------|------------------|---------|
-| {{site.data.keyword.openwhisk_short}}          | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    |
 | {{site.data.keyword.codeengineshort}}          | ![Checkmark icon](images/checkmark-icon.svg) | |    |
 {: caption="Table 4. Compute serverless services integration in Europe locations" caption-side="top"}
 {: #cs-comp-table-3}
