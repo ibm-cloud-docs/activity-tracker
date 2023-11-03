@@ -596,9 +596,9 @@ The following tables list the locations where automatic collection of security s
 | Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
 | Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
 | Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
-| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
-| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |   ![Checkmark icon](images/checkmark-icon.svg) |
-| Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)   |
+| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |  |
+| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |    |
+| Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |    |
 {: caption="Table 14. VPC events in Europe locations" caption-side="top"}
 {: #cs-vpc-table-3}
 {: tab-title="Europe"}
