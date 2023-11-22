@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-03"
+lastupdated: "2023-11-22"
 
 keywords:
 
@@ -88,7 +88,7 @@ The following table lists database services that send auditing events:
 | [{{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_mongodb_full}}](/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-gettingstarted) | `hyperp-dbaas-mongodb` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/hyper-protect-dbaas-for-mongodb?topic=hyper-protect-dbaas-for-mongodb-activity-tracker-events) |
 | [{{site.data.keyword.cloud_notm}} {{site.data.keyword.ihsdbaas_postgresql_full}}](/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-gettingstarted) | `hyperp-dbaas-postgresql`| ![Checkmark](/images/checkmark-icon.svg "Checkmark")|  [Location-based events](/docs/hyper-protect-dbaas-for-postgresql?topic=hyper-protect-dbaas-for-postgresql-activity-tracker-events) |
 | [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-getting-started) | `databases-for-enterprisedb-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker-integration) |
-| [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-getting-started) | `databases-for-postgresql` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/databases-for-postgresql?topic=cloud-databases-activity-tracker-integration) |
+| [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-getting-started) | `databases-for-postgresql` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/databases-for-postgresql?topic=databases-for-postgresql-activity-tracker) |
 | [{{site.data.keyword.databases-for-redis_full_notm}}](/docs/databases-for-redis?topic=databases-for-redis-getting-started) | `databases-for-redis-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/databases-for-redis?topic=cloud-databases-activity-tracker-integration) |
 | [{{site.data.keyword.databases-for-etcd_full_notm}}](/docs/databases-for-etcd?topic=databases-for-etcd-getting-started) | `databases-for-etcd-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/databases-for-etcd?topic=cloud-databases-activity-tracker-integration) |
 | [{{site.data.keyword.databases-for-elasticsearch_full_notm}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started) | `databases-for-elasticsearch-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|  [Location-based events](/docs/databases-for-elasticsearch?topic=cloud-databases-activity-tracker-integration) |
