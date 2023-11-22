@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-10-31"
+lastupdated: "2023-11-22"
 
 keywords:
 
@@ -21,6 +21,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
+
+## 22 November 2023
+{: #ctivity-tracker-nov2223}
+{: release-note}
+ 
+Context-based restrictions support
+:   {{site.data.keyword.at_full_notm}} now supports access support to {{site.data.keyword.at_full_notm}} using [context-based restrictions.](/docs/activity-tracker?topic=activity-tracker-cbr)
 
 ## 31 October 2023
 {: #activity-tracker-oct3123}
