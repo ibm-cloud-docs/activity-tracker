@@ -182,8 +182,13 @@ toc:
           topics:
           - topic: architecture-workload-isolation.md
             navtitle: Architecture and workload isolation
-          - topic: service-endpoints.md
-            navtitle: Private service endpoints
+          - topicgroup:
+              label: Privately connecting to Activity Tracker
+              topics:
+              - topic: vpe.md
+                navtitle: Using virtual private endpoints for VPC
+              - topic: service-endpoints.md
+                navtitle: Private service endpoints
           - data-security.md
           - topic: cbr.md
             navtitle: Protecting resources with context-based restrictions

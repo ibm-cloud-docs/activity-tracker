@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-22"
+lastupdated: "2023-12-07"
 
 keywords:
 
@@ -22,8 +22,19 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
 
+## 8 December 2023
+{: #activity-tracker-dec0823}
+{: release-note}
+
+Virtual private endpoint support
+:   {{site.data.keyword.at_full_notm}} hosted event search now supports virtual private endpoints for VPC.  For more information, see [Using virtual private endpoints for VPC to privately connect to {{site.data.keyword.at_full_notm}} hosted event search](/docs/activity-tracker?topic=activity-tracker-vpe-connection).
+
+    The VPE endpoints for {{site.data.keyword.at_full_notm}} hosted event search are shared with {{site.data.keyword.la_full_notm}}. When you create a VPE gateway you need to select {{site.data.keyword.la_full_notm}} instead of  {{site.data.keyword.at_full_notm}} as your service.
+    {: important}
+
+
 ## 22 November 2023
-{: #ctivity-tracker-nov2223}
+{: #activity-tracker-nov2223}
 {: release-note}
  
 Context-based restrictions support
