@@ -480,7 +480,6 @@ The following tables list the locations where automatic collection of security s
 | Service                            | `Dallas (us-south)` | `Washington (us-east)`  |`Toronto (ca-tor)` | `Sao Paulo (br-sao)` |
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
 | {{site.data.keyword.cos_full_notm}}  `[*]`          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)  |
-| {{site.data.keyword.mdms_short}}            | ![Checkmark icon](images/checkmark-icon.svg)  |       |
 {: caption="Table 12. Storage services integration in America locations" caption-side="top"}
 {: #cs-storage-table-1}
 {: tab-title="America"}
@@ -491,7 +490,6 @@ The following tables list the locations where automatic collection of security s
 | Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |------------------------------------------------|------------------|----------------------------|
 | {{site.data.keyword.cos_full_notm}}  `[*]`        | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.mdms_short}}            |   |       |
 {: caption="Table 12. Storage services integration in AP locations" caption-side="top"}
 {: #cs-storage-table-2}
 {: tab-title="Asia Pacific"}
@@ -502,7 +500,6 @@ The following tables list the locations where automatic collection of security s
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Madrid (eu-es)` |
 |---------------------------------------------------------------|---------------------|------------------|---------|
 | {{site.data.keyword.cos_full_notm}}  `[*]`        | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)  |
-| {{site.data.keyword.mdms_short}}            |   |       |     |
 {: caption="Table 12. Storage services integration in Europe locations" caption-side="top"}
 {: #cs-storage-table-3}
 {: tab-title="Europe"}
@@ -518,39 +515,6 @@ The following tables list the locations where automatic collection of security s
     * To monitor management events, you must configure a bucket and specify the {{site.data.keyword.at_short}} instance where those events will be available for monitoring.
     * To monitor data events, you must select the option **Track data events** when you associate a bucket with an {{site.data.keyword.at_short}} instance.
 
-
-## Web and mobile services
-{: #cloud_services_locations_web}
-
-| Service                            | `Dallas (us-south)` | `Washington (us-east)`  |`Toronto (ca-tor)` | `Sao Paulo (br-sao)` |
-|------------------------------------|---------------------|-------------------------|-------------------|----------------------|
-| {{site.data.keyword.mobilefoundation_short}}   |![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 13. Web and mobile services integration in America locations" caption-side="top"}
-{: #cs-web-table-1}
-{: tab-title="America"}
-{: tab-group="cs-web"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                        | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
-|------------------------------------------------|------------------|----------------------------|
-| {{site.data.keyword.mobilefoundation_short}}   |               | ![Checkmark icon](images/checkmark-icon.svg) |
-{: caption="Table 13. Web and mobile services integration in AP locations" caption-side="top"}
-{: #cs-web-table-2}
-{: tab-title="Asia Pacific"}
-{: tab-group="cs-web"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Madrid (eu-es)` |
-|---------------------------------------------------------------|---------------------|------------------|----------|
-| {{site.data.keyword.mobilefoundation_short}}   | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |    |
-{: caption="Table 13. Web and mobile services integration in Europe locations" caption-side="top"}
-{: #cs-web-table-3}
-{: tab-title="Europe"}
-{: tab-group="cs-web"}
-{: class="simple-tab-table"}
-{: row-headers}
 
 ## VPC infrastructure services
 {: #cloud_services_locations_vpc_infrastructure}
