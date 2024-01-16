@@ -93,7 +93,7 @@ The following table lists database services that send auditing events:
 | [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started)  | `messages-for-rabbitmq-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker) |
 | [{{site.data.keyword.databases-for-mongodb_full_notm}}](/docs/databases-for-mongodb) | `databases-for-mongodb-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/databases-for-mongodb?topic=cloud-databases-activity-tracker-integration) |
 | [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql) | `databases-for-mysql-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|  [Location-based events](/docs/databases-for-mysql?topic=cloud-databases-activity-tracker-integration) |
-| [{{site.data.keyword.Db2_on_Cloud_long}}](/docs/Db2onCloud?topic=Db2onCloud-about) | `db2oncloud` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/Db2onCloud?topic=Db2onCloud-activity-tracker) |
+| [{{site.data.keyword.Db2_on_Cloud_long}}](/docs/Db2onCloud?topic=Db2onCloud-about) | `db2oncloud` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/Db2onCloud?topic=Db2onCloud-auditing) |
 | [{{site.data.keyword.dashdblong_notm}}](/docs/Db2whc?topic=Db2whc-getting-started) | `dashdb` | `[*]` | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_dashdb) |
 {: caption="Table 5. List of database services" caption-side="top"}
 
@@ -306,6 +306,6 @@ The following table lists Power IaaS infrastructure services that send auditing 
 | [NetworkPorts](/docs/power-iaas?topic=power-iaas-configuring-subnet) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-network-ports) |
 | [Tenant](/docs/power-iaas?topic=power-iaas-managing-resources-and-users) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-tenants) |
 | [SSHKeys](/docs/power-iaas?topic=power-iaas-create-vm) | `pcloud.ssh-key` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-ssh) |
-| [IKE](https://test.cloud.ibm.com/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events) |
-| [IPSec](/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events) |
+| [IKE](https://test.cloud.ibm.com/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](docs/power-iaas?topic=power-iaas-at-events#at-ike-policy) |
+| [IPSec](/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-ipsec-policy) |
 {: caption="Table 18. List of Power Systems Virtual Server infrastructure services" caption-side="top"}
