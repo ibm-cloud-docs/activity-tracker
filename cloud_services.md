@@ -32,10 +32,10 @@ The following table lists analytics services that send auditing events:
 
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | Events |
 |-------------|--------------|------------------|--------|
-| [{{site.data.keyword.iae_full}}](/docs/AnalyticsEngine?topic=AnalyticsEngine-getting-started) | `ibmanalyticsengine` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  [Location-based events](/docs/AnalyticsEngine?topic=AnalyticsEngine-at_events) |
+| [{{site.data.keyword.iae_full}}](/docs/AnalyticsEngine?topic=AnalyticsEngine-getting-started) | `ibmanalyticsengine` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  [Location-based events](/docs/AnalyticsEngine?topic=AnalyticsEngine-at_events-serverless) |
 | [{{site.data.keyword.sqlquery_full}}](/docs/sql-query?topic=sql-query-overview#overview) | `sql-query` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/sql-query?topic=sql-query-activitytracker#activitytracker) |
 | [{{site.data.keyword.PA_SaaS_full}}](/docs/planning-analytics?topic=planning-analytics-about) | `planning-analytics` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](docs/planning-analytics?topic=planning-analytics-at_events) |
-| [{{site.data.keyword.dv_short}}](/docs/data-virtualization?topic=data-virtualization-about) | `data-virtualization` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas&audience=wdp#dv){: exernal} |
+| [{{site.data.keyword.dv_short}}](/docs/data-virtualization?topic=data-virtualization-getting-started) | `data-virtualization` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas&audience=wdp#dv){: exernal} |
 {: caption="Table 1. List of analytics services" caption-side="top"}
 
 ## Classic services
@@ -45,7 +45,7 @@ The following table lists services that send auditing events:
 
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | Events |
 |-------------|--------------|------------------|--------|
-| [{{site.data.keyword.BluVirtServers_full}} (Classic)](/docs/vsi?topic=virtual-servers-about-virtual-servers#about-virtual-servers)| `audit-log` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vsi?topic=virtual-servers-at_events#at_events) |
+| [{{site.data.keyword.BluVirtServers_full}} (Classic)](/docs/virtual-servers?topic=virtual-servers-about-virtual-servers#about-virtual-servers)| `audit-log` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/virtual-servers?topic=virtual-servers-at_events#at_events) |
 | [{{site.data.keyword.baremetal_long}} (Classic)](/docs/bare-metal?topic=bare-metal-about-bm#about-bm) | `audit-log` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/bare-metal?topic=bare-metal-bm-at-events#bm-at-events) |
 {: caption="Table 2. List of classic services" caption-side="top"}
 
@@ -85,14 +85,14 @@ The following table lists database services that send auditing events:
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | Events |
 |-------------|--------------|------------------|--------|
 | [{{site.data.keyword.cloudantfull}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) | `cloudantnosqldb`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/Cloudant?topic=Cloudant-at_events) |
-| [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-getting-started) | `databases-for-enterprisedb-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/databases-for-enterprisedb?topic=cloud-databases-activity-tracker-integration) |
+| [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-getting-started) | `databases-for-enterprisedb-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-activity-tracker) |
 | [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-getting-started) | `databases-for-postgresql` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/databases-for-postgresql?topic=databases-for-postgresql-activity-tracker) |
-| [{{site.data.keyword.databases-for-redis_full_notm}}](/docs/databases-for-redis?topic=databases-for-redis-getting-started) | `databases-for-redis-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/databases-for-redis?topic=cloud-databases-activity-tracker-integration) |
-| [{{site.data.keyword.databases-for-etcd_full_notm}}](/docs/databases-for-etcd?topic=databases-for-etcd-getting-started) | `databases-for-etcd-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/databases-for-etcd?topic=cloud-databases-activity-tracker-integration) |
-| [{{site.data.keyword.databases-for-elasticsearch_full_notm}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started) | `databases-for-elasticsearch-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|  [Location-based events](/docs/databases-for-elasticsearch?topic=cloud-databases-activity-tracker-integration) |
-| [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started)  | `messages-for-rabbitmq-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/messages-for-rabbitmq?topic=cloud-databases-activity-tracker) |
-| [{{site.data.keyword.databases-for-mongodb_full_notm}}](/docs/databases-for-mongodb) | `databases-for-mongodb-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/databases-for-mongodb?topic=cloud-databases-activity-tracker-integration) |
-| [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql) | `databases-for-mysql-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|  [Location-based events](/docs/databases-for-mysql?topic=cloud-databases-activity-tracker-integration) |
+| [{{site.data.keyword.databases-for-redis_full_notm}}](/docs/databases-for-redis?topic=databases-for-redis-getting-started) | `databases-for-redis-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/databases-for-redis?topic=databases-for-redis-activity-tracker) |
+| [{{site.data.keyword.databases-for-etcd_full_notm}}](/docs/databases-for-etcd?topic=databases-for-etcd-getting-started) | `databases-for-etcd-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/databases-for-etcd?topic=databases-for-etcd-activity-tracker) |
+| [{{site.data.keyword.databases-for-elasticsearch_full_notm}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started) | `databases-for-elasticsearch-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|  [Location-based events](/docs/cloud-databases?topic=cloud-databases-activity-tracker) |
+| [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started)  | `messages-for-rabbitmq-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-activity-tracker) |
+| [{{site.data.keyword.databases-for-mongodb_full_notm}}](/docs/databases-for-mongodb) | `databases-for-mongodb-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/databases-for-mongodb?topic=databases-for-mongodb-activity-tracker) |
+| [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql) | `databases-for-mysql-group` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")|  [Location-based events](/docs/databases-for-mysql?topic=databases-for-mysql-activity-tracker) |
 | [{{site.data.keyword.Db2_on_Cloud_long}}](/docs/Db2onCloud?topic=Db2onCloud-about) | `db2oncloud` | ![Checkmark](/images/checkmark-icon.svg "Checkmark")| [Location-based events](/docs/Db2onCloud?topic=Db2onCloud-auditing) |
 | [{{site.data.keyword.dashdblong_notm}}](/docs/Db2whc?topic=Db2whc-getting-started) | `dashdb` | `[*]` | [Global events](/docs/activity-tracker?topic=activity-tracker-at_events_dashdb) |
 {: caption="Table 5. List of database services" caption-side="top"}
@@ -131,8 +131,8 @@ The following table lists integration services that send auditing events:
 
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | Events |
 |-------------|--------------|------------------|--------|
-| [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting_started)| `event-streams` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/EventStreams?topic=EventStreams-at_events) |
-| [MQ on IBM Cloud](/docs/mqcloud?topic=mqcloud-mqoc_getting_started) |`mqcloud` |![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/mqcloud?topic=mqcloud-at_events) |
+| [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting-started)| `event-streams` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/EventStreams?topic=EventStreams-at_events) |
+| [MQ on IBM Cloud](/docs/mqcloud?topic=mqcloud-getting_started) |`mqcloud` |![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/mqcloud?topic=mqcloud-at_events) |
 |[{{site.data.keyword.apiconnect_long}}](/docs/apiconnect?topic=apiconnect-getting-started)| `apiconnect` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/apiconnect?topic=apiconnect-at_events) |
 {: caption="Table 8. List of integration Cloud services" caption-side="top"}
 
@@ -229,10 +229,11 @@ The following table lists storage services that send auditing events:
 * Collection of data events in your account is optional. You must configure each bucket to enable data events by selecting the option **Track data events**.
 
 
+
 ## VMware Solutions
 {: #vmware_solutions}
 
-With {{site.data.keyword.vmwaresolutions_full_notm}}, you can quickly and seamlessly integrate or migrate your on-premises VMware workloads to the {{site.data.keyword.cloud_notm}} by using the scalable, secure, and high-performance {{site.data.keyword.cloud_notm}} infrastructure and the industry-leading VMware hybrid virtualization technology. You can easily deploy your VMware virtual environments and manage the infrastructure resources on {{site.data.keyword.cloud_notm}}. At the same time, you can still use your familiar native VMware product console to manage the VMware workloads. [Learn more](https://www.ibm.com/cloud/vmware){: external}.
+With {{site.data.keyword.vmwaresolutions_full_notm}}, you can quickly and seamlessly integrate or migrate your on-premises VMware workloads to the {{site.data.keyword.cloud_notm}} by using the scalable, secure, and high-performance {{site.data.keyword.cloud_notm}} infrastructure and the industry-leading VMware hybrid virtualization technology. You can easily deploy your VMware virtual environments and manage the infrastructure resources on {{site.data.keyword.cloud_notm}}. At the same time, you can still use your familiar native VMware product console to manage the VMware workloads. [Learn more](https://www.ibm.com/products/vmware){: external}.
 
 The following table lists VMware solution services that send auditing events:
 
@@ -274,11 +275,11 @@ The following table lists Watson AI services that send auditing events:
 |-------------|--------------|------------------|--------|
 | [{{site.data.keyword.conversationfull}}](/docs/assistant?topic=assistant-getting-started) | `conversation`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/assistant?topic=assistant-at-events) |
 | [{{site.data.keyword.discoveryfull}}](/docs/discovery-data?topic=discovery-data-getting-started) | `discovery` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/discovery-data?topic=discovery-data-at_events)  |
-| [{{site.data.keyword.DSX_full}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/overview-ws.html) | `data-science-experience`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html#ws) |
-| [IBM Watson&trade; Knowledge Catalog](https://dataplatform.cloud.ibm.com/docs/content/wsj/catalog/overview-wkc.html) | `datacatalog` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html#wkc) |
+| [{{site.data.keyword.DSX_full}}](https://dataplatform.cloud.ibm.com/docs/content/svc-welcome/wsl.html?context=cpdaas) | `data-science-experience`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas#ws) |
+| [IBM Watson&trade; Knowledge Catalog](https://dataplatform.cloud.ibm.com/docs/content/svc-welcome/wkc.html?context=cpdaas) | `datacatalog` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas#wkc) |
 | [{{site.data.keyword.knowledgestudiofull}}](/docs/watson-knowledge-studio) | `knowledge-studio` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-activity-tracker-events) |
-| [{{site.data.keyword.languagetranslatorfull}}](/docs/language-translator?topic=language-translator-gettingstarted) | `language-translator` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/language-translator?topic=language-translator-at_events) |
-| [{{site.data.keyword.pm_full}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html) | `pm-20` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html#wml) |
+| [{{site.data.keyword.languagetranslatorfull}}](/docs/language-translator?topic=language-translator-about) | `language-translator` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/language-translator?topic=language-translator-at_events) |
+| [{{site.data.keyword.pm_full}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html) | `pm-20` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas#wml) |
 | [{{site.data.keyword.nlufull}}](/docs/natural-language-understanding) | `natural-language-understanding` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/natural-language-understanding?topic=natural-language-understanding-at_events) |
 | [{{site.data.keyword.speechtotextfull}}](/docs/speech-to-text?topic=speech-to-text-gettingStarted) | `speech-to-text` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/speech-to-text?topic=speech-to-text-at-events) |
 | [{{site.data.keyword.texttospeechfull}}](/docs/text-to-speech?topic=text-to-speech-gettingStarted) | `text-to-speech` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/text-to-speech?topic=text-to-speech-at-events) |
@@ -296,7 +297,7 @@ The following table lists Power IaaS infrastructure services that send auditing 
 | Service     | Service name | {{site.data.keyword.at_short}} hosted event search offering |  Events |
 |-------------|--------------|------------------|--------|
 | [Images](/docs/power-iaas?topic=power-iaas-deploy-custom-image) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-images) |
-| [Networks](/docs/power-iaas?topic=power-iaas-connecting-networks) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-networks) |
+| [Networks](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-networks) |
 | [PVM-Instance](/docs/power-iaas?topic=power-iaas-creating-power-virtual-server) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-servers) |
 | [Volumes](/docs/power-iaas?topic=power-iaas-modifying-server#modifying-volume-network) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-volumes) |
 | [VPN](/docs/power-iaas?topic=power-iaas-vpn-connectivity) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-vpn-connection) |
@@ -306,6 +307,6 @@ The following table lists Power IaaS infrastructure services that send auditing 
 | [NetworkPorts](/docs/power-iaas?topic=power-iaas-configuring-subnet) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-network-ports) |
 | [Tenant](/docs/power-iaas?topic=power-iaas-managing-resources-and-users) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-tenants) |
 | [SSHKeys](/docs/power-iaas?topic=power-iaas-create-vm) | `pcloud.ssh-key` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-ssh) |
-| [IKE](/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](docs/power-iaas?topic=power-iaas-at-events#at-ike-policy) |
+| [IKE](/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-ike-policy) |
 | [IPSec](/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-ipsec-policy) |
 {: caption="Table 18. List of Power Systems Virtual Server infrastructure services" caption-side="top"}
