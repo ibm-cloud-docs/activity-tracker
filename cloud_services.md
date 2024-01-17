@@ -34,7 +34,7 @@ The following table lists analytics services that send auditing events:
 |-------------|--------------|------------------|--------|
 | [{{site.data.keyword.iae_full}}](/docs/AnalyticsEngine?topic=AnalyticsEngine-getting-started) | `ibmanalyticsengine` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") |  [Location-based events](/docs/AnalyticsEngine?topic=AnalyticsEngine-at_events-serverless) |
 | [{{site.data.keyword.sqlquery_full}}](/docs/sql-query?topic=sql-query-overview#overview) | `sql-query` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/sql-query?topic=sql-query-activitytracker#activitytracker) |
-| [{{site.data.keyword.PA_SaaS_full}}](/docs/planning-analytics?topic=planning-analytics-about) | `planning-analytics` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](docs/planning-analytics?topic=planning-analytics-at_events) |
+| [{{site.data.keyword.PA_SaaS_full}}](/docs/planning-analytics?topic=planning-analytics-about) | `planning-analytics` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/planning-analytics?topic=planning-analytics-at_events) |
 | [{{site.data.keyword.dv_short}}](/docs/data-virtualization?topic=data-virtualization-getting-started) | `data-virtualization` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas&audience=wdp#dv){: exernal} |
 {: caption="Table 1. List of analytics services" caption-side="top"}
 
