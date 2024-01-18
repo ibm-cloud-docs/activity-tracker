@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-16"
+lastupdated: "2024-01-18"
 
 keywords:
 
@@ -163,6 +163,7 @@ The following table lists observability services that send auditing events:
 | [{{site.data.keyword.atracker_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started) | `atracker` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/activity-tracker?topic=activity-tracker). |
 | [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | `logdna` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/log-analysis?topic=log-analysis-at_events) |
 | [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) | `sysdig-monitor` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/monitoring?topic=monitoring-at_events) |
+| [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-getting-started) | `metrics-router` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/monitoring?topic=monitoring-at_events) |
 {: caption="Table 10. List of observability services" caption-side="top"}
 
 
