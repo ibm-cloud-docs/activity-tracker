@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-01-24"
 
 keywords:
 
@@ -61,7 +61,6 @@ Complete the following steps to launch the web UI:
 4. Select the instance in the region where you want to view events. Then, click **Open Dashboard**.
 
 The {{site.data.keyword.at_full_notm}} web UI opens and shows the **Everything** view. Through this view, you can see the events in your account for the region that you have selected.
-
 
 ## Launching the UI from a browser
 {: #launch_browser}
