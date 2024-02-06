@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-02-06"
 
 keywords:
 
@@ -258,13 +258,10 @@ The following table lists VPC infrastructure services that send auditing events:
 
 | Service     | Service name | {{site.data.keyword.at_short}} hosted event search offering |  Events |
 |-------------|--------------|------------------|--------|
-| [Storage resources](/docs/vpc?topic=vpc-block-storage-about) | `is.volume` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-storage) |
-| [Compute resources](/docs/vpc?topic=vpc-about-advanced-virtual-servers) | `is.instance` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-compute) |
-| [Network resources](/docs/vpc?topic=vpc-about-networking-for-vpc) | `is.subnet` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-network) |
+| [VPC](/docs/vpc?topic=vpc-getting-started) | `is` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events) |
 | [Load Balancer](/docs/vpc?topic=vpc-load-balancers)| `is.load-balancer` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-load-balancers) |
 | [VPN](/docs/vpc?topic=vpc-using-vpn)| `is.vpn` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#at-events) |
 | [Client VPN](/docs/vpc?topic=vpc-vpn-client-to-site-overview)| `is.vpn-server` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-vpn-server) |
-| [Images](/docs/vpc?topic=vpc-about-images) | `is.image` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/vpc?topic=vpc-at-events#events-images) |
 {: caption="Table 16. List of VPC infrastructure services (generation 2)" caption-side="top"}
 
 ## Watson AI
@@ -274,7 +271,7 @@ The following table lists Watson AI services that send auditing events:
 
 | Service     | CRN service name | {{site.data.keyword.at_short}} hosted event search offering | Events |
 |-------------|--------------|------------------|--------|
-| [{{site.data.keyword.conversationfull}}](/docs/assistant?topic=assistant-getting-started) | `conversation`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/assistant?topic=assistant-at-events) |
+| [{{site.data.keyword.conversationfull}}](/docs/watson-assistant?topic=watson-assistant-getting-started) | `conversation`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/watson-assistant?topic=watson-assistant-admin-auditing) |
 | [{{site.data.keyword.discoveryfull}}](/docs/discovery-data?topic=discovery-data-getting-started) | `discovery` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/discovery-data?topic=discovery-data-at_events)  |
 | [{{site.data.keyword.DSX_full}}](https://dataplatform.cloud.ibm.com/docs/content/svc-welcome/wsl.html?context=cpdaas) | `data-science-experience`  | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas#ws) |
 | [IBM Watson&trade; Knowledge Catalog](https://dataplatform.cloud.ibm.com/docs/content/svc-welcome/wkc.html?context=cpdaas) | `datacatalog` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas#wkc) |
@@ -297,17 +294,18 @@ The following table lists Power IaaS infrastructure services that send auditing 
 
 | Service     | Service name | {{site.data.keyword.at_short}} hosted event search offering |  Events |
 |-------------|--------------|------------------|--------|
-| [Images](/docs/power-iaas?topic=power-iaas-deploy-custom-image) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-images) |
-| [Networks](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-networks) |
-| [PVM-Instance](/docs/power-iaas?topic=power-iaas-creating-power-virtual-server) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-servers) |
-| [Volumes](/docs/power-iaas?topic=power-iaas-modifying-server#modifying-volume-network) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-volumes) |
-| [VPN](/docs/power-iaas?topic=power-iaas-vpn-connectivity) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-vpn-connection) |
-| [PlacementGroups](/docs/power-iaas?topic=power-iaas-placement-groups) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-placement-groups) |
-| [CloudConnections](/docs/power-iaas?topic=power-iaas-cloud-connections) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-cloud-connection) |
-| [SAP](/docs/power-iaas?topic=power-iaas-about-virtual-server#support-SAPNetWeaver-or-SAPHANA) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-sap) |
-| [NetworkPorts](/docs/power-iaas?topic=power-iaas-configuring-subnet) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-network-ports) |
-| [Tenant](/docs/power-iaas?topic=power-iaas-managing-resources-and-users) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-tenants) |
+| [{{site.data.keyword.powerSys_notm}}](/docs/power-iaas?topic=power-iaas-getting-started) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events) |
 | [SSHKeys](/docs/power-iaas?topic=power-iaas-create-vm) | `pcloud.ssh-key` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-ssh) |
-| [IKE](/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-ike-policy) |
-| [IPSec](/docs/power-iaas?topic=power-iaas-ordering-direct-link-connect) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-ipsec-policy) |
 {: caption="Table 18. List of Power Systems Virtual Server infrastructure services" caption-side="top"}
+
+## Cloud Pak
+{: #cloud_pak}
+
+
+The following table lists Cloud Pak services that send auditing events:
+
+| Service     | Service name | {{site.data.keyword.at_short}} hosted event search offering |  Events |
+|-------------|--------------|------------------|--------|
+| [{{site.data.keyword.cpd_short}}](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x) | `cp4d` | ![Checkmark](/images/checkmark-icon.svg "Checkmark"){: external} | [List of events](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=data-services-that-support-audit-logging){: external} |
+| [{{site.data.keyword.cpd_short}} as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html?context=cpdaas&audience=wdp){: external} | `cpdaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [List of events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas&audience=wdp){: external} |
+{: caption="Table 19. List of {{site.data.keyword.cpd_full_notm}} services" caption-side="top"}

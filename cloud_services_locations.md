@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-06"
 
 keywords:
 
@@ -521,9 +521,7 @@ The following tables list the locations where automatic collection of security s
 
 | Service                            | `Dallas (us-south)` | `Washington (us-east)`  |`Toronto (ca-tor)` | `Sao Paulo (br-sao)` |
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
-| Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |
-| Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  |![Checkmark icon](images/checkmark-icon.svg)   |
-| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |
+| VPC                      | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |
 | Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |
 | VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |
 | Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)   |
@@ -536,9 +534,7 @@ The following tables list the locations where automatic collection of security s
 
 | Service     | `Tokyo (jp-tok)`   |`Sydney (au-syd)`    | `Osaka (jp-osa)` |
 |-------------|--------------------|---------------------|-------------------|
-| Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
-| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
+| VPC                   | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
@@ -551,12 +547,10 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Madrid (eu-es)` |
 |---------------------------------------------------------------|---------------------|------------------|-----------|
-| Storage resources                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
-| Compute resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
-| Network resources                      | ![Checkmark icon](images/checkmark-icon.svg)               | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
-| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |  |
+| VPC                      | ![Checkmark icon](images/checkmark-icon.svg)   | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
+| Load Balancer                          | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |    |
 | VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |    |
-| Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |    |
+| Client VPN                             | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |   |
 {: caption="Table 14. VPC events in Europe locations" caption-side="top"}
 {: #cs-vpc-table-3}
 {: tab-title="Europe"}
@@ -637,19 +631,8 @@ The following tables list the locations where automatic collection of security s
 
 | Service                            | `Dallas (us-south)` | `Washington (us-east)`  |`Toronto (ca-tor)` | `Sao Paulo (br-sao)` |
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
-| Images                                 | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| Networks                               | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| PVM-Instance                           | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| Volumes                                | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| PlacementGroups                        | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| CloudConnections                       | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| SAP                                    | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| NetworkPorts                           | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| Tenant                                 | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
+| {{site.data.keyword.powerSys_notm}}                                 | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
 | SSHKeys                                | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| IKE                                    | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
-| IPSec                                  | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Dallas (us-south) instance.` |
 {: caption="Table 16. Power IaaS events in Americas locations" caption-side="top"}
 {: #cs-power-iaas-table-1}
 {: tab-title="Americas"}
@@ -659,19 +642,8 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                                         | `Tokyo (jp-tok)` |`Sydney (au-syd)`           |
 |-----------------------------------------------------------------|------------------|----------------------------|
-| Images                                 | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| Networks                               | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| PVM-Instance                           | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| Volumes                                | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| PlacementGroups                        | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| CloudConnections                       | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| SAP                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| NetworkPorts                           | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| Tenant                                 | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
+| {{site.data.keyword.powerSys_notm}}                                 | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 | SSHKeys                                | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| IKE                                    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
-| IPSec                                  | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |
 {: caption="Table 16. Power IaaS events in AP locations" caption-side="top"}
 {: #cs-power-iaas-table-2}
 {: tab-title="Asia Pacific"}
@@ -681,19 +653,8 @@ The following tables list the locations where automatic collection of security s
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Madrid (eu-es)` |
 |---------------------------------------------------------------|---------------------|------------------|-------------|
-| Images                                 | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| Networks                               | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| PVM-Instance                           | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| Volumes                                | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| VPN                                    | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| PlacementGroups                        | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| CloudConnections                       | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| SAP                                    | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| NetworkPorts                           | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| Tenant                                 | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
+| {{site.data.keyword.powerSys_notm}}                                 | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
 | SSHKeys                                | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| IKE                                    | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
-| IPSec                                  | ![Checkmark icon](images/checkmark-icon.svg)  | `Events are available through the Activity Tracker Frankfurt (eu-de) instance.` |    |
 {: caption="Table 16. Power IaaS events in Europe locations" caption-side="top"}
 {: #cs-power-iaas-table-3}
 {: tab-title="Europe"}
