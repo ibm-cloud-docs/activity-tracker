@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-09-05"
+  years: 2019, 2024
+lastupdated: "2024-02-15"
 
 keywords:
 
@@ -225,6 +225,7 @@ The following table lists the actions that generate an event:
 | `iam-identity.account-settings-template.assignment-update` | An event is generated when a user updates an enterprise-managed IAM settings template assignment. |
 {: caption="Table 12. Events that are generated for user enterprise-managed IAM settings template actions" caption-side="top"}
 
+
 ## Viewing events
 {: #at_events_iam_ui}
 
@@ -323,7 +324,20 @@ The following fields include extra information:
 * In requestData, the `instance_name` field includes the new name of the API key.
 * In requestData, the `prev_instance_name` field includes the name of the API key before it was changed.
 
+### Limits events
+{: #at_events_iam_limits}
 
+There are [limitations](/docs/account?topic=account-known-issues#iam_limits) on the number of service IDs, API keys, trusted profiles, and policies allowed in an account. An event is generated when your account reaches 90% of the of the limit for service IDs, API keys, trusted profiles, and policies. 
+
+The following is an example message when an account is approaching the maximum number of service IDs:
+
+> Warning: You have reached 90% of the maximum number of allowed Service IDs in account 10t2tyv8d1f88940dfc56af370b1f109. Your current count is 1800 and the limit is 2000. Reduce the number of Service IDs before you hit the limit to ensure that you are not blocked from creating new Service IDs.
+
+Apply the following search query to view all limits events: 
+- `the maximum number of allowed`
+
+Start by removing inactive identities if they are no longer needed. For more information, see [Identifying inactive identities](/docs/account?topic=account-id-inactive-identities).
+{: tip}
 
 ### Update a user API key or a service ID API key
 {: #at_events_iam_update_apikey}
@@ -405,3 +419,4 @@ Depending on the resource type, you can get any of the following messages:
 In the event, the `lock` field in requestData is set to **true**. This is the reason why this action fails. To successfully change an attribute of a service ID, the `lock` field must be set to **false**.
 
 Notice that the field `severity` is set to **critical**. Someone is trying to modify a service ID that is locked in the account.
+
