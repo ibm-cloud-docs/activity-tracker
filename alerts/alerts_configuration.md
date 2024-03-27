@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,7 +18,8 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full}}, you can create alerts to notify on configuration changes on the {{site.data.keyword.cloud_notm}} account. For example, you can generate notifications that report when services are created, modified, and deleted. These alerts can be limited to specific resources, or can apply to any services offered within the {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Configuring alerts using the console
 {: #alerts_configuration_ui}

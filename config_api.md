@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-11-17"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,7 +18,8 @@ subcollection: activity-tracker
 You can use the *Configuration REST API* to manage programmatically views and alerts.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 
 - You can use the **POST** method to create a view, or create a view and attach an alert to it.

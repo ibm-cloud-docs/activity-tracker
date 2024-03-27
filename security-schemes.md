@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2019, 2023
-lastupdated: "2023-10-26"
+  years:  2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -17,6 +17,9 @@ subcollection: activity-tracker
 
 The {{site.data.keyword.at_full_notm}} API supports the following security schemes:
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Service API key authorization
 {: #security-schemes-1}

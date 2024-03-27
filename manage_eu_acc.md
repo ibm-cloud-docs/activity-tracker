@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-06-01"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -17,6 +17,9 @@ subcollection: activity-tracker
 
 Across every industry, organizations require tighter controls and visibility into where their data is stored and processed in the {{site.data.keyword.cloud_notm}}. To manage events that are generated in your **EU-supported account** by using the {{site.data.keyword.at_full_notm}} service, consider the following information:
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 * [You must enable your account to be EU-supported](/docs/services/activity-tracker?topic=activity-tracker-manage_eu_acc#manage_eu_acc_step1), so support is handled by team members in the European Union.
 * You must **configure resources to collect global events in an EU-supported location.** For {{site.data.keyword.at_full_notm}} hosted event search offerings, you must provision 1 {{site.data.keyword.at_full_notm}} instance in the `EU-DE (Frankfurt)` location. (You can only have 1 instance per region.) For {{site.data.keyword.atracker_full_notm}}, you must configure the route that is defined in an EU-supported location to collect global events.

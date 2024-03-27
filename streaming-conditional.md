@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2022-02-04"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -17,6 +17,9 @@ subcollection: activity-tracker
 
 In an {{site.data.keyword.at_full}} instance, you can configure streaming exclusion rules through the UI to filter what data is streamed.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 You must have manager access for {{site.data.keyword.at_short}} to define exclusion rules.  See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streaming#streaming-1) for more information on roles required for streaming.
 {: note}

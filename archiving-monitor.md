@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-10-21"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,7 +19,8 @@ subcollection: activity-tracker
 {{site.data.keyword.cos_full_notm}} is integrated with the {{site.data.keyword.mon_short}} service. {{site.data.keyword.mon_short}} provides a default template that you can customize to monitor the bucket that you configure to store data for long term from an {{site.data.keyword.at_short}} instance.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 
 Complete the following steps to monitor the {{site.data.keyword.messagehub}} instance:

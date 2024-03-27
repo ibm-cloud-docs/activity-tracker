@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,7 +19,8 @@ subcollection: activity-tracker
 {{site.data.keyword.iamlong}} (IAM) enables you to securely authenticate users and control access to all cloud resources consistently in the {{site.data.keyword.cloud_notm}}. Complete the following steps to grant a user or service ID administration permissions to work with the {{site.data.keyword.at_full_notm}} service:
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 For example, as an administrator of the service, you can provison and remove instances of the service, grant other users permissions to work with the service, archive logs to an {{site.data.keyword.cos_full_notm}} (COS) instance, and more. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam#iam).
 

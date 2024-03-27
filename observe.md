@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,7 +19,8 @@ subcollection: activity-tracker
 You can manage your Activity Tracker instances through the `Observability` dashboard in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Launch the Activity Tracker UI in {{site.data.keyword.cloud_notm}}
 {: #observe_ui}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-09-30"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,7 +19,8 @@ subcollection: activity-tracker
 {{site.data.keyword.at_full}} provides an API that you can use to configure streaming for an {{site.data.keyword.at_full_notm}} instance.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streaming#streaming-1) for more information on roles required for streaming.
 {: note}

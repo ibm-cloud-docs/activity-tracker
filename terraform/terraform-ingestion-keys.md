@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2018, 2023
-lastupdated: "2022-08-03"
+  years:  2018, 2024
+lastupdated: "2024-03-27"
 
 keywords: IBM Cloud, Activity Tracker, terraform
 
@@ -21,6 +21,8 @@ subcollection: activity-tracker
 You can use the **LogDNA Terraform provider** to manage and rotate ingestion keys for a {{site.data.keyword.at_short}} instance by using HashiCorp Configuration Language (HCL).
 {: shortdesc}
 
+<!-- Common deprecation statement -->
+{{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Prereqs
 {: #terraform-ingestion-keys-prereqs}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -20,6 +20,8 @@ subcollection: activity-tracker
 To ensure that you can securely manage your data when you use {{site.data.keyword.at_full_notm}}, it is important to know exactly what data is stored and encrypted, and how you can delete any stored personal data.
 {: shortdesc}
 
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## What data is stored in {{site.data.keyword.at_full_notm}}
 {: #data-stored}

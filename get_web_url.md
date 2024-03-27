@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-24"
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -17,6 +17,9 @@ subcollection: activity-tracker
 
 After you provision an instance of the {{site.data.keyword.at_full_notm}} service in the {{site.data.keyword.cloud_notm}}, you can view, monitor, and manage events through the {{site.data.keyword.at_full_notm}} web UI. You can launch the UI from the {{site.data.keyword.cloud_notm}} UI or directly from a browser.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 You can also get the web UI URL by [undocking the dashboard.](/docs/activity-tracker?topic=activity-tracker-undock)
 {: tip}

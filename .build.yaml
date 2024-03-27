@@ -1,5 +1,6 @@
 includes:
   - https://github.ibm.com/cloud-docs/activity-tracker-cli-plugin
+  - https://github.ibm.com/cloud-docs/log-analysis
 translation:
   exclude:
     byFilePath:

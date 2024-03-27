@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-06-14"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,7 +18,8 @@ subcollection: activity-tracker
 You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.data.keyword.at_full_notm}} (AT) archive files that are stored in an {{site.data.keyword.cos_short}} (COS) bucket in your account. You can run queries from the {{site.data.keyword.cloud_notm}} UI, or programmatically.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ![{{site.data.keyword.cloud_notm}} services integration scenario](images/Activity-Tracker-Search-03-Search-Archive.svg "{{site.data.keyword.cloud_notm}} services integration scenario"){: caption="Figure 1. {{site.data.keyword.cloud_notm}} services integration scenario" caption-side="bottom"}
 

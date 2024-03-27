@@ -10,6 +10,7 @@ toc:
     product-page: https://www.ibm.com/cloud/activity-tracker
     path: activity-tracker
     label: Activity Tracker hosted event search
+    release-level: deprecated
 
   entries:
   - navgroup:
@@ -18,6 +19,18 @@ toc:
       - topic: getting-started.md
         navtitle: Getting started
       - about.md
+
+      - topicgroup:
+          label: Deprecation
+          topics:
+          - include: ../log-analysis/deprecation.md
+            navtitle: Overview
+          - include: ../log-analysis/deprecation_details.md
+            navtitle: Details
+          - include: ../log-analysis/deprecation_migration.md
+            navtitle: Migration
+          - include: ../log-analysis/deprecation_faq.md
+          - include: ../log-analysis/deprecation_help.md
 
       - topic: cloud_services.md
         navtitle: Services generating events

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 subcollection: activity-tracker
 
@@ -16,7 +16,8 @@ subcollection: activity-tracker
 {{site.data.keyword.at_full_notm}} is used to collect, archive, view and analyze events.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Collecting events to monitor activity in the account
 {: #manage_events_provision}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-09-26"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -17,6 +17,9 @@ subcollection: activity-tracker
 
 Classless Inter-Domain Routing (CIDR) blocks are ranges of addresses. {{site.data.keyword.at_full}} traffic will be sent from these addresses. This traffic includes webhooks, archiving to {{site.data.keyword.cos_full_notm}}, streaming to {{site.data.keyword.messagehub}} and so on. You can use these CIDR blocks in firewalls and other configurations to ensure that the data received by your code, or another {{site.data.keyword.IBM_notm}} service, originates only from {{site.data.keyword.at_full_notm}}.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 The CIDR blocks with a date next to them indicates the date they will be available. The CIDR blocks indicated as [Deprecated]{: tag-deprecated} are no longer supported and should be removed from any configured allowlists.
 {: important}

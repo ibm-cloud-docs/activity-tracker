@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-03-14"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,6 +18,9 @@ subcollection: activity-tracker
 
 From an {{site.data.keyword.at_full_notm}} instance, you can export events programmatically by using the V2 Export REST API.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 The V2 Export REST API does not support sending the events by email.  If you need email support, you will need to use the [V1 Export REST API](/docs/activity-tracker?topic=activity-tracker-export_api).
 {: note}

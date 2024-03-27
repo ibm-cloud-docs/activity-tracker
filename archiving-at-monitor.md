@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2022-05-04"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,7 +19,8 @@ subcollection: activity-tracker
 You can monitor archiving of an {{site.data.keyword.at_short}} instance by monitoring the service ID that is used to write data into {{site.data.keyword.cos_full_notm}} (COS).
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Prereqs
 {: #archiving-at-monitor-prereqs}

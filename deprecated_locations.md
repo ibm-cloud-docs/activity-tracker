@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2022-11-13"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -17,6 +17,9 @@ subcollection: activity-tracker
 
 Over time support for the {{site.data.keyword.at_full}} service might be deprecated in some regions. This topic documents the CIDR blocks and endpoints for deprecated regions.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Deprecated regions
 {: #deprecated-regions}

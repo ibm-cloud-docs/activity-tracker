@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-06"
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,6 +18,9 @@ subcollection: activity-tracker
 
 List of locations where {{site.data.keyword.cloud}} services are enabled to send events to {{site.data.keyword.at_full_notm}}:
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 
 ## Analytics services

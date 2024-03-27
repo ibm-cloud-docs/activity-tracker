@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-06"
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -20,6 +20,9 @@ subcollection: activity-tracker
 
 {{site.data.keyword.cloud_notm}} services that use {{site.data.keyword.at_short}} to monitor user-initiated activities that change the state of any of the following services in the {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 {{site.data.keyword.at_short}} hosted event search routes location-based auditing events to an {{site.data.keyword.at_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.at_short}} instance that is provisioned in Frankfurt.
 {: important}

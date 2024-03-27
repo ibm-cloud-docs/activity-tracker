@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-11-04"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -22,7 +22,8 @@ make a tutorial
 In {{site.data.keyword.at_full}}, you can define an alert to notify when a condition, that is defined by the filtering criteria of a custom view, reaches a theshold that the user configures. The user can choose from absence or presence alert types.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 
 

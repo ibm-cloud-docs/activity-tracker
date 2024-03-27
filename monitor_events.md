@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -20,7 +20,8 @@ subcollection: activity-tracker
 You can monitor activity in your account through the {{site.data.keyword.at_full_notm}} web UI by using views, dashboards, and screens. You can also export sets of events to analyze them in a different context. You can be notified if specific events are generated in your account.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 
 There is 1 instance of the {{site.data.keyword.at_full_notm}} service per location. Therefore, to monitor activity in your account, you might need to view and analyze events through different {{site.data.keyword.at_full_notm}} instances.

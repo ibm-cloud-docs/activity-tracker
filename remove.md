@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2022-11-02"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -17,6 +17,9 @@ subcollection: activity-tracker
 
 You can remove an instance of the {{site.data.keyword.at_full_notm}} service from the {{site.data.keyword.cloud_notm}} UI or through the command line.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Considerations if you are using archiving
 {: #remove_archiving}

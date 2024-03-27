@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,7 +18,8 @@ subcollection: activity-tracker
 For each {{site.data.keyword.at_full_notm}} instance, you can configure whether users can export data.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 When the export configuration setting is enabled, you can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance.
 

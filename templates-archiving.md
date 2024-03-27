@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-04-20"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,6 +18,9 @@ subcollection: activity-tracker
 
 Use the {{site.data.keyword.at_full_notm}} archiving template (Track Archiving) to monitor {{site.data.keyword.at_short}} instances and {{site.data.keyword.la_short}} instances that have the archiving feature enabled and configured to send data to an IBM Cloud Object Storage bucket.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Overview
 {: #templates-archiving-ov}

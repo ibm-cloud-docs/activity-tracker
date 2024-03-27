@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2022-06-14"
+  years: 2021, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -16,6 +16,10 @@ subcollection: activity-tracker
 {: #events_context_based}
 
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} to track how users and applications interact with the Context-based restrictions rules and network zones in {{site.data.keyword.cloud_notm}}.
+{: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of these resources in {{site.data.keyword.cloud_notm}}.
 

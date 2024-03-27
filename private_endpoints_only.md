@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2022-03-24"
+  years: 2022, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,7 +19,8 @@ subcollection: activity-tracker
 You can limit access to an {{site.data.keyword.at_full}} instance to private endpoints only.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 You can configure your {{site.data.keyword.at_full_notm}} instance so it is accessible through [private endpoints](/docs/activity-tracker?topic=activity-tracker-endpoints) only.
 
