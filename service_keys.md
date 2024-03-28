@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-01-04"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,7 +18,8 @@ subcollection: activity-tracker
 In an {{site.data.keyword.at_full_notm}} instance you can create, delete, and view auditing service keys by using the UI.  You can also create and view auditing service keys by using the CLI and API.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 A service key is a unique code that is passed in an API request to identify the calling application or user.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-02-28"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,7 +18,8 @@ subcollection: activity-tracker
 You can send alerts to the {{site.data.keyword.mon_short}} service and manage them through the *Events* view section.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 
 ## Configuring a {{site.data.keyword.mon_short}} alert

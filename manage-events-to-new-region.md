@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-09-12"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,6 +18,9 @@ subcollection: activity-tracker
 
 To manage events from {{site.data.keyword.cloud_notm}} services that generate auditing events in a new region where the {{site.data.keyword.at_full_notm}} service is not available until a later date, complete these instructions.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 For example, the Madrid region opened for business in June 2023. {{site.data.keyword.cloud_notm}} services that are available and generate auditing events send currently those events to the Frankfurt region. You can manage and monitor interaction with these services in Frankfurt. Auditing events include the field `logSourceCRN` that specifies the region, location, or datacenter where the resource is available. For example, for Madrid, you can see the location of auditing events set to `eu-es`.
 

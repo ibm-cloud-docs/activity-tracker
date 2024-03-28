@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2022-05-23"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,6 +18,9 @@ subcollection: activity-tracker
 
 In {{site.data.keyword.at_full}}, events are collected automatically for most {{site.data.keyword.at_short}}-enabled services. However, some services might require an upgrade of the service plan, a configuration setting, or both, for you to be able to collect and analyze their events.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 {{site.data.keyword.at_short}} routes location-based auditing events to an {{site.data.keyword.at_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.at_short}} instance that is provisioned in Frankfurt.
 {: note}

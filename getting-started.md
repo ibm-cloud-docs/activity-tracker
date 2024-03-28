@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-06-14"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords: Observability
 
@@ -18,6 +18,9 @@ subcollection: activity-tracker
 
 Use the {{site.data.keyword.at_full}} service to capture a record of your {{site.data.keyword.cloud_notm}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 For more information about {{site.data.keyword.atracker_full_notm}}, see [About {{site.data.keyword.atracker_short}}](/docs/atracker?topic=atracker-about).
 

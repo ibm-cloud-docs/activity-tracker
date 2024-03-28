@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-11-05"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -18,7 +18,8 @@ subcollection: activity-tracker
 You can manage {{site.data.keyword.at_full_notm}} [groups](/docs/activity-tracker?topic=activity-tracker-group_data_access) by using an API.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 
 ## Prerequisites on the {{site.data.keyword.at_full_notm}} service

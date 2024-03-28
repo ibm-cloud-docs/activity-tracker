@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2021, 2023
-lastupdated: "2021-11-04"
+  years:  2021, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -17,6 +17,9 @@ subcollection: activity-tracker
 
 You can send {{site.data.keyword.at_full}} alerts to Slack.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Prerequsite
 {: #slack-prereq}

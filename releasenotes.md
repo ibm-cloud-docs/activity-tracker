@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-12-07"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -21,6 +21,16 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.at_full}} hosted event search.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
+
+## 28 March 2023
+{: #activity-tracker-mar2824}
+{: release-note}
+
+{{site.data.keyword.at_full_notm}} is deprecated
+:   For more information about the deprecation, see [Deprecation of {{site.data.keyword.la_full_notm}} and {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-deprecation).
 
 ## 8 December 2023
 {: #activity-tracker-dec0823}

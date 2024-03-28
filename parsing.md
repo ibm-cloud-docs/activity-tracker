@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,7 +19,8 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full_notm}}, you can create custom fields that you can use in advanced searches and in filtering queries by using parsing rules. You define parsing templates through the UI to add custom fields to your records.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Create a parsing rule
 {: #AT-create-parsing rule}

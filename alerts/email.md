@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -20,8 +20,8 @@ subcollection: activity-tracker
 You can send alerts to 1 or more email addresses.
 {: shortdesc}
 
-
-
+<!-- Common deprecation statement -->
+{{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Configuring email
 {: #email-config}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-11-04"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,6 +19,8 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full}}, you can query your auditing instance and identify usage trends over a period of time by using the *Usage API*. You can get aggregated usage data information for 1 or more services during a specific period of time and within the last 6 months.
 {: shortdesc}
 
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 
 

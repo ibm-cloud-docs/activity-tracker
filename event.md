@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-08-31"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,6 +19,9 @@ subcollection: activity-tracker
 
 {{site.data.keyword.at_full_notm}} events are based on the Cloud Auditing Data Federation (CADF) standard.
 {: shortdesc}
+
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications in cloud environments.
 

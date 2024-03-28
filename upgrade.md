@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2021-08-09"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,7 +19,8 @@ subcollection: activity-tracker
 When you provision an instance of the {{site.data.keyword.at_full_notm}} service, you must choose a service plan. Different plans offer different features. You can change the service plan at any time.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 [Learn more about service plans](/docs/activity-tracker?topic=activity-tracker-service_plan).
 

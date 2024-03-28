@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2022-03-24"
+  years: 2019, 2024
+lastupdated: "2024-03-27"
 
 keywords:
 
@@ -19,7 +19,8 @@ subcollection: activity-tracker
 Before you can monitor and manage event data with {{site.data.keyword.at_full_notm}}, you must provision an instance of the service in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-
+<!-- Common deprecation statement -->
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 To provision an {{site.data.keyword.at_full_notm}} instance in a Public Cloud region, consider the following information:
 * You must select the service plan that is associated with the instance, the region where your events are collected, and the plan that determines the retention period for your events. You can choose from 7, 14, or 30-day retention periods. Alternatively, {{site.data.keyword.at_full_notm}} offers a `Lite` plan that you can use to view your events as they pass through the system. You can view events by using event tailing. You can also design filters to prepare for upgrading to a longer retention period plan. This plan has a 0-day retention period.
