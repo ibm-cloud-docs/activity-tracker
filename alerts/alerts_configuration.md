@@ -137,3 +137,4 @@ The following table outlines queries that you can use to alert on configuraton c
 | An administrator changes the MFA setting in the account. Valid MFA setting values are: NONE, TOTP, TOTP4ALL, LEVEL1, LEVEL2, LEVEL3 | `action:iam-identity.accountsettings.update AND new_mfa_traits:<MFA_SETTING>` |
 {: caption="Table 2. Query samples when account settings are modified" caption-side="top"}
 
+
