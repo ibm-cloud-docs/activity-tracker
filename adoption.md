@@ -19,8 +19,10 @@ subcollection: activity-tracker
 For regulated and highly available workloads, consider the following adoption guidelines when using the {{site.data.keyword.at_full}} (AT) service:
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
+
+
 
 ## Define resources naming standards for compliance
 {: #adoption_naming}

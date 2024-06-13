@@ -18,7 +18,7 @@ subcollection: activity-tracker
 Frequently asked questions about {{site.data.keyword.at_short}}.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## What are the different ways to manage auditing events?

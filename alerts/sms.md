@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can send SMS alerts to notify on data hosted in a {{site.data.keyword.at_short}} instance.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 

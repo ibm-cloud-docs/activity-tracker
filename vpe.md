@@ -18,7 +18,7 @@ subcollection: activity-tracker
 {{site.data.keyword.cloud}} Virtual Private Endpoints (VPE) for VPC enables you to connect to {{site.data.keyword.at_full_notm}} hosted event search from your VPC network by using the IP addresses of your choosing, allocated from a subnet within your VPC.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 The VPE endpoints for {{site.data.keyword.at_full_notm}} hosted event search are shared with {{site.data.keyword.la_full_notm}}. When you create a VPE gateway you need to select {{site.data.keyword.la_full_notm}} instead of  {{site.data.keyword.at_full_notm}} as your service.

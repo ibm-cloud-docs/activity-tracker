@@ -18,7 +18,7 @@ subcollection: activity-tracker
 {{site.data.keyword.at_full}} is available in the following locations:
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/Activity-Tracker-Search-06-Locations.svg){: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}

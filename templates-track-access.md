@@ -19,7 +19,7 @@ subcollection: activity-tracker
 Use the {{site.data.keyword.at_full_notm}} Track Access template to gain insight on your {{site.data.keyword.cloud_notm}} access requests. Monitor login requests, unauthorize access, and denied requests.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Overview

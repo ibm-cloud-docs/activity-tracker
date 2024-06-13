@@ -19,7 +19,7 @@ subcollection: activity-tracker
 Different pricing plans are available that you can choose for an {{site.data.keyword.at_full_notm}} instance. Each plan defines the number of days that data is retained for search, the number of users allowed to manage the data, and the features that are enabled.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 

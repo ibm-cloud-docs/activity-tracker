@@ -21,7 +21,7 @@ subcollection: activity-tracker
 To reuse an alert configuration, a service administrator can configure an **alert preset** (alert template).
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 

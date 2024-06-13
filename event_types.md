@@ -19,7 +19,7 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full_notm}}, you can differentiate events by scope as global or location-based events, and by operational impact as management or data events.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 Events can be classified as `management` or `data` events.

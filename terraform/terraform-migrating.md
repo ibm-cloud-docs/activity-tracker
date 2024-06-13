@@ -21,7 +21,7 @@ subcollection: activity-tracker
 After you have migrated to the {{site.data.keyword.atracker_full}} V2 API you will need to make changes to your **LogDNA Terraform provider** configuration.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 These instructions assume you have an {{site.data.keyword.atracker_full}} instance that you have provisioned using Terraform prior to the availability of the {{site.data.keyword.atracker_full}} V2 API.

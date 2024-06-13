@@ -21,7 +21,7 @@ subcollection: activity-tracker
 You can use the **LogDNA Terraform provider** to manage categories in a {{site.data.keyword.at_short}} instance by using HashiCorp Configuration Language (HCL).
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Prereqs

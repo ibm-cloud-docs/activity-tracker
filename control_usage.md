@@ -20,7 +20,7 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full}}, you can control the data that is collected and available for analysis through an auditing instance. You can define exclusion rules in the UI that apply to data collected in that instance. You can define an alert that is triggered when the data usage threshold that you define for that auditing instance is reached.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Controlling data by using exclusion rules

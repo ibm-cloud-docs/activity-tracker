@@ -21,7 +21,7 @@ subcollection: activity-tracker
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.dashdblong}} service in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 You can provision an instance of {{site.data.keyword.dashdblong}} through the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/db2-warehouse){: external}. [Learn more](/docs/account?topic=account-iamoverview).

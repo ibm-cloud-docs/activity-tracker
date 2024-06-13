@@ -20,7 +20,7 @@ subcollection: activity-tracker
 Streaming is failing because your {{site.data.keyword.at_short}} instance cannot connect to the {{site.data.keyword.messagehub}} Kafka broker.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 You get the following error message: `Failed to connect to Kafka broker: KafkaJSSASLAuthenticationError: SASL PLAIN authentication failed: Authentication failed, invalid credentials`.

@@ -18,7 +18,7 @@ subcollection: activity-tracker
 As a security officer, auditor, or manager, you can use the {{site.data.keyword.at_full_notm}} to track how users and applications interact with the Context-based restrictions rules and network zones in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of these resources in {{site.data.keyword.cloud_notm}}.

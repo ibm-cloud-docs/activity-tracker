@@ -18,7 +18,7 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full}}, you can create alerts to notify on configuration changes on the {{site.data.keyword.cloud_notm}} account. For example, you can generate notifications that report when services are created, modified, and deleted. These alerts can be limited to specific resources, or can apply to any services offered within the {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Configuring alerts using the console
@@ -92,7 +92,6 @@ curl https://api.eu-de.logging.cloud.ibm.com/v1/config/view \
 
 You will create a view as well as an alert, even when using the API.
 {: note}
-
 
 ## Sample queries to notify on account configuration changes
 {: #alerts_configuration_queries}

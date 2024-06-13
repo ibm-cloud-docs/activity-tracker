@@ -18,9 +18,8 @@ subcollection: activity-tracker
 You can manage {{site.data.keyword.at_full_notm}} [groups](/docs/activity-tracker?topic=activity-tracker-group_data_access) by using an API.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
-{{../log-analysis/_include-segments/deprecation_notice.md}}
 
+{{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Prerequisites on the {{site.data.keyword.at_full_notm}} service
 {: #groups_prereqs}

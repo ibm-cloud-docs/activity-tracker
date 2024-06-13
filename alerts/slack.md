@@ -18,7 +18,7 @@ subcollection: activity-tracker
 You can send {{site.data.keyword.at_full}} alerts to Slack.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Prerequsite

@@ -18,7 +18,7 @@ subcollection: activity-tracker
 You can use the *Configuration REST API* to manage programmatically views and alerts.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 

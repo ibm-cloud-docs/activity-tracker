@@ -18,7 +18,7 @@ subcollection: activity-tracker
 Across every industry, organizations require tighter controls and visibility into where their data is stored and processed in the {{site.data.keyword.cloud_notm}}. To manage events that are generated in your **EU-supported account** by using the {{site.data.keyword.at_full_notm}} service, consider the following information:
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 * [You must enable your account to be EU-supported](/docs/services/activity-tracker?topic=activity-tracker-manage_eu_acc#manage_eu_acc_step1), so support is handled by team members in the European Union.

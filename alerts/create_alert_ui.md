@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can create alerts graphically through the UI.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 

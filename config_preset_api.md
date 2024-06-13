@@ -18,7 +18,7 @@ subcollection: activity-tracker
 You can use the *Configuration REST API* to manage presets programmatically.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 Presets are templates that can be used to quickly configure alerts.  Presets can also be configured through the [UI](/docs/activity-tracker?topic=activity-tracker-preset_ui).

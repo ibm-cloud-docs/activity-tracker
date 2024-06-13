@@ -18,7 +18,7 @@ subcollection: activity-tracker
 {{site.data.keyword.at_full_notm}} hosted event search is a highly available, multi-tenant, regional service. In this topic, you can learn more about {{site.data.keyword.at_short}} availability and disaster recovery strategies, what you need to plan for, and what you need to do if you need to recover from a regional disaster.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Prereqs

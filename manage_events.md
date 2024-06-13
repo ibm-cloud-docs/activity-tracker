@@ -16,7 +16,7 @@ subcollection: activity-tracker
 {{site.data.keyword.at_full_notm}} is used to collect, archive, view and analyze events.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Collecting events to monitor activity in the account

@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can configure your web UI to work with UTC timestamps, change the log line format, change the background color and more.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 

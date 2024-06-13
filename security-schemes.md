@@ -18,7 +18,7 @@ subcollection: activity-tracker
 The {{site.data.keyword.at_full_notm}} API supports the following security schemes:
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Service API key authorization

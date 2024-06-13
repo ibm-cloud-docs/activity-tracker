@@ -19,7 +19,7 @@ subcollection: activity-tracker
 Complete the following steps to configure streaming for an {{site.data.keyword.at_full}} instance:
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 See [Configure streaming](/docs/activity-tracker?topic=activity-tracker-streaming#streaming-1) for more information on roles required for streaming.

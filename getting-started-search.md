@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2024
 lastupdated: "2024-05-24"
 
-keywords: IBM Cloud, Activity Tracker, getting started, auditing, tutorial
+keywords:
 
 subcollection: activity-tracker
 
@@ -28,11 +28,9 @@ completion-time: 1h
 Use the {{site.data.keyword.at_full}} service to monitor the activity of your {{site.data.keyword.cloud_notm}} account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
-This information applies only if you use an [{{site.data.keyword.at_full}} hosted event search offerings](/docs/activity-tracker?topic=activity-tracker-service_plan).
-{: important}
 
 ![The {{site.data.keyword.at_full_notm}} service](images/atov.png "The {{site.data.keyword.at_full_notm}} service"){: caption="Figure 1. Activity Tracker hosted event search flow" caption-side="bottom"}
 

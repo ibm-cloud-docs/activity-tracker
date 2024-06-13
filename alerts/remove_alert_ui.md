@@ -21,7 +21,7 @@ subcollection: activity-tracker
 You can detach alerts graphically by detaching an alert from a view or by deleting a preset.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 

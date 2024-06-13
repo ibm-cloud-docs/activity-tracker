@@ -19,7 +19,7 @@ subcollection: activity-tracker
 Review the following sample architecture for {{site.data.keyword.at_full}}, and learn more about different isolation levels so that you can choose the solution that best meets the requirements of the workloads that you want to run in the cloud.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## {{site.data.keyword.at_full_notm}} architecture

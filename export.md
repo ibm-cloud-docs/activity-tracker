@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can export data in JSONL format from an {{site.data.keyword.at_full_notm}} instance graphically through the web UI.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 Exporting using the UI uses the [V1 export API](/docs/activity-tracker?topic=activity-tracker-export_api) and is limited to the functionality provided by that version of the API.

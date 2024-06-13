@@ -20,7 +20,7 @@ subcollection: activity-tracker
 In {{site.data.keyword.at_full}}, you can define an alert to notify when the data usage in the instance reaches the data usage threshold that you set for the instance.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 
