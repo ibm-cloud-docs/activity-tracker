@@ -20,7 +20,7 @@ subcollection: activity-tracker
 You can monitor activity in your account through the {{site.data.keyword.at_full_notm}} web UI by using views, dashboards, and screens. You can also export sets of events to analyze them in a different context. You can be notified if specific events are generated in your account.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 

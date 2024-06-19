@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can send alerts to PagerDuty.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Configuring PagerDuty

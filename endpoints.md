@@ -18,7 +18,7 @@ subcollection: activity-tracker
 The following table lists the endpoints per region for the {{site.data.keyword.at_full}} service:
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 There are two types of Configuration API endpoints: public and private.

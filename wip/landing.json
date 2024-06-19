@@ -1,0 +1,65 @@
+{
+    "title": "Product docs",
+    "lastupdated": "2021-11-04",
+    "introduction": "Use the Activity Tracker service to capture a record of your IBM Cloud activities and monitor the activity of your IBM Cloud account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.",
+    "section_devtools": {
+      "api": "/apidocs/activity-tracker", 
+      "cli": "/docs/activity-tracker?topic=activity-tracker-cli-plugin-activity-tracker-cli", 
+      "terraform": "/docs/activity-tracker?topic=activity-tracker-terraform-setup"
+    },
+    "section_recommended": [
+      {
+        "title": "IBM Cloud services",
+        "description": "Learn about the IBM Cloud services that you can monitor in your account and the actions that they reprt on.",
+        "href": "/docs/activity-tracker?topic=activity-tracker-cloud_services"
+      },
+      {
+        "title": "Activity Tracker - Financial Services (FS) validate",
+        "description": "Learn how to use Activity Tracker to collect auditing events for compliance.",
+        "href": "/docs/atracker?topic=atracker-getting-started"
+      },
+      {
+        "title": "Activity Tracker - ",
+        "description": "Learn how to use Activity Tracker to monitor your account.",
+        "href": "/docs/activity-tracker?topic=activity-tracker-getting-started"
+      }
+    ],
+    "section_videos": [
+      {
+        "title": "IBM Cloud for Financial Services Ecosystem",
+        "href": "https://www.youtube.com/watch?v=ldlE09pE_cs", 
+        "thumbnail": "/images/enterprise-video-thumbnail.png" 
+      },
+      {
+        "title": "Title of video",
+        "href": "/docs/account?topic=account-enterprise-video",
+        "thumbnail": "/images/enterprise-video-thumbnail.png"
+      },
+      {
+        "title": "Title of video",
+        "href": "/docs/account?topic=account-enterprise-video",
+        "thumbnail": "/images/enterprise-video-thumbnail.png"
+      }
+    ],
+    "section_learn": {
+      "developer": "https://developer.ibm.com/depmodels/cloud/",
+      "architecture": "https://www.ibm.com/cloud/architecture",
+      "training": "https://www.ibm.com/training/cloud",
+      "community": "https://community.ibm.com/community/user/publiccloud/home"
+    },
+    "section_updates": {
+      "view_more": "/docs/activity-tracker?topic=activity-tracker-activity-tracker-release-notes",
+      "tiles": [
+        {
+          "date": "4 October 2021",
+          "title": "[{{site.data.keyword.at_short}} hosted event search offering] API for Archiving",
+          "description": "Documentation of API changes supporting archiving is generally available.  [Learn more about the archiving API](/apidocs/activity-tracker#get-v1-config-archiving)."
+        },
+        {
+          "date": "13 August 2021",
+          "title": "[{{site.data.keyword.atracker_short}} offering] General availability of {{site.data.keyword.atracker_short}}",
+          "description": "[Learn more about {{site.data.keyword.atracker_short}}](/docs/atracker?topic=atracker-getting-started)."
+        }
+      ]
+    }
+  }

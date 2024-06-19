@@ -20,8 +20,9 @@ subcollection: activity-tracker
 You can send alerts to 1 or more email addresses.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
+
 
 ## Configuring email
 {: #email-config}

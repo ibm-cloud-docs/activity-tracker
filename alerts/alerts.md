@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can configure alerts to notify about the activity in your {{site.data.keyword.cloud_notm}} account and changes in configuration in the account.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 A rule specifies the scope of the data that you want to monitor and be notified if certain conditions occur. Per alert rule, consider the following information:

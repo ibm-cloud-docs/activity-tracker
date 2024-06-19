@@ -18,7 +18,7 @@ subcollection: activity-tracker
 The following table lists the notification channels that you can configure when an alert is triggered:
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 

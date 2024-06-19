@@ -19,7 +19,7 @@ subcollection: activity-tracker
 Due to maintenance, {{site.data.keyword.at_full}} makes changes periodically to service IPs in some regions. You might need to take action to continue using the service.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 Endpoints and regions that are not listed are unchanged.

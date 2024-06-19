@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-24"
+lastupdated: "2021-03-20"
 
 keywords:
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 You are trying to configure streaming and receive a "failure to connect" error.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 You are trying to configure streaming and receive a message similar to the following: `Failed to connect: Port should be >= 0 and < 65536. Received NaN.`

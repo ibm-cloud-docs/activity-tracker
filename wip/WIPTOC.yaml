@@ -1,0 +1,358 @@
+toc:
+  properties:
+    subcollection: activity-tracker
+    service-name: logdnaat
+    version: 2
+    category: logging_monitoring
+    audience: service
+    href: /docs/activity-tracker?topic=activity-tracker-getting-started
+    console-page: /observe/activitytracker
+    product-page: https://www.ibm.com/cloud/activity-tracker
+    path: activity-tracker
+    label: Activity Tracker
+
+  entries: 
+  - navgroup: 
+      id: learn
+      topics:
+      - getting-started.md
+      - about.md
+
+      - topicgroup: 
+          label:  Configuring the account
+          topics:
+          - topic: atracker/atracker-acc-config.md
+            navtitle: Overview
+          - topic: atracker/atracker-resources-planning.md
+            navtitle: Planning
+          - topic: atracker/atracker-scenarios.md
+            navtitle: Scenarios
+          - topic: atracker/atracker-resources.md
+            navtitle: Specifications
+          - topic: atracker/limitations.md
+            navtitle: Restrictions and limitations
+      
+      - topic: cloud_services.md
+        navtitle: Services generating events
+      - topic: cloud_services_locations.md
+        navtitle: Services generating events by location
+    
+      - topicgroup: 
+          label: Integrations (WIP)
+          topics:
+          - integrations/qradar-integration.md
+          - integrations/netcool-integration.md
+          - integrations/splunk-integration.md
+      
+      - topicgroup: 
+          label: Events
+          topics:
+          - event.md
+          - event_types.md
+          - events_opt-in.md
+          - events_collect.md
+
+      - topicgroup: 
+          label: Security and compliance
+          topics:
+          - adoption.md
+          - manage_eu_acc.md
+
+      - topic: releasenotes.md
+        navtitle: Release notes
+
+  - navgroup: 
+      id: tutorial
+      topics:
+      - topicgroup: 
+          label: Activity Tracker Event Routing
+          topics:
+          - topic: atracker/getting-started-mng-endpoints.md
+            navtitle: Enforcing private endpoints to configure Activity Tracker resources
+          - topic: atracker/getting-started-target-2.md
+            navtitle: Configuring a COS target in the same account that generates auditing events by using the CLI (WIP)
+          - topic: atracker/getting-started-target-2.md
+            navtitle: Configuring a COS target in the same account that generates auditing events by using the API
+          - topic: atracker/getting-started-routing-2.md
+            navtitle: Configuring a COS target in a different account from the one that generates auditing events
+          - topic: atracker/getting-started-target-1.md
+            navtitle: Configuring a logdna target in the account to manage global events
+          - topic: atracker/getting-started-routing.md
+            navtitle: Getting started (Using V1 API)
+
+      - topicgroup: 
+          label: Activity Tracker event search
+          topics:
+          - topic: getting-started-search.md
+            navtitle: Getting started
+          - control_usage_instance.md
+
+  - navgroup: 
+      id: howto
+      topics:
+      - observe.md
+
+      - topicgroup: 
+          label: Provisioning
+          topics:
+          - provision.md
+          - provision_hipaa.md
+          - terraform/terraform-setup.md
+          - upgrade.md
+          - remove.md
+      
+      - topicgroup: 
+          label: Controlling access
+          topics:
+          - iam.md
+          - teams_data_access.md
+          - trusted-profiles.md
+          - groups-api.md
+          - iam_grant_team.md
+          - iam_manage_events.md
+          - iam_view_events.md
+          - private_endpoints_only.md
+      
+      - topicgroup: 
+          label: Archiving
+          topics:
+          - archiving-ov.md
+          - archive.md
+          - archiving-manage-api.md
+          - terraform/terraform-archive.md
+          - templates-archiving.md
+          - sqlquery.md
+          - archiving-at-monitor.md
+          - archiving-monitor.md
+
+      - topicgroup:
+          label: Configuring the account
+          topics:
+          - topic: atracker/configure-atracker.md
+            navtitle: Configuring Activity Tracker Event Routing in your account
+          - topic: atracker/atracker-tf-config.md
+            navtitle: Configuring Activity Tracker Event Routing by using terraform 
+          - topic: atracker/settings.md
+            navtitle: Configuring account settings
+          - topic: atracker/get-config-version.md
+            navtitle: Determining the account configuration version
+          - topic: atracker/migration.md
+            navtitle: Migrating the account configuration from V1 to V2
+          - topic: atracker/atracker-tf-migration.md
+            navtitle: Using Terraformn to migrate the account configuration from V1 to V2
+          - topic: atracker/atracker-cli-config.md
+            navtitle: Configuring the CLI to manage the account configuration
+
+      - topicgroup: 
+          label: Managing costs and data usage
+          topics:
+          - control_usage.md
+          - exclusion_rules.md
+          - control_usage_alert.md
+          - control_usage_index_rate.md
+          - control_usage_quotas.md
+          - control_usage_api.md
+
+      - topicgroup: 
+          label: Managing keys
+          topics:
+          - service_keys.md
+          - ingestion_key.md
+          - atracker/retrieve-iam-token.md
+
+      - topicgroup: 
+          label: Managing resources
+          topics:
+          - reuse_resource_definitions.md
+      
+      - topicgroup: 
+          label: Monitoring Cloud resources
+          topics:
+          - alerts/alerts_configuration.md
+          - analyze/iam_manage_login.md
+      
+      - topicgroup: 
+          label: Enhancing security
+          topics:
+          - architecture-workload-isolation.md
+          - service-endpoints.md
+          - data-security.md
+      
+      - topicgroup: 
+          label: Exporting events
+          topics:
+          - export_config.md
+          - export.md
+          - export_api.md
+          - export_api_v2.md
+      
+      - topicgroup: 
+          label: Logging and monitoring
+          topics:
+          - at_events.md
+          - atracker/platform_metrics.md
+      
+      - atracker/endpoints_manage.md
+
+      - topicgroup: 
+          label: Managing targets
+          topics:
+          - atracker/target_v1.md
+          - atracker/target_v2_cos.md
+          - atracker/target_v2_at.md
+
+      - topicgroup: 
+          label: Managing routes
+          topics:
+          - atracker/route_v1.md
+          - atracker/route_v2.md
+
+      - atracker/cos.md
+      - atracker/config_report.md
+      - atracker/config_report_v2.md
+
+      
+      - topicgroup: 
+          label: Streaming data
+          topics:
+          - streaming.md
+          - streaming-configure.md
+          - streaming-monitor.md
+          - streaming-conditional.md
+          - streaming-manage-api.md
+          - terraform/terraform-streaming.md
+      
+      - topicgroup: 
+          label: UI
+          topics:
+          - launch.md
+          - config.md
+          - get_web_url.md
+
+      - topicgroup: 
+          label: Working with events
+          topics:
+          - manage_events.md
+          - monitor_events.md
+          - view_events.md
+          - parsing.md
+          - views.md 
+          - templates.md
+
+      - topicgroup: 
+          label: Working with alerts
+          topics:
+          - alerts/alerts.md
+          - alerts/create_alert_ui.md
+          - alerts/remove_alert_ui.md
+          - alerts/preset_ui.md
+          - config_api.md
+          - config_preset_api.md
+          - alerts/email.md
+          - pagerduty.md
+          - alerts/monitoring.md
+          - alerts/sms.md
+          - alerts/webhook.md
+          - alerts/slack.md
+          - atracker/cloud_notifications.md
+      
+      - topicgroup: 
+          label: WIP
+          topics:
+          - manage-scc.md
+          - analyze/bss_mfa_events.md
+          - analyze/iam_users_events.md
+          - analyze/iam_serviceIDs_events.md
+          - analyze/iam_ag_events.md
+          - analyze/iam_apikeys_events.md
+          - analyze/service_instance_events.md
+          - tutorial_iam_apikeys.md
+          
+  
+  - navgroup: 
+      id: reference
+      topics: 
+      - regions.md
+      - endpoints.md
+      - cidr.md
+      - channels.md
+      - service_plan.md
+      - shared-responsibilities.md
+      - ha-dr.md
+      - service-ip-changes.md
+      
+      - topicgroup: 
+          label: CLI
+          links:
+          - link: 
+              label: Hosted event search CLI
+              href: https://{DomainName}/docs/activity-tracker-cli-plugin?topic=activity-tracker-cli-plugin-activity-tracker-cli
+          - link:
+              label: Event Routing V1 CLI
+              href: https://{DomainName}/docs/activity-tracker-cli-plugin?topic=activity-tracker-cli-plugin-atracker-v1-cli
+          - link:
+              label: Event Routing V2 CLI
+              href: https://{DomainName}/docs/activity-tracker-cli-plugin?topic=activity-tracker-cli-plugin-atracker-v2-cli
+
+      - topicgroup: 
+          label: API
+          links: 
+            - link: 
+                label: Activity Tracker Event Routing API
+                href: https://{DomainName}/apidocs/atracker
+            - link:
+                label: Activity Tracker Export API
+                href: https://{DomainName}/apidocs/activity-tracker#export
+            - link:
+                label: Activity Tracker Archiving API
+                href: https://{DomainName}/apidocs/activity-tracker#get-v1-config-archiving
+            - link:
+                label: Activity Tracker Alerts and views API
+                href: https://{DomainName}/apidocs/activity-tracker#create-view
+            - link:
+                label: Activity Tracker Streaming API
+                href: https://{DomainName}/apidocs/activity-tracker#post-v1-config-stream
+            - link:
+                label: Activity Tracker Groups API
+                href: https://{DomainName}/apidocs/activity-tracker#create-group
+  
+      - topicgroup: 
+          label: Events
+          topics:     
+          - at_events_iam.md
+          - at_events_acc_mgt.md
+          - at_events_rc.md
+          - at_event_dashdb.md
+          - at_events_cbr.md
+  
+  - navgroup: 
+        id: help
+        topics: 
+        - gettinghelp.md
+        - at_faq.md
+
+        - topicgroup: 
+            label: Troubleshooting
+            topics:  
+
+            - topicgroup:
+                label: Hosted event search
+                topics:
+                - troubleshoot-04.md
+                - troubleshoot-05.md
+
+            - topicgroup:
+                label: Event Routing
+                topics:
+                - atracker/troubleshoot-01.md
+                - atracker/troubleshoot-02.md
+                - atracker/troubleshoot-03.md
+                - atracker/troubleshoot-06.md
+                - atracker/troubleshoot-07.md
+                - atracker/troubleshoot-08.md
+                - atracker/troubleshoot-09.md
+                - atracker/troubleshoot-10.md
+                - atracker/troubleshoot-11.md
+                - atracker/troubleshoot-12.md
+                - atracker/troubleshoot-13.md
+                - atracker/troubleshoot-14.md

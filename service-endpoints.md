@@ -20,7 +20,7 @@ subcollection: activity-tracker
 To ensure that you have enhanced control and security over your data when you use {{site.data.keyword.at_full}}, you have the option of using private routes to {{site.data.keyword.cloud}} service endpoints. Private routes are not accessible or reachable over the internet. By using the {{site.data.keyword.cloud_notm}} private service endpoints feature, you can protect your data from threats from the public network and logically extend your private network.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 You can use private and public endpoints to configure {{site.data.keyword.at_full}} resources in your account.

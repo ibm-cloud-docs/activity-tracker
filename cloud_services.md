@@ -21,7 +21,7 @@ subcollection: activity-tracker
 {{site.data.keyword.cloud_notm}} services that use {{site.data.keyword.at_short}} to monitor user-initiated activities that change the state of any of the following services in the {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 {{site.data.keyword.at_short}} hosted event search routes location-based auditing events to an {{site.data.keyword.at_short}} instance in the region where they are generated and routes global auditing events to the {{site.data.keyword.at_short}} instance that is provisioned in Frankfurt.
@@ -39,6 +39,7 @@ The following table lists analytics services that send auditing events:
 | [{{site.data.keyword.sqlquery_full}}](/docs/sql-query?topic=sql-query-overview#overview) | `sql-query` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/sql-query?topic=sql-query-activitytracker#activitytracker) |
 | [{{site.data.keyword.PA_SaaS_full}}](/docs/planning-analytics?topic=planning-analytics-about) | `planning-analytics` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/planning-analytics?topic=planning-analytics-at_events) |
 | [{{site.data.keyword.dv_short}}](/docs/data-virtualization?topic=data-virtualization-getting-started) | `data-virtualization` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas&audience=wdp#dv){: exernal} |
+| Data Product Hub | `data-product-hub` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://ibmdocs-test.dcs.ibm.com/docs/en/dpx_test?topic=administer-activity-tracker-events){: external} |
 {: caption="Table 1. List of analytics services" caption-side="top"}
 
 ## Classic services

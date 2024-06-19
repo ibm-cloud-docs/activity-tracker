@@ -11,7 +11,6 @@ toc:
     path: activity-tracker
     label: Activity Tracker hosted event search
     release-level: deprecated
-
   entries:
   - navgroup:
       id: learn
@@ -19,7 +18,6 @@ toc:
       - topic: getting-started.md
         navtitle: Getting started
       - about.md
-
       - topicgroup:
           label: Deprecation
           topics:
@@ -31,12 +29,10 @@ toc:
             navtitle: Migration
           - include: ../log-analysis/deprecation_faq.md
           - include: ../log-analysis/deprecation_help.md
-
       - topic: cloud_services.md
         navtitle: Services generating events
       - topic: cloud_services_locations.md
         navtitle: Services generating events by location
-
       - topicgroup:
           label: Events
           topics:
@@ -44,22 +40,18 @@ toc:
           - event_types.md
           - events_opt-in.md
           - events_collect.md
-
       - topicgroup:
           label: Security and compliance
           topics:
           - adoption.md
           - manage_eu_acc.md
-
       - topic: releasenotes.md
         navtitle: Release notes
       - releasenotes_notifications.md
-
   - navgroup:
       id: howto
       topics:
       - observe.md
-
       - topicgroup:
           label: Provisioning
           topics:
@@ -68,7 +60,6 @@ toc:
           - terraform/terraform-setup.md
           - upgrade.md
           - remove.md
-
       - topicgroup:
           label: Controlling access
           topics:
@@ -79,7 +70,6 @@ toc:
           - iam_manage_events.md
           - iam_view_events.md
           - private_endpoints_only.md
-
       - topicgroup:
           label: Archiving
           topics:
@@ -91,9 +81,8 @@ toc:
           - sqlquery.md
           - archiving-at-monitor.md
           - archiving-monitor.md
-
       - topicgroup:
-          label: Managing costs and data
+          label: Managing costs and data usage
           topics:
           - control_usage.md
           - exclusion_rules.md
@@ -101,7 +90,6 @@ toc:
           - control_usage_index_rate.md
           - control_usage_quotas.md
           - control_usage_api.md
-
       - topicgroup:
           label: Managing keys
           topics:
@@ -109,14 +97,12 @@ toc:
           - terraform/terraform-service-keys.md
           - ingestion_key.md
           - terraform/terraform-ingestion-keys.md
-
       - topicgroup:
           label: Managing resources
           topics:
           - reuse_resource_definitions.md
           - config_categories.md
           - terraform/terraform-categories.md
-
       - topicgroup:
           label: Monitoring Cloud resources
           topics:
@@ -124,7 +110,6 @@ toc:
           - topic: alerts/alerts_configuration.md
             navtitle: Generating alerts on configuration changes
           - analyze/iam_manage_login.md
-
       - topicgroup:
           label: Exporting events
           topics:
@@ -132,12 +117,10 @@ toc:
           - export.md
           - export_api.md
           - export_api_v2.md
-
       - topicgroup:
           label: Logging and monitoring
           topics:
           - at_events.md
-
       - topicgroup:
           label: Streaming data
           topics:
@@ -148,7 +131,6 @@ toc:
           - streaming-conditional.md
           - streaming-manage-api.md
           - terraform/terraform-streaming.md
-
       - topicgroup:
           label: UI
           topics:
@@ -156,7 +138,6 @@ toc:
           - config.md
           - undock.md
           - get_web_url.md
-
       - topicgroup:
           label: Working with events
           topics:
@@ -166,7 +147,13 @@ toc:
           - parsing.md
           - views.md
           - templates.md
-
+          links:
+            - link:
+                label: Searching log contents
+                href: https://docs.mezmo.com/docs/searching-log-contents
+            - link:
+                label: Searching field contents
+                href: https://docs.mezmo.com/docs/search-json-fields
       - topicgroup:
           label: Working with events in non-supported locations
           topics:
@@ -174,7 +161,6 @@ toc:
             navtitle: Working with events before a region is available
           - topic: manage-events-to-new-region.md
             navtitle: Working with events after a region is open for business
-
       - topicgroup:
           label: Working with alerts
           topics:
@@ -190,7 +176,6 @@ toc:
           - alerts/sms.md
           - alerts/webhook.md
           - alerts/slack.md
-
       - topicgroup:
           label: Enhancing security
           topics:
@@ -206,7 +191,6 @@ toc:
           - data-security.md
           - topic: cbr.md
             navtitle: Protecting resources with context-based restrictions
-
   - navgroup:
       id: reference
       topics:
@@ -221,21 +205,17 @@ toc:
       - ha-dr.md
       - ha_dr_steps.md
       - service-ip-changes.md
-
       - topicgroup:
           label: Templates for hosted event search
           topics:
           - templates-archiving.md
           - templates-track-access.md
-
       - topicgroup:
           label: CLI
           topics:
           - include: ../activity-tracker-cli-plugin/activity-tracker-cli.md
-
       - topic: security-schemes.md
         navtitle: API security schemes
-
       - topicgroup:
           label: API
           links:
@@ -254,7 +234,6 @@ toc:
             - link:
                 label: Activity Tracker Groups API
                 href: https://{DomainName}/apidocs/activity-tracker#create-group
-
       - topicgroup:
           label: Events
           topics:
@@ -263,16 +242,15 @@ toc:
           - at_events_rc.md
           - at_event_dashdb.md
           - at_events_cbr.md
-
   - navgroup:
         id: help
         topics:
         - gettinghelp.md
         - at_faq.md
-
         - topicgroup:
             label: Troubleshooting
             topics:
             - troubleshoot-01.md
             - troubleshoot-04.md
             - troubleshoot-05.md
+            - troubleshoot-06.md

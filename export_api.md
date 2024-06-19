@@ -19,7 +19,7 @@ subcollection: activity-tracker
 From an {{site.data.keyword.at_full_notm}} instance, you can export events programmatically by using the V1 Export REST API.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 The V1 Export REST API does not support pagination.  If you need pagination support, you will need to use the [V2 export REST API](/docs/activity-tracker?topic=activity-tracker-export_api_v2).
@@ -158,8 +158,36 @@ To define the parameters that you need for the export request, complete the foll
 
 3. Map the query to the query parameter.
 
-    Notice that when you copy the query from the UI, you must replace every space with `%20`.
+    Notice that when you copy the query from the UI, you must replace every space with `%20`, every `[` with `%5B`, and every `]` with `%5D`.
     {: important}
+
+    For example, if the query from the UI is:
+
+    ```text
+    action:iam-groups.group.create OR action:iam-groups.group.delete OR action:iam-groups.group.update OR action:iam-identity.account-profile.create OR action:iam-identity.account-profile.delete OR action:iam-identity.account-profile.update OR action:iam-am.policy.create OR action:iam-am.policy.delete OR action:iam-am.policy.update
+    ```
+    {: codeblock}
+
+    You would specify the query as this in the API:
+
+    ```text
+    action:iam-groups.group.create%20OR%20action:iam-groups.group.delete%20OR%20action:iam-groups.group.update%20OR%20action:iam-identity.account-profile.create%20OR%20action:iam-identity.account-profile.delete%20OR%20action:iam-identity.account-profile.update%20OR%20action:iam-am.policy.create%20OR%20action:iam-am.policy.delete%20OR%20action:iam-am.policy.update
+    ```
+    {: codeblock}
+
+    For this query from the UI:
+
+    ```text
+    "q": "action:[iam-groups.group.create.iam-groups.group.delete,iam-groups.group.update,iam-identity.account-profile.create,iam-identity.account-profile.delete,iam-identity.account-profile.update,iam-am.policy.create,iam-am.policy.delete,iam-am.policy.update]"
+    ```
+    {: codeblock}
+
+    You would run the following command:
+
+    ```text
+    curl -XGET  'https://api.eu-de.logging.cloud.ibm.com/v1/export?from=1690365540000&to=1690451940000&hosts=iam-identity,iam-groups,iam-am&query=action:%5Biam-groups.group.create,iam-groups.group.delete,iam-groups.group.update,iam-identity.account-profile.create,iam-identity.account-profile.delete,iam-identity.account-profile.update,iam-am.policy.create,iam-am.policy.delete,iam-am.policy.update%5D' --header 'servicekey:     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    ```
+    {: pre}
 
 
 

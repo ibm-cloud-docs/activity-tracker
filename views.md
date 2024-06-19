@@ -19,7 +19,7 @@ subcollection: activity-tracker
 Through the {{site.data.keyword.at_full_notm}} web UI, you can apply search and filtering criteria to define the set of events that are displayed through a custom view.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Prerequisites

@@ -18,8 +18,9 @@ subcollection: activity-tracker
 In an {{site.data.keyword.at_full_notm}} instance, you can configure exclusion rules through the UI to stop events from counting against your data usage quota and from being stored for search.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
+
 
 ## Prereqs
 {: #exclusion_rules_prereqs}

@@ -18,7 +18,7 @@ subcollection: activity-tracker
 You can configure, control, and manage data that is available to users in your {{site.data.keyword.cloud}} account by configuring **groups** in the auditing instance.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 A **group** defines the scope of the data that is available for users that belong to that group.

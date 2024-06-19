@@ -18,7 +18,7 @@ subcollection: activity-tracker
 Over time support for the {{site.data.keyword.at_full}} service might be deprecated in some regions. This topic documents the CIDR blocks and endpoints for deprecated regions.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Deprecated regions

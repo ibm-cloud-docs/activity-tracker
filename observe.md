@@ -19,7 +19,7 @@ subcollection: activity-tracker
 You can manage your Activity Tracker instances through the `Observability` dashboard in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Launch the Activity Tracker UI in {{site.data.keyword.cloud_notm}}

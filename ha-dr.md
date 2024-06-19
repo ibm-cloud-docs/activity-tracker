@@ -20,7 +20,7 @@ subcollection: activity-tracker
 {{site.data.keyword.at_full_notm}} is a highly available, multi-tenant, regional service. In this topic, you can learn more about {{site.data.keyword.at_short}}'s availability and disaster recovery strategies.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Service high availability (HA)

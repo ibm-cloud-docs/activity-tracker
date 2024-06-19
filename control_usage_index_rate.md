@@ -19,7 +19,7 @@ subcollection: activity-tracker
 Configure index rates alerts in your {{site.data.keyword.at_short}} instance to monitor and be alerted of unexpected spikes in your data volumes. Use the index rate to analyze and predict costs associated with storage of searchable data.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 Index rates are calculated based on data that is ingested over the last 30 days and collected in 5 minute intervals.

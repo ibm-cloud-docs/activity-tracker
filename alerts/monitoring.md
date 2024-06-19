@@ -18,7 +18,7 @@ subcollection: activity-tracker
 You can send alerts to the {{site.data.keyword.mon_short}} service and manage them through the *Events* view section.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../../log-analysis/_include-segments/deprecation_notice.md}}
 
 

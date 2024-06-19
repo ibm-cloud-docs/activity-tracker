@@ -18,7 +18,7 @@ subcollection: activity-tracker
 To avoid recreating definitions of views, boards, parsing templates, and exclusion rules, you can export these resources from a {{site.data.keyword.at_full}} instance as a JSON file. Then, you can import the definitions into other auditing instances.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 ## Export the configuration of resources

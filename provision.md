@@ -19,7 +19,7 @@ subcollection: activity-tracker
 Before you can monitor and manage event data with {{site.data.keyword.at_full_notm}}, you must provision an instance of the service in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-<!-- Common deprecation statement -->
+
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
 To provision an {{site.data.keyword.at_full_notm}} instance in a Public Cloud region, consider the following information:
