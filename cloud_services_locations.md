@@ -30,8 +30,7 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 | {{site.data.keyword.iae_full}}               | ![Checkmark icon](images/checkmark-icon.svg) |                                      |
 | {{site.data.keyword.sqlquery_full}}          | ![Checkmark icon](images/checkmark-icon.svg) |                                      |
 | {{site.data.keyword.PA_SaaS_full}}           |  | ![Checkmark icon](images/checkmark-icon.svg) |
-| {{site.data.keyword.dv_short}}               | ![Checkmark icon](images/checkmark-icon.svg) |                                      |
-| {{site.data.keyword.openpages_full}}         | ![Checkmark icon](images/checkmark-icon.svg) | | | |
+| {{site.data.keyword.dv_short}}               | ![Checkmark icon](images/checkmark-icon.svg) |
 | Data Product Hub | ![Checkmark icon](images/checkmark-icon.svg) | | | |
 {: caption="Table 1. Analytics services integration in Americas locations" caption-side="top"}
 {: #analytics-table-1}
@@ -46,7 +45,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 | {{site.data.keyword.sqlquery_full}}          | |  |
 | {{site.data.keyword.PA_SaaS_full}}          | |  |
 | {{site.data.keyword.dv_short}}               | ![Checkmark icon](images/checkmark-icon.svg)   |  |
-| {{site.data.keyword.openpages_full}}         |  | | | |
 | Data Product Hub | | | | |
 {: caption="Table 1. Analytics services integration in AP locations" caption-side="top"}
 {: #analytics-table-2}
@@ -61,7 +59,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 | {{site.data.keyword.sqlquery_full}}          | ![Checkmark icon](images/checkmark-icon.svg) |                                 |    |
 | {{site.data.keyword.PA_SaaS_full}}          | |  |    |
 | {{site.data.keyword.dv_short}}               | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg) |    |
-| {{site.data.keyword.openpages_full}}         | | | |
 | Data Product Hub | | | |
 {: caption="Table 1. Analytics services integration in Europe locations" caption-side="top"}
 {: #analytics-table-3}
@@ -206,7 +203,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 | {{site.data.keyword.la_full_notm}}       | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg)|
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.metrics_router_full_notm}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| | |
-| {{site.data.keyword.logs_routing_full_notm}} | | ![Checkmark icon](images/checkmark-icon.svg) | | |
 {: caption="Table 5. Observability services in America's locations" caption-side="top"}
 {: #cs-observability-table-1}
 {: tab-title="America"}
@@ -221,7 +217,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 | {{site.data.keyword.la_full_notm}}  | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)| ![Checkmark icon](images/checkmark-icon.svg) | |  |
 | {{site.data.keyword.metrics_router_full_notm}} | | | | |
-| {{site.data.keyword.logs_routing_full_notm}} | | | | |
 {: caption="Table 5. Observability services in AP locations" caption-side="top"}
 {: #cs-observability-table-2}
 {: tab-title="Asia Pacific"}
@@ -236,7 +231,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 | {{site.data.keyword.la_full_notm}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |  ![Checkmark icon](images/checkmark-icon.svg)  |
 | {{site.data.keyword.mon_full_notm}}      | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|  ![Checkmark icon](images/checkmark-icon.svg)  |
 | {{site.data.keyword.metrics_router_full_notm}} | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg)|  ![Checkmark icon](images/checkmark-icon.svg)  |
-| {{site.data.keyword.logs_routing_full_notm}} | | | |
 {: caption="Table 5. Observability services in Europe locations" caption-side="top"}
 {: #cs-observability-table-3}
 {: tab-title="Europe"}

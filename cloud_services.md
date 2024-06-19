@@ -40,7 +40,6 @@ The following table lists analytics services that send auditing events:
 | [{{site.data.keyword.PA_SaaS_full}}](/docs/planning-analytics?topic=planning-analytics-about) | `planning-analytics` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/planning-analytics?topic=planning-analytics-at_events) |
 | [{{site.data.keyword.dv_short}}](/docs/data-virtualization?topic=data-virtualization-getting-started) | `data-virtualization` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas&audience=wdp#dv){: exernal} |
 | Data Product Hub | `data-product-hub` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](https://ibmdocs-test.dcs.ibm.com/docs/en/dpx_test?topic=administer-activity-tracker-events){: external} |
-| [{{site.data.keyword.openpages_full}}](/docs/openpages?topic=openpages-gettingstartedtutorial) | `openpages` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/openpages?topic=openpages-at_events) |
 {: caption="Table 1. List of analytics services" caption-side="top"}
 
 ## Classic services
@@ -169,7 +168,6 @@ The following table lists observability services that send auditing events:
 | [{{site.data.keyword.la_full}}](/docs/log-analysis?topic=log-analysis-getting-started#getting-started) | `logdna` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/log-analysis?topic=log-analysis-at_events) |
 | [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) | `sysdig-monitor` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/monitoring?topic=monitoring-at_events) |
 | [{{site.data.keyword.metrics_router_full_notm}}](/docs/metrics-router?topic=metrics-router-getting-started) | `metrics-router` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/monitoring?topic=monitoring-at_events) |
-| [{{site.data.keyword.logs_routing_full_notm}}](/docs/logs-router?topic=logs-router-getting-started) | `logs-router` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/monitoring?topic=monitoring-at_events) |
 {: caption="Table 10. List of observability services" caption-side="top"}
 
 
