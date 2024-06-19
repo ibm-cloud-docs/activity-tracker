@@ -103,7 +103,6 @@ toc:
           - reuse_resource_definitions.md
           - config_categories.md
           - terraform/terraform-categories.md
-          - scc.md
       - topicgroup:
           label: Monitoring Cloud resources
           topics:
