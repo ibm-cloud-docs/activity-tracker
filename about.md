@@ -64,14 +64,12 @@ Use {{site.data.keyword.atracker_short}} to manage auditing events in your accou
 {: tip}
 
 
-
-
 ### PCI, SOC2, Privacy Shield and HIPAA compliance
 {: #about-cp}
 
 {{site.data.keyword.at_short}} offers ready to run event search offerings that you can use to expedite your time to greater insights. You can choose to retain your events for 7, 14, or 30 days. In addition, a 30 day HIPAA compliant offering is also available. For more information on these offerings, see [Service plans](/docs/activity-tracker?topic=activity-tracker-service_plan).
 
-Use {{site.data.keyword.at_short}} hosted event search offering to manage events through the UI or to manage auditing events that are not routed by {{site.data.keyword.atracker_short}}.
+Use the {{site.data.keyword.at_short}} hosted event search offering to manage events through the UI or to manage auditing events that are not routed by {{site.data.keyword.atracker_short}}.
 {: tip}
 
 ### Features
