@@ -52,7 +52,7 @@ To get the ingestion key for an {{site.data.keyword.at_full_notm}} instance by u
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Click the **Settings** icon ![Settings icon](../images/admin.png) &gt; **Organization** &gt; **API keys**.
+2. Click the **Settings** icon ![Settings icon](/images/admin.png) &gt; **Organization** &gt; **API keys**.
 
     You can see the ingestion keys that are enabled.
 
@@ -70,7 +70,7 @@ Complete the following steps to create a service key:
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Click the **Settings** icon ![Settings icon](../images/admin.png).
+2. Click the **Settings** icon ![Settings icon](/images/admin.png).
 
 3. Select **Organization**.
 
@@ -92,7 +92,7 @@ Complete the following steps to delete an ingestion key:
 
 1. [Launch the {{site.data.keyword.at_short}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Click the **Settings** icon ![Settings icon](../images/admin.png).
+2. Click the **Settings** icon ![Settings icon](/images/admin.png).
 
 3. Select **Organization**.
 
@@ -112,7 +112,7 @@ To renew the ingestion key for an {{site.data.keyword.at_full_notm}} instance by
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Click the **Settings** icon ![Settings icon](../images/admin.png) &gt; **Organization**.
+2. Click the **Settings** icon ![Settings icon](/images/admin.png) &gt; **Organization**.
 
 3. Select **API keys**.
 

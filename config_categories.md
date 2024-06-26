@@ -105,8 +105,8 @@ The following table indicates when the `name` parameter is required:
 
 | Action                                                                | Request  | Field required                       |
 | ----------------------------------------------------------------------|----------|--------------------------------------|
-| Create a new category for a given type.                          | `POST`   | ![Check mark icon](../images/checkmark-icon.svg "Check mark icon indicating required")|
-| Modify a category | `UPDATE`    | ![Check mark icon](../images/checkmark-icon.svg "Check mark icon indicating required")|
+| Create a new category for a given type.                          | `POST`   | ![Check mark icon](/images/checkmark-icon.svg "Check mark icon indicating required")|
+| Modify a category | `UPDATE`    | ![Check mark icon](/images/checkmark-icon.svg "Check mark icon indicating required")|
 {: caption="Table 2. Required status per method" caption-side="top"}
 
 

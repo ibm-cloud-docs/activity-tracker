@@ -128,7 +128,7 @@ To renew the service key for an {{site.data.keyword.at_full_notm}} instance by u
 
 1. [Launch the {{site.data.keyword.at_full_notm}} web UI](/docs/activity-tracker?topic=activity-tracker-launch).
 
-2. Click the **Settings** icon ![Settings icon](../images/admin.png) &gt; **Organization**.
+2. Click the **Settings** icon ![Settings icon](/images/admin.png) &gt; **Organization**.
 
 3. Select **API keys**.
 
