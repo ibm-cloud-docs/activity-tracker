@@ -22,6 +22,7 @@ Use the {{site.data.keyword.at_full}} service to capture a record of your {{site
 
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
+
 Compliance with internal policies and industry regulations is a key requirement in any organization's strategy, regardless of where applications run: on-premises, in a hybrid cloud, or in a public cloud. The {{site.data.keyword.at_full_notm}} service provides the framework and functionality to monitor API calls to services on the {{site.data.keyword.cloud_notm}} and produces the evidence to comply with corporate policies and market industry-specific regulations.
 
 When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm}}, you must plan the cloud strategy for auditing and monitoring workloads and data in accordance with your internal policies and with industry and country-based compliance requirements. You can use the information that is registered through the {{site.data.keyword.at_full_notm}} service to identify security incidents, detect unauthorized access, and comply with regulatory and internal auditing requirements.
@@ -38,10 +39,15 @@ For information on the services sending events to {{site.data.keyword.at_short}}
 {: #cadf_standard}
 
 The CADF standard defines a full event model that includes the information that is needed to certify, manage, and audit security of applications and services in cloud environments. The CADF event model includes the following components:
+
 -	Action: The action is the operation or activity that an initiator performs, attempts to perform, or is waiting to complete.
+
 -	Initiator: The initiator is the resource that makes an API call and generates a CADF event. The event that is triggered depends on the action that is requested by the API call.
+
 -	Observer: The observer is the resource that creates and stores a CADF record from information available in a CADF event
+
 -	Outcome: The outcome is the status of the action against the target.
+
 -	Target: The target is the resource against which the action is performed, attempted to perform, or is pending to complete.
 
 ## Selecting your {{site.data.keyword.at_full_notm}} offering
