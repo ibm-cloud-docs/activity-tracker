@@ -28,5 +28,3 @@ Complete the following steps to undock the dashboard:
 1. [Launch the UI through the {{site.data.keyword.cloud_notm}} UI.](/docs/activity-tracker?topic=activity-tracker-launch#launch_cloud_ui)
 
 2. Click **Undocked dashboard**.
-
-
