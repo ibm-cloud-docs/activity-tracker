@@ -21,7 +21,7 @@ subcollection: activity-tracker
 
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
-![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/Activity-Tracker-Search-06-Locations.svg){: caption="Figure 1. Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}
+![The image shows the locations where the {{site.data.keyword.at_full_notm}} service is available.](images/Activity-Tracker-Search-06-Locations.svg){: caption="Displays the regions where you can create and manage {{site.data.keyword.at_full_notm}} resources." caption-side="bottom"}
 
 This image is an artistic representation and does not reflect actual political or geographic boundaries.
 {: note}
@@ -40,7 +40,7 @@ This image is an artistic representation and does not reflect actual political o
 | `North America`       | `Washington (us-east)`   | `N/A`        | `MZR`     |
 | `North America`       | `Toronto (ca-tor)`   | `N/A`        | `MZR`     |
 | `South America`       | `Sao Paulo (br-sao)`     | `N/A`        | `MZR`     |
-{: caption="Table 1. List of locations for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
+{: caption="List of locations for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
 {: #end-api-table-1}
 
 

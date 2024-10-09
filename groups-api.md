@@ -32,7 +32,7 @@ You can manage {{site.data.keyword.at_full_notm}} [groups](/docs/activity-tracke
 |---------------------------|-------------------------------|
 | Platform role: `Viewer`     | Allows the user to view the list of service instances. |
 | Service role: `Manager`      | Allows the user to manage groups by using the API.  |
-{: caption="Table 1. IAM roles" caption-side="top"}
+{: caption="IAM roles" caption-side="top"}
 
 For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 

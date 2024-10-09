@@ -31,7 +31,7 @@ You can stream data to an {{site.data.keyword.messagehub}} instance or to an {{s
 
 You can also also configure streaming from one {{site.data.keyword.at_short}} instance to a second {{site.data.keyword.at_short}} instance.
 
-![Streaming example](images/Activity-Tracker-Search-04-Data-Streaming.svg "Streaming example"){: caption="Figure 1. Streaming example" caption-side="bottom"}
+![Streaming example](images/Activity-Tracker-Search-04-Data-Streaming.svg "Streaming example"){: caption="Streaming example" caption-side="bottom"}
 
 You can only stream from one {{site.data.keyword.at_short}} instance to one other {{site.data.keyword.at_short}} instance. You cannot stream from the second {{site.data.keyword.at_short}} instance to another {{site.data.keyword.at_short}} instance.
 {: important}
@@ -123,4 +123,4 @@ The following {{site.data.keyword.at_short}} events are generated when you confi
 | `logdnaat.streaming-logs.send`              | This event is generated when there is a failure streaming data. |
 | `logdnaat.exclusion-rule.create`            | This event is generated when an streaming exclusion rule is configured. |
 | `logdnaat.exclusion-rule.delete`            | This event is generated when an streaming exclusion rule is deleted. |
-{: caption="Table 1. Events generated when configuring streaming" caption-side="bottom"}
+{: caption="Events generated when configuring streaming" caption-side="bottom"}

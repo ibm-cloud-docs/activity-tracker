@@ -127,7 +127,7 @@ The following table outlines the actions that you can run to manage views and al
 | Get all configured views and alerts                            | `GET`   | `<ENDPOINT>/v1/config/view`          |
 | Modify an existing view and the alerts that are attached to the view.   | `PUT`    | `<ENDPOINT>/v1/config/view/<VIEWID>` |
 | Delete a view and its associated alerts.                                | `DELETE` | `<ENDPOINT>/v1/config/view/<VIEWID>` |
-{: caption="Table 1. Configuration API endpoints" caption-side="top"}
+{: caption="Configuration API endpoints" caption-side="top"}
 
 Where `<VIEWID>` represents the ID of a view.
 
@@ -195,7 +195,7 @@ The following table indicates when the `name` parameter is required:
 | Modify an existing view and the alerts that are attached to the view. | `PUT`    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating required")|
 | Get all configured views and alerts                            | `GET`   | |
 | Delete a view and its associated alerts.                              | `DELETE` |  |
-{: caption="Table 2. Required status per method" caption-side="top"}
+{: caption="Required status per method" caption-side="top"}
 
 
 ### query (string)

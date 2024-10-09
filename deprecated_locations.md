@@ -43,7 +43,7 @@ The following are the CIDR blocks for deprecated regions.
 |----------|------------|
 | Seoul    | 169.56.86.240/28 |
 | Seoul    | 169.56.111.128/27 |
-{: caption="Table 1. Seoul public CIDR blocks" caption-side="top"}
+{: caption="Seoul public CIDR blocks" caption-side="top"}
 
 ### Private CIDR blocks
 {: #dep-cidr-private}
@@ -54,7 +54,7 @@ The following are the CIDR blocks for deprecated regions.
 | Region | CIDR block |
 |--------|------------|
 | Seoul	    | 10.178.139.64/26 |
-{: caption="Table 2. Seoul private CIDR blocks" caption-side="top"}
+{: caption="Seoul private CIDR blocks" caption-side="top"}
 
 ## Deprecated endpoints
 {: #deprecated-endpoints}
@@ -69,7 +69,7 @@ The following table shows the deprecated public API endpoints:
 | Location                 | Region                   |  Public Endpoint                                   |
 |--------------------------|--------------------------|----------------------------------------------------|
 | `Asia Pacific`           | `Seoul (kr-seo)`         | `https://api.kr-seo.logging.cloud.ibm.com`         |    |
-{: caption="Table 3. Deprecated public API endpoints" caption-side="top"}
+{: caption="Deprecated public API endpoints" caption-side="top"}
 
 ### Private API endpoints
 {: #endpoints_api-at-private}
@@ -79,7 +79,7 @@ The following table shows the deprecated private API endpoints:
 | Location                 | Region                   |  Public Endpoint                                   |
 |--------------------------|--------------------------|----------------------------------------------------|
 | `Asia Pacific`           | `Seoul (kr-seo)`         | `https://api.private.kr-seo.logging.cloud.ibm.com`         |
-{: caption="Table 4. Deprecated private API endpoints" caption-side="top"}
+{: caption="Deprecated private API endpoints" caption-side="top"}
 
 
 ### UI endpoints
@@ -90,4 +90,4 @@ The following table shows the deprecated UI endpoints:
 | Location                 | Region                   |  Public Endpoint                                   |
 |--------------------------|--------------------------|----------------------------------------------------|
 | `Asia Pacific`           | `Seoul (kr-seo)`         | `https://app.kr-seo.logging.cloud.ibm.com`         |
-{: caption="Table 5. Deprecated UI endpoints" caption-side="top"}
+{: caption="Deprecated UI endpoints" caption-side="top"}

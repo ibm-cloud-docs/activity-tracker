@@ -29,7 +29,7 @@ For more information about {{site.data.keyword.atracker_full_notm}}, see [About 
 
 Compliance with internal policies and industry regulations is a key requirement in any organization's strategy, regardless of where applications run: on-premises, in a hybrid cloud, or in a public cloud. The {{site.data.keyword.at_full_notm}} service provides the framework and functionality to monitor API calls to services on the {{site.data.keyword.cloud_notm}} and produces the evidence to comply with corporate policies and market industry-specific regulations.
 
-![The {{site.data.keyword.at_full_notm}} service](images/Activity-Tracker-Search-01-Search-Flow.svg "The {{site.data.keyword.at_full_notm}} service"){: caption="Figure 1. Activity Tracker hosted event search flow" caption-side="bottom"}
+![The {{site.data.keyword.at_full_notm}} service](images/Activity-Tracker-Search-01-Search-Flow.svg "The {{site.data.keyword.at_full_notm}} service"){: caption="Activity Tracker hosted event search flow" caption-side="bottom"}
 
 When you work in a cloud environment, such as the {{site.data.keyword.cloud_notm}}, you must plan the cloud strategy for auditing and monitoring workloads and data in accordance with your internal policies and with industry and country-based compliance requirements. You can use the information that is registered through the {{site.data.keyword.at_full_notm}} service to identify security incidents, detect unauthorized access, and comply with regulatory and internal auditing requirements.
 
@@ -230,7 +230,7 @@ The CADF event model includes the following components:
 | `Observer` | The observer is the resource that creates and stores a CADF record from information available in a CADF event. |
 | `Outcome`  | The outcome is the status of the action against the target. |
 | `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
-{: caption="Table 1. Components that are available in a CADF event model" caption-side="top"}
+{: caption="Components that are available in a CADF event model" caption-side="top"}
 
 [Learn more](/docs/services/activity-tracker?topic=activity-tracker-event#event).
 

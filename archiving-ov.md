@@ -29,7 +29,7 @@ You can only have 1 {{site.data.keyword.at_short}} instance per region. Each {{s
 
 The following figure shows a high-level view of the different components that are involved when archiving events:
 
-![High-level view archiving events](images/Activity-Tracker-Search-02-Archiving-Events.svg "High-level view archiving events"){: caption="Figure 1. High-level view archiving events" caption-side="bottom"}
+![High-level view archiving events](images/Activity-Tracker-Search-02-Archiving-Events.svg "High-level view archiving events"){: caption="High-level view archiving events" caption-side="bottom"}
 
 The {{site.data.keyword.cos_full_notm}} instance is provisioned within the context of a resource group. The {{site.data.keyword.at_full_notm}} instance is also provisioned within the context of a resource group. Both instances can be grouped under the same resource group or in different ones.
 
@@ -145,7 +145,7 @@ The following table lists the minimum roles that a user must have to be able to 
 |---------------------------|-------------------------------|
 | Platform role: `Viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
 | Service role: `Manager`      | Allows the user to launch the web UI and configure archiving through the web UI or by using the API.  |
-{: caption="Table 1. IAM roles" caption-side="top"}
+{: caption="IAM roles" caption-side="top"}
 
 For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
@@ -161,7 +161,7 @@ The following table lists the roles that a user can have to complete the actions
 | `Cloud Object Storage`     |  Platform role: `Administrator`   \n  or \n Platform role:`Editor` | Allows the user to provision an instance of the {{site.data.keyword.cos_full_notm}} service.    |
 | `Cloud Object Storage`     |  Platform role: `Administrator`   \n or \n  Platform role:`Editor` \n or   \n  Platform role: `Operator` | Allows the user to create a service ID.    |
 | `Cloud Object Storage`     |  Service role: `writer` | Grants permissions to create, modify, and delete buckets. In addition, grants permissions to upload and download the objects in the bucket.   |
-{: caption="Table 2. Roles and actions" caption-side="top"}
+{: caption="Roles and actions" caption-side="top"}
 
 For more information on how to configure policies for a user, see [Grant IAM policies to a user to work with {{site.data.keyword.cos_full_notm}}D](/docs/activity-tracker?topic=activity-tracker-archiving#archiving_step1).
 
@@ -182,4 +182,4 @@ The following {{site.data.keyword.at_short}} events are generated when you confi
 | Action                                            | Description                |
 |---------------------------------------------------|----------------------------|
 | `logdnaat.account-archive-setting.configure` | This event is generated when an administrator configures archiving for an auditing instance. |
-{: caption="Table 3. Archiving {{site.data.keyword.at_short}} events" caption-side="top"}
+{: caption="Archiving {{site.data.keyword.at_short}} events" caption-side="top"}

@@ -150,7 +150,7 @@ The following table outlines predefined views that you can use to monitor activi
 | `Enable archiving`    | Reports when archiving is enabled so you can keep track of which instances are configured, when archiving was enabled, and by whom. |
 | `Disable archiving`   | Reports when archiving is disabled so you can keep track of which instances are not archiving data for long term storage. |
 | `Delete bucket`       | Reports when a bucket is deleted. |
-{: caption="Table 1. Available template views" caption-side="bottom"}
+{: caption="Available template views" caption-side="bottom"}
 
 Be sure no one disables your archiving so you don’t start to fail to save data you need for your compliance.
 {: important}
@@ -187,7 +187,7 @@ The following table outlines the predefined views that you can use to monitor 1 
 | `Server errors (5XX)` | Reports server errors for 1 bucket. Shows any requests that have a response reason code (RC) value of 5XX. |
 | `Unauthorized access` | Reports unauthorized attempts to access your archives and manage 1 bucket. Checks reason codes 403 and 401.|
 | `Partial content`     | Reports errors uploading an object in multiple parts into 1 bucket so you can find out when data is not complete. |
-{: caption="Table 2. Bucket monitoring predefined views" caption-side="bottom"}
+{: caption="Bucket monitoring predefined views" caption-side="bottom"}
 
 To use these views, you must customize them by entering the bucket name.
 {: note}
@@ -201,7 +201,7 @@ The following table outlines the predefined views that you can use to monitor wh
 | `Hourly archiving`    | Reports every time an object (file) is uploaded to the bucket that is configured for archiving for the instance that you are monitoring. |
 | `Bucket delete`       | Reports when the bucket configured to collect data for 1 instance is deleted. |
 | `Archive failures`    | Reports unsuccessful requests uploading objects to a bucket. Reports all reason codes except 200. |
-{: caption="Table 3. Archiving enablement predefined views" caption-side="bottom"}
+{: caption="Archiving enablement predefined views" caption-side="bottom"}
 {: #archive_template_views}
 
 To use these views, you must customize them by entering the {{site.data.keyword.at_short}} hosted event search instance CRN, the bucket name, and the service ID that is used to authenticate and work with the bucket.
@@ -225,7 +225,7 @@ The following table outlines the predefined views that you can use to monitor wh
 | `IP invalid`       | Reports when the request is originating from an IP address that is not in the IP allowed list. |
 | `Unable to access bucket`    | Reports when there is a `ReplicationConfigurationNotFoundError` and archiving fails. |
 | `Unauthorized access` | Reports unauthorized attempts to access your archives and manage 1 bucket. Checks reason codes 403 and 401.|
-{: caption="Table 4. Archiving enablement predefined views to report failures" caption-side="bottom"}
+{: caption="Archiving enablement predefined views to report failures" caption-side="bottom"}
 
 
 
@@ -239,7 +239,7 @@ The following table outlines the predefined dashboards that you can use to monit
 | `Archiving bucket`   | Monitor archiving for 1 {{site.data.keyword.at_short}} hosted event search instance in an account. |
 | `Archiving overview` | Monitor archiving across the account. |
 | `Failures to archive` | Monitors scenarios where archiving fails. |
-{: caption="Table 5. Predefined dashboard" caption-side="bottom"}
+{: caption="Predefined dashboard" caption-side="bottom"}
 
 To use these dashboards, you must customize them by entering the bucket name and the service ID that is used to authenticate and work with the bucket.
 {: note}
@@ -266,7 +266,7 @@ The following table outlines the predefined screens that you can use to monitor 
 | `Bucket <BUCKETNAME>` | View statistics about a single bucket. |
 | `Archiving overview`  | View statistics about archiving across multiple instances in your account or Enterprise account. |
 | `Failures to archive` | View statistics about archiving failures and the errors that cause the failure. |
-{: caption="Table 6. Predefined screens" caption-side="bottom"}
+{: caption="Predefined screens" caption-side="bottom"}
 
 To use these screens, you must customize them by entering the bucket name and the service ID that is used to authenticate and work with the bucket.
 {: note}

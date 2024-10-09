@@ -39,7 +39,7 @@ Complete the following steps to archive an {{site.data.keyword.at_full_notm}} in
 |---------------------------|-------------------------------|
 | Platform role: `Viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
 | Service role: `Manager`      | Allows the user to launch the web UI and configure archiving through the web UI or by using the API.  |
-{: caption="Table 1. IAM roles" caption-side="top"}
+{: caption="IAM roles" caption-side="top"}
 
 For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
@@ -66,7 +66,7 @@ The following table lists the roles that a user can have to complete the actions
 | `Cloud Object Storage`     | Administrator     | Allows the user to assign policies to users in the account to work with the {{site.data.keyword.cos_full_notm}} service. |
 | `Cloud Object Storage`     | Administrator   \n Editor | Allows the user to provision an instance of the {{site.data.keyword.cos_full_notm}} service.    |
 | `Cloud Object Storage`     | Administrator   \n Editor   \n Operator | Allows the user to create a service ID.    |
-{: caption="Table 2. Roles and actions" caption-side="top"}
+{: caption="Roles and actions" caption-side="top"}
 
 
 Complete the following steps to assign a user administrator role to the {{site.data.keyword.cos_full_notm}} service within the context of a resource group:
@@ -256,7 +256,7 @@ The following table lists the policies that a user must have to configure archiv
 |--------------------------------------|---------------------------|-------------------------------------|
 | `{{site.data.keyword.at_full_notm}}` | Platform role: Viewer     | Allows the user to view the list of service instances in the Observability Logging dashboard. |
 | `{{site.data.keyword.at_full_notm}}` | Service role: Manager     | Allows the user to launch the web UI and view events in the web UI.                             |
-{: caption="Table 3. IAM policies" caption-side="top"}
+{: caption="IAM policies" caption-side="top"}
 
 [Learn more](/docs/services/activity-tracker?topic=activity-tracker-iam#iam).
 
@@ -299,7 +299,7 @@ Complete the following steps to configure archiving of your {{site.data.keyword.
     | Endpoint    | Set to the COS bucket private endpoint.              |
     | API Key     | Set to the API key associated to the COS service ID. |
     | Instance ID | Set to the COS instance ID.                          |
-    {: caption="Table 4. COS fields" caption-side="top"}
+    {: caption="COS fields" caption-side="top"}
 
 5. Click **Save**.
 
