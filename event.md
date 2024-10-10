@@ -34,7 +34,7 @@ The CADF event model includes the following components:
 | `Observer` | The observer is the resource that creates and stores a CADF record from information available in a CADF event. |
 | `Outcome`  | The outcome is the status of the action against the target. |
 | `Target`   | The target is the resource against which the action is performed, attempted to perform, or is pending to complete. |
-{: caption="Table 1. Components that are available in a CADF event model" caption-side="top"}
+{: caption="Components that are available in a CADF event model" caption-side="top"}
 
 
 The following fields are included in each Activity Tracker event:
@@ -317,7 +317,7 @@ The following table describes how this field is set based on the type of action:
 | `normal`   | Routine actions in the {{site.data.keyword.cloud_notm}} | Start an instance |
 | `warning`  | Actions that fail   \n Actions where a resource is updated or its metadata is modified | Rename a service instance |
 | `critical` | Actions that affect security in the {{site.data.keyword.cloud_notm}} such as changing credentials of a user or deleting data   \n Actions where the initiator is not authorized to work with an {{site.data.keyword.cloud_notm}} resource | Delete a security key |
-{: caption="Table 3. Severity values by type of action" caption-side="top"}
+{: caption="Severity values by type of action" caption-side="top"}
 
 When the reasonCode for an API call is any of the following values, the value of severity is set as follows:
 
@@ -334,7 +334,7 @@ When the reasonCode for an API call is any of the following values, the value of
 | `504`      | `Gateway Timeout`             | `warning`      |
 | `505`      | `HTTP Version Not Supported`  | `warning`      |
 | `507`      | `Insufficient Storage`        | `critical`     |
-{: caption="Table 4. Severity value for some reason codes" caption-side="top"}
+{: caption="Severity value for some reason codes" caption-side="top"}
 
 
 ## Target fields
@@ -351,7 +351,7 @@ The following table lists common target fields that are available for each event
 | `target.name` | Human-readable name of the resource on which the action is executed. |  |
 | `target.typeURI` | Type of the cloud resource on which the action is executed. | For example, `iam-am/policy` or `cloud-object-storage/bucket/acl` |
 | `target.host.address` | IP Address or URL of the target service |  |
-{: caption="Table 5. Common target fields" caption-side="top"}
+{: caption="Common target fields" caption-side="top"}
 
 
 ### target.id (string)
@@ -402,7 +402,7 @@ For example:
 | kms.secrets.read                                  | kms/secrets                                     |
 | cloud-object-storage.instance.create              | cloud-object-storage/instance                   |
 | cloud-object-storage.object-multipart.create      | cloud-object-storage/object/multipart           |
-{: caption="Table 6. target.typeURI examples" caption-side="top"}
+{: caption="target.typeURI examples" caption-side="top"}
 
 
 ### target.resourceGroupId (string)
@@ -436,4 +436,4 @@ The following table outlines common labels and line identifiers that you can fin
 | `Line identifier`  | `Source`           | Service that generates the event                     | `host`           |
 | `Line identifier`  | `Env`              | Environment: `production`                            | `env`            |
 | `Line identifier`  | `App`              | CRN of the service instance in your account          | `app`            |
-{: caption="Table 7. labels and line identifiers" caption-side="top"}
+{: caption="labels and line identifiers" caption-side="top"}

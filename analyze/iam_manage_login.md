@@ -184,7 +184,7 @@ The following table shows the IAM event that is generated in each of the log in 
 | User     | `iam-identity.user-apikey.login`         | An event is generated when a user logs in to the {{site.data.keyword.cloud_notm}} by using an API key. |
 | User     | `iam-identity.user-identitycookie.login` | An event is generated when a user requests an identity cookie to run an action. |
 | User     | `iam-identity.user-refreshtoken.login`   | An event is generated when a user logs in to the {{site.data.keyword.cloud_notm}}, or when an initiator that has already logged in to the {{site.data.keyword.cloud_notm}} requests a new refresh token to run an action. |
-{: caption="Table 1. User login actions" caption-side="top"}
+{: caption="User login actions" caption-side="top"}
 
 
 [Learn more about analyzing IAM events](/docs/services/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_analyze).

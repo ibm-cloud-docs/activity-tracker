@@ -38,7 +38,7 @@ Review the following sections for the specific responsibilities for you and for 
 | `Archive events for {{site.data.keyword.at_short}}`  | Provide the ability to archive to a client configured Cloud Object Storage (COS) location and archive data. | Configure Cloud Object Storage per your requirements.   \n [Enable archiving of the Activity Tracker instance.](/docs/activity-tracker?topic=activity-tracker-archiving) |
 | `Monitor events for {{site.data.keyword.at_short}}`  | [Participating Cloud services](/docs/activity-tracker?topic=activity-tracker-cloud_services) publish relevant event data to their subscribing clients. {{site.data.keyword.at_full_notm}} provides clients with the ability to receive the events once the client configures their instance. | [Create an {{site.data.keyword.at_full_notm}} instance](/docs/activity-tracker?topic=activity-tracker-provision) in each region where Cloud service subscriptions publish events to receive the published events.   \n Create an instance in Frankfurt to get global Activity Tracker events.   \n [Create views, dashboards, and screens to view and analyze the data.](/docs/activity-tracker?topic=activity-tracker-monitor_events)|
 | `Configuring exclusion rules for {{site.data.keyword.at_short}}` |  | Verify that each exclusion rule that you add behaves as expected. Improper configured exclusion rules can result in storing data not intended for storage. For more information on how to use exclusion rules, see [Excluding data by using exclusion rules](/docs/activity-tracker?topic=activity-tracker-exclusion_rules), [Configuring conditional streaming](/docs/activity-tracker?topic=activity-tracker-streaming-conditional) and [Configuring usage quota exclusion rules](/docs/activity-tracker?topic=activity-tracker-control_usage_quotas#rules_usage_quota). |
-{: caption="Table 1. Responsibilities for incident and operations" caption-side="top"}
+{: caption="Responsibilities for incident and operations" caption-side="top"}
 
 
 ## Change management
@@ -48,7 +48,7 @@ Review the following sections for the specific responsibilities for you and for 
 |---------------------------------------------------------|-----------------------|--------|
 | `Updates to {{site.data.keyword.at_short}}` | Provide major, minor, and patch version updates for {{site.data.keyword.at_full_notm}} interfaces.   \n Document changes in the [Release notes](https://docs.mezmo.com/changelog){: external} | `N/A` |
 | `Track versions of custom views, dashboards, screens, parsing templates, and alerts for {{site.data.keyword.at_short}}`    | `N/A` | Use your own change management process to control versions of metadata resources such as views, dashboards, screens, parsing templates, and alerts`.   \n To learn how to export metadata, see [Export the configuration of resources in an auditing instance](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config). |
-{: caption="Table 2. Responsibilities for change management" caption-side="top"}
+{: caption="Responsibilities for change management" caption-side="top"}
 
 
 
@@ -59,7 +59,7 @@ Review the following sections for the specific responsibilities for you and for 
 | Task                           | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |--------------------------------|-------------------------------------------------|-----------------------|
 | `Manage permissions for {{site.data.keyword.at_short}}`           |Provide the ability to restrict access to resources.   \n {{site.data.keyword.IBM_notm}} is responsible for the security and compliance of {{site.data.keyword.at_full_notm}}. | Restrict access to resources by using Cloud IAM access policies by defining IAM policies to control which users within your account have access to the data.    \n [Learn more about controlling access through IAM](/docs/activity-tracker?topic=activity-tracker-iam).|
-{: caption="Table 3. Responsibilities for identity and access management" caption-side="top"}
+{: caption="Responsibilities for identity and access management" caption-side="top"}
 
 
 
@@ -70,7 +70,7 @@ Review the following sections for the specific responsibilities for you and for 
 | Task                                       | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |--------------------------------------------|-------------------------------------------------|-----------------------|
 | `Meet security and compliance objectives`  | Maintain controls that are commensurate to various industry compliance standards such as SOC2, PCI, HIPAA and Privacy Shield. For more information, see [Securing your data](/docs/activity-tracker?topic=activity-tracker-mng-data). | Set up and maintain security and regulation compliance for your apps and data.  This includes:   \n [Defining the account management strategy](/docs/activity-tracker?topic=activity-tracker-adoption#adoption_account)   \n [Configuring the accounts settings for compliance](/docs/activity-tracker?topic=activity-tracker-adoption#adoption_acc_settings)   \n [Define IAM Strategy](/docs/activity-tracker?topic=activity-tracker-adoption#adoption_iam)   \n [Define the notification strategy](/docs/activity-tracker?topic=activity-tracker-adoption#adoption_alerts) \n Ensure encryption of archived data by configuring a COS bucket that has full control over the data encryption keys that are used. [{{site.data.keyword.cos_full}} provides several options to encrypt your data.](/docs/cloud-object-storage?topic=cloud-object-storage-encryption) |
-{: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="top"}
+{: caption="Responsibilities for security and regulation compliance" caption-side="top"}
 
 
 
@@ -85,7 +85,7 @@ Review the following sections for the specific responsibilities for you and for 
 | `Backup auditing events for {{site.data.keyword.at_short}}` | `N/A` | [Configure archiving to retain a backup copy of the data.](/docs/activity-tracker?topic=activity-tracker-archiving) |
 | `Backup metadata for {{site.data.keyword.at_short}}` | Backup metadata that is used by the service. | [Backup the metadata such as views, dashboards, screens, parsing templates, and alerts for each auditing instance.](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#rrd_export_config) |
 | `Restore metadata for {{site.data.keyword.at_short}}`   | Restore metadata that is used by the service.  | [Restore the metadata such as views, dashboards, screens, parsing templates, and alerts for each instance.](/docs/activity-tracker?topic=activity-tracker-reuse_resource_definitions#import_config) |
-{: caption="Table 5. Responsibilities for disaster recovery" caption-side="top"}
+{: caption="Responsibilities for disaster recovery" caption-side="top"}
 
 `[*]` Recovered and restarted service components will not have customer data reloaded.
 {: note}

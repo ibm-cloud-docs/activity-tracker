@@ -32,7 +32,7 @@ Before you start, check that your user ID has permissions to launch the web UI a
 | Platform role: `viewer`     | Allows the user to view the list of service instances in the Observability dashboard. |
 | Service role: `reader`      | Allows the user to launch the web UI and view events in the web UI.  |
 | Service role: `standard-member`      | Allows the user save a view based on a search.  |
-{: caption="Table 1. IAM roles" caption-side="top"}
+{: caption="IAM roles" caption-side="top"}
 
 For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 
@@ -89,7 +89,7 @@ The following table lists core services:
 | [IAM Identity service](/docs/services/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_login)   | `iam-identity`    | `_platform:==iam-identity`  |
 | [IAM Access Groups service](/docs/services/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_access)   | `iam-groups`  | `_platform:==iam-groups`     |
 | [Resource controller service](/docs/services/activity-tracker?topic=activity-tracker-cloud_services#platform_core_integrated)   | `BSS`  | `_platform:==BSS`  |
-{: caption="Table 2. Query by service name" caption-side="top"}
+{: caption="Query by service name" caption-side="top"}
 
 
 
@@ -118,7 +118,7 @@ The following table show examples of how to query for a group of events that is 
 | `IAM Identity service`                     | [Account service ID events](/docs/services/activity-tracker?topic=activity-tracker-at_events_iam#at_events_iam_serviceids) | `_platform:==iam-identity (action account-serviceid)`  |
 | `Resource controller`                      | [Provisioning and managing service instances](/docs/services/activity-tracker?topic=activity-tracker-at_events_rc#rc_provision) | `_platform:==BSS (action instance)`  |
 | `Resource controller`                      | [Managing users in the account](/docs/services/activity-tracker?topic=activity-tracker-at_events_acc_mgt#at_events_acc_mgt_users)   |  `_platform:==BSS (action user-management.user)`  |                   |
-{: caption="Table 3. Samples of more complex queries" caption-side="top"}
+{: caption="Samples of more complex queries" caption-side="top"}
 
 
 ### Query for events that have a specific action
@@ -140,7 +140,7 @@ The following table show examples of queries for different actions:
 | Provision a service    | `action instance.create`         |
 | Remove an instance     | `action instance.delete`         |
 | Add a user             | `action user-management.user.create` |
-{: caption="Table 4. Samples of queries by action type" caption-side="top"}
+{: caption="Samples of queries by action type" caption-side="top"}
 
 ### Query for events with a specific reason code
 {: #views_step2_4}

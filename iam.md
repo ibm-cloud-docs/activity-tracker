@@ -81,7 +81,7 @@ Use the following table to identify the platform role for the {{site.data.keywor
 | `Create a service ID`                                                     | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |        |      |
 | `View details of a service instance`                                      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |
 | `View service instances in the Observability Activity Tracker dashboard`  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")  | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |
-{: caption="Table 12. IAM user platform roles and actions for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
+{: caption="IAM user platform roles and actions for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
 
 
 ## {{site.data.keyword.cloud_notm}} service roles
@@ -112,7 +112,7 @@ Use the following table to identify the service roles that you can grant a user 
 | `Use views to monitor events`                                           | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")                    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |
 | `Use dashboards to monitor events`                                      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")                    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |
 | `Use screens to monitor events`                                         | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")      | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")                    | ![Check mark icon](images/checkmark-icon.svg "Check mark icon indicating correct usage")    |
-{: caption="Table 13. IAM service roles and actions for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
+{: caption="IAM service roles and actions for {{site.data.keyword.at_short}} hosted event search offerings" caption-side="top"}
 
 
 The **manager** service role maps directly to the service admin role.

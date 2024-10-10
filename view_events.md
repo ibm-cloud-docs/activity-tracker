@@ -35,7 +35,7 @@ Complete the following steps to view events:
     |-------------------------|------------------------------------------------------------------------------------------|
     | Platform role: `Viewer` | Allows the user to view the list of service instances in the *Observability* dashboard.  |
     | Service role: `Reader`  | Allows the user to launch the web UI, and view, search, and filter events in the web UI. |
-    {: caption="Table 1. IAM roles" caption-side="top"}
+    {: caption="IAM roles" caption-side="top"}
 
     For more information on how to configure policies for a user, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 

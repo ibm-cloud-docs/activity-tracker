@@ -102,7 +102,7 @@ Use these views to gain insight on your {{site.data.keyword.cloud_notm}} access 
 | `[Login] [TP] Federated users login sessions` | Use this view to monitor trusted profile (TP) logins for federated users. |
 | `[Login] Service ID API Key logins` | Use this view to monitor logins with service ID API keys. |
 | `[Login] User API Key logins` | Use this view to monitor logins with user API keys. |
-{: caption="Table 1. Predefined views" caption-side="bottom"}
+{: caption="Predefined views" caption-side="bottom"}
 
 `CBR` is the acronym that is used to group views that are related with context based restrictions.
 `TP` is the acronymn that is used to group views that are related with trusted profiles.
@@ -120,4 +120,4 @@ The following table outlines the predefined screens that you can use to gain ins
 |-------------|-------------|
 | `Activity Summary` | View statistics and gain insight on your {{site.data.keyword.cloud_notm}} requests. |
 | `Login and Requests Status`  | View statistics about login, unauthorize access, and denied requests. |
-{: caption="Table 2. Predefined screens" caption-side="bottom"}
+{: caption="Predefined screens" caption-side="bottom"}

@@ -21,7 +21,7 @@ You can use the {{site.data.keyword.sqlquery_short}} service to query {{site.dat
 
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
-![{{site.data.keyword.cloud_notm}} services integration scenario](images/Activity-Tracker-Search-03-Search-Archive.svg "{{site.data.keyword.cloud_notm}} services integration scenario"){: caption="Figure 1. {{site.data.keyword.cloud_notm}} services integration scenario" caption-side="bottom"}
+![{{site.data.keyword.cloud_notm}} services integration scenario](images/Activity-Tracker-Search-03-Search-Archive.svg "{{site.data.keyword.cloud_notm}} services integration scenario"){: caption="{{site.data.keyword.cloud_notm}} services integration scenario" caption-side="bottom"}
 
 Each {{site.data.keyword.at_full_notm}} instance has a service plan associated that indicates the number of days that you can query data through the web UI. To have access to the events after this period, you must enable archiving in the {{site.data.keyword.at_full_notm}} instance. When you enable archiving, you get an archive file hourly. This file contains information for that hour. Notice that UTC timestamps are used to determine which records are included in each file. The file name includes the ID of your {{site.data.keyword.at_full_notm}} instance and the date of the records that are included in the file.
 
@@ -91,13 +91,13 @@ To run queries with the SQL query service, a user needs a platform role and a se
 | Platform actions                        | Administrator                                     | Editor | Operator | Viewer  |
 |---------------------------------------------------------------------------|:-------------------------------------------------:|:-------:|:--------:|:------:|
 | `View details of the {{site.data.keyword.sqlquery_short}} service instance`    | ![Checkmark icon](images/checkmark-icon.svg)  | ![Checkmark icon](images/checkmark-icon.svg)    | ![Checkmark icon](images/checkmark-icon.svg)      | ![Checkmark icon](images/checkmark-icon.svg)    |
-{: caption="Table 1. Platform roles" caption-side="top"}
+{: caption="Platform roles" caption-side="top"}
 
 
 | Service actions                 | Manager                                           | Writer                                            | Reader           |
 |:-------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|:----------------:|
 | `Run an SQL query`              | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |                  |
-{: caption="Table 2. Service roles" caption-side="top"}
+{: caption="Service roles" caption-side="top"}
 
 Notice that users with the service role **reader** get an access error when they launch the SQL Query UI.
 
@@ -405,4 +405,4 @@ The following table lists the event fields and the column name that you must use
 | `severity`                    | `_source.severity`    |
 | `requestData`                 | `_source.requestData` |
 | `responseData`                | `_source.responseData` |
-{: caption="Table 3. Mapping of event fields to SQL query column names" caption-side="top"}
+{: caption="Mapping of event fields to SQL query column names" caption-side="top"}

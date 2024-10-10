@@ -34,7 +34,7 @@ The following table lists the minimum policy that a user must have to be able to
 |---------------------------|---------------------|
 | Platform role: `Viewer`   | Allows the user to view the list of service instances in the Observability dashboard. |
 | Service role: `Reader`    | Allows the user to view events through the web UI. |
-{: caption="Table 1. IAM policies" caption-side="top"}
+{: caption="IAM policies" caption-side="top"}
 
 For more information, see [Granting user permissions to a user or service ID](/docs/services/activity-tracker?topic=activity-tracker-iam_view_events#iam_view_events).
 

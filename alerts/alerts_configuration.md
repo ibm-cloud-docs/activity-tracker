@@ -110,7 +110,7 @@ The following table outlines queries that you can use to alert on configuraton c
 | Modify a service instance | `instance.update` | N/A | N/A |
 | Modify a service instance for service type | `instance.update` | You can choose a specific service in the source filter section of the UI.   \n   \n For example, to notify when a Key Protect service instance is changed, choose `kms` as the source. | You can specify the service in the hosts patameter.   \n   \n For example, to notify when a Key Protect service instance is changed, add `\"hosts\": \"kms\"` |
 | Create, delete or modify any service instance | `instance.create OR instance.delete OR instance.update` | N/A | N/A |
-{: caption="Table 1. Query samples when services are created, modified, and deleted" caption-side="top"}
+{: caption="Query samples when services are created, modified, and deleted" caption-side="top"}
 
 ### Notify when account settings are modified
 {: #alerts_configuration_queries_2}
@@ -134,5 +134,4 @@ The following table outlines queries that you can use to alert on configuraton c
 | An administrator restricts access to resources in the account | `action:iam-identity.accountsettings.update AND requestData.public_access_enabled:true`  |
 | An administrator allows public access to resources in the account | `action:iam-identity.accountsettings.update AND requestData.public_access_enabled:false`  |
 | An administrator changes the MFA setting in the account. Valid MFA setting values are: NONE, TOTP, TOTP4ALL, LEVEL1, LEVEL2, LEVEL3 | `action:iam-identity.accountsettings.update AND new_mfa_traits:<MFA_SETTING>` |
-{: caption="Table 2. Query samples when account settings are modified" caption-side="top"}
-
+{: caption="Query samples when account settings are modified" caption-side="top"}

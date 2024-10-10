@@ -5,7 +5,7 @@ toc:
     version: 2
     category: logging_monitoring
     audience: service
-    href: /docs/activity-tracker?topic=activity-tracker-getting-started
+    href: /docs/activity-tracker
     console-page: /observe/activitytracker
     product-page: https://www.ibm.com/cloud/activity-tracker
     path: activity-tracker

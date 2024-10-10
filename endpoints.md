@@ -41,7 +41,7 @@ The following table shows the public API endpoints:
 | `North America`          | `Toronto (ca-tor)`       | `https://api.ca-tor.logging.cloud.ibm.com`       |
 | `North America`          | `Washington DC (us-east)` | `https://api.us-east.logging.cloud.ibm.com`       |
 | `South America`          | `Sao Paulo (br-sao)`     | `https://api.br-sao.logging.cloud.ibm.com`       |
-{: caption="Table 1. Public API endpoints" caption-side="top"}
+{: caption="Public API endpoints" caption-side="top"}
 
 ## Private API endpoints
 {: #endpoints_api-at-private}
@@ -61,7 +61,7 @@ The following table shows the private API endpoints:
 | `North America`          | `Toronto (ca-tor)`       | `https://api.private.ca-tor.logging.cloud.ibm.com`         |
 | `North America`          | `Washington DC (us-east)`   | `https://api.private.us-east.logging.cloud.ibm.com`         |
 | `South America`          | `Sao Paulo (br-sao)`     | `https://api.private.br-sao.logging.cloud.ibm.com`       |
-{: caption="Table 2. Private API endpoints" caption-side="top"}
+{: caption="Private API endpoints" caption-side="top"}
 
 
 ## UI endpoints
@@ -82,4 +82,4 @@ The following table shows the UI endpoints:
 | `North America`          | `Toronto (ca-tor)`       | `https://app.ca-tor.logging.cloud.ibm.com`        |
 | `North America`          | `Washington DC (us-east)`   | `https://app.us-east.logging.cloud.ibm.com`        |
 | `South America`          | `Sao Paulo (br-sao)`     | `https://app.br-sao.logging.cloud.ibm.com`       |
-{: caption="Table 3. Lists of UI endpoints" caption-side="top"}
+{: caption="Lists of UI endpoints" caption-side="top"}

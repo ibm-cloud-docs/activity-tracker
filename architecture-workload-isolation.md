@@ -30,7 +30,7 @@ Review the following sample architecture for {{site.data.keyword.at_full}}, and 
 
 The following figure shows the high level architecture for {{site.data.keyword.at_full_notm}} hosted event search offerings:
 
-![{{site.data.keyword.at_full_notm}} architecture](images/Activity-Tracker-Search-05-Architecture.svg "High level architecture for {{site.data.keyword.at_full_notm}}"){: caption="Figure 1. {{site.data.keyword.at_full_notm}} architecture" caption-side="bottom"}
+![{{site.data.keyword.at_full_notm}} architecture](images/Activity-Tracker-Search-05-Architecture.svg "High level architecture for {{site.data.keyword.at_full_notm}}"){: caption="{{site.data.keyword.at_full_notm}} architecture" caption-side="bottom"}
 
 The API server component provides a web and an API interface to the logging service.
 
