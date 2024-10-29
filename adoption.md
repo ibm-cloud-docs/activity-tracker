@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-05-24"
+lastupdated: "2024-10-29"
 
 keywords:
 
@@ -163,7 +163,7 @@ The service plan that you choose determines the number of days that data is avai
 Choose your plan based on the number of days that you need to be able to search data online through the web UI.
 {: tip}
 
-The HIPAA plan has a maximum of 25 users. If you need to grant permissions to more than 25 users, [open a support ticket](/docs/get-support).
+The HIPAA plan has a maximum of 25 users. If you need to grant permissions to more than 25 users, [open a support ticket](/docs/account?topic=account-open-case&interface=ui).
 
 
 ### Tags

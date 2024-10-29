@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-05-24"
+lastupdated: "2024-10-29"
 
 keywords:
 
@@ -61,7 +61,7 @@ You can export data in JSONL format locally, write data to your terminal, or req
 
 When you delete an instance, the instance is automatically deactivated, and ingestion of events is stopped. [Learn more](/docs/services/activity-tracker?topic=activity-tracker-remove). {{site.data.keyword.at_short}} deletes all events that are already ingested. Deletion is completed within 24 hours after receiving your request. You are responsible for managing archived data.
 
-When you delete an auditing instance, user metadata such as views, alerts, dashboards, screens, and templates, is never deleted. You must open a case through support to request the data to be deleted. For more information, see [Open a support ticket](/docs/get-support). You are responsible for deleting archived metadata.
+When you delete an auditing instance, user metadata such as views, alerts, dashboards, screens, and templates, is never deleted. You must open a case through support to request the data to be deleted. For more information, see [Creating support cases](/docs/account?topic=account-open-case&interface=ui). You are responsible for deleting archived metadata.
 
 You can delete metadata such as views, dashboards, screens, templates, and alerts at any time.
 
