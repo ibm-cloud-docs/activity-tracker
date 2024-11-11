@@ -301,15 +301,3 @@ The following table lists Power IaaS infrastructure services that send auditing 
 | [{{site.data.keyword.powerSys_notm}}](/docs/power-iaas?topic=power-iaas-getting-started) | `power-iaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events) |
 | [SSHKeys](/docs/power-iaas?topic=power-iaas-create-vm) | `pcloud.ssh-key` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [Location-based events](/docs/power-iaas?topic=power-iaas-at-events#at-actions-ssh) |
 {: caption="List of Power Systems Virtual Server infrastructure services" caption-side="top"}
-
-## Cloud Pak
-{: #cloud_pak}
-
-
-The following table lists Cloud Pak services that send auditing events:
-
-| Service     | Service name | {{site.data.keyword.at_short}} hosted event search offering |  Events |
-|-------------|--------------|------------------|--------|
-| [{{site.data.keyword.cpd_short}}](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x){: external} | `cp4d` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [List of events](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=data-services-that-support-audit-logging){: external} |
-| [{{site.data.keyword.cpd_short}} as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html?context=cpdaas&audience=wdp){: external} | `cpdaas` | ![Checkmark](/images/checkmark-icon.svg "Checkmark") | [List of events](https://dataplatform.cloud.ibm.com/docs/content/wsj/admin/at-events.html?context=cpdaas&audience=wdp){: external} |
-{: caption="List of {{site.data.keyword.cpd_full_notm}} services" caption-side="top"}
