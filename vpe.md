@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-24"
+lastupdated: "2024-11-13"
 
 keywords:
 
@@ -88,7 +88,7 @@ of the target region.
 
 3. Make sure your {{site.data.keyword.at_full_notm}} deployment's [private endpoint is enabled](/docs/activity-tracker?topic=activity-tracker-service-endpoints).
 
-4. In the {{site.data.keyword.cloud_notm}} console, click the menu icon and select **VPC** > **Infrastructure** > **Network** > **Virtual private endpoint gateways**. Create a VPE for your {{site.data.keyword.at_full_notm}} instances with the [following instruction](/docs/vpc?topic=vpc-about-vpe). 
+4. In the {{site.data.keyword.cloud_notm}} console, click the menu icon and select **Infrastructure > VPC Layout > Network > Virtual private endpoint gateways**. Create a VPE for your {{site.data.keyword.at_full_notm}} instances with the [following instruction](/docs/vpc?topic=vpc-about-vpe). 
 
    The VPE endpoints for {{site.data.keyword.at_full_notm}} hosted event search are shared with {{site.data.keyword.la_full_notm}}. When you create a VPE gateway you need to select {{site.data.keyword.la_full_notm}} instead of  {{site.data.keyword.at_full_notm}} as your service.
    {: important}
