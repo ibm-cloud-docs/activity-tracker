@@ -58,16 +58,16 @@ of the target region.
 
 | Region     | Endpoints Supported in Region        | CRN                                                                                |  |
 |------------|--------------------------------------|------------------------------------------------------------------------------------|--|
-| Dallas (us-south) | api.private.us-south.logging.cloud.ibm.com  \n  \n logs.private.us-south.logging.cloud.ibm.com | crn:v1:bluemix:public:logdna:us-south:::endpoint:api.private.us-south.logging.cloud.ibm.com |
-| Frankfurt (eu-de) | api.private.eu-de.logging.cloud.ibm.com  \n  \n logs.private.eu-de.logging.cloud.ibm.com | crn:v1:bluemix:public:logdna:eu-de:::endpoint:api.private.eu-de.logging.cloud.ibm.com |
-| London (eu-gb) | api.private.eu-gb.logging.cloud.ibm.com  \n  \n logs.private.eu-gb.logging.cloud.ibm.com | crn:v1:bluemix:public:logdna:eu-gb:::endpoint:api.private.eu-gb.logging.cloud.ibm.com |
-| Madrid (eu-es) | api.private.eu-es.logging.cloud.ibm.com  \n  \n logs.private.eu-es.logging.cloud.ibm.com | crn:v1:bluemix:public:logdna:eu-es:::endpoint:api.private.eu-es.logging.cloud.ibm.com |
-| Osaka (jp-osa) | api.private.jp-osa.logging.cloud.ibm.com  \n  \n logs.private.jp-osa.logging.cloud.ibm.com | crn:v1:bluemix:public:logdna:jp-osa:::endpoint:api.private.jp-osa.logging.cloud.ibm.com |
-| Sao Paulo (br-sao) | api.private.br-sao.logging.cloud.ibm.com  \n  \n logs.private.br-sao.logging.cloud.ibm.com | crn:v1:bluemix:public:logdna:br-sao:::endpoint:api.private.br-sao.logging.cloud.ibm.com |
-| Sydney (au-syd) | api.private.au-syd.logging.cloud.ibm.com  \n  \n logs.private.au-syd.logging.cloud.ibm.com | crn:v1:bluemix:public:logdna:au-syd:::endpoint:api.private.au-syd.logging.cloud.ibm.com |
-| Tokyo (jp-tok) | api.private.jp-tok.logging.cloud.ibm.com  \n  \n logs.private.jp-tok.logging.cloud.ibm.com | crn:v1:bluemix:public:logdna:jp-tok:::endpoint:api.private.jp-tok.logging.cloud.ibm.com |
-| Toronto (ca-tor) | api.private.ca-tor.logging.cloud.ibm.com  \n  \n logs.private.ca-tor.logging.cloud.ibm.com | crn:v1:bluemix:public:logdna:ca-tor:::endpoint:api.private.ca-tor.logging.cloud.ibm.com |
-| Washington (us-east) | api.private.us-east.logging.cloud.ibm.com  \n  \n logs.private.us-east.logging.cloud.ibm.com | crn:v1:bluemix:public:logdna:us-east:::endpoint:api.private.us-east.logging.cloud.ibm.com |
+| Dallas (us-south) | `api.private.us-south.logging.cloud.ibm.com`  \n  \n `logs.private.us-south.logging.cloud.ibm.com` | `crn:v1:bluemix:public:logdna:us-south:::endpoint:api.private.us-south.logging.cloud.ibm.com` |
+| Frankfurt (eu-de) | `api.private.eu-de.logging.cloud.ibm.com`  \n  \n `logs.private.eu-de.logging.cloud.ibm.com` | `crn:v1:bluemix:public:logdna:eu-de:::endpoint:api.private.eu-de.logging.cloud.ibm.com` |
+| London (eu-gb) | `api.private.eu-gb.logging.cloud.ibm.com`  \n  \n `logs.private.eu-gb.logging.cloud.ibm.com` | `crn:v1:bluemix:public:logdna:eu-gb:::endpoint:api.private.eu-gb.logging.cloud.ibm.com` |
+| Madrid (eu-es) | `api.private.eu-es.logging.cloud.ibm.com`  \n  \n `logs.private.eu-es.logging.cloud.ibm.com` | `crn:v1:bluemix:public:logdna:eu-es:::endpoint:api.private.eu-es.logging.cloud.ibm.com` |
+| Osaka (jp-osa) | `api.private.jp-osa.logging.cloud.ibm.com`  \n  \n `logs.private.jp-osa.logging.cloud.ibm.com` | `crn:v1:bluemix:public:logdna:jp-osa:::endpoint:api.private.jp-osa.logging.cloud.ibm.com` |
+| Sao Paulo (br-sao) | `api.private.br-sao.logging.cloud.ibm.com`  \n  \n `logs.private.br-sao.logging.cloud.ibm.com` | `crn:v1:bluemix:public:logdna:br-sao:::endpoint:api.private.br-sao.logging.cloud.ibm.com` |
+| Sydney (au-syd) | `api.private.au-syd.logging.cloud.ibm.com`  \n  \n `logs.private.au-syd.logging.cloud.ibm.com` | `crn:v1:bluemix:public:logdna:au-syd:::endpoint:api.private.au-syd.logging.cloud.ibm.com` |
+| Tokyo (jp-tok) | `api.private.jp-tok.logging.cloud.ibm.com`  \n  \n `logs.private.jp-tok.logging.cloud.ibm.com` | `crn:v1:bluemix:public:logdna:jp-tok:::endpoint:api.private.jp-tok.logging.cloud.ibm.com` |
+| Toronto (ca-tor) | `api.private.ca-tor.logging.cloud.ibm.com`  \n  \n `logs.private.ca-tor.logging.cloud.ibm.com` | `crn:v1:bluemix:public:logdna:ca-tor:::endpoint:api.private.ca-tor.logging.cloud.ibm.com` |
+| Washington (us-east) | `api.private.us-east.logging.cloud.ibm.com`  \n  \n `logs.private.us-east.logging.cloud.ibm.com` | `crn:v1:bluemix:public:logdna:us-east:::endpoint:api.private.us-east.logging.cloud.ibm.com` |
 {: caption="Lists private endpoints for interacting with {{site.data.keyword.at_full_notm}} APIs over IBM Cloud's private network" caption-side="top"}
 
 ## Using Virtual Private Endpoints
