@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-05-24"
+lastupdated: "2024-12-10"
 
 keywords:
 
@@ -22,6 +22,8 @@ Different pricing plans are available that you can choose for an {{site.data.key
 
 {{../log-analysis/_include-segments/deprecation_notice.md}}
 
+{{site.data.keyword.at_full_notm}} hosted event search ended marketing on 30 November 2024. You can no longer change service plans for existing {{site.data.keyword.at_full_notm}} hosted event search instances.
+{: deprecated}
 
 | Plan                          | Number of days that data is available for seach | Number of users per plan | Plan Name |Plan ID |
 |-------------------------------|-------------------------------------------------|--------------------------|-----------|--------|

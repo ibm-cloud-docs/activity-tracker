@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-05-24"
+lastupdated: "2024-12-10"
 
 keywords:
 
@@ -21,6 +21,9 @@ When you provision an instance of the {{site.data.keyword.at_full_notm}} service
 
 
 {{../log-analysis/_include-segments/deprecation_notice.md}}
+
+{{site.data.keyword.at_full_notm}} hosted event search ended marketing on 30 November 2024. You can no longer change service plans for existing {{site.data.keyword.at_full_notm}} hosted event search instances.
+{: deprecated}
 
 [Learn more about service plans](/docs/activity-tracker?topic=activity-tracker-service_plan).
 
