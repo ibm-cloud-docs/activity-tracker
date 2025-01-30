@@ -112,7 +112,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                            | `Dallas (us-south)` | `Washington (us-east)`  |`Toronto (ca-tor)` | `Sao Paulo (br-sao)` |
 |------------------------------------|---------------------|-------------------------|-------------------|----------------------|
-| {{site.data.keyword.BluVirtServers_full}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.baremetal_long}}           | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 {: caption="Compute infrastructure services integration in Americas locations" caption-side="top"}
 {: #cs-infra-table-1}
@@ -123,7 +122,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service        | `Tokyo (jp-tok)`    |`Sydney (au-syd)` | `Osaka (jp-osa)` | `Chennai (in-che)` |
 |----------------|---------------------|------------------|------------------|------------------|
-| {{site.data.keyword.BluVirtServers_full}}     | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 | {{site.data.keyword.baremetal_long}}           | ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |
 {: caption="Compute infrastructure services integration in AP locations" caption-side="top"}
 {: #cs-infra-table-2}
@@ -134,7 +132,6 @@ List of locations where {{site.data.keyword.cloud}} services are enabled to send
 
 | Service                                                       |`Frankfurt (eu-de)`  | `London (eu-gb)` | `Madrid (eu-es)` |
 |---------------------------------------------------------------|---------------------|------------------|--------|
-| {{site.data.keyword.BluVirtServers_full}}     |  ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    |
 | {{site.data.keyword.baremetal_long}}           |  ![Checkmark icon](images/checkmark-icon.svg) | ![Checkmark icon](images/checkmark-icon.svg) |    |
 {: caption="Compute infrastructure services integration in Europe locations" caption-side="top"}
 {: #cs-infra-table-3}
