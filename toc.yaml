@@ -161,8 +161,8 @@ toc:
             navtitle: Working with events before a region is available
           - topic: manage-events-to-new-region.md
             navtitle: Working with events after a region is open for business
-          - include: ../log-analysis/move_region.md
-            navtitle: Moving your instance from one region to another
+      - include: ../log-analysis/move_region.md
+        navtitle: Moving your instance from one region to another
       - topicgroup:
           label: Working with alerts
           topics:
