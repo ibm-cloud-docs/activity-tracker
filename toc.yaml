@@ -3,7 +3,6 @@ toc:
     subcollection: activity-tracker
     service-name: logdnaat
     version: 2
-    category: logging_monitoring
     audience: service
     href: /docs/activity-tracker
     console-page: /observe/activitytracker
